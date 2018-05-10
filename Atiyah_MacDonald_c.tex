@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 \usepackage[parfill]{parskip}
@@ -1023,56 +1023,35 @@ The purpose of this section is to review the following closely related statement
 Before proceeding, it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
 
 $(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
-
-The following is taken from Wikipedia 
-
-\href{https://en.wikipedia.org/wiki/Noether_normalization_lemma}{\small https://en.wikipedia.org/wiki/Noether\_normalization\_lemma}
+%The following is taken from Wikipedia \href{https://en.wikipedia.org/wiki/Noether_normalization_lemma}{\small https://en.wikipedia.org/wiki/Noether\_normalization\_lemma}
 
 \textbf{Noether Normalization Lemma.} \emph{If $k$ is a field and $A$ a finitely generated $k$-algebra, then there exist a nonnegative integer $d$ and algebraically independent elements $y_1,\dots,y_d$ in $A$ such that $A$ is a finitely generated $k[y_1,\dots,y_d]$-module.}
 
+%Here are two versions of the proof. The second version is more detailed, but less concise.
 \begin{proof} 
-Let $x_1,\dots,x_n\in A$. Assume that $A=k[x_1,\dots,x_n]$ and that the $x_i$ are algebraically dependent over $k$. In view of $(\star)$ above, it suffices to show that\medskip
-
-\centerline{there are $y_2,\dots,y_n\in A$ such that $A$ is integral over $k[\,y_2,\dots,y_n]$.}
-
-There is a nonzero polynomial $f$ in $n$ indeterminates over $k$ such that
-\begin{equation}\label{fyz1}
-f(\,x_1,\dots,x_n) = 0.
-\end{equation}
-Let $r$ be an integer larger than the degree of $f$, and set
+Let $x_1,\dots,x_n\in A$. Assume that $A=k[x_1,\dots,x_n]$, and that there is a non-constant polynomial $f\in k[X_1,\dots,X_n]$, where the $X_i$ are indeterminates, such that $f(\,x_1,\dots,x_n)=0$. Let $r$ be an integer larger than the degree of $f$. In view of $(\star)$ above, it suffices to show that $A$ is integral over 
 $$
-y_i=x_i-x_1^{r^{i-1}},\quad2\le i \le n.
+B:=k\left[x_2-x_1^r,\dots,x_n-x_1^{r^{i-1}}\right].
 $$ 
-As we have 
-$$
-A=k[x_1,\dots,x_n]=k[\,x_1,y_2,\dots,y_n],
-$$
-it only remains to show that\medskip
+As $A=B[x_1]$, it is enough to prove that $x_1$ is integral over $B$. In fact, we only need to check that 
 
-\centerline{$x_1$ is integral over $k[\,y_2,\dots,y_n]$.} 
+$(\star\star)$ there is an $a\in k^\times$, an integer $d\ge1$, and a 
+$$
+g\in\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{i-1}}\right]\bigg)[X_1]
+$$ 
+of degree less than $d$, such that $f=aX_1^d+g$. 
 
-Equation \eqref{fyz1} becomes 
-\begin{equation}\label{fyz2}
-f(x_1,y_2+x_1^r,\dots,y_n+x_1^{r^{n-1}})=0.
-\end{equation}
-Let $X_1,Y_2,\dots,Y_n$ be indeterminates. The highest term in $X_1$ of 
+But this is straightforward. 
+
+More precisely, the key fact used to prove $(\star\star)$ is this: For any monomial $u\in k[X_1,\dots,X_n]$ occurring in $f$ (with a nonzero coefficient), let's denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
-X_1^{\alpha_1}\prod_{i=2}^n\left(Y_i + X_1^{r^{i-1}}\right)^{\alpha_i}
+\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{i-1}}\right]\bigg)[X_1].
 $$ 
-being
-$$
-X_1^{\alpha_1+\alpha_2r+\cdots+\alpha_n r^{n-1}},
-$$
-it is easy to see that the highest term in $X_1$ of 
-$$
-f(X_1,Y_2+X_1^r,\dots,Y_n+X_1^{r^{n-1}})
-$$ 
-is 
-$$
-aX_1^{\alpha_1+\alpha_2r+\cdots+\alpha_n r^{n-1}}
-$$
-for some $a$ in $k^\times$ and some multi-index $\alpha$. Then \eqref{fyz2} gives an equation of integral dependence for $x_1$ over $k[\,y_2,\dots,y_n]$. 
+Then $u'$ is monic. Moreover, if $u$ and $v$ are two such distinct monomials, then we have $\deg(u')\ne\deg(v')$.
+
+In fact, if $u=X_1^{\alpha_1}\cdots X_n^{\alpha_n}$, then $u'$ is monic of degree $$\alpha_1+\alpha_2r+\cdots+\alpha_nr^{n-1}.$$
 \end{proof}
+% https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit Here is the second version of the proof:
 
 Here is a statement of Zariski's Lemma:
 
