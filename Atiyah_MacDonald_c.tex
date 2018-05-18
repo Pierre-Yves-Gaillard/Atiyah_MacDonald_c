@@ -35,8 +35,9 @@
 %\newcommand{\todo}{To do: }%\newcommand{\up}{Unsolved problem: }
 %\newcommand{\nt}{\newtheorem}
 \newtheorem{thm}{Theorem}[section]
-\newtheorem{rk}[thm]{Remark}
+\newtheorem{lem}[thm]{Lemma}
 \newtheorem{qn}[thm]{Question}
+\newtheorem{rk}[thm]{Remark}
 %\addtolength{\parskip}{.2\baselineskip}
 \title{About Atiyah and MacDonald's Book}
 \author{Pierre-Yves Gaillard}
@@ -58,11 +59,13 @@ Here are some links:
 
 $\bu$ Errata \href{https://mathoverflow.net/q/42241/461}{https://mathoverflow.net/q/42241/461}
 
+$\bu$ \href{http://www.geocities.jp/mathlife1/atiyah}{http://www.geocities.jp/mathlife1/atiyah}
+
+$\bu$ Jeffrey Daniel Kasik Carlson \href{https://goo.gl/WEfMG7}{https://goo.gl/WEfMG7}
+
 $\bu$ Thomas J. Haines, Lectures on Commutative Algebra, 
 
 \href{http://www.math.umd.edu/~tjh/CommAlg.pdf}{http://www.math.umd.edu/$\sim$tjh/CommAlg.pdf}
-
-$\bu$ Jeffrey Daniel Kasik Carlson \href{https://goo.gl/WEfMG7}{https://goo.gl/WEfMG7}
 
 $\bu$ Shengtian Yang 
 
@@ -76,17 +79,13 @@ $\bu$ Yongwei Yao
 
 \href{http://www2.gsu.edu/~matyxy/math831/math831.html}{http://www2.gsu.edu/$\sim$matyxy/math831/math831.html}
 
-$\bu$ Takumi Murayama 
-
-\href{http://www2.gsu.edu/~matyxy/math831/math831.html}{http://www2.gsu.edu/$\sim$matyxy/math831/math831.html}
+%$\bu$ Takumi Murayama \href{http://www2.gsu.edu/~matyxy/math831/math831.html}{http://www2.gsu.edu/$\sim$matyxy/math831/math831.html}
 
 $\bu$ Boocher \href{http://www.maths.ed.ac.uk/~aboocher/math/AMnotes.pdf}{\small http://www.maths.ed.ac.uk/$\sim$aboocher/math/AMnotes.pdf}
 
-$\bu$ Flores 
+$\bu$ Allen Altman and Steven Kleinman %Flores \href{http://www.math.ku.edu/~zflores/mathematics.html}{http://www.math.ku.edu/$\sim$zflores/mathematics.html}
 
-\href{http://www.math.ku.edu/~zflores/mathematics.html}{http://www.math.ku.edu/$\sim$zflores/mathematics.html}
-
-$\bu$ 18.705 \href{http://web.mit.edu/18.705/www/13Ed.pdf}{http://web.mit.edu/18.705/www/13Ed.pdf}
+\href{http://web.mit.edu/18.705/www/13Ed.pdf}{http://web.mit.edu/18.705/www/13Ed.pdf}
 
 \href{http://web.mit.edu/18.705/www/}{http://web.mit.edu/18.705/www/}
 
@@ -299,7 +298,11 @@ Let $f\in A[x_1,\dots,x_n]$ be a zero divisor. We must show that there is a nonz
 
 \href{https://en.wikipedia.org/wiki/Monomial_order}{https://en.wikipedia.org/wiki/Monomial\_order}
 
-We denote the multi-degree of $g\in A[x_1,\dots,x_n]$ by $\deg g$. Put $f=a_0+\cdots+a_\alpha x^\alpha$, where $\alpha$ is the multi-degree of $f$. Let 
+We denote the multi-degree of $g\in A[x_1,\dots,x_n]$ by $\deg g$. Put 
+$$
+f=a_0+\cdots+a_\alpha x^\alpha,
+$$ 
+where $\alpha$ is the multi-degree of $f$. Let 
 $$
 g=b_0+\cdots+b_\beta x^\beta\in A[x_1,\dots,x_n]
 $$ 
@@ -307,7 +310,7 @@ be a nonzero polynomial of least multi-degree $\beta$ such that
 \begin{equation}\label{1}
 fg=0.
 \end{equation}
-It suffices in turn to prove 
+It suffices to prove 
 \begin{equation}\label{2}
 \beta=0.
 \end{equation}
@@ -943,6 +946,14 @@ Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb
 
 \hrule\bigskip
 
+\section{P. 61, Corollary 5.9}\label{59}%
+
+Here is a slightly stronger statement: 
+
+Let $A$ and $B$ be rings, $B$ integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\mf p$ say. Then $\mf q=\mf b$.
+
+Proof. Arguing as in the book, we see that $\mf p_{\mf p}\subset A_{\mf p}$ and $\mf q_{\mf p}\subset B_{\mf p}$ are maximal, and that we have $\mf q_{\mf p}\subset\mf b_{\mf p}\subset B_{\mf p}$. Proposition 3.1ii p.~41 of the book implies $\mf b_{\mf p}\ne B_{\mf p}$, and thus $\mf q_{\mf p}=\mf b_{\mf p}$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $s$ in $A\setminus\mf p$, then $tb\in\mf q$ for some $t$ in $A\setminus\mf p$, and thus $b\in\mf q$.
+
 \section{Page 62, proof of Proposition 5.9}%
 
 Let $A\subset B$ be rings, let $\mf q$ be a prime ideal of $B$ and set $\mf p:=A\cap\mf q$:
@@ -1031,13 +1042,13 @@ $(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as
 \begin{proof} 
 Let $x_1,\dots,x_n\in A$. Assume that $A=k[x_1,\dots,x_n]$, and that there is a non-constant polynomial $f\in k[X_1,\dots,X_n]$, where the $X_i$ are indeterminates, such that $f(\,x_1,\dots,x_n)=0$. Let $r$ be an integer larger than the degree of $f$. In view of $(\star)$ above, it suffices to show that $A$ is integral over 
 $$
-B:=k\left[x_2-x_1^r,\dots,x_n-x_1^{r^{i-1}}\right].
+B:=k\left[x_2-x_1^r,\dots,x_n-x_1^{r^{n-1}}\right].
 $$ 
 As $A=B[x_1]$, it is enough to prove that $x_1$ is integral over $B$. In fact, we only need to check that 
 
 $(\star\star)$ there is an $a\in k^\times$, an integer $d\ge1$, and a 
 $$
-g\in\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{i-1}}\right]\bigg)[X_1]
+g\in\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1]
 $$ 
 of degree less than $d$, such that $f=aX_1^d+g$. 
 
@@ -1045,9 +1056,9 @@ But this is straightforward.
 
 More precisely, the key fact used to prove $(\star\star)$ is this: For any monomial $u\in k[X_1,\dots,X_n]$ occurring in $f$ (with a nonzero coefficient), let's denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
-\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{i-1}}\right]\bigg)[X_1].
+\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1].
 $$ 
-Then $u'$ is monic. Moreover, if $u$ and $v$ are two such distinct monomials, then we have $\deg(u')\ne\deg(v')$.
+Then $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
 
 In fact, if $u=X_1^{\alpha_1}\cdots X_n^{\alpha_n}$, then $u'$ is monic of degree $$\alpha_1+\alpha_2r+\cdots+\alpha_nr^{n-1}.$$
 \end{proof}
@@ -1073,6 +1084,55 @@ Set $A_f:=A[1/f]$. The extension $\mf p^{\oo e}$ of $\mf p$ in $A_f$ being clear
 
 Note successively that $f\notin\mf m$; that $\mf q:=\mf m\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mf m$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\mf q\mono A_f/\mf m\simeq k$ implies that $\mf q$ is a maximal ideal of $A$.
 \end{proof}
+
+\begin{comment}
+\section{P. 70, Exercise 21}%
+
+The statement is: Let $A$ be a subring of an integral domain $B$ such that $B$ is finitely generated over $A$. Show that there exists $s\ne0$ in $A$ such that, if $\Omega$ is an algebraically closed field and $f:A\to\Omega$ is a homomorphism for which $f(s)\ne0$, then $f$ can be extended to a homomorphism $B\to\Omega$. 
+
+The hint leads to a slightly stronger statement which (it seems to me) makes Exercise 22 easier. Here is the stronger statement in question:
+
+\emph{Let $A$ be a subring of an integral domain $B$ such that $B$ is finitely generated over $A$. Show that there exists $s\ne0$ in $A$ such that, if $\Omega$ is an algebraically closed field and $f:A\to\Omega$ is a homomorphism for which $f(s)\ne0$, then $f$ can be extended to a homomorphism $g:B\to\Omega$ such that $g(B)$ is a finitely generated $f(A)$-module.}
+
+(In particular, if $f(A)$ is a field, then $g(B)$ is a finite degree extension of $f(A)$.)
+
+\end{comment}
+
+\section{P. 70, Exercise 5.20}%
+
+Here is a complement to the hint for Exercise 5.20 p.~70 in the book:
+
+By assumption there is a positive integer $d$ and a family 
+$$
+(u_{ij})_{0\le i<d,1\le j\le m},\qquad u_{ij}\in K[x_1,\dots,x_n]
+$$ 
+such that 
+$$
+z_j^d+\sum_{i=0}^{d-1}\ u_{ij}\ z_j^i=0
+$$ 
+for all $j$. Then there is an $s$ in $S$ and a family 
+$$
+(v_{ij})_{0\le i<d,1\le j\le m},\qquad v_{ij}\in A[sx_1,\dots,sx_n]
+$$ 
+such that 
+$$
+(sz_j)^d+\sum_{i=0}^{d-1}\ v_{ij}\ (sz_j)^i=0
+$$ 
+for all $j$. Then it is easy to see that this $s$ does the job.
+
+\section{P. 71, Exercise 5.24}%
+
+Here is a partial solution. Let's prove 
+
+\emph{If $A\subset B$ is an integral extension of rings and if $A$ is Jacobson, then $B$ is Jacobson.}
+
+Proof. By Theorem 5.10 p.~62 of the book we can assume that $B$ is a domain. Let $\mf b\subset B$ be the Jacobson radical of $B$. It suffices to prove $\mf b=(0)$.
+
+Claim: $\mf b^{\oo c}=(0)$. 
+
+Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ such sitting above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
+
+In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59}, the claim implies $\mf b=(0)$.
 
 \section{P. 81, proof of Hilbert Basis Theorem}%
 
