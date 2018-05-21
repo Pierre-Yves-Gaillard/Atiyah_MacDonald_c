@@ -1013,7 +1013,7 @@ I would change this to
 
 Assuming the set $\Sigma$ is nonempty, the conditions of Zorn's lemma are clearly satisfied and therefore $\Sigma$ has at least one maximal element.
 
-\section{Page 66, proof of Corollary 5.22}
+\section{Page 66, proof of Corollary 5.22}%
 
 Sentences
 
@@ -1025,50 +1025,71 @@ Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a hom
 
 Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof.\bigskip
 
-\section{P. 69, Exercise 16}\label{nnl}%
+\section{P. 69, Exercise 16, NNL}\label{nnl}%
 
-\textbf{\Large Noether Normalization Lemma}
+MNL stands for Noether Normalization Lemma.
 
 The purpose of this section is to review the following closely related statements: Noether's Normalization Lemma, Zariski's Lemma, the Weak Nullstellensatz and the Nullstellensatz.
+
+\textbf{\Large Noether Normalization Lemma}
 
 Before proceeding, it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
 
 $(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
-%The following is taken from Wikipedia \href{https://en.wikipedia.org/wiki/Noether_normalization_lemma}{\small https://en.wikipedia.org/wiki/Noether\_normalization\_lemma}
 
-\textbf{Noether Normalization Lemma.} \emph{If $k$ is a field and $A$ a finitely generated $k$-algebra, then there exist a nonnegative integer $d$ and algebraically independent elements $y_1,\dots,y_d$ in $A$ such that $A$ is a finitely generated $k[y_1,\dots,y_d]$-module.}
+Recall the general notation $A_s:=A[s^{-1}]$.
 
-%Here are two versions of the proof. The second version is more detailed, but less concise.
+\textbf{Noether Normalization Lemma.} \emph{If $A$ is a domain and $B$ a finitely generated $A$-algebra containing $A$, then there exist a nonzero element $s$ in $A$, a nonnegative integer $m$, and elements $y_1,\dots,y_m$ in $B$ which are algebraically independent over $A$, such that $B_s$ is a finitely generated $A_s[\,y_1,\dots,y_m]$-module.}
+
 \begin{proof} 
-Let $x_1,\dots,x_n\in A$. Assume that $A=k[x_1,\dots,x_n]$, and that there is a non-constant polynomial $f\in k[X_1,\dots,X_n]$, where the $X_i$ are indeterminates, such that $f(\,x_1,\dots,x_n)=0$. Let $r$ be an integer larger than the degree of $f$. In view of $(\star)$ above, it suffices to show that $A$ is integral over 
+Let $x_1,\dots,x_n\in B$. Assume that $B=A[x_1,\dots,x_n]$. We argue by induction on $n$. If $n=0$ or if the $x_i$ are algebraically independent over $A$, there is nothing to prove, so that we can assume that $n\ge1$ and that the statement holds with $n$ replaced by $n-1$ and that there is a non-constant polynomial $f\in A[X_1,\dots,X_n]$, where the $X_i$ are indeterminates, such that $f(\,x_1,\dots,x_n)=0$. Let $r$ be an integer larger than the degree of $f$. 
+
+We claim that there is a nonzero $t$ in $A$ such that $B_t$ is finitely generated as a module over 
 $$
-B:=k\left[x_2-x_1^r,\dots,x_n-x_1^{r^{n-1}}\right].
+C:=A_t\left[x_2-x_1^r,\dots,x_n-x_1^{r^{n-1}}\right].
 $$ 
-As $A=B[x_1]$, it is enough to prove that $x_1$ is integral over $B$. In fact, we only need to check that 
+In view of $(\star)$ above, it suffices to show that $B_t$ is integral over $C$. As $B_t=C[x_1]$, it is enough to prove that $x_1$ is integral over $C$. In fact, we only need to check that 
 
-$(\star\star)$ there is an $a\in k^\times$, an integer $d\ge1$, and a 
+$(\star\star)$ There is a nonzero $t$ in $A$, an integer $d\ge1$, and a 
 $$
-g\in\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1]
+g\in\bigg(A\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1]
 $$ 
-of degree less than $d$, such that $f=aX_1^d+g$. 
+of degree less than $d$, such that $f=tX_1^d+g$. 
 
-But this is straightforward. 
-
-More precisely, the key fact used to prove $(\star\star)$ is this: For any monomial $u\in k[X_1,\dots,X_n]$ occurring in $f$ (with a nonzero coefficient), let's denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
+If, for any monomial $u\in A[X_1,\dots,X_n]$ occurring in $f$ (with a nonzero coefficient), we denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
-\bigg(k\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1].
+\bigg(A\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1],
 $$ 
-Then $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
+then $(\star\star)$ follows immediately from 
 
-In fact, if $u=X_1^{\alpha_1}\cdots X_n^{\alpha_n}$, then $u'$ is monic of degree $$\alpha_1+\alpha_2r+\cdots+\alpha_nr^{n-1}.$$
+$(\star\star\star)$ The polynomial $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
+
+In fact, if $u=X_1^{\alpha_1}\cdots X_n^{\alpha_n}$, then $u'$ is monic of degree 
+$$
+\alpha_1+\alpha_2r+\cdots+\alpha_nr^{n-1}.
+$$ 
+So, we have proved that there exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{n-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{n-1}]$-module. 
+
+By the inductive hypothesis, there exist a nonzero element $u$ in $A_t$, a nonnegative integer $m$, and elements $w_1$, \dots, $w_m$ in $A_t[z_1,\dots,z_{n-1}]$ which are algebraically independent over $A_t$, such that $(A_t[z_1,\dots,z_{n-1}])_u$ is a finitely generated module over 
+$$
+(A_t)_u[w_1,\dots,w_m].
+$$ 
+Thus there exist a nonzero element $v$ in $A$ and elements $y_1$, \dots, $y_m$ in $A[z_1,\dots,z_{n-1}]$ which are algebraically independent over $A$, such that $A_v[z_1,\dots,z_{n-1}]$ is a finitely generated module over 
+$$
+A_v[\,y_1,\dots,y_m].
+$$ 
+Setting $s:=tv$ we see that $A_s[z_1,\dots,z_{n-1}]$ is a finitely generated module over 
+$$
+A_s[\,y_1,\dots,y_m].
+$$ 
+Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{n-1}]$-module. Therefore $B_s$ is a finitely generated module over $A_s[z_1,\dots,z_{n-1}]$, which is itself, as we have just seen, a finitely generated $A_s[\,y_1,\dots,y_m]$-module. This implies that $B_s$ is a finitely generated module over 
+$$
+A_s[\,y_1,\dots,y_m],
+$$ 
+as desired.
 \end{proof}
-% https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit Here is the second version of the proof:
-
-[Added later: An approach which I find better is expounded in 
-
-Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, 
-
-\href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}\ ]
+% https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit old versions
+%[Added later: An approach which I find better is expounded in Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}\ ]
 
 Here is a statement of Zariski's Lemma:
 
@@ -1126,11 +1147,9 @@ $$
 $$ 
 for all $j$. Then it is easy to see that this $s$ does the job.
 
-The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnl} p.~\pageref{nnl}:
+Note that Exercise 5.20 follows immediately from the version of the Noether Normalization Lemma given in Section~\ref{nnl} p.~\pageref{nnl}.
 
-Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, 
-
-\href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
+%The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnl} p.~\pageref{nnl}): Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
 
 \section{P. 71, Exercise 5.24}%
 
