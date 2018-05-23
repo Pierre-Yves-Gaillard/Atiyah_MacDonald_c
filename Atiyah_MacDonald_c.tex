@@ -19,7 +19,7 @@
 %\usepackage{Baskervaldx}
 \usepackage[baskervaldx]{newtxmath}
 \usepackage{tikz-cd}
-\usepackage{comment}
+%\usepackage{comment}
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
 \newcommand{\oo}{\operatorname}
@@ -344,8 +344,6 @@ $$
 Then (c) implies that $\mf m^{\oo c}$ is maximal.
 
 (d) $\mf m=\mf m^{\oo c}+(x)$. Proof: If $f=a_0+xg\in\mf m$, then $a_0\in\mf m^{\oo c}$ by (a).
-
-%\begin{comment}
 
 \section{Page 11, Exercise 1.5v}
 
@@ -705,8 +703,6 @@ For all $A$-linear map $g:M\to N$ from $M$ to an $S^{-1}A$-module $N$ such that 
 
 Using this universal property one can describe explicitly the respective inverses of the isomorphisms in Propositions 3.5 and 3.7.
 
-%\begin{comment}
-
 \section{Pp 41-42, proof of Proposition 3.11}%
 
 $\bu$ About Part (ii): Here is a more detailed proof of the statement 
@@ -784,36 +780,7 @@ $$
 $$ 
 might help. Note that we have $f_\ppp^{-1}(\mf m)=\ppp_\ppp$.
 
-\begin{comment}
-Here are some additional details. Let us summarize the setting by the commutative diagram
-$$
-\begin{tikzcd}
-A\ar[d,"\alpha"']\ar[r,"f"]&B\ar[d,"\beta"]\\ 
-A_{\mf p}\ar[r,"f_{\mf p}"']&B_{\mf p}.
-\end{tikzcd}
-$$ 
-\emph{We have:}
-
-(a) \emph{If $\mf p$ is not contracted, that is $f^{-1}(\mf pB)>\mf p$, then} $\mf pB_{\mf p}=B_{\mf p}$, that is $B\otimes_AA_{\mf p}/\mf p_{\mf p}=0$.
-
-(b) \emph{Assume $\mf p$ is contracted, that is $f^{-1}(\mf pB)=\mf p$, and let $\mf m$ be a maximal ideal of $B_{\mf p}$ containing $\mf pB_{\mf p}$. Then we have $f^{-1}\beta^{-1}\mf m=\mf p$ and} $B\otimes_AA_{\mf p}/\mf p_{\mf p}\simeq B_{\mf p}/\mf pB_{\mf p}\ne0$.
-
-(c) \emph{The prime ideal $\mf p$ is contracted if and only if} $B\otimes_AA_{\mf p}/\mf p_{\mf p}\ne0$. \emph{In particular, a maximal ideal $\mf m$ in $A$ is contracted if and only if $B\otimes_AA/\mf m\ne0$. (Compare with Section~\ref{27} p.~\pageref{27}.)}
-
-\begin{proof} (a) is clear. To prove (b), note that we have $\mf pB_{\mf p}\subset\mf m$. This implies successively 
-$$
-\mf p_{\mf p}\subset(f_{\mf p})^{-1}\mf m,
-$$ 
-$$
-\mf p_{\mf p}=(f_{\mf p})^{-1}\mf m,
-$$ 
-$$
-f^{-1}\beta^{-1}\mf m=\alpha^{-1}(f_{\mf p})^{-1}\mf m=\alpha^{-1}\mf p_{\mf p}=\mf p.
-$$ 
-\end{proof}
-\end{comment}
-
-%\begin{comment}
+%https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
 \section{Page 43, Proposition 3.16}\label{43}%
 
@@ -838,8 +805,6 @@ in contradiction with the primality of $\aaa$.
 \section{Contracted primary ideals}\label{cpi}%
 
 Section~\ref{43} p.~\pageref{43} prompts the question: Is a contracted primary ideal the contraction of a primary ideal? We show that the answer is negative.
-
-%\begin{comment}
 
 Let $K$ be a field and set $A:=K[\varepsilon]$ with $\varepsilon^2=0$ but $\varepsilon\ne0$. Note that $(0)\subset A$ is primary. We will define a ring $B$ which contains $A$. Then $(0)\subset A$ will be a contracted primary ideal, and we will show that $(0)\subset A$ is not the contraction of a primary ideal of $B$. 
 
@@ -1037,56 +1002,50 @@ Before proceeding, it might be useful to spell out a fact which is proved but, i
 
 $(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
 
-Recall the general notation $A_s:=A[s^{-1}]$.
+Recall the general notation $A_s:=A[s^{-1}]$.%
 
-\textbf{Noether Normalization Lemma.} \emph{If $A$ is a domain and $B$ a finitely generated $A$-algebra containing $A$, then there exist a nonzero element $s$ in $A$, a nonnegative integer $m$, and elements $y_1,\dots,y_m$ in $B$ which are algebraically independent over $A$, such that $B_s$ is a finitely generated $A_s[\,y_1,\dots,y_m]$-module.}
+\textbf{Noether Normalization Lemma.} \emph{If $A$ is a domain and $B$ a finitely generated $A$-algebra containing $A$, then there exist a nonzero element $s$ in $A$, a nonnegative integer $n$, and elements $x_1,\dots,x_n$ in $B$ which are algebraically independent over $A$, such that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module.}
 
 \begin{proof} 
-Let $x_1,\dots,x_n\in B$. Assume that $B=A[x_1,\dots,x_n]$. We argue by induction on $n$. If $n=0$ or if the $x_i$ are algebraically independent over $A$, there is nothing to prove, so that we can assume that $n\ge1$ and that the statement holds with $n$ replaced by $n-1$ and that there is a non-constant polynomial $f\in A[X_1,\dots,X_n]$, where the $X_i$ are indeterminates, such that $f(\,x_1,\dots,x_n)=0$. Let $r$ be an integer larger than the degree of $f$. 
+Case 1: $A$ is a field.
 
-We claim that there is a nonzero $t$ in $A$ such that $B_t$ is finitely generated as a module over 
+Let $y_1,\dots,y_m\in B$. Assume that $B=A[\,y_1,\dots,y_m]$, and that there is a non-constant polynomial $f\in A[Y_1,\dots,Y_m]$, where the $Y_i$ are indeterminates, such that 
 $$
-C:=A_t\left[x_2-x_1^r,\dots,x_n-x_1^{r^{n-1}}\right].
+f(\,y_1,\dots,y_m)=0.
 $$ 
-In view of $(\star)$ above, it suffices to show that $B_t$ is integral over $C$. As $B_t=C[x_1]$, it is enough to prove that $x_1$ is integral over $C$. In fact, we only need to check that 
+Let $r$ be an integer larger than the degree of $f$. In view of $(\star)$ above, it suffices to show that $B$ is integral over 
+$$
+C:=A\left[\,y_2-y_1^r,\dots,y_m-y_1^{r^{m-1}}\right].
+$$ 
+As $B=C[\,y_1]$, it is enough to prove that $y_1$ is integral over $C$. In fact, we only need to check that 
 
-$(\star\star)$ There is a nonzero $t$ in $A$, an integer $d\ge1$, and a 
+$(\star\star)$ there is an $a\in A^\times$, an integer $d\ge1$, and a 
 $$
-g\in\bigg(A\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1]
+g\in\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1]
 $$ 
-of degree less than $d$, such that $f=tX_1^d+g$. 
+of degree less than $d$, such that $f=aY_1^d+g$. 
 
-If, for any monomial $u\in A[X_1,\dots,X_n]$ occurring in $f$ (with a nonzero coefficient), we denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
-$$
-\bigg(A\left[X_2-X_1^r,\dots,X_n-X_1^{r^{n-1}}\right]\bigg)[X_1],
-$$ 
-then $(\star\star)$ follows immediately from 
+But this is straightforward. 
 
-$(\star\star\star)$ The polynomial $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
+More precisely, the key fact used to prove $(\star\star)$ is this: For any monomial $u\in A[Y_1,\dots,Y_m]$ occurring in $f$ (with a nonzero coefficient), let's denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
+$$
+\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1].
+$$ 
+Then $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
 
-In fact, if $u=X_1^{\alpha_1}\cdots X_n^{\alpha_n}$, then $u'$ is monic of degree 
+In fact, if $u=Y_1^{\alpha_1}\cdots Y_m^{\alpha_m}$, then $u'$ is monic of degree 
 $$
-\alpha_1+\alpha_2r+\cdots+\alpha_nr^{n-1}.
+\alpha_1+\alpha_2r+\cdots+\alpha_mr^{m-1}.
 $$ 
-So, we have proved that there exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{n-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{n-1}]$-module. 
+This completes the proof in the case when $A$ is a field.
 
-By the inductive hypothesis, there exist a nonzero element $u$ in $A_t$, a nonnegative integer $m$, and elements $w_1$, \dots, $w_m$ in $A_t[z_1,\dots,z_{n-1}]$ which are algebraically independent over $A_t$, such that $(A_t[z_1,\dots,z_{n-1}])_u$ is a finitely generated module over 
+Case 2: general case.
+
+Set $S:=A\setminus\{0\}$ and let $K=S^{-1}A$ be the field of fractions of $A$. By the first case, there are elements $x_1,\dots,x_n$ in $S^{-1}B$ which are algebraically independent over $K$, such that $S^{-1}B$ is a finitely generated $K[x_1,\dots,x_n]$-module. We can assume that the $x_i$ are in $B$. Let $y_1,\dots,y_m$ be generators of $B$ as an $A$-algebra, and thus of $S^{-1}B$ as a $K$-algebra. The $y_i$ are integral over $K[x_1,\dots,x_n]$, and it suffices to show that they are integral over $A_s[x_1,\dots,x_n]$ for some $s$ in $S$ (independent of $i$). There exist a positive integer $d$ and elements $u_{ij}\in K[x_1,\dots,x_n]$ such that 
 $$
-(A_t)_u[w_1,\dots,w_m].
+y_i^d+u_{i1}\,y^{i-1}+\cdots+u_{id}=0.
 $$ 
-Thus there exist a nonzero element $v$ in $A$ and elements $y_1$, \dots, $y_m$ in $A[z_1,\dots,z_{n-1}]$ which are algebraically independent over $A$, such that $A_v[z_1,\dots,z_{n-1}]$ is a finitely generated module over 
-$$
-A_v[\,y_1,\dots,y_m].
-$$ 
-Setting $s:=tv$ we see that $A_s[z_1,\dots,z_{n-1}]$ is a finitely generated module over 
-$$
-A_s[\,y_1,\dots,y_m].
-$$ 
-Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{n-1}]$-module. Therefore $B_s$ is a finitely generated module over $A_s[z_1,\dots,z_{n-1}]$, which is itself, as we have just seen, a finitely generated $A_s[\,y_1,\dots,y_m]$-module. This implies that $B_s$ is a finitely generated module over 
-$$
-A_s[\,y_1,\dots,y_m],
-$$ 
-as desired.
+Then there is an $s$ in $S$ such that each $u_{ij}$ is of the form $v_{ij}/s$ with $v_{ij}$ in $A[x_1,\dots,x_n]$. This proves that $y_i$ is integral over $A_s[x_1,\dots,x_n]$, as desired. 
 \end{proof}
 % https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit old versions
 %[Added later: An approach which I find better is expounded in Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}\ ]
@@ -1101,54 +1060,24 @@ The Nullstellensatz is stated in Exercise 14 of Chapter 7 as follows:
 
 (N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1,\dots,t_n]$ and let $\mf a$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\mf a$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\mf a$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\mf a)$.}
 
-\begin{proof} The inclusion $r(\mf a)\subset I(V)$ is clear. Let's prove $I(V)\subset r(\mf a)$. 
+\begin{proof} 
+The inclusion $r(\mf a)\subset I(V)$ is clear. Let's prove $I(V)\subset r(\mf a)$. 
 
-(ZL) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\mf p$. Let $f$ be in $A\setminus\mf p$. 
+(ZL) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\mf p$. Let $f$ be in $A\setminus\mf p$ and set $A_f:=A[1/f]$.
 
-It suffices to find a maximal ideal of $A$ which doesn't contain $f$. 
+It suffices to prove the claim below.
 
-Set $A_f:=A[1/f]$. The extension $\mf p^{\oo e}$ of $\mf p$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mf m\subset A_f$ containing $\mf p^{\oo e}$. 
+Claim: There is a maximal ideal of $A$ which doesn't contain $f$. 
+
+We give two proofs of the claim.
+
+Proof 1. The extension $\mf p^{\oo e}$ of $\mf p$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mf m\subset A_f$ containing $\mf p^{\oo e}$. 
 
 Note successively that $f\notin\mf m$; that $\mf q:=\mf m\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mf m$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\mf q\mono A_f/\mf m\simeq k$ implies that $\mf q$ is a maximal ideal of $A$.
+
+Proof 2. By Noether Normalization Lemma applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Theorem 5.10 p.~62 of the book the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
 \end{proof}
-
-\begin{comment}
-\section{P. 70, Exercise 21}%
-
-The statement is: Let $A$ be a subring of an integral domain $B$ such that $B$ is finitely generated over $A$. Show that there exists $s\ne0$ in $A$ such that, if $\Omega$ is an algebraically closed field and $f:A\to\Omega$ is a homomorphism for which $f(s)\ne0$, then $f$ can be extended to a homomorphism $B\to\Omega$. 
-
-The hint leads to a slightly stronger statement which (it seems to me) makes Exercise 22 easier. Here is the stronger statement in question:
-
-\emph{Let $A$ be a subring of an integral domain $B$ such that $B$ is finitely generated over $A$. Show that there exists $s\ne0$ in $A$ such that, if $\Omega$ is an algebraically closed field and $f:A\to\Omega$ is a homomorphism for which $f(s)\ne0$, then $f$ can be extended to a homomorphism $g:B\to\Omega$ such that $g(B)$ is a finitely generated $f(A)$-module.}
-
-(In particular, if $f(A)$ is a field, then $g(B)$ is a finite degree extension of $f(A)$.)
-
-\end{comment}
-
-\section{P. 70, Exercise 5.20}%
-
-Here is a complement to the hint for Exercise 5.20 p.~70 in the book:
-
-By assumption there is a positive integer $d$ and a family 
-$$
-(u_{ij})_{0\le i<d,1\le j\le m},\qquad u_{ij}\in K[x_1,\dots,x_n]
-$$ 
-such that 
-$$
-z_j^d+\sum_{i=0}^{d-1}\ u_{ij}\ z_j^i=0
-$$ 
-for all $j$. Then there is an $s$ in $S$ and a family 
-$$
-(v_{ij})_{0\le i<d,1\le j\le m},\qquad v_{ij}\in A[sx_1,\dots,sx_n]
-$$ 
-such that 
-$$
-(sz_j)^d+\sum_{i=0}^{d-1}\ v_{ij}\ (sz_j)^i=0
-$$ 
-for all $j$. Then it is easy to see that this $s$ does the job.
-
-Note that Exercise 5.20 follows immediately from the version of the Noether Normalization Lemma given in Section~\ref{nnl} p.~\pageref{nnl}.
-
+%https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 %The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnl} p.~\pageref{nnl}): Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
 
 \section{P. 71, Exercise 5.24}%
@@ -1184,19 +1113,7 @@ and observe that $\deg(f_{n+1}-g)$ is less than $\deg f_{n+1}$, which is impossi
 
 The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y)=(0)$. Indeed, if $a$ is in $(x^n)\cap(\,y)$ we have $a=bx^n=cy$ for some $b$ and $c$ in $A$, and thus $bx^{n+1}=cyx=0$. Now $bx^{n+1}=0$ implies $bx^n=0$, that is $a=0$. 
 
-\begin{comment}
-\section{Page 83, Theorem 7.13}%
-
-Let $M$ be the set of minimal prime ideals of $A$ (see Remark~\ref{fmme} p.~\pageref{fmme}). We have 
-$$
-A\text{ noetherian }\implies(0)\text{ is decomposable}\implies M\text{ is finite.}
-$$ 
-It would be interesting to know if the implication
-$$
-M\text{ is finite }\implies(0)\text{ is decomposable}
-$$ 
-is true.
-\end{comment}
+%https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
 \section{Page 90}%\label{90}%
 
@@ -1240,8 +1157,6 @@ This follows from Statement (B) in the proof of Proposition 9.2.
 \section{Page 95}%
 
 $\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mf m^n$) it follows that $\mf a$ is a power of $\mf m$''. Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
-
-%\begin{comment}
 
 $\bu$ The proof of the equivalence (ii) $\iff$ (iii) in Theorem 9.3 uses Statement (B) in the proof of Proposition 9.2 p.~94.
 
