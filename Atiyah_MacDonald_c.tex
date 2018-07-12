@@ -1,10 +1,10 @@
 % Atiyah_MacDonald_c_tex
+% !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit
 % https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/edit/master/Atiyah_MacDonald_c.tex
-% !TEX encoding = UTF-8 Unicode
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
-\documentclass[12pt]{article}
-%\documentclass{article}
+%\documentclass[12pt]{article}%\documentclass{article}
+\documentclass[parskip=half]{scrartcl}%\documentclass[parskip=full]{scrartcl}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
@@ -12,7 +12,7 @@
 \usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
-\usepackage[parfill]{parskip}
+%\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
 \usepackage[pdfusetitle]{hyperref}
 \usepackage{datetime}
 \usepackage[osf]{Baskervaldx} % oldstyle figures
@@ -139,7 +139,7 @@ The following is taken from Wikipedia:
 
 \href{https://en.wikipedia.org/wiki/Prime_avoidance_lemma}{https://en.wikipedia.org/wiki/Prime\_avoidance\_lemma}
 
-\emph{Let $A$ be a commutative ring and $S$ a multiplicatively closed additive subgroup of $A$. Let $\mf a_1,\dots,\mf a_n,n\ge1$ be ideals such that $\mf a_i$ is prime for $i\ge3$. If $S$ is not contained in any $\mf a_i$, then $S$ is not contained in their union.}
+\emph{Let $A$ be a commutative ring and $S$ a multiplicatively closed additive subgroup of $A$. Let $\mf a_1,\dots,\mf a_n$, $n\ge1$ be ideals such that $\mf a_i$ is prime for $i\ge3$. If $S$ is not contained in any $\mf a_i$, then $S$ is not contained in their union.}
 
 \begin{proof} 
 We argue by induction on $n$. It suffices to find an element $s$ that is in $S$ and not in $\mf a_i$ for any $i$. 
@@ -1064,9 +1064,30 @@ is a finitely generated $A_s[x_1,\dots,x_n]$-module. Recall that $B_t$ is a fini
 
 Here is a statement of Zariski's Lemma:
 
-(ZL) \emph{Let $k$ be a field, $A$ a finitely generated $k$-algebra. Let $\mf m$ be a maximal ideal of $A$. Then the field $A/\mf m$ is a finite algebraic extension of $k$. In particular, if $k$ is algebraically closed then $A/\mf m\simeq k$.}
+(ZL)\emph{Let $k$ be a field, $A$ a finitely generated $k$-algebra. Let $\mf m$ be a maximal ideal of $A$. Then the field $A/\mf m$ is a finite algebraic extension of $k$. In particular, if $k$ is algebraically closed then $A/\mf m\simeq k$, that is, the natural morphism $k\to A/\mf m$ is an isomorphism.}
 
-In view of Proposition 5.7 p.~61 of the book, Zariski's \- Lemma follows immediately from Noether's Normalization Theorem.
+In view of Proposition 5.7 p.~61 of the book, Zariski's Lemma follows immediately from Noether's Normalization Theorem. %In view of Proposition 5.7 p.~61 of the book, Zariski's \- Lemma follows immediately from Noether's Normalization Theorem.
+
+Here is an easy consequence of (ZL):
+
+(ZL2) \emph{Set $A:=k[t_1,\dots,t_n]$ where $k$ is an algebraically closed field and the $t_i$ are indeterminates, let $\mf m$ be a maximal ideal of $A$, let} 
+$$
+k\xrightarrow\iota A\xrightarrow{\pi}A/\mf m
+$$ 
+\emph{be the canonical morphisms, and set $x_i:=(\pi\circ\iota)^{-1}(\pi(t_i))$ (recall that $\pi\circ\iota$ is bijective). Then we have} 
+$$
+\mf m=(t_1-x_1,\dots,t_n-x_n)
+$$ 
+\emph{and} 
+$$
+(\pi\circ\iota)^{-1}(\pi(f))=f(x)
+$$ 
+\emph{(with $x:=(x_1,\dots,x_n)$) for all $f$ in $A$. In particular} 
+$$
+\mf m=\{f\in A\ |\ f(x)=0\}.
+$$
+
+The detailed proof of (ZL2) is left to the reader.
 
 The Nullstellensatz is stated in Exercise 14 of Chapter 7 as follows:
 
@@ -1075,7 +1096,9 @@ The Nullstellensatz is stated in Exercise 14 of Chapter 7 as follows:
 \begin{proof} 
 The inclusion $r(\mf a)\subset I(V)$ is clear. Let's prove $I(V)\subset r(\mf a)$. 
 
-(ZL) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\mf p$. Let $f$ be in $A\setminus\mf p$ and set $A_f:=A[1/f]$.
+(ZL2) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\mf p$. Then the statement follows immediately from Exercises 5.23 and 5.24 p.~71 of the book. Here is a slightly different argument:
+
+Let $f$ be in $A\setminus\mf p$ and set $A_f:=A[1/f]$.
 
 It suffices to prove the claim below.
 
@@ -1140,14 +1163,18 @@ The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y
 
 \section{Page 90}%\label{90}%
 
-$\bu$ About Proposition 8.6, we have 
+$\bu$ About Proposition 8.6. I suggest the following restatement of Proposition 8.6:
 
-Let $(A,\mf m)$ be a Noetherian local ring. Then
+\emph{Let $A$ be a Noetherian local ring, $\mf m$ its maximal ideal. Then exactly one of the following two statements is true:}
+
+(i) $\mf m^n\ne\mf m^{n+1}$ \emph{for all $n$ and $A$ is \emph{not} Artin};
+
+(ii) $\mf m^n=0$ \emph{for some $n$, in which case $A$ is an Artin local ring.}
+
+In particular 
 \begin{equation}\label{86}
 A\text{ is Artin $\iff\mf m$ is nilpotent.}
-\end{equation}
-
-Indeed, if $A$ is Artin, then, as observed before Proposition 8.6, $\mf m$ is the nilradical of $A$, and Proposition 8.5 p.~89 implies that $\mf m$ is nilpotent. 
+\end{equation}%Indeed, if $A$ is Artin, then, as observed before Proposition 8.6, $\mf m$ is the nilradical of $A$, and Proposition 8.5 p.~89 implies that $\mf m$ is nilpotent. 
 
 $\bu$ By Proposition 8.6 and Proposition 4.2 p.~51, we have:
 
@@ -1322,7 +1349,11 @@ The ideal would be to find a ring which satisfies items \ref{dec}, \ref{fmm}, \r
 
 [About items \ref{fmm} and \ref{dec}, see Section~\ref{di} p.~\pageref{di}.]
 
-About item \ref{ip}: There are rings in which $(0)$ is irreducible but not primary: see \href{https://mathoverflow.net/q/185739/461}{https://mathoverflow.net/q/185739/461}. In fact, the following statement is easy to check. Let $A$ be a domain which is not a field, let $K$ be its field of fractions, form the $A$-module $B:=A\oplus K/A$ and define a multiplication on $B$ by $$(a,\alpha)(b,\beta)=(ab,a\beta+b\alpha).$$ Then $B$ is a commutative ring in which the zero ideal is irreducible but not primary. 
+About item \ref{ip}: There are rings in which $(0)$ is irreducible but not primary: see 
+
+\href{https://mathoverflow.net/q/185739/461}{https://mathoverflow.net/q/185739/461}. 
+
+In fact, the following statement is easy to check. Let $A$ be a domain which is not a field, let $K$ be its field of fractions, form the $A$-module $B:=A\oplus K/A$ and define a multiplication on $B$ by $$(a,\alpha)(b,\beta)=(ab,a\beta+b\alpha).$$ Then $B$ is a commutative ring in which the zero ideal is irreducible but not primary. 
 
 \end{document}%\overset?\implies
 
