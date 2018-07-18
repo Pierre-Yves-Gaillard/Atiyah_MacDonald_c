@@ -1219,7 +1219,7 @@ $\bu$ Corollary 9.4. See Section~\ref{92} above.
 $\bu$ The domain $\mathbb Z[-5]$ is Dedekind but doesn't have unique factorization. %The fact that $\mathbb Z[-5]$ is Dedekind follows from Theorem 5.15 p.~63 and Theorem 9.5 p.~96.???
 The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the fact that $2\cdot3$ and $$\left(1+\sqrt5\right)\left(1-\sqrt5\right)$$ are irreducible factorizations of $6$.%Indeed, it is easy to check that $2\cdot3$ and $$\left(1+\sqrt5\right)\left(1-\sqrt5\right)$$ are irreducible factorizations of $6$.
 
-\section{Page 102, Completions}%
+\section{Page 102, Completions 1}%
 
 In the first paragraph after the proof of Lemma 10.1, it is written ``Two Cauchy sequences are equivalent if $x_\nu-y_\nu\to0$ in $G$''. Note that a sequence may have several limits.%The correct condition is ``the image of $x_\nu-y_\nu$ in $G/H$ tends to $0$, where $H$ is the intersection of all neighborhoods of $0$ in $G$''.
 
@@ -1227,15 +1227,24 @@ In the penultimate paragraph of p.~102 it is claimed that $\widehat f:\widehat G
 
 Then these subgroups do define a topology on $\widehat G$, and the canonical morphism $c:G\to\widehat G$ is continuous and its image is dense. 
 
-Moreover $\widehat f:\widehat G\to\widehat H$ is continuous if $f:G\to H$ is. 
+Moreover $\widehat f:\widehat G\to\widehat H$ is continuous if $f:G\to H$ is. (Here we assume that the topology of $G$ and $H$ are such that $0$ has a countable fundamental system of neighborhoods.)
 
-Finally, for each continuous morphism $f:G\to H$, where $H$ is complete, there is a unique continuous morphism $g:\widehat G\to H$ such that $g\circ c=f$.
+%Finally, for each continuous morphism $f:G\to H$, where $H$ is complete, there is a unique continuous morphism $g:\widehat G\to H$ such that $g\circ c=f$.
 
-Here is an important statement which is implicit in the book.
+\section{Page 103, Completions 2}%
 
-In the setting considered in the last paragraph of p.~102, let $\pi_i:G\to G/G_i$ be the canonical projection, let $C\subset G^{\mathbb N}$ be the group of Cauchy sequences (this is indeed easily seen to be a subgroup of $G^{\mathbb N}$), note that $x\in G^{\mathbb N}$ is Cauchy if and only if for each $i$ the sequence $j\mapsto\pi_i(x_j)$ is eventually constant, in which case we write $\pi_i(x_\infty)$ for its eventual value, set $\widehat G:=\lim G/G_i$, and define $\varphi:C\to\widehat G$ by $\varphi(x)_i:=\pi_i(x_\infty)$. Then $\varphi$ is a well defined group epimorphism, and it induces an isomorphism $C/\!\!\sim\ \xrightarrow\sim\widehat G$.
-
-The proof is left to the reader.%We sketch the proof of the surjectivity of $\varphi$ and leave the rest of the proof to the reader. \dots Let $\xi$ be in $\widehat G$. 
+The penultimate display is 
+$$
+\widehat G\simeq\varprojlim G/G_n.
+$$ 
+More precisely, let $\pi_i:G\to G/G_i$ be the canonical projection; let $C\subset G^{\mathbb N}$ be the group of Cauchy sequences (this is indeed easily seen to be a subgroup of $G^{\mathbb N}$); note that $x\in G^{\mathbb N}$ is Cauchy if and only if for each $i$ the sequence $j\mapsto\pi_i(x_j)$ is eventually constant, in which case we write $\pi_i(x_\infty)$ for its eventual value; and define 
+$$
+\varphi:C\to\varprojlim G/G_i
+$$ 
+by $\varphi(x)_i:=\pi_i(x_\infty)$. Then $\varphi$ is a well defined group epimorphism, and it induces an isomorphism 
+$$
+\widehat G\xrightarrow\sim\varprojlim G/G_i.
+$$ %The proof is left to the reader.%We sketch the proof of the surjectivity of $\varphi$ and leave the rest of the proof to the reader. \dots Let $\xi$ be in $\widehat G$. 
 
 \section{Page 105}%
 
