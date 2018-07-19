@@ -1115,7 +1115,7 @@ Proof 2. By Noether Normalization Theorem applied to the $k$-algebra $A_f$, ther
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 %The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnt} p.~\pageref{nnt}): Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
 
-\section{P. 69, Exercise 5.17}%£
+\section{P. 69, Exercise 5.17}%
 
 As observed by the Mathematics Stackexchange user Kato here 
 
@@ -1237,11 +1237,11 @@ The penultimate display is
 $$
 \widehat G\simeq\varprojlim G/G_n.
 $$ 
-More precisely, let $\pi_i:G\to G/G_i$ be the canonical projection; let $C\subset G^{\mathbb N}$ be the group of Cauchy sequences (this is indeed easily seen to be a subgroup of $G^{\mathbb N}$); note that $x\in G^{\mathbb N}$ is Cauchy if and only if for each $i$ the sequence $j\mapsto\pi_i(x_j)$ is eventually constant, in which case we write $\pi_i(x_\infty)$ for its eventual value; and define 
+More precisely, let $\pi_i:G\to G/G_i$ be the canonical projection; let $C\subset G^{\mathbb N}$ be the group of Cauchy sequences (this is indeed easily seen to be a subgroup of $G^{\mathbb N}$); and note that $x\in G^{\mathbb N}$ is Cauchy if and only if for each $i$ the sequence $j\mapsto\pi_i(x_j)$ is eventually constant, in which case we write $\pi_i(x_\infty)$ for its eventual value. Then there is a unique group morphism 
 $$
 \varphi:C\to\varprojlim G/G_i
 $$ 
-by $\varphi(x)_i:=\pi_i(x_\infty)$. Then $\varphi$ is a well defined group epimorphism, and it induces an isomorphism 
+such that $\varphi(x)_i=\pi_i(x_\infty)$ for all $x$ in $C$ and all $i$ in $\mathbb N$, this morphism is an epimorphism, and it induces an isomorphism 
 $$
 \widehat G\xrightarrow\sim\varprojlim G/G_i.
 $$ %The proof is left to the reader.%We sketch the proof of the surjectivity of $\varphi$ and leave the rest of the proof to the reader. \dots Let $\xi$ be in $\widehat G$. 
@@ -1274,6 +1274,17 @@ A/\mf a^n\simeq\hat A^n/\hat{\mf a}^n,
 but in the sequel \eqref{1015b} is needed at various places, and it is justified by stating that it follows from \eqref{1015a}. For instance in the proof of Proposition 10.16 it is written
 
 ``By (10.15) iii) we have $\hat A/\hat{\mf m}\simeq A/\mf m$''.
+
+In fact, I think it's better to prove $\hat{\mf a}^n/\hat{\mf a}^{n+k}\simeq\mf a^n/\mf a^{n+k}$ directly by noting that we have 
+$$
+\hat{\mf a}^n/\hat{\mf a}^{n+k}\simeq(\mf a^n)^\wedge/(\mf a^{n+k})^\wedge\simeq(\mf a^n/\mf a^{n+k})^\wedge\simeq\mf a^n/\mf a^{n+k},
+$$ 
+the first isomorphism following from Proposition 10.15 (ii), the second from Corollary 10.3 p.~104, and the third being obvious.
+
+In the same spirit, Proposition 10.15 (ii) is easily seen to imply 
+$$
+(\mf a^n)^\wedge\simeq\hat A\ \mf a^n\simeq\hat A\otimes_A\mf a^n.
+$$
 
 \section{Page 111, Corollary 10.21}%
 
