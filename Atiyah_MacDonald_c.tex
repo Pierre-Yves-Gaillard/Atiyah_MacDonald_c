@@ -537,7 +537,7 @@ and $\psi'(u)=0$. Thus there is a $w$ in $M^{\oplus I}$ such that $\phi'(w)=u$, 
 If $A\to B$ is a morphism, then an ideal $\mf a$ of $A$ is contracted if and only if the natural map $A/\mf a\to B\otimes_A A/\mf a$ is injective. In particular, if a proper ideal $\mf a$ is contracted, we have $B\otimes_A A/\mf a\ne0$. Indeed, $B\otimes_A A/\mf a\simeq B/\mf a^{\oo e}$ and $\oo{Ker}(A/\mf a\to B\otimes_A A/\mf a)\simeq\mf a^{\oo{ec}}/\mf a$. %(Compare with Section~\ref{43b} p.~\pageref{43b}.)
 
 
-\section{Page 35, Exercise 26}\label{35}%
+\section{Page 35, Exercise 2.26}\label{35}%
 
 Here is the sketch of a solution.
 
@@ -634,7 +634,7 @@ We also have:
 
 There is also a statement and a proof of this result in the Stacks Project; see the tag http://stacks.math.columbia.edu/tag/00HK
 
-\section{Page 35, Exercise 27, (i) implies (ii)}%
+\section{Page 35, Exercise 2.27, (i) implies (ii)}%
 
 Consider the obvious diagram
 $$
@@ -911,13 +911,13 @@ Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb
 
 \hrule\bigskip
 
-\section{P. 61, Corollary 5.9}\label{59}%
+\section{Page 61, Corollary 5.9}\label{59}%
 
 Here is a slightly stronger statement: 
 
-\emph{Let $A$ and $B$ be rings, $B$ integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\mf p$ say. Then $\mf q=\mf b$.}
+\emph{Let $A$ be a subring of a ring $B$ such that $B$ is integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\mf p$ say. Then $\mf q=\mf b$.}
 
-Proof. Arguing as in the book, we see that $\mf p_{\mf p}\subset A_{\mf p}$ and $\mf q_{\mf p}\subset B_{\mf p}$ are maximal, and that we have $\mf q_{\mf p}\subset\mf b_{\mf p}\subset B_{\mf p}$. Proposition 3.1ii p.~41 of the book implies $\mf b_{\mf p}\ne B_{\mf p}$, and thus $\mf q_{\mf p}=\mf b_{\mf p}$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $q$ in $\mf q$ and some $s$ in $A\setminus\mf p$, then $tb\in\mf q$ for some $t$ in $A\setminus\mf p$, and thus $b\in\mf q$.
+Proof. Arguing as in the book, we see that $\mf p_{\mf p}\subset A_{\mf p}$ and $\mf q_{\mf p}\subset B_{\mf p}$ are maximal, and that we have $\mf q_{\mf p}\subset\mf b_{\mf p}\subset B_{\mf p}$. Proposition 3.11ii p.~41 of the book implies $\mf b_{\mf p}\ne B_{\mf p}$, and thus $\mf q_{\mf p}=\mf b_{\mf p}$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $q$ in $\mf q$ and some $s$ in $A\setminus\mf p$, then $tb\in\mf q$ for some $t$ in $A\setminus\mf p$, and thus $b\in\mf q$.
 
 \section{Page 62, proof of Corollary 5.9}%
 
@@ -928,9 +928,10 @@ A\ar[d,"\alpha"']\ar[r,hook]&B\ar[d,"\beta"]\\
 A_{\mf p}\ar[r,hook]&B_{\mf p}.
 \end{tikzcd}
 $$
-We claim $A_{\mf p}\cap\mf q_{\mf p}=\mf p_{\mf p}$. Set $S:=A\setminus\mf p$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\mf p=\varnothing$, we see that $\mf q_{\mf p}$ is prime, and it suffices to show $\mf p_{\mf p}\subset\mf q_{\mf p}$, which is clear.
+Then Corollary 3.4ii p.~39 of the book implies $A_{\mf p}\cap\mf q_{\mf p}=\mf p_{\mf p}$.
+%We claim $A_{\mf p}\cap\mf q_{\mf p}=\mf p_{\mf p}$. Set $S:=A\setminus\mf p$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\mf p=\varnothing$, we see that $\mf q_{\mf p}$ is prime, and it suffices to show $\mf p_{\mf p}\subset\mf q_{\mf p}$, which is clear.
 
-\section{P. 62, Theorem 5.10}%
+\section{Page 62, Theorem 5.10}%
 
 Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\mf p$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$.
 
@@ -988,9 +989,27 @@ I would change this to
 
 Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A'$.
 
-Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof.\bigskip
+Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof.%\bigskip
 
-\section{P. 69, Exercise 16, NNT}\label{nnt}%
+\section{Page 67, Exercise 5.2}\label{67}%
+
+Set $\mf p:=\oo{Ker}f$ and let $\mf q\subset B$ be given by Theorem 5.10 p.~62. Our problem can be summarized as follows: 
+$$
+\begin{tikzcd}
+A/\mf p\ar[r,hook]\ar[d,hook]&B/\mf q\ar[dl,dashrightarrow,hook]\\ 
+\Omega.
+\end{tikzcd}
+$$ 
+Writing $K$ and $L$ for the respective fields of fractions of $A/\mf p$ and $B/\mf q$, Our problem becomes  
+$$
+\begin{tikzcd}
+K\ar[r,hook]\ar[d,hook]&L\ar[dl,dashrightarrow,hook]\\ 
+\Omega.
+\end{tikzcd}
+$$ 
+As $L/K$ is algebraic and $\Omega$ algebraically closed, this problem has a solution.
+
+\section{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
 NNT stands for Noether Normalization Theorem.
 
@@ -1110,12 +1129,13 @@ Proof 1. The extension $\mf p^{\oo e}$ of $\mf p$ in $A_f$ being clearly a prope
 
 Note successively that $f\notin\mf m$; that $\mf q:=\mf m\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mf m$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\mf q\mono A_f/\mf m\simeq k$ implies that $\mf q$ is a maximal ideal of $A$.
 
-Proof 2. By Noether Normalization Theorem applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Theorem 5.10 p.~62 of the book the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
+Proof 2. By Noether Normalization Theorem applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Exercise 5.2 %Theorem 5.10 
+p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
 \end{proof}
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 %The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnt} p.~\pageref{nnt}): Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
 
-\section{P. 69, Exercise 5.17}%
+\section{Page 69, Exercise 5.17}%
 
 As observed by the Mathematics Stackexchange user Kato here 
 
@@ -1130,7 +1150,11 @@ $$
 I(X)\ne(1)\implies X\ne\varnothing.
 $$
 
-\section{P. 71, Exercise 5.24}%
+\section{Page 70, Exercise 5.22}% 
+
+We have $k\subset g(B)\subset\Omega$. By Proposition 5.7 p.~71 of the book, $g(B)$ is a field.
+
+\section{Page 71, Exercise 5.24}%
 
 Here is a partial solution. Let's prove 
 
@@ -1142,9 +1166,9 @@ Claim: $\mf b^{\oo c}=(0)$.
 
 Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ such sitting above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
 
-In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59}, the claim implies $\mf b=(0)$.
+In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$.
 
-\section{P. 81, proof of Hilbert Basis Theorem}%
+\section{Page 81, proof of Hilbert Basis Theorem}%
 
 Here is a (well known) shorter proof:
 
@@ -1165,7 +1189,7 @@ The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
-\section{Page 90}%\label{90}%
+\section{Page 90}\label{90}%
 
 $\bu$ About Proposition 8.6. I suggest the following restatement of Proposition 8.6:
 
@@ -1210,7 +1234,7 @@ This follows from Statement (B) in the proof of Proposition 9.2.
 
 \section{Page 95}%
 
-$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mf m^n$) it follows that $\mf a$ is a power of $\mf m$''. Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
+$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mf m^n$) it follows that $\mf a$ is a power of $\mf m$''. The fact that $A/\mf m^n$ is Artin follows from Proposition 8.6 p.~90 of the book (see Section~\ref{90} p.~\pageref{90} above). %Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
 
 $\bu$ The proof of the equivalence (ii) $\iff$ (iii) in Theorem 9.3 uses Statement (B) in the proof of Proposition 9.2 p.~94.
 
@@ -1218,6 +1242,10 @@ $\bu$ Corollary 9.4. See Section~\ref{92} above.
 
 $\bu$ The domain $\mathbb Z[-5]$ is Dedekind but doesn't have unique factorization. %The fact that $\mathbb Z[-5]$ is Dedekind follows from Theorem 5.15 p.~63 and Theorem 9.5 p.~96.???
 The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the fact that $2\cdot3$ and $$\left(1+\sqrt5\right)\left(1-\sqrt5\right)$$ are irreducible factorizations of $6$.%Indeed, it is easy to check that $2\cdot3$ and $$\left(1+\sqrt5\right)\left(1-\sqrt5\right)$$ are irreducible factorizations of $6$.
+
+\section{Page 97, proof of Theorem 9.8}%
+
+The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_{\mf p}$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_{\mf p}$ by Proposition 3.11.i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_{\mf p}$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)).
 
 \section{Page 102, Completions 1}%
 
@@ -1287,7 +1315,7 @@ $$
 $$ 
 In particular, the equality $(\mf a^n)^\wedge=\hat A\,\mf a^n$ shows that the $\mf a$-topology and the $\hat{\mf a}$-topology of $\hat A$ coincide. The $\mf a$-topology is finer than the $\hat{\mf a}$-topology even if $A$ is not noetherian.
 
-\section{Page 111, Corollaries 10.20 and 10.21}%£
+\section{Page 111, Corollaries 10.20 and 10.21}%
 
 About the proof of Corollary 10.20: The fact that ``an $\mf m$-primary ideal of $A$ is just any ideal contained between $\mf m$ and some power $\mf m^n$'' has already been stated as Corollary 7.16 p.~83.
 
