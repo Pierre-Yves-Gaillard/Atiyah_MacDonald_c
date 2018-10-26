@@ -1210,6 +1210,28 @@ The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
+\section{P. 89, Proposition 8.1}%\label{dt}%
+
+Here is a related result:
+
+\emph{The following conditions on a ring $A$ are equivalent:}
+
+(a) \emph{the Krull dimension of $A$ is at most zero,}
+
+(b) \emph{$A/\mf n$ is absolutely flat, where $\mf n$ is the nilradical of $A$,}
+
+(c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
+
+\emph{Proof.} (a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\mf p$ be a prime ideal of $A$. Then the nilradical of $A_{\mf p}$ is $(0)$ and $\mf p_{\mf p}$ is the only prime ideal of $A_{\mf p}$. This implies that $A_{\mf p}$ is a field, and we get successively the equalities 
+$$
+(a)_{\mf p}=(a^2)_{\mf p},\quad(a)_{\mf p}/(a^2)_{\mf p}=(0),\quad((a)/(a^2))_{\mf p}=(0).
+$$ 
+As $\mf p$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
+
+(b)$\implies$(c): With obvious notation we have $\bar a=\bar a^2\bar b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^{n+1}\in(a^n)$ and thus $(a^{n+1})=(a^n)$. 
+
+(c)$\implies$(a): Let $\mf p$ be a prime ideal of $A$ and let $a$ be in $A\setminus\mf p$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\mf p$, and thus $1-ab\in\mf p$. This implies that $A/\mf p$ is a field, and therefore that $\mf p$ is maximal. $\square$
+
 \section{Page 90}\label{90}%
 
 $\bu$ About Proposition 8.6. I suggest the following restatement of Proposition 8.6:
