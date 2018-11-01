@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -811,6 +811,25 @@ $$
 $$ 
 in contradiction with the primality of $\aaa$.
 
+\section{P. 47, Exercise 3.21.iv}\label{321iv}%
+
+We just give the commutative diagram
+$$
+\begin{tikzcd}
+(B/\mf pB_{\mf p})^*\ar[d,"\overline{f_{\mf p}}^*"]\ar[r]&(B_{\mf p})^*\ar[d,"(f_{\mf p})^*"]\ar[r]& B^*\ar[d,"f^*"]\\ 
+(A_{\mf p}/\mf p_{\mf p})^*\ar[r]&(A_{\mf p})^*\ar[r]& A^*,
+\end{tikzcd}
+$$ 
+where $R^*$ stands for $\oo{Spec}(R)$, and the chain of isomorphisms  
+$$
+(A_{\mf p}/\mf p_{\mf p})\otimes_AB\simeq
+(A/\mf p)_{\mf p}\otimes_AB\simeq
+(A/\mf p)_{\mf p}\otimes_{A/\mf p}A/\mf p\otimes_AB
+$$ 
+$$
+\simeq(A/\mf p)_{\mf p}\otimes_{A/\mf p}B/\mf pB\simeq(B/\mf pB)_{\mf p}.
+$$
+
 \section{Contracted primary ideals}\label{cpi}%
 
 Section~\ref{43} p.~\pageref{43} prompts the question: Is a contracted primary ideal the contraction of a primary ideal? We show that the answer is negative.
@@ -931,6 +950,10 @@ Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb
 %Then $\mf a:=\{0\}\times\mathbb Z$ has only one minimal prime $\{0\}\times\mathbb Q$ and $\mf a$ has no primary decomposition.\bigskip%https://math.stackexchange.com/a/1679116/660
 
 \hrule\bigskip
+
+\section{P. 55, Exercise 4.7}\label{5547}%
+
+Use Exercises 1.18 p.~10 and 1.2ii p.~11.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
@@ -1476,6 +1499,12 @@ I think ``by (11.20)'' should be ``by (11.21)''.
 \section{Page 125, proof of (11.25)}%
 
 For the last sentence of the proof, see the Examples on p.~121.
+
+\section{P. 121}%
+
+Exercise 11.6. For Exercise 4.7 p.~55 see Section~\ref{5547} p.~\pageref{5547} above.
+
+Exercise 11.7. Second sentence of the hint: see Proposition 11.13 p.~121 of the book. Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
 \section{Questions}%
 
