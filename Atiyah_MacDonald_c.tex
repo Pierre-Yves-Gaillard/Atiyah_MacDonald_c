@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -1507,6 +1507,20 @@ For the last sentence of the proof, see the Examples on p.~121.
 For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
 
 For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
+
+For any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$ we have:
+
+$\bullet$ if $(\mf p_0)^{\oo c}=(\mf p_1)^{\oo c}$ then $\mf p_0=(\mf p_0)^{\oo c}[x]$ and $(\mf p_1)^{\oo c}\underset\ne\subset(\mf p_2)^{\oo c}$,
+
+$\bullet$ if $(\mf p_1)^{\oo c}=(\mf p_2)^{\oo c}$ then $\mf p_1=(\mf p_1)^{\oo c}[x]$ and $(\mf p_0)^{\oo c}\underset\ne\subset\mf p_1^{\oo c}$.
+
+This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of length at least $\lfloor\ell/2\rfloor$ in $A$. Hence 
+$$
+\left\lfloor\frac{\dim A[x]}2\right\rfloor\le\dim A,
+$$ 
+$$
+\frac{\dim A[x]}2\le\frac12+\dim A.
+$$
 
 \emph{Exercise 11.7.}
 
