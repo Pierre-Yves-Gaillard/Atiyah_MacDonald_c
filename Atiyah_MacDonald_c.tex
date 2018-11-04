@@ -1518,17 +1518,29 @@ For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv
 
 For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
 
+We'll use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
+
+($\star$) \emph{If $f:A\to A[x]$ is the natural embedding, then the fiber of} 
+$$
+f^*:\oo{Spec}(A[x])\to \oo{Spec}(A)
+$$ 
+\emph{over a prime ideal $\mf p$ of $A$ is order isomorphic to the spectrum of} 
+$$
+k\otimes_AA[x]\simeq k[x],
+$$ 
+\emph{where $k$ is the residue field at} $\mf p$.
+
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
 $$
 \mf p_0\underset\ne\subset\dots\underset\ne\subset\mf p_n
 $$ 
-is a chain of prime ideals of $A$, then 
+is a chain of prime ideals in $A$, then 
 $$
 \mf p_0[x]\underset\ne\subset\dots\underset\ne\subset\mf p_n[x]\underset\ne\subset(\mf p,x)
 $$ 
-is chain of prime ideals of $A[x].\ \square$
+is chain of prime ideals in $A[x].\ \square$
 
-\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: For any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$ we have:
+\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Statement ($\star$) above implies that, for any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$, we have:
 
 $\bullet$ if $(\mf p_0)^{\oo c}=(\mf p_1)^{\oo c}$ then $\mf p_0=(\mf p_0)^{\oo c}[x]$ and $(\mf p_1)^{\oo c}\underset\ne\subset(\mf p_2)^{\oo c}$,
 
@@ -1549,13 +1561,19 @@ Second sentence of the hint: see Proposition 11.13 p.~121 of the book.
 
 Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
-Last sentence of the hint: We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
+Last sentence of the hint: 
 
-We prove $h(\mf p)\le1+h(\mf p^{\oo c})$ for all prime ideal $\mf p$ of $A[x]$ by induction on $h(\mf p^{\oo c})$.
+We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
+
+We prove 
+$$
+h(\mf p)\le1+h(\mf p^{\oo c})
+$$ 
+for all prime ideal $\mf p$ of $A[x]$ by induction on $h(\mf p^{\oo c})$.
 
 This will imply $\dim A[x]\le1+\dim A$, as desired.
 
-If $h(\mf p^{\oo c})=0$ the statement follows from the argument used to solve Exercise 11.6 p.~126 of the book.
+If $h(\mf p^{\oo c})=0$ the statement follows from ($\star$).
 
 Assume $h(\mf p^{\oo c})>0$. %Let $\mf q$ be a prime ideal of $A[x]$ strictly smaller than $\mf p$. 
 
@@ -1567,7 +1585,7 @@ Let $\mf q$ be such a prime ideal.
 
 If $\mf q^{\oo c}\underset\ne\subset\mf p^{\oo c}$, the induction hypothesis implies $h(\mf q)\le 1+h(\mf q^{\oo c})$, and it suffices to verify $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, which is easy.
 
-If $\mf q^{\oo c}=\mf p^{\oo c}$, we have $\mf q=\mf p^{\oo c}[x]$ by the argument used to solve Exercise 11.6 p.~126 of the book. This implies $h(\mf q)=h(\mf p^{\oo c})$.
+If $\mf q^{\oo c}=\mf p^{\oo c}$, we have $\mf q=\mf p^{\oo c}[x]$ by ($\star$). This implies $h(\mf q)=h(\mf p^{\oo c})$.
 
 %now Exercise 11.6 implies $$\oo{height}(\mf p)\le1+\oo{height}((\mf p)^{\oo c}[x])\le1+\dim A$$ for all prime ideal $\mf p$ of $A[x]$, and thus $\dim A[x]\le1+\dim A$.
 
