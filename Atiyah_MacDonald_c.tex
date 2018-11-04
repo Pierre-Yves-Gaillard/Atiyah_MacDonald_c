@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -370,6 +370,14 @@ $$
 \sum_{i=1}^n g_i(x_1,\dots,x_n)f_i(x_i)=1.
 $$ 
 Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we get the equality $0=1$ in $L$ be evaluating the above display at $(\alpha_1,\dots,\alpha_n)$.
+
+\section{Page 13, Exercise 1.21iii}%
+
+It seems better to prove first the equality 
+$$
+\overline S=V(\mf a),\quad \mf a:=\bigcap_{\mf p\in S}\ \mf p
+$$ 
+for $S\subset\oo{Spec}(A)$. 
 
 \section{Page 21, Proposition 2.4}%
 
@@ -1502,13 +1510,17 @@ For the last sentence of the proof, see the Examples on p.~121.
 
 \section{P. 121}%
 
+We denote the Krull dimension of the ring $A$ by $\dim A$.
+
 \emph{Exercise 11.6.} 
 
 For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
 
 For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
 
-For any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$ we have:
+\emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If $\mf p_0,\dots,\mf p_n$ is a length $n$ ascending chain of prime ideals of $A$, then $\mf p_0[x],\dots,\mf p_n[x],(\mf p,x)$ is a length $n+1$ ascending chain of prime ideals of $A[x].\ \square$
+
+\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: For any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$ we have:
 
 $\bullet$ if $(\mf p_0)^{\oo c}=(\mf p_1)^{\oo c}$ then $\mf p_0=(\mf p_0)^{\oo c}[x]$ and $(\mf p_1)^{\oo c}\underset\ne\subset(\mf p_2)^{\oo c}$,
 
@@ -1518,8 +1530,9 @@ This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of len
 $$
 \left\lfloor\frac{\dim A[x]}2\right\rfloor\le\dim A,
 $$ 
+that is,
 $$
-\frac{\dim A[x]}2\le\frac12+\dim A.
+\frac{\dim A[x]}2\le\frac12+\dim A.\ \square
 $$
 
 \emph{Exercise 11.7.}
@@ -1527,6 +1540,12 @@ $$
 Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
 Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
+
+Last sentence of the hint: now Exercise 11.6 implies 
+$$
+\oo{height}(\mf p)\le1+\oo{height}((\mf p)^{\oo c}[x])\le1+\dim A
+$$ 
+for all prime ideal $\mf p$ of $A[x]$, and thus $\dim A[x]\le1+\dim A$.
 
 \section{Questions}%
 
