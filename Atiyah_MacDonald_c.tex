@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -1508,11 +1508,11 @@ I think ``by (11.20)'' should be ``by (11.21)''.
 
 For the last sentence of the proof, see the Examples on p.~121.
 
-\section{P. 121}%
+\section{P. 126}%%
 
 We denote the Krull dimension of the ring $A$ by $\dim A$.
 
-\emph{Exercise 11.6.} 
+\subsection{Exercise 11.6}% 
 
 For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
 
@@ -1555,17 +1555,15 @@ $$
 \frac{\dim A[x]}2\le\frac12+\dim A.\ \square
 $$
 
-\emph{Exercise 11.7.}
+\subsection{Exercise 11.7}%
 
 Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
 Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
-Last sentence of the hint: 
+Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint): 
 
-We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
-
-We prove 
+We denote the height of the prime ideal $\mf p$ by $h(\mf p)$. We prove 
 $$
 h(\mf p)\le1+h(\mf p^{\oo c})
 $$ 
@@ -1573,15 +1571,19 @@ for all prime ideal $\mf p$ of $A[x]$ by induction on $h(\mf p^{\oo c})$.
 
 This will imply $\dim A[x]\le1+\dim A$, as desired.
 
-If $h(\mf p^{\oo c})=0$ the statement follows from ($\star$).
+If $h(\mf p^{\oo c})=0$, the statement follows from ($\star$).
 
-Assume $h(\mf p^{\oo c})>0$. %Let $\mf q$ be a prime ideal of $A[x]$ strictly smaller than $\mf p$. 
+Assume $h(\mf p^{\oo c})>0$. It suffices to show
 
-It suffices to show $h(\mf q)\le h(\mf p^{\oo c})$ for all prime ideal $\mf q$ of $A[x]$ strictly smaller than $\mf p$.
+(a) $h(\mf q)\le h(\mf p^{\oo c})$ for all prime ideal $\mf q$ of $A[x]$ strictly smaller than $\mf p$.
 
-%As we have $h(\mf p)\le1+h(\mf q)$, it suffices to show $h(\mf q)\le h(\mf p^{\oo c})$.
-
-Let $\mf q$ be such a prime ideal.
+Indeed, there is a chain 
+$$
+\mf q_0\underset\ne\subset\cdots\underset\ne\subset\mf q_{n-2}\underset\ne\subset\mf q\underset\ne\subset\mf p
+$$ 
+with $n=h(\mf p)$, and we get $h(\mf q)\ge n-1=h(\mf p)-1$, that is, $h(\mf p)\le1+h(\mf q)$. 
+ 
+Let $\mf q$ be a prime ideal as in (a).
 
 If $\mf q^{\oo c}\underset\ne\subset\mf p^{\oo c}$, the induction hypothesis implies $h(\mf q)\le 1+h(\mf q^{\oo c})$, and it suffices to verify $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, which is easy.
 
