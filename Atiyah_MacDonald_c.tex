@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -1561,9 +1561,25 @@ Second sentence of the hint: see Proposition 11.13 p.~121 of the book.
 
 Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
-Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint): 
+Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint). 
 
-We denote the height of the prime ideal $\mf p$ by $h(\mf p)$. We prove 
+We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
+
+We give two proofs of the inequality $\dim A[x]\le1+\dim A$.
+
+\emph{Proof 1.} We can assume $\dim A<\infty$. Set $n:=\dim A$ and let 
+$$
+\mf p_0\underset\ne\subset\cdots\underset\ne\subset\mf p_{n+2}
+$$ 
+be a chain of prime ideals in $A[x]$ of length $n+2$. It suffices to derive a contradiction from this assumption. 
+
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $(\mf p_i)^{\oo c}=(\mf p_{i+1})^{\oo c}$. Let $i$ be the largest such index. By ($\star$) we have $\mf p_i=(\mf p_i)^{\oo c}[x]$, and thus 
+$$
+h((\mf p_{i+1})^{\oo c})=h((\mf p_i)^{\oo c})=h(\mf p_i)\ge i.
+$$ 
+As $(\mf p_{i+2})^{\oo c}$ is strictly larger than $(\mf p_{i+1})^{\oo c}$, we get $h((\mf p_{i+2})^{\oo c})\ge i+1$. Similarly $h((\mf p_{i+3})^{\oo c})\ge i+2$,\dots, and finally $h((\mf p_{n+2})^{\oo c})\ge n+1$, which is impossible. $\square$
+
+\emph{Proof 2.} We prove 
 $$
 h(\mf p)\le1+h(\mf p^{\oo c})
 $$ 
@@ -1585,9 +1601,9 @@ with $n=h(\mf p)$, and we get $h(\mf q)\ge n-1=h(\mf p)-1$, that is, $h(\mf p)\l
  
 Let $\mf q$ be a prime ideal as in (a).
 
-If $\mf q^{\oo c}\underset\ne\subset\mf p^{\oo c}$, we have $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, and the induction hypothesis implies $h(\mf q)\le 1+h(\mf q^{\oo c})\le h(\mf p^{\oo c})$.%, and it suffices to verify $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, which is easy.
+If $\mf q^{\oo c}\underset\ne\subset\mf p^{\oo c}$, we have $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, and the induction hypothesis implies $h(\mf q)\le 1+h(\mf q^{\oo c})\le h(\mf p^{\oo c})$.
 
-If $\mf q^{\oo c}=\mf p^{\oo c}$, we have $\mf q=\mf p^{\oo c}[x]$ by ($\star$). This implies $h(\mf q)=h(\mf p^{\oo c})$.
+If $\mf q^{\oo c}=\mf p^{\oo c}$, we have $\mf q=\mf p^{\oo c}[x]$ by ($\star$). This implies $h(\mf q)=h(\mf p^{\oo c})$. $\square$
 
 %now Exercise 11.6 implies $$\oo{height}(\mf p)\le1+\oo{height}((\mf p)^{\oo c}[x])\le1+\dim A$$ for all prime ideal $\mf p$ of $A[x]$, and thus $\dim A[x]\le1+\dim A$.
 
