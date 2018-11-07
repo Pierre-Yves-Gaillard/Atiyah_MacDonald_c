@@ -379,6 +379,12 @@ $$
 $$ 
 for $S\subset\oo{Spec}(A)$. 
 
+\section{Page 14, Exercise 1.23}%
+
+Part (i): In fact we have $X=X_f\sqcup X_{1-f}$ for all $f$ in $A$.
+
+Part (iv): If $f\in\mf p\setminus\mf q$ then $\mf p\in X_{1-f}$ and $\mf q\in X_f$.
+
 \section{Page 21, Proposition 2.4}%
 
 Proposition 2.4 reads:
@@ -1189,11 +1195,8 @@ p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra m
 
 \section{Page 69, Exercise 5.17}%
 
-As observed by the Mathematics Stackexchange user Kato here 
-
-\href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660}
-
-the Weak Nullstellensatz is the statement
+%As observed by the Mathematics Stackexchange user Kato here \href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660} t
+The Weak Nullstellensatz is the statement
 $$
 \mf a\ne(1)\implies V(\mf a)\ne\varnothing.
 $$ 
@@ -1508,21 +1511,23 @@ I think ``by (11.20)'' should be ``by (11.21)''.
 
 For the last sentence of the proof, see the Examples on p.~121.
 
-\section{P. 126}%%
+\section{P. 126}%% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
-We denote the Krull dimension of the ring $A$ by $\dim A$.
-
-\subsection{Exercise 11.6}% 
-
-For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
-
-For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
-
-We'll use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
-
-($\star$) \emph{If $f:A\to A[x]$ is the natural embedding, then the fiber of} 
+We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\mf p$ by $h(\mf p)$. If $\mf p$ and $\mf q$ are prime ideals of a ring $B$, we write $\mf p<\mf q$ instead of 
 $$
-f^*:\oo{Spec}(A[x])\to \oo{Spec}(A)
+\mf p\underset\ne\subset\mf q,
+$$ 
+and $\mf p_i^{\oo c}$ instead of $(\mf p_i)^{\oo c}$. 
+
+We'll freely use the following obvious fact:
+
+($\star$) \emph{If $\mf p_0<\cdots<\mf p_n$ is a chain of prime ideals, then} $h(\mf p_n)\ge n+h(\mf p_0)$. 
+
+We'll also use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
+
+($\star\star$) \emph{If $f:A\to A[x]$ is the natural embedding, then the fiber of} 
+$$
+f^*:\oo{Spec}(A[x])\to\oo{Spec}(A)
 $$ 
 \emph{over a prime ideal $\mf p$ of $A$ is order isomorphic to the spectrum of} 
 $$
@@ -1530,21 +1535,27 @@ k\otimes_AA[x]\simeq k[x],
 $$ 
 \emph{where $k$ is the residue field at} $\mf p$.
 
+\subsection{Exercise 11.6}%
+
+For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
+
+For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
+
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
-$$
-\mf p_0\underset\ne\subset\dots\underset\ne\subset\mf p_n
-$$ 
+$
+\mf p_0<\dots<\mf p_n
+$ 
 is a chain of prime ideals in $A$, then 
 $$
-\mf p_0[x]\underset\ne\subset\dots\underset\ne\subset\mf p_n[x]\underset\ne\subset(\mf p,x)
+\mf p_0[x]<\dots<\mf p_n[x]<(\mf p,x)
 $$ 
 is chain of prime ideals in $A[x].\ \square$
 
-\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Statement ($\star$) above implies that, for any chain $\mf p_0\underset\ne\subset\mf p_1\underset\ne\subset\mf p_2$ of prime ideals in $A[x]$, we have:
+\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Statement ($\star\star$) above implies that, for any chain $\mf p_0<\mf p_1<\mf p_2$ of prime ideals in $A[x]$, we have:
 
-$\bullet$ if $(\mf p_0)^{\oo c}=(\mf p_1)^{\oo c}$ then $\mf p_0=(\mf p_0)^{\oo c}[x]$ and $(\mf p_1)^{\oo c}\underset\ne\subset(\mf p_2)^{\oo c}$,
+$\bullet$ if $\mf p_0^{\oo c}=\mf p_1^{\oo c}$ then $\mf p_0=\mf p_0^{\oo c}[x]$ and $\mf p_1^{\oo c}<\mf p_2^{\oo c}$,
 
-$\bullet$ if $(\mf p_1)^{\oo c}=(\mf p_2)^{\oo c}$ then $\mf p_1=(\mf p_1)^{\oo c}[x]$ and $(\mf p_0)^{\oo c}\underset\ne\subset\mf p_1^{\oo c}$.
+$\bullet$ if $\mf p_1^{\oo c}=\mf p_2^{\oo c}$ then $\mf p_1=\mf p_1^{\oo c}[x]$ and $\mf p_0^{\oo c}<\mf p_1^{\oo c}$.
 
 This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of length at least $\lfloor\ell/2\rfloor$ in $A$. Hence 
 $$
@@ -1557,55 +1568,28 @@ $$
 
 \subsection{Exercise 11.7}%
 
-Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
+$\bullet$ Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
-Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
+$\bullet$ Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
-Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint). 
+$\bullet$ Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint). 
 
-We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
+%We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
 
-We give two proofs of the inequality $\dim A[x]\le1+\dim A$.
+%We give two proofs of the inequality $\dim A[x]\le1+\dim A$.
 
-\emph{Proof 1.} We can assume $\dim A<\infty$. Set $n:=\dim A$ and let 
-$$
-\mf p_0\underset\ne\subset\cdots\underset\ne\subset\mf p_{n+2}
-$$ 
+\emph{Proof.} We can assume $\dim A<\infty$. Set $n:=\dim A$ and let 
+$ 
+\mf p_0<\cdots<\mf p_{n+2}
+$ 
 be a chain of prime ideals in $A[x]$ of length $n+2$. It suffices to derive a contradiction from this assumption. 
 
-The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $(\mf p_i)^{\oo c}=(\mf p_{i+1})^{\oo c}$. Let $i$ be the largest such index. By ($\star$) we have $\mf p_i=(\mf p_i)^{\oo c}[x]$, and thus 
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\mf p_i^{\oo c}=\mf p_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\mf p_i=\mf p_i^{\oo c}[x]$ by ($\star\star$), and $h(\mf p_i^{\oo c})=h(\mf p_i)\ge i$ by ($\star$). Using again ($\star$) we get  
+%and $\mf p_i=\mf p_i^{\oo c}[x]$ by ($\star$), and thus $h(\mf p_i^{\oo c})=h(\mf p_i)\ge i$. This implies
 $$
-h((\mf p_{i+1})^{\oo c})=h((\mf p_i)^{\oo c})=h(\mf p_i)\ge i.
+h(\mf p_{n+2}^{\oo c})\ge n+1-i+h(\mf p_i^{\oo c})\ge n+1,
 $$ 
-As $(\mf p_{i+2})^{\oo c}$ is strictly larger than $(\mf p_{i+1})^{\oo c}$, we get $h((\mf p_{i+2})^{\oo c})\ge i+1$. Similarly $h((\mf p_{i+3})^{\oo c})\ge i+2$,\dots, and finally $h((\mf p_{n+2})^{\oo c})\ge n+1$, which is impossible. $\square$
-
-\emph{Proof 2.} We prove 
-$$
-h(\mf p)\le1+h(\mf p^{\oo c})
-$$ 
-for all prime ideal $\mf p$ of $A[x]$ by induction on $h(\mf p^{\oo c})$.
-
-This will imply $\dim A[x]\le1+\dim A$, as desired.
-
-If $h(\mf p^{\oo c})=0$, the statement follows from ($\star$).
-
-Assume $h(\mf p^{\oo c})>0$. It suffices to show
-
-(a) $h(\mf q)\le h(\mf p^{\oo c})$ for all prime ideal $\mf q$ of $A[x]$ strictly smaller than $\mf p$.
-
-Indeed, there is a chain 
-$$
-\mf q_0\underset\ne\subset\cdots\underset\ne\subset\mf q_{n-2}\underset\ne\subset\mf q\underset\ne\subset\mf p
-$$ 
-with $n=h(\mf p)$, and we get $h(\mf q)\ge n-1=h(\mf p)-1$, that is, $h(\mf p)\le1+h(\mf q)$. 
- 
-Let $\mf q$ be a prime ideal as in (a).
-
-If $\mf q^{\oo c}\underset\ne\subset\mf p^{\oo c}$, we have $h(\mf q^{\oo c})<h(\mf p^{\oo c})$, and the induction hypothesis implies $h(\mf q)\le 1+h(\mf q^{\oo c})\le h(\mf p^{\oo c})$.
-
-If $\mf q^{\oo c}=\mf p^{\oo c}$, we have $\mf q=\mf p^{\oo c}[x]$ by ($\star$). This implies $h(\mf q)=h(\mf p^{\oo c})$. $\square$
-
-%now Exercise 11.6 implies $$\oo{height}(\mf p)\le1+\oo{height}((\mf p)^{\oo c}[x])\le1+\dim A$$ for all prime ideal $\mf p$ of $A[x]$, and thus $\dim A[x]\le1+\dim A$.
+which is impossible. $\square$
 
 \section{Questions}%%
 
