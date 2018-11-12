@@ -32,6 +32,7 @@
 \newcommand{\epi}{\twoheadrightarrow}
 \newcommand{\incl}{\hookrightarrow}
 \newcommand{\mono}{\rightarrowtail}
+\newcommand{\xr}{\xrightarrow}
 %\newcommand{\todo}{To do: }%\newcommand{\up}{Unsolved problem: }
 %\newcommand{\nt}{\newtheorem}
 \newtheorem{thm}{Theorem}[section]
@@ -385,7 +386,7 @@ Part (i): In fact we have $X=X_f\sqcup X_{1-f}$ for all $f$ in $A$.
 
 Part (iv): If $f\in\mf p\setminus\mf q$ then $\mf p\in X_{1-f}$ and $\mf q\in X_f$.
 
-\section{Page 21, Proposition 2.4}%
+\section{Page 21, Proposition 2.4}\label{24}%
 
 Proposition 2.4 reads:
 
@@ -559,6 +560,234 @@ and $\psi'(u)=0$. Thus there is a $w$ in $M^{\oplus I}$ such that $\phi'(w)=u$, 
 
 If $A\to B$ is a morphism, then an ideal $\mf a$ of $A$ is contracted if and only if the natural map $A/\mf a\to B\otimes_A A/\mf a$ is injective. In particular, if a proper ideal $\mf a$ is contracted, we have $B\otimes_A A/\mf a\ne0$. Indeed, $B\otimes_A A/\mf a\simeq B/\mf a^{\oo e}$ and $\oo{Ker}(A/\mf a\to B\otimes_A A/\mf a)\simeq\mf a^{\oo{ec}}/\mf a$. %(Compare with Section~\ref{43b} p.~\pageref{43b}.)
 
+\section{Page 32, Exercise 2.11}%
+
+We solve the last part of Exercise 2.11. We claim that if $f:A^m\to A^n$ is an $A$-linear injection, then $m\le n$. 
+
+Suppose for the sake of contradiction that there are positive integers $i,j$ and an $A$-linear injection $f:A^{i+j}\to A^i$. 
+
+Set $k:=i+j$ and define $g:A^k\to A^k$ by $g(x,y):=(f(x,y),0)$ for $x\in A^i$, $j\in A^j$. Note that $g$ is injective. By Proposition~2.4 p.~21 of the book (see Section~\ref{24} p.~\pageref{24} above) there is a monic polynomial $P\in A[x]$ such that there is an $a$ in $A$ with 
+\begin{equation}\label{211}
+gP(g)=a\oo{id}_{A^k}.
+\end{equation} 
+We can assume that the degree of $P$ is minimal for this condition. In particular $P(g)$ is nonzero. Evaluating \eqref{211} on $(0,y)$, $y\in A^j$, gives $ay=0$. As $y$ is arbitrary, this implies $a=0$, and thus $gP(g)=0$, and the injectivity of $g$ yields $P(g)=0$, a contradiction.
+
+\section{Page 33, Exercise 2.15}%\varinjlim
+
+The proof of the following statements is left to the reader.
+
+There is a unique equivalence relation $\sim$ on the disjoint union $M'$ of the $M_i$ such that, for any $x\in M_i$ and any $y$ in $M_j$, we have $x\sim y$ if and only if there is a $k\ge i,j$ with $\mu_{ki}(x)=\mu_{kj}(\,y)$. 
+
+[I denote by $\mu_{ki}$ what the book denotes by $\mu_{ik}$.]
+
+Then $M'/\sim$ is a direct of the $M_i$ in the category of sets. 
+
+Let $p:M'\to M'/\sim$ be the canonical projection. 
+
+There is a unique structure of $A$-module on $M'/\sim$ such that 
+
+$\bullet\ ap(x)=p(ax)$ for all $x$ in $M_i$ and all $a$ in $A$, 
+
+$\bullet\ p(x)+p(\,y)=p(\mu_{ki}(x)+\mu_{kj}(\,y))$ for all $x$ in $M_i$ and all $y$ in $M_j$. 
+
+Then $M'/\sim$ is a direct of the $M_i$ also in the category of $A$-modules.
+
+\section{Page 34, Exercise 2.25}%
+
+Here is a solution to Exercise 2.25 which does \emph{not} us the Tor functor. Of course, the solution using the Tor functor is much simpler.
+
+The proof below follows closely the proof of Proposition 1.2.5.5 in Bourbaki's \textbf{Algèbre commutative}.
+
+In this section, the ground ring is denoted by $R$, not by $A$.
+
+Let 
+\begin{equation}\label{b10}
+\begin{tikzcd}
+A\ar[d,"\alpha"]\ar[r,"u"]&B\ar[d,"\beta"]\ar[r,"v"]&C\ar[d,"\gamma"]\\ 
+A'\ar[r,"u'"']&B'\ar[r,"v'"']&C'
+\end{tikzcd}
+\end{equation}
+be a commutative diagram of $R$-modules with exact rows. 
+%
+\begin{lem}\label{b1i}
+If $\gamma$ is injective, we have 
+$$
+\oo{Im}(\beta)\cap\oo{Im}(u')=\oo{Im}(u'\circ\alpha)=\oo{Im}(\beta\circ u).
+$$
+\end{lem}
+% 
+\begin{proof}
+We clearly have 
+$$
+\oo{Im}(u'\circ\alpha)=\oo{Im}(\beta\circ u)\subset\oo{Im}(\beta)\cap\oo{Im}(u').
+$$ 
+Conversely, let $b'\in\oo{Im}(\beta)\cap\oo{Im}(u')$. There is a $b\in B$ such that $b'=\beta(b)$. As $v'\circ u'=0$, we have 
+$$
+0=v'(b')=v'(\beta(b))=\gamma(v(b)),
+$$ 
+whence $v(b)=0$ since $\gamma$ is injective. The first row of \eqref{b10} being exact, there is an $a\in A$ such that $b=u(a)$, whence $b'=\beta(u(a))$.
+\end{proof}
+%
+\begin{lem}\label{b1ii}
+If $\alpha$ is surjective, we have 
+$$
+\oo{Ker}(\beta)+\oo{Im}(u)=\oo{Ker}(v'\circ\beta)=\oo{Ker}(\gamma\circ v).
+$$
+\end{lem}
+% 
+\begin{proof}
+As $v\circ u=0$ and $v'\circ u'=0$, it is clear that 
+$$
+\oo{Ker}(\beta)+\oo{Im}(u)\subset\oo{Ker}(v'\circ\beta)=\oo{Ker}(\gamma\circ v).
+$$ 
+Conversely, let $b\in\oo{Ker}(v'\circ\beta)$. Then $\beta(b)\in\oo{Ker}(v')$, and there is a $a'\in A'$ such that $u'(a')=\beta(b)$ since the bottom row of \eqref{b10} is exact. As $\alpha$ is surjective, there is an $a\in A$ such that $\alpha(a)=a'$, whence 
+$$
+\beta(b)=u'(\alpha(a))=\beta(u(a));
+$$ 
+this implies that $b-u(a)$ is in in $\oo{Ker}(\beta)$.
+\end{proof}
+%
+We extend the commutative diagram \eqref{b10} as follows:
+\begin{equation}\label{b10x}
+\begin{tikzcd}
+\oo{Ker}(\alpha)\ar[d]\ar[r,"u_1"]&\oo{Ker}(\beta)\ar[d,"j"]\ar[r,"v_1"]&\oo{Ker}(\gamma)\ar[d,"k"]\\ 
+A\ar[d,"\alpha"]\ar[r,"u"]&B\ar[d,"\beta"]\ar[r,"v"]&C\ar[d,"\gamma"]\\ 
+A'\ar[d,"p"]\ar[r,"u'"]&B'\ar[d,"q"]\ar[r,"v'"]&C'\ar[d]\\ 
+\oo{Coker}(\alpha)\ar[r,"u_2"]&\oo{Coker}(\beta)\ar[r,"v_2"]&\oo{Coker}(\gamma),
+\end{tikzcd}
+\end{equation} 
+the new maps being the natural ones.
+
+Recall that we are working under the assumption that the second and third row of \eqref{b10x} are exact.
+%
+\begin{lem}\label{b2i}
+The sequence 
+$$
+\oo{Ker}(\alpha)\xr{u_1}\oo{Ker}(\beta)\xr{v_1}\oo{Ker}(\gamma)
+$$ 
+is a complex. Moreover, if $u'$ is injective, this complex is exact.
+\end{lem}
+% 
+\begin{proof}
+The first claim is clear. We have 
+$$
+\oo{Ker}(v_1)=\oo{Ker}(\beta)\cap\oo{Ker}(v)=\oo{Ker}(\beta)\cap\oo{Im}(u)=\oo{Im}(j)\cap\oo{Im}(u).
+$$ 
+Lemma~\ref{b1i} implies $\oo{Ker}(v_1)=\oo{Im}(j\circ u_1)=\oo{Im}(u_1)$ if $u'$ is injective.
+\end{proof}
+%
+\begin{lem}\label{b2ii}
+The sequence 
+$$
+\oo{Coker}(\alpha)\xr{u_2}\oo{Coker}(\beta)\xr{v_2}\oo{Coker}(\gamma)
+$$ 
+is a complex. Moreover, if $v$ is surjective, this complex is exact.
+\end{lem}
+% 
+\begin{proof}
+As $u_2$ and $v_2$ are obtained from $u$ and $v$ by taking quotients, it is clear that $v_1\circ u_2=0$. Suppose $v$ is surjective; $q$ and $p$ being surjective, we get, in view of the assumptions and Lemma~\ref{b1ii},
+$$
+\oo{Ker}(v_2) = q(\oo{Ker}(v_2\circ q))= q(\oo{Ker}(v')+\oo{Im}(\beta))=q(\oo{Ker}(v'))
+$$ 
+$$
+=q(\oo{Im}(u'))=\oo{Im}(q\circ u')=\oo{Im}(u_2\circ p)=\oo{Im}(u_2).
+$$
+\end{proof} 
+%
+\begin{lem}\label{b2iii}
+Assume that $u'$ is injective and that $v$ is surjective. Then there is a unique morphism $\delta:\oo{Ker}(\gamma)\to\oo{Coker}(\alpha)$ having the following property: if $c\in\oo{Ker}(\gamma),b\in B$ and $a'\in A'$ satisfy $v(b)=k(c)$ and $u'(a')= \beta(b)$, then we have $\delta(c)=p(a')$. Moreover the sequence 
+$$
+\oo{Ker}(\alpha)\xr{u_1}\oo{Ker}(\beta)\xr{v_1}\oo{Ker}(\gamma)\xr \delta\oo{Coker}(\alpha)\xr{u_2}\oo{Coker}(\beta)\xr{v_2}\oo{Coker}(\gamma) 
+$$
+is exact.
+\end{lem}
+% 
+\begin{proof} (a) Definition of $\delta$: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
+$$
+u'(a'+\alpha(a))=u'(a')+u'(\alpha(a))=\beta(b)+\beta(u(a))
+$$ 
+$$
+=\beta(b+u(a))=\beta(b^*)=u'(a'^*),
+$$ 
+and the injectivity of $u'$ implies $a'+\alpha(a)=a'^*$. Finally, we conclude that $p(a'^*)=p(a')+p(\alpha(a))=p(a')$. We can thus set $\delta(c)=p(a')$ and we have defined a map $\delta:\oo{Ker}(\gamma)\to\oo{Coker}(\alpha)$.
+
+(b) Linearity of $\delta$: If $c_1,c_2$ are in $\oo{Ker}(\gamma)$ and $c=c_1+c_2$, pick $b_1$ and $b_2$ in $B$ such that $v(b_1)=k(c_1)$ and $v(b_2)=k(c_2)$, and define $b\in B$ by $b:=b_1+b_2$; it is then obvious that $\delta(c)=\delta(c_1)+\delta(c_2)$. We prove similarly that $\delta(rc)=r\delta(c)$ for $r\in R$.
+
+(c) Exactness at $\oo{Ker}(\beta)$ and $\oo{Coker}(\beta)$: Follows from Lemmas \ref{b2i} and \ref{b2ii} respectively.
+
+(d) Equality $\delta\circ v_1=0$: Suppose that $c=v_1(\bar b)$ with $\bar b\in\oo{Ker}(\beta)$; we then take for $b\in B$ the element $j(\bar b)$. As $\beta(j(\bar b))=0$, we see that $\delta(c)=0$, hence $\delta\circ v_1=0$. 
+
+(e) Exactness at $\oo{Ker}(\gamma)$: Suppose that $\delta(c)=0$. It suffices to show that we have $c=v_1(b^*)$ for some $b^*\in\oo{Ker}(\beta)$. In the notation of (a) we have $a'=\alpha(a)$ with $a\in A$, and we get 
+$$
+\beta(b)=u'(a')= u'(\alpha(a))= \beta(u(a)),
+$$ 
+that is, $\beta(b-u(a))=0$. The element $b-u(a)$ is thus of the form $j(b^*)$ for some $b^*\in\oo{Ker}(\beta)$. It is enough to show $c=v_1(b^*)$. We have 
+$$
+k(c)=v(b)= v(u(a)+j(b^*))=v(j(b^*))=k(v_1(b^*)).
+$$ 
+The injectivity of $k$ yields $c=v_1(b^*)$, as desired.
+
+(f) Equality $u_2\circ\delta=0$: We have (still with the notation of (a)) 
+$$
+u_2(\delta(c))=u_2(p(a'))=q(u'(a'))=q(\beta(b))=0.
+$$ 
+%hence $u_2\circ\delta=0$. 
+
+(g) Exactness at $\oo{Coker}(\alpha)$: Suppose that an element $p(a')$ in $\oo{Coker}(\alpha)$ (with $a'\in A'$) satisfies $u_2(p(a'))=0$. It suffices to prove $p(a')=\delta(c)$ for some $c\in\oo{Ker}(\gamma)$. We have $q(u'(a'))=0$, and thus $u'(a')=\beta(b)$ for some $b\in B$; as $v'(u'(a')))=0$, we get $v'(\beta(b))=0$, thus $\gamma(v(b))=0$, that is $v(b)=k(c)$ for some $c\in\oo{Ker}(\gamma)$, and we get the sought-for equality $p(a')=\delta(c)$ by definition of $\delta$.%which shows that \eqref{eb2iii} is exact at $\oo{Coker}(\alpha)$.
+\end{proof}
+%\begin{lem}\label{bc1i}If $u',\alpha$ and $\gamma$ are injective, then $\beta$ is injective.\end{lem}\begin{proof}This follows from Lemma~\ref{b2i}: indeed we have $\oo{Ker}(\alpha)=0$ and $\oo{Ker}(\gamma)=0$, hence $\oo{Ker}(\beta)=0$.\end{proof}
+\begin{lem}\label{b254}
+If $M$ is a flat $R$-module, if 
+$$
+0\to M_1\to M_2\to M\to0
+$$ 
+is an exact sequence of $R$-modules, and if $N$ is an $R$-module, then the sequence 
+$$
+0\to M_1\otimes_RN\to M_2\otimes_RN\to M\otimes_RN\to0
+$$ 
+is exact.
+\end{lem}
+%
+\begin{proof}
+Let 
+$$
+0\to P\to F\to N\to 0
+$$ 
+be an exact sequence of $R$-modules such that $F$ is free, and form the diagram
+$$
+\begin{tikzcd}
+&M_1\otimes P\ar[d]\ar[r]&M_2\otimes P\ar[d,"f"]\ar[r]&M\otimes P\ar[d,"g"]\ar[r]&0\\ 
+0\ar[r]&M_1\otimes F\ar[d]\ar[r]&M_2\otimes F\ar[d]\ar[r]&M\otimes F\\ 
+&M_1\otimes N\ar[d]\ar[r]&M_2\otimes N\ar[d]\\ 
+&0&0
+\end{tikzcd}
+$$ 
+where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By Lemma~\ref{b2iii} there is an exact sequence  
+$$
+\oo{Ker}(f)\to\oo{Ker}(g)\to M_1\otimes N\to M_2\otimes N
+$$ 
+As $M$ is flat, $g$ is injective. Thus $M_1\otimes N\to M_2\otimes N$ is also injective. 
+\end{proof}
+%
+\begin{lem}%\label{?}
+Let $0\to M'\to M\to M''\to0$ be an exact sequence of $R$-modules with $M''$ flat. Then $M'$ if flat if and only if $M$ is flat.
+\end{lem}
+%
+\begin{proof}
+Let $N'\to N$ be a monomorphism of $R$-modules and form the commutative diagram 
+$$
+\begin{tikzcd}
+&&&0\ar[d]\\ 
+0\ar[r]&M'\otimes N'\ar[d,"\alpha"]\ar[r,"f"]&M\otimes N'\ar[d,"\beta"]\ar[r]&M''\otimes N'\ar[d,"\gamma"]\ar[r]&0\\ 
+0\ar[r]&M'\otimes N\ar[r,"g"]&M\otimes N\ar[r]&M''\otimes N\ar[r]&0,
+\end{tikzcd}
+$$ 
+the maps being the natural ones. The diagram is exact by flatness of $M''$ and Lemma~\ref{b254}.
+
+Assume that $M$ is flat. Then $\beta$ is injective, and so is $\beta\circ f=g\circ\alpha$. This shows that $\alpha$ is injective, and thus that $M'$ is flat.
+
+Assume that $M'$ is flat. Then $\alpha$ is injective, and Lemma~\ref{b2i} implies that $\beta$ is injective, and thus that $M$ is flat.
+\end{proof}
 
 \section{Page 35, Exercise 2.26}\label{35}%
 
