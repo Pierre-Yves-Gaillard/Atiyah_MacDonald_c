@@ -19,23 +19,26 @@
 %\usepackage{Baskervaldx}
 \usepackage[baskervaldx]{newtxmath}
 \usepackage{tikz-cd}
-%\usepackage{comment}
+\usepackage{comment}
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
 \newcommand{\oo}{\operatorname}
 \newcommand{\mf}{\mathfrak}
 \newcommand{\aaa}{\mf a}
 \newcommand{\bbb}{\mf b}
+\newcommand{\mmm}{\mf m}
 \newcommand{\ppp}{\mf p}
+\newcommand{\qqq}{\mf q}
 \newcommand{\bu}{\bullet}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\epi}{\twoheadrightarrow}
 \newcommand{\incl}{\hookrightarrow}
 \newcommand{\mono}{\rightarrowtail}
+\newcommand{\Spec}{\oo{Spec}}\newcommand{\Sp}{\oo{Spec}}
 \newcommand{\xr}{\xrightarrow}
 %\newcommand{\todo}{To do: }%\newcommand{\up}{Unsolved problem: }
 %\newcommand{\nt}{\newtheorem}
-\newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}%[section]
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{qn}[thm]{Question}
 \newtheorem{rk}[thm]{Remark}
@@ -979,9 +982,28 @@ $$
 $$ 
 We have $g(sx)=0$ and thus $sx=\sum_{i=1}^nb_ix_i$ with $b_i\in B$ and $x_i\in M$. As $b_i/s=0$ in $S^{-1}A$ there is a $t\in S$ such that $tb_i=0$ for all $i$. This gives $tsx=0.\ \square$
 
+\section{P 40, Proposition 3.9}\label{re}%
+
+Here is a mild generalization:
+
+\emph{The complex of $A$-modules $M\xr fN\xr g P$ is exact if and only if the complex} 
+$$
+M_{\mf m}\xr{f_{\mf m}}N_{\mf m}\xr{g_{\mf m}}P_{\mf m}
+$$ 
+\emph{is exact for all maximal ideal $\mf m$ of} $A$.
+\begin{proof}
+Use the isomorphism 
+$$
+\oo{Ker}(g_{\mf m})/\oo{Im}(f_{\mf m})\simeq(\oo{Ker}(g)/\oo{Im}(f))_{\mf m}
+$$ 
+and Proposition 3.8 of the book.
+\end{proof}
+
 \section{Pp 41-42, proof of Proposition 3.11}%
 
-$\bu$ About Part (ii): Here is a more detailed proof of the statement 
+\subsection{Part (ii)}
+
+Here is a more detailed proof of the statement 
 
 \emph{If $\mf a$ is an ideal in $A$, then $\mf a^{\oo{ec}}=\bigcup_{s\in S}\ (\mf a:s)$}.
 
@@ -1019,9 +1041,25 @@ S^{-1}A=0\iff\ 0\in S
 \end{equation}
 (It is easy to prove this particular case directly.)
 
-$\bu$ About Part (iv):
+\subsection{Part (iv)}\label{prcor}%
 
-Let $U$ be the set of prime ideals of $A$ disjoint from $S$ and $V$ the set of prime ideals of $S^{-1}A$. 
+Set $X:=\Sp(A),Y:=\Sp(S^{-1}A)$ and let $c:Y\to X$ be the contraction map. In view of Proposition 1.17iii p.~10 of the book, it suffices to show:
+$$
+c(Y)=\{\ppp\in X\ |\ \ppp\cap S=\varnothing\}
+$$ 
+and 
+$$
+\ppp\in c(Y)\implies S^{-1}\ppp\in c(X).
+$$ 
+The conclusion is that 
+
+\emph{the contraction and extension maps are inverse bijections between $Y$ and $c(Y)$.} 
+
+\begin{comment}
+
+\emph{Let $U$ be the set of prime ideals of $A$ disjoint from $S$ and $V$ the set of prime ideals of $S^{-1}A$. Then the maps $U\to V$, $\ppp\mapsto S^{-1}\ppp$ and $V\to U$, $\qqq\mapsto \qqq^{\oo c}$ are well-defined inverse bijections.} 
+
+\emph{Proof.}
 
 $\mf q\in V\implies\mf q^{\oo c}\in U$: It suffices to check that $\mf q^{\oo c}$ is disjoint from $S$. If $s$ is in $S\cap\mf q^{\oo c}$, then $s/1$ is in $\mf q$, which is impossible since $s/1$ is a unit.
 
@@ -1029,7 +1067,9 @@ $\mf p\in U\implies\mf p^{\oo e}\in V$: As written in the book, ``if $\mf p$ is 
 
 $\mf p^{\oo{ec}}=\mf p$ for $\mf p\in U$: It suffices to show $\mf p^{\oo{ec}}\subset\mf p$. Let $s$ be in $S$. In view of Proposition 3.11 (ii), it suffices to show $(\mf p:s)\subset\mf p$, which is easy.
 
-$\mf q^{\oo{ce}}=\mf q$ for $\mf q\in V$: This is a particular case of Part (i).
+$\mf q^{\oo{ce}}=\mf q$ for $\mf q\in V$: This is a particular case of Part (i). $\square$
+
+\end{comment}
 
 \section{Page 43, Proposition 3.14}%
 
@@ -1045,7 +1085,11 @@ A:=K[X],\quad S:=K[X]\setminus\{0\},\quad M:=\bigoplus A/(X^n).
 $$ 
 We get $\oo{Ann}M=(0)$, $S^{-1}M=0$, $\oo{Ann}S^{-1}M=(1)$. 
 
-\section{Page 43, proof of Proposition 3.16}%\label{43b}
+\section{Page 43, Proposition 3.16}%\label{43b}
+
+Compare with Exercise 3.21iv p. 47 of the book Section~\ref{321iv} p.~\pageref{321iv} below.
+
+\subsection{Proof of Proposition 3.16}
 
 The commutative diagram
 $$
@@ -1058,7 +1102,7 @@ might help. Note that we have $f_\ppp^{-1}(\mf m)=\ppp_\ppp$.
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
-\section{Page 43, Proposition 3.16}\label{43}%
+\subsection{Strengthening of Proposition 3.16}\label{43}
 
 Proposition 3.16 can also be stated as follows:
 
@@ -1077,6 +1121,24 @@ $$
 \bbb^{\oo c}\bbb'^{\oo c}\subset(\mf{bb}')^{\oo c}\subset\mf q^{\oo c}=\aaa,
 $$ 
 in contradiction with the primality of $\aaa$.
+
+\subsection{Related result}\label{res}
+
+Here is a related result:
+
+\emph{$\mf p$ is the contraction of a prime ideal if and only if $A_\ppp/\ppp_\ppp\otimes_AB\ne0$.}
+
+Indeed we have 
+\begin{equation}\label{f1}
+A_\ppp/\ppp_\ppp\otimes_AB\simeq\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{(\ppp B)_\ppp}\simeq\big(B/\ppp B\big)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp\ ,
+\end{equation} 
+$$
+\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }B/\ppp^{\oo e}\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
+$$ 
+$$
+\iff\exists\ s\in\ppp^{\oo{ec}}\setminus\ppp\iff\ppp^{\oo{ec}}\ne\ppp.
+$$ 
+Note that the above statement follows also from Exercise 3.21iv p.~47 of the book.
 
 \section{Page 44, Exercise 3.8}%
 
@@ -1155,7 +1217,7 @@ the element $\mu/1$ of $A_{\mf m}$ is nilpotent, which is clear since $\mf m$ is
 
 (i)$\implies$(ii): Assume by contradiction there is a prime ideal $\mf p$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\mf p<\mf m$. In the above notation we get firstly $\overline{\mf p}<\overline{\mf m}$ with $\overline{\mf p}$ prime and $\overline{\mf m}$ maximal, and secondly $\overline{\mf p}_{\overline{\mf m}}<\overline{\mf m}_{\overline{\mf m}}$ with $\overline{\mf p}_{\overline{\mf m}}$ prime and $\overline{\mf m}_{\overline{\mf m}}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310ii} above) implies $\overline{\mf m}_{\overline{\mf m}}=(\overline0).\ \square$
 
-Proof that $X$ is totally disconnected: Let $x$ and $y$ be two different points of $X$. We saw that there is an $a\in A$ such that $x\in X_a$ and $y\notin X_a$. As $X$ is Hausdorff and $X_a$ is compact, $X_a$ is closed, that is open and closed, and so is its complement $V(a)$, which contains $y.\ \square$
+Proof that $X$ is totally disconnected: Let $x$ and $y$ be two different points of $X$. We saw that there is an $a\in A$ such that $x\in X_a$ and $y\notin X_a$ (see above claim). As $X$ is Hausdorff and $X_a$ is compact, $X_a$ is closed, that is open and closed, and so is its complement $V(a)$, which contains $y.\ \square$
 
 Here is a related result:
 
@@ -1173,7 +1235,22 @@ Here is a related result:
 
 (c)$\implies$(a): Let $\mf p$ be a prime ideal of $A$ and let $a$ be in $A\setminus\mf p$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\mf p$, and thus $1-ab\in\mf p$. This implies that $A/\mf p$ is a field, and therefore that $\mf p$ is maximal. $\square$
 
-\section{P. 47, Exercise 3.21.iv}\label{321iv}%
+\section{P. 45, Exercise 3.14}%\label{321iv}
+
+Let $\mf m$ be a maximal ideal of $A/\mf a$. It suffices to show $(M/\mf aM)_{\mf m}=0$. Letting $\mf m^{\oo c}$ be the contraction of $\mf m$ in $A$, we get 
+$$
+(M/\mf aM)_{\mf m}\simeq(M/\mf aM)_{\mf m^{\oo c}}\simeq M_{\mf m^{\oo c}}/(\mf aM)_{\mf m^{\oo c}}=0.
+$$ 
+
+\section{P. 45, Exercise 3.15}%\label{321iv}
+
+See Lemma \ref{b254} p. \pageref{b254} above.
+
+\section{P. 46, Exercise 3.20}%\label{321iv}
+
+Counterexample to the converse of (ii): $B:=k$ a field, $A:=k[\varepsilon]$ with $\varepsilon^2=0$, $f:k[\varepsilon]\to k$ the canonical projection. 
+
+\section{P. 47, Exercise 3.21iv}\label{321iv}%
 
 We just give the commutative diagram
 $$
@@ -1184,13 +1261,55 @@ $$
 $$ 
 where $R^*$ stands for $\oo{Spec}(R)$, and the chain of isomorphisms  
 $$
-(A_{\mf p}/\mf p_{\mf p})\otimes_AB\simeq
-(A/\mf p)_{\mf p}\otimes_AB\simeq
-(A/\mf p)_{\mf p}\otimes_{A/\mf p}A/\mf p\otimes_AB
+(A_{\mf p}/\mf p_{\mf p})\otimes_AB\simeq(A/\mf p)_{\mf p}\otimes_AB\simeq(A/\mf p)_{\mf p}\otimes_{A/\mf p}A/\mf p\otimes_AB
 $$ 
 $$
 \simeq(A/\mf p)_{\mf p}\otimes_{A/\mf p}B/\mf pB\simeq(B/\mf pB)_{\mf p}.
+$$ 
+(See \eqref{f1} p.~\pageref{f1} for a minor variant of the above calculation.)
+
+\section{P. 47, Exercise 3.23}%\label{321iv}%
+
+It's simpler to proceed as follows:
+
+For $f\in A$ put 
 $$
+S(f):=A\ \setminus\ \bigcup_{\mf p\notni f}\ \mf p,
+$$ 
+where it is understood that $\mf p$ is in $X$. Note that $S(f)$ is a multiplicatively closed set depending only on $X_f$, not on $f$. Finally put 
+$$
+A(X_f):=S(f)^{-1}A.
+$$ 
+Here is a mild generalization: 
+
+For each radical ideal $\mf a$ of $A$ put 
+$$
+S_{\mf a}:=A\ \setminus\ \bigcup_{\mf p\not\supset\mf a}\ \mf p.
+$$ 
+This is multiplicatively closed. For $\mf a\subset\mf b$ we have a natural morphism $S_{\mf b}^{-1}A\to S_{\mf a}^{-1}A$. We also have a canonical isomorphism 
+$$
+\varinjlim_{\mf a\not\subset\mf p}S_{\mf a}^{-1}A.
+$$
+
+\section{P. 47, Exercise 3.24}%
+
+Denote the natural morphism $A\to A_{f_i}$ by $a\mapsto a_{|i}$, and the natural morphism $A_{f_i}\to A_{f_if_j}$ by $a_i\mapsto a_{i|j}$. 
+
+Step 1: $I=\{1,\dots,n\}$. Consider the diagram 
+$$
+0\to A\xr\alpha\prod_{i\in I}A_{f_i}\xr\beta\prod_{i,j\in I}A_{f_if_j}
+$$ 
+defined by $\alpha(a):=(a_{|i})$ and $\beta((a_i)):=((a_{i|j}-a_{j|i}))$. This is clearly a complex. It suffices to show that it is exact. By Section~\ref{re} p.~\pageref{re}, we can assume that $A$ is local. Let $\mf m$ be its maximal ideal. As the $f_i$ generate the unit ideal, one of them is a unit, so that we can assume $f_1=1$. It is easy to see that $\alpha$ is injective. Assuming $\beta((a_i))=0$, it is straightforward to check that $(a_i)$ is equal to $\alpha(a_1)$. This solves the exercise in the case $I=\{1,\dots,n\}$.
+
+Step 2: $I$ arbitrary. Let $(s_i)$ be a family such that $s_i\in A_{f_i}$ for all $i$ and $s_{i|j}=s_{j|i}$ for all $i,j$. There are $i_1,\dots,i_n$ such that $(f_{i_1},\dots,f_{i_n})=(1)$ and, by Step~1, there is an $s\in A$ such that $s_{|i_k}=s_{i_k}$ for $1\le k\le n$. Let $i_{n+1}$ be in $I$. There is again a $t\in A$ such that $t_{|i_k}=s_{i_k}$ for $1\le k\le n+1$. By uniqueness we get $t=s$. As $i_{n+1}$ was arbitrary, we have $s_{|i}=s_i$ for all $i$. This proves the existence of a solution to our problem. The uniqueness is clear.
+
+\section{P. 48, Exercise 3.25}%
+
+For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
+
+\section{P. 48, Exercise 3.26}%
+
+For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
 
 \section{Contracted primary ideals}\label{cpi}%
 
@@ -1228,6 +1347,10 @@ We prove that $(0)\subset A$ is not the contraction of a primary ideal of $B$.
 
 Let $\mathfrak q$ be a primary ideal of $B$. If we had $\varepsilon\notin\mathfrak q$ and $x^n\notin\mathfrak q$ for all $n\ge1$, then $x$ would be a non nilpotent zero divisor in $B/\mathfrak q$, contradicting the assumption that $\mathfrak q$ is primary. Thus we have $x^n\in\mathfrak q$ for some $n\ge1$, or $\varepsilon\in\mathfrak q$. But, since $\varepsilon\in(x^n)$, we get $\varepsilon\in\mathfrak q$ in both cases, and $\mathfrak q$ contracts to $(1)$ instead of contracting to $(0)$.
 
+\section{Page 50}\label{contrpry}%
+
+Just before Proposition 4.1: In fact, the contraction of a $\ppp$-primary ideal is a $\ppp^{\oo c}$-primary ideal.
+
 \section{Page 52}%
 
 $\bu$ Proof of Theorem 4.5.
@@ -1235,9 +1358,9 @@ $\bu$ Proof of Theorem 4.5.
 The following statement, occurring in the proof of Theorem 4.5, is often used in the sequel of the book:
 
 {\em In the setting of Theorem 4.5 we have} 
-$$
+\begin{equation}\label{45}
 r(\mf a:x)=\bigcap_{x\notin\mf q_j}\mf p_j.
-$$
+\end{equation}
 (See Remark~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\mf p_j$-primary for $j\in J(x)$, and we have 
 $$
 (\mf a:x)=\bigcap_{j\in J(x)}(\mf q_j:x).
@@ -1252,7 +1375,28 @@ $\bu$ Corollary to Proposition 4.6:
 If $\mf a$ is decomposable, then the set of prime ideals containing $\mf a$ has only finitely many minimal elements.
 \end{rk}
 
-\section{Page 53, proof of Proposition 4.8.ii}%
+\section{Page 53, proof of Proposition 4.8.ii}%\label{prcor}%\label{contrpry}
+
+Using the notation of Section~\ref{prcor} p.~\pageref{prcor} and taking Section~\ref{contrpry} p.~\pageref{contrpry} into account, we set 
+$$
+X':=\{\qqq\ |\ \qqq\text{ primary ideal of }A\},
+$$ 
+$$
+Y':=\{\qqq\ |\ \qqq\text{ primary ideal of }S^{-1}A\}.
+$$ 
+We then have a contraction map $c:Y'\to X'$ compatible with radicals. We check that  
+$$
+c(Y')=\{\qqq\in X'\ |\ r(\qqq)\in c(Y)\}
+$$ 
+and that 
+$$
+\qqq\in c(Y')\implies S^{-1}\qqq\in X',
+$$ 
+and we see that 
+
+\emph{the contraction and extension maps are inverse bijections compatible with radicals between $Y'$ and $c(Y')$.} 
+
+\begin{comment}
 
 We have 
 $$
@@ -1263,6 +1407,8 @@ $$
 r(\mf q^{\text e})=r(S^{-1}\mf q)=S^{-1}r(\mf q)=S^{-1}\mf p
 $$ 
 by Proposition 3.11v p.~42.
+
+\end{comment}
 
 \section{Page 54, decomposable ideals}\label{di}%
 
@@ -1313,9 +1459,110 @@ Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb
 
 \hrule\bigskip
 
+\section{P. 55, Exercise 4.6}%
+
+Claim: any prime ideal is contained in a \emph{unique} maximal ideal.
+
+Proof: Using Urysohn's Lemma it is easy to see that, given distinct points $x$ and $y$ in $X$ and denoting by $\mmm_x$ and $\mmm_y$ the corresponding maximal ideals, there are $f,g\in C(X)$ such that $fg=0$, $f\in\mmm_x\setminus\mmm_y$, $g\in\mmm_y\setminus\mmm_x$. 
+
+The claim implies that there are infinitely many minimal prime ideals.
+
+%Using Urysohn's Lemma it is easy to see that any prime ideal is contained in a \emph{unique} maximal ideal. This implies that there are infinitely many minimal prime ideals.
+
 \section{P. 55, Exercise 4.7}\label{5547}%
 
-Use Exercises 1.18 p.~10 and 1.2ii p.~11.
+Part iii: Use Exercises 1.18 p.~10 and 1.2ii p.~11. Note that we have (by Exercise 1.2ii p.~11)
+\begin{equation}\label{rax}
+r(\aaa[x])=r(\aaa)[x]
+\end{equation}
+(obvious notation).
+ 
+Part iv: We claim: %$(\aaa\cap\bbb)[x]=\aaa[x]\cap\bbb[x]$ (obvious notation).
+\begin{equation}\label{acbx}
+(\aaa\cap\bbb)[x]=\aaa[x]\cap\bbb[x]
+\end{equation}
+(obvious notation).
+
+Proof: The diagram 
+$$
+\begin{tikzcd}
+0\ar[r]&(\aaa\cap\bbb)[x]\ar[d]\ar[r]&(\aaa\oplus\bbb)[x]\ar[d]\ar[r]&(\aaa+\bbb)[x]\ar[d]\ar[r]&0\\ 
+0\ar[r]&\aaa[x]\cap\bbb[x]\ar[r]&\aaa[x]\oplus\bbb[x]\ar[r]&\aaa[x]+\bbb[x]\ar[r]&0
+\end{tikzcd}
+$$ 
+(where the arrows are the obvious ones) commutes, the rows are exact, the first vertical arrow is clearly an isomorphism, and the second vertical arrow is an isomorphism by Exercises 1.18 p.~10. Thus the first vertical arrow is also an isomorphism. But by its (implicit) definition this arrow is an inclusion. Being surjective, it is actually an equality. $\square$
+
+Then Part iv follows from \eqref{acbx} and Part iii.
+
+Part v: We clearly have 
+\begin{equation}\label{asb}
+\aaa\subset\bbb\iff\aaa[x]\subset\bbb[x]
+\end{equation}
+(obvious notation), and Part v follows from \eqref{asb}, Part iv and Proposition 4.6 p.~52 of the book.
+
+\section{P. 55, Exercise 4.8}%
+
+Use Section \ref{5547} and the following easy facts:
+
+Let $A$ be a ring and $x$ an indeterminate.
+
+If $\aaa$ and $\bbb$ are ideals of $A$, then $(\aaa+\bbb)[x]=\aaa[x]+\bbb[x]$ (Exercise 1.18 p.~10 of the book).
+
+For $a$ in $A$ we have $(aA)[x]=a(A[x])$. (In fact for any overring $B$ of $A$ we have $(aA)^{\oo e}=aB$.) %Let $a$ be in $A$, write $(a)_A$ for the ideal of $A$ generated by $a$, and $(a)_{A[x]}$ for the ideal of $A[x]$ generated by $a$. Then we have $(a)_A[x]=(a)_{A[x]}$.
+
+\section{P. 55, Exercise 4.9}%
+
+Let $a,b\in A$ and $\ppp\in\oo{Spec}(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
+
+Claim 1: $a$ is zero-divisor.
+
+Proof of Claim 1. Obviously $b\ne0$ and $a\notin(0:b)$. Let $s$ be in $A\setminus\ppp$ and $n$ be in $\mathbb N$. 
+
+Claim 2: $a^ns\notin(0:b)$.
+
+Proof of Claim 2. Assume by contradiction that $a^ns\in(0:b)$. We can suppose that $n$ is minimum for this condition. In particular $n\ge2$. We have $a(a^{n-1}sb)=a^nsb=0$. As $a$ is not a zero-divisor, this implies $a^{n-1}sb=0$, that is $a^{n-1}s\in(0:b)$, in contradicition with the minimality of $n$. This ends the proof of Claim~2.  $\square$
+
+Set $T:=\{\ a^ns|\ n\in\mathbb N,s\in A\setminus\ppp\}$. Claim~2 implies that $T$ is disjoint from $(0:b)$. Then there is a prime ideal $\qqq$ which contains $(0:b)$ and is disjoint from $T$, and we have $A\setminus\ppp\subset T\subset A\setminus\qqq$, that is $(0:b)\subset\qqq\subset\ppp$. By minimality of $\ppp$ over $(0:b)$ this forces $\qqq=\ppp$, and thus $a\in\ppp\cap T=\qqq\cap T=\varnothing$, a contradiction. This completes the proof of Claim~1. $\square$ 
+
+Proof of the inclusion $D(S^{-1}A)\subset D(A)\cap\Sp(S^{-1}A)$: 
+
+Let $\ppp$ be a prime ideal of $A$ disjoint from $S$. It suffices to show $\ppp\in D(A)$. Note that $S^{-1}\ppp$ is minimal over $(0:\frac as)$ for some $a\in A$ and some $s\in S$ such that $\frac as$ is a zero-divisor. It suffices to show that $a$ is a zero-divisor and that $\ppp$ is minimal over $(0:a)$. It is easy to prove that $a$ is a zero-divisor. It remains to verify that $\ppp$ is minimal over $(0:a)$.
+
+Claim 1: $(0:a)\subset\ppp$.
+
+Proof of Claim 1. Let $b\in A$ satisfy $ab=0$. It is enough to check $b\in\ppp$. We have $\frac as\frac b1=0$, hence $\frac b1\in(0:\frac as)\subset S^{-1}\ppp$, and thus $b\in\ppp$. $\square$
+
+Assume by contradiction that there is a prime ideal $\qqq$ such that $(0:a)\subset\qqq<\ppp$. 
+
+Claim 2: $(0:\frac as)\subset S^{-1}\qqq$.
+
+Proof of Claim 2. Assuming $\frac bt\frac as=0$ (obvious notation), we get $abu$ for some $u\in S$, hence $bu\in\qqq$, hence $b\in\qqq$, and thus $\frac bt\in S^{-1}\qqq$. $\square$ 
+
+We get $(0:\frac as)\subset S^{-1}\qqq<S^{-1}\ppp$, contradicting the minimality of $\ppp$ over $(0:a)$. $\square$
+
+Let $(0)=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced decomposition and set $\ppp_i:=r(\qqq_i)$. We have 
+$$
+D(A)\subset\{\ppp_1,\dots,\ppp_n\}.
+$$ 
+Proof. Let $\ppp$ be in $D(A)$. Then $\ppp$ is minimal over $(0:a)$ for some $a\in A$. By \eqref{45} p.~\pageref{45} we have 
+$$
+r(0:a)=\bigcap_{\qqq_i\ni a}\ppp_i\subset\ppp.
+$$ 
+In particular $a\in\qqq_i$ for some $i$, and we get 
+$$
+\ppp\supset\prod_{\qqq_i\ni a}\ppp_i,
+$$ 
+hence $\ppp\supset\ppp_i$ for some $i$, and thus $\ppp=\ppp_i$ for some $i$. $\square$
+
+\section{P. 55, Exercise 4.10}%
+
+Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect to $A\to A_\ppp$. Note also that we have $r((0)^{\oo c})=r(0)^{\oo c}$.
+
+(ii) We must show that $\ppp$ is minimal if and only if $r(0)^{\oo c}=\ppp$. 
+
+If $\ppp$ is minimal we have $r(0)=\ppp_\ppp$ and thus $r(0)^{\oo c}=\ppp$. 
+
+If $\ppp$ is \emph{not} minimal, there is a prime ideal $\qqq$ such that $\qqq<\ppp$, and we get $r(0)\subset\qqq_\ppp<\ppp_\ppp$, hence $r(0)^{\oo c}\subset\qqq_\ppp<\ppp_\ppp$ and thus $r(0)^{\oo c}\ne\ppp$.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
@@ -1670,7 +1917,7 @@ The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the
 
 \section{Page 97, proof of Theorem 9.8}%
 
-The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_{\mf p}$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_{\mf p}$ by Proposition 3.11.i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_{\mf p}$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)).
+The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_{\mf p}$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_{\mf p}$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_{\mf p}$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)).
 
 \section{Page 102, Completions 1}%
 
@@ -1885,7 +2132,7 @@ $$
 
 \subsection{Exercise 11.6}%
 
-For Exercise 3.21.iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
+For Exercise 3.21iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
 
 For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
 
