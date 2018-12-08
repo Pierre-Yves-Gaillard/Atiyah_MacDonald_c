@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -39,6 +39,7 @@
 %\newcommand{\todo}{To do: }%\newcommand{\up}{Unsolved problem: }
 %\newcommand{\nt}{\newtheorem}
 \newtheorem{thm}{Theorem}%[section]
+\newtheorem{cor}[thm]{Corollary}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{qn}[thm]{Question}
 \newtheorem{rk}[thm]{Remark}
@@ -103,7 +104,7 @@ The intersection and the product of the empty family of ideals is the unit ideal
 
 It is written
 
-\emph{In the ring $\mathbb Z$, $\cap$ and + are distributive over each other. This is not the case in general\dots}
+\emph{In the ring $\mathbb Z$, $\cap$ and + are distributive over each other. This is not the case in general.}
 
 Here is an example: In the ring $K[X,Y]$, where $K$ is a field and $X$ and $Y$ are indeterminates, we have 
 $$
@@ -1351,7 +1352,7 @@ Just before Proposition 4.1: In fact, the contraction of a $\ppp$-primary ideal 
 
 \section{Page 52}%
 
-$\bu$ Proof of Theorem 4.5.
+\subsection{Proof of Theorem 4.5}
 
 The following statement, occurring in the proof of Theorem 4.5, is often used in the sequel of the book:
 
@@ -1367,48 +1368,14 @@ In particular, we have $J(x_i)=\{i\}$, and thus
 $$
 (\mf a:x_i)=(\mf q_i:x_i),\quad r(\mf a:x_i)=\mf p_i.
 $$
-$\bu$ Corollary to Proposition 4.6:
+
+\subsection{Corollary to Proposition 4.6}
 
 \begin{rk}\label{fmme}
 If $\mf a$ is decomposable, then the set of prime ideals containing $\mf a$ has only finitely many minimal elements.
 \end{rk}
 
-\section{Page 53, proof of Proposition 4.8.ii}%\label{prcor}%\label{contrpry}
-
-Using the notation of Section~\ref{prcor} p.~\pageref{prcor} and taking Section~\ref{contrpry} p.~\pageref{contrpry} into account, we set 
-$$
-X':=\{\qqq\ |\ \qqq\text{ primary ideal of }A\},
-$$ 
-$$
-Y':=\{\qqq\ |\ \qqq\text{ primary ideal of }S^{-1}A\}.
-$$ 
-We then have a contraction map $c:Y'\to X'$ compatible with radicals. We check that  
-$$
-c(Y')=\{\qqq\in X'\ |\ r(\qqq)\in c(Y)\}
-$$ 
-and that 
-$$
-\qqq\in c(Y')\implies S^{-1}\qqq\in X',
-$$ 
-and we see that 
-
-\emph{the contraction and extension maps are inverse inclusion preserving bijections compatible with radicals between $Y'$ and $c(Y')$.} 
-
-In particular, if $\ppp$ is a minimal prime ideal, then the kernel of the natural morphism $A\to A_\ppp$ is a minimal \emph{primary} ideal.
-
-\begin{comment}
-We have 
-$$
-\mf q^{\text{ec}}=\bigcup_{s\in S}\ (\mf q:s)=\mf q
-$$ 
-by Proposition 3.11ii p.~41 and Lemma 4.4iii p.~51, and 
-$$
-r(\mf q^{\text e})=r(S^{-1}\mf q)=S^{-1}r(\mf q)=S^{-1}\mf p
-$$ 
-by Proposition 3.11v p.~42.
-\end{comment}
-
-\section{Page 54, decomposable ideals}\label{di}%
+\section{Page 53, decomposable ideals}\label{di}%
 
 An ideal having only finitely many minimal primes is not necessarily decomposable.
 
@@ -1456,6 +1423,53 @@ Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb
 %Then $\mf a:=\{0\}\times\mathbb Z$ has only one minimal prime $\{0\}\times\mathbb Q$ and $\mf a$ has no primary decomposition.\bigskip%https://math.stackexchange.com/a/1679116/660
 
 \hrule\bigskip
+
+\section{Page 53, proof of Proposition 4.8.ii}\label{prycor}%\label{contrpry}
+
+Using the notation of Section~\ref{prcor} p.~\pageref{prcor} and taking Section~\ref{contrpry} p.~\pageref{contrpry} into account, we set 
+$$
+X':=\{\qqq\ |\ \qqq\text{ primary ideal of }A\},
+$$ 
+$$
+Y':=\{\qqq\ |\ \qqq\text{ primary ideal of }S^{-1}A\}.
+$$ 
+We then have a contraction map $c:Y'\to X'$ compatible with radicals. We check that  
+$$
+c(Y')=\{\qqq\in X'\ |\ r(\qqq)\in c(Y)\}
+$$ 
+and that 
+$$
+\qqq\in c(Y')\implies S^{-1}\qqq\in X',
+$$ 
+and we see that 
+
+\emph{the contraction and extension maps are inverse inclusion preserving bijections compatible with radicals between $Y'$ and $c(Y')$.} 
+
+In particular, if $\ppp$ is a minimal prime ideal, then the kernel of the natural morphism $A\to A_\ppp$ is a minimal \emph{primary} ideal.
+
+\begin{comment}
+We have 
+$$
+\mf q^{\text{ec}}=\bigcup_{s\in S}\ (\mf q:s)=\mf q
+$$ 
+by Proposition 3.11ii p.~41 and Lemma 4.4iii p.~51, and 
+$$
+r(\mf q^{\text e})=r(S^{-1}\mf q)=S^{-1}r(\mf q)=S^{-1}\mf p
+$$ 
+by Proposition 3.11v p.~42.
+\end{comment}
+
+\section{P. 54, Theorem 4.10}%\label{410}%
+
+Here is a corollary to Theorem 4.10:
+
+\begin{cor}\label{410}
+Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced primary decomposition.
+
+(a) If $\ppp_i:=r(\qqq_i)$ is isolated, then $\qqq_i$ is the least $\ppp_i$-primary ideal containing $\aaa$.%\end{cor}\begin{cor}\label{413}
+
+(b) If $r(\aaa)=\ppp$ for some prime ideal $\ppp$, then $\ppp$ is an isolated prime ideal of $\aaa$, and the corresponding primary component is the least $\ppp$-primary ideal containing $\aaa$.
+\end{cor}
 
 \section{P. 55, Exercise 4.6}%
 
@@ -1561,6 +1575,41 @@ Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect t
 If $\ppp$ is minimal we have $r(0)=\ppp_\ppp$ and thus $r(0)^{\oo c}=\ppp$. 
 
 If $\ppp$ is \emph{not} minimal, there is a prime ideal $\qqq$ such that $\qqq<\ppp$, and we get $r(0)\subset\qqq_\ppp<\ppp_\ppp$, hence $r(0)^{\oo c}\subset\qqq_\ppp<\ppp_\ppp$ and thus $r(0)^{\oo c}\ne\ppp$.
+
+\section{P. 56, Exercise 4.11}%
+
+(a) If $\ppp$ is a minimal prime ideal of a ring $A$, show that $S_\ppp(0)$ (Exercise 10) is the smallest $\ppp$-primary ideal.
+
+This follows from Section~\ref{prycor} p.~\pageref{prycor}.
+
+(b) Let $\aaa$ be the intersection of the ideals $S_\ppp(0)$ as  $\ppp$ runs through the minimal prime ideals of $A$. Show that $\aaa$ is contained in the nilradical of $A$.
+
+This follows from Exercise 4.10i p. 55.
+
+(c) Suppose that the zero ideal is decomposable. Prove that $\aaa=0$ if and only if every prime ideal of $(0)$ is isolated.
+
+Let 
+$$
+(0)=\qqq_1\cap\cdots\cap\qqq_n
+$$ 
+be a reduced decomposition. We can assume that there is an $m$ such that $1\le m\le n$ and $\ppp_i:=r(\qqq_i)$ is isolated if and only if $i\le m$. Theorem 4.10 p.~54 of the book and (a) above imply  
+$$
+(0)=S_{\ppp_1}(0)\cap\cdots\cap S_{\ppp_m}(0)\cap\qqq_{m+1}\cap\cdots\cap\qqq_n
+$$ 
+$$
+=\aaa\cap\qqq_{m+1}\cap\cdots\cap\qqq_n,
+$$ 
+and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conversely if $\aaa=0$, then $m=n$ because the decomposition is reduced.
+
+\section{P. 56, Exercise 4.12}%
+
+Follows from statements 1.18, 3.11ii, 3.11v and 4.9 in the book.
+
+\section{P. 56, Exercise 4.13}%
+
+(ii) In view of Corollary~\ref{410} p.~\pageref{410} it suffices to check that $\ppp^{(n)}$ is the least $\ppp$-primary ideal containing $\ppp^n$.
+
+(iii) In view of Corollary~\ref{410} p.~\pageref{410} it suffices to check that $\ppp^{(m+n)}$ is the least $\ppp$-primary ideal containing $\ppp^{(m)}\ppp^{(n)}$.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
