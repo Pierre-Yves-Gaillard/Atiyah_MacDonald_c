@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -33,13 +33,16 @@
 \newcommand{\ds}{\displaystyle}
 \newcommand{\epi}{\twoheadrightarrow}
 \newcommand{\incl}{\hookrightarrow}
+\newcommand{\Ker}{\operatorname{Ker}}\newcommand{\Coker}{\operatorname{Coker}}
 \newcommand{\mono}{\rightarrowtail}
-\newcommand{\Spec}{\oo{Spec}}\newcommand{\Sp}{\oo{Spec}}
+\newcommand{\Spec}{\operatorname{Spec}}\newcommand{\Sp}{\operatorname{Spec}}
+\newcommand{\Tor}{\operatorname{Tor}}
 \newcommand{\xr}{\xrightarrow}
 %\newcommand{\todo}{To do: }%\newcommand{\up}{Unsolved problem: }
 %\newcommand{\nt}{\newtheorem}
 \newtheorem{thm}{Theorem}%[section]
 \newtheorem{cor}[thm]{Corollary}
+\newtheorem{exo}[thm]{Exercise}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{qn}[thm]{Question}
 \newtheorem{rk}[thm]{Remark}
@@ -600,9 +603,15 @@ $\bullet\ p(x)+p(\,y)=p(\mu_{ki}(x)+\mu_{kj}(\,y))$ for all $x$ in $M_i$ and all
 
 Then $M'/\sim$ is a direct of the $M_i$ also in the category of $A$-modules.
 
-\section{Page 34, Exercise 2.25}%
+\section{Page 34, Exercise 2.25, first solution}\label{s225a}%
 
-Here is a solution to Exercise 2.25 which does \emph{not} us the Tor functor. Of course, the solution using the Tor functor is much simpler.
+Recall the statement of Exercise 2.25:
+
+\begin{exo}[Exercise 2.25]\label{e225}
+Let $0\to N'\to N\to N''\to0$ be an exact sequence, with $N''$ flat. Then $N'$ is flat if and only if $N$ is flat.
+\end{exo}
+
+Here is a solution to Exercise 2.25 which does \emph{not} use the Tor functor. Of course, the solution using the Tor functor (and assuming the Tor functor and some of its basic properties are known) is much simpler. In the next section we give a proof which includes a definition of the Tor functor.
 
 The proof below follows closely the proof of Proposition 1.2.5.5 in Bourbaki's \textbf{Algèbre commutative}.
 
@@ -616,14 +625,14 @@ A'\ar[r,"u'"']&B'\ar[r,"v'"']&C'
 \end{tikzcd}
 \end{equation}
 be a commutative diagram of $R$-modules with exact rows. 
-%
+
 \begin{lem}\label{b1i}
 If $\gamma$ is injective, we have 
 $$
 \oo{Im}(\beta)\cap\oo{Im}(u')=\oo{Im}(u'\circ\alpha)=\oo{Im}(\beta\circ u).
 $$
 \end{lem}
-% 
+
 \begin{proof}
 We clearly have 
 $$
@@ -635,14 +644,14 @@ $$
 $$ 
 whence $v(b)=0$ since $\gamma$ is injective. The first row of \eqref{b10} being exact, there is an $a\in A$ such that $b=u(a)$, whence $b'=\beta(u(a))$.
 \end{proof}
-%
+
 \begin{lem}\label{b1ii}
 If $\alpha$ is surjective, we have 
 $$
 \oo{Ker}(\beta)+\oo{Im}(u)=\oo{Ker}(v'\circ\beta)=\oo{Ker}(\gamma\circ v).
 $$
 \end{lem}
-% 
+
 \begin{proof}
 As $v\circ u=0$ and $v'\circ u'=0$, it is clear that 
 $$
@@ -654,7 +663,7 @@ $$
 $$ 
 this implies that $b-u(a)$ is in in $\oo{Ker}(\beta)$.
 \end{proof}
-%
+
 We extend the commutative diagram \eqref{b10} as follows:
 \begin{equation}\label{b10x}
 \begin{tikzcd}
@@ -666,8 +675,8 @@ A'\ar[d,"p"]\ar[r,"u'"]&B'\ar[d,"q"]\ar[r,"v'"]&C'\ar[d]\\
 \end{equation} 
 the new maps being the natural ones.
 
-Recall that we are working under the assumption that the second and third row of \eqref{b10x} are exact.
-%
+Recall that we are working under the assumption that the second and third rows of \eqref{b10x} are exact.
+
 \begin{lem}\label{b2i}
 The sequence 
 $$
@@ -675,7 +684,7 @@ $$
 $$ 
 is a complex. Moreover, if $u'$ is injective, this complex is exact.
 \end{lem}
-% 
+ 
 \begin{proof}
 The first claim is clear. We have 
 $$
@@ -683,7 +692,7 @@ $$
 $$ 
 Lemma~\ref{b1i} implies $\oo{Ker}(v_1)=\oo{Im}(j\circ u_1)=\oo{Im}(u_1)$ if $u'$ is injective.
 \end{proof}
-%
+
 \begin{lem}\label{b2ii}
 The sequence 
 $$
@@ -691,7 +700,7 @@ $$
 $$ 
 is a complex. Moreover, if $v$ is surjective, this complex is exact.
 \end{lem}
-% 
+
 \begin{proof}
 As $u_2$ and $v_2$ are obtained from $u$ and $v$ by taking quotients, it is clear that $v_1\circ u_2=0$. Suppose $v$ is surjective; $q$ and $p$ being surjective, we get, in view of the assumptions and Lemma~\ref{b1ii},
 $$
@@ -701,7 +710,7 @@ $$
 =q(\oo{Im}(u'))=\oo{Im}(q\circ u')=\oo{Im}(u_2\circ p)=\oo{Im}(u_2).
 $$
 \end{proof} 
-%
+
 \begin{lem}\label{b2iii}
 Assume that $u'$ is injective and that $v$ is surjective. Then there is a unique morphism $\delta:\oo{Ker}(\gamma)\to\oo{Coker}(\alpha)$ having the following property: if $c\in\oo{Ker}(\gamma),b\in B$ and $a'\in A'$ satisfy $v(b)=k(c)$ and $u'(a')= \beta(b)$, then we have $\delta(c)=p(a')$. Moreover the sequence 
 $$
@@ -709,7 +718,7 @@ $$
 $$
 is exact.
 \end{lem}
-% 
+
 \begin{proof} (a) Definition of $\delta$: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
 $$
 u'(a'+\alpha(a))=u'(a')+u'(\alpha(a))=\beta(b)+\beta(u(a))
@@ -755,7 +764,7 @@ $$
 $$ 
 is exact.
 \end{lem}
-%
+
 \begin{proof}
 Let 
 $$
@@ -776,11 +785,11 @@ $$
 $$ 
 As $M$ is flat, $g$ is injective. Thus $M_1\otimes N\to M_2\otimes N$ is also injective. 
 \end{proof}
-%
-\begin{lem}%\label{?}
+
+\begin{lem}
 Let $0\to M'\to M\to M''\to0$ be an exact sequence of $R$-modules with $M''$ flat. Then $M'$ if flat if and only if $M$ is flat.
 \end{lem}
-%
+
 \begin{proof}
 Let $N'\to N$ be a monomorphism of $R$-modules and form the commutative diagram 
 $$
@@ -796,6 +805,166 @@ Assume that $M$ is flat. Then $\beta$ is injective, and so is $\beta\circ f=g\ci
 
 Assume that $M'$ is flat. Then $\alpha$ is injective, and Lemma~\ref{b2i} implies that $\beta$ is injective, and thus that $M$ is flat.
 \end{proof}
+
+\section{Exercise 2.25 p.~34, second solution}
+
+In Section~\ref{s225a} p.~\pageref{s225a} above we gave a solution to Exercise 2.25 p.~34 of the book which doesn't use the Tor functor. The purpose of the present section is to give a solution which \emph{does} use the Tor functor, but does \emph{not} assume this functor to be known. We'll follow Bourbaki's \textbf{Algèbre homologique}.
+
+We fix a commutative ring $A$ with one. \emph{Module} shall mean $A$-\emph{module}. 
+
+We already stated Exercise 2.25 as Exercise~\ref{e225} p.~\pageref{e225} above, but for the reader's convenience we restate it:
+
+\begin{exo}[Exercise 2.25]\label{e225b}
+Let $0\to N'\to N\to N''\to0$ be an exact sequence, with $N''$ flat. Then $N'$ is flat if and only if $N$ is flat.
+\end{exo}
+
+We refer the reader to Bourbaki's \textbf{Théorie des ensembles}, II.3 for the notion of \emph{correspondance} from a set to another set.
+
+\subsection{The Snake Lemma}%
+
+Let 
+\begin{equation}\label{sl1}
+\begin{tikzcd}
+&M\ar["u"]{r}\ar["f"]{d}&N\ar["v"]{r}\ar["g"]{d}&P\ar["h"]{d}\ar{r}&0\\ 
+0\ar{r}&M'\ar["u'"']{r}&N'\ar["v'"']{r}&P'
+\end{tikzcd}
+\end{equation} 
+be a commutative diagram of modules with exact rows.
+
+\begin{lem}[Snake Lemma]\label{sl2}
+The commutative diagram \eqref{sl1} can be extended to 
+$$
+\begin{tikzcd}
+&\Ker(f)\ar["u_1"]{r}\ar["i"]{d}&\Ker(g)\ar["v_1"]{r}\ar["j"]{d}&\Ker(h)\ar["k"]{d}\\ 
+&M\ar["u"]{r}\ar["f"]{d}&N\ar["v"]{r}\ar["g"]{d}&P\ar["h"]{d}\ar{r}&0\\ 
+0\ar{r}&M'\ar["u'"']{r}\ar["p"]{d}&N'\ar["v'"']{r}\ar["q"]{d}&P'\ar["r"]{d}\\ 
+&\Coker(f)\ar["u_2"']{r}&\Coker(g)\ar["v_2"']{r}&\Coker(h),
+\end{tikzcd}
+$$ 
+where the arrows are the natural ones. Moreover the correspondance 
+$$
+d:=p\circ u'^{-1}\circ g\circ v^{-1}\circ k
+$$ 
+is an $A$-linear map, and we have an exact sequence
+$$
+\begin{tikzcd}
+\Ker(f)\ar["u_1"]{r}&\Ker(g)\ar["v_1"]{r}&\Ker(h)\ar["d"']{ddll}\\ \\ 
+\Coker(f)\ar["u_2"']{r}&\Coker(g)\ar["v_2"']{r}&\Coker(h).
+\end{tikzcd}
+$$ 
+\end{lem}
+
+\begin{proof}Omitted.\end{proof}
+
+The name ``Snake Lemma'' comes from the fact that the above exact sequence can be displayed as 
+$$%https://tex.stackexchange.com/a/82774/8816
+\begin{tikzcd}
+  \Ker(f) \ar["u_1"]{r} & \Ker(g) \ar["v_1"]{r}
+             \ar[draw=none]{d}[name=X, anchor=center]{}
+    & \Ker(h) \ar[rounded corners,
+            to path={ -- ([xshift=2ex]\tikztostart.east)
+                      |- (X.center) \tikztonodes
+                      -| ([xshift=-2ex]\tikztotarget.west)
+                      -- (\tikztotarget)}]{dll}[at end]{} \\      
+  \Coker(f) \ar["u_2"]{r} & \Coker(g) \ar["v_2"]{r} & \Coker(h).
+\end{tikzcd}
+$$
+
+\subsection{Complexes}%
+
+A \emph{graded module} is a module $C$ equipped with a family $(C_n)_{n\in\mathbb Z}$ of submodules such that $C=\bigoplus_{n\in\mathbb Z}C_n$. 
+
+A \emph{degree $k$ morphism} from a graded module $C$ to a graded module $D$ is an $A$-linear map $f:C\to D$ such that $f(C_n)\subset D_{n+k}$ for all $n$. 
+
+A \emph{complex} is a graded module $C=\bigoplus_{n\in\mathbb Z}C_n$ equipped with a degree $-1$ endomorphism $d$, called the \emph{differential} of $C$, such that $d\circ d=0$. 
+
+A \emph{morphism} from a complex $C$ to a complex $D$ is degree $0$ morphism $C\to D$ which commutes with the differentials. 
+
+The identity of $C$ is a morphism of complexes, and the composition of two morphisms of complexes is a morphism of complexes. 
+
+If $C$ is a complex the kernel of $d$ is denoted $Z(C)$ and the image of $d$ is denoted $B(C)$. 
+
+We have $B(C)\subset Z(C)$, and we set $H(C):=Z(C)/B(C)$. 
+
+The modules $Z(C),B(C)$ and $H(C)$ are graded is an obvious way, and are respectively called the submodule of \emph{cycles}, the submodule of \emph{boundaries}, and the \emph{homology} of $C$.
+
+%A morphism of complexes $f:C\to D$ induces in an obvious way a degree $0$ morphism of graded modules $H(f):H(C)\to H(D)$. 
+
+%If $H(f)$ is bijective, $f$ is called a \emph{homologism}.
+
+\subsection{The homology long exact sequence}\label{hles}% 
+
+Let $0\to C'\xr uC\xr vC''\to0$ be a short exact sequence of complexes. We get a commutative diagram 
+$$
+\begin{tikzcd}
+&0\ar{d}&0\ar{d}&0\ar{d}\\ 
+&H_n(C')\ar["u_1"]{r}\ar["i"]{d}&H_n(C)\ar["v_1"]{r}\ar["j"]{d}&H_n(C'')\ar["k"]{d}\\ 
+&\ds\frac{C'_n}{B_n(C')}\ar["u"]{r}\ar["f"]{d}&\ds\frac{C_n}{B_n(C)}\ar["v"]{r}\ar["g"]{d}&\ds\frac{C''_n}{B_n(C'')}\ar["h"]{d}\ar{r}&0\\ 
+0\ar{r}&Z_{n-1}(C')\ar["u'"']{r}\ar["p"]{d}&Z_{n-1}(C)\ar["v'"']{r}\ar["q"]{d}&Z_{n-1}(C'')\ar["r"]{d}\\ 
+&H_{n-1}(C')\ar["u_2"']{r}\ar{d}&H_{n-1}(C)\ar["v_2"']{r}\ar{d}&H_{n-1}(C'')\ar{d}\\ 
+&0&0&0
+\end{tikzcd}
+$$ 
+with exact rows and columns. By the Snake Lemma (Lemma~\ref{sl2}) we get a ``bi-infinite'' exact sequence 
+$$
+\cdots\to H_{n+1}(C'')\to H_n(C')\to H_n(C)\to H_n(C'')\to H_{n-1}(C')\to\cdots
+$$ 
+called the \emph{homology long exact sequence.}
+
+%\subsection{Homotopy}Let $C$ and $D$ be two complexes and $f$ and $g$ be two morphisms from $C$ to $D$. A \emph{homotopy from $f$ to $g$} is a degree $1$ morphism $s:D\to C$ such that $g-f=d\circ s+s\circ d$. If such a homotopy $s$ exists we say that $f$ and $g$ are \emph{homotopic}. One easily checks that this is an equivalence relation, and that we have $H(f)=H(g)$ if $f$ and $g$ are homotopic.
+
+\subsection{The canonical free resolution}
+
+Let $M$ be an $A$-module. 
+
+Set $F_0(M):=A^{(M)}$, that is, $F_0(M)$ is the free $A$-module with basis $M$. 
+
+We have a natural epimorphism $F_0(M)\to M$. Let $Z$ be its kernel and set $F_1(M):=F_0(Z)$. 
+
+We have again a natural epimorphism $F_1(M)\to Z$. Let $Y$ be its kernel and set $F_2(M):=F_0(Y)$. 
+
+As before we get a natural epimorphism $F_2(M)\to Y$. 
+
+This gives a complex $F_2(M)\to F_1(M)\to F_0(M)\to M\to0$ which is exact at $F_1(M)$, $F_0(M)$ and $M$. 
+
+Iterating we get an infinite exact sequence  
+$$
+\cdots\to F_n(M)\to F_{n-1}(M)\to\cdots\to F_1(M)\to F_0(M)\to M\to0.
+$$ 
+We say that the complex $F(M)$, that is the complex 
+$$
+\cdots\to F_n(M)\to F_{n-1}(M)\to\cdots\to F_1(M)\to F_0(M),
+$$ 
+is \emph{the canonical free resolution of} $M$. 
+
+We clearly have $H_0(F(M))\simeq M$ and $H_n(F(M))=0$ for $n\ge1$.
+
+\subsection{The Tor functor}
+
+In the above notation, let $N$ be an $A$-module. Note that $F(M)\otimes_AN$ is in a natural way a complex of $A$-modules. We set 
+$$
+\Tor^A(M,N):=H(F(M)\otimes_AN).
+$$ 
+This graded $A$-module vanishes in negative degree. 
+
+If $N$ is flat, then $\Tor^A_n(M,N)=0$ for all $n\ge1$.
+
+It is easy to check the canonical isomorphism $\Tor^A_0(M,N)\simeq M\otimes_AN$.
+
+Let $0\to N'\to N\to N''\to0$ be an exact sequence of $A$-modules. It is easy to see that $0\to F(M)\otimes_AN'\to F(M)\otimes_AN\to F(M)\otimes_AN''\to0$ is an exact sequence of complexes of $A$-modules. By Section~\ref{hles} we get a long exact sequence 
+$$
+\begin{matrix}
+\cdots&\to&\Tor^A_2(M,N)&\to&\Tor^A_2(M,N'')&\to\\ \\ 
+\Tor^A_1(M,N')&\to&\Tor^A_1(M,N)&\to&\Tor^A_1(M,N'')&\to\\ \\ 
+M\otimes_AN'&\to&M\otimes_AN&\to&M\otimes_AN''&\to\\ \\ 
+0.
+\end{matrix}
+$$ 
+In particular 
+
+$M$ \emph{is flat if and only if $\ \Tor^A_1(M,N'')=0$ for all $N''$ --- in which case we have $\Tor^A_n(M,N'')=0$ for all $n\ge1$ and all $N''$.}
+
+Now Exercise 2.25 (see Exercise~\ref{e225b} above) follows from the above statement and the above long exact sequence.
 
 \section{Page 35, Exercise 2.26}\label{35}%
 
