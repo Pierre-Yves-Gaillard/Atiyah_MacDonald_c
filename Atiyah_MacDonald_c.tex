@@ -1869,7 +1869,7 @@ Follows from Proposition 3.11i p.~41 and Proposition 4.9 p.~54.
 
 \section{Page 56, Exercise 4.17}%https://math.stackexchange.com/q/2375591/660 - previous version https://docs.google.com/document/d/1jO2WMu4veaXNHTd_D2QJ89QwvbGW_KaqyJPpb02RU4I/edit
 
-Here is the statement of the exercise:%\centerline{$\star$}
+Here is the statement of the exercise:%\centerline{$\star$}£
 
 \emph{Let $A$ be a ring with the following property.}
 
@@ -1892,7 +1892,7 @@ $\bu\ \mathfrak p$ is a minimal element of the set of prime ideals containing $\
 
 $\bu\ \mathfrak q:=S_{\mathfrak p}(\bbb)$, 
 
-$\bu\ x\in A\setminus\ppp$ satisfy $\mathfrak q=(\bbb:x)$.%(such an $x$ exists by (L1)). 
+$\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$.%(such an $x$ exists by (L1)). 
 \end{df}%By Assumption (L1), for all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
 
 \begin{lem}\label{l417}
@@ -1983,6 +1983,27 @@ This proves Condition $\oo C(\gamma)$.
 In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ in such a way that $(\aaa_\gamma,\ppp_\gamma,\qqq_\gamma,x_\gamma)$ is admissible (Lemma~\ref{l417}a).
 
 Now the map \eqref{e417a} is defined. The map $\alpha\mapsto\aaa_\alpha$ is clearly increasing. As already indicated, this is a contradiction.
+
+\section{Page 57, Exercise 4.18}%
+
+(i)$\implies$(L1): Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a minimal primary decomposition. Let $\ppp$ be a prime ideal. We can assume that $\ppp_i\subset\ppp$ if and only if $i\le m$. Proposition 4.9 p.~54 of the book entails $S_\ppp(\aaa)=\qqq_1\cap\cdots\cap\qqq_m$. For $m+1\le i\le n$ there is an element $x_i$ which is in $\qqq_i$ but not in $\ppp$. Then $x:=x_{m+1}\cdots x_n$ is in $\qqq_{m+1}\cap\cdots\cap\qqq_n$ but not in $\ppp$, and we get 
+$$
+(\aaa:x)
+$$
+$$
+\begin{matrix}
+=&(\qqq_1:x)\cap\cdots\cap(\qqq_m:x)&\cap&(\qqq_{m+1}:x)\cap\cdots\cap(\qqq_n:x)\\ \\ 
+=&\qqq_1\cap\cdots\cap\qqq_m&\cap&(1)\cap\cdots\cap(1)
+\end{matrix}
+$$
+$$
+=\qqq_1\cap\cdots\cap\qqq_{m+1}=S_\ppp(\aaa),
+$$ 
+the second equality following from Lemma 4.4 p.~51 of the book.
+
+(i)$\implies$(L2): Clear.
+
+(ii)$\implies$(i): 
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
