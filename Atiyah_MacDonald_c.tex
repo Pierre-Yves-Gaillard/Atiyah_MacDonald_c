@@ -42,6 +42,7 @@
 %\newcommand{\nt}{\newtheorem}
 \newtheorem{thm}{Theorem}%[section]
 \newtheorem{cor}[thm]{Corollary}
+\newtheorem{df}[thm]{Definition}
 \newtheorem{exo}[thm]{Exercise}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{qn}[thm]{Question}
@@ -571,6 +572,28 @@ and $\psi'(u)=0$. Thus there is a $w$ in $M^{\oplus I}$ such that $\phi'(w)=u$, 
 
 If $A\to B$ is a morphism, then an ideal $\mf a$ of $A$ is contracted if and only if the natural map $A/\mf a\to B\otimes_A A/\mf a$ is injective. In particular, if a proper ideal $\mf a$ is contracted, we have $B\otimes_A A/\mf a\ne0$. Indeed, $B\otimes_A A/\mf a\simeq B/\mf a^{\oo e}$ and $\oo{Ker}(A/\mf a\to B\otimes_A A/\mf a)\simeq\mf a^{\oo{ec}}/\mf a$. %(Compare with Section~\ref{43b} p.~\pageref{43b}.)
 
+\section{Page 29, Proposition 2.19}%
+
+I don't understand the proof that (ii) implies (i). Here is another argument.
+
+We start by proving (ii)$\iff$(iii) as in the book. Then we prove (iii)$\implies$(i) as follows:
+
+Let $P\xr fQ\xr gR$ be exact, let $Q\xr{g'}g(Q)$ and $g(Q)\xr iR$ be the obvious maps, and let $T$ be the functor $N\otimes_A-$. We must show that 
+$$
+T(P)\xr{T(f)}T(Q)\xr{T(g)}T(R)
+$$ 
+is exact. The sequences 
+$$
+P\xr fQ\xr{g'}g(Q)\to0,\quad0\to g(Q)\xr{g'}R,
+$$ 
+$$
+T(P)\xr{T(f)}T(Q)\xr{T(g')}T(g(Q))\to0,\quad0\to T(g(Q))\xr{T(g')}R,
+$$ 
+being exact, we get 
+$$
+\Ker(T(g))=\Ker(T(i)\circ T(g'))=\oo{Im}(T(f)).
+$$
+
 \section{Page 32, Exercise 2.11}%
 
 We solve the last part of Exercise 2.11. We claim that if $f:A^m\to A^n$ is an $A$-linear injection, then $m\le n$. 
@@ -616,6 +639,8 @@ Here is a solution to Exercise 2.25 which does \emph{not} use the Tor functor. O
 The proof below follows closely the proof of Proposition 1.2.5.5 in Bourbaki's \textbf{Algèbre commutative}.
 
 In this section, the ground ring is denoted by $R$, not by $A$.
+
+\subsection{Part 1: The Snake Lemma}\label{ssl}
 
 Let 
 \begin{equation}\label{b10}
@@ -711,13 +736,35 @@ $$
 $$
 \end{proof} 
 
-\begin{lem}\label{b2iii}
-Assume that $u'$ is injective and that $v$ is surjective. Then there is a unique morphism $\delta:\oo{Ker}(\gamma)\to\oo{Coker}(\alpha)$ having the following property: if $c\in\oo{Ker}(\gamma),b\in B$ and $a'\in A'$ satisfy $v(b)=k(c)$ and $u'(a')= \beta(b)$, then we have $\delta(c)=p(a')$. Moreover the sequence 
+\begin{lem}[Snake Lemma]\label{lsl}
+Assume that $u'$ is injective and that $v$ is surjective. Then the correspondance (see Bourbaki's \textbf{Théorie des ensembles}, Section II.3) 
 $$
-\oo{Ker}(\alpha)\xr{u_1}\oo{Ker}(\beta)\xr{v_1}\oo{Ker}(\gamma)\xr \delta\oo{Coker}(\alpha)\xr{u_2}\oo{Coker}(\beta)\xr{v_2}\oo{Coker}(\gamma) 
+\delta:=p\circ u'^{-1}\circ\beta\circ v^{-1}\circ k
+$$ 
+is an $R$-linear map. On other words, there is a unique $R$-linear map $\delta:\oo{Ker}(\gamma)\to\oo{Coker}(\alpha)$ having the following property: if $c\in\oo{Ker}(\gamma),b\in B$ and $a'\in A'$ satisfy $v(b)=k(c)$ and $u'(a')= \beta(b)$, then we have $\delta(c)=p(a')$. Moreover the sequence 
+%$$\oo{Ker}(\alpha)\xr{u_1}\oo{Ker}(\beta)\xr{v_1}\oo{Ker}(\gamma)\xr \delta\oo{Coker}(\alpha)\xr{u_2}\oo{Coker}(\beta)\xr{v_2}\oo{Coker}(\gamma)$$ 
 $$
+\begin{tikzcd}
+\Ker(\alpha)\ar["u_1"]{r}&\Ker(\beta)\ar["v_1"]{r}&\Ker(\gamma)\ar["\delta"']{ddll}\\ \\ 
+\Coker(\alpha)\ar["u_2"']{r}&\Coker(\beta)\ar["v_2"']{r}&\Coker(\gamma).
+\end{tikzcd}
+$$ 
 is exact.
 \end{lem}
+
+The name ``Snake Lemma'' comes from the fact that the above exact sequence can be displayed as 
+$$%https://tex.stackexchange.com/a/82774/8816
+\begin{tikzcd}
+  \Ker(f) \ar["u_1"]{r} & \Ker(g) \ar["v_1"]{r}
+             \ar[draw=none]{d}[name=X, anchor=center]{}
+    & \Ker(h) \ar[rounded corners,
+            to path={ -- ([xshift=2ex]\tikztostart.east)
+                      |- (X.center) \tikztonodes
+                      -| ([xshift=-2ex]\tikztotarget.west)
+                      -- (\tikztotarget)}]{dll}[at end]{} \\      
+  \Coker(f) \ar["u_2"]{r} & \Coker(g) \ar["v_2"]{r} & \Coker(h).
+\end{tikzcd}
+$$
 
 \begin{proof} (a) Definition of $\delta$: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
 $$
@@ -753,6 +800,9 @@ $$
 (g) Exactness at $\oo{Coker}(\alpha)$: Suppose that an element $p(a')$ in $\oo{Coker}(\alpha)$ (with $a'\in A'$) satisfies $u_2(p(a'))=0$. It suffices to prove $p(a')=\delta(c)$ for some $c\in\oo{Ker}(\gamma)$. We have $q(u'(a'))=0$, and thus $u'(a')=\beta(b)$ for some $b\in B$; as $v'(u'(a')))=0$, we get $v'(\beta(b))=0$, thus $\gamma(v(b))=0$, that is $v(b)=k(c)$ for some $c\in\oo{Ker}(\gamma)$, and we get the sought-for equality $p(a')=\delta(c)$ by definition of $\delta$.%which shows that \eqref{eb2iii} is exact at $\oo{Coker}(\alpha)$.
 \end{proof}
 %\begin{lem}\label{bc1i}If $u',\alpha$ and $\gamma$ are injective, then $\beta$ is injective.\end{lem}\begin{proof}This follows from Lemma~\ref{b2i}: indeed we have $\oo{Ker}(\alpha)=0$ and $\oo{Ker}(\gamma)=0$, hence $\oo{Ker}(\beta)=0$.\end{proof}
+
+\subsection{Part 2}
+
 \begin{lem}\label{b254}
 If $M$ is a flat $R$-module, if 
 $$
@@ -779,12 +829,14 @@ $$
 &0&0
 \end{tikzcd}
 $$ 
-where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By Lemma~\ref{b2iii} there is an exact sequence  
+where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By the Snake Lemma (Lemma~\ref{lsl}) there is an exact sequence  
 $$
 \oo{Ker}(f)\to\oo{Ker}(g)\to M_1\otimes N\to M_2\otimes N
 $$ 
 As $M$ is flat, $g$ is injective. Thus $M_1\otimes N\to M_2\otimes N$ is also injective. 
 \end{proof}
+
+Clearly the following lemma implies Exercise~2.25 (see Exercise~\ref{e225} p.~\pageref{e225}).
 
 \begin{lem}
 Let $0\to M'\to M\to M''\to0$ be an exact sequence of $R$-modules with $M''$ flat. Then $M'$ if flat if and only if $M$ is flat.
@@ -806,11 +858,11 @@ Assume that $M$ is flat. Then $\beta$ is injective, and so is $\beta\circ f=g\ci
 Assume that $M'$ is flat. Then $\alpha$ is injective, and Lemma~\ref{b2i} implies that $\beta$ is injective, and thus that $M$ is flat.
 \end{proof}
 
-\section{Exercise 2.25 p.~34, second solution}
+\section{Page 34, Exercise 2.25, second solution}% doc snake0: https://docs.google.com/document/d/1gTyvvgy4XYRi04V_LI47nxX0mYQvRyn57lMmjo59hlM/edit
 
 In Section~\ref{s225a} p.~\pageref{s225a} above we gave a solution to Exercise 2.25 p.~34 of the book which doesn't use the Tor functor. The purpose of the present section is to give a solution which \emph{does} use the Tor functor, but does \emph{not} assume this functor to be known. We'll follow Bourbaki's \textbf{Algèbre homologique}.
 
-We fix a commutative ring $A$ with one. \emph{Module} shall mean $A$-\emph{module}. 
+We return to the natation $A$ for a commutative ring with one. \emph{Module} stands for $A$-\emph{module}. 
 
 We already stated Exercise 2.25 as Exercise~\ref{e225} p.~\pageref{e225} above, but for the reader's convenience we restate it:
 
@@ -818,8 +870,10 @@ We already stated Exercise 2.25 as Exercise~\ref{e225} p.~\pageref{e225} above, 
 Let $0\to N'\to N\to N''\to0$ be an exact sequence, with $N''$ flat. Then $N'$ is flat if and only if $N$ is flat.
 \end{exo}
 
-We refer the reader to Bourbaki's \textbf{Théorie des ensembles}, II.3 for the notion of \emph{correspondance} from a set to another set.
+%We refer the reader to Bourbaki's \textbf{Théorie des ensembles}, II.3 for the notion of \emph{correspondance} from a set to another set.
 
+%%%
+\begin{comment}
 \subsection{The Snake Lemma}%
 
 Let 
@@ -869,6 +923,8 @@ $$%https://tex.stackexchange.com/a/82774/8816
   \Coker(f) \ar["u_2"]{r} & \Coker(g) \ar["v_2"]{r} & \Coker(h).
 \end{tikzcd}
 $$
+\end{comment}
+%%%
 
 \subsection{Complexes}%
 
@@ -905,7 +961,7 @@ $$
 &0&0&0
 \end{tikzcd}
 $$ 
-with exact rows and columns. By the Snake Lemma (Lemma~\ref{sl2}) we get a ``bi-infinite'' exact sequence 
+with exact rows and columns. By the Snake Lemma (Lemma~\ref{lsl} p.~\pageref{lsl}) we get a ``bi-infinite'' exact sequence 
 $$
 \cdots\to H_{n+1}(C'')\to H_n(C')\to H_n(C)\to H_n(C'')\to H_{n-1}(C')\to\cdots
 $$ 
@@ -1347,17 +1403,17 @@ $$
 \frac{a/t}{r/s}=\psi\left(\frac{a/1}{rt/s}\right).
 $$
 
-\section{P. 44, Exercise 3.9}%
+\section{Page 44, Exercise 3.9}%
 
 See Section \ref{114} p.~\pageref{114}. --- Actually there are two proofs of the fact that the set of zero-divisors  is a union of prime ideals: one is Exercise 1.14 p.~12, the other is Exercise 3.7 p.~44.
 
 (ii) Assume that $a/s\in S_0^{-1}A$ is neither a unit nor a zero-divisor. We have $e\notin S_0$. Then there is a nonzero $b$ in $A$ with $ab=0$, and we get $\frac as\frac b1=0$, hence $\frac b1=0$, that is $bt=0$ for some $t\in S_0$. This implies $b=0$, a contradiction.
 
-\section{P. 44, Exercise 3.10i}%
+\section{Page 44, Exercise 3.10i}%
 
 $$a=a^2x\implies\frac{a^2}{s^2}\frac{sx}1=\frac{ax^2s}{s^2}=\frac as\ .$$ 
 
-\section{P. 44, Exercise 3.10ii}\label{310ii}%
+\section{Page 44, Exercise 3.10ii}\label{310ii}%
 
 Equivalent statements: 
 
@@ -1367,7 +1423,7 @@ $A$ \emph{is absolutely flat if and only if for all $\mu\in\mf m\subset A$ with 
 
 Here is a proof: If $A$ is absolutely flat, then so is $A_{\mf m}$ by Part (i) of the same Exercise, and $A_{\mf m}$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). Conversely, assume that $A_{\mf m}$ is a field for each maximal ideal $\mf m$ of $A$, and let $a$ be in $A$. We have $(a^2)_{\mf m}=(a)_{\mf m}$ for all maximal $\mf m$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
 
-\section{P. 44, Exercise 3.11}%
+\section{Page 44, Exercise 3.11}%
 
 The equivalence (ii)$\iff$(iii) is clear, as well as the implication (iv)$\implies$(iii).
 
@@ -1403,22 +1459,22 @@ Here is a related result:
 
 (c)$\implies$(a): Let $\mf p$ be a prime ideal of $A$ and let $a$ be in $A\setminus\mf p$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\mf p$, and thus $1-ab\in\mf p$. This implies that $A/\mf p$ is a field, and therefore that $\mf p$ is maximal. $\square$
 
-\section{P. 45, Exercise 3.14}%\label{321iv}
+\section{Page 45, Exercise 3.14}%\label{321iv}
 
 Let $\mf m$ be a maximal ideal of $A/\mf a$. It suffices to show $(M/\mf aM)_{\mf m}=0$. Letting $\mf m^{\oo c}$ be the contraction of $\mf m$ in $A$, we get 
 $$
 (M/\mf aM)_{\mf m}\simeq(M/\mf aM)_{\mf m^{\oo c}}\simeq M_{\mf m^{\oo c}}/(\mf aM)_{\mf m^{\oo c}}=0.
 $$ 
 
-\section{P. 45, Exercise 3.15}%\label{321iv}
+\section{Page 45, Exercise 3.15}%\label{321iv}
 
 See Lemma \ref{b254} p. \pageref{b254} above.
 
-\section{P. 46, Exercise 3.20}%\label{321iv}
+\section{Page 46, Exercise 3.20}%\label{321iv}
 
 Counterexample to the converse of (ii): $B:=k$ a field, $A:=k[\varepsilon]$ with $\varepsilon^2=0$, $f:k[\varepsilon]\to k$ the canonical projection. 
 
-\section{P. 47, Exercise 3.21iv}\label{321iv}%
+\section{Page 47, Exercise 3.21iv}\label{321iv}%
 
 We just give the commutative diagram
 $$
@@ -1436,7 +1492,7 @@ $$
 $$ 
 (See \eqref{f1} p.~\pageref{f1} for a minor variant of the above calculation.)
 
-\section{P. 47, Exercise 3.23}%\label{321iv}%
+\section{Page 47, Exercise 3.23}%\label{321iv}%
 
 It's simpler to proceed as follows:
 
@@ -1459,7 +1515,7 @@ $$
 \varinjlim_{\mf a\not\subset\mf p}S_{\mf a}^{-1}A.
 $$
 
-\section{P. 47, Exercise 3.24}%
+\section{Page 47, Exercise 3.24}%
 
 Denote the natural morphism $A\to A_{f_i}$ by $a\mapsto a_{|i}$, and the natural morphism $A_{f_i}\to A_{f_if_j}$ by $a_i\mapsto a_{i|j}$. 
 
@@ -1471,11 +1527,11 @@ defined by $\alpha(a):=(a_{|i})$ and $\beta((a_i)):=((a_{i|j}-a_{j|i}))$. This i
 
 Step 2: $I$ arbitrary. Let $(s_i)$ be a family such that $s_i\in A_{f_i}$ for all $i$ and $s_{i|j}=s_{j|i}$ for all $i,j$. There are $i_1,\dots,i_n$ such that $(f_{i_1},\dots,f_{i_n})=(1)$ and, by Step~1, there is an $s\in A$ such that $s_{|i_k}=s_{i_k}$ for $1\le k\le n$. Let $i_{n+1}$ be in $I$. There is again a $t\in A$ such that $t_{|i_k}=s_{i_k}$ for $1\le k\le n+1$. By uniqueness we get $t=s$. As $i_{n+1}$ was arbitrary, we have $s_{|i}=s_i$ for all $i$. This proves the existence of a solution to our problem. The uniqueness is clear.
 
-\section{P. 48, Exercise 3.25}%
+\section{Page 48, Exercise 3.25}%
 
 For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
 
-\section{P. 48, Exercise 3.26}%
+\section{Page 48, Exercise 3.26}%
 
 For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
 
@@ -1521,6 +1577,12 @@ Just before Proposition 4.1: In fact, the contraction of a $\ppp$-primary ideal 
 
 \section{Page 52}%
 
+\subsection{Corollary to Theorem 4.5}
+
+\begin{cor}\label{c45}
+In the notation of Theorem 4.5, if $(\aaa:x)$ is prime, then $(\aaa:x)$ $=\ppp_i$ for some $i$.
+\end{cor}
+
 \subsection{Proof of Theorem 4.5}
 
 The following statement, occurring in the proof of Theorem 4.5, is often used in the sequel of the book:
@@ -1546,7 +1608,9 @@ If $\mf a$ is decomposable, then the set of prime ideals containing $\mf a$ has 
 
 \section{Page 53, decomposable ideals}\label{di}%
 
-An ideal having only finitely many minimal primes is not necessarily decomposable.
+The purpose of this section is to prove the following statement:
+
+\emph{An ideal having only finitely many minimal primes is not necessarily decomposable.}
 
 The following is due to user26857 of Mathematics Stackexchange.\bigskip\bigskip
 
@@ -1610,9 +1674,11 @@ and that
 $$
 \qqq\in c(Y')\implies S^{-1}\qqq\in X',
 $$ 
-and we see that 
+and we see the following facts: 
 
-\emph{the contraction and extension maps are inverse inclusion preserving bijections compatible with radicals between $Y'$ and $c(Y')$.} 
+\emph{The contraction and extension maps are inverse inclusion preserving bijections compatible with radicals between $Y'$ and $c(Y')$.} 
+
+\emph{Moreover, a primary ideal of $A$ is contracted if and only if its radical is disjoint from $S$.}
 
 In particular, if $\ppp$ is a minimal prime ideal, then the kernel of the natural morphism $A\to A_\ppp$ is a minimal \emph{primary} ideal.
 
@@ -1628,7 +1694,7 @@ $$
 by Proposition 3.11v p.~42.
 \end{comment}
 
-\section{P. 54, Theorem 4.10}%\label{410}%
+\section{Page 54, Theorem 4.10}%\label{410}%
 
 Here is a corollary to Theorem 4.10:
 
@@ -1640,7 +1706,7 @@ Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced primary decomposition.
 (b) If $r(\aaa)=\ppp$ for some prime ideal $\ppp$, then $\ppp$ is an isolated prime ideal of $\aaa$, and the corresponding primary component is the least $\ppp$-primary ideal containing $\aaa$.
 \end{cor}
 
-\section{P. 55, Exercise 4.6}%
+\section{Page 55, Exercise 4.6}%
 
 Claim: any prime ideal is contained in a \emph{unique} maximal ideal.
 
@@ -1650,7 +1716,7 @@ The claim implies that there are infinitely many minimal prime ideals.
 
 %Using Urysohn's Lemma it is easy to see that any prime ideal is contained in a \emph{unique} maximal ideal. This implies that there are infinitely many minimal prime ideals.
 
-\section{P. 55, Exercise 4.7}\label{5547}%
+\section{Page 55, Exercise 4.7}\label{5547}%
 
 Part iii: Use Exercises 1.18 p.~10 and 1.2ii p.~11. Note that we have (by Exercise 1.2ii p.~11)
 \begin{equation}\label{rax}
@@ -1681,7 +1747,7 @@ Part v: We clearly have
 \end{equation}
 (obvious notation), and Part v follows from \eqref{asb}, Part iv and Proposition 4.6 p.~52 of the book.
 
-\section{P. 55, Exercise 4.8}%
+\section{Page 55, Exercise 4.8}%
 
 Use Section \ref{5547} and the following easy facts:
 
@@ -1691,7 +1757,7 @@ If $\aaa$ and $\bbb$ are ideals of $A$, then $(\aaa+\bbb)[x]=\aaa[x]+\bbb[x]$ (E
 
 For $a$ in $A$ we have $(aA)[x]=a(A[x])$. (In fact for any overring $B$ of $A$ we have $(aA)^{\oo e}=aB$.) %Let $a$ be in $A$, write $(a)_A$ for the ideal of $A$ generated by $a$, and $(a)_{A[x]}$ for the ideal of $A[x]$ generated by $a$. Then we have $(a)_A[x]=(a)_{A[x]}$.
 
-\section{P. 55, Exercise 4.9}%
+\section{Page 55, Exercise 4.9}%
 
 Let $a,b\in A$ and $\ppp\in\oo{Spec}(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
 
@@ -1735,7 +1801,7 @@ $$
 $$ 
 hence $\ppp\supset\ppp_i$ for some $i$, and thus $\ppp=\ppp_i$ for some $i$. $\square$
 
-\section{P. 55, Exercise 4.10}%
+\section{Page 55, Exercise 4.10}%
 
 Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect to $A\to A_\ppp$. Note also that we have $r((0)^{\oo c})=r(0)^{\oo c}$.
 
@@ -1745,11 +1811,11 @@ If $\ppp$ is minimal we have $r(0)=\ppp_\ppp$ and thus $r(0)^{\oo c}=\ppp$.
 
 If $\ppp$ is \emph{not} minimal, there is a prime ideal $\qqq$ such that $\qqq<\ppp$, and we get $r(0)\subset\qqq_\ppp<\ppp_\ppp$, hence $r(0)^{\oo c}\subset\qqq_\ppp<\ppp_\ppp$ and thus $r(0)^{\oo c}\ne\ppp$.
 
-\section{P. 56, Exercise 4.11}%
+\section{Page 56, Exercise 4.11}\label{411}%
 
 (a) If $\ppp$ is a minimal prime ideal of a ring $A$, show that $S_\ppp(0)$ (Exercise 10) is the smallest $\ppp$-primary ideal.
 
-This follows from Section~\ref{prycor} p.~\pageref{prycor}.
+This follows from Proposition 4.2 p.~51 of the book and Section~\ref{prycor} p.~\pageref{prycor}.
 
 (b) Let $\aaa$ be the intersection of the ideals $S_\ppp(0)$ as  $\ppp$ runs through the minimal prime ideals of $A$. Show that $\aaa$ is contained in the nilradical of $A$.
 
@@ -1770,15 +1836,153 @@ $$
 $$ 
 and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conversely if $\aaa=0$, then $m=n$ because the decomposition is reduced.
 
-\section{P. 56, Exercise 4.12}%
+\section{Page 56, Exercise 4.12}%
 
 Follows from statements 1.18, 3.11ii, 3.11v and 4.9 in the book.
 
-\section{P. 56, Exercise 4.13}%
+\section{Page 56, Exercise 4.13}%
 
 (ii) In view of Corollary~\ref{410} p.~\pageref{410} it suffices to check that $\ppp^{(n)}$ is the least $\ppp$-primary ideal containing $\ppp^n$.
 
 (iii) In view of Corollary~\ref{410} p.~\pageref{410} it suffices to check that $\ppp^{(m+n)}$ is the least $\ppp$-primary ideal containing $\ppp^{(m)}\ppp^{(n)}$.
+
+\section{Page 56, Exercise 4.14}%
+
+By Corollary~\ref{c45} p.~\pageref{c45} above (which is a corollary to the first uniqueness theorem, that is to Theorem 4.5 p.~52 of the book), it suffices to show that $\ppp$ is prime, which is not hard.
+
+\section{Page 56, Exercise 4.15}%
+
+We can assume that $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ is a minimal primary decomposition, and that, setting $\ppp_i:=r(\qqq_i)$ we have $\Sigma=\{\ppp_1,\dots\ppp_m\}$. The equality $\qqq_\Sigma=S_f(\aaa)$ follows from Proposition 4.9 p.~54 of the book. Proposition 3.11 p.~41 of the book implies $S_f(\aaa)=\bigcup_{k\ge0}(\aaa:f^k)$. We have \begin{equation}\label{afk}
+(\aaa:f^k)=(\qqq_1:f^k)\cap\cdots\cap(\qqq_n:f^k).
+\end{equation} 
+Using Lemma 4.4 p.~51 we see that  
+
+$\bu$ if $1\le i\le m$, then $(\qqq_i:f^k)=\qqq_i$,  
+
+$\bu$ if $m+1\le i\le n$ and $k$ is large enough, then $f^k\in\qqq_i$, and thus $(\qqq_i:f^k)$ $=(1)$.
+
+In view of \eqref{afk} this entails $(\aaa:f^k)=\qqq_\Sigma$ for $k$ large enough.
+
+\section{Page 56, Exercise 4.16}%
+
+Follows from Proposition 3.11i p.~41 and Proposition 4.9 p.~54.
+
+\section{Page 56, Exercise 4.17}%https://math.stackexchange.com/q/2375591/660 - previous version https://docs.google.com/document/d/1jO2WMu4veaXNHTd_D2QJ89QwvbGW_KaqyJPpb02RU4I/edit
+
+Here is the statement of the exercise:%\centerline{$\star$}
+
+\emph{Let $A$ be a ring with the following property.}
+
+(L1) \emph{For every ideal $\mathfrak a\ne(1)$ in $A$ and every prime ideal $\mathfrak p$, there exists $x\notin\mathfrak p$ such that $S_{\mathfrak p}(\mathfrak a)=(\mathfrak a:x)$, where} $S_{\mathfrak p}=A\setminus\mathfrak p$.
+
+\emph{Then every ideal in $A$ is an intersection of (possibly infinitely many) primary ideals.}
+
+Let $\aaa'$ be the intersection of all the primary ideals containing $\aaa$, and let's assume  
+\begin{equation}\label{abs417}
+\aaa<\aaa'.
+\end{equation} 
+It suffices to reach a contradiction.
+
+\begin{df} 
+An \emph{admissible quadruple} is a quadruple $(\bbb,\ppp,\qqq,x)$ such that 
+
+$\bu\ \bbb$ is an ideal $\ne(1)$ in $A$, 
+
+$\bu\ \mathfrak p$ is a minimal element of the set of prime ideals containing $\bbb$, 
+
+$\bu\ \mathfrak q:=S_{\mathfrak p}(\bbb)$, 
+
+$\bu\ x\in A\setminus\ppp$ satisfy $\mathfrak q=(\bbb:x)$.%(such an $x$ exists by (L1)). 
+\end{df}%By Assumption (L1), for all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
+
+\begin{lem}\label{l417}
+ \emph{(a)} For all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
+
+\emph{(b)} If $(\bbb,\ppp,\qqq,x)$ is an admissible quadruple, then 
+
+\emph{(b1)} $\mathfrak q$ is $\mathfrak p$-primary, 
+
+\emph{(b2)} $\bbb=\mathfrak q\cap(\bbb+(x))$.
+\end{lem}
+
+\begin{proof}
+Part (a) follows from Assumption (L1). Part (b1) follows from Exercise 4.11 p.~56 of the book (see Section~\ref{411} p.~\pageref{411} above). Let's prove (b2). Set $\bbb':=\mathfrak q\cap(\bbb+(x))$. The inclusion $\bbb\subset\bbb'$ is obvious. To prove the other inclusion, let $\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to show $ax\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. As $ax\in\qqq$, we have $ax^2\in\bbb$, hence 
+$$
+a\in(\bbb:x^2)\subset\bigcup_{s\notin\ppp}\ (\bbb:s)=S_{\ppp}(\bbb)=(\bbb:x)
+$$ 
+by Proposition 3.11 p.~41 of the book, and thus $ax\in\bbb$, as desired.%let $q=\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to prove $q\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. We get $\beta x+ax^2=qx\in\bbb$, hence $ax^2\in\bbb$, hence $a\in %S_{x}(\bbb)\subset S_{\ppp}(\bbb)=(\bbb:x)$, hence $ax\in\bbb$, and thus $q\in\bbb$.
+\end{proof}
+
+Note that we have 
+$$
+\bbb\subset\qqq\subset\ppp\not\ni x.
+$$
+Let $\kappa$ be a cardinal larger than the cardinality of $A$, and let $W$ be the set of all ordinals $\le\kappa$. We will define, by induction on $\alpha\in W$, a map 
+\begin{equation}\label{e417a}
+\alpha\mapsto(\aaa_\alpha,\ppp_\alpha,\qqq_\alpha,x_\alpha)
+\end{equation}
+from $W$ to the set of admissible quadruples, such that 
+
+(a) the map 
+\begin{equation}\label{e417b}
+\alpha\mapsto\aaa_\alpha\text{ is increasing,}
+\end{equation} 
+(b) each ordinal $\alpha\in W$ satisfies %\emph{Condition} $\oo C(\alpha)$ if we have 
+\begin{equation}\label{e417c}
+\aaa_0=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
+\end{equation}
+We call \eqref{e417c} Condition $\oo C(\alpha)$. 
+
+At each stage Lemma~\ref{l417}b1 will imply that $\qqq_\alpha$ is primary for all $\alpha\in W$. 
+
+The existence of \eqref{e417a} satisfying \eqref{e417b} will give the desired contradiction.
+
+Here is the key point:
+
+\emph{Assume that $(\aaa_\beta,\ppp_\beta,\qqq_\beta,x_\beta)$ has been constructed for $\beta\le\alpha$, and that $\aaa_\alpha$ has been defined and satisfies Condition $\oo C(\alpha)$. Then Assumption~\eqref{abs417} and Lemma~\ref{l417}b1 imply $\aaa_\alpha\ne(1)$. In particular there is, by Lemma~\ref{l417}a, an admissible quadruple} $(\aaa_\alpha,\ppp_\alpha,\qqq_\alpha,x_\alpha)$.
+
+We embark on the construction of \eqref{e417a}.
+
+$\bu$ The case of the zero ordinal. The ideal $\aaa_0$ is the ideal $\aaa$ given in the statement of the exercise, and we choose $\ppp_0,\qqq_0,x_0$ in such a way that $(\aaa_0,\ppp_0,\qqq_0,x_0)$ is admissible. Condition~$\oo C(0)$ holds trivially.
+
+$\bu$ From $\alpha=$ to $\alpha+1$. Let $\alpha\in W$ be such that $\alpha+1\in W$, and assume that $(\aaa_\beta,\ppp_\beta,\qqq_\beta,x_\beta)$ has already been constructed for $\beta\le\alpha$ and that Condition $\oo C(\alpha)$ holds.%and that $\aaa_\alpha\ne(1)$.
+
+We claim: 
+$$
+(\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta=\aaa_0.
+$$ 
+Proof of the claim: It suffices to prove the inclusion $\subset$. In view of Condition $\oo C(\alpha)$, it even suffices to prove 
+$$
+(\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta\subset\aaa_\alpha.
+$$ 
+But we have 
+$$
+(\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta\subset(\aaa_\alpha+(x_\alpha))\cap\qqq_\alpha=\aaa_\alpha.
+$$ 
+by Lemma~\ref{l417}b2. $\square$%Let $q=a_\alpha+bx_\alpha\in\qqq_\alpha$ with $a_\alpha\in\aaa_\alpha,b\in A$. It suffices to prove $q\in\aaa_\alpha$. Recall that $\qqq_\alpha=S_{\ppp_\alpha}(\aaa_\alpha)=(\aaa_\alpha:x_\alpha)$. We get $a_\alpha x_\alpha+bx_\alpha^2=qx_\alpha\in\aaa_\alpha$, hence $bx_\alpha^2\in\aaa_\alpha$, hence $b\in %S_{x_\alpha}(\aaa_\alpha)\subset 
+%S_{\ppp_\alpha}(\aaa_\alpha)=(\aaa_\alpha:x_\alpha)$, hence $bx_\alpha\in\aaa_\alpha$, and thus $q\in\aaa_\alpha$. $\square$
+
+By the claim, there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$. In particular $\aaa_{\alpha+1}\ne(1)$ by Assumption~\eqref{abs417} and Lemma~\ref{l417}b1. We define $\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}$ in such a way that $(\aaa_{\alpha+1},\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1})$ is admissible (Lemma~\ref{l417}a). %If $\aaa_{\alpha+1}=(1)$ we set $\ppp_{\alpha+1}=\ppp_0$, $\qqq_{\alpha+1}=\qqq_0$, $x_{\alpha+1}=x_0$.
+
+$\bu$ The case of a limit ordinal. Assume now that $\gamma\in W$ is a limit ordinal, and set 
+$$
+\aaa_\gamma=\sum_{\alpha<\gamma}\aaa_\alpha=\bigcup_{\alpha<\gamma}\aaa_\alpha.
+$$ 
+We claim that Condition $\oo C(\gamma)$ holds.
+
+Proof of the claim: We must show 
+$$
+\left(\bigcup_{\alpha<\gamma}\aaa_\alpha\right)\cap\left(\bigcap_{\beta<\gamma}\qqq_\beta\right)=\aaa_0.
+$$ 
+Inclusion $\supset$ being clear, it suffices to prove $\subset$. Let $x$ be in the left side. There is an $\alpha<\gamma$ such that %$x$ is in 
+$$
+x\in\aaa_\alpha\cap\bigcap_{\beta<\gamma}\qqq_\beta\subset\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta=\aaa_0.
+$$ 
+This proves Condition $\oo C(\gamma)$. 
+
+In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ in such a way that $(\aaa_\gamma,\ppp_\gamma,\qqq_\gamma,x_\gamma)$ is admissible (Lemma~\ref{l417}a).
+
+Now the map \eqref{e417a} is defined. The map $\alpha\mapsto\aaa_\alpha$ is clearly increasing. As already indicated, this is a contradiction.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
@@ -2054,7 +2258,7 @@ and observe that $\deg(f_{n+1}-g)$ is less than $\deg f_{n+1}$, which is impossi
 The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y)=(0)$. Indeed, if $a$ is in $(x^n)\cap(\,y)$ we have $a=bx^n=cy$ for some $b$ and $c$ in $A$, and thus $bx^{n+1}=cyx=0$. Now $bx^{n+1}=0$ implies $bx^n=0$, that is $a=0$. 
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
-%\section{P. 89, Proposition 8.1}%\label{dt}%
+%\section{Page 89, Proposition 8.1}%\label{dt}%
 
 Here is a related result:
 
@@ -2253,7 +2457,7 @@ Now \eqref{dd} follows from (1) p. 117.
 
 The claim ``$A$ is an Artin ring'' is justified by \eqref{86} p.~\pageref{86}.
 
-\section{P. 121, the Dimension Theorem}\label{dt}%
+\section{Page 121, the Dimension Theorem}\label{dt}%
 
 Here is an application of the Dimension Theorem: 
 
@@ -2321,7 +2525,7 @@ I think ``by (11.20)'' should be ``by (11.21)''.
 
 For the last sentence of the proof, see the Examples on p.~121.
 
-\section{P. 126}%% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
+\section{Page 126}%% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
 We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\mf p$ by $h(\mf p)$. If $\mf p$ and $\mf q$ are prime ideals of a ring $B$, we write $\mf p<\mf q$ instead of 
 $$
