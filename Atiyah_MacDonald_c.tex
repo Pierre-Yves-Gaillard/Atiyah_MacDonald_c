@@ -1869,13 +1869,15 @@ Follows from Proposition 3.11i p.~41 and Proposition 4.9 p.~54.
 
 \section{Page 56, Exercise 4.17}%https://math.stackexchange.com/q/2375591/660 - previous version https://docs.google.com/document/d/1jO2WMu4veaXNHTd_D2QJ89QwvbGW_KaqyJPpb02RU4I/edit
 
-Here is the statement of the exercise:%\centerline{$\star$}£
+\subsection{Statement}\label{417}%Here is the statement of the exercise:
 
-\emph{Let $A$ be a ring with the following property.}
+Let $A$ be a ring with the following property.
 
-(L1) \emph{For every ideal $\mathfrak a\ne(1)$ in $A$ and every prime ideal $\mathfrak p$, there exists $x\notin\mathfrak p$ such that $S_{\mathfrak p}(\mathfrak a)=(\mathfrak a:x)$, where} $S_{\mathfrak p}=A\setminus\mathfrak p$.
+(L1) For every ideal $\mathfrak a\ne(1)$ in $A$ and every prime ideal $\mathfrak p$, there exists $x\notin\mathfrak p$ such that $S_{\mathfrak p}(\mathfrak a)=(\mathfrak a:x)$, where $S_{\mathfrak p}=A\setminus\mathfrak p$.
 
-\emph{Then every ideal in $A$ is an intersection of (possibly infinitely many) primary ideals.}
+Then every ideal in $A$ is an intersection of (possibly infinitely many) primary ideals.
+
+\subsection{First solution}%
 
 Let $\aaa'$ be the intersection of all the primary ideals containing $\aaa$, and let's assume  
 \begin{equation}\label{abs417}
@@ -1892,8 +1894,8 @@ $\bu\ \mathfrak p$ is a minimal element of the set of prime ideals containing $\
 
 $\bu\ \mathfrak q:=S_{\mathfrak p}(\bbb)$, 
 
-$\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$.%(such an $x$ exists by (L1)). 
-\end{df}%By Assumption (L1), for all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
+$\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$. 
+\end{df}
 
 \begin{lem}\label{l417}
  \emph{(a)} For all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
@@ -1910,7 +1912,7 @@ Part (a) follows from Assumption (L1). Part (b1) follows from Exercise 4.11 p.~5
 $$
 a\in(\bbb:x^2)\subset\bigcup_{s\notin\ppp}\ (\bbb:s)=S_{\ppp}(\bbb)=(\bbb:x)
 $$ 
-by Proposition 3.11 p.~41 of the book, and thus $ax\in\bbb$, as desired.%let $q=\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to prove $q\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. We get $\beta x+ax^2=qx\in\bbb$, hence $ax^2\in\bbb$, hence $a\in %S_{x}(\bbb)\subset S_{\ppp}(\bbb)=(\bbb:x)$, hence $ax\in\bbb$, and thus $q\in\bbb$.
+by Proposition 3.11 p.~41 of the book, and thus $ax\in\bbb$, as desired. 
 \end{proof}
 
 Note that we have 
@@ -1923,17 +1925,19 @@ Let $\kappa$ be a cardinal larger than the cardinality of $A$, and let $W$ be th
 \end{equation}
 from $W$ to the set of admissible quadruples, such that 
 
-(a) the map 
+(a) $\aaa_0=\aaa$, 
+
+(b) the map 
 \begin{equation}\label{e417b}
 \alpha\mapsto\aaa_\alpha\text{ is increasing,}
 \end{equation} 
-(b) each ordinal $\alpha\in W$ satisfies %\emph{Condition} $\oo C(\alpha)$ if we have 
+(c) each ordinal $\alpha\in W$ satisfies 
 \begin{equation}\label{e417c}
-\aaa_0=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
+\aaa=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
 \end{equation}
 We call \eqref{e417c} Condition $\oo C(\alpha)$. 
 
-At each stage Lemma~\ref{l417}b1 will imply that $\qqq_\alpha$ is primary for all $\alpha\in W$. 
+Lemma~\ref{l417}b1 will imply that $\qqq_\alpha$ is primary for all $\alpha\in W$. 
 
 The existence of \eqref{e417a} satisfying \eqref{e417b} will give the desired contradiction.
 
@@ -1945,11 +1949,11 @@ We embark on the construction of \eqref{e417a}.
 
 $\bu$ The case of the zero ordinal. The ideal $\aaa_0$ is the ideal $\aaa$ given in the statement of the exercise, and we choose $\ppp_0,\qqq_0,x_0$ in such a way that $(\aaa_0,\ppp_0,\qqq_0,x_0)$ is admissible. Condition~$\oo C(0)$ holds trivially.
 
-$\bu$ From $\alpha=$ to $\alpha+1$. Let $\alpha\in W$ be such that $\alpha+1\in W$, and assume that $(\aaa_\beta,\ppp_\beta,\qqq_\beta,x_\beta)$ has already been constructed for $\beta\le\alpha$ and that Condition $\oo C(\alpha)$ holds.%and that $\aaa_\alpha\ne(1)$.
+$\bu$ From $\alpha=$ to $\alpha+1$. Let $\alpha\in W$ be such that $\alpha+1\in W$, and assume that $(\aaa_\beta,\ppp_\beta,\qqq_\beta,x_\beta)$ has already been constructed for $\beta\le\alpha$ and that Condition $\oo C(\alpha)$ holds. 
 
 We claim: 
 $$
-(\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta=\aaa_0.
+(\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta=\aaa.
 $$ 
 Proof of the claim: It suffices to prove the inclusion $\subset$. In view of Condition $\oo C(\alpha)$, it even suffices to prove 
 $$
@@ -1959,24 +1963,23 @@ But we have
 $$
 (\aaa_\alpha+(x_\alpha))\cap\bigcap_{\beta\le\alpha}\qqq_\beta\subset(\aaa_\alpha+(x_\alpha))\cap\qqq_\alpha=\aaa_\alpha.
 $$ 
-by Lemma~\ref{l417}b2. $\square$%Let $q=a_\alpha+bx_\alpha\in\qqq_\alpha$ with $a_\alpha\in\aaa_\alpha,b\in A$. It suffices to prove $q\in\aaa_\alpha$. Recall that $\qqq_\alpha=S_{\ppp_\alpha}(\aaa_\alpha)=(\aaa_\alpha:x_\alpha)$. We get $a_\alpha x_\alpha+bx_\alpha^2=qx_\alpha\in\aaa_\alpha$, hence $bx_\alpha^2\in\aaa_\alpha$, hence $b\in %S_{x_\alpha}(\aaa_\alpha)\subset 
-%S_{\ppp_\alpha}(\aaa_\alpha)=(\aaa_\alpha:x_\alpha)$, hence $bx_\alpha\in\aaa_\alpha$, and thus $q\in\aaa_\alpha$. $\square$
+by Lemma~\ref{l417}b2. $\square$
 
-By the claim, there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$. In particular $\aaa_{\alpha+1}\ne(1)$ by Assumption~\eqref{abs417} and Lemma~\ref{l417}b1. We define $\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}$ in such a way that $(\aaa_{\alpha+1},\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1})$ is admissible (Lemma~\ref{l417}a). %If $\aaa_{\alpha+1}=(1)$ we set $\ppp_{\alpha+1}=\ppp_0$, $\qqq_{\alpha+1}=\qqq_0$, $x_{\alpha+1}=x_0$.
+By the claim, there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$. In particular $\aaa_{\alpha+1}\ne(1)$ by Assumption~\eqref{abs417} and Lemma~\ref{l417}b1. We define $\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}$ in such a way that $(\aaa_{\alpha+1},\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1})$ is admissible (Lemma~\ref{l417}a). 
 
 $\bu$ The case of a limit ordinal. Assume now that $\gamma\in W$ is a limit ordinal, and set 
 $$
-\aaa_\gamma=\sum_{\alpha<\gamma}\aaa_\alpha=\bigcup_{\alpha<\gamma}\aaa_\alpha.
+\aaa_\gamma:=\sum_{\alpha<\gamma}\aaa_\alpha=\bigcup_{\alpha<\gamma}\aaa_\alpha.
 $$ 
 We claim that Condition $\oo C(\gamma)$ holds.
 
 Proof of the claim: We must show 
 $$
-\left(\bigcup_{\alpha<\gamma}\aaa_\alpha\right)\cap\left(\bigcap_{\beta<\gamma}\qqq_\beta\right)=\aaa_0.
+\left(\bigcup_{\alpha<\gamma}\aaa_\alpha\right)\cap\left(\bigcap_{\beta<\gamma}\qqq_\beta\right)=\aaa.
 $$ 
-Inclusion $\supset$ being clear, it suffices to prove $\subset$. Let $x$ be in the left side. There is an $\alpha<\gamma$ such that %$x$ is in 
+Inclusion $\supset$ being clear, it suffices to prove $\subset$. Let $x$ be in the left side. There is an $\alpha<\gamma$ such that 
 $$
-x\in\aaa_\alpha\cap\bigcap_{\beta<\gamma}\qqq_\beta\subset\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta=\aaa_0.
+x\in\aaa_\alpha\cap\bigcap_{\beta<\gamma}\qqq_\beta\subset\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta=\aaa.
 $$ 
 This proves Condition $\oo C(\gamma)$. 
 
@@ -1984,7 +1987,76 @@ In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ 
 
 Now the map \eqref{e417a} is defined. The map $\alpha\mapsto\aaa_\alpha$ is clearly increasing. As already indicated, this is a contradiction.
 
+This completes the solution to Exercise 4.17. The following variant will be used to solve Exercise 4.18.
+
+\subsection{Second solution}\label{for418}%\subsection{Part 2}% previous version https://docs.google.com/document/d/1DnCzzLfgWzv6XqiA-2PiOudOTof99MIeD9ejViIJwUY/edit
+
+Here is a variant of the above proof.
+
+We stop assuming \eqref{abs417}. 
+
+Let $Q$ be the set of admissible quadruples. We define a map $f:W\to Q\cup\{\varnothing\}$ (note that the union is disjoint) as follows:
+
+$\bu$ We assume $\aaa\ne(1)$ and define $(\aaa_0,\ppp_0,\qqq_0,x_0)$ as before, and we set $f(0):=(\aaa_0,\ppp_0,\qqq_0,x_0)$. 
+
+$\bu$ In the passage from $\alpha$ to $\alpha+1$, we define $f(\alpha+1)$ as follows (assuming that $f(\alpha)$ has already been defined):
+
+If $f(\alpha)=\varnothing$ we set $f(\alpha+1):=\varnothing$. 
+
+Otherwise there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$. 
+
+If $\aaa_{\alpha+1}\ne(1)$ we define $\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}$ in such a way that 
+$$
+(\aaa_{\alpha+1},\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1})
+$$ 
+is admissible, as before, and we set 
+$$
+f(\alpha+1):=(\aaa_{\alpha+1},\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}).
+$$ 
+
+If $\aaa_{\alpha+1}=(1)$ we set $f(\alpha+1):=\varnothing$.'' 
+
+$\bu$ In the case of a limit ordinal $\gamma$, we define $f(\gamma)$ as follows (assuming that $f(\alpha)$ has already been defined for $\alpha<\gamma$):
+
+If $f(\alpha)=\varnothing$ for some $\alpha<\gamma$ we set $f(\gamma)=\varnothing$.
+
+Otherwise we define $\aaa_\gamma$ as before.
+
+If $\aaa_\gamma\ne(1)$ we define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ in such a way that $(\aaa_\gamma,\ppp_\gamma,\qqq_\gamma,x_\gamma)$ is admissible, as before, and we set 
+$$
+f(\gamma):=(\aaa_{\gamma},\ppp_{\gamma},\qqq_{\gamma},x_{\gamma}).
+$$ 
+
+If $\aaa_\gamma=(1)$ we set $f(\gamma)=\varnothing$.
+
+This ends the definition of $f$.
+
+Then there is a least $\alpha\in W$ such that $f(\alpha)=\varnothing$, and we get 
+\begin{equation}\label{abak}
+\aaa=\bigcap_{\beta<\alpha}\qqq_\beta.
+\end{equation} 
+
 \section{Page 57, Exercise 4.18}%
+
+\subsection{Statement}
+
+Consider the following condition on a ring $A$:
+
+(L2) Given an ideal $\mathfrak a$ and a descending chain 
+$$
+S_1\supset S_2\supset\cdots\supset S_n\supset\cdots
+$$ 
+of multiplicatively closed subsets of $A$, there exists an integer $n$ such that $S_n(\mathfrak a)=S_{n+1}(\mathfrak a)=\cdots$. %[Here $X\supset Y$ means that $Y$ is a (not necessarily proper) subset of $X$.]
+
+Prove that the following are equivalent:
+
+(i) Every ideal in $A$ has a primary decomposition;
+
+(ii) A satisfies (L1) and (L2).
+
+[See Section~\ref{417} p.~\pageref{417} for the definition of (L1).]
+
+\subsection{Solution}
 
 (i)$\implies$(L1): Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a minimal primary decomposition. Let $\ppp$ be a prime ideal. We can assume that $\ppp_i\subset\ppp$ if and only if $i\le m$. Proposition 4.9 p.~54 of the book entails $S_\ppp(\aaa)=\qqq_1\cap\cdots\cap\qqq_m$. For $m+1\le i\le n$ there is an element $x_i$ which is in $\qqq_i$ but not in $\ppp$. Then $x:=x_{m+1}\cdots x_n$ is in $\qqq_{m+1}\cap\cdots\cap\qqq_n$ but not in $\ppp$, and we get 
 $$
@@ -2001,9 +2073,41 @@ $$
 $$ 
 the second equality following from Lemma 4.4 p.~51 of the book.
 
-(i)$\implies$(L2): Clear.
+(i)$\implies$(L2): Follows from Proposition 4.9 p.~54 of the book.
 
-(ii)$\implies$(i): 
+(ii)$\implies$(i): %Assume by contradiction that $\aaa$ admits no primary decomposition and c
+Consider the map 
+$$%\begin{equation}\label{e417a}
+\alpha\mapsto(\aaa_\alpha,\ppp_\alpha,\qqq_\alpha,x_\alpha)
+$$%\end{equation}
+from $W$ to the set of admissible quadruples defined in Section~\ref{for418} above.
+
+Recall that \eqref{e417c} is called Condition $\oo C(\alpha)$, and that $\qqq_\alpha$ is primary for all $\alpha<\kappa$. For the reader's convenience let's rewrite $\oo C(\alpha)$:
+$$
+\aaa=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
+$$
+Setting $S_n:=S_{\ppp_0}\cap\cdots\cap S_{\ppp_n}$ for $n\in\mathbb N$, we get, in view of $\oo C(n+1)$ and Exercise 4.12i p.~56 of the book
+$$
+S_n(\aaa)=S_n(\aaa_{n+1})\cap S_n(\qqq_0\cap\cdots\cap\qqq_n).
+$$ 
+We claim $S_n(\aaa_{n+1})=(1)$. 
+
+To prove this it suffices to show $S_n\cap\aaa_{n+1}\ne\varnothing$. Assume by contradiction $S_n\cap\aaa_{n+1}=\varnothing$, that is $\aaa_{n+1}\subset\ppp_0\cup\cdots\cup\ppp_n$. Then Proposition 1.11i p.~8 of the book implies $\aaa_{n+1}\subset\ppp_i$ for some $0\le i\le n$. This yields $x_i\in\aaa_{i+1}\subset\aaa_{n+1}\subset\ppp_i$, a contradiction. This proves the equality $S_n(\aaa_{n+1})=(1)$.
+
+Now Proposition 4.9 p.~54 of the book implies 
+$$
+S_n(\qqq_0\cap\cdots\cap\qqq_n)=\bigcap_{S_n\cap\ppp_i=\varnothing}\qqq_i=\qqq_0\cap\cdots\cap\qqq_n,
+$$ 
+and we get 
+$$%\begin{equation}\label{snaq}
+S_n(\aaa)=\qqq_0\cap\cdots\cap\qqq_n.
+$$%\end{equation}
+
+For all $\alpha\le\kappa$ set 
+$$
+\bbb_\alpha:=\bigcap_{\beta<\alpha}\qqq_\beta.
+$$
+Then (L2) implies that there is some $n\in\mathbb N$ such that $\bbb_\alpha=\bbb_n$ for $n\le\alpha\le\kappa$. (???!!!) (We assume, with no loss of generality, that $\kappa$ is infinite.) Now \eqref{abak} implies $\aaa=\bbb_\kappa=\bbb_n$, showing that $\aaa$ admits a primary decomposition.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
