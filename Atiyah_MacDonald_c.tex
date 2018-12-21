@@ -45,6 +45,7 @@
 \newtheorem{df}[thm]{Definition}
 \newtheorem{exo}[thm]{Exercise}
 \newtheorem{lem}[thm]{Lemma}
+\newtheorem{note}[thm]{Note}
 \newtheorem{qn}[thm]{Question}
 \newtheorem{rk}[thm]{Remark}
 %\addtolength{\parskip}{.2\baselineskip}
@@ -102,9 +103,9 @@ $\bu$ Wiki \href{http://am-solutions.wikispaces.com}{http://am-solutions.wikispa
 
 \section{Page 6}%
 
-\begin{rk}\label{ef}
+\begin{note}\label{ef}
 The intersection and the product of the empty family of ideals is the unit ideal.
-\end{rk}
+\end{note}
 
 It is written
 
@@ -1591,7 +1592,7 @@ The following statement, occurring in the proof of Theorem 4.5, is often used in
 \begin{equation}\label{45}
 r(\mf a:x)=\bigcap_{x\notin\mf q_j}\mf p_j.
 \end{equation}
-(See Remark~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\mf p_j$-primary for $j\in J(x)$, and we have 
+(See Note~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\mf p_j$-primary for $j\in J(x)$, and we have 
 $$
 (\mf a:x)=\bigcap_{j\in J(x)}(\mf q_j:x).
 $$ 
@@ -1602,9 +1603,9 @@ $$
 
 \subsection{Corollary to Proposition 4.6}
 
-\begin{rk}\label{fmme}
+\begin{note}\label{fmme}
 If $\mf a$ is decomposable, then the set of prime ideals containing $\mf a$ has only finitely many minimal elements.
-\end{rk}
+\end{note}
 
 \section{Page 53, decomposable ideals}\label{di}%
 
@@ -1642,7 +1643,7 @@ Let's list some important properties of this ring:
 
 Taken from\\ https://math.stackexchange.com/a/1679116/660:\bigskip
 
-\begin{rk}%\label{nice}
+\begin{note}%\label{nice}
 If $A$ is the idealization of the $\mathbb Z$-module $\mathbb Q$, then the primary ideals of $A$ are  
 
 $\bullet\quad p^n\mathbb Z\times\mathbb Q$ with $p$ prime, $n\ge1$, 
@@ -1651,8 +1652,8 @@ $\bullet\quad\{0\}\times\mathbb Q$,
 
 $\bullet\quad\{0\}\times\{0\}$. 
 
-Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb Z$, and $\{0\}\times\mathbb Z$ has no primary decomposition (see Remark~\ref{fmme}).
-\end{rk}\bigskip
+Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb Z$, and $\{0\}\times\mathbb Z$ has no primary decomposition (see Note~\ref{fmme}).
+\end{note}\bigskip
 %Then $\mf a:=\{0\}\times\mathbb Z$ has only one minimal prime $\{0\}\times\mathbb Q$ and $\mf a$ has no primary decomposition.\bigskip%https://math.stackexchange.com/a/1679116/660
 
 \hrule\bigskip
@@ -1935,7 +1936,9 @@ from $W$ to the set of admissible quadruples, such that
 \begin{equation}\label{e417c}
 \aaa=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
 \end{equation}
+\begin{df}\label{calpha}
 We call \eqref{e417c} Condition $\oo C(\alpha)$. 
+\end{df}
 
 Lemma~\ref{l417}b1 will imply that $\qqq_\alpha$ is primary for all $\alpha\in W$. 
 
@@ -1991,11 +1994,15 @@ This completes the solution to Exercise 4.17. The following variant will be used
 
 \subsection{Second solution}\label{for418}%\subsection{Part 2}% previous version https://docs.google.com/document/d/1DnCzzLfgWzv6XqiA-2PiOudOTof99MIeD9ejViIJwUY/edit
 
-Here is a variant of the above proof.
+The following variant of the above proof will be used to solve Exercise 4.18. %Here is a variant of the above proof.
 
 We stop assuming \eqref{abs417}. 
 
-Let $Q$ be the set of admissible quadruples. We define a map $f:W\to Q\cup\{\varnothing\}$ (note that the union is disjoint) as follows:
+Let $Q$ be the set of admissible quadruples. We define a map 
+$$
+f:W\to Q\cup\{\varnothing\}
+$$ 
+(note that the union is disjoint) as follows:
 
 $\bu$ We assume $\aaa\ne(1)$ and define $(\aaa_0,\ppp_0,\qqq_0,x_0)$ as before, and we set $f(0):=(\aaa_0,\ppp_0,\qqq_0,x_0)$. 
 
@@ -2003,7 +2010,7 @@ $\bu$ In the passage from $\alpha$ to $\alpha+1$, we define $f(\alpha+1)$ as fol
 
 If $f(\alpha)=\varnothing$ we set $f(\alpha+1):=\varnothing$. 
 
-Otherwise there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$. 
+Otherwise there is an ideal $\aaa_{\alpha+1}$ containing $\aaa_\alpha+(x_\alpha)$ which is maximal subject to the constraint $\oo C(\alpha+1)$ (see Definition~\ref{calpha} p.~\pageref{calpha}). 
 
 If $\aaa_{\alpha+1}\ne(1)$ we define $\ppp_{\alpha+1},\qqq_{\alpha+1},x_{\alpha+1}$ in such a way that 
 $$
@@ -2035,6 +2042,28 @@ Then there is a least $\zeta\in W$ such that $f(\zeta)=\varnothing$, and we get
 \begin{equation}\label{abak}
 \aaa=\bigcap_{\alpha<\zeta}\qqq_\alpha.
 \end{equation} 
+\begin{note}\label{amaa}
+The map $\alpha\mapsto\aaa_\alpha$ from the set $\{\alpha\in W\ |\ \alpha<\zeta\}$ to the set of ideals of $A$ is increasing.
+\end{note} 
+The following lemma will be used to solve Exercise 4.18. 
+\begin{lem}\label{lasker}
+The map $n\mapsto\qqq_0\cap\cdots\cap\qqq_n$ from the set $\{n\in\mathbb N\ |\ n<\zeta\}$ to the set of ideals of $A$ is decreasing.
+\end{lem}
+\begin{proof}
+Suppose by contradiction that we have 
+$$
+\qqq_0\cap\cdots\cap\qqq_{n-1}=\qqq_0\cap\cdots\cap\qqq_{n-1}\cap\qqq_n
+$$ 
+for some $n<\zeta$. Recall that $\aaa_n$ is maximal for 
+\begin{equation}\label{an}
+\aaa_n\supset\aaa_{n-1}+(x_{n-1})\text{ and }\aaa=\aaa_n\cap\qqq_0\cap\cdots\cap\qqq_{n-1}.
+\end{equation} 
+Similarly $\aaa_{n+1}$ is maximal for 
+$$%\begin{equation}\label{anp}
+\aaa_{n+1}\supset\aaa_n+(x_n)\text{ and }\aaa=\aaa_{n+1}\cap\qqq_0\cap\cdots\cap\qqq_{n-1}.
+$$%\end{equation} 
+As $\aaa_{n+1}$ satisfies \eqref{an} and contains $\aaa_n$, these two ideals coincide, in contradiction with Note~\ref{amaa}. 
+\end{proof}
 
 \section{Page 57, Exercise 4.18}%
 
@@ -2075,17 +2104,23 @@ the second equality following from Lemma 4.4 p.~51 of the book.
 
 (i)$\implies$(L2): Follows from Proposition 4.9 p.~54 of the book.
 
-(ii)$\implies$(i): %Assume by contradiction that $\aaa$ admits no primary decomposition and c
+(ii)$\implies$(i): %I haven't been able to prove that. Here is what I've done so far:
 Consider the map 
-$$%\begin{equation}\label{e417a}
+$$
 \alpha\mapsto(\aaa_\alpha,\ppp_\alpha,\qqq_\alpha,x_\alpha)
-$$%\end{equation}
-from $W$ to the set of admissible quadruples defined in Section~\ref{for418} above.
+$$
+from $W$ to the set of admissible quadruples defined in Section~\ref{for418} above, and let $\zeta$ be defined as in \eqref{abak}. 
 
-Recall that \eqref{e417c} is called Condition $\oo C(\alpha)$, and that $\qqq_\alpha$ is primary for all $\alpha<\kappa$. For the reader's convenience let's rewrite $\oo C(\alpha)$:
+It suffices to show that $\zeta$ in finite. 
+
+Assume by contradiction that $\zeta$ is infinite.
+
+Recall that \eqref{e417c} is called Condition $\oo C(\alpha)$, and that $\qqq_\alpha$ is primary for all $\alpha<\zeta$. For the reader's convenience let's rewrite $\oo C(\alpha)$:
 $$
 \aaa=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
-$$
+$$ 
+This holds for all $\alpha<\zeta$.
+
 Setting $S_n:=S_{\ppp_0}\cap\cdots\cap S_{\ppp_n}$ for $n\in\mathbb N$, we get, in view of $\oo C(n+1)$ and Exercise 4.12i p.~56 of the book
 $$
 S_n(\aaa)=S_n(\aaa_{n+1})\cap S_n(\qqq_0\cap\cdots\cap\qqq_n).
@@ -2098,16 +2133,15 @@ Now Proposition 4.9 p.~54 of the book implies
 $$
 S_n(\qqq_0\cap\cdots\cap\qqq_n)=\bigcap_{S_n\cap\ppp_i=\varnothing}\qqq_i=\qqq_0\cap\cdots\cap\qqq_n,
 $$ 
-and we get 
-$$%\begin{equation}\label{snaq}
+and we get
+$$
 S_n(\aaa)=\qqq_0\cap\cdots\cap\qqq_n.
-$$%\end{equation}
-
-For all $\alpha\le\kappa$ set 
-$$
-\bbb_\alpha:=\bigcap_{\beta<\alpha}\qqq_\beta.
-$$
-Then (L2) implies that there is some $n\in\mathbb N$ such that $\bbb_\alpha=\bbb_n$ for $n\le\alpha\le\kappa$. (???!!!) (We assume, with no loss of generality, that $\kappa$ is infinite.) Now \eqref{abak} implies $\aaa=\bbb_\kappa=\bbb_n$, showing that $\aaa$ admits a primary decomposition.
+$$ 
+Now (L2) and Lemma~\ref{lasker} give the desired contradiction.
+%\label{lasker}
+%The map $n\mapsto S_n(\aaa)$ taking only finitely many values by Assumption (L2),%Proposition 4.9 p.~54 of the book, %there is an $n\in\mathbb N$ such that 
+%By Assumption (L2) there is an $n\in\mathbb N$ such that $$\aaa=\qqq_0\cap\cdots\cap\qqq_n\cap\bigcap_{\omega\le\alpha<\zeta}\qqq_\alpha.$$ Of course if there are only finitely many ordinals between $\omega$ and $\zeta$, the proof is complete; but if there are infinitely many such ordinals, I'm stuck...
+%For all $\alpha\le\kappa$ set $$\bbb_\alpha:=\bigcap_{\beta<\alpha}\qqq_\beta.$$ Then (L2) implies that there is some $n\in\mathbb N$ such that $\bbb_\alpha=\bbb_n$ for $n\le\alpha\le\kappa$. (???!!!) (We assume, with no loss of generality, that $\kappa$ is infinite.) Now \eqref{abak} implies $\aaa=\bbb_\kappa=\bbb_n$, showing that $\aaa$ admits a primary decomposition.
 
 \section{Page 61, Corollary 5.9}\label{59}%
 
