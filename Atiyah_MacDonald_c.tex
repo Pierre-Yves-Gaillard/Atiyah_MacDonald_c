@@ -22,7 +22,7 @@
 \usepackage{comment}
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
-\newcommand{\oo}{\operatorname}
+\newcommand{\oo}{\operatorname}\newcommand{\ooo}{\operatorname*}
 \newcommand{\mf}{\mathfrak}
 \newcommand{\aaa}{\mf a}
 \newcommand{\bbb}{\mf b}
@@ -53,7 +53,7 @@
 \author{Pierre-Yves Gaillard}
 \date{\today,\currenttime}
 
-\begin{document}%\ar[r,yshift=4pt]\ar[yshift=0.7ex]{r}\ar[yshift=-0.7ex]{r}
+\begin{document}%\ar[r,yshift=0.9ex]\ar[r,yshift=-0.9ex]%\ar[r,yshift=4pt]\large%{\oo c}
 
 %\large
 
@@ -173,23 +173,23 @@ This proves the claim, and thus the statement.
 
 Here is a version which is slightly weaker but sufficient for our purpose:
 
-\emph{Let $A$ be a commutative ring, let $\mf a$ be an ideal, and let $\mf p_1,\dots,\mf p_n,n\ge1$ be prime ideals. If $\mf a$ is not contained in any $\mf p_i$, then $\mf a$ is not contained in their union.}
+\emph{Let $A$ be a commutative ring, let $\mf a$ be an ideal, and let $\ppp_1,\dots,\ppp_n,n\ge1$ be prime ideals. If $\mf a$ is not contained in any $\ppp_i$, then $\mf a$ is not contained in their union.}
 
 \begin{proof} 
 We can assume that $n\ge2$ and that there are elements $a_1,\dots,a_n$ in $\mf a$ such that 
 $$
-a_i\in\mf p_i\setminus\bigcup_{j \ne i}\mf p_j.
+a_i\in\ppp_i\setminus\bigcup_{j \ne i}\ppp_j.
 $$ 
-Then $a:=a_1\cdots a_{n-1}+a_n$ is in $\mf a$ but not in $\mf p_i$ for any $i$.
+Then $a:=a_1\cdots a_{n-1}+a_n$ is in $\mf a$ but not in $\ppp_i$ for any $i$.
 \end{proof}
 
 %About the proof of Part (ii) of Proposition 1.11 p.~8, if a prime ideal contains the intersection of a finite family of ideals, then it contains the product of this family, and thus one of the factors.
 
 $\bu$ \textbf{\Large Proposition 1.11ii}%
 
-Note that $\mf p$ is prime $\iff$
+Note that $\ppp$ is prime $\iff$
 $$
-\mf p\supset\mf a\mf b\quad\implies\quad\mf p\supset\mf a\quad\text{or}\quad\mf p\supset\mf b.
+\ppp\supset\mf a\mf b\quad\implies\quad\ppp\supset\mf a\quad\text{or}\quad\ppp\supset\mf b.
 $$
 
 $\bu$ \textbf{\Large Quotient ideal}%
@@ -389,7 +389,7 @@ More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\mf b\in\S
 
 It seems better to prove first the equality 
 $$
-\overline S=V(\mf a),\quad \mf a:=\bigcap_{\mf p\in S}\ \mf p
+\overline S=V(\mf a),\quad \mf a:=\bigcap_{\ppp\in S}\ \ppp
 $$ 
 for $S\subset\oo{Spec}(A)$. 
 
@@ -397,7 +397,7 @@ for $S\subset\oo{Spec}(A)$.
 
 Part (i): In fact we have $X=X_f\sqcup X_{1-f}$ for all $f$ in $A$.
 
-Part (iv): If $f\in\mf p\setminus\mf q$ then $\mf p\in X_{1-f}$ and $\mf q\in X_f$.
+Part (iv): If $f\in\ppp\setminus\mf q$ then $\ppp\in X_{1-f}$ and $\mf q\in X_f$.
 
 \section{Page 21, Proposition 2.4}\label{24}%
 
@@ -615,7 +615,7 @@ There is a unique equivalence relation $\sim$ on the disjoint union $M'$ of the 
 
 [I denote by $\mu_{ki}$ what the book denotes by $\mu_{ik}$.]
 
-Then $M'/\sim$ is a direct of the $M_i$ in the category of sets. 
+Then $M'/\sim$ is a direct limit of the $M_i$ in the category of sets. 
 
 Let $p:M'\to M'/\sim$ be the canonical projection. 
 
@@ -625,7 +625,46 @@ $\bullet\ ap(x)=p(ax)$ for all $x$ in $M_i$ and all $a$ in $A$,
 
 $\bullet\ p(x)+p(\,y)=p(\mu_{ki}(x)+\mu_{kj}(\,y))$ for all $x$ in $M_i$ and all $y$ in $M_j$. 
 
-Then $M'/\sim$ is a direct of the $M_i$ also in the category of $A$-modules.
+The quotient $M'/\sim$ is a direct limit of the $M_i$ also in the category of $A$-modules.
+
+\section{Page 33, Exercise 2.20}%
+
+Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$ be a category $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
+
+Define the morphisms $u$ and $v$ by the commutative diagram
+$$
+\begin{tikzcd}
+M_{d(f)}\ar[d,"\alpha_{f}"']\ar[r,equal]&M_{d(f)}\ar[d,"\beta_{d(f)}"]\\ 
+\ds\bigoplus_gM_{d(g)}\ar[r,yshift=0.9ex,"u"]\ar[r,yshift=-0.9ex,"v"']&\ds\bigoplus_iM_i\\ 
+M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f),}\ar[u,"\beta_{c(f)}"']
+\end{tikzcd}
+$$ 
+where the $\alpha_f$ and the $\beta_i$ are the coprojections. 
+
+We claim that the cokernel of $u-v$ is a colimit of our system, or equivalently, that the middle row of the commutative diagram 
+$$
+\begin{tikzcd}
+M_{d(f)}\ar[d,"\alpha_{f}"']\ar[r,equal]&M_{d(f)}\ar[d,"\beta_{d(f)}"]\\ 
+\ds\bigoplus_gM_{d(g)}\ar[r,"u-v"]&\ds\bigoplus_iM_i\ar[r]&\ds\ooo{colim}_iM_i\ar[r]&0\\ 
+M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f)}\ar[u,"\beta_{c(f)}"']
+\end{tikzcd}
+$$ 
+is exact. 
+
+The proof is left to the reader.
+
+As a result, to prove that the tensor product commutes with colimits, it suffices to check that it commutes with direct sums. 
+
+To do so, let $M$ be an $A$-module, let $(N_i)$ be a family of $A$-module, and define the morphisms $f$ and $g$ by the commutative diagram 
+$$
+\begin{tikzcd} 
+\bigoplus_i(M\otimes N_i)\ar[r,yshift=0.9ex,"f"]\ar[r,leftarrow,yshift=-0.9ex,"g"']& M\otimes\left(\bigoplus_iN_i\right)\\ 
+M\otimes N_i\ar[u,"\beta_i"]\ar[r,equal]&M\otimes N_i,\ar[u,"1\otimes\alpha_i"']
+\end{tikzcd}
+$$ 
+the tensor products being taken over $A$.
+
+We leave it to the reader to check that $f$ and $g$ are inverse isomorphisms.
 
 \section{Page 34, Exercise 2.25, first solution}\label{s225a}%
 
@@ -1289,9 +1328,9 @@ The conclusion is that
 
 $\mf q\in V\implies\mf q^{\oo c}\in U$: It suffices to check that $\mf q^{\oo c}$ is disjoint from $S$. If $s$ is in $S\cap\mf q^{\oo c}$, then $s/1$ is in $\mf q$, which is impossible since $s/1$ is a unit.
 
-$\mf p\in U\implies\mf p^{\oo e}\in V$: As written in the book, ``if $\mf p$ is a prime ideal in $A$, then $A/\mf p$ is an integral domain; if $\overline S$ is the image of $S$ in $A/\mf p$, we have $S^{-1}A/S^{-1}\mf p\simeq\bar S^{-1}(A/\mf p)$ which is either $0$ or else is contained in the field of fractions of $A/\mf p$ and is therefore an integral domain, and therefore $\bar S^{-1}(A/\mf p)$ is either prime or is the unit ideal; by i) the latter possibility occurs if and only if $\mf p$ meets $S$.'' Instead of ``by i)'', I would say ``by \eqref{s-1a}''.
+$\ppp\in U\implies\ppp^{\oo e}\in V$: As written in the book, ``if $\ppp$ is a prime ideal in $A$, then $A/\ppp$ is an integral domain; if $\overline S$ is the image of $S$ in $A/\ppp$, we have $S^{-1}A/S^{-1}\ppp\simeq\bar S^{-1}(A/\ppp)$ which is either $0$ or else is contained in the field of fractions of $A/\ppp$ and is therefore an integral domain, and therefore $\bar S^{-1}(A/\ppp)$ is either prime or is the unit ideal; by i) the latter possibility occurs if and only if $\ppp$ meets $S$.'' Instead of ``by i)'', I would say ``by \eqref{s-1a}''.
 
-$\mf p^{\oo{ec}}=\mf p$ for $\mf p\in U$: It suffices to show $\mf p^{\oo{ec}}\subset\mf p$. Let $s$ be in $S$. In view of Proposition 3.11 (ii), it suffices to show $(\mf p:s)\subset\mf p$, which is easy.
+$\ppp^{\oo{ec}}=\ppp$ for $\ppp\in U$: It suffices to show $\ppp^{\oo{ec}}\subset\ppp$. Let $s$ be in $S$. In view of Proposition 3.11 (ii), it suffices to show $(\ppp:s)\subset\ppp$, which is easy.
 
 $\mf q^{\oo{ce}}=\mf q$ for $\mf q\in V$: This is a particular case of Part (i). $\square$
 \end{comment}
@@ -1351,12 +1390,17 @@ in contradiction with the primality of $\aaa$.
 
 Here is a related result:
 
-\emph{$\mf p$ is the contraction of a prime ideal if and only if $A_\ppp/\ppp_\ppp\otimes_AB\ne0$.}
+\emph{$\ppp$ is the contraction of a prime ideal if and only if $A_\ppp/\ppp_\ppp\otimes_AB\ne0$.}
 
 Indeed we have 
-\begin{equation}\label{f1}
-A_\ppp/\ppp_\ppp\otimes_AB\simeq\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{(\ppp B)_\ppp}\simeq\big(B/\ppp B\big)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp\ ,
-\end{equation} 
+%\begin{equation}\label{f1}%
+$$
+(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB
+$$ 
+$$
+\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp,
+$$ 
+%\end{equation}A_\ppp/\ppp_\ppp\otimes_AB\simeq\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{\ppp_\ppp\otimes_AB}\simeq\frac{B_\ppp}{(\ppp B)_\ppp}\simeq\big(B/\ppp B\big)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp\ ,
 $$
 \big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }B/\ppp^{\oo e}\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
 $$ 
@@ -1367,39 +1411,39 @@ Note that the above statement follows also from Exercise 3.21iv p.~47 of the boo
 
 \section{Page 44, Exercise 3.8}%
 
-Implication (v)$\implies$(i). Let $\mf p$ be a prime ideal of $A$ disjoint from $S$. By Proposition 3.9 p.~40 of the book, it suffices to show that the natural map 
+Implication (v)$\implies$(i). Let $\ppp$ be a prime ideal of $A$ disjoint from $S$. By Proposition 3.9 p.~40 of the book, it suffices to show that the natural map 
 $$
-\psi:(S^{-1}A)_{S^{-1}\mf p}\to(T^{-1}A)_{S^{-1}\mf p}
+\psi:(S^{-1}A)_{S^{-1}\ppp}\to(T^{-1}A)_{S^{-1}\ppp}
 $$ 
 is bijective. 
 
-The element $r/s\in S^{-1}A$ is not in $S^{-1}\mf p$ if and only if $r$ is not in $\mf p$. In particular an element of $(S^{-1}A)_{S^{-1}\mf p}$ is of the form 
+The element $r/s\in S^{-1}A$ is not in $S^{-1}\ppp$ if and only if $r$ is not in $\ppp$. In particular an element of $(S^{-1}A)_{S^{-1}\ppp}$ is of the form 
 $$
 \frac{a/s}{r/s'}
 $$ 
-with $a\in A, r\in A\setminus\mf p$ and $s,s'\in S$.
+with $a\in A, r\in A\setminus\ppp$ and $s,s'\in S$.
 
 Injectivity of $\psi$: If 
 $$
 \frac{a/s}{r/s'}=0
 $$ 
-in $(T^{-1}A)_{S^{-1}\mf p}$, then there is an $r'\in A\setminus\mf p$ and an $s''\in S$ such that the element 
+in $(T^{-1}A)_{S^{-1}\ppp}$, then there is an $r'\in A\setminus\ppp$ and an $s''\in S$ such that the element 
 $$
 \frac{a}{s}\frac{r'}{s''}=\frac{ar'}{ss''}
 $$ 
-is equal to zero in $T^{-1}A$, and there is a $t\in T$ such that $ar't=0$. Then $t$ is not in $\mf p$, and we get 
+is equal to zero in $T^{-1}A$, and there is a $t\in T$ such that $ar't=0$. Then $t$ is not in $\ppp$, and we get 
 $$
 \frac{a/s}{r/s'}=\frac{ar't/s}{rr't/s'}=0.
 $$ 
-Surjectivity of $\psi$: An element of $(T^{-1}A)_{S^{-1}\mf p}$ is of the form 
+Surjectivity of $\psi$: An element of $(T^{-1}A)_{S^{-1}\ppp}$ is of the form 
 $$
 \frac{a/t}{r/s}
 $$ 
-with $a\in A,t\in T,r\in A\setminus\mf p, s\in S$, and we have 
+with $a\in A,t\in T,r\in A\setminus\ppp, s\in S$, and we have 
 $$
 \frac{a/t}{r/s}=\frac{a/1}{rt/s}\ .
 $$ 
-We see that $rt$ is not in $\mf p$, and thus 
+We see that $rt$ is not in $\ppp$, and thus 
 $$
 \frac{a/t}{r/s}=\psi\left(\frac{a/1}{rt/s}\right).
 $$
@@ -1430,17 +1474,17 @@ The equivalence (ii)$\iff$(iii) is clear, as well as the implication (iv)$\impli
 
 (ii)$\implies$(iv): Let $x$ and $y$ be two distinct points of $X=\oo{Spec}(A)$. 
 
-Claim: there are elements $a\in\mf p_x\setminus\mf p_y$, $b\in\mf p_y\setminus\mf p_x$ such that $ab=0$.
+Claim: there are elements $a\in\ppp_x\setminus\ppp_y$, $b\in\ppp_y\setminus\ppp_x$ such that $ab=0$.
 
 The claim implies (iv): $X_a$ and $X_b$ are disjoint open neighborhood of $x$ and $y$ respectively. 
 
-Proof of the claim. Assume the claim is false. Then $S:=(A\setminus\mf p_x)(A\setminus\mf p_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mf m$ in $S^{-1}A$ whose contraction in $A$ is a prime ideal contained in $\mf p_x\cap\mf p_y$, a contradiction.
+Proof of the claim. Assume the claim is false. Then $S:=(A\setminus\ppp_x)(A\setminus\ppp_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mf m$ in $S^{-1}A$ whose contraction in $A$ is a prime ideal contained in $\ppp_x\cap\ppp_y$, a contradiction.
 
 (iv)$\implies$(i): For any ideal $\mf a$ of any ring $R$ write $\overline{\mf a}$ for the image of $\mf a$ in $\overline R:=R/\mf N(R)$, define $\overline r\in\overline R$ for $r\in R$ similarly. Let $\mu\in\mf m\subset A$ with $\mf m$ maximal. By Section~\ref{310ii} p.~\pageref{310ii} above, it suffices to show that %there is an $s\in A\setminus\mf m$ such that 
 $\overline \mu=\overline 0$. By Corollary 3.15 p.~42 of the book, this is equivalent to showing that %there is an $s\in A\setminus\mf m$ such that 
 the element $\mu/1$ of $A_{\mf m}$ is nilpotent, which is clear since $\mf m$ is a minimal prime ideal of $A$ (and thus $\mf m_{\mf m}$ is the nilradical of $A_{\mf m}$).
 
-(i)$\implies$(ii): Assume by contradiction there is a prime ideal $\mf p$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\mf p<\mf m$. In the above notation we get firstly $\overline{\mf p}<\overline{\mf m}$ with $\overline{\mf p}$ prime and $\overline{\mf m}$ maximal, and secondly $\overline{\mf p}_{\overline{\mf m}}<\overline{\mf m}_{\overline{\mf m}}$ with $\overline{\mf p}_{\overline{\mf m}}$ prime and $\overline{\mf m}_{\overline{\mf m}}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310ii} above) implies $\overline{\mf m}_{\overline{\mf m}}=(\overline0).\ \square$
+(i)$\implies$(ii): Assume by contradiction there is a prime ideal $\ppp$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\ppp<\mf m$. In the above notation we get firstly $\overline\ppp<\overline{\mf m}$ with $\overline\ppp$ prime and $\overline{\mf m}$ maximal, and secondly $\overline\ppp_{\overline{\mf m}}<\overline{\mf m}_{\overline{\mf m}}$ with $\overline\ppp_{\overline{\mf m}}$ prime and $\overline{\mf m}_{\overline{\mf m}}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310ii} above) implies $\overline{\mf m}_{\overline{\mf m}}=(\overline0).\ \square$
 
 Proof that $X$ is totally disconnected: Let $x$ and $y$ be two different points of $X$. We saw that there is an $a\in A$ such that $x\in X_a$ and $y\notin X_a$ (see above claim). As $X$ is Hausdorff and $X_a$ is compact, $X_a$ is closed, that is open and closed, and so is its complement $V(a)$, which contains $y.\ \square$
 
@@ -1454,11 +1498,11 @@ Here is a related result:
 
 (c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
 
-\emph{Proof.} In view of Exercise 3.11 p. 44 of the book, it suffices to prove (b)$\implies$(c)$\implies$(a). %(a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\mf p$ be a prime ideal of $A$. Then the nilradical of $A_{\mf p}$ is $(0)$ and $\mf p_{\mf p}$ is the only prime ideal of $A_{\mf p}$. This implies that $A_{\mf p}$ is a field, and we get successively the equalities $$(a)_{\mf p}=(a^2)_{\mf p},\quad(a)_{\mf p}/(a^2)_{\mf p}=(0),\quad((a)/(a^2))_{\mf p}=(0).$$ As $\mf p$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
+\emph{Proof.} In view of Exercise 3.11 p. 44 of the book, it suffices to prove (b)$\implies$(c)$\implies$(a). %(a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\ppp$ be a prime ideal of $A$. Then the nilradical of $A_\ppp$ is $(0)$ and $\ppp_\ppp$ is the only prime ideal of $A_\ppp$. This implies that $A_\ppp$ is a field, and we get successively the equalities $$(a)_\ppp=(a^2)_\ppp,\quad(a)_\ppp/(a^2)_\ppp=(0),\quad((a)/(a^2))_\ppp=(0).$$ As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 
 (b)$\implies$(c): With obvious notation we have $\bar a=\bar a^2\bar b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^{n+1}\in(a^n)$ and thus $(a^{n+1})=(a^n)$. 
 
-(c)$\implies$(a): Let $\mf p$ be a prime ideal of $A$ and let $a$ be in $A\setminus\mf p$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\mf p$, and thus $1-ab\in\mf p$. This implies that $A/\mf p$ is a field, and therefore that $\mf p$ is maximal. $\square$
+(c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
 
 \section{Page 45, Exercise 3.14}%\label{321iv}
 
@@ -1480,18 +1524,16 @@ Counterexample to the converse of (ii): $B:=k$ a field, $A:=k[\varepsilon]$ with
 We just give the commutative diagram
 $$
 \begin{tikzcd}
-(B/\mf pB_{\mf p})^*\ar[d,"\overline{f_{\mf p}}^*"]\ar[r]&(B_{\mf p})^*\ar[d,"(f_{\mf p})^*"]\ar[r]& B^*\ar[d,"f^*"]\\ 
-(A_{\mf p}/\mf p_{\mf p})^*\ar[r]&(A_{\mf p})^*\ar[r]& A^*,
+(B_\ppp/\ppp B_\ppp)^*\ar[d,"\overline{f_\ppp}^*"]\ar[r]&(B_\ppp)^*\ar[d,"(f_\ppp)^*"]\ar[r]& B^*\ar[d,"f^*"]\\ 
+(A_\ppp/\ppp_\ppp)^*\ar[r]&(A_\ppp)^*\ar[r]& A^*,
 \end{tikzcd}
 $$ 
-where $R^*$ stands for $\oo{Spec}(R)$, and the chain of isomorphisms  
+where $R^*$ stands for $\oo{Spec}(R)$, and recall the isomorphism 
 $$
-(A_{\mf p}/\mf p_{\mf p})\otimes_AB\simeq(A/\mf p)_{\mf p}\otimes_AB\simeq(A/\mf p)_{\mf p}\otimes_{A/\mf p}A/\mf p\otimes_AB
+(A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp
 $$ 
-$$
-\simeq(A/\mf p)_{\mf p}\otimes_{A/\mf p}B/\mf pB\simeq(B/\mf pB)_{\mf p}.
-$$ 
-(See \eqref{f1} p.~\pageref{f1} for a minor variant of the above calculation.)
+proved in Section~\ref{res} p.~\pageref{res}.
+%chain of isomorphisms $$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp.$$ (See Section~\ref{res} p.~\pageref{res} for a minor variant of the above calculation.)
 
 \section{Page 47, Exercise 3.23}%\label{321iv}%
 
@@ -1499,9 +1541,9 @@ It's simpler to proceed as follows:
 
 For $f\in A$ put 
 $$
-S(f):=A\ \setminus\ \bigcup_{\mf p\notni f}\ \mf p,
+S(f):=A\ \setminus\ \bigcup_{\ppp\notni f}\ \ppp,
 $$ 
-where it is understood that $\mf p$ is in $X$. Note that $S(f)$ is a multiplicatively closed set depending only on $X_f$, not on $f$. Finally put 
+where it is understood that $\ppp$ is in $X$. Note that $S(f)$ is a multiplicatively closed set depending only on $X_f$, not on $f$. Finally put 
 $$
 A(X_f):=S(f)^{-1}A.
 $$ 
@@ -1509,11 +1551,11 @@ Here is a mild generalization:
 
 For each radical ideal $\mf a$ of $A$ put 
 $$
-S_{\mf a}:=A\ \setminus\ \bigcup_{\mf p\not\supset\mf a}\ \mf p.
+S_{\mf a}:=A\ \setminus\ \bigcup_{\ppp\not\supset\mf a}\ \ppp.
 $$ 
 This is multiplicatively closed. For $\mf a\subset\mf b$ we have a natural morphism $S_{\mf b}^{-1}A\to S_{\mf a}^{-1}A$. We also have a canonical isomorphism 
 $$
-\varinjlim_{\mf a\not\subset\mf p}S_{\mf a}^{-1}A.
+\varinjlim_{\mf a\not\subset\ppp}S_{\mf a}^{-1}A.
 $$
 
 \section{Page 47, Exercise 3.24}%
@@ -1590,15 +1632,15 @@ The following statement, occurring in the proof of Theorem 4.5, is often used in
 
 {\em In the setting of Theorem 4.5 we have} 
 \begin{equation}\label{45}
-r(\mf a:x)=\bigcap_{x\notin\mf q_j}\mf p_j.
+r(\mf a:x)=\bigcap_{x\notin\mf q_j}\ppp_j.
 \end{equation}
-(See Note~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\mf p_j$-primary for $j\in J(x)$, and we have 
+(See Note~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\ppp_j$-primary for $j\in J(x)$, and we have 
 $$
 (\mf a:x)=\bigcap_{j\in J(x)}(\mf q_j:x).
 $$ 
 In particular, we have $J(x_i)=\{i\}$, and thus 
 $$
-(\mf a:x_i)=(\mf q_i:x_i),\quad r(\mf a:x_i)=\mf p_i.
+(\mf a:x_i)=(\mf q_i:x_i),\quad r(\mf a:x_i)=\ppp_i.
 $$
 
 \subsection{Corollary to Proposition 4.6}
@@ -1635,7 +1677,7 @@ Let's list some important properties of this ring:
 
 2. $A$ is a Noetherian ring if and only if $R$ is Noetherian and $M$ is finitely generated.
 
-3. All prime (maximal) ideals of $A$ have the form $\mf p\times M$, where $\mf p$ is a prime (maximal) ideal of $R$.
+3. All prime (maximal) ideals of $A$ have the form $\ppp\times M$, where $\ppp$ is a prime (maximal) ideal of $R$.
 
 4. If $R$ is an integral domain and $M$ is divisible, then all the ideals of $A$ have the form $\mf a\times M$ with $\mf a$ ideal of $R$, or $\{0\}\times N$ with $N$ submodule of $M$.\bigskip\bigskip
 
@@ -1690,7 +1732,7 @@ $$
 $$ 
 by Proposition 3.11ii p.~41 and Lemma 4.4iii p.~51, and 
 $$
-r(\mf q^{\text e})=r(S^{-1}\mf q)=S^{-1}r(\mf q)=S^{-1}\mf p
+r(\mf q^{\text e})=r(S^{-1}\mf q)=S^{-1}r(\mf q)=S^{-1}\ppp
 $$ 
 by Proposition 3.11v p.~42.
 \end{comment}
@@ -2004,8 +2046,10 @@ f:W\to Q\cup\{\varnothing\}
 $$ 
 (note that the union is disjoint) as follows:
 
-$\bu$ We assume $\aaa\ne(1)$ and define $(\aaa_0,\ppp_0,\qqq_0,x_0)$ as before, and we set $f(0):=(\aaa_0,\ppp_0,\qqq_0,x_0)$. 
-
+$\bu$ We assume $\aaa\ne(1)$ and define $(\aaa_0,\ppp_0,\qqq_0,x_0)$ as before, and we set 
+$$
+f(0):=(\aaa_0,\ppp_0,\qqq_0,x_0).
+$$
 $\bu$ In the passage from $\alpha$ to $\alpha+1$, we define $f(\alpha+1)$ as follows (assuming that $f(\alpha)$ has already been defined):
 
 If $f(\alpha)=\varnothing$ we set $f(\alpha+1):=\varnothing$. 
@@ -2147,25 +2191,25 @@ Now (L2) and Lemma~\ref{lasker} give the desired contradiction.
 
 Here is a slightly stronger statement: 
 
-\emph{Let $A$ be a subring of a ring $B$ such that $B$ is integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\mf p$ say. Then $\mf q=\mf b$.}
+\emph{Let $A$ be a subring of a ring $B$ such that $B$ is integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\ppp$ say. Then $\mf q=\mf b$.}
 
-Proof. Arguing as in the book, we see that $\mf p_{\mf p}\subset A_{\mf p}$ and $\mf q_{\mf p}\subset B_{\mf p}$ are maximal, and that we have $\mf q_{\mf p}\subset\mf b_{\mf p}\subset B_{\mf p}$. Proposition 3.11ii p.~41 of the book implies $\mf b_{\mf p}\ne B_{\mf p}$, and thus $\mf q_{\mf p}=\mf b_{\mf p}$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $q$ in $\mf q$ and some $s$ in $A\setminus\mf p$, then $tb\in\mf q$ for some $t$ in $A\setminus\mf p$, and thus $b\in\mf q$.
+Proof. Arguing as in the book, we see that $\ppp_\ppp\subset A_\ppp$ and $\mf q_\ppp\subset B_\ppp$ are maximal, and that we have $\mf q_\ppp\subset\mf b_\ppp\subset B_\ppp$. Proposition 3.11ii p.~41 of the book implies $\mf b_\ppp\ne B_\ppp$, and thus $\mf q_\ppp=\mf b_\ppp$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $q$ in $\mf q$ and some $s$ in $A\setminus\ppp$, then $tb\in\mf q$ for some $t$ in $A\setminus\ppp$, and thus $b\in\mf q$.
 
 \section{Page 62, proof of Corollary 5.9}%
 
-Let $A\subset B$ be rings, let $\mf q$ be a prime ideal of $B$ and set $\mf p:=A\cap\mf q$:
+Let $A\subset B$ be rings, let $\mf q$ be a prime ideal of $B$ and set $\ppp:=A\cap\mf q$:
 $$
 \begin{tikzcd}
 A\ar[d,"\alpha"']\ar[r,hook]&B\ar[d,"\beta"]\\ 
-A_{\mf p}\ar[r,hook]&B_{\mf p}.
+A_\ppp\ar[r,hook]&B_\ppp.
 \end{tikzcd}
 $$
-Then Corollary 3.4ii p.~39 of the book implies $A_{\mf p}\cap\mf q_{\mf p}=\mf p_{\mf p}$.
-%We claim $A_{\mf p}\cap\mf q_{\mf p}=\mf p_{\mf p}$. Set $S:=A\setminus\mf p$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\mf p=\varnothing$, we see that $\mf q_{\mf p}$ is prime, and it suffices to show $\mf p_{\mf p}\subset\mf q_{\mf p}$, which is clear.
+Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$.
+%We claim $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$. Set $S:=A\setminus\ppp$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\ppp=\varnothing$, we see that $\mf q_\ppp$ is prime, and it suffices to show $\ppp_\ppp\subset\mf q_\ppp$, which is clear.
 
 \section{Page 62, Theorem 5.10}%
 
-Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\mf p$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$.
+Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\ppp$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$.
 
 \section{Page 62, dim A = dim B}%
 
@@ -2199,7 +2243,7 @@ for all $j$ (the second equality following from \eqref{514}).
 
 \section{Page 64, proof of Theorem 5.16}%
 
-Last line of the first paragraph of the proof: It suffices to show $B_{\mf q_1}\mf p_2\cap A\subset\mf p_2$.
+Last line of the first paragraph of the proof: It suffices to show $B_{\mf q_1}\ppp_2\cap A\subset\ppp_2$.
 
 \section{Page 65}%
 
@@ -2225,21 +2269,117 @@ Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``le
 
 \section{Page 67, Exercise 5.2}\label{67}%
 
-Set $\mf p:=\oo{Ker}f$ and let $\mf q\subset B$ be given by Theorem 5.10 p.~62. Our problem can be summarized as follows: 
+Set $\ppp:=\oo{Ker}f$ and let $\mf q\subset B$ be given by Theorem 5.10 p.~62. Our problem can be summarized as follows: 
 $$
 \begin{tikzcd}
-A/\mf p\ar[r,hook]\ar[d,hook]&B/\mf q\ar[dl,dashrightarrow,hook]\\ 
+A/\ppp\ar[r,tail]\ar[d,tail]&B/\mf q\ar[dl,dashrightarrow]\\ 
 \Omega.
 \end{tikzcd}
 $$ 
-Writing $K$ and $L$ for the respective fields of fractions of $A/\mf p$ and $B/\mf q$, Our problem becomes  
+Writing $K$ and $L$ for the respective fields of fractions of $A/\ppp$ and $B/\mf q$, our problem becomes  
 $$
 \begin{tikzcd}
-K\ar[r,hook]\ar[d,hook]&L\ar[dl,dashrightarrow,hook]\\ 
+K\ar[r,tail]\ar[d,tail]&L\ar[dl,dashrightarrow]\\ 
 \Omega.
 \end{tikzcd}
 $$ 
 As $L/K$ is algebraic and $\Omega$ algebraically closed, this problem has a solution.
+
+\section{Page 67, Exercise 5.3}%£
+
+\subsection{Solution}
+
+Set $D:=(f\otimes1)(B\otimes_AC)$ and let $E$ be the integral closure of $D$ in $B'\otimes_AC$. We have $1\otimes c\in D\subset E$ for $c\in C$ and it is easy to see that $b'\otimes1\in E$ for $b'\in B'$. Then $E$ contains $b'\otimes c$ for $b'\in B',c\in C$, hence $E$ contains $B'\otimes_AC$.
+
+\subsection{A more general question}%\label{53}
+
+Let $C\leftarrow A\to B\to B'$ be morphisms of rings. In this section tensor products are taken over $A$, and $\overline{X\ }^Y$ means ``integral closure of $X$ in $Y$''. 
+
+The purpose of this section is to show that the morphism 
+$$
+\overline{B\ }^{B'}\otimes C\to\overline{B\otimes C\ }^{B'\otimes C}
+$$ 
+induced by the natural morphism $\overline{B\ }^{B'}\otimes C\to B'\otimes C$ is not always surjective. 
+
+Let $K$ be a field of characteristic $\ne2$ and $x$ an indeterminate, and set 
+$$
+A:=K[x^2],\qquad B:=K\left[x^2,x\sqrt{x^2-1}\right],
+$$
+$$
+B':=K\left(x^2,x\sqrt{x^2-1}\right),\qquad C:=K[x].
+$$ 
+We claim 
+$$
+B'':=\overline{K\left[x^2,x\sqrt{x^2-1}\right]\ }^{K\left(x^2,x\sqrt{x^2-1}\right)}=K\left[x^2,x\sqrt{x^2-1}\right].
+$$ 
+Note that 
+$$
+B''\cap K(x^2)=K[x^2].
+$$ 
+%$$B''=\overline{K\left[x^2\right]\ }^{K\left(x^2,x\sqrt{x^2-1}\right)}.$$
+To prove the claim, let $u$ be in $B''$. We can write 
+$$
+u=f(x^2)+x\sqrt{x^2-1}\ g(x^2)
+$$ 
+with $f(x^2),g(x^2)\in K(x^2)$. It suffices to check that $f(x^2)$ and $g(x^2)$ are in $K[x^2]$, or equivalently, that they are in $B''$. We have 
+$$
+v:=f(x^2)-x\sqrt{x^2-1}\ g(x^2)\in B'',
+$$ 
+and we successively see that the following elements of $K(x^2)$ are in $K[x^2]$: 
+$$
+\frac{u+v}2=f(x^2),
+$$ 
+$$
+uv=f(x^2)^2-x^2(x^2-1)\ g(x^2)^2,
+$$ 
+$$
+x^2(x^2-1)\ g(x^2)^2.
+$$ 
+As $x^2(x^2-1)$ is square-free in $K[x^2]$, we conclude that $g(x^2)$ is also in $K[x^2]$. This completes the proof of the claim. 
+
+Using the claim we get firstly
+$$
+\overline{B\ }^{B'}\otimes C=\overline{K\left[x^2,x\sqrt{x^2-1}\right]\ }^{K\left(x^2,x\sqrt{x^2-1}\right)}\otimes K[x]
+$$
+$$
+=K\left[x^2,x\sqrt{x^2-1}\right]\otimes K[x]\simeq K\left[x,x\sqrt{x^2-1}\right],
+$$ 
+and secondly 
+$$ 
+\overline{B\otimes C\ }^{B'\otimes C}=\overline{K\left[x^2,x\sqrt{x^2-1}\right]\otimes K[x]\ }^{K\left(x^2,x\sqrt{x^2-1}\right)\otimes K[x]}
+$$
+$$
+\simeq\overline{K\left[x,x\sqrt{x^2-1}\right]\ }^{K\left(x,\sqrt{x^2-1}\right)}\subset K\left(x,\sqrt{x^2-1}\right).
+$$ 
+The element 
+$$
+\sqrt{x^2-1}\in K\left(x,\sqrt{x^2-1}\right)
+$$ 
+is integral over $K\left[x,x\sqrt{x^2-1}\right]$, but does \emph{not} belong to this ring.
+
+In fact $K\left[x,\sqrt{x^2-1}\right]$ is integrally closed, and thus Dedekind.
+
+\begin{comment}
+For any morphism of rings $g:A_1\to A_2$ write $\oo{IC}_{A_2}(A_1)$ for the integral closure of $A_1$ in $A_2$. Then we have, in the setting of Exercise 5.3, 
+$$
+\oo{IC}_{B'\otimes C}(B\otimes C)=(i\otimes1)(\oo{IC}_{B'}(B)\otimes C),
+$$ 
+where the tensor products are taken over $A$ and the morphism $i$ is the inclusion of $\oo{IC}_{B'}(B)$ into $B'$.
+
+In particular, if $\phi:A\to B$ is a morphism of rings and $x$ an indeterminate, then we get 
+$$
+\oo{IC}_{B[x]}(A[x])=\oo{IC}_B(A)[x].
+$$ 
+Indeed we have $A[x]=A\otimes_{\mathbb Z}\mathbb Z[x]$, and similarly for $B$.
+\end{comment}
+
+\section{Page 67, Exercise 5.6}%
+
+It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy.
+
+\section{Page 68, Exercise 5.10}%
+
+It is easy to show that (a) implies (c), and that (b) and (c) are eqivalent.
 
 \section{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
@@ -2276,13 +2416,13 @@ of degree less than $d$, such that $f=tY_1^d+g$.
 
 If, for any monomial $u\in A[Y_1,\dots,Y_m]$ occurring in $f$ (with a nonzero coefficient), we denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
-\bigg(A\left[Y_2-Y_1^r,\dots,Y_n-Y_1^{r^{m-1}}\right]\bigg)[Y_1],
+\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1],
 $$ 
 then $(\star)$ follows immediately from 
 
 $(\star\star)$ The polynomial $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
 
-In fact, if $u=Y_1^{\alpha_1}\cdots X_n^{\alpha_m}$, then $u'$ is monic of degree 
+In fact, if $u=Y_1^{\alpha_1}\cdots Y_m^{\alpha_m}$, then $u'$ is monic of degree 
 $$
 \alpha_1+\alpha_2r+\cdots+\alpha_mr^{m-1}.
 $$ 
@@ -2347,9 +2487,9 @@ The Nullstellensatz is stated in Exercise 14 of Chapter 7 as follows:
 \begin{proof} 
 The inclusion $r(\mf a)\subset I(V)$ is clear. Let's prove $I(V)\subset r(\mf a)$. 
 
-(ZL2) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\mf p$. Then the statement follows immediately from Exercises 5.23 and 5.24 p.~71 of the book. Here is a slightly different argument:
+(ZL2) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\ppp$. Then the statement follows immediately from Exercises 5.23 and 5.24 p.~71 of the book. Here is a slightly different argument:
 
-Let $f$ be in $A\setminus\mf p$ and set $A_f:=A[1/f]$.
+Let $f$ be in $A\setminus\ppp$ and set $A_f:=A[1/f]$.
 
 It suffices to prove the claim below.
 
@@ -2357,7 +2497,7 @@ Claim: There is a maximal ideal of $A$ which doesn't contain $f$.
 
 We give two proofs of the claim.
 
-Proof 1. The extension $\mf p^{\oo e}$ of $\mf p$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mf m\subset A_f$ containing $\mf p^{\oo e}$. 
+Proof 1. The extension $\ppp^{\oo e}$ of $\ppp$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mf m\subset A_f$ containing $\ppp^{\oo e}$. 
 
 Note successively that $f\notin\mf m$; that $\mf q:=\mf m\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mf m$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\mf q\mono A_f/\mf m\simeq k$ implies that $\mf q$ is a maximal ideal of $A$.
 
@@ -2397,6 +2537,43 @@ Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf 
 
 In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$.
 
+\section{Page 80, a remark}%
+
+Here is an example of a descending chain $A_0\supset A_1\supset\cdots$ such that each $A_n$ is noetherian but the intersection is not.
+
+Consider the submonoid $M_n$ of $\mathbb N^2$ defined by 
+$$
+M_n:=\{a\in\mathbb N^2\ |\ a_2\ge1\ \lor\ a_1\ge n\}\supset M_{n+1},
+$$ 
+note that we have $M_n\supset M_{n+1}$, and that 
+$$
+M:=\bigcap_n\ M_n=\{a\in\mathbb N^2\ |\ a_2\ge1\}
+$$ 
+is \emph{not} finitely generated. Observe that the finite set 
+$$
+G_n:=\{(n,0),(n+1,0),\dots,(2n-1,0),(0,1),(1,1),(2,1),\dots,(n-1,1)\}\subset M_n
+$$ 
+generates $M_n$. 
+
+Here is a picture for $n=3$: The black dots are the points of $G_3$, the white dots are the points on $M_3\setminus G_3$, the crosses are the points in $\mathbb N^2\setminus M_3$.
+$$
+\begin{matrix}
+2&\circ&\circ&\circ&\circ&\circ&\circ&\circ\\ 
+1&\bullet&\bullet&\bullet&\circ&\circ&\circ&\circ\\ 
+0&\times&\times&\times&\bullet&\bullet&\bullet&\circ\\ 
+&0&1&2&3&4&5&6.
+\end{matrix}
+$$
+Let $K$ be a field and $x$ and $y$ indeterminates, and set  
+$$
+A_n:=K\left[(x^iy^j)_{(i,j)\in G_n}\right],
+$$ 
+that is, $A_n$ is the sub-$K$-algebra of $K[x,y]$ generated by 
+$$
+\{x^iy^j\ |\ (i,j)\in G_n\}.
+$$ 
+Then the $A_n$ satisfy the conditions stated at the beginning of this section.
+
 \section{Page 81, proof of Hilbert Basis Theorem}%
 
 Here is a (well known) shorter proof:
@@ -2429,15 +2606,15 @@ Here is a related result:
 
 (c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
 
-\emph{Proof.} (a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\mf p$ be a prime ideal of $A$. Then the nilradical of $A_{\mf p}$ is $(0)$ and $\mf p_{\mf p}$ is the only prime ideal of $A_{\mf p}$. This implies that $A_{\mf p}$ is a field, and we get successively the equalities 
+\emph{Proof.} (a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\ppp$ be a prime ideal of $A$. Then the nilradical of $A_\ppp$ is $(0)$ and $\ppp_\ppp$ is the only prime ideal of $A_\ppp$. This implies that $A_\ppp$ is a field, and we get successively the equalities 
 $$
-(a)_{\mf p}=(a^2)_{\mf p},\quad(a)_{\mf p}/(a^2)_{\mf p}=(0),\quad((a)/(a^2))_{\mf p}=(0).
+(a)_\ppp=(a^2)_\ppp,\quad(a)_\ppp/(a^2)_\ppp=(0),\quad((a)/(a^2))_\ppp=(0).
 $$ 
-As $\mf p$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
+As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 
 (b)$\implies$(c): With obvious notation we have $\bar a=\bar a^2\bar b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^{n+1}\in(a^n)$ and thus $(a^{n+1})=(a^n)$. 
 
-(c)$\implies$(a): Let $\mf p$ be a prime ideal of $A$ and let $a$ be in $A\setminus\mf p$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\mf p$, and thus $1-ab\in\mf p$. This implies that $A/\mf p$ is a field, and therefore that $\mf p$ is maximal. $\square$
+(c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
 
 \section{Page 90}\label{90}%
 
@@ -2495,7 +2672,7 @@ The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the
 
 \section{Page 97, proof of Theorem 9.8}%
 
-The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_{\mf p}$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_{\mf p}$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_{\mf p}$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)).
+The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_\ppp$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_\ppp$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_\ppp$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)).
 
 \section{Page 102, Completions 1}%
 
@@ -2575,12 +2752,12 @@ About the proof of Corollary 10.20: The fact that ``an $\mf m$-primary ideal of 
 
 About Corollary 10.21: Let $a$ be in $A$. We must show: 
 
-$a\in\mf q$ for all $\mf p$-primary ideal $\mf q$ $\iff$ there is an $s$ in $A\setminus\mf p$ such that $as=0$. 
+$a\in\mf q$ for all $\ppp$-primary ideal $\mf q$ $\iff$ there is an $s$ in $A\setminus\ppp$ such that $as=0$. 
 
 \begin{proof} 
-If $s$ in $A\setminus\mf p$ satifies $as=0$, and if $\mf q$ is a $\mf p$-primary ideal, then $a$ is in $\mf q$.
+If $s$ in $A\setminus\ppp$ satifies $as=0$, and if $\mf q$ is a $\ppp$-primary ideal, then $a$ is in $\mf q$.
 
-If $as\neq0$ for all $s\in A\setminus\mf p$, then $\frac a1\neq0$, and Corollary 10.20 implies that there is a $\mf p$-primary ideal $\mf q$ such that $\frac a1\notin\mf q_{\mf p}$, and thus $a\notin\mf q$. 
+If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 10.20 implies that there is a $\ppp$-primary ideal $\mf q$ such that $\frac a1\notin\mf q_\ppp$, and thus $a\notin\mf q$. 
 \end{proof}
 
 \section{Page 118, proof of Proposition 11.4}%\label{odnd}
@@ -2672,7 +2849,7 @@ The case when $K$ is \emph{finite} is a Bourbaki exercise: Exercice 22c p. 288 i
 
 \section{Page 122}%
 
-$\bu$ Proof of Corollary 11.16. The fact that $(x_1,\dots,x_r)_{\mf p}$ is $\mf p_{\mf p}$-primary follows easily from Propositions 4.8 (ii) p~53 and 4.9 p~54.
+$\bu$ Proof of Corollary 11.16. The fact that $(x_1,\dots,x_r)_\ppp$ is $\ppp_\ppp$-primary follows easily from Propositions 4.8 (ii) p~53 and 4.9 p~54.
 
 $\bu$ Proof of Proposition 11.20. The $d(?)$ are $d_o(?)$ in the notation of Section~\ref{odnd}.
 
@@ -2686,15 +2863,15 @@ For the last sentence of the proof, see the Examples on p.~121.
 
 \section{Page 126}%% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
-We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\mf p$ by $h(\mf p)$. If $\mf p$ and $\mf q$ are prime ideals of a ring $B$, we write $\mf p<\mf q$ instead of 
+We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If $\ppp$ and $\mf q$ are prime ideals of a ring $B$, we write $\ppp<\mf q$ instead of 
 $$
-\mf p\underset\ne\subset\mf q,
+\ppp\underset\ne\subset\mf q,
 $$ 
-and $\mf p_i^{\oo c}$ instead of $(\mf p_i)^{\oo c}$. 
+and $\ppp_i^{\oo c}$ instead of $(\ppp_i)^{\oo c}$. 
 
 We'll freely use the following obvious fact:
 
-($\star$) \emph{If $\mf p_0<\cdots<\mf p_n$ is a chain of prime ideals, then} $h(\mf p_n)\ge n+h(\mf p_0)$. 
+($\star$) \emph{If $\ppp_0<\cdots<\ppp_n$ is a chain of prime ideals, then} $h(\ppp_n)\ge n+h(\ppp_0)$. 
 
 We'll also use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
 
@@ -2702,11 +2879,11 @@ We'll also use the following fact which occurs in the hint to Exercise 11.6 p.~1
 $$
 f^*:\oo{Spec}(A[x])\to\oo{Spec}(A)
 $$ 
-\emph{over a prime ideal $\mf p$ of $A$ is order isomorphic to the spectrum of} 
+\emph{over a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of} 
 $$
 k\otimes_AA[x]\simeq k[x],
 $$ 
-\emph{where $k$ is the residue field at} $\mf p$.
+\emph{where $k$ is the residue field at} $\ppp$.
 
 \subsection{Exercise 11.6}%
 
@@ -2716,19 +2893,19 @@ For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} abov
 
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
 $
-\mf p_0<\dots<\mf p_n
+\ppp_0<\dots<\ppp_n
 $ 
 is a chain of prime ideals in $A$, then 
 $$
-\mf p_0[x]<\dots<\mf p_n[x]<(\mf p,x)
+\ppp_0[x]<\dots<\ppp_n[x]<(\ppp,x)
 $$ 
 is chain of prime ideals in $A[x].\ \square$
 
-\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Statement ($\star\star$) above implies that, for any chain $\mf p_0<\mf p_1<\mf p_2$ of prime ideals in $A[x]$, we have:
+\emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Statement ($\star\star$) above implies that, for any chain $\ppp_0<\ppp_1<\ppp_2$ of prime ideals in $A[x]$, we have:
 
-$\bullet$ if $\mf p_0^{\oo c}=\mf p_1^{\oo c}$ then $\mf p_0=\mf p_0^{\oo c}[x]$ and $\mf p_1^{\oo c}<\mf p_2^{\oo c}$,
+$\bullet$ if $\ppp_0^{\oo c}=\ppp_1^{\oo c}$ then $\ppp_0=\ppp_0^{\oo c}[x]$ and $\ppp_1^{\oo c}<\ppp_2^{\oo c}$,
 
-$\bullet$ if $\mf p_1^{\oo c}=\mf p_2^{\oo c}$ then $\mf p_1=\mf p_1^{\oo c}[x]$ and $\mf p_0^{\oo c}<\mf p_1^{\oo c}$.
+$\bullet$ if $\ppp_1^{\oo c}=\ppp_2^{\oo c}$ then $\ppp_1=\ppp_1^{\oo c}[x]$ and $\ppp_0^{\oo c}<\ppp_1^{\oo c}$.
 
 This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of length at least $\lfloor\ell/2\rfloor$ in $A$. Hence 
 $$
@@ -2743,24 +2920,24 @@ $$
 
 $\bullet$ Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
-$\bullet$ Inequality $\oo{height }\mf p[x]\le m$: see Corollary 11.16 p.~121 of the book.
+$\bullet$ Inequality $\oo{height }\ppp[x]\le m$: see Corollary 11.16 p.~121 of the book.
 
 $\bullet$ Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint). 
 
-%We denote the height of the prime ideal $\mf p$ by $h(\mf p)$.
+%We denote the height of the prime ideal $\ppp$ by $h(\ppp)$.
 
 %We give two proofs of the inequality $\dim A[x]\le1+\dim A$.
 
 \emph{Proof.} We can assume $\dim A<\infty$. Set $n:=\dim A$ and let 
 $ 
-\mf p_0<\cdots<\mf p_{n+2}
+\ppp_0<\cdots<\ppp_{n+2}
 $ 
 be a chain of prime ideals in $A[x]$ of length $n+2$. It suffices to derive a contradiction from this assumption. 
 
-The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\mf p_i^{\oo c}=\mf p_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\mf p_i=\mf p_i^{\oo c}[x]$ by ($\star\star$), and $h(\mf p_i^{\oo c})=h(\mf p_i)\ge i$ by ($\star$). Using again ($\star$) we get  
-%and $\mf p_i=\mf p_i^{\oo c}[x]$ by ($\star$), and thus $h(\mf p_i^{\oo c})=h(\mf p_i)\ge i$. This implies
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star\star$), and $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$ by ($\star$). Using again ($\star$) we get  
+%and $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star$), and thus $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$. This implies
 $$
-h(\mf p_{n+2}^{\oo c})\ge n+1-i+h(\mf p_i^{\oo c})\ge n+1,
+h(\ppp_{n+2}^{\oo c})\ge n+1-i+h(\ppp_i^{\oo c})\ge n+1,
 $$ 
 which is impossible. $\square$
 
