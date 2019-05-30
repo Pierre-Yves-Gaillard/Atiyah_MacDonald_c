@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -674,7 +674,7 @@ Recall the statement of Exercise 2.25:
 Let $0\to N'\to N\to N''\to0$ be an exact sequence, with $N''$ flat. Then $N'$ is flat if and only if $N$ is flat.
 \end{exo}
 
-Here is a solution to Exercise 2.25 which does \emph{not} use the Tor functor. Of course, the solution using the Tor functor (and assuming the Tor functor and some of its basic properties are known) is much simpler. In the next section we give a proof which includes a definition of the Tor functor.
+Here is a solution to Exercise 2.25 which does \emph{not} use the Tor functor. Of course, the solution using the Tor functor (and assuming the Tor functor and some of its basic properties are known) is much simpler. In the next section (Section~\ref{sol2} p.~\pageref{sol2}) we give a proof which includes a definition of the Tor functor.
 
 The proof below follows closely the proof of Proposition 1.2.5.5 in Bourbaki's \textbf{Algèbre commutative}.
 
@@ -898,7 +898,7 @@ Assume that $M$ is flat. Then $\beta$ is injective, and so is $\beta\circ f=g\ci
 Assume that $M'$ is flat. Then $\alpha$ is injective, and Lemma~\ref{b2i} implies that $\beta$ is injective, and thus that $M$ is flat.
 \end{proof}
 
-\section{Page 34, Exercise 2.25, second solution}% doc snake0: https://docs.google.com/document/d/1gTyvvgy4XYRi04V_LI47nxX0mYQvRyn57lMmjo59hlM/edit
+\section{Page 34, Exercise 2.25, second solution}\label{sol2}% doc snake0: https://docs.google.com/document/d/1gTyvvgy4XYRi04V_LI47nxX0mYQvRyn57lMmjo59hlM/edit
 
 In Section~\ref{s225a} p.~\pageref{s225a} above we gave a solution to Exercise 2.25 p.~34 of the book which doesn't use the Tor functor. The purpose of the present section is to give a solution which \emph{does} use the Tor functor, but does \emph{not} assume this functor to be known. We'll follow Bourbaki's \textbf{Algèbre homologique}.
 
