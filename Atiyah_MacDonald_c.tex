@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -2550,6 +2550,46 @@ Claim: $\mf b^{\oo c}=(0)$.
 Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ such sitting above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
 
 In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$.
+
+\section{Chapter 6}%%
+
+\subsection{Jordan-Hölder Theorem}%
+
+The following proof is taken from Jeffrey Daniel Kasik Carlson's text cited at the beginning of the present text. 
+
+Consider an $A$-module $M$ of finite length. Proposition 6.7 p.~77 of the book says that all composition series of $M$ have the same length, and the book claims (p. 77) that the multiset of isomorphism classes of quotients of successive terms is the same for any choice of composition series. The proof, it goes on, is the same as for finite groups. We recall it here.
+
+The proof proceeds by induction on the length $\ell(M)$ of $M$. If $\ell(M)=0$ or $1$, we are done. Assume inductively that the result holds for all modules of length $n$, and let $\ell(M)=n+1$. Assume $M$ has the two composition series 
+$$
+M=M_0>M_1>\cdots>M_{n+1}=0,\quad M=N_0>N_1>\cdots>N_{n+1}=0.
+$$
+If $M_1=N_1$, then by the inductive hypotheses the multisets 
+$$
+S=\{[M_i/M_{i+1}]\}_{i=1}^n\text{ and }T=\{[N_i/N_{i+1}]\}_{i=1}^n
+$$ 
+of quotients are equal, so, since $M/M_1=M/N_1$, the quotient multisets of the two composition series for $M$ are equal.
+
+If $M_1\ne N_1$, let $P_1:=M_1\cap N_1$. Note that $M_1<M_1+N_1\subset M$, so, since $M/M_1$ was assumed simple, $M_1+N_1=M$. Now 
+$$
+M_1/P_1 = M_1/(M_1\cap N_1)\simeq(M_1+N_1)/N_1=M/N_1
+$$ 
+by the second isomorphism theorem (Proposition 2.1.ii p.~19 of the book), and this quotient is simple. Symmetrically, $N_1/P_1\simeq M/M_1$. By the proof of Proposition 6.7 p.~77 of the book, $\ell(P_1)\le\ell(M_1)=n$ is finite, so $P_1$ has a composition series $P_1>P_2>\cdots>P_p=0$. Write $U$ for the quotient multiset. Then $M_1>P_1>\cdots>P_p=0$ is a composition series for $M_1$. Since $\ell(M_1)=n$, we have $p = n$, and by the induction hypothesis, the multiset  
+$$
+\{[M_1/P_1]\}\cup U =\{[M/N_1]\}\cup U
+$$ 
+is the same as the multiset $S=\{[M_i/M_{i+1}]\}_{i=1}^n$. Then the quotient multiset for the $M_i$ composition series of $M$ is 
+$$
+\{[M/M_1]\}\cup S=\{[M/M_1],[M/N_1]\}\cup U.
+$$ 
+Similarly $N_1>P_1>\cdots>P_p=0$ is a composition series for $N_1$ with quotient multiset $\{[N_1/P_1]\}\cup U=\{[M/M_1]\}\cup U$, by inductive assumption equal to the multiset 
+$$
+T:=\{[N_i/N_{i+1}]\}_{i=1}^n.
+$$ 
+Then the $N_i$ composition series for $M$ yields the quotient multiset 
+$$
+\{[M/N_1]\}\cup T=\{[M/N_1],[M/M_1]\}\cup U
+$$ 
+as well.
 
 \section{About Chapter 7}%%
 
