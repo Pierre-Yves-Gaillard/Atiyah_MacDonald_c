@@ -681,10 +681,10 @@ T(P)\xr{T(f)}T(Q)\xr{T(g)}T(R)
 $$ 
 is exact. The sequences 
 $$
-P\xr fQ\xr{g'}g(Q)\to0,\quad0\to g(Q)\xr{g'}R,
+P\xr fQ\xr{g'}g(Q)\to0,\quad0\to g(Q)\xr{i'}R,
 $$ 
 $$
-T(P)\xr{T(f)}T(Q)\xr{T(g')}T(g(Q))\to0,\quad0\to T(g(Q))\xr{T(g')}R,
+T(P)\xr{T(f)}T(Q)\xr{T(g')}T(g(Q))\to0,\quad0\to T(g(Q))\xr{T(i')}T(R),
 $$ 
 being exact, we get 
 $$
@@ -725,7 +725,7 @@ The quotient $M'/\sim$ is a direct limit of the $M_i$ also in the category of $A
 
 \subsection{Page 33, Exercise 2.20}%
 
-Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$ be a category $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
+Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
 
 Define the morphisms $u$ and $v$ by the commutative diagram
 $$
@@ -851,7 +851,11 @@ The first claim is clear. We have
 $$
 \oo{Ker}(v_1)=\oo{Ker}(\beta)\cap\oo{Ker}(v)=\oo{Ker}(\beta)\cap\oo{Im}(u)=\oo{Im}(j)\cap\oo{Im}(u).
 $$ 
-Lemma~\ref{b1i} implies $\oo{Ker}(v_1)=\oo{Im}(j\circ u_1)=\oo{Im}(u_1)$ if $u'$ is injective.
+Assume that $u'$ is injective. As Lemma~\ref{b1i} implies 
+$$
+\oo{Im}(j)\cap\oo{Im}(u)=\oo{Im}(j\circ u_1)=\oo{Im}(u_1),
+$$ 
+we get $\oo{Ker}(v_1)=\oo{Im}(u_1)$.
 \end{proof}
 
 \begin{lem}\label{b2ii}
@@ -869,7 +873,8 @@ $$
 $$ 
 $$
 =q(\oo{Im}(u'))=\oo{Im}(q\circ u')=\oo{Im}(u_2\circ p)=\oo{Im}(u_2).
-$$
+$$ 
+(Lemma~\ref{b1ii} is used to prove the second equality.)
 \end{proof} 
 
 \begin{lem}[Snake Lemma]\label{lsl}
@@ -891,18 +896,18 @@ is exact.
 The name ``Snake Lemma'' comes from the fact that the above exact sequence can be displayed as 
 $$%https://tex.stackexchange.com/a/82774/8816
 \begin{tikzcd}
-  \Ker(f) \ar["u_1"]{r} & \Ker(g) \ar["v_1"]{r}
+  \Ker(\alpha) \ar["u_1"]{r} & \Ker(\beta) \ar["v_1"]{r}
              \ar[draw=none]{d}[name=X, anchor=center]{}
-    & \Ker(h) \ar[rounded corners,
+    & \Ker(\gamma) \ar[rounded corners,
             to path={ -- ([xshift=2ex]\tikztostart.east)
                       |- (X.center) \tikztonodes
                       -| ([xshift=-2ex]\tikztotarget.west)
                       -- (\tikztotarget)}]{dll}[at end]{} \\      
-  \Coker(f) \ar["u_2"]{r} & \Coker(g) \ar["v_2"]{r} & \Coker(h).
+  \Coker(\alpha) \ar["u_2"]{r} & \Coker(\beta) \ar["v_2"]{r} & \Coker(\gamma).
 \end{tikzcd}
 $$
 
-\begin{proof} (a) Definition of $\delta$: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
+\begin{proof} (a) The correspondance $\delta$ is a map: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
 $$
 u'(a'+\alpha(a))=u'(a')+u'(\alpha(a))=\beta(b)+\beta(u(a))
 $$ 
@@ -917,7 +922,8 @@ and the injectivity of $u'$ implies $a'+\alpha(a)=a'^*$. Finally, we conclude th
 
 (d) Equality $\delta\circ v_1=0$: Suppose that $c=v_1(\bar b)$ with $\bar b\in\oo{Ker}(\beta)$; we then take for $b\in B$ the element $j(\bar b)$. As $\beta(j(\bar b))=0$, we see that $\delta(c)=0$, hence $\delta\circ v_1=0$. 
 
-(e) Exactness at $\oo{Ker}(\gamma)$: Suppose that $\delta(c)=0$. It suffices to show that we have $c=v_1(b^*)$ for some $b^*\in\oo{Ker}(\beta)$. In the notation of (a) we have $a'=\alpha(a)$ with $a\in A$, and we get 
+(e) Exactness at $\oo{Ker}(\gamma)$: Suppose that $\delta(c)=0$. It suffices to show that we have $c=v_1(b^*)$ for some $b^*\in\oo{Ker}(\beta)$. Defining $b$ and $a'$ as in (a), we get $p(a')=\delta(c)=0$. Thus there is an $a$ in $A$ such that $a'=\alpha(a)$, %In the notation of (a) we have $a'=\alpha(a)$ with $a\in A$, 
+and we get 
 $$
 \beta(b)=u'(a')= u'(\alpha(a))= \beta(u(a)),
 $$ 
@@ -933,7 +939,7 @@ u_2(\delta(c))=u_2(p(a'))=q(u'(a'))=q(\beta(b))=0.
 $$ 
 %hence $u_2\circ\delta=0$. 
 
-(g) Exactness at $\oo{Coker}(\alpha)$: Suppose that an element $p(a')$ in $\oo{Coker}(\alpha)$ (with $a'\in A'$) satisfies $u_2(p(a'))=0$. It suffices to prove $p(a')=\delta(c)$ for some $c\in\oo{Ker}(\gamma)$. We have $q(u'(a'))=0$, and thus $u'(a')=\beta(b)$ for some $b\in B$; as $v'(u'(a')))=0$, we get $v'(\beta(b))=0$, thus $\gamma(v(b))=0$, that is $v(b)=k(c)$ for some $c\in\oo{Ker}(\gamma)$, and we get the sought-for equality $p(a')=\delta(c)$ by definition of $\delta$.%which shows that \eqref{eb2iii} is exact at $\oo{Coker}(\alpha)$.
+(g) Exactness at $\oo{Coker}(\alpha)$: Suppose that an element $p(a')$ in $\oo{Coker}(\alpha)$ (with $a'\in A'$) satisfies $u_2(p(a'))=0$. It suffices to prove $p(a')=\delta(c)$ for some $c\in\oo{Ker}(\gamma)$. We have $q(u'(a'))=0$, and thus $u'(a')=\beta(b)$ for some $b\in B$; as $v'(u'(a')))=0$, we get $v'(\beta(b))=0$, thus $\gamma(v(b))=0$, that is $v(b)=k(c)$ for some $c\in\oo{Ker}(\gamma)$, and we obtain the sought-for equality $p(a')=\delta(c)$ by definition of $\delta$.%which shows that \eqref{eb2iii} is exact at $\oo{Coker}(\alpha)$.
 \end{proof}
 %\begin{lem}\label{bc1i}If $u',\alpha$ and $\gamma$ are injective, then $\beta$ is injective.\end{lem}\begin{proof}This follows from Lemma~\ref{b2i}: indeed we have $\oo{Ker}(\alpha)=0$ and $\oo{Ker}(\gamma)=0$, hence $\oo{Ker}(\beta)=0$.\end{proof}
 
@@ -967,12 +973,12 @@ $$
 $$ 
 where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By the Snake Lemma (Lemma~\ref{lsl}) there is an exact sequence  
 $$
-\oo{Ker}(f)\to\oo{Ker}(g)\to M_1\otimes N\to M_2\otimes N
+\oo{Ker}(f)\to\oo{Ker}(g)\to M_1\otimes N\to M_2\otimes N.
 $$ 
 As $M$ is flat, $g$ is injective. Thus $M_1\otimes N\to M_2\otimes N$ is also injective. 
 \end{proof}
 
-Clearly the following lemma implies Exercise~2.25 (see Exercise~\ref{e225} p.~\pageref{e225}).
+Clearly the following lemma implies Exercise~2.25 (stated as Exercise~\ref{e225} p.~\pageref{e225}).
 
 \begin{lem}
 Let $0\to M'\to M\to M''\to0$ be an exact sequence of $R$-modules with $M''$ flat. Then $M'$ if flat if and only if $M$ is flat.
