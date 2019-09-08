@@ -1788,8 +1788,6 @@ For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pag
 
 \section{About Chapter 4}%%
 
-% Bourbaki https://docs.google.com/document/d/15j_JjYfsyrM7Et-PvKQLXjNOYUnEAUVqT7gR0HlbLXA/edit
-
 \subsection{Contracted primary ideals}\label{cpi}%
 
 Section~\ref{43} p.~\pageref{43} prompts the question: Is a contracted primary ideal the contraction of a primary ideal? We show that the answer is negative.
@@ -2480,6 +2478,131 @@ y\in\mathfrak{q}_n\setminus\mathfrak{p}_1.
 $$ 
 %$y\in\mathfrak{q}_n$ such that $y\notin\mathfrak{p}_1$.
 Then the product $xy$ is in $\mathfrak{q}_2\cap \cdots \cap \mathfrak{q}_n\subset\mathfrak{q}_1$. But this is impossible since $x$ is not in $\ppp_1$ and $y$ is not in $\qqq_1$. %Since $\mathfrak{q}_1$ is $\mathfrak{p}_1$-primary, so either $x\in \mathfrak{q}_1$ or $y\in \mathfrak{p}_1$. But by construction of $x$ and $y$, this is not the case.
+
+\subsection{Primary decomposition of a submodule after Bourbaki}%\label{310ii}%%
+
+% Bourbaki https://docs.google.com/document/d/15j_JjYfsyrM7Et-PvKQLXjNOYUnEAUVqT7gR0HlbLXA/edit
+
+We follow closely Bourbaki's \textbf{Algèbre commutative}, Chapter IV. Unless otherwise stated, $A$ is a commutative ring with one and $M$ is an $A$-module. For any element $a$ of $A$ and any $A$-module $M$ write $a_M$ for the map $x\mapsto ax$, $M\to M$
+
+%\subsubsection{Associated prime ideals}%
+
+\begin{df}
+Let $M$ be an $A$-module. We say that a prime ideal $\ppp$ of $A$ is \emph{associated} to $M$ if there is an $x\in M$ such that  $\ppp$ is the annihilator of $x$. We write $\Ass(M)$ for the set of those prime ideals of $A$ which are associated to $M$. 
+\end{df}
+
+The annihilator of the zero module being the unit ideal, an element $x\in M$ whose annihilator is prime is nonzero. 
+
+\begin{lem}\label{ail0}
+Let $\ppp$ be a prime ideal of $A$. Then $\ppp$ is associated to $M$ if and only if $M$ contains a submodule $N$ isomorphic to $A/\ppp$, in which case we can take $N:=Ax$ for any $x\in M$ whose annihilator is $\ppp$. 
+\end{lem}
+\begin{proof}
+This is clear.
+\end{proof}
+
+If $M$ is the union of a family $(M_i)_{i\in I}$ of submodules, we clearly have
+\begin{equation}\label{ai1}
+\Ass(M)=\bigcup_{i\in I}\Ass(M_i).
+\end{equation}
+
+\begin{prop}\label{aip1}
+For all prime ideal $\ppp$ of $A$ and all nonzero submodule $M$ of $A/\ppp$ we have $\Ass(M)=\{\ppp\}$. 
+\end{prop}
+\begin{proof}
+As $A/\ppp$ is a domain, the annihilator in $A$ of any of its nonzero element is $\ppp$.
+\end{proof}
+
+\begin{prop}\label{aip2}
+Let $\aaa$ be an ideal of $A$ which is maximal among all ideals of the form $\Ann(x)$, $x\in M\setminus\{0\}$. Then $\aaa$ is prime, and thus $\aaa\in\Ass(M)$.
+%Any maximal element of the set of all ideals $\Ann(x)$, with $x\in M\setminus\{0\}$, is in $\Ass(M)$.
+\end{prop}
+\begin{proof}
+Let $x$ and $\aaa$ % $\aaa=\Ann(x)$ and $x\in M\setminus\{0\}$, 
+be as above. %such a maximal element; 
+It suffices to check that $\aaa$ is prime. As $x\ne0$, we have $\aaa\ne(1)$. Let $b,c$ be elements of $A$ such that $bc\in\aaa$ and $c\notin\aaa$. We get $cx\ne0$, $b\in\Ann(cx)$ and $\aaa\subset\Ann(cx)$. As $\aaa$ is maximal, this implies $\Ann(cx)=\aaa$, whence $b\in\aaa$. This shows that $\aaa$ is prime.
+\end{proof}
+\begin{cor}\label{iac1}
+If $A$ is a noetherian ring and $M$ an $A$-module, then the conditions $M=0$ and $\Ass(M)=\varnothing$ are equivalent.
+\end{cor}
+\begin{proof}
+If $M=0$, then $\Ass(M)$ is empty (even if $A$ were not noetherian). If $M\ne0$, the set $S$ of all ideals of the form $\Ann(x)$, $x\in M\setminus\{0\}$, is nonempty and $(1)\notin S$; as $A$ is noetherian, this set has a maximal element; and Proposition~\ref{aip2} gives the desired conclusion.
+\end{proof}
+\begin{cor} Let $A$ be noetherian, let $a$ be in $A$ and let $M$ be an $A$-module. Then $a_M$ is injective if and only if $a$ belongs to no prime ideal associated to $M$.
+\end{cor}
+\begin{proof}
+If $a\in\ppp\in\Ass(M)$, we have $\ppp=\Ann(x)$ for some $x\in M\setminus\{0\}$, and the equality $ax=0$ shows that $a_M$ is not injective. Conversely, if $ax=0$ for some $x\in M\setminus\{0\}$, we get $Ax\ne0$, whence $\Ass(Ax)\ne\varnothing$ (Corollary~\ref{iac1}). Let $\ppp\in\Ass(Ax)$; we obviously have $\ppp\in\Ass(M)$ and $\ppp=\Ann(bx)$ for some $b\in A$; whence $a\in\ppp$ since $abx=0$. 
+\end{proof}
+\begin{cor}%COROLLAIR3E. - 
+The set of all zero-divisors in a noetherian ring $A$ is the union of the ideals $\ppp\in\Ass(A)$.
+\end{cor}
+\begin{prop}\label{aip3}%PROPOSIT3IO. -N 
+If $N$ is a submodule of $M$, we have 
+$$
+\Ass(N)\subset\Ass(M)\subset\Ass(N)\cup\Ass(M/N).
+$$
+\end{prop}
+\begin{proof}
+The inclusion $\Ass(N)\subset\Ass(M)$ is obvious. Let $\ppp\in\Ass(M)$. By Lemma~\ref{ail0} there is a submodule $E$ of $M$ isomorphic to $A/\ppp$. Set $F:=E\cap N$. If $F=0$, then $E$ is isomorphic to a submodule of $M/N$, and (again by Lemma~\ref{ail0}) $\ppp\in\Ass(M/N)$. If $F\ne0$, the annihilator of any nonzero element of $F$ is $\ppp$ (Proposition~\ref{aip1}), hence $\ppp\in\Ass(N)$.
+\end{proof}
+
+\begin{lem}\label{aimyl1}
+If $A$ is a noetherian ring, and if $(N_i)_{i\in I}$ is a family of submodules of an $A$-module $M$ such that the intersection of the $\Ass(N_i)$ is empty, then the intersection of the $N_i$ is the zero submodule.
+\end{lem}
+\begin{proof}
+This follows from Corollary~\ref{iac1} and Proposition~\ref{aip3}.
+\end{proof}
+
+\begin{cor}\label{aic1}%COROLLAIR1E. - 
+If $M$ is the direct sum of a family $(M_i)_{i\in I}$ of submodules, then $\Ass(M)$ is the union of the $\Ass(M_i)$.%$$\Ass(M)=\bigcup_{i\in I}\Ass(M_i).$$
+\end{cor}
+\begin{proof}
+By \eqref{ai1} we can assume that $I$ is finite. Arguing by induction, we see that it suffices to handle the case $I=\{1,2\}$. But this case follows from Proposition~\ref{aip3}.
+\end{proof}
+
+\begin{cor}\label{aimc11}%COROLLAIR2E. - 
+Let $M$ be an $A$-module and $Q_1,\dots,Q_n$ submodules of $M$. If the intersection of the $Q_i$ is $0$, then $\Ass(M)$ is contained in the union of the $\Ass(Q_i)$, and thus $\Ass(M)$ coincides with the union of the $\Ass(Q_i)$
+\end{cor}
+\begin{proof}
+The canonical map $M\to\bigoplus(M/Q_i)$ being injective, it suffices to apply Proposition~\ref{aip3} and Corollary~\ref{aic1}.
+\end{proof}
+
+\begin{prop}\label{aip4}%PROPOSITIO4
+Given $\Psi\subset\Ass(M)$ there is a submodule $N$ of $M$ such that 
+$$
+\Ass(N)=\Ass( M )\setminus\Psi\text{ and }\Ass(M/N)=\Psi.
+$$ 
+\end{prop}
+\begin{proof}
+Let $\Sigma$ be the set of those submodules $P$ of $M$ such that $\Ass(P)\subset\Ass( M )\setminus\Psi$. By \eqref{ai1} the set $\Sigma$, ordered by inclusion, is inductive; moreover the zero submodule belongs to $\Sigma$, so $\Sigma$ is nonempty. Let $N$ be a maximal element of $\Sigma$. We have $\Ass(N)\subset\Ass( M )\setminus\Psi$. By Proposition~\ref{aip3}, it suffices to prove $\Ass(M/N)\subset\Psi$. %\begin{equation}\label{ai2}\Ass(M/N)\subset\Psi.\end{equation}
+Let $\ppp\in\Ass(M/N)$; then, by Lemma~\ref{ail0}, $M/N$ contains a submodule $F/N$ isomorphic to $A/\ppp$. By Propositions \ref{aip1} and \ref{aip3} we have $\Ass(F)\subset\Ass(N)\cup\{\ppp\}$. The maximality of $N$ implies $F\notin\Sigma$, and thus $\ppp\in\Psi$.
+\end{proof}
+
+\begin{prop}\label{aimyl2}
+If $A$ is a noetherian ring and if $(\Psi_i)_{i\in I}$ is a family of subsets of $\Ass(M)$ whose union is $\Ass(M)$, then there is a family $(N_i)_{i\in I}$ of submodules of $M$ such that $\Ass(M/N_i)=\Psi_i$ for all $i$, and the intersection of the $N_i$ is the zero submodule.
+\end{prop}
+\begin{proof}
+Write $M(\Psi)$ for the submodule denoted by $N$ in the proof of Proposition~\ref{aip4} and apply Lemma~\ref{aimyl1} to the $M(\Psi_i)$.%This follows from Lemma~\ref{aimyl1} and Proposition~\ref{aip4}, setting ???
+\end{proof}
+
+\begin{df}
+A submodule $N$ of an $A$-module $M$ is \emph{primary} if $\Ass(M/N)=\{\ppp\}$ for some prime ideal $\ppp$ of $A$, in which case one also says that $N$ is $\ppp$\emph{-primary}. 
+\end{df}
+
+The following consequence of Proposition~\ref{aimyl2} is stated as Theorem 2.2.1 in Somaya Muiny's thesis \href{https://scholarworks.gsu.edu/math_theses/70/}{https://scholarworks.gsu.edu/math\_theses/70/}
+
+\begin{thm}[Somaya Muiny]\label{somaya}
+If $M$ is a module over a noetherian ring $A$, then the intersection of its primary submodules is zero. More generally, if $N$ is submodule of an $A$-module $M$, then $N$ is the intersection of the primary submodules of $M$ which contain $N$. In fact, $N$ is the intersection of a family $(M(\ppp))_{\ppp\in\Ass(M/N)}$ of submodules containing $N$ such that each $M(\ppp)/N$ is $\ppp$-primary.
+\end{thm}
+\begin{proof}
+Assuming $N=0$ without lost of generality, we apply Proposition~\ref{aimyl2} to the family $(\{\ppp\})_{\ppp\in\Ass(M)}$.
+\end{proof}
+
+\begin{prop}%\label{aimyl2}
+Let $A$ be a noetherian ring and $M$ an $A$-module. Then the zero submodule of $M$ is the intersection of a finite family $(Q_1,\dots,Q_n)$ of primary submodules  of $M$ if and only if $\Ass(M)$ is finite, in which case $\Ass(M)$ is the disjoint union of the $\Ass(Q_i)$. There is a similar statement for an arbitrary submodule of $M$ (instead of the zero submodule).%the zero submodule of $M$ is the intersection of a family $(Q(\ppp))_{\ppp\in\Ass(M)}$ where each $Q(\ppp)$ is $\ppp$-primary. Let $A$ be a noetherian ring and $M$ an $A$-module. Then the zero submodule of $M$ is a finite intersection of primary submodules of $M$ if and only if $\Ass(M)$ is finite, in which case the zero submodule of $M$ is the intersection of a family $(Q(\ppp))_{\ppp\in\Ass(M)}$ where each $Q(\ppp)$ is $\ppp$-primary.
+\end{prop}
+\begin{proof}
+This follows from Corollary~\ref{aimc11} and Theorem~\ref{somaya}.
+\end{proof}
 
 \section{About Chapter 5}%%%
 
