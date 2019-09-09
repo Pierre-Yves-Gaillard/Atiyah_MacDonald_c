@@ -2588,6 +2588,14 @@ Write $M(\Psi)$ for the submodule denoted by $N$ in the proof of Proposition~\re
 Let $A$ be a noetherian ring. A submodule $N$ of an $A$-module $M$ is \emph{primary} if $\Ass(M/N)=\{\ppp\}$ for some prime ideal $\ppp$ of $A$, in which case one also says that $N$ is $\ppp$\emph{-primary}. 
 \end{df}
 
+Note that Bourbaki's definition given above is \textbf{not} equivalent to Atiyah and MacDonald's, as shown by the following example.
+
+Let $K$ be a field, and $x$ and $y$ indeterminates. Set $A:=K[[x]]$, $M:=K[y]$, and define an $A$-module structure on $M$ by 
+$$
+\left(\sum a_nx^n\right)f:=\sum a_nf^{(n)},
+$$ 
+where $f^{(n)}$ is the $n$-th derivative of $f$. Then the zero submodule of $M$ is primary in Bourbaki's sense but is \textbf{not} an intersection of primary submodules in the sense of Atiyah and MacDonald.
+
 The following consequence of Proposition~\ref{aimyl2} is stated as Theorem 2.2.1 in Somaya Muiny's thesis \href{https://scholarworks.gsu.edu/math_theses/70/}{https://scholarworks.gsu.edu/math\_theses/70/}
 
 \begin{thm}[Somaya Muiny]\label{somaya}
