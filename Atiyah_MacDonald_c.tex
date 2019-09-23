@@ -1635,7 +1635,7 @@ Recall the statement:
 
 \emph{Let $A$ be a ring. Prove that the following are equivalent:}
 
-(i) $A/\mf N$ \emph{is absolutely flat ($\mf N$ being the nilradical of $A$).}
+(i) $A/\mf N$ \emph{is absolutely flat ($\,\mf N$ being the nilradical of $A$).}
 
 (ii) \emph{Every prime ideal of $A$ is maximal.}
 
@@ -1688,7 +1688,7 @@ Here is a related result:
 
 (a) \emph{the Krull dimension of $A$ is at most zero,}
 
-(b) \emph{$A/\mf n$ is absolutely flat, where $\mf n$ is the nilradical of $A$,}
+(b) \emph{$A/\mf N$ is absolutely flat, where $\mf N$ is the nilradical of $A$,}
 
 (c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
 
@@ -2720,7 +2720,7 @@ Set $D:=(f\otimes1)(B\otimes_AC)$ and let $E$ be the integral closure of $D$ in 
 
 \subsubsection{A more general question}%\label{53}
 
-Let $C\leftarrow A\to B\to B'$ be morphisms of rings. In this section tensor products are taken over $A$, and $\overline{X\ }^Y$ means ``integral closure of $X$ in $Y$''. 
+Let $C\leftarrow A\to B\to B'$ be morphisms of rings. In this section tensor products are taken over $A$, and, for any morphism of rings $f:X\to Y$, the notation $\overline{X\ }^Y$ means ``integral closure of $f(X)$ in $Y$''. 
 
 The purpose of this section is to show that the morphism 
 $$
@@ -2748,7 +2748,7 @@ To prove the claim, let $u$ be in $B''$. We can write
 $$
 u=f(x^2)+x\sqrt{x^2-1}\ g(x^2)
 $$ 
-with $f(x^2),g(x^2)\in K(x^2)$. It suffices to check that $f(x^2)$ and $g(x^2)$ are in $K[x^2]$, or equivalently, that they are in $B''$. We have 
+with $f(x^2)$, $g(x^2)\in K(x^2)$. It suffices to check that $f(x^2)$ and $g(x^2)$ are in $K[x^2]$, or equivalently, that they are in $B''$. We have 
 $$
 v:=f(x^2)-x\sqrt{x^2-1}\ g(x^2)\in B'',
 $$ 
@@ -3084,6 +3084,24 @@ As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 (b)$\implies$(c): With obvious notation we have $\overline a=\overline a^2\overline b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^{n+1}\in(a^n)$ and thus $(a^{n+1})=(a^n)$. 
 
 (c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
+
+\subsection{Page 86, Exercise 7.17}%
+
+Let $M$ be an $A$-module whose zero submodule $0\subset M$ is irreducible. Let us show that $0$ is primary in $M$. 
+
+Let $a$ be an element of $A$ which is a nonzero zero divisor in $M$. It suffices to show that $a$ is nilpotent in $M$. 
+
+The chain of submodules $(0:a)\subset(0:a^2)\subset\cdots$ stabilizes. Say $(0:a^n)=(0:a^{n+1})$. It suffices to show $a^nM=0$. 
+
+Let $x\in M$ satisfy $x\ne0$ and $ax=0$. It is enough to prove $a^nM\cap Ax=0$. 
+
+Let $y$ be in $a^nM\cap Ax=0$. We only need to show $y=0$. 
+
+We have $y=a^nz=bx$ for some $z\in M$ and some $b\in A$, and we get 
+$$
+ay=a^{n+1}z=abx=bax=0,
+$$ 
+and thus $0=a^nz=y$. This completes the proof.% proves the claim. As $Ax\ne0$ and $0$ is irreducible, the claim implies that $a^nM=0$, and thus that $a$ is nilpotent in $M$, as required.
 
 \section{About Chapter 8}%%
 
