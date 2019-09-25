@@ -2812,6 +2812,27 @@ It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which
 
 It is easy to show that (a) implies (c), and that (b) and (c) are equivalent.
 
+\subsection{Page 68, Exercise 5.12}%
+
+Hint: The main point is to show that an invariant fraction is equal to a fraction with invariant numerator and denominator. Let $x=a/s$ be our fraction (obvious notation). 
+
+Step 1. Set 
+$$
+t:=\prod_{\sigma\ne1}\sigma(s).
+$$ 
+The product $st$ is invariant, and we have 
+$$
+x=\frac{a}{s}=\frac{at}{st}\ .
+$$ 
+In other words we can assume that the denominator $s$ of our fraction $x=a/s$ is invariant.
+
+Step 2. For $\sigma\in G$ we have $\sigma(a)/s=a/s$, that is $\sigma(a)st_\sigma=ast_\sigma$ for some $t_\sigma\in S$. Arguing as in Step~1 we can assume that the $t_\sigma$ are invariant.
+
+Step 3. By a similar trick we can assume that the $t_\sigma$ are all equal to some $t\in S^G$, and we get $ast=\sigma(a)st=\sigma(ast)$, and thus 
+$$
+\frac{a}{s}=\frac{ast}{s^2t}\ .
+$$
+
 \subsection{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
 NNT stands for Noether Normalization Theorem.
