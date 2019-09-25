@@ -2833,6 +2833,10 @@ $$
 \frac{a}{s}=\frac{ast}{s^2t}\ .
 $$
 
+\subsection{Page 69, Exercise 5.15}%
+
+Let $L/K$ be purely inseparable of characteristic $p>0$, and let $\ppp$ be a prime ideal of $A$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\qqq$ of $B$ lying above $\ppp$. If $b\in B$, $n\in\mathbb N$ and $b^{p^n}\in\ppp$, then $b\in\qqq$. If $x\in\qqq$, then $x^{p^n}\in K$ for some $n\in\mathbb N$, and thus $x^{p^n}\in K\cap\qqq=\ppp$. We conclude that $\qqq$ is the set of those $b\in B$ such that $b^{p^n}\in\ppp$ for some $n\in\mathbb N$ (even if the extension is of infinite degree).
+
 \subsection{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
 NNT stands for Noether Normalization Theorem.
@@ -2841,11 +2845,11 @@ The purpose of this section is to review the following closely related statement
 
 \textbf{\Large Noether Normalization Theorem}
 
-Before proceeding, it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
+Before proceeding, recall the following fact (see Remark p.~60 of the book): %it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
 
 $(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
 
-Recall the general notation $A_s:=A[s^{-1}]$.%
+Recall also the general notation $A_s:=A[s^{-1}]$.%
 
 \textbf{Noether Normalization Theorem.} \emph{Let $A\subset B$ be an inclusion of nonzero rings such that $B$ a finitely generated $A$-algebra. Then there exist a nonzero element $s$ in $A$, a nonnegative integer $n$, and elements $x_1,\dots,x_n$ in $B_s$ which are algebraically independent over $A_s$, such that $B_s$ is a finitely generated module over} 
 $$
@@ -2985,7 +2989,7 @@ Proof. By Theorem 5.10 p.~62 of the book we can assume that $B$ is a domain. Let
 
 Claim: $\mf b^{\oo c}=(0)$. 
 
-Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ such sitting above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
+Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ such lying above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
 
 In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$.
 
