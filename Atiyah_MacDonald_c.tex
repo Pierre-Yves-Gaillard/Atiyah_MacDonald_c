@@ -2839,15 +2839,17 @@ Let $L/K$ be purely inseparable of characteristic $p>0$, and let $\ppp$ be a pri
 
 \subsection{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
-NNT stands for Noether Normalization Theorem.
+NNT stands for \textbf{Noether Normalization Theorem}.
 
-The purpose of this section is to review the following closely related statements: Noether's Normalization Theorem, Zariski's Lemma, the Weak Nullstellensatz and the Nullstellensatz.
+The purpose of this section is to review the following closely related statements: Noether's Normalization Theorem, Zariski's Lemma, %the Weak Nullstellensatz 
+and the Nullstellensatz.
 
-\textbf{\Large Noether Normalization Theorem}
+%\textbf{Noether Normalization Theorem}\subsubsection{Noether Normalization Theorem}
 
 Before proceeding, recall the following fact (see Remark p.~60 of the book): %it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
 
-$(\star)$ \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
+%$(\star)$ 
+\emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
 
 Recall also the general notation $A_s:=A[s^{-1}]$.%
 
@@ -2856,33 +2858,40 @@ $$
 A_s[x_1,\dots,x_n].
 $$ 
 \begin{proof} 
-Let $y_1,\dots,y_m\in B$. Assume that $B=A[\,y_1,\dots,y_m]$. We argue by induction on $m$. If $m=0$ or if the $y_i$ are algebraically independent over $A$, there is nothing to prove, so that we can assume that $m\ge1$, that the statement holds with $m$ replaced by $m-1$, and that there is a non-constant polynomial $f\in A[Y_1,\dots,Y_m]$, where the $Y_i$ are indeterminates, such that $f(\,y_1,\dots,y_m)=0$. Let $r$ be an integer larger than the degree of $f$. 
+Let $y_1,\dots,y_m\in B$ generate $B$ as an $A$-algebra: $B=A[\,y_1,\dots,y_m]$. 
 
-We claim that there is a nonzero $t$ in $A$ such that $B_t$ is finitely generated as a module over 
+We argue by induction on $m$. 
+
+If $m=0$ or if the $y_i$ are algebraically independent over $A$, there is nothing to prove.
+
+Thus we can assume that $m\ge1$; that the statement holds with $m$ replaced by $m-1$; and that there is a non-constant polynomial $f\in A[Y_1,\dots,Y_m]$, where the $Y_i$ are indeterminates, such that $f(\,y_1,\dots,y_m)=0$. %Let $r$ be an integer larger than the degree of $f$. 
+
+We claim
+
+(a) There exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{m-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. 
+
+We start the proof of (a). 
+
+Let $r$ be an integer larger than the degree of $f$, and, for any monomial $u\in A[Y_1,\dots,Y_m]$ occurring in $f$ (with a nonzero coefficient), write $u'$ for the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
-C:=A_t\left[\,y_2-y_1^r,\dots,y_m-y_1^{r^{m-1}}\right].
+\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1].
 $$ 
-It suffices to show that $B_t$ is integral over $C$. As $B_t=C[\,y_1]$, it is enough to prove that $y_1$ is integral over $C$. In fact, we only need to check that 
-
-$(\star)$ There is a nonzero $t$ in $A$, an integer $d\ge1$, and a 
-$$
-g\in\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1]
-$$ 
-of degree less than $d$, such that $f=tY_1^d+g$. 
-
-If, for any monomial $u\in A[Y_1,\dots,Y_m]$ occurring in $f$ (with a nonzero coefficient), we denote by $u'$ the monomial $u$ \emph{viewed as a polynomial in the ring} 
-$$
-\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1],
-$$ 
-then $(\star)$ follows immediately from 
-
-$(\star\star)$ The polynomial $u'$ is monic. Moreover, if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$.
-
-In fact, if $u=Y_1^{\alpha_1}\cdots Y_m^{\alpha_m}$, then $u'$ is monic of degree 
+If $u=Y_1^{\alpha_1}\cdots Y_m^{\alpha_m}$, then $u'$ is monic of degree 
 $$
 \alpha_1+\alpha_2r+\cdots+\alpha_mr^{m-1}.
 $$ 
-So, we have proved that there exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{m-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. 
+This implies that $u'$ is monic, and that we have $\deg(u')\ne\deg(v')$ for any two distinct such monomials $u$ and $v$. %if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$. 
+As a result, there is a nonzero $t$ in $A$, an integer $d\ge1$, and a polynomial 
+$$
+g\in\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1]
+$$ 
+of degree less than $d$, such that $f=tY_1^d+g$. In particular, $y_1$ is integral over the ring 
+$$
+C:=A_t\left[\,y_2-y_1^r,\dots,y_m-y_1^{r^{m-1}}\right],
+$$ 
+and $B_t$ is a finitely generated $C$-module. This proves (a).
+
+Let us show that (a) implies the Theorem:
 
 We can assume that $A_t$ is nonzero. By the inductive hypothesis applied to the inclusion 
 $$
@@ -2896,7 +2905,11 @@ which are algebraically independent over $(A_t)_u$, such that
 $$
 (A_t)_u[z_1,\dots,z_{m-1}]
 $$ 
-is a finitely generated $(A_t)_u[x_1,\dots,x_n]$-module. Now $u=v/t^i$ for some nonzero $v$ in $A$ and some integer $i\ge0$, and we have $(A_t)_u=A_{tv}$. Setting $s:=tv$, we see that $s\ne0$, and we get elements $x_1$, \dots, $x_n$ in 
+is a finitely generated $(A_t)_u[x_1,\dots,x_n]$-module. 
+
+Now $u=v/t^i$ for some nonzero $v$ in $A$ and some integer $i\ge0$, and we have $(A_t)_u=A_{tv}$. 
+
+Setting $s:=tv$, we see that $s\ne0$, and we get elements $x_1$, \dots, $x_n$ in 
 $
 A_s[z_1,\dots,z_{m-1}]
 $ 
@@ -2904,12 +2917,21 @@ which are algebraically independent over $A_s$, such that
 $
 A_s[z_1,\dots,z_{m-1}]
 $ 
-is a finitely generated $A_s[x_1,\dots,x_n]$-module. Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. Therefore $B_s$ is a finitely generated $A_s[z_1,\dots,z_{m-1}]$-module, which is itself, as we have just seen, a finitely generated $A_s[x_1,\dots,x_n]$-module. This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module,  as desired.
+is a finitely generated $A_s[x_1,\dots,x_n]$-module. 
+
+Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. 
+
+In particular $B_s$ is a finitely generated module over the ring $$A_s[z_1,\dots,z_{m-1}],$$ ring which is itself, as we have just seen, a finitely generated $A_s[x_1,\dots,x_n]$-module. 
+
+This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module, as desired.
+
+This shows that, indeed, (a) implies the Theorem.
 \end{proof} 
+%https://docs.google.com/document/d/1KsGGeQkmO40nOVK3_LVgBWoxS6DiRJsDygE6UnkFWjc/edit
 % https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit old versions
 %[Added later: An approach which I find better is expounded in Mel Hochster, Noether normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}\ ]
 
-Here is a statement of Zariski's Lemma:
+Here is a statement of \textbf{Zariski's Lemma}:
 
 (ZL)\emph{Let $k$ be a field, $A$ a finitely generated $k$-algebra. Let $\mf m$ be a maximal ideal of $A$. Then the field $A/\mf m$ is a finite algebraic extension of $k$. In particular, if $k$ is algebraically closed then $A/\mf m\simeq k$, that is, the natural morphism $k\to A/\mf m$ is an isomorphism.}
 
@@ -2936,7 +2958,7 @@ $$
 
 The detailed proof of (ZL2) is left to the reader.
 
-The Nullstellensatz is stated in Exercise 14 of Chapter 7 as follows:
+The \textbf{Nullstellensatz} is stated in Exercise 14 of Chapter 7 as follows:
 
 (N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1,\dots,t_n]$ and let $\mf a$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\mf a$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\mf a$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\mf a)$.}
 
