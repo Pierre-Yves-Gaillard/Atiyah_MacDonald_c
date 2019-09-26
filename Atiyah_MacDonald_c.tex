@@ -2844,14 +2844,10 @@ NNT stands for \textbf{Noether Normalization Theorem}.
 The purpose of this section is to review the following closely related statements: Noether's Normalization Theorem, Zariski's Lemma, %the Weak Nullstellensatz 
 and the Nullstellensatz.
 
-%\textbf{Noether Normalization Theorem}\subsubsection{Noether Normalization Theorem}
-
-Before proceeding, recall the following fact (see Remark p.~60 of the book): %it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:
-
-%$(\star)$ 
+%\textbf{Noether Normalization Theorem}\subsubsection{Noether Normalization Theorem}%Before proceeding, recall the following fact (see Remark p.~60 of the book): %it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:%$(\star)$ 
 \emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
 
-Recall also the general notation $A_s:=A[s^{-1}]$.%
+Recall the general notation $A_s:=A[s^{-1}]$.%
 
 \textbf{Noether Normalization Theorem.} \emph{Let $A\subset B$ be an inclusion of nonzero rings such that $B$ a finitely generated $A$-algebra. Then there exist a nonzero element $s$ in $A$, a nonnegative integer $n$, and elements $x_1,\dots,x_n$ in $B_s$ which are algebraically independent over $A_s$, such that $B_s$ is a finitely generated module over} 
 $$
@@ -2868,9 +2864,9 @@ Thus we can assume that $m\ge1$; that the statement holds with $m$ replaced by $
 
 We claim
 
-(a) There exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{m-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. 
+$(\star)$ There exist a nonzero $t$ in $A$ and elements $z_1$, \dots, $z_{m-1}$ in $B$ such that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module. 
 
-We start the proof of (a). 
+We start the proof of $(\star)$. 
 
 Let $r$ be an integer larger than the degree of $f$, and, for any monomial $u\in A[Y_1,\dots,Y_m]$ occurring in $f$ (with a nonzero coefficient), write $u'$ for the monomial $u$ \emph{viewed as a polynomial in the ring} 
 $$
@@ -2889,9 +2885,9 @@ of degree less than $d$, such that $f=tY_1^d+g$. In particular, $y_1$ is integra
 $$
 C:=A_t\left[\,y_2-y_1^r,\dots,y_m-y_1^{r^{m-1}}\right],
 $$ 
-and $B_t$ is a finitely generated $C$-module. This proves (a).
+and $B_t=C[y_1]$ is a finitely generated $C$-module. This proves $(\star)$.
 
-Let us show that (a) implies the Theorem:
+Let us show that $(\star)$ implies the Theorem:
 
 We can assume that $A_t$ is nonzero. By the inductive hypothesis applied to the inclusion 
 $$
@@ -2925,7 +2921,7 @@ In particular $B_s$ is a finitely generated module over the ring $$A_s[z_1,\dots
 
 This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module, as desired.
 
-This shows that, indeed, (a) implies the Theorem.
+This shows that, indeed, $(\star)$ implies the Theorem.
 \end{proof} 
 %https://docs.google.com/document/d/1KsGGeQkmO40nOVK3_LVgBWoxS6DiRJsDygE6UnkFWjc/edit
 % https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit old versions
