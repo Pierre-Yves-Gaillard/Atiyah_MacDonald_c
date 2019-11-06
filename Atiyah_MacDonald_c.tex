@@ -309,7 +309,7 @@ This will follow from Exercise 1.3iii.
 
 \subsection{Page 11, Exercise 1.3i and 1.3ii}%
 
-Prove both statements by induction on the number of indeterminates, starting with Exercise 1.3ii.
+Prove both statements by induction on the number of indeterminates. It seems better to solve Exercise 1.3ii before Exercise 1.3i.
 
 \subsection{Page 11, Exercise 1.3iii}%
 
@@ -405,13 +405,25 @@ Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we
 
 More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\mf b\in\Sigma$ such that $\mf a\subset\mf b$.
 
-\subsection{Page 13, Exercise 1.21iii}%
+\subsection{Page 13, Exercise 1.21iii}\label{121iii}%
 
 It seems better to prove first the equality 
 $$
 \overline S=V(\mf a),\quad \mf a:=\bigcap_{\ppp\in S}\ \ppp
 $$ 
 for $S\subset\oo{Spec}(A)$.
+
+\subsection{Page 13, Exercise 1.21v}%\label{hbt}
+
+In the notation of the exercise we must show 
+$$
+\overline{\phi^*(Y)}=X\iff\Ker\phi\subset\mf N(A).
+$$ 
+More generally we have 
+$$
+\overline{\phi^*(Y)}=V(\Ker\phi)
+$$ 
+by Part (iii) of the same exercise (see Section~\ref{121iii} above).
 
 \subsection{Page 13, Exercise 1.22, (i) implies (iii)}%
 
@@ -447,6 +459,10 @@ $\bullet\  P$ is the lattice attached to $A$,
 
 $\bullet$ we have $(a)+(b)=(a+b+ab),\ (a)\cap(b)=(ab)$.
 
+%%%
+
+\begin{comment}
+
 \subsection{Page 16, Exercise 1.28}%
 
 We assume that our field $k$ is \emph{infinite} (but not necessarily algebraically closed). We shall prove that, in the setting of the exercise, there are inverse bijections 
@@ -455,7 +471,7 @@ $$
 \text{Hom}(X,Y)\ar[r,yshift=4pt,"F"]&\text{Hom}(P(Y),P(X))\ar[l,yshift=-4pt,"G"],
 \end{tikzcd}
 $$ 
-where the first $\text{Hom}$ is the set of regular morphisms from$X$ to $Y$ and the second $\text{Hom}$ is the set of $k$-algebra morphisms from $P(Y)$ to $P(X)$. We shall use the following notation:
+where the first $\text{Hom}$ is the set of regular morphisms from $X$ to $Y$ and the second $\text{Hom}$ is the set of $k$-algebra morphisms from $P(Y)$ to $P(X)$. We shall use the following notation:
 $$
 t=(t_1,\dots,t_n),\ u=(u_1,\dots,u_m),\ x=(x_1,\dots,x_n),%\ y=(y_1,\dots,y_m),
 $$ 
@@ -494,6 +510,10 @@ $$
 \widetilde{G(\Phi)}(x):=\left(\widetilde\Phi(u_1)(x),\dots,\widetilde\Phi(u_m)(x)\right).
 $$ 
 Finally, it is straightforward to check $G(F(\varphi))=\varphi$ and $F(G(\Phi))=\Phi$.
+
+\end{comment}
+
+%%%
 
 \section{About Chapter 2}%%
 
