@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -899,8 +899,8 @@ $$
 (Lemma~\ref{b1ii} is used to prove the second equality.)
 \end{proof} 
 
-\begin{lem}[Snake Lemma]\label{lsl}
-Assume that $u'$ is injective and that $v$ is surjective. Then the correspondance (see Bourbaki's \textbf{Théorie des ensembles}, Section II.3) 
+\begin{thm}[Snake Lemma]\label{lsl}
+Assume that $u'$ is injective and that $v$ is surjective. Then the correspondence (see Bourbaki's \textbf{Théorie des ensembles}, Section II.3) 
 $$
 \delta:=p\circ u'^{-1}\circ\beta\circ v^{-1}\circ k
 $$ 
@@ -913,7 +913,7 @@ $$
 \end{tikzcd}
 $$ 
 is exact.
-\end{lem}
+\end{thm}
 
 The name ``Snake Lemma'' comes from the fact that the above exact sequence can be displayed as 
 $$%https://tex.stackexchange.com/a/82774/8816
@@ -929,7 +929,7 @@ $$%https://tex.stackexchange.com/a/82774/8816
 \end{tikzcd}
 $$
 
-\begin{proof} (a) The correspondance $\delta$ is a map: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$ we have $a'^*=a'+\alpha(a)$; indeed we have 
+\begin{proof} (a) The correspondence $\delta$ is a map: For $c\in\oo{Ker}(\gamma)$ there is a $b\in B$ such that $v(b)=k(c)$ because $v$ is surjective; moreover, we have $v'(\beta(b))=\gamma(k(c))=0$, and thus there is a unique $a'\in A'$ such that $u'(a')=\beta(b)$ because $u'$ is injective. Let us show that the element $p(a')\in\oo{Coker}(\alpha)$ does not depend on the choice of the element $b\in B$ such that $v(b)=k(c)$. Indeed, if $b^*\in B$ is another element such that $v(b^*)=k(c)$, we have $b^*=b+u(a)$ where $a\in A$; let us show that if $a'^*\in A'$ is such that $u'(a'^*)=\beta(b^*)$, then $a'^*=a'+\alpha(a)$; indeed we have 
 $$
 u'(a'+\alpha(a))=u'(a')+u'(\alpha(a))=\beta(b)+\beta(u(a))
 $$ 
@@ -993,7 +993,7 @@ $$
 &0&0
 \end{tikzcd}
 $$ 
-where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By the Snake Lemma (Lemma~\ref{lsl}) there is an exact sequence  
+where the tensor products are taken over $R$, and where the maps are the natural ones. This diagram is clearly commutative and exact. By the Snake Lemma (Theorem~\ref{lsl}) there is an exact sequence  
 $$
 \oo{Ker}(f)\to\oo{Ker}(g)\to M_1\otimes N\to M_2\otimes N.
 $$ 
@@ -1034,61 +1034,9 @@ We already stated Exercise 2.25 as Exercise~\ref{e225} p.~\pageref{e225} above, 
 Let $0\to N'\to N\to N''\to0$ be an exact sequence, with $N''$ flat. Then $N'$ is flat if and only if $N$ is flat.
 \end{exo}
 
-%We refer the reader to Bourbaki's \textbf{Théorie des ensembles}, II.3 for the notion of \emph{correspondance} from a set to another set.
+%We refer the reader to Bourbaki's \textbf{Théorie des ensembles}, II.3 for the notion of \emph{correspondence} from a set to another set.
 
-%%%
-\begin{comment}
-\subsection{The Snake Lemma}%
-
-Let 
-\begin{equation}\label{sl1}
-\begin{tikzcd}
-&M\ar["u"]{r}\ar["f"]{d}&N\ar["v"]{r}\ar["g"]{d}&P\ar["h"]{d}\ar{r}&0\\ 
-0\ar{r}&M'\ar["u'"']{r}&N'\ar["v'"']{r}&P'
-\end{tikzcd}
-\end{equation} 
-be a commutative diagram of modules with exact rows.
-
-\begin{lem}[Snake Lemma]\label{sl2}
-The commutative diagram \eqref{sl1} can be extended to 
-$$
-\begin{tikzcd}
-&\Ker(f)\ar["u_1"]{r}\ar["i"]{d}&\Ker(g)\ar["v_1"]{r}\ar["j"]{d}&\Ker(h)\ar["k"]{d}\\ 
-&M\ar["u"]{r}\ar["f"]{d}&N\ar["v"]{r}\ar["g"]{d}&P\ar["h"]{d}\ar{r}&0\\ 
-0\ar{r}&M'\ar["u'"']{r}\ar["p"]{d}&N'\ar["v'"']{r}\ar["q"]{d}&P'\ar["r"]{d}\\ 
-&\Coker(f)\ar["u_2"']{r}&\Coker(g)\ar["v_2"']{r}&\Coker(h),
-\end{tikzcd}
-$$ 
-where the arrows are the natural ones. Moreover the correspondance 
-$$
-d:=p\circ u'^{-1}\circ g\circ v^{-1}\circ k
-$$ 
-is an $A$-linear map, and we have an exact sequence
-$$
-\begin{tikzcd}
-\Ker(f)\ar["u_1"]{r}&\Ker(g)\ar["v_1"]{r}&\Ker(h)\ar["d"']{ddll}\\ \\ 
-\Coker(f)\ar["u_2"']{r}&\Coker(g)\ar["v_2"']{r}&\Coker(h).
-\end{tikzcd}
-$$ 
-\end{lem}
-
-\begin{proof}Omitted.\end{proof}
-
-The name ``Snake Lemma'' comes from the fact that the above exact sequence can be displayed as 
-$$%https://tex.stackexchange.com/a/82774/8816
-\begin{tikzcd}
-  \Ker(f) \ar["u_1"]{r} & \Ker(g) \ar["v_1"]{r}
-             \ar[draw=none]{d}[name=X, anchor=center]{}
-    & \Ker(h) \ar[rounded corners,
-            to path={ -- ([xshift=2ex]\tikztostart.east)
-                      |- (X.center) \tikztonodes
-                      -| ([xshift=-2ex]\tikztotarget.west)
-                      -- (\tikztotarget)}]{dll}[at end]{} \\      
-  \Coker(f) \ar["u_2"]{r} & \Coker(g) \ar["v_2"]{r} & \Coker(h).
-\end{tikzcd}
-$$
-\end{comment}
-%%%
+% There was a comment here: https://docs.google.com/document/d/1xGlYIpKhDsSRHiQCVdxI3JIqTVgRilYS7cghOi3g8ec/edit
 
 \subsubsection{Complexes}%
 
@@ -1114,7 +1062,28 @@ The modules $Z(C),B(C)$ and $H(C)$ are graded is an obvious way, and are respect
 
 \subsubsection{The homology long exact sequence}\label{hles}% 
 
-Let $0\to C'\xr uC\xr vC''\to0$ be a short exact sequence of complexes. We get a commutative diagram 
+Let $0\to C'\xr uC\xr vC''\to0$ be a short exact sequence of complexes. By applying the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}) to 
+$$
+\begin{tikzcd}
+C'_{n-1}\ar[d,"d'_{n-1}"]\ar[r,"u_{n-1}"]&C_{n-1}\ar[d,"d_{n-1}"]\ar[r,"v_{n-1}"]&C''_{n-1}\ar[d,"d''_{n-1}"]\\ 
+C'_n\ar[r,"u_n"']&C_n\ar[r,"v_n"']&C''_n,
+\end{tikzcd}
+$$ 
+we get exact sequences 
+$$
+Z_{n-1}(C')\to Z_{n-1}(C)\to Z_{n-1}(C''),
+$$ 
+$$
+\frac{C'_n}{B_n(C')}\to\frac{C_n}{B_n(C)}\to\frac{C''_n}{B_n(C'')}\ .
+$$ 
+It is easy to see that we even have exact sequences 
+$$
+0\to Z_{n-1}(C')\to Z_{n-1}(C)\to Z_{n-1}(C''),
+$$ 
+$$
+\frac{C'_n}{B_n(C')}\to\frac{C_n}{B_n(C)}\to\frac{C''_n}{B_n(C'')}\to0,
+$$ 
+so that we get an exact commutative diagram 
 $$
 \begin{tikzcd}
 &0\ar{d}&0\ar{d}&0\ar{d}\\ 
@@ -1122,10 +1091,10 @@ $$
 &\ds\frac{C'_n}{B_n(C')}\ar["u"]{r}\ar["f"]{d}&\ds\frac{C_n}{B_n(C)}\ar["v"]{r}\ar["g"]{d}&\ds\frac{C''_n}{B_n(C'')}\ar["h"]{d}\ar{r}&0\\ 
 0\ar{r}&Z_{n-1}(C')\ar["u'"']{r}\ar["p"]{d}&Z_{n-1}(C)\ar["v'"']{r}\ar["q"]{d}&Z_{n-1}(C'')\ar["r"]{d}\\ 
 &H_{n-1}(C')\ar["u_2"']{r}\ar{d}&H_{n-1}(C)\ar["v_2"']{r}\ar{d}&H_{n-1}(C'')\ar{d}\\ 
-&0&0&0
+&0&0&0.
 \end{tikzcd}
 $$ 
-with exact rows and columns. By the Snake Lemma (Lemma~\ref{lsl} p.~\pageref{lsl}) we get a ``bi-infinite'' exact sequence 
+Using again the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}), we get a ``bi-infinite'' exact sequence 
 $$
 \cdots\to H_{n+1}(C'')\to H_n(C')\to H_n(C)\to H_n(C'')\to H_{n-1}(C')\to\cdots
 $$ 
