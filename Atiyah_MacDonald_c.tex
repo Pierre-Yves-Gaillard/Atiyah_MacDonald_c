@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -1054,7 +1054,7 @@ If $C$ is a complex the kernel of $d$ is denoted $Z(C)$ and the image of $d$ is 
 
 We have $B(C)\subset Z(C)$, and we set $H(C):=Z(C)/B(C)$. 
 
-The modules $Z(C),B(C)$ and $H(C)$ are graded is an obvious way, and are respectively called the submodule of \emph{cycles}, the submodule of \emph{boundaries}, and the \emph{homology} of $C$.
+The modules $Z(C),B(C)$ and $H(C)$ are graded in an obvious way, are regarded as complexes with vanishing differential, and are respectively called the subcomplex of \emph{cycles}, the subcomplex of \emph{boundaries}, and the \emph{homology} complex of $C$.
 
 %A morphism of complexes $f:C\to D$ induces in an obvious way a degree $0$ morphism of graded modules $H(f):H(C)\to H(D)$. 
 
@@ -1062,23 +1062,23 @@ The modules $Z(C),B(C)$ and $H(C)$ are graded is an obvious way, and are respect
 
 \subsubsection{The homology long exact sequence}\label{hles}% 
 
-Let $0\to C'\xr uC\xr vC''\to0$ be a short exact sequence of complexes. By applying the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}) to 
+Let $0\to C'\xr uC\xr vC''\to0$ be a short exact sequence of complexes. Applying Lemma~\ref{b2i} p.~\pageref{b2i} and Lemma~\ref{b2ii} p.~\pageref{b2ii} to %the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}) to
 $$
 \begin{tikzcd}
-C'_{n-1}\ar[d,"d'_{n-1}"]\ar[r,"u_{n-1}"]&C_{n-1}\ar[d,"d_{n-1}"]\ar[r,"v_{n-1}"]&C''_{n-1}\ar[d,"d''_{n-1}"]\\ 
+C'_{n+1}\ar[d,"d'_{n+1}"]\ar[r,"u_{n+1}"]&C_{n+1}\ar[d,"d_{n+1}"]\ar[r,"v_{n+1}"]&C''_{n+1}\ar[d,"d''_{n+1}"]\\ 
 C'_n\ar[r,"u_n"']&C_n\ar[r,"v_n"']&C''_n,
 \end{tikzcd}
 $$ 
 we get exact sequences 
 $$
-Z_{n-1}(C')\to Z_{n-1}(C)\to Z_{n-1}(C''),
+Z_{n+1}(C')\to Z_{n+1}(C)\to Z_{n+1}(C''),
 $$ 
 $$
 \frac{C'_n}{B_n(C')}\to\frac{C_n}{B_n(C)}\to\frac{C''_n}{B_n(C'')}\ .
 $$ 
 It is easy to see that we even have exact sequences 
 $$
-0\to Z_{n-1}(C')\to Z_{n-1}(C)\to Z_{n-1}(C''),
+0\to Z_{n+1}(C')\to Z_{n+1}(C)\to Z_{n+1}(C''),
 $$ 
 $$
 \frac{C'_n}{B_n(C')}\to\frac{C_n}{B_n(C)}\to\frac{C''_n}{B_n(C'')}\to0,
@@ -1094,7 +1094,7 @@ $$
 &0&0&0.
 \end{tikzcd}
 $$ 
-Using again the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}), we get a ``bi-infinite'' exact sequence 
+By the Snake Lemma (Theorem~\ref{lsl} p.~\pageref{lsl}), we get a ``bi-infinite'' exact sequence 
 $$
 \cdots\to H_{n+1}(C'')\to H_n(C')\to H_n(C)\to H_n(C'')\to H_{n-1}(C')\to\cdots
 $$ 
@@ -1140,7 +1140,7 @@ If $N$ is flat, then $\Tor^A_n(M,N)=0$ for all $n\ge1$.
 
 It is easy to check the canonical isomorphism $\Tor^A_0(M,N)\simeq M\otimes_AN$.
 
-Let $0\to N'\to N\to N''\to0$ be an exact sequence of $A$-modules. It is easy to see that $0\to F(M)\otimes_AN'\to F(M)\otimes_AN\to F(M)\otimes_AN''\to0$ is an exact sequence of complexes of $A$-modules. By Section~\ref{hles} we get a long exact sequence 
+Let $0\to N'\to N\to N''\to0$ be an exact sequence of $A$-modules. It is easy to see that $0\to F(M)\otimes_AN'\to F(M)\otimes_AN\to F(M)\otimes_AN''\to0$ is an exact sequence of complexes of $A$-modules. By Section~\ref{hles} and the above observations we get a long exact sequence 
 $$
 \begin{matrix}
 \cdots&\to&\Tor^A_2(M,N)&\to&\Tor^A_2(M,N'')&\to\\ \\ 
