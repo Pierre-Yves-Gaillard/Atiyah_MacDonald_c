@@ -13,13 +13,14 @@
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
-\usepackage[pdfusetitle]{hyperref}
 \usepackage{datetime}
 \usepackage[osf]{Baskervaldx} % oldstyle figures
 %\usepackage{Baskervaldx}
 \usepackage[baskervaldx]{newtxmath}
 \usepackage{tikz-cd}
 \usepackage{comment}
+%\usepackage[dvipsnames]{xcolor} %creates clashes !!!
+\usepackage[pdfusetitle]{hyperref}
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
 \newcommand{\oo}{\operatorname}\newcommand{\ooo}{\operatorname*}
@@ -148,7 +149,7 @@ This gives the second claim, directly for $n=2$, by induction for $n>2$.
 
 \subsection{Page 8}%
 
-$\bu$ \textbf{Proposition 1.11i, Prime Avoidance}%
+$\bu$ \textbf{Proposition 1.11i, Prime Avoidance}\label{111i}%
 
 The following is taken from Wikipedia:
 
@@ -2962,7 +2963,11 @@ We claim
 $$
 B'':=\overline{K\left[x^2,x\sqrt{x^2-1}\right]\ }^{K\left(x^2,x\sqrt{x^2-1}\right)}=K\left[x^2,x\sqrt{x^2-1}\right].
 $$ 
-Note that 
+Note that the two-element set 
+$$
+\{1,x\sqrt{x^2-1}\}
+$$ 
+is a $K[x^2]$-basis of $K[x\sqrt{x^2-1}]$, as well as a $K(x^2)$-basis of $K(x\sqrt{x^2-1})$. Using this fact it is easy to see that 
 $$
 B''\cap K(x^2)=K[x^2].
 $$ 
@@ -3025,11 +3030,33 @@ Indeed we have $A[x]=A\otimes_{\mathbb Z}\mathbb Z[x]$, and similarly for $B$.
 
 \subsection{Page 67, Exercise 5.4}%
 
-The characteristic of $k$ must be $\ne2$. The last sentence of the hint should be "Can the element $1/(x + 1)$ be integral over $k[x^2-1]_{(x^2-1)}$?"  
+The characteristic of $k$ must be $\ne2$. The last sentence of the hint should be "Can the element $1/(x + 1)$ be integral over $k[x^2-1]_{(x^2-1)}$?" 
+
+Note that 
+$$
+k[x^2-1]_{(x^2-1)}=\left\{\frac{f(x^2-1)}{g(x^2-1)}\ \bigg|\ f,g\in k[t]\right\},
+$$ 
+and, if $1/(x + 1)$ was integral over $k[x^2-1]_{(x^2-1)}$, we would get 
+$$
+\frac1{(x+1)^n}+\frac{f_1(x^2-1)}{g_1(x^2-1)}\frac1{(x+1)^{n-1}}+\cdots+\frac{f_n(x^2-1)}{g_n(x^2-1)}=0.
+$$ 
+Multiplying through by $(x+1)^n$ and setting $x=-1$ yields $1=0$.
 
 \subsection{Page 67, Exercise 5.6}%
 
 It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy.
+
+\subsection{Page 68, Exercise 5.9}% 
+
+The display 
+$$
+(f_1+x^r)^m+g_1\ (f+x^r)^{m-1}+\cdots+g_m=0
+$$ 
+should be 
+$$
+(f_1+x^r)^m+g_1\ (f_1+x^r)^{m-1}+\cdots+g_m=0
+$$ 
+More precisely, the second term should be $$g_1\ (f_1+x^r)^{m-1}$$ instead of $$g_1\ (f+x^r)^{m-1}$$ (with $f_1$ instead of $f$).
 
 \subsection{Page 68, Exercise 5.10}%
 
@@ -3055,6 +3082,27 @@ Step 3. By a similar trick we can assume that the $t_\sigma$ are all equal to so
 $$
 \frac{a}{s}=\frac{ast}{s^2t}\ .
 $$
+\subsection{Page 68, Exercise 5.13}%
+
+We follow the hint given in the book.
+
+Let $\qqq,\qqq'\in P$ and $a\in\qqq'$. We have  
+$$
+\prod_\sigma\sigma(a)\in\qqq'\cap A^G=\ppp=\qqq\cap A^G\subset\qqq.
+$$ 
+Hence there is a $\sigma_a\in G$ such that $\sigma_a(a)\in\qqq$, and thus $a\in\sigma_a^{-1}(\qqq)$. This implies 
+$$
+\qqq'\subset\bigcup_\sigma\sigma(\qqq),
+$$ 
+and thus, by Proposition 1.11i p.~8 of the book (see Section~\ref{111i} p.~\pageref{111i}), $\qqq'\subset\sigma(\qqq)$ for some $\sigma\in G$. 
+
+It suffices to prove $\qqq'=\sigma(\qqq)$.
+
+As 
+$$
+\sigma(\qqq)\cap A^G=\sigma\left(\qqq\cap\sigma^{-1}(A^G)\right)=\sigma\left(\qqq\cap A^G\right)=\sigma(\ppp)=\ppp,
+$$ 
+Corollary 5.9 p.~61 of the book (See Section~\ref{59} p.~\pageref{59}) implies $\qqq'=\sigma(\qqq)$, as was to be shown.
 
 \subsection{Page 69, Exercise 5.15}%
 
@@ -3068,7 +3116,7 @@ The purpose of this section is to review the following closely related statement
 and the Nullstellensatz.
 
 %\textbf{Noether Normalization Theorem}\subsubsection{Noether Normalization Theorem}%Before proceeding, recall the following fact (see Remark p.~60 of the book): %it might be useful to spell out a fact which is proved but, it seems to me, not stated explicitly in the book:%$(\star)$ 
-\emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
+%\emph{Let $A\subset B$ be rings such that $B$ is finitely generated as an $A$-algebra. Then $B$ is finitely generated as an $A$-module if and only if it is integral over $A$.}
 
 Recall the general notation $A_s:=A[s^{-1}]$.%
 
@@ -3100,11 +3148,14 @@ $$
 \alpha_1+\alpha_2r+\cdots+\alpha_mr^{m-1}.
 $$ 
 This implies that $u'$ is monic, and that we have $\deg(u')\ne\deg(v')$ for any two distinct such monomials $u$ and $v$. %if $u$ and $v$ are two distinct such monomials, then we have $\deg(u')\ne\deg(v')$. 
+
 As a result, there is a nonzero $t$ in $A$, an integer $d\ge1$, and a polynomial 
 $$
 g\in\bigg(A\left[Y_2-Y_1^r,\dots,Y_m-Y_1^{r^{m-1}}\right]\bigg)[Y_1]
 $$ 
-of degree less than $d$, such that $f=tY_1^d+g$. In particular, $y_1$ is integral over the ring 
+of degree less than $d$, such that $f=tY_1^d+g$. 
+
+In particular, $y_1$ is integral over the ring 
 $$
 C:=A_t\left[\,y_2-y_1^r,\dots,y_m-y_1^{r^{m-1}}\right],
 $$ 
