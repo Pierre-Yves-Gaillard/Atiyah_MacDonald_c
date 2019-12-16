@@ -3481,7 +3481,6 @@ M_2\ar[d,dash,"a_3"']&&N_2\ar[d,dash,"b_3"]\\
 M_n&&N_n.
 \end{tikzcd}
 $$ 
-%$$M=M_0>M_1>\cdots>M_{n+1}=0,\quad M=N_0>N_1>\cdots>N_{n+1}=0.$$ We must prove that the respective multisets of quotients are equal. 
 Case 1: $M_1=N_1$. We get $a_1=b_1$ and 
 $$
 \begin{tikzcd}
@@ -3494,10 +3493,8 @@ M_n&&N_n,
 \end{tikzcd}
 $$ 
 and we are done because the inductive hypotheses yields $a_2+\cdots+a_n=b_2+\cdots+b_n$.
-%the multisets %$$S=\{[M_i/M_{i+1}]\}_{i=1}^n\text{ and }T=\{[N_i/N_{i+1}]\}_{i=1}^n$$ of quotients attached to the two series for $M_1$ are equal, hence the multisets of quotients attached to the two original series are also equal.%, since $M/M_1=M/N_1$, the quotient multisets of the two composition series for $M$ are equal. 
 
-Case 2: $M_1\ne N_1$. Setting $P_2:=M_1\cap N_1$, %Note that $M_1<M_1+N_1\subset M$, so, since $M/M_1$ was assumed simple, $M_1+N_1=M$. Now $$M_1/P_2 = M_1/(M_1\cap N_1)\simeq(M_1+N_1)/N_1=M/N_1$$ by the second isomorphism theorem (Proposition 2.1.ii p.~19 of the book), and this quotient is simple. Symmetrically, $N_1/P_1\simeq M/M_1$. By the proof of Proposition 6.7 p.~77 of the book, $\ell(P_2)\le\ell(M_1)=-1n$ is finite, so $P_2$ has a composition series $P_2>P_3>\cdots>P_k=0$. Write $U$ for the quotient multiset. Then $M_1>P_1>\cdots>P_p=0$ is a composition series for $M_1$. Since $\ell(M_1)=n$, we have $p=n$, and by the induction hypothesis, the multiset $$\{[M_1/P_1]\}\cup U =\{[M/N_1]\}\cup U$$ is the same as the multiset $S=\{[M_i/M_{i+1}]\}_{i=1}^n$. Then the quotient multiset for the $M_i$ composition series of $M$ is $$\{[M/M_1]\}\cup S=\{[M/M_1],[M/N_1]\}\cup U.$$ Similarly $N_1>P_1>\cdots>P_p=0$ is a composition series for $N_1$ with quotient multiset $\{[N_1/P_1]\}\cup U=\{[M/M_1]\}\cup U$, by inductive assumption equal to the multiset $$T:=\{[N_i/N_{i+1}]\}_{i=1}^n.$$ Then the $N_i$ composition series for $M$ yields the quotient multiset $$\{[M/N_1]\}\cup T=\{[M/N_1],[M/M_1]\}\cup U$$ as well.
-we get 
+Case 2: $M_1\ne N_1$. Setting $P_2:=M_1\cap N_1$, we get 
 $$
 \begin{tikzcd}
 &M\ar[dl,dash,"a_1"']\ar[dr,dash,"b_1"]\\ 
@@ -3525,21 +3522,66 @@ $$
 $$ 
 This completes the proof. 
 
+\subsection{Page 78, Exercise 6.3}%\label{nnt}%
+
+Hint: Consider the exact sequences 
+$$
+0\to\frac{N_1}{N_1\cap N_2}\to\frac M{N_1\cap N_2}\to\frac M{N_1}\to0
+$$ 
+and 
+$$
+0\to\frac{N_1+N_2}{N_2}\to\frac M{N_2}\to\frac M{N_1+N_2}\to0.
+$$ 
+Mild generalization: If $N_1,\dots,N_k$ are submodules of $M$ such that $M/N_i$ is noetherian for all $i$, then $M/(N_1\cap\cdots\cap N_k)$ is noetherian. 
+
+\subsection{Page 78, Exercise 6.4}%\label{nnt}%
+
+(a) Hint: use the above generalization.
+
+(b) See Example 3 p.~74 of the book. 
+
 \subsection{Page 79, Exercise 6.7}%\label{nnt}%
 
-See Exercises 1.19 and 1.20 p.~13 of the book.
+See Exercises 1.19 and 1.20 p.~13 of the book. 
+
+Hint: Let $C$ be a minimal element of $\Sigma$. Then $C$ is nonempty, and, for $c\in C$, we have $C=(C\setminus\{c\})\cup\overline{\{c\}}$. 
 
 \subsection{Page 79, Exercise 6.8}%\label{nnt}%
+
+Hint: If $V(\aaa_1)\supset V(\aaa_2)\supset\cdots$, with $r(\aaa_i)=\aaa_i$, is a weakly decreasing chain of closed subsets of $X$, then $\aaa_1\subset\aaa_2\subset\cdots$ is a weakly increasing chain of ideals of $A$. 
+
+\subsection{Page 79, Exercise 6.9}%\label{nnt}%
 
 See Exercise 1.20iv p.~13 of the book.
 
 \subsection{Page 79, Exercise 6.10}%\label{nnt}%
 
-See Exercise 3.19 p.~46 of the book.
+By Exercise 3.19 p.~46 of the book we have $\oo{Supp}(M)=V(\aaa)$ with $\aaa:=\oo{Ann}(M)$. We also have $V(\aaa)\simeq\oo{Spec}(A/\aaa)$, and $A/\aaa$ is noetherian by Exercise 6.4 p.~78, and $\oo{Spec}(A/\aaa)$ is noetherian by Exercise 6.8 p.~79. 
 
 \subsection{Page 79, Exercise 6.11}%
 
-Hint: use Exercises 5.10i p.~68, 6.5 p.~79 and 1.21iv p.~13.
+%Hint: use Exercises 5.10i p.~68, 6.5 p.~79 and 1.21iv p.~13. 
+Let us assume that $f$ has the going-up property, and let us show that $f^*$ is closed. Let $\bbb$ be a radical ideal of $B$, and let $\aaa$ be its contraction in $A$. It suffices to prove 
+$$
+f^*(V(\bbb))=V(\aaa).
+$$ 
+By Exercises 6.5, 6.7 and 1.20iv there are $\qqq_1,\dots,\qqq_n\in V(\bbb)$ such that the set of minimal elements of $V(\bbb)$ is $\{\qqq_1,\dots,\qqq_n\}$ and 
+$$
+V(\bbb)=\bigcup_{i=1}^n\ V(\qqq_i).
+$$ 
+Let $\ppp_i$ be the contraction of $\qqq_i$ in $A$. It suffices to prove: 
+\begin{equation}\label{611a}
+V(\aaa)=\bigcup_{i=1}^n\ V(\ppp_i)
+\end{equation} 
+and 
+\begin{equation}\label{611b}
+f^*(V(\qqq_i))=V(\ppp_i)\text{ for all }i.
+\end{equation} 
+Condition \eqref{611b} follows from the going-up property. To prove \eqref{611a}, let $\ppp$ be in $V(\aaa)$. It is enough to check that $\ppp$ is in $V(\ppp_i)$ for some $i$. We have 
+$$
+\ppp\supset\aaa=\bbb^{\oo c}=\left(\bigcap\ \qqq_i\right)^{\oo c}=\bigcap\ \ppp_i,
+$$ 
+and Proposition 1.11ii p.8 of the book implies $\ppp\subset\ppp_i$ for some $i$, as was to be shown. 
 
 \subsection{Page 79, Exercise 6.12}%
 
