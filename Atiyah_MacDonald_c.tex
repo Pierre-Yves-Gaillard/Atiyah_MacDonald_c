@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -27,7 +27,9 @@
 \newcommand{\mf}{\mathfrak}
 \newcommand{\aaa}{\mf a}
 \newcommand{\bbb}{\mf b}
+\newcommand{\ccc}{\mf c}
 \newcommand{\mmm}{\mf m}
+\newcommand{\nnn}{\mf n}
 \newcommand{\ppp}{\mf p}
 \newcommand{\qqq}{\mf q}
 \newcommand{\Ann}{\oo{Ann}}
@@ -76,6 +78,10 @@ Here are some other links:
 $\bu$ Errata \href{https://mathoverflow.net/q/42241/461}{https://mathoverflow.net/q/42241/461}
 
 %$\bu$ \href{https://sites.google.com/view/mathlife1}{https://sites.google.com/view/mathlife1}
+
+$\bu$ Athanasios Papaioannou, Solutions to Atiyah and MacDonald’s Introduction to Commutative Algebra \href{https://tinyurl.com/r3y453b}{https://tinyurl.com/r3y453b}
+
+% \href{shorturl.at/mqzH9}{shorturl.at/mqzH9} https://tinyurl.com/r3y453b  \href{https://dangtuanhiep.files.wordpress.com/2008/09/papaioannoua_solutions_to_atiyah.pdf}{https://dangtuanhiep.files.wordpress.com/2008/09/papaioannoua\_solutions\_to\_atiyah.pdf} 
 
 $\bu$ Thomas J. Haines, Lectures on Commutative Algebra, 
 
@@ -405,6 +411,10 @@ Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we
 \subsection{Page 12, Exercise 1.14}\label{114}%
 
 More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\mf b\in\Sigma$ such that $\mf a\subset\mf b$.
+
+\subsection{Page 13, Exercise 1.19}\label{119}%£
+
+The statement implies that the closed irreducible subsets of $\Spec(A)$ are the closures of the singletons, i.e. the $V(\ppp)$. 
 
 \subsection{Page 13, Exercise 1.21iii}\label{121iii}%
 
@@ -1774,7 +1784,7 @@ Counterexample to the converse of (ii): $B:=k$ a field, $A:=k[\varepsilon]$ with
 
 \subsection{Page 47, Exercise 3.21iv}\label{321iv}%
 
-In fact $f^{*-1}(\ppp)$ is the set of those prime ideals $\qqq$ of $B$ which satisfy 
+In fact the fiber $f^{*-1}(\ppp)$ is the set of those prime ideals $\qqq$ of $B$ which satisfy 
 $$
 \ppp^{\oo{e}}\subset\qqq\subset B\setminus f(S),
 $$ 
@@ -2628,7 +2638,7 @@ This yields $M=N+P$, so $r_M(N+P)=(1)$, but $r_M(N)=r_M(P)=0$. % Let $A\ne0$, $M
 
 Analogue of (4.3): Let $Q_1$ and $Q_2$ be $\ppp$-primary in $M$, and let us show that $Q_1\cap Q_2$ is also $\ppp$-primary in $M$. Let $a\in A$, $x\in M$, $x\notin Q_1\cap Q_2$ satisfy $ax\in Q_1\cap Q_2$. We can assume $x\notin Q_1$. We get $a\in\ppp$, and thus $a^nM\subset Q_1\cap Q_2$ for some $n$.
 
-One can also modify the statement and the proof in the book according to the following table:
+One can also modify the statement and the proof in the book according to the following table: 
 $$
 \begin{matrix}
 \qqq_i&\qqq&r(\qqq)&r(\qqq_i)&y\in A&xy\in\qqq&y\notin\qqq_i\\ \\ 
@@ -3647,9 +3657,11 @@ $$
 and observe that $\deg(f_{n+1}-g)$ is less than $\deg f_{n+1}$, which is impossible.
 \end{proof}
 
-\subsection{Page 83, proof of Lemma 7.12}%
+\subsection{Page 83, Lemma 7.12}%
 
-The equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y)=(0)$. Indeed, if $a$ is in $(x^n)\cap(\,y)$ we have $a=bx^n=cy$ for some $b$ and $c$ in $A$, and thus $bx^{n+1}=cyx=0$. Now $bx^{n+1}=0$ implies $bx^n=0$, that is $a=0$. 
+In the proof, the equalities $xy=0$ and $\oo{Ann}(x^n)=\oo{Ann}(x^{n+1})$ imply $(x^n)\cap(\,y)=(0)$. Indeed, if $a$ is in $(x^n)\cap(\,y)$ we have $a=bx^n=cy$ for some $b$ and $c$ in $A$, and thus $bx^{n+1}=cyx=0$. Now $bx^{n+1}=0$ implies $bx^n=0$, that is $a=0$. 
+
+Note that primary ideals in noetherian rings can be reducible: the ideal $(x^2,xy,y^2)$ of $K[x,y]$ (where $K$ is a field, $x$ and $y$ are indeterminates) is $(x,y)$-primary but reducible because $(x,y^2)\cap(y,x^2)=(x^2,xy,y^2)$. 
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 %\subsection{Page 89, Proposition 8.1}%\label{dt}%
@@ -3674,7 +3686,7 @@ As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 
 (c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
 
-\subsection{Page 84, Exercise 7.2}%
+\subsection{Page 84, Exercise 7.1}%
 
 Following the hint in the book, set $\aaa+(x)=(s_1,\dots,s_n)$, $s_i\in A$. Then we have $s_i=b_i+t_ix$ with $b_i\in\aaa$, $t_i\in A$. Setting $\bbb=(b_1,\dots,b_n)\subset\aaa$, we get $\aaa+(x)=\bbb+(x)$. 
 
@@ -3688,19 +3700,23 @@ Note that $y$ is in $(\aaa:x)$ but not in $\aaa$. This implies that $(\aaa:x)$ i
 
 Hint: 
 
-(i) $\implies$ (ii): Use Proposition 4.8 p.~53. 
+(i) $\implies$ (ii): Use Lemma 4.5 p.~51 and Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
 
-(ii) $\implies$ (iii): Use Proposition 3.11ii p.~41.
+(ii) $\implies$ (iii): Use Proposition 3.11ii p.~41. (This implication also holds even if $\aaa$ is reducible.)
 
-(i) $\implies$ (ii): Use the proof of Lemma 7.12 p.~83 of the book.
+(iii) $\implies$ (i): Use the proof of Lemma 7.12 p.~83.
 
 \subsection{Page 84, Exercise 7.5}%
 
-Hint: Use Exercise 5.12 p.~68 and Proposition 7.8 p.~81 of the book.
+Hint: Use Exercise 5.12 p.~68 and Proposition 7.8 p.~81.
 
 \subsection{Page 85, Exercise 7.10}%
 
 See Theorem~\ref{hbt} p.~\pageref{hbt} above.
+
+\subsection{Page 85, Exercise 7.13}%
+
+Hint: Let $\ppp$ be in $\oo{Spec}(A)$ and set $k:=A_\ppp/\ppp_\ppp$. It suffices to show that $k\otimes_AB$ is noetherian. To do this, note that there are indeterminates $x_1,\dots,x_n$ such that $B$ is a quotient of $A[x_1,\dots,x_n]$, and conclude that $k\otimes_AB$ is a quotient of $k[x_1,\dots,x_n]$. 
 
 \subsection{Page 86, Exercise 7.17}%
 
@@ -3718,7 +3734,212 @@ We have $y=a^nz=bx$ for some $z\in M$ and some $b\in A$, and we get
 $$
 ay=a^{n+1}z=abx=bax=0,
 $$ 
-and thus $0=a^nz=y$. This completes the proof.% proves the claim. As $Ax\ne0$ and $0$ is irreducible, the claim implies that $a^nM=0$, and thus that $a$ is nilpotent in $M$, as required.
+and thus $0=a^nz=y$. This completes the proof.% proves the claim. As $Ax\ne0$ and $0$ is irreducible, the claim implies that $a^nM=0$, and thus that $a$ is nilpotent in $M$, as required. 
+
+\subsection{Page 86, Exercise 7.18}%
+
+Proposition 7.17 p.~83 can be generalized to modules according to the following table: %
+$$
+\begin{matrix}
+\aaa\ne(1)&x\in A&\qqq_i&\ppp_i=r(\qqq_i)&\aaa_i&\ppp_i^m\subset\qqq_i&\aaa_i\cap\ppp_i^m\\ \\ 
+N<M&x\in M&Q_i&\ppp_i=r(Q_i:M)&N_i&\ppp_i^mM\subset Q_i&N_i\cap\ppp_i^mM
+\end{matrix}
+$$ 
+
+\subsection{Page 86, Exercise 7.19}% https://mathoverflow.net/q/12322/461
+% previous version https://docs.google.com/document/d/1a-63-De-I8iBErGM5vuEuVpkBAJ1fOm2j0ECZIMzeT4/edit?folder=0ADbJLwZkWgt8Uk9PVA
+
+Statement: Let $\aaa$ be an ideal in a Noetherian ring $A$. Let 
+$$
+\mathfrak{a}=\bigcap_{i=1}^r\mathfrak{b}_i=\bigcap_{j=1}^s\mathfrak{c}_j
+$$ 
+be two minimal decompositions of $\aaa$ as intersections of irreducible ideals. Prove that $r=s$ and that (possible after re-indexing the $\ccc_i$) $r(\bbb_i)=r(\ccc_i)$ for all $i$. State and prove an analogous result for modules.
+
+Solution: Our goal is to prove:
+
+\begin{prop}\label{719P1}
+(a) Let $A$ be a ring, $M$ an $A$-module and $W$ a submodule. Let 
+$$
+W=\bigcap_{i=1}^nU_i=\bigcap_{j=1}^mV_j
+$$ 
+be two minimal decompositions of $W$ as intersections of irreducible submodules. Then $n=m$.
+
+(b) If $M$ is noetherian, we have (possible after re-indexing the $V_j$) $r(U_i:M)=r(V_i:M)$ for all $i$.
+\end{prop}
+
+\subsubsection{Proof of Part (a) of Proposition~\ref{719P1}}%
+
+\begin{lem}\label{719L2}
+Let $A$ be a ring, $M$ an $A$-module and let $U_1,U_2,V_1,\dots,V_m,W$ be submodules of $M$ such that $U_1$ is irreducible and 
+$$
+W=U_1\cap U_2=V_1\cap\cdots\cap V_m.
+$$ 
+Then we have $W=V_i\cap U_2$ for some $i$. 
+\end{lem} 
+We summarize Lemma~\ref{719L3} by saying that ``we have replaced $U_1$ with $V_i$ in the equality $W=U_1\cap U_2$''. 
+
+\paragraph{First proof of Lemma~\ref{719L2}}${}$\medskip%
+
+We follow Bourbaki, \textbf{Algèbre}, Exercice II.2.17.
+
+\begin{lem}\label{719L3}
+Let $A$ be a ring, $M$ an $A$-module and let $U,V,U',V'$ and $W$ be five submodules of $M$ such that 
+$$
+W=U\cap V=U'\cap V'.
+$$ 
+(a) We have 
+$$
+U=(U+(V\cap U'))\cap(U+(V\cap V')).
+$$ 
+(b) If $U$ is irreducible, then $W=V\cap U'$ or $W=V\cap V'$. 
+\end{lem} 
+\begin{proof}[Proof of Lemma~\ref{719L3}] We can assume $W=0$. 
+
+(a) It suffices to show 
+$$
+(U+(V\cap U'))\cap(U+(V\cap V'))\subset U. 
+$$ 
+Let $u_1,u_2,x,y$ be such that $u_1,u_2\in U$, $x\in V\cap U'$, $y\in V\cap V'$ and $u_1+x=u_2+y$. It suffices to show $x\in U$. We have $x-y\in U\cap V=0$, and thus $x=y\in U'\cap V'=0$. 
+
+(b) The submodule $U$ is equal to $U+(V\cap U')$ or to $U+(V\cap V')$. In the first case we have $V\cap U'\subset U$, and thus 
+$$
+V\cap U'=U\cap V\cap U'=0. 
+$$ 
+The second case is similar. 
+\end{proof} 
+
+\begin{proof}[Proof of Lemma~\ref{719L2}] Let $1\le i_1<\cdots<i_p\le m$ be such that 
+$$
+W=U_2\cap V_{i_1}\cap\cdots\cap V_{i_p}
+$$ 
+and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L2} with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. 
+\end{proof}
+
+\paragraph{Second proof of Lemma~\ref{719L2}}${}$\medskip%
+
+We follow Matthew Emerton, \medskip
+
+\centerline{\href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}}
+
+We can assume $W=0$. Let 
+$$
+\phi_i:M\to M/U_i,\quad\phi:M\mono M/U_1\times M/U_2
+$$ 
+($i=1,2$) be the natural morphisms, note that $\phi$ is injective, and set $X_j:=V_j\cap U_2$ for $1\le j\le m$. 
+
+It suffices to show $X_j=0$ for some $j$.
+
+We have 
+$$
+\bigcap X_j\subset \bigcap V_j=0,\quad\phi(X_j)=\phi_1(X_j)\times0.
+$$ 
+By injectivity of $\phi$ we also have 
+$$
+\bigcap\phi(X_j)=\phi\left(\bigcap X_j\right)=0,
+$$ 
+and thus $\bigcap\phi_1(X_j)=0$. The zero submodule of $M/U_1$ being ir\-re\-ducible, this implies $\phi_1(X_j)=0$, hence $X_j=0$, for some $j$. This proves Lemma~\ref{719L2}.
+
+\subsubsection{Proof of Part (b) of Proposition~\ref{719P1}}%
+
+Recall the setting: $A$ is a ring, $M$ is a noetherian $A$-module, $W$ is a submodule, 
+$$
+W=\bigcap_{i=1}^nU_i=\bigcap_{j=1}^nV_j
+$$ 
+are two minimal decompositions of $W$ as intersections of irreducible submodules. We must show that we have (possible after re-indexing the $V_j$) $r(U_i:M)=r(V_i:M)$ for all $i$.
+
+Irreducible submodules being primary, the sets 
+$$
+\{r(U_1:M),\dots,r(U_n:M)\}\text{ and }\{r(V_1:M),\dots,r(V_n:M)\}
+$$ 
+are equal. Denote this set by $P$, write $[n]$ for $\{1,\dots,n\}$ and define the maps $f$ and $g$ from $[n]$ to $P$ by 
+$$
+f(i):=r(U_i:M),\quad g(i):=r(V_i:M).
+$$ 
+It suffices to show that, for all $\ppp\in P$ the fibers $f^{-1}(\ppp)$ and $g^{-1}(\ppp)$ are equipotent. 
+
+Let $I$ be an isolated subset of $P$. The Second Uniqueness Theorem for modules implies 
+$$
+\bigcap_{i\in f^{-1}(I)}U_i=\bigcap_{i\in g^{-1}(I)}V_i.
+$$ 
+Then Part (b) of Proposition~\ref{719P1} entails that $f^{-1}(I)$ and $g^{-1}(I)$ are equipotent. In particular, if $\ppp\in P$ is minimal, $f^{-1}(\ppp)$ and $g^{-1}(\ppp)$ have same cardinality, and an obvious induction completes the proof.
+
+\subsection{Page 87, Exercise 7.21}%
+
+Let us denote by $\mathcal F(X)$ the set designated by $\mathcal F$ in Exercise 7.20. 
+
+To prove the ``only if'' part of Exercise 7.21, note that $E\cap X_0\in\mathcal F(X_0)$ if $E\in\mathcal F(X)$ and use Exercise 7.20.
+
+To prove the ``if'' part, we follow the hint: 
+
+Set $\mathcal F:=\mathcal F(X)$ and let $\Sigma$ be the set of all closed subsets $X'$ of $X$ such that $E\cap X'\notin\mathcal F$. Then $\Sigma$ is nonempty because it contains $X$. Let $X_0$ be a minimal element of $\Sigma$. In particular 
+\begin{equation}\label{721}
+E\cap X_0\notin\mathcal F.
+\end{equation} 
+The subset $X_0$ is irreducible, for if we have $X_0=C\cup D$ with $C,D$ closed and $<X_0$, we would have $C,D\notin\Sigma$ by minimality of $X_0$, and thus $E\cap C$ and $E\cap D$ in $\mathcal F$, which would imply 
+$$
+\mathcal F\ni(E\cap C)\cup(E\cap D)=E\cap(C\cup D)=E\cap X_0\notin\mathcal F.
+$$ 
+If $\overline{E\cap X_0}<X_0$, then we have 
+$$
+E\cap X_0=E\cap\overline{E\cap X_0}\in\mathcal F
+$$ 
+by minimality of $X_0$, contradicting \eqref{721}. 
+
+If there is a nonempty open subset $U$ of $X_0$ such that $U\subset E$, then $U<X_0$ because $U=X_0$ would imply 
+$$
+\mathcal F\ni X_0=E\cap X_0\notin\mathcal F
+$$ 
+by \eqref{721}. The set $C:=X_0\setminus U$ is closed in $X$, and we have $X_0=U\sqcup C$ (disjoint union), $U\ne\varnothing\ne C$, and thus
+$$
+E\cap X_0=(E\cap U)\sqcup(E\cap C)=U\sqcup(E\cap C).
+$$ 
+As $U\ne\varnothing$, we get $E\cap C<E\cap X_0$, and thus $E\cap C\in\mathcal F$ by minimality of $X_0$. The above display implies $E\cap X_0\in\mathcal F$, contradicting again \eqref{721}.
+
+\subsection{Page 87, Exercise 7.22}%
+
+Statement: Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E\cap X_0=\varnothing$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
+
+Solution: If $E$ is open in $X$, then the indicated condition holds: straightforward (details left to the reader).
+
+Assume that $E$ is not open in $X$. Set $F:=X\setminus E$. Then $F$ is not closed. Put 
+$$
+\Sigma:=\{\ X'\subset X|\ X'\text{ closed, }F\cap X'\text{ not closed}\}.
+$$ 
+In particular $X$ belongs to $\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. 
+
+The subset $X_0$ is irreducible, for the conditions $X_0=Y_1\cup Y_2$ with $Y_i<X_0$ and $Y_i$ closed would imply $F\cap X_0=(F\cap Y_1)\cup(F\cap Y_2)$ with $F\cap Y_i$ closed and $F\cap X_0$ not closed, which is impossible.
+
+Assume $E\cap X_0=\varnothing$. This implies $E\cap X_0=X_0$ with $E\cap X_0$ not closed and $X_0$ closed, a contradiction.
+
+Assume $E\cap X_0\supset U\ne\varnothing$ with $U$ open in $X_0$. It suffices to derive a contradiction. Set $X_1:=X_0\setminus U$. We clearly have $X_1<X_0$. 
+
+We claim: $F\cap X_1=F\cap X_0$. 
+
+It is enough to show $F\cap X_0\subset F\cap X_1$. Let $a$ be in $F\cap X_0$. As $a$ cannot be in $U$ (because this would imply $a\in E\cap F=\varnothing$), the point $a$ is in $X_0\setminus U=X_1$, and the claim is proved.
+
+The claim implies $X_1\in\Sigma$, contradicting the minimality of $X_0$.
+
+\subsection{Page 87, Exercise 7.23}%
+
+The fact that ``$E$ is quasi-compact'' in the hint follows from Exercise 6.6 p.~79 of the book. The phrase ``where $X_0=V(\ppp)$'' follows from Section~\ref{119} p.~\pageref{119} above.
+
+\subsection{Page 87, Exercise 7.24}% 
+
+Let us spell out the last two sentences of the hint.
+
+Let $\ppp_0$ be in $X$, and set $X_0:=V(\ppp_0)$. Assuming that $f$ has the going-down property, we want to show that $E:=f^*(Y)$ is open in $X$. Suppose $E\cap X_0\ne\varnothing$, and thus $\ppp_0\in E$ (by the going-down property). As $E$ is constructible by Exercise 7.23, it suffices, in view of Exercise 7.22, to show that $E\cap X_0$ contains a nonempty open subset of $X_0$, and Exercise 7.22 tells us that it is even enough to check the inclusion 
+\begin{equation}\label{724}
+X_0\subset\overline{E\cap X_0}.
+\end{equation} 
+Setting 
+$$
+\aaa:=\bigcap_{\ppp\in E\cap X_0}\ppp,
+$$ 
+we get $\aaa\subset\ppp_0$ because $\ppp_0\in E\cap X_0$, that is 
+$$
+X_0=V(\ppp_0)\subset V(\aaa)=\overline{E\cap X_0},
+$$ 
+proving \eqref{724}.
 
 \section{About Chapter 8}%%
 
