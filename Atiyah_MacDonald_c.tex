@@ -4007,7 +4007,7 @@ The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the
 
 The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_\ppp$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_\ppp$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_\ppp$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)). 
 
-\subsection{Page 99, Exercise 9.2}% 
+\subsection{Page 99, Exercise 9.2}%
 
 See Exercise 1.1iv p.~11 of the book. 
 
@@ -4023,7 +4023,7 @@ Hint: for $0\ne a\in A$ there is a unique $n\in\mathbb N$ such that $a\in\mmm^n\
 
 %\subsection{Page 99, Exercise 9.5}% See Exercises 3.13 p.~45 and 7.16 p.~86 of the book. 
 
-\subsection{Page 99, Exercise 9.6}% 
+\subsection{Page 99, Exercise 9.6}% previous version https://docs.google.com/document/d/15qlLg96SBKJG55fxaZfevFdjzQIziYUDSj0OHYj7TGA/edit?folder=0ADbJLwZkWgt8Uk9PVA
 
 Let $M$ be a finitely-generated torsion module over de Dedekind domain $A$. Then $M$ has a nonzero annihilator $\aaa$. Let $\aaa=\ppp_1^{n_1}\cdots\ppp_r^{n_r}$ be the prime factorization of $\aaa$, and note that $M$ is a module over the ring 
 $$
@@ -4043,15 +4043,13 @@ M\simeq A/\ppp^{m_1}\oplus\cdots\oplus A/\ppp^{m_k}
 $$ 
 (isomorphism of $A$-modules).
 
-Claim 1: the natural morphism $A/\ppp^n\to(A/\ppp^n)_\ppp$ is an isomorphism. 
+We claim that the natural morphisms $A/\ppp^n\xrightarrow\alpha(A/\ppp^n)_\ppp\xleftarrow\beta A_\ppp/\ppp_\ppp^n$ are isomorphisms. 
 
-Let $\pi:A\to A/\ppp^n$ be the canonical projection, set $S:=A\setminus\ppp$, and note that $\pi(s)$ is a unit for all $s\in S$ (because $A/\ppp^n$ is a local ring with maximal ideal $\pi(\ppp)$). We leave it to the reader to check that the formula $\phi(a/s)=\pi(s)^{-1}a$ (for $a\in A/\ppp^n$ and $s\in S$) defines a morphism $\phi:(A/\ppp^n)_\ppp\to A/\ppp^n$, and that this morphism is inverse to the natural morphism $A/\ppp^n\to(A/\ppp^n)_\ppp$. This proves Claim~1. 
+Let $\pi:A\to A/\ppp^n$ be the canonical projection, set $S:=A\setminus\ppp$, and note that $\pi(s)$ is a unit for all $s\in S$ (because $A/\ppp^n$ is a local ring with maximal ideal $\pi(\ppp)$). We leave it to the reader to check that the formula $\alpha'(a/s)=\pi(s)^{-1}a$ (for $a\in A/\ppp^n$ and $s\in S$) defines a morphism $\alpha':(A/\ppp^n)_\ppp\to A/\ppp^n$, and that this morphism is inverse to $\alpha$. This proves the claim. 
 
-Claim 2: the natural morphism $M\to M_\ppp$ is an isomorphism. 
+As a result an $A$-module annihilated by $\ppp^n$ is "the same thing as" an $A_\ppp$-module annihilated by $\ppp_\ppp^n$. (We leave it to the reader to give a precise meaning to the previous sentence.) The same holds for \emph{finitely generated} modules. 
 
-We leave it to the reader to check that the formula $\psi(x/s)=\pi(s)^{-1}x$ (for $x\in M$ and $s\in S$) defines a morphism $\psi:M_\ppp\to M$, and that this morphism is inverse to the natural morphism $M\to M_\ppp$. 
-
-In other words the $A$-module $M$ can be viewed as a finitely generated module over $A_\ppp$ annihilated by $\ppp_\ppp^n$. Since $A_\ppp$ is a principal ideal domain and $\ppp_\ppp$ is maximal, there is a unique $k$-tuple $(m_1,\dots,m_k)$ of integers such that 
+Going back to our module $M$, note that, $A_\ppp$ being a principal ideal domain and $\ppp_\ppp$ being maximal, there is a unique $k$-tuple $(m_1,\dots,m_k)$ of integers such that 
 $$
 1\le m_1\le\cdots\le m_k\le n
 $$ 
@@ -4061,7 +4059,9 @@ M\simeq A_\ppp/\ppp_\ppp^{m_1}\oplus\cdots\oplus A_\ppp/\ppp_\ppp^{m_k}
 $$ 
 (isomorphism of $A_\ppp$-modules). This implies $(\star)$. 
 
-%To prove this it suffices to show that the image $\overline s$ in $A/\ppp^n$ of any $s\in A\setminus\ppp$ is a unit. But this is clear because $A/\ppp^n$ is a local ring with maximal ideal $\overline\ppp$ (obvious notation).\\ We claim secondly that the natural morphism $M\to M_\ppp$ is an isomorphism. Indeed we have $$M\simeq A/\ppp^n\otimes_{A/\ppp^n}M\simeq (A/\ppp^n)_\ppp\otimes_{A/\ppp^n}M\simeq M_\ppp. $$ In particular we can regard $M$ is a finitely generated $A_\ppp$-module, and $(\star)$ now follows from the fact that $A_\ppp$ is a principal ideal domain. 
+\subsection{Page 99, Exercise 9.7}% 
+
+Hint: Show that any nontrivial quotient of $A$ is a principal ideal ring, and that this implies that, given any nonzero element $x\in\aaa$ there is a $y\in\aaa$ such that $\aaa=(x,y)$. 
 
 \section{About Chapter 10}%%
 
