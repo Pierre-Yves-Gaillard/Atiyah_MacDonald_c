@@ -35,6 +35,7 @@
 \newcommand{\Ann}{\oo{Ann}}
 \newcommand{\Ass}{\oo{Ass}}
 \newcommand{\bu}{\bullet}
+\DeclareMathOperator*{\colim}{colim}
 \newcommand{\ds}{\displaystyle}
 \newcommand{\epi}{\twoheadrightarrow}
 \newcommand{\incl}{\hookrightarrow}
@@ -365,7 +366,7 @@ Other wording: $\mf R(A[[x]])=\mf R(A)+(x)$.
 
 Let $\mf m$ be a maximal ideal of $A[[x]]$. We must show that $\mf m^{\oo c}$ is maximal and that $\mf m=\mf m^{\oo c}+(x)$.
 
-(a) $x\in\mf m$. Proof: $1-xf\in A[[x]]^\times$ by (i).
+(a) $x\in\mf m$. Proof: $1-xf\in A[[x]]^\times$ for all $f\in A[[x]]$ by (i).
 
 (b) $A[[x]]=A+\mf m$. Proof: $A[[x]]=A+(x)\overset{(\text a)}\subset A+\mf m$.
 
@@ -375,7 +376,7 @@ A/\mf m^{\oo c}=A/(A\cap\mf m)\simeq(A+\mf m)/\mf m\overset{(\text b)}=A[[x]]/\m
 $$ 
 Then (c) implies that $\mf m^{\oo c}$ is maximal.
 
-(d) $\mf m=\mf m^{\oo c}+(x)$. Proof: If $f=a_0+xg\in\mf m$, then $a_0\in\mf m^{\oo c}$ by (a).
+(d) $\mf m=\mf m^{\oo c}+(x)$. Proof: Let $f\in A[[x]]$ with $f=a_0+a_1x+\cdots$. There is a unique $g\in A[[x]]$ such that $f=a_0+xg$, and (a) implies that $f\in\mmm$ if and only if $a_0\in\mf m^{\oo c}$. %then $f\in\mmm$ by (a). $f=a_0+xg\in\mf m$, then $a_0\in\mf m^{\oo c}$ by (a).
 
 \subsection{Page 11, Exercise 1.5v}%
 
@@ -387,16 +388,21 @@ If
 $$
 A\xrightarrow fB\xrightarrow gC
 $$ 
-are ring morphisms and if $(g\circ f)^*:C^*\to A^*$ is surjective, then so is $f^*:B^*\to A^*$. We solve Exercise 1.5v by applying this observation to the natural morphisms $A\to A[[x]]\to A$, whose composition is the identity of $A$.
+are ring morphisms and if $(g\circ f)^*:C^*\to A^*$ is surjective, then so is $f^*:B^*\to A^*$. We solve Exercise 1.5v by applying this observation to the natural morphisms $A\to A[[x]]\to A$, whose composition is the identity of $A$. 
+
+\subsection{Page 11, Exercise 1.6}%
+
+If $e=e^2\in\mf R$, then $e=0$. Indeed, the element $1-e=1-e^2$ being a unit, the equality $e(1-e)=0$ implies $e=0$.
 
 \subsection{Page 11, Exercise 1.11iii}%
 
 Let $A$ be boolean, and let us show that any finitely generated $\aaa$ ideal is principal. We can assume $\aaa=(x,y)$. Then $z:=x+y-xy\in\aaa$ satisfies $xz=x,yz=y$, and we get $\aaa=(z)$.
 
-\subsection{Page 11, Exercise 1.12}%
+\subsection{Page 11, Exercise 1.12}\label{112}%
 
-A local ring $A$ contains no idempotents $\neq0,1$. A ring containing such an idempotent is a product of two nonzero rings, and, thus, cannot be local. Other argument: %If $A$ is local and $a\in A$ is not a unit, then $a\in\mathfrak R$, and $1-a$ is a unit. 
-Let $e\in A$ be idempotent. If $e$ is a unit, then $e=e^{-1}e^2=e^{-1}e=1$. If $e$ is not a unit, then $e\in\mathfrak R$, and $1-e$ is a unit (by Proposition~1.9 p.~6 of the book) and an idempotent, and thus equal to $1$, hence $e=0$.
+A local ring $(A,\mmm)$ contains no idempotents $\neq0,1$. %A ring containing such an idempotent is a product of two nonzero rings, and, thus, cannot be local. Other argument: %If $A$ is local and $a\in A$ is not a unit, then $a\in\mathfrak R$, and $1-a$ is a unit. 
+
+Proof: Let $e\in A$ be idempotent. If $e$ is a unit, then $e=e^{-1}e^2=e^{-1}e=1$. If $e$ is not a unit, then $e\in\mmm=\mf R$, and $1-e$ is a unit (by Proposition~1.9 p.~6 of the book) and an idempotent, and thus equal to $1$, hence $e=0$.
 
 \subsection{Page 11, Exercise 1.13}%
 
@@ -438,7 +444,7 @@ by Part (iii) of the same exercise (see Section~\ref{121iii} above).
 
 \subsection{Page 13, Exercise 1.22, (i) implies (iii)}%
 
-We have $X=V(\aaa)\sqcup V(\bbb)$. This implies $\aaa+\bbb=(1)$ and $\aaa\cap\bbb\subset\mf N$. There are $a\in\aaa$ and $b\in\bbb$ such that $a+b=1$, and thus $(a^n)+(b^n)=(1)$ and $a^nb^n=0$ for some $n$, and we have $e+f=1$ and $ef=0$ for some $e\in(a^n)$ and some $f\in(b^n)$. This gives $e-e^2=ef=0$, and thus $e^2=e$. Similarly $f^2=f$.
+We have $X=V(\aaa)\sqcup V(\bbb)$ with $\aaa,\bbb\ne(1)$ and $\aaa,\bbb\not\subset\mf N$. This implies $\aaa+\bbb=(1)$ and $\aaa\cap\bbb\subset\mf N$. There are $a\in\aaa$ and $b\in\bbb$ such that $a,b\notin\mf N$ and $a+b=1$, and thus $(a^n)+(b^n)=(1)$ and $a^nb^n=0$ for some $n$, and we have $e+f=1$ and $ef=0$ for some $e\in(a^n)$ and some $f\in(b^n)$ with $e\ne0\ne f$. This gives $e-e^2=ef=0$, and thus $e^2=e$. Similarly $f^2=f$.
 
 \subsection{Page 14, Exercise 1.23}%
 
@@ -468,7 +474,54 @@ $\bullet\ P$ is a sublattice of the lattice of ideals of $A$,
 
 $\bullet\  P$ is the lattice attached to $A$,
 
-$\bullet$ we have $(a)+(b)=(a+b+ab),\ (a)\cap(b)=(ab)$.
+$\bullet$ we have $(a)+(b)=(a+b+ab),\ (a)\cap(b)=(ab)$. 
+
+\subsection{Page 16, Exercise 1.28}% 
+
+Assume that $k$ is infinite and set $t:=(t_1,\dots,t_n)$, $u:=(u_1,\dots,u_m)$, where the $t_i$ and $u_j$ are indeterminates. 
+
+To a polynomial map $\phi:k^n\to k^m$ we attach a $k$-algebra morphism $\psi:k[u]\to k[t]$ by setting $\psi(g):=g\circ\phi$, where $g\in k[u]$ is viewed as a polynomial map $g:k^m\to k$. 
+
+Conversely, to a $k$-algebra morphism $\psi:k[u]\to k[t]$ we attach a polynomial map $\phi:k^n\to k^m$ by setting $\phi_i(x):=\psi(u_i)(x)$. 
+
+Let $\phi:k^n\to k^m$ be a polynomial map, let $\psi:k[u]\to k[t]$ be the corresponding polynomial map, and let $\phi':k^n\to k^m$ be the polynomial map attached to $\psi$. For $x\in k^n$ we have 
+$$\phi_i'(x)=\psi(u_i)(x)=u_i(\phi(x))=\phi_i(x).
+$$ 
+Conversely, let $\psi:k[u]\to k[t]$ be a polynomial map, let $\psi:k[u]\to k[t]$ be the corresponding $k$-algebra morphism, and let $\psi':k[u]\to k[t]$ be the polynomial map attached to $\phi$. For $g\in k[u]$ and $x\in k^n$ we have 
+$$
+\psi'(g)(x)=g(\phi(x))=g(\phi_1(x),\dots,\phi_m(x))=g(\psi(u_1)(x),\dots,\psi(u_m)(x)). 
+$$ 
+As the $k$-algebra morphisms $\alpha,\beta:k[u]\rightrightarrows k$ defined by 
+$$
+\alpha(g):=g(\psi(u_1)(x),\dots,\psi(u_m)(x))
+$$ 
+and 
+$$
+\beta(g):=\psi(g)(x)
+$$ 
+coincide on the $u_i$, they are equal, so that we get 
+\begin{equation}\label{128}
+g(\psi(u_1)(x),\dots,\psi(u_m)(x))=\psi(g)(x),
+\end{equation}
+and thus 
+$$
+\psi'(g)(x)=\psi(g)(x).
+$$ 
+It suffices to show (using obvious notation):
+
+(a) If $\phi:k^n\to k^m$ maps $X$ into $Y$, then $\psi:k[u]\to k[t]$ maps $I(Y)$ to $I(X)$. 
+
+(b) If $\psi:k[u]\to k[t]$ maps $I(Y)$ to $I(X)$, then $\phi:k^n\to k^m$ maps $X$ into $Y$. 
+
+Proof of (a): For $g\in I(Y)$ and $x\in X$ we have 
+$$
+\psi(g)(x)=g(\phi(x))=0.
+$$ 
+Proof of (b): For $x\in X$ and $g\in I(Y)$ we have 
+$$
+g(\phi(x))=g(\phi_1(x),\dots,\phi_m(x))=g(\psi(u_1)(x),\dots,\psi(u_m)(x))=\psi(g)(x)=0,
+$$ 
+the penultimate equality being justifies by \eqref{128}.
 
 %%%
 
@@ -730,7 +783,7 @@ We solve the last part of Exercise 2.11. We claim that if $f:A^m\to A^n$ is an $
 
 Suppose for the sake of contradiction that there are positive integers $i,j$ and an $A$-linear injection $f:A^{i+j}\to A^i$. 
 
-Set $k:=i+j$ and define $g:A^k\to A^k$ by $g(x,y):=(f(x,y),0)$ for $x\in A^i$, $y\in A^j$. Note that $g$ is injective. By Proposition~2.4 p.~21 of the book (see Section~\ref{24} p.~\pageref{24} above) there is a monic polynomial $P\in A[x]$ such that there is an $a$ in $A$ with 
+Set $k:=i+j$ and define $g:A^k\to A^k$ by $g(x,y):=(f(x,y),0)$ for $x\in A^i$, $y\in A^j$. Note that $g$ is injective. By Proposition~2.4 p.~21 of the book (see Section~\ref{24} p.~\pageref{24} above) there is a monic polynomial $P\in A[t]$ such that there is an $a$ in $A$ with 
 \begin{equation}\label{211}
 gP(g)=a\oo{id}_{A^k}.
 \end{equation} 
@@ -1298,7 +1351,7 @@ To show that (i) implies (ii), let $x$ be in $A$ and consider the obvious diagra
 $$
 (x)\otimes A\xr\beta(x)\otimes A/(x)\xr\alpha A/(x). 
 $$ 
-It is clear that $\beta$ is surjective and that $\alpha\circ\beta$ is zero. The flatness of $A/(x)$ implies the injectivity of $\alpha$, and we get $0=(x)\otimes A/(x)\simeq(x)/(x^2)$, hence $(x)^2=(x)$. $\square$
+(In this Section tensor products are taken over $A$.) It is clear that $\beta$ is surjective and that $\alpha\circ\beta$ is zero. The flatness of $A/(x)$ implies the injectivity of $\alpha$, and we get $0=(x)\otimes A/(x)\simeq(x)/(x^2)$, hence $(x)^2=(x)$. $\square$
 
 %%%
 \begin{comment}
@@ -1324,7 +1377,7 @@ $$
 $$ 
 where $\bbb$ is an ideal such that $A=\aaa\oplus\bbb$ (such an ideal exists by assumption). These morphisms are clearly injective. $\square$ 
 
-The argument given in the book show that (i), (ii) and (iii) are also equivalent to
+The argument given in the book shows that (i), (ii) and (iii) are also equivalent to
 
 (iv) Every finitely generated ideal is generated by an idempotent,
 
@@ -1334,7 +1387,7 @@ and also to
 
 \subsection{Page 35, Exercise 2.28}\label{228}%
 
-An absolutely flat local ring is a field: Let $(A,\mf m)$ be our local ring and let $\mu$ be in $\mf m$. It suffices to show $\mu=0$. If we had $\mu\ne0$, we would get $(\mu)=(e)$ for some nonzero idempotent $e$ (see end of Section \ref{227} above). Then $e\in\mf m=\mf R$ would imply that $f:=1-e$ is a unit, hence $f=f^2$ entails $f=1$ and thus $e=0$, a contradiction. 
+An absolutely flat local ring is a field: This follows immediately from Property~(iv) above (Section~\ref{227}) and Exercise 1.12 p.~11 of the book (see Section~\ref{112} p.~\pageref{112} above). %Let $(A,\mf m)$ be our local ring and let $\mu$ be in $\mf m$. It suffices to show $\mu=0$. If we had $\mu\ne0$, we would get $(\mu)=(e)$ for some nonzero idempotent $e$ (see end of Section \ref{227} above). Then $e\in\mf m=\mf R$ would imply that $f:=1-e$ is a unit, hence $f=f^2$ entails $f=1$ and thus $e=0$, a contradiction. 
 
 \section{About Chapter 3}%%
 
@@ -1551,19 +1604,36 @@ $$
 $$ 
 in contradiction with the primality of $\aaa$.
 
-\subsection{Related result}\label{res}
+\subsection{Related result}\label{res}%
 
 Here is a related result:
+\begin{equation}\label{fiber1}
+\ppp\text{ is the contraction of a prime ideal if and only if }A_\ppp/\ppp_\ppp\otimes_AB\ne0.
+\end{equation}
+This will follow from Claim~1 and Claim~2 below.
 
-\emph{$\ppp$ is the contraction of a prime ideal if and only if $A_\ppp/\ppp_\ppp\otimes_AB\ne0$.}
-
-Indeed we have 
+Claim~1. We have 
+\begin{equation}\label{fiber2}
+(A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp.%\simeq B_\ppp/\ppp B_\ppp.
+\end{equation} 
+Proof of Claim~1. The second isomorphism follows from the exactness of localization and the equality $(\ppp B)_\ppp=\ppp B_\ppp$. %is clear. 
+To prove the first isomorphism of \eqref{fiber2}, observe that the sequences 
 $$
-(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB
+\ppp_\ppp\to A_\ppp\to A_\ppp/\ppp_\ppp\to0,
 $$ 
 $$
-\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp,
+\ppp_\ppp\otimes_AB\to A_\ppp\otimes_AB\to A_\ppp/\ppp_\ppp\otimes_AB\to0
 $$ 
+and 
+$$
+\ppp_\ppp\otimes_AB\to B_\ppp\to A_\ppp/\ppp_\ppp\otimes_AB\to0
+$$ 
+are exact, and that the image of $\ppp_\ppp\otimes_AB\to B_\ppp$ is $\ppp B_\ppp$. This proves the first isomorphism of \eqref{fiber2}, completting the proof of Claim~1. 
+%$$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp,$$ 
+
+Claim~2. We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
+
+Proof of Claim~2. 
 $$
 \big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }\big(B/\ppp^{\oo e}\big)_\ppp\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
 %\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }B/\ppp^{\oo e}\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
@@ -1571,7 +1641,7 @@ $$
 $$
 \iff\exists\ s\in\ppp^{\oo{ec}}\setminus\ppp\iff\ppp^{\oo{ec}}\ne\ppp.
 $$ 
-Note that the above statement follows also from Exercise 3.21iv p.~47 of the book.
+Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
 
 %
 \begin{comment}
@@ -1616,7 +1686,17 @@ This implies $abt\in S$ for some $t\in S$, contradicting the saturation of $S$.
 
 (ii) Left to the reader.
 
-(iii) $\overline S$ is the complement of the union of the maximal ideals containing $\aaa$.
+(iii) $\overline S$ is the complement of the union of the maximal ideals containing $\aaa$. 
+
+Proof. Let $M$ be the union of the maximal ideals containing $\aaa$ and $P$ the union of the prime ideals disjoint from $1+\aaa$:
+$$
+M:=\bigcup_{\mmm\supset\aaa}\mmm,\quad P:=\bigcup_{\ppp\cap(1+\aaa)=\varnothing}\ppp.
+$$ 
+It suffices to show $M=P$. To prove $M\subset P$, assume $\mmm\supset\aaa$, $\mmm$ maximal. It is enough to check $\mmm\cap(1+\aaa)=\varnothing$. If there was an $x$ in $\mmm\cap(1+\aaa)$, there would be an $a$ in $\aaa$ with $x=1+a$, which would imply $1\in\mmm$, contradiction. Let us verify $P\subset M$. Assume $\ppp\cap(1+\aaa)=\varnothing$, with $\ppp$ prime. We claim $\ppp+\aaa\ne(1)$. If not we would have $p+a=1$ with $p\in\ppp$ and $a\in\aaa$, and thus 
+$$
+p=1-a\in\ppp\cap(1+\aaa)=\varnothing.
+$$ 
+As $\ppp+\aaa\ne(1)$, there is a maximal ideal containing $\ppp$ and $\aaa$.
 
 %Hint 1: Let $S$ be a multiplicative set and $\aaa$ an ideal disjoint from $S$, and let $\Sigma$ be the set of ideals of $A$ which are disjoint from $S$. Then $\Sigma$ has maximal elements, and any maximal element of $\Sigma$ is prime.
 
@@ -1636,11 +1716,11 @@ $$
 $$ 
 with $a\in A, r\in A\setminus\ppp$ and $s,s'\in S$.
 
-Injectivity of $\psi$: If 
+Injectivity of $\psi$: Let $a,r,s,s'$ be as above and assume that  
 $$
 \frac{a/s}{r/s'}=0
 $$ 
-in $(T^{-1}A)_{S^{-1}\ppp}$, then there is an $r'\in A\setminus\ppp$ and an $s''\in S$ such that the element 
+in $(T^{-1}A)_{S^{-1}\ppp}$. Then there is an $r'\in A\setminus\ppp$ and an $s''\in S$ such that the element 
 $$
 \frac{a}{s}\frac{r'}{s''}=\frac{ar'}{ss''}
 $$ 
@@ -1759,9 +1839,19 @@ Here is a related result:
 
 (c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
 
-\subsection{Page 45, Exercise 3.12iv}%
+\subsection{Page 45, Exercise 3.12iv}%£
 
-If $1\otimes x=0$ in $K\otimes M$, then $1\otimes x=0$ in $A\frac1a\otimes M$. This implies $ax=0$.
+[In the hint, ``Chapter 1'' should be ``Chapter 2''.]
+
+By Exercise 2.20 p.~33 of the book we have 
+$$
+K\otimes_AM\simeq\left(\colim_{a\in A\setminus\{0\}}Aa^{-1}\right)\otimes_AM\simeq\colim_{a\in A\setminus\{0\}}\left(Aa^{-1}\otimes_AM\right).
+$$ 
+If $1\otimes x$ vanishes in $K\otimes_AM$, then Exercise 2.15 p.~33 of the book implies that $1\otimes x$ already vanishes in $Aa^{-1}\otimes_AM$ for some $a\in A\setminus\{0\}$, and we get 
+$$
+0=1\otimes x=a^{-1}a\otimes x=a^{-1}\otimes ax,
+$$ 
+which implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\otimes ay$ is an isomorphism. %If $1\otimes x=0$ in $K\otimes M$, then $1\otimes x=0$ in $A\frac1a\otimes M$. This implies $ax=0$.
 
 \subsection{Page 45, Exercise 3.14}%
 
@@ -1805,12 +1895,12 @@ where $R^*$ stands for $\oo{Spec}(R)$, and recall the isomorphism
 $$
 (A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp
 $$ 
-proved in Section~\ref{res} p.~\pageref{res}.
+proved in \eqref{fiber2} p.~\pageref{fiber2}. %Section~\ref{res} p.~\pageref{res}.
 %chain of isomorphisms $$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp.$$ (See Section~\ref{res} p.~\pageref{res} for a minor variant of the above calculation.)
 
 \subsection{Page 47, Exercise 3.23}%\label{321iv}%
 
-It's simpler to proceed as follows:
+It is simpler to proceed as follows:
 
 For $f\in A$ put 
 $$
@@ -4143,7 +4233,26 @@ In particular, the equality $(\mf a^n)^\wedge=\hat A\,\mf a^n$ shows that
 $$
 \boxed{\text{the $\mf a$-topology and the $\hat{\mf a}$-topology of $\hat A$ coincide.}} 
 $$
-The $\mf a$-topology is finer than the $\hat{\mf a}$-topology even if $A$ is not noetherian.
+The $\mf a$-topology is finer than the $\hat{\mf a}$-topology even if $A$ is not noetherian. 
+
+Note also 
+\begin{prop}\label{1015}
+Let $A$ be a noetherian ring, $\aaa$ an ideal of $A$ and $M$ a finitely generated $A$-module, and regard $(\aaa M)^\wedge$ as a sub-$A$-module of $\widehat M$. Then the sub-$A$-modules $(\aaa M)^\wedge,\widehat\aaa M$ and $\aaa\widehat M$ of $\widehat M$ coincide and are in fact sub-$\widehat A$-modules of $\widehat M$. Moreover they are isomorphic to $\widehat A\otimes_A\aaa\otimes_AM$. %then we have $$(\aaa M)^\wedge=\widehat\aaa M=\aaa\widehat M\simeq\widehat A\otimes_A\aaa\otimes_AM.$$ (Here $(\aaa M)^\wedge,\widehat\aaa M$ and $\aaa\widehat M$ are viewed as sub-$A$-modules of $\widehat M$.)
+\end{prop} 
+The proof is the same as that of Proposition 10.15i in the book. 
+
+\subsection{Page 110, Corollary 10.19}\label{1019}% 
+
+Statement in the book:
+
+Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$ contained in the Jacobson radical and let $M$ be a finitely-generated $A$-module. Then the $\aaa$-topology of $M$ is Hausdorff, i.e. $\bigcap\aaa^nM=0$. 
+
+Here is a slightly stronger statement: 
+
+\emph{Let $A$ be a Noetherian ring and $\aaa$ an ideal of $A$. % and let $M$ be a finitely-generated $A$-module. 
+Then the $\aaa$-topology of $M$ is Hausdorff for all finitely-generated $A$-module $M$, i.e. $\bigcap\aaa^nM=0$, if and only if $\aaa$ is contained in the Jacobson radical.} 
+
+Let us prove that the $\aaa$-topology is not necessarily Hausdorff if $\aaa$ is not contained in the Jacobson radical. Indeed, if $\mmm$ is a maximal ideal not containing $\aaa$, then the $\aaa$-topology of $A/\mmm$ is the coarse topology. 
 
 \subsection{Page 111, Corollaries 10.20 and 10.21}%
 
@@ -4162,6 +4271,130 @@ If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 
 \subsection{Page 113, Exercise 10.1}% 
 
 Hint: The sequence $A^\land\to B^\land\to(B/\alpha(A))^\land$ is not exact. 
+
+\subsection{Page 114, Exercise 10.5}% 
+
+Hint: In view of the isomorphism $\widehat A\otimes_A\simeq\widehat M$, it suffices to show 
+\begin{equation}\label{aba+b}
+(A^\aaa)^\bbb\simeq A^{\aaa+\bbb}. 
+\end{equation} 
+Using Proposition~10.2. p.~104 and Proposition~\ref{1015} p.~\pageref{1015}, and writing $L_i$ for 
+$$
+\lim_i.
+$$ 
+we have 
+$$
+(A^\aaa)^\bbb\simeq 
+L_j\left(\frac{L_i\frac{A}{\aaa^i}}{\bbb^jL_i\frac{A}{\aaa^i}}\right)\simeq 
+L_j\left(\frac{L_i\frac{A}{\aaa^i}}{L_i\bbb^j\frac{A}{\aaa^i}}\right)\simeq 
+L_jL_i\left(\frac{\frac{A}{\aaa^i}}{\bbb^j\frac{A}{\aaa^i}}\right)
+$$ 
+$$
+\simeq L_jL_i\left(\frac{A}{\aaa^i+\bbb^j}\right)
+\simeq L_n\left(\frac{A}{(\aaa+\bbb)^n}\right)
+\simeq A^{\aaa+\bbb}.
+$$ 
+
+\subsection{Page 114, Exercise 10.6}% 
+
+Let $A$ be a ring, $\aaa$ an ideal, and equip $A$ with the $\aaa$-adic topology. 
+
+Then any ideal containing $\aaa$ is open and closed (because such an ideal is a union of $\aaa$-cosets). 
+
+Moreover any maximal ideal $\mmm$ not containing $\aaa$ is dense. 
+
+To prove this let us show that any nonempty open subset $U\subset A$ meets $\mmm$. Set $K:=A/\mmm$ and let $\pi:A\to K$ be the canonical projection. It suffices to check that $0\in\pi(U)$. But the $\aaa$-adic topology of $K$ being the coarse topology, $\pi(U)$ is the unique nonempty subset of $K$, that is $K$ itself. %Let $u$ be in $U$. There some $n\in\mathbb N$ such that $u+\aaa^n\subset U$, and it suffices to prove that $u+\aaa^n$ meets $\mmm$. Let $\alpha$ be in $\aaa\setminus\mmm$. If $x\in A$ is a solution to the equation $$\alpha^nx\equiv u\bmod\mmm,$$ then we have $u-\alpha^nx\in\mmm$, as desired. 
+
+\subsection{Page 114, Exercise 10.7}% 
+
+See Section~\ref{1019} p.~\pageref{1019} above. 
+
+\subsection{Page 115, Exercise 10.9}% 
+
+We follow Jeffrey Daniel Kasik Carlson. 
+
+\begin{lem}\label{L106a} 
+Let $B$ be a ring, let $p,q$ be are coprime monic polynomials in $B[x]$ with $\deg p=r$, and let $c$ be in $B[x]$. Then there are unique $a,b\in B[x]$ with $c=ap+bq$ and $\deg b<r$. 
+\end{lem} 
+\begin{proof}
+The element $\bar q\in B[x]/(p)$ being a unit since $(p,q)=(1)$ in $B[x]$, there is a $b\in B[x]$ of least degree such that $\bar b\bar q=\bar c$ in $B[x]/(p)$. Since $p$ is monic of degree $r$, the elements $\bar 1,\bar x,\dots,\bar x^{r-1}$ freely generate $B[x]/(p)$ as a $B$-module, so $b$ is unique and of degree less that $r$. Now $c\equiv bq\bmod p$, and $p$, being monic, is not a zero-divisor, so $ap=c-bq$ has a unique solution $a\in B[x]$. 
+\end{proof}
+
+\begin{lem}\label{L106b}
+Let $\bbb\subset\mf R(A)$ be an ideal of $A$, let $g$ and $h$ be in $A[x]$ with $g$ monic and $(\bar g,\bar h)=(1)$ in $(A/\bbb)[x]$. Then we have $(g,h)=(1)$ in $A[x]$. 
+\end{lem} 
+\begin{proof} 
+If $M=A[x]/(g)$, and $N=hM$, then since 
+$$
+\bbb A[x]+(g, h)=A[x],
+$$ 
+we have $\bbb M+N=M$. Since $M$ is finitely generated by $\bar 1$, $\bar x, $\dots, $\bar x^{(\deg g)-1}$, Corollary 2.7 to Nakayama’s Lemma, p.~22 of the book applies to show $hM=M$, so that $(g,h)=(1)$ in $A[x]$. 
+\end{proof} 
+
+Now we solve Exercise 10.6. We need only assume that $A$ is complete with respect to some ideal $\mmm$; we do not necessarily need $\mmm$ maximal or $A$ local. To emphasize the fact that $\mmm$ is not necessarily maximal, we denote this ideal by $\aaa$. Recall that $A$ is complete for the $\aaa$-topology. 
+
+Let $g_1,h_1$ be monic lifts of $\bar g,\bar h$ to $A[x]$ and note the we have 
+$$
+f-g_1h_1\equiv0\quad\bmod\aaa.
+$$ 
+
+We shall inductively construct $g_2,h_2,g_3,h_3,\dots\in A[x]$ with 
+$$
+g_j\text{ monic of degree }r%\text{ for all }j\ge2,  
+$$ 
+$$
+f-g_jh_j\equiv0\quad\bmod\aaa^j%\text{ for all }j\ge2
+$$ 
+and 
+$$
+g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\quad\bmod\aaa^{j-1}%\text{ for all }j\ge2
+$$ 
+for all $j\ge 2$. 
+
+Coefficient by coefficient, the $g_j$ and the $h_j$ will form Cauchy sequences with respect to the $\aaa$-topology, and so converge to unique limits $g,h\in A[x]$ with 
+$$
+g\equiv g_j,\quad h\equiv h_j\quad\bmod\aaa^j
+$$ 
+for all $j\ge1$. We will then have 
+$$
+f-gh=(f-g_jh_j)+(g_jh_j-gh)\equiv0\quad\bmod\aaa^j
+$$ 
+for all $j\le1$. Since $A$ is $\aaa$-adically complete, $\bigcap\aaa^j=0$, so $f=gh$. As $f$ and $g$ are monic, so is $h$. 
+
+It only remains to construct the $g_j$ and $h_j$. 
+
+Let $k$ be $\ge2$ and suppose inductively we have found $g_2,$ $h_2,$ $g_3,$ $h_3,$ $\dots,$ $g_k,$ $h_k$ such that 
+$$
+g_j\text{ is monic of degree }r,
+$$ 
+$$
+f-g_jh_j=c\equiv0\quad\bmod\aaa^j
+$$ 
+for $1\le j\le k$, and 
+$$
+g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\quad\bmod\aaa^{j-1}
+$$ 
+for $2\le j\le k$. 
+
+Since by Proposition 10.15.iv p.~109 of the book, $\aaa^k\subset\mf R(A)$, it follows from Lemma~\ref{L106b} with $\bbb=\aaa^k$, that $(g_k,h_k)=(1)$ in $A[x]$. By Lemma~\ref{L106a} with 
+$$
+B=A,\quad p=g_k,\quad q=h_k,
+$$ 
+there are unique $a,b\in A[x]$ with $\deg b<r$ and $ag_k+bh_k=c$. Taking $B=A/\aaa^k$ in Lemma~\ref{L106a} and using uniqueness, we see that since $\bar c=0$ we also have $\bar a=\bar b=0$, or $a,b\in\aaa^k[x]$. Setting  
+$$
+g_{k+1}=g_k+b\in g_k+\aaa^k[x]
+$$ 
+and 
+$$
+h_{k+1}=h_k+a\in h_k+\aaa^k[x],
+$$ 
+we get 
+\[
+\begin{split}
+f-g_{k+1}h_{k+1}&=(f-g_kh_k)-(ag_k+bh_k)-ab\\
+&=c-c+ab=ab\in\aaa^{2k}[x]\subset\aaa^{k+1}[x].\\
+\end{split} 
+\] 
 
 \section{About Chapter 11}%%
 
@@ -4266,7 +4499,35 @@ I think ``by (11.20)'' should be ``by (11.21)''.
 
 For the last sentence of the proof, see the Examples on p.~121.
 
-\subsection{Page 126}%% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
+\subsection{Page 126, Exercise 11.4}% 
+
+Hint:
+
+Let 
+$$
+\mathbb N=\bigsqcup_{i\in\mathbb N}N_i
+$$ 
+be a partition of $\mathbb N$, let $K$ be a field, let $A$ be the $K$-algebra $K[x_0,x_1,\dots]$, where the $x_i$ are indeterminates, for each $i\in\mathbb N$ let $\ppp_i$ be the ideal of $A$ generated by the $x_j$ with $j\in N_i$, for $f\in A$ set 
+$$
+W(f):=\{i\in\mathbb N\ |\ f\in\ppp_i\},
+$$ 
+and let $\aaa$ be an ideal of $A$ contained in the union of the $\ppp_i$. 
+
+Claim 1: We have $\aaa\subset\ppp_i$ for some $i$. 
+
+Claim 2: If $f,g\in A$ and $i,j\in\mathbb N$ satisfy 
+$$
+g\notin\ppp_i,\quad j\notin N_i,\quad x_j\text{ doesn't occur in }f,
+$$ 
+then $W(f+x_jg)\subset W(f)\setminus\{i\}$. 
+
+To prove Claim 2 note that no monomial can occur simultaneously in $f$ and in $x_jg$. 
+
+Let us show that Claim 2 implies Claim 1. 
+
+Assume by contradiction that for all $i$ we have $\aaa\not\subset\ppp_i$. Note that $W(f)$ is finite if $0\ne f\in A$. Denote by $|X|$ the cardinality of any set $X$. Let $f\in\aaa$ with $|W(f)|$ minimum. In particular $|W(f)|$ is a nonnegative integer. It is even a positive integer because $\aaa$ is contained in the union of the $\ppp_i$. Let $i$ be in $W(f)$ and $g$ be in $\aaa\setminus\ppp_i$. By Claim~2 there is a $j$ such that $f+x_jg$ is an element of $\aaa$ satisfying $|W(f+x_jg)|<|W(f)|$, a contradiction. 
+
+\subsection{Page 126, Exercise 11.6}% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
 We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If $\ppp$ and $\mf q$ are prime ideals of a ring $B$, we write $\ppp<\mf q$ instead of 
 $$
@@ -4284,17 +4545,15 @@ We'll also use the following fact which occurs in the hint to Exercise 11.6 p.~1
 $$
 f^*:\oo{Spec}(A[x])\to\oo{Spec}(A)
 $$ 
-\emph{over a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of} 
+\emph{above a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of} 
 $$
 k\otimes_AA[x]\simeq k[x],
 $$ 
-\emph{where $k$ is the residue field at} $\ppp$.
-
-\subsection{Exercise 11.6}%
+\emph{where $k$ is the residue field at} $\ppp$. 
 
 For Exercise 3.21iv p.~47 of the book see Section~\ref{321iv} p.~\pageref{321iv} above. 
 
-For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above.
+For Exercise 4.7 p.~55 of the book see Section~\ref{5547} p.~\pageref{5547} above. 
 
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
 $
@@ -4302,7 +4561,7 @@ $
 $ 
 is a chain of prime ideals in $A$, then 
 $$
-\ppp_0[x]<\dots<\ppp_n[x]<(\ppp,x)
+\ppp_0[x]<\dots<\ppp_n[x]<\ppp_n+(x)
 $$ 
 is chain of prime ideals in $A[x].\ \square$
 
@@ -4321,13 +4580,13 @@ $$
 \frac{\dim A[x]}2\le\frac12+\dim A.\ \square
 $$
 
-\subsection{Exercise 11.7}%
+\subsection{Page 126, Exercise 11.7}%
 
 $\bullet$ Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
-$\bullet$ Inequality $\oo{height }\ppp[x]\le m$: see Corollary 11.16 p.~121 of the book.
+$\bullet$ Inequality $\oo{height }\ppp[x]\le m$: see Corollary 11.16 p.~121 of the book. Note that we have $\aaa=\sum_{i=1}^ma_iA$ and $\aaa[x]=\sum_{i=1}^ma_iA[x]$. 
 
-$\bullet$ Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint). 
+$\bullet$ Inequality $\dim A[x]\le1+\dim A$ (last sentence of the hint): 
 
 %We denote the height of the prime ideal $\ppp$ by $h(\ppp)$.
 
@@ -4339,8 +4598,11 @@ $
 $ 
 be a chain of prime ideals in $A[x]$ of length $n+2$. It suffices to derive a contradiction from this assumption. 
 
-The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star\star$), and $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$ by ($\star$). Using again ($\star$) we get  
-%and $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star$), and thus $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$. This implies
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star\star$), and 
+$$
+h(\ppp_i^{\oo c})=h(\ppp_i^{\oo c}[x])=h(\ppp_i)\ge i,
+$$ 
+the inequality following from ($\star$). Using again ($\star$) we get  %and $\ppp_i=\ppp_i^{\oo c}[x]$ by ($\star$), and thus $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$. This implies
 $$
 h(\ppp_{n+2}^{\oo c})\ge n+1-i+h(\ppp_i^{\oo c})\ge n+1,
 $$ 
@@ -4378,7 +4640,29 @@ About item \ref{ip}: There are rings in which $(0)$ is irreducible but not prima
 
 \href{https://mathoverflow.net/q/185739/461}{https://mathoverflow.net/q/185739/461}. 
 
-In fact, the following statement is easy to check. Let $A$ be a domain which is not a field, let $K$ be its field of fractions, form the $A$-module $B:=A\oplus K/A$ and define a multiplication on $B$ by $$(a,\alpha)(b,\beta)=(ab,a\beta+b\alpha).$$ Then $B$ is a commutative ring in which the zero ideal is irreducible but not primary. 
+In fact, the following statement is easy to check. Let $A$ be a domain which is not a field, let $K$ be its field of fractions, form the $A$-module $B:=A\oplus K/A$ and define a multiplication on $B$ by $$(a,\alpha)(b,\beta)=(ab,a\beta+b\alpha).$$ Then $B$ is a commutative ring in which the zero ideal is irreducible but not primary.\bigskip
+
+\hrule\bigskip
+
+This text is also available at 
+
+\href{https://www.mediafire.com/folder/e72y1pvh76pg7/}{https://www.mediafire.com/folder/e72y1pvh76pg7/}
+
+\href{https://mega.nz/#F!XVQHGSLb!iUGzAsdR4dNc1aCPoaxSEw}{https://mega.nz/\#F!XVQHGSLb!iUGzAsdR4dNc1aCPoaxSEw}
+
+\href{https://tinyurl.com/sod9n2b}{https://tinyurl.com/sod9n2b}
+
+\href{https://yadi.sk/d/cMhmbETNKNQROg}{https://yadi.sk/d/cMhmbETNKNQROg}
+
+\href{https://app.box.com/s/4ves1ifaqzzmen3fmrx1c4s168q5s2ak}{https://app.box.com/s/4ves1ifaqzzmen3fmrx1c4s168q5s2ak}
+
+\href{https://tinyurl.com/w48z943}{https://tinyurl.com/w48z943}
+
+\href{https://1drv.ms/u/s!Ar0eXvL-m_9Nas0-rrpGQRJFpBg?e=ndQTS5}{https://1drv.ms/u/s!Ar0eXvL-m\_9Nas0-rrpGQRJFpBg?e=ndQTS5}
+
+\href{https://tinyurl.com/wbd68zm}{https://tinyurl.com/wbd68zm}
+
+\href{http://k00.fr/d1mxqtf7}{http://k00.fr/d1mxqtf7}
 
 \end{document}%\overset?\implies
 
