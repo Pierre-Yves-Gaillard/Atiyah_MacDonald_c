@@ -1628,7 +1628,7 @@ and
 $$
 \ppp_\ppp\otimes_AB\to B_\ppp\to A_\ppp/\ppp_\ppp\otimes_AB\to0
 $$ 
-are exact, and that the image of $\ppp_\ppp\otimes_AB\to B_\ppp$ is $\ppp B_\ppp$. This proves the first isomorphism of \eqref{fiber2}, completting the proof of Claim~1. 
+are exact, and that the image of $\ppp_\ppp\otimes_AB\to B_\ppp$ is $\ppp B_\ppp$. This proves the first isomorphism of \eqref{fiber2}, completing the proof of Claim~1. 
 %$$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp,$$ 
 
 Claim~2. We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
@@ -1839,7 +1839,7 @@ Here is a related result:
 
 (c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
 
-\subsection{Page 45, Exercise 3.12iv}%£
+\subsection{Page 45, Exercise 3.12iv}%
 
 [In the hint, ``Chapter 1'' should be ``Chapter 2''.]
 
@@ -1941,9 +1941,13 @@ For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pag
 
 For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
 
-\subsection{Page 48, Exercise 3.27iv}%
+\subsection{Page 48, Exercise 3.27}%Examples 25 and 26
 
-See Section~\ref{223} p.~\pageref{223}.
+In the hint to (i), ``Examples 25 and 26'' should be ``Exercises 25 and 26''. 
+
+Part (ii): see Exercise 1.22 p. 13 of the book. 
+
+For (iv), see Section~\ref{223} p.~\pageref{223}.
 
 \section{About Chapter 4}%%
 
@@ -1989,12 +1993,10 @@ Just before Proposition 4.1: In fact, the contraction of a $\ppp$-primary ideal 
 
 \subsection{Page 52, Corollary to Theorem 4.5}%%
 
+(Theorem 4.5 is the First Uniqueness Theorem.)
 \begin{cor}\label{c45}
-In the notation of Theorem 4.5, we have:
-
-(a) If $(\aaa:x)$ is prime, then $(\aaa:x)$ $=\ppp_i$ for some $i$.
-
-(b) If $1\le i\ne j\le n$, then $\ppp_i\ne\ppp_j$.
+In the notation of Theorem 4.5, if %we have: (a) If 
+$(\aaa:x)$ is prime, then $(\aaa:x)$ $=\ppp_i$ for some $i$. %(b) If $1\le i\ne j\le n$, then $\ppp_i\ne\ppp_j$.
 \end{cor}
 
 \subsection{Page 52, Proof of Theorem 4.5}%
@@ -2112,7 +2114,7 @@ by Proposition 3.11v p.~42.
 
 \subsection{Page 54, Theorem 4.10}%\label{410}%
 
-Here is a corollary to Theorem 4.10 (see also Proposition 1.11ii p.~8 of the book):
+This is the Second Uniqueness Theorem. Here is a corollary (see also Proposition 1.11ii p.~8 of the book):
 
 \begin{cor}\label{410}
 Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced primary decomposition.
@@ -2121,6 +2123,22 @@ Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced primary decomposition.
 
 (b) If $r(\aaa)=\ppp$ for some prime ideal $\ppp$, then $\ppp$ is the only isolated prime ideal of $\aaa$, and the corresponding primary component is the smallest $\ppp$-primary ideal containing $\aaa$.
 \end{cor}
+
+\subsection{Page 55, Exercise 4.2}% 
+
+Statement: If $\aaa=r(\aaa)$, then $\aaa$ has no embedded prime ideals.
+
+It is implicitly assumed that $\aaa$ is decomposable. In general, if 
+$$
+\aaa=\qqq_1\cap\cdots\cap\qqq_n
+$$ 
+is a reduced primary decomposition of $\aaa$ such that the minimal prime ideals of $\aaa$ are $\ppp_1,\dots,\ppp_m$ (with $\ppp_i=r(\qqq_i)$), then 
+$$
+r(\aaa)=\ppp_1\cap\cdots\cap\ppp_m
+$$ 
+is the unique reduced primary decomposition of $r(\aaa)$. In particular $r(\aaa)$ has no embedded prime ideals. 
+
+Summary: If $\aaa$ is decomposable, then so is $r(\aaa)$, and $r(\aaa)$ has no embedded prime ideals. 
 
 \subsection{Page 55, Exercise 4.5}%
 
@@ -2156,13 +2174,11 @@ Claim: any prime ideal is contained in a \emph{unique} maximal ideal.
 
 Proof: Using Urysohn's Lemma it is easy to see that, given distinct points $x$ and $y$ in $X$ and denoting by $\mmm_x$ and $\mmm_y$ the corresponding maximal ideals, there are $f,g\in C(X)$ such that $fg=0$, $f\in\mmm_x\setminus\mmm_y$, $g\in\mmm_y\setminus\mmm_x$. 
 
-The claim implies that there are infinitely many minimal prime ideals.
-
-%Using Urysohn's Lemma it is easy to see that any prime ideal is contained in a \emph{unique} maximal ideal. This implies that there are infinitely many minimal prime ideals.
+The claim implies that there are infinitely many minimal prime ideals. %Using Urysohn's Lemma it is easy to see that any prime ideal is contained in a \emph{unique} maximal ideal. This implies that there are infinitely many minimal prime ideals.
 
 \subsection{Page 55, Exercise 4.7}\label{5547}%
 
-Part iii: Use Exercises 1.18 p.~10 and 1.2ii p.~11. Note that we have (by Exercise 1.2ii p.~11)
+Part (iii): Use Exercises 1.18 p.~10 and 1.2ii p.~11. Note that we have (by Exercise 1.2ii p.~11)
 \begin{equation}\label{rax}
 r(\aaa[x])=r(\aaa)[x]
 \end{equation}
@@ -2184,14 +2200,14 @@ $$
 $$ 
 (where the arrows are the obvious ones) commutes, the rows are exact, the second vertical arrow is clearly an isomorphism, and the third vertical arrow is an isomorphism by Exercises 1.18 p.~10. Thus the first vertical arrow is also an isomorphism. But by its (implicit) definition this arrow is an inclusion. Being surjective, it is actually an equality. $\square$
 
-Then Part iv follows from \eqref{acbx} and Part iii.
+Then Part (iv) follows from \eqref{acbx} and Part iii.
 \end{comment}
 
-Part v: We clearly have 
+Part (v): We clearly have 
 \begin{equation}\label{asb}
 \aaa\subset\bbb\iff\aaa[x]\subset\bbb[x]
 \end{equation}
-(obvious notation), and Part v follows from \eqref{asb}, Part iv and Proposition 4.6 p.~52 of the book.
+(obvious notation), and Part (v) follows from \eqref{asb}, Part~(iv) and Proposition 4.6 p.~52 of the book.
 
 \subsection{Page 55, Exercise 4.8}%
 
@@ -2223,7 +2239,8 @@ For $a$ in $A$ we have $(aA)[x]=a(A[x])$. (In fact for any overring $B$ of $A$ w
 
 \subsection{Page 55, Exercise 4.9}%
 
-%\subsubsection{} 
+Here are some hints.
+
 $\bu$ Let $a,b\in A$ and $\ppp\in\oo{Spec}(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
 
 \textbf{Claim 1:} $a$ is zero-divisor.
@@ -2235,7 +2252,7 @@ $\bu$ Let $a,b\in A$ and $\ppp\in\oo{Spec}(A)$ be such that $a\in\ppp$ and $\ppp
 \emph{Proof of Claim 2.} Assume by contradiction that $a^ns\in(0:b)$. We can suppose that $n$ is minimum for this condition. %In particular $n\ge2$. 
 We have $a(a^{n-1}sb)=a^nsb=0$. As $a$ is not a zero-divisor, this implies $a^{n-1}sb=0$, that is $a^{n-1}s\in(0:b)$, in contradiction with the minimality of $n$. $\square$
 
-To complete the proof of Claim~1 set $T:=\{\ a^ns|\ n\in\mathbb N,s\in A\setminus\ppp\}$. Claim~2 implies that $T$ is disjoint from $(0:b)$. Thus there is a prime ideal $\qqq$ which contains $(0:b)$ and is disjoint from $T$, and we have $A\setminus\ppp\subset T\subset A\setminus\qqq$, that is $(0:b)\subset\qqq\subset\ppp$. By minimality of $\ppp$ over $(0:b)$ this forces $\qqq=\ppp$, and thus $a\in\ppp\cap T=\qqq\cap T=\varnothing$, a contradiction. This completes the proof of Claim~1. $\square$ 
+To complete the proof of Claim~1 set $T:=\{\ a^ns|\ n\in\mathbb N,s\in A\setminus\ppp\}$. This is a multiplicative set. Claim~2 implies that $T$ is disjoint from $(0:b)$. Thus there is a prime ideal $\ppp'$ which contains $(0:b)$ and is disjoint from $T$, and we have $A\setminus\ppp\subset T\subset A\setminus\ppp'$, that is $(0:b)\subset\ppp'\subset\ppp$. By minimality of $\ppp$ over $(0:b)$ this forces $\ppp'=\ppp$, and thus $a\in\ppp\cap T=\ppp'\cap T=\varnothing$, a contradiction. This completes the proof of Claim~1. $\square$ 
 
 $\bu$ \textbf{Proof of the inclusion} 
 \begin{equation}\label{da}
@@ -2254,17 +2271,17 @@ To prove \eqref{da2} we start by proving:
 
 \emph{Proof of Claim 3.} Let $b\in A$ satisfy $ab=0$. It is enough to check $b\in\ppp$. We have $\frac a1\frac b1=0$, hence $\frac b1\in(0:\frac a1)\subset S^{-1}\ppp$, and thus $b\in\ppp$. $\square$
 
-To complete the proof of \eqref{da2}, assume by contradiction that there is a prime ideal $\qqq$ such that 
+To complete the proof of \eqref{da2}, assume by contradiction that there is a prime ideal $\ppp'$ such that 
 $$
-(0:a)\subset\qqq<\ppp.
+(0:a)\subset\ppp'<\ppp.
 $$ 
-\textbf{Claim 4:} $(0:\frac a1)\subset S^{-1}\qqq$.
+\textbf{Claim 4:} $(0:\frac a1)\subset S^{-1}\ppp'$.
 
-\emph{Proof of Claim 4.} Assuming $\frac bs\frac a1=0$ (obvious notation), we get $abt$ for some $t\in S$, hence $bt\in\qqq$, hence $b\in\qqq$, and thus $\frac bs\in S^{-1}\qqq$. $\square$ 
+\emph{Proof of Claim 4.} Assuming $\frac bs\frac a1=0$ (obvious notation), we get $abt=0$ for some $t\in S$, hence $bt\in\ppp'$, hence $b\in\ppp'$, and thus $\frac bs\in S^{-1}\ppp'$. $\square$ 
 
 To complete the proof of \eqref{da2}, note that we get 
 $$
-\left(0:\frac a1\right)\subset S^{-1}\qqq<S^{-1}\ppp,
+\left(0:\frac a1\right)\subset S^{-1}\ppp'<S^{-1}\ppp,
 $$ 
 contradicting the minimality of $S^{-1}\ppp$ over $(0:\frac a1)$. %$\ppp$ over $(0:a)$. 
 $\square$
@@ -2289,19 +2306,19 @@ Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect t
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)
 $$ 
-and $r((0)^{\oo c})=r(0)^{\oo c}$.
+and $r_A((0)^{\oo c})=r_{A_\ppp}(0)^{\oo c}$.
 
 (i) We have 
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)\subset\ppp.
 $$
-(ii) We must show that $\ppp$ is minimal if and only if $r(0)^{\oo c}=\ppp$. 
+(ii) We must show that $\ppp$ is minimal if and only if $(r_{A_\ppp}(0))^{\oo c}=\ppp$. 
 
-If $\ppp$ is minimal we have $r(0)=\ppp_\ppp$ and thus $r(0)^{\oo c}=\ppp$. 
+If $\ppp$ is minimal we have $r_{A_\ppp}(0)=\ppp_\ppp$ and thus $(r_{A_\ppp}(0))^{\oo c}=\ppp$. 
 
-If $\ppp$ is \emph{not} minimal, there is a prime ideal $\ppp'$ such that $\ppp'<\ppp$, and we get $r(0)\subset\ppp'_\ppp<\ppp_\ppp$, hence $r(0)^{\oo c}\subset\ppp'<\ppp$ and thus $r(0)^{\oo c}\ne\ppp$.
+If $\ppp$ is \emph{not} minimal, there is a prime ideal $\ppp'$ such that $\ppp'<\ppp$, and we get $r_{A_\ppp}(0)\subset\ppp'_\ppp<\ppp_\ppp$, hence $r_A(0)^{\oo c}\subset\ppp'<\ppp$ and thus $r_{A_\ppp}(0)^{\oo c}\ne\ppp$.
 
-(iii) For $\ppp\supset\ppp'$ we have 
+(iii) Assuming $\ppp\supset\ppp'$, we must show $S_\ppp(0)\subset S_{\ppp'}(0)$. We have 
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)\subset\bigcup_{s'\in A\setminus\ppp'}(0:s')\subset S_{\ppp'}(0).
 $$
@@ -2319,7 +2336,7 @@ would imply $as=0$ for some $s\in A\setminus\ppp$, and thus $s\in(0:a)\subset\pp
 
 (a) If $\ppp$ is a minimal prime ideal of a ring $A$, show that $S_\ppp(0)$ (Exercise 10) is the smallest $\ppp$-primary ideal.
 
-The ideal $\ppp_\ppp$, being the unique prime ideal of $A_\ppp$, coincides with the nilradical: $\ppp_\ppp=r(0)$. Proposition 4.2 p.~51 of the book implies that $(0)$ is $\ppp_\ppp$-primary, and is thus the smallest $\ppp_\ppp$-primary ideal of $A_\ppp$. As $\ppp_\ppp$ contracts to $\ppp$, Section~\ref{prycor} p.~\pageref{prycor} above entails that $S_\ppp(0)=(0)^{\oo c}$ is the smallest $\ppp$-primary ideal of $A$. %By Exercise 4.10ii p.~55 of the book (see Section~\ref{e410} above), we have $r(S_\ppp(0))=\ppp$, and thus $r(S_\ppp(0)_\ppp)=\ppp_\ppp$ (Proposition 3.11v p.~42 of the book).  Proposition 4.2 p.~51 of the book implies then that $S_\ppp(0)_\ppp$, and Section~\ref{prycor} p.~\pageref{prycor} above entails that ???This follows from Proposition 4.2 p.~51 %and 4.8 p.~53 of the book and Section~\ref{prycor} p.~\pageref{prycor}.
+The ideal $\ppp_\ppp$, being the unique prime ideal of $A_\ppp$, coincides with the nilradical: $\ppp_\ppp=r_{A_\ppp}(0)$. Proposition 4.2 p.~51 of the book implies that $(0)$ is $\ppp_\ppp$-primary, and is thus the smallest $\ppp_\ppp$-primary ideal of $A_\ppp$. As $\ppp_\ppp$ contracts to $\ppp$, Section~\ref{prycor} p.~\pageref{prycor} above entails that $S_\ppp(0)=(0)^{\oo c}$ is the smallest $\ppp$-primary ideal of $A$. %By Exercise 4.10ii p.~55 of the book (see Section~\ref{e410} above), we have $r(S_\ppp(0))=\ppp$, and thus $r(S_\ppp(0)_\ppp)=\ppp_\ppp$ (Proposition 3.11v p.~42 of the book).  Proposition 4.2 p.~51 of the book implies then that $S_\ppp(0)_\ppp$, and Section~\ref{prycor} p.~\pageref{prycor} above entails that ??? This follows from Proposition 4.2 p.~51 %and 4.8 p.~53 of the book and Section~\ref{prycor} p.~\pageref{prycor}.
 
 (b) Let $\aaa$ be the intersection of the ideals $S_\ppp(0)$ as  $\ppp$ runs through the minimal prime ideals of $A$. Show that $\aaa$ is contained in the nilradical of $A$.
 
@@ -2331,14 +2348,14 @@ Let
 $$
 (0)=\qqq_1\cap\cdots\cap\qqq_n
 $$ 
-be a reduced decomposition. We can assume that there is an $m$ such that $1\le m\le n$ and $\ppp_i:=r(\qqq_i)$ is isolated if and only if $i\le m$. Theorem 4.10 p.~54 of the book and (a) above imply  
-$$
+be a reduced decomposition. We can assume that there is an $m$ such that $1\le m\le n$ and $\ppp_i:=r(\qqq_i)$ is isolated if and only if $i\le m$. The Second Uniqueness Theorem (Theorem 4.10 p.~54 of the book) and (a) above imply 
+\begin{equation}\label{eq411}
 (0)=S_{\ppp_1}(0)\cap\cdots\cap S_{\ppp_m}(0)\cap\qqq_{m+1}\cap\cdots\cap\qqq_n
-$$ 
+\end{equation} 
 $$
 =\aaa\cap\qqq_{m+1}\cap\cdots\cap\qqq_n,
 $$ 
-and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conversely if $\aaa=0$, then $m=n$ because the decomposition is reduced.
+and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conversely if $\aaa=0$, then $m=n$ because \eqref{eq411} is a \emph{reduced} decomposition.
 
 \subsection{Page 56, Exercise 4.12}%
 
@@ -2348,7 +2365,7 @@ Follows from statements 1.18, 3.11ii, 3.11v and 4.9 in the book.
 
 Note that $(\ppp^{(n)})_\ppp=\ppp_\ppp^n$.
 
-(i) Let us show that $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. We have $(\ppp^{(n)})_\ppp=\ppp_\ppp^n\subset\ppp_\ppp$. As $\ppp_\ppp$ is maximal, the ideal $(\ppp^{(n)})_\ppp$ is $\ppp_\ppp$-primary. Using contraction we see that $\ppp^{(n)}$ is $\ppp$-primary. If we had $\ppp^n\subset\qqq<\ppp$ with $\qqq$ a $\ppp$-primary ideal, localization would give $\ppp_\ppp^n\subset\qqq_\ppp<\ppp_\ppp^n$.
+(i) Let us show that $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. We have $(\ppp^{(n)})_\ppp=\ppp_\ppp^n\subset\ppp_\ppp$. As $\ppp_\ppp$ is maximal, the ideal $(\ppp^{(n)})_\ppp$ is $\ppp_\ppp$-primary. Using contraction we see that $\ppp^{(n)}$ is $\ppp$-primary. Assuming $\ppp^n\subset\qqq\subset\ppp$ with $\qqq$ a $\ppp$-primary ideal, we get $\ppp_\ppp^n\subset\qqq_\ppp\subset\ppp_\ppp$, and $\ppp^{(n)}\subset\qqq\subset\ppp$. %If we had $\ppp^n\subset\qqq<\ppp$ with $\qqq$ a $\ppp$-primary ideal, localization would give $\ppp_\ppp^n\subset\qqq_\ppp<\ppp_\ppp^n$.
 
 (ii) In view of Corollary~\ref{410}b p.~\pageref{410} it suffices to check that $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. We just did that in (i) above.
 
@@ -2362,7 +2379,7 @@ This follows from what we proved in (i).
 
 \subsection{Page 56, Exercise 4.14}%
 
-By Corollary~\ref{c45} p.~\pageref{c45} above (which is a corollary to the first uniqueness theorem, that is to Theorem 4.5 p.~52 of the book), it suffices to show that $(\aaa:x)$ is prime. If not there would be $y,z\in A$ such that 
+By Corollary~\ref{c45} p.~\pageref{c45} above (which is a corollary to the first uniqueness theorem, that is to Theorem 4.5 p.~52 of the book (the First Uniqueness Theorem)), it suffices to show that $(\aaa:x)$ is prime. If not there would be $y,z\in A$ such that 
 $$
 y\notin(\aaa:x),\quad z\notin(\aaa:x),\quad yz\in(\aaa:x),
 $$ 
@@ -2677,21 +2694,23 @@ Now (L2) and Lemma~\ref{lasker} p.~\pageref{lasker} give the desired contradicti
 
 Statement:
 
-Let $A$ be a ring and $\mathfrak p$ a prime ideal of $A$. Show that every $\mathfrak p$-primary ideal contains $S_{\mathfrak p}(0)$, the kernel of the canonical homomorphism $A\to A_{\mathfrak p}$.
+(a) Let $A$ be a ring and $\mathfrak p$ a prime ideal of $A$. Show that every $\mathfrak p$-primary ideal contains $S_{\mathfrak p}(0)$, the kernel of the canonical homomorphism $A\to A_{\mathfrak p}$.
 
-Suppose that $A$ satisfies the following condition: for every prime ideal $\mathfrak p$, the intersection of all $\mathfrak p$-primary ideals of $A$ is equal to $S_{\mathfrak p}(0)$. (Noetherian rings satisfy this condition: see Chapter 10\footnote{See Corollary 10.21 p.~111 of the book.}.) Let $\mathfrak p_1,\dots,\mathfrak p_n$ be distinct prime ideals, none of which is a minimal prime ideal of $A$. Then there exists an ideal $\mathfrak a$ in $A$ whose associated prime ideals are $\mathfrak p_1,\dots,\mathfrak p_n$.
+(b) Suppose that $A$ satisfies the following condition: for every prime ideal $\mathfrak p$, the intersection of all $\mathfrak p$-primary ideals of $A$ is equal to $S_{\mathfrak p}(0)$. (Noetherian rings satisfy this condition: see Chapter 10\footnote{See Corollary 10.21 p.~111 of the book.}.) Let $\mathfrak p_1,\dots,\mathfrak p_n$ be distinct prime ideals, none of which is a minimal prime ideal of $A$. Then there exists an ideal $\mathfrak a$ in $A$ whose associated prime ideals are $\mathfrak p_1,\dots,\mathfrak p_n$.
 
-[Proof by induction on $n$. The case $n=1$ is trivial (take $\mathfrak a=\mathfrak p_1$). Suppose $n>1$ and let $\mathfrak p_n$ be maximal in the set $\{\mathfrak p_1,\dots,\mathfrak p_n\}$. By the inductive hypothesis there exists an ideal $\mathfrak b$ and a minimal primary decomposition $\mathfrak b=\mathfrak q_1\cap\dots\cap\mathfrak q_{n-1}$, where each $\mathfrak q_i$ is $\mathfrak p_i$-primary. If $\mathfrak b\subset S_{\mathfrak p_n}(0)$ let $\mathfrak p$ be a minimal prime ideal of $A$ contained in $\mathfrak p_n$. Then $S_{\mathfrak p_n}(0)\subset S_{\mathfrak p}(0)$, hence $\mathfrak b\subset S_{\mathfrak p}(0)$. Taking radicals and using Exercise 10, we have $\mathfrak p_1\cap\dots\cap\mathfrak p_{n-1}\subset\mathfrak p$, hence some $\mathfrak p_i\subset \mathfrak p$, hence $\mathfrak p_i=\mathfrak p$ since $\mathfrak p$ is minimal. This is a contradiction since no $\mathfrak p_i$ is minimal. Hence $\mathfrak b\not\subset S_{\mathfrak p_n}(0)$ and therefore there exists a $\mathfrak p_n$-primary ideal $\mathfrak q_n$ such that $\mathfrak b\not\subset\mathfrak q_n$. Show that $\mathfrak a=\mathfrak q_1\cap\dots\cap\mathfrak q_n$ has the required properties.]
+[Proof of (b) by induction on $n$. The case $n=1$ is trivial (take $\mathfrak a=\mathfrak p_1$). Suppose $n>1$ and let $\mathfrak p_n$ be maximal in the set $\{\mathfrak p_1,\dots,\mathfrak p_n\}$. By the inductive hypothesis there exists an ideal $\mathfrak b$ and a minimal primary decomposition $\mathfrak b=\mathfrak q_1\cap\dots\cap\mathfrak q_{n-1}$, where each $\mathfrak q_i$ is $\mathfrak p_i$-primary. If $\mathfrak b\subset S_{\mathfrak p_n}(0)$ let $\mathfrak p$ be a minimal prime ideal of $A$ contained in $\mathfrak p_n$. Then $S_{\mathfrak p_n}(0)\subset S_{\mathfrak p}(0)$, hence $\mathfrak b\subset S_{\mathfrak p}(0)$. Taking radicals and using Exercise 10, we have $\mathfrak p_1\cap\dots\cap\mathfrak p_{n-1}\subset\mathfrak p$, hence some $\mathfrak p_i\subset \mathfrak p$, hence $\mathfrak p_i=\mathfrak p$ since $\mathfrak p$ is minimal. This is a contradiction since no $\mathfrak p_i$ is minimal. Hence $\mathfrak b\not\subset S_{\mathfrak p_n}(0)$ and therefore there exists a $\mathfrak p_n$-primary ideal $\mathfrak q_n$ such that $\mathfrak b\not\subset\mathfrak q_n$. Show that $\mathfrak a=\mathfrak q_1\cap\dots\cap\mathfrak q_n$ has the required properties.]
 
 End of the statement.
 
-The following argument was explained to me by user withoutfeather over on Mathematics Stackexchange: 
+Proof of (a): If $\qqq$ is $\ppp$-primary, then we have $(0)\subset\qqq_\ppp\subset A_\ppp$, and thus $S_\ppp(0)=(0)^{\oo c}\subset(\qqq_\ppp)^{\oo c}=\qqq\subset A$. 
+
+Proof of (b): The following argument was explained to me by user withoutfeather over on Mathematics Stackexchange: 
 
 \href{https://math.stackexchange.com/a/3338211/660}{https://math.stackexchange.com/a/3338211/660}
 
-Assume that $\mathfrak{a}=\mathfrak{q}_1\cap \cdots \cap \mathfrak{q}_n$ is \textbf{not} reduced. %a minimal primary decomposition. 
+Assume that $\mathfrak{a}=\mathfrak{q}_1\cap\cdots\cap\mathfrak{q}_n$ is \textbf{not} reduced. %a minimal primary decomposition. 
 
-Since $\mathfrak{q}_n\not \supset \mathfrak{q}_1\cap \cdots \cap \mathfrak{q}_n$, there is an index $i$ with $1\leq i\leq n-1$ such that $\mathfrak{q}_i$ contains the intersection of the other $\qqq_j$. We can assume that $i=1$, i.e. 
+Since $\mathfrak{q}_n\not\supset\mathfrak{q}_1\cap\cdots\cap\mathfrak{q}_{n-1}$, there is an index $i$ with $1\leq i\leq n-1$ such that $\mathfrak{q}_i$ contains the intersection of the other $\qqq_j$. We can assume that $i=1$, i.e. 
 $$
 \mathfrak{q}_1\supset\mathfrak{q}_2\cap\cdots\cap\mathfrak{q}_n.
 $$ 
@@ -2905,7 +2924,7 @@ Let $\ppp\in\Ass(M/N)$; then, by Lemma~\ref{ail0}, $M/N$ contains a submodule $F
 If $A$ is a noetherian ring and if $(\Psi_i)_{i\in I}$ is a family of subsets of $\Ass(M)$ whose union is $\Ass(M)$, then there is a family $(N_i)_{i\in I}$ of submodules of $M$ such that $\Ass(M/N_i)=\Psi_i$ for all $i$, and the intersection of the $N_i$ is the zero submodule.
 \end{prop}
 \begin{proof}
-Write $M(\Psi)$ for the submodule denoted by $N$ in the proof of Proposition~\ref{aip4} and apply Lemma~\ref{aimyl1} to the $M(\Psi_i)$.%This follows from Lemma~\ref{aimyl1} and Proposition~\ref{aip4}, setting ???
+Write $M(\Psi)$ for the submodule denoted by $N$ in the proof of Proposition~\ref{aip4} and apply Lemma~\ref{aimyl1} to the $M(\Psi_i)$.%This follows from Lemma~\ref{aimyl1} and Proposition~\ref{aip4}, setting ...
 \end{proof}
 
 \begin{df}
@@ -3794,7 +3813,7 @@ Note that $y$ is in $(\aaa:x)$ but not in $\aaa$. This implies that $(\aaa:x)$ i
 
 Hint: 
 
-(i) $\implies$ (ii): Use Lemma 4.5 p.~51 and Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
+(i) $\implies$ (ii): Use Theorem 4.5 p.~51 (the First Uniqueness Theorem) and Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
 
 (ii) $\implies$ (iii): Use Proposition 3.11ii p.~41. (This implication also holds even if $\aaa$ is reducible.)
 
