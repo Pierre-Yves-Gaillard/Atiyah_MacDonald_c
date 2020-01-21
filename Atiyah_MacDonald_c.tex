@@ -19,7 +19,7 @@
 \usepackage[baskervaldx]{newtxmath}
 \usepackage{tikz-cd}
 \usepackage{comment}
-%\usepackage[dvipsnames]{xcolor} %creates clashes !!!
+%\usepackage[dvipsnames]{xcolor} % creates clashes !!!
 \usepackage[pdfusetitle]{hyperref}
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
@@ -2745,37 +2745,47 @@ This yields $M=N+P$, so $r_M(N+P)=(1)$, but $r_M(N)=r_M(P)=0$. % Let $A\ne0$, $M
 
 \subsection{Page 57, Exercise 4.21}%
 
-Analogue of (4.3): Let $Q_1$ and $Q_2$ be $\ppp$-primary in $M$, and let us show that $Q_1\cap Q_2$ is also $\ppp$-primary in $M$. Let $a\in A$, $x\in M$, $x\notin Q_1\cap Q_2$ satisfy $ax\in Q_1\cap Q_2$. We can assume $x\notin Q_1$. We get $a\in\ppp$, and thus $a^nM\subset Q_1\cap Q_2$ for some $n$.
+Analogue of (4.3): In the statement and the proof of (4.3) one can replace each occurrence of $\qqq$ with $Q$ and each occurrence of $r$ with $r_M$. 
+
+%
+\begin{comment}
+Let $Q_1$ and $Q_2$ be $\ppp$-primary in $M$, and let us show that $Q_1\cap Q_2$ is also $\ppp$-primary in $M$. Let $a\in A$, $x\in M$, $x\notin Q_1\cap Q_2$ satisfy $ax\in Q_1\cap Q_2$. We can assume $x\notin Q_1$. We get $a\in\ppp$, and thus $a^nM\subset Q_1\cap Q_2$ for some $n$.
 
 One can also modify the statement and the proof in the book according to the following table: 
+%$$\begin{matrix}\qqq_i&\qqq&r(\qqq)&r(\qqq_i)&y\in A&xy\in\qqq&y\notin\qqq_i\\ \\ Q_i&Q&r_M(Q)&r_M(Q_i)&y\in M&xy\in Q&y\notin Q_i\end{matrix}$$ 
 $$
-\begin{matrix}
-\qqq_i&\qqq&r(\qqq)&r(\qqq_i)&y\in A&xy\in\qqq&y\notin\qqq_i\\ \\ 
-Q_i&Q&r_M(Q)&r_M(Q_i)&y\in M&xy\in Q&y\notin Q_i
-\end{matrix}
+\begin{array}{|c|c|c|c|c|c|c|}\hline
+\qqq_i&\qqq&r(\qqq)&r(\qqq_i)&y\in A&xy\in\qqq&y\notin\qqq_i\\ \hline
+Q_i&Q&r_M(Q)&r_M(Q_i)&y\in M&xy\in Q&y\notin Q_i\\ \hline
+\end{array}
 $$ 
-Analogue of (4.4): For the analogues of (i) and (ii), replace $\qqq$ with $Q$ and $x\in A$ with $x\in M$. I see no analogue of (iii). For the proof of (ii) (using the same notation as above): 
+\end{comment}
+%
+
+Analogue of (4.4): For the analogues of (i) and (ii), replace $\qqq$ with $Q$ and $x\in A$ with $x\in M$. I see no analogue of (iii). For the proof of (ii), one can modify the text of the book according to the following table:  
+%$$\begin{matrix}y\in(\qqq:x)&xy\in\qqq&x\notin\qqq&\qqq\subset(\qqq:x\subset\ppp&r(\qqq:x)=\ppp\\ \\y\in(Q:x)&yx\in Q&x\notin Q&(Q:M)\subset(Q:x)\subset\ppp&r(Q:x)=\ppp\end{matrix}$$ 
 $$
-\begin{matrix}
-y\in(\qqq:x)&xy\in\qqq&x\notin\qqq&\qqq\subset(\qqq:x)\subset\ppp&r(\qqq:x)=\ppp\\ \\ 
-y\in(Q:x)&yx\in Q&x\notin Q&(Q:M)\subset(Q:x)\subset\ppp&r(Q:x)=\ppp
-\end{matrix}
+\begin{array}{|c|c|c|c|c|}\hline
+y\in(\qqq:x)&xy\in\qqq&x\notin\qqq&\qqq\subset(\qqq:x)\subset\ppp&r(\qqq:x)=\ppp\\ \hline
+y\in(Q:x)&yx\in Q&x\notin Q&(Q:M)\subset(Q:x)\subset\ppp&r(Q:x)=\ppp\\ \hline
+\end{array}
 $$ 
 Continuation of the table:
 $$
-\begin{matrix}
-yz\in(\qqq:x)&xyz\in\qqq&xz\in\qqq&z\in(\qqq:x)\\ \\ 
-yz\in(Q:x)&yzx\in Q&zx\in Q&z\in(Q:x)
-\end{matrix}
+\begin{array}{|c|c|c|c|}\hline
+yz\in(\qqq:x)&xyz\in\qqq&xz\in\qqq&z\in(\qqq:x)\\ \hline
+yz\in(Q:x)&yzx\in Q&zx\in Q&z\in(Q:x)\\ \hline
+\end{array}
 $$ 
+
 \subsection{Page 58, Exercise 4.22}%
 
 Analogue of (4.5): 
 $$
-\begin{matrix}
-\aaa&\qqq_i&r(\qqq_i)&x\in A&x_i\notin\qqq_i\\ \\ 
-N&Q_i&r_M(Q_i)&x\in M&x_i\notin Q_i
-\end{matrix}
+\begin{array}{|c|c|c|c|c|}\hline
+\aaa&\qqq_i&r(\qqq_i)&x\in A&x_i\notin\qqq_i\\ \hline 
+N&Q_i&r_M(Q_i)&x\in M&x_i\notin Q_i\\ \hline
+\end{array}
 $$ 
 
 \subsection{Page 58, Exercise 4.23}%
@@ -2784,10 +2794,10 @@ Analogues of (4.6)-(4.11), assuming $N=0$:
 
 (4.6):
 $$
-\begin{matrix}
-\aaa\subset A&\ppp\supset\aaa&\ppp\supset\aaa=\bigcap\qqq_i&r(\qqq_i)\\ \\ 
-0\subset M&\ppp\supset(0:M)&\ppp\supset(0:M)=\bigcap(Q_i:M)&r(Q_i:M)
-\end{matrix}
+\begin{array}{|c|c|c|c|}\hline
+\aaa\subset A&\ppp\supset\aaa&\ppp\supset\aaa=\bigcap\qqq_i&r(\qqq_i)\\ \hline 
+0\subset M&\ppp\supset(0:M)&\ppp\supset(0:M)=\bigcap(Q_i:M)&r(Q_i:M)\\ \hline
+\end{array}
 $$ 
 (4.7): Replace 
 
@@ -2801,9 +2811,9 @@ with
 $$
 \frac x1=\frac{s^nx}{s^n}\in S^{-1}Q.
 $$ 
-(ii) If $S\cap\ppp=\varnothing$,then $S^{-1}Q$ is $S^{-1}\ppp$S-primary and its contraction in $M$ is $Q$. Hence primary ideals correspond to primary ideals in the correspondence between submodules in $S^{-1}M$ and contracted submodules in $M$.
+(ii) If $S\cap\ppp=\varnothing$, then $S^{-1}Q$ is $S^{-1}\ppp$-primary and its contraction in $M$ is $Q$. Hence primary ideals correspond to primary ideals in the correspondence between submodules in $S^{-1}M$ and contracted submodules in $M$.
 
-Let us show $r(S^{-1}Q:S^{-1}M)=S^{-1}\ppp$. It suffices to check $(S^{-1}Q:S^{-1}M)^{\text c}\subset (Q:M)$. Let $a$ be in $(S^{-1}Q:S^{-1}M)^{\text c}$, that is $a/1\in (S^{-1}Q:S^{-1}M)$, and let $x$ be in $M$. It suffices to verify $ax\in Q$. We have  
+Let us show $r(S^{-1}Q:S^{-1}M)=S^{-1}\ppp$. Let us check $(S^{-1}Q:S^{-1}M)^{\text c}\subset (Q:M)$. Let $a$ be in $(S^{-1}Q:S^{-1}M)^{\text c}$, that is $a/1\in (S^{-1}Q:S^{-1}M)$, and let $x$ be in $M$. It suffices to verify $ax\in Q$. We have  
 $$
 \frac{ax}1=\frac a1\frac x1\in S^{-1}Q,
 $$ 
@@ -2817,12 +2827,13 @@ The remaining part of (4.8) is left to the reader.
 
 For (4.9), (4.10) and (4.11) we use the table
 $$
-\begin{matrix}
-\aaa\subset A&\qqq_i&r(\qqq_i)\\ \\ 
-0\subset M&Q_i&r(Q_i:M)
-\end{matrix}
+\begin{array}{|c|c|c|}\hline
+\aaa\subset A&\qqq_i&r(\qqq_i)\\ \hline 
+0\subset M&Q_i&r(Q_i:M)\\ \hline
+\end{array}
 $$ 
-\subsection{Primary decomposition of a submodule after Bourbaki}%\label{310ii}%%
+
+\subsection{Primary decomposition of a submodule after Bourbaki}%
 
 % Bourbaki https://docs.google.com/document/d/15j_JjYfsyrM7Et-PvKQLXjNOYUnEAUVqT7gR0HlbLXA/edit
 
@@ -2977,9 +2988,11 @@ $$
 Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$.
 %We claim $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$. Set $S:=A\setminus\ppp$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\ppp=\varnothing$, we see that $\mf q_\ppp$ is prime, and it suffices to show $\ppp_\ppp\subset\mf q_\ppp$, which is clear.
 
-\subsection{Page 62, Theorem 5.10}%
+\subsection{Page 62, Theorem 5.10}\label{510}%
 
-Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\ppp$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$.
+Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\ppp$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$. 
+
+Also note that Corollary 5.8 and Theorem 5.10 imply that an ideal of $A$ is maximal if and only if it is the contraction of a maximal ideal of $B$. 
 
 \subsection{Page 62, dim A = dim B}%
 
@@ -3023,11 +3036,11 @@ I would change the sentence
 
 to 
 
-``Assuming the set $\Sigma$ is nonempty, the conditions of Zorn's lemma are clearly satisfied and therefore $\Sigma$ has at least one maximal element''.
+``Assuming $(A,f)\in\Sigma$, the conditions of Zorn's lemma are clearly satisfied and therefore $\Sigma$ has at least one maximal element $(B,g)\ge(A,f)$''. %``Assuming the set $\Sigma$ is nonempty, the conditions of Zorn's lemma are clearly satisfied and therefore $\Sigma$ has at least one maximal element''.
 
-\subsection{Page 65, Theorem 5.20}\label{520}%
+\subsection{Page 65, Lemma 5.20}\label{520}%
 
-The proof of Theorem 5.20 shows:
+The proof of Lemma 5.20 shows:
 
 \emph{Let $K$ be a field, let $B$ be a local subring of $K$ with maximal ideal $\mmm$, let $x$ be a non-zero element of $K$, let $B[x]$ be the subring of $K$ generated by $x$ over $B$, and let $\mmm[x]$ be the extension of $\mmm$ in $B[x]$. Then either $\mmm[x]\ne B[x]$ or $\mmm[x^{-1}]\ne B[x]$.}
 
@@ -3047,17 +3060,20 @@ Let us prove the ``if'' part. Let $(B,g)\in\Sigma$ with $B$ a valuation ring of 
 
 The proof shows:
 
-\emph{In the setting of Section~\ref{520} above, let x be a non-zero element of K. If $\mmm[x]\ne B[x]$, then there is a maximal ideal $\mmm'$ of $B[x]$ containing $\mmm$ and $B/\mmm'$ is algebraic over $B/\mmm$. If $\mmm[x^{-1}]\ne B[x^{-1}]$, then there is a maximal ideal $\mmm'$ of $B[x^{-1}]$ containing $\mmm$ and $B/\mmm'$ is algebraic over $B/\mmm$.}
+\emph{In the setting of Section~\ref{520} above, let $x$ be a non-zero element of $K$. If $\mmm[x]\ne B[x]$, then there is a maximal ideal $\mmm'$ of $B[x]$ such that $B\cap\mmm'=\mmm$ %containing $\mmm$ 
+and $B[x]/\mmm'$ is algebraic over $B/\mmm$. If $\mmm[x^{-1}]\ne B[x^{-1}]$, then there is a maximal ideal $\mmm'$ of $B[x^{-1}]$ such that $B\cap\mmm'=\mmm$ %containing $\mmm$ 
+and $B[x]/\mmm'$ is algebraic over $B/\mmm$.}
 
 \subsection{Page 66, proof of Corollary 5.22}%
 
 Sentences
 
-Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A$.
+``Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A$.''
 
 I would change this to 
 
-Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A'$.
+%``Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. 
+``By (5.21) the natural homomorphism $A'\to\Omega$ can be extended to some valuation ring $B\supseteq A'$.'' %Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A'$.
 
 Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof.%\bigskip
 
@@ -3157,6 +3173,7 @@ is integral over $K\left[x,x\sqrt{x^2-1}\right]$, but does \emph{not} belong to 
 
 In fact $K\left[x,\sqrt{x^2-1}\right]$ is integrally closed, and thus Dedekind.
 
+%
 \begin{comment}
 For any morphism of rings $g:A_1\to A_2$ write $\oo{IC}_{A_2}(A_1)$ for the integral closure of $A_1$ in $A_2$. Then we have, in the setting of Exercise 5.3, 
 $$
@@ -3170,6 +3187,7 @@ $$
 $$ 
 Indeed we have $A[x]=A\otimes_{\mathbb Z}\mathbb Z[x]$, and similarly for $B$.
 \end{comment}
+%
 
 \subsection{Page 67, Exercise 5.4}%
 
@@ -3183,11 +3201,41 @@ and, if $1/(x + 1)$ was integral over $k[x^2-1]_{(x^2-1)}$, we would get
 $$
 \frac1{(x+1)^n}+\frac{f_1(x^2-1)}{g_1(x^2-1)}\frac1{(x+1)^{n-1}}+\cdots+\frac{f_n(x^2-1)}{g_n(x^2-1)}=0.
 $$ 
-Multiplying through by $(x+1)^n$ and setting $x=-1$ yields $1=0$.
+Multiplying through by $(x+1)^n$ and setting $x=-1$ yields $1=0$. 
+
+\subsection{Page 67, Exercise 5.5}\label{55}%
+
+Statement: Let $A\subset B$ be rings, $B$ integral over $A$.
+
+(i) If $x\in A$ is a unit in $B$ then it is a unit in $A$.
+
+(ii) The Jacobson radical of $A$ is the contraction of the Jacobson radical of $B$. 
+
+Solution: 
+
+(i) Let $a$ be an element of $A$ which has an inverse in $B$. If $a$ was not a unit of $A$, there would be a maximal ideal $\mmm$ of $A$ containing $a$, and the second paragraph of Section~\ref{510} p.~\pageref{510} above would imply the existence of some maximal ideal of $B$ containing $a$, contradicting the invertibility of $a$ in $B$. 
+
+(ii) In the lines below $\mmm$ and $\nnn$ run respectively over the maximal ideal of $A$ and $B$. It suffices to show $A\cap(\bigcap\nnn)=\bigcap\mmm$, that is $\bigcap(A\cap\nnn)=\bigcap\mmm$. But this follows immediately from the second paragraph of Section~\ref{510} p.~\pageref{510}. 
 
 \subsection{Page 67, Exercise 5.6}%
 
-It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy.
+It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy. 
+
+\subsection{Page 67, Exercise 5.7}% 
+
+Assume by contradiction that $b\in B\setminus A$ is integral over $A$. We have 
+$$
+b^n+a_1b^{n-1}+\cdots+a_n=0
+$$ 
+with $a_i\in A$, $n\ge1$, and we can suppose that $n$ is minimum. Setting 
+$$
+a':=b^{n-1}+a_1b^{n-2}+\cdots+a_{n-1}
+$$
+we get $a'b=-a_n\in A$, hence $a'\in A$, and the equality 
+$$
+b^{n-1}+a_1b^{n-2}+\cdots+a_{n-2}b+(a_{n-1}-a')=0
+$$ 
+contradicts the minimality of $n$. 
 
 \subsection{Page 68, Exercise 5.9}% 
 
@@ -3247,7 +3295,7 @@ It suffices to prove $\qqq'=\sigma(\qqq)$.
 
 As 
 $$
-\sigma(\qqq)\cap A^G=\sigma\left(\qqq\cap\sigma^{-1}(A^G)\right)=\sigma\left(\qqq\cap A^G\right)=\sigma(\ppp)=\ppp,
+\sigma(\qqq)\cap A^G=\sigma\left(\qqq\cap\sigma^{-1}(A^G)\right)=\sigma\left(\qqq\cap A^G\right)=\sigma(\ppp)=\ppp=\qqq'\cap A^G,
 $$ 
 Corollary 5.9 p.~61 of the book (See Section~\ref{59} p.~\pageref{59}) implies $\qqq'=\sigma(\qqq)$, as was to be shown.
 
@@ -3418,7 +3466,7 @@ We have $k\subset g(B)\subset\Omega$. By Proposition 5.7 p.~71 of the book, $g(B
 
 \subsection{Page 71, Exercise 5.23}% 
 
-In the hint ``ii)'' should be `i)''.
+In the hint ``ii)'' should be ``i)''.
 
 \subsection{Page 71, Exercise 5.24}%
  
@@ -3427,18 +3475,14 @@ Part (i). Let's prove %Here is a partial solution.
 \emph{If $A\subset B$ is an integral extension of rings and if $A$ is Jacobson, then $B$ is Jacobson.}
 
 Proof. %By Theorem 5.10 p.~62 of the book 
-We can assume that $B$ is a domain. Let $\mf b\subset B$ be the Jacobson radical of $B$. It suffices to prove $\mf b=(0)$.
-
-Claim: $\mf b^{\oo c}=(0)$. 
-
-Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ lying above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.
-
-In view of the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$.
+We can assume that $B$ is a domain. Let $\mf b\subset B$ be the Jacobson radical of $B$. It suffices to prove $\mf b=(0)$. We have %Claim: 
+$\mf b^{\oo c}=(0)$ by Exercise 5.5 p.~67 of the book (see Section~\ref{55} p.~\pageref{55} above), and %Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ lying above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.\\ %In view of 
+the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$. $\square$
 
 Part (ii) %of the Exercise 
 follows from Exercise 5.22 p.~70 of the book.
 
-\subsection{Page 71, Exercise 5.26}%\label{nnt}%
+\subsection{Page 71, Exercise 5.26}%
 
 The first two sentences are
 
@@ -3454,7 +3498,21 @@ $\bullet\ U\cap C\subset U\cap\overline{U\cap C}$ because $U\cap C\subset U$ and
 
 $\bullet\ U\cap\overline{U\cap C}\subset U\cap C$ because $\overline{U\cap C}\subset\overline C=C$. $\square$ %(because $U\cap C\subset C$ and $C$ is closed). \\ If $S\subset X$ is open in its closure $\overline S$, we have $S=U\cap\overline S$ for some open subset $U$. \\ Conversely, if $S=U\cap C$ with $U$ open and $C$ closed, then $$S=U\cap C=U\cap\overline{U\cap C}.$$ To prove this it suffices to show $U\cap\overline{U\cap C}\subset U\cap C$. Let $u$ be in $U\cap\overline{U\cap C}$. If $u$ was not in $C$, then $u$ would be in $V:=X\setminus C$, and $V$ would meet $U\cap C$, contradiction. \\ Hint for the first part: prove (2) $\iff$ (1)$\iff$ (3).
 
-Part 1. Condition (3) is clearly equivalent to 
+\subsubsection{Part 1} 
+
+Recall from the book: 
+
+$\bu$ Condition (1): Every non-empty locally closed subset of $X$ meets $X_0$;
+
+$\bu$ Condition (2): For every closed set $E$ in $X$ we have $E\cap X_0 =E$;
+
+$\bu$ Condition (3): The mapping $U\mapsto U\cap X_0$ of the collection of open sets of $X$ onto the collection of open sets of $X_0$ is bijective.
+
+A subset $X_0$ satisfying these conditions is said to be \textbf{very dense} in $X$. 
+
+\textbf{Solution to Part 1.}
+
+Condition (3) is clearly equivalent to 
 
 (3') The map $C\mapsto X_0\cap C$ from the set of closed subsets of $X$ to the set of closed subsets of $X_0$ is bijective.
 
@@ -3462,21 +3520,43 @@ This is also equivalent to
 
 (3'') The map $C\mapsto X_0\cap C$ from the set of closed subsets of $X$ to the set of closed subsets of $X_0$ is injective.
 
-(1)$\implies$(2): If there is a closed subset $C$ of $X$ such that $\overline{X_0\cap C}\ne C$, then $L:=C\setminus\overline{X_0\cap C}$ satisfies $X_0\cap L=\varnothing$. 
+(1)$\implies$(2): If there is a closed subset $C$ of $X$ such that $\overline{X_0\cap C}\ne C$, then 
+$$
+L:=C\setminus\overline{X_0\cap C}
+$$ 
+is  a nonempty locally closed subset satisfying $X_0\cap L=\varnothing$. 
 
-(2)$\implies$(3): (2) means that $C'\to\overline{C'}$ is a left inverse to the map in (3'). 
+(2)$\implies$(3''): (2) means that $C'\to\overline{C'}$ is a left inverse to the map in (3''). 
 
 (3')$\implies$(1): $X_0\cap L=\varnothing$ implies $X_0\cap L=X_0\cap\varnothing$.
 
-Part 2. Here is a hint for the proof of (i) $\iff$ (ii). Let $M\subset\Spec(A)$ be the set of maximal ideals. It suffices to show that (a) and (b) below are equivalent.
+\subsubsection{Part 2} 
+
+Statement: 
+
+If $A$ is a ring, show that the following are equivalent:
+
+(i) $A$ is a Jacobson ring;
+
+(ii) The set of maximal ideals of $A$ is very dense in $\Spec(A)$;
+
+(iii) Every locally closed subset of $\Spec(A)$ consisting of a single point is closed.
+
+$\bu$ Proof of (i) $\iff$ (ii). 
+
+Hint: Let $M\subset\Spec(A)$ be the set of maximal ideals. In view of Condition~(2) above, it suffices to show that (a) and (b) below are equivalent.
 
 (a) For all ideal $\aaa$ of $A$ we have $\mf R(A/\aaa)\subset\mf N(A/\aaa)$.
 
 (b) For all ideal $\aaa$ of $A$ we have $V(\aaa)\subset\overline{V(\aaa)\cap M}$.
 
-Let $\bbb$ be the intersection of the maximal ideals containing $\aaa$. In fact we have (a) $\iff$ $\bbb=r(\aaa)$ $\iff$ $[\ppp\supset\aaa\implies\ppp\supset\bbb]$ $\iff$ (b).
+Let $\bbb$ be the intersection of the maximal ideals containing $\aaa$. In fact we have 
 
-Let us prove (i) $\iff$ (iii) in the second part of the exercise. It suffices to show that (c) and (d) below are equivalent.
+\centerline{(a) $\iff$ $\bbb=r(\aaa)$ $\iff$ $[\ppp\supset\aaa\implies\ppp\supset\bbb]$ $\iff$ (b).}
+
+$\bu$ Proof of (i) $\iff$ (iii). 
+
+It suffices to show that (c) and (d) below are equivalent.
 
 (c) Every non-maximal prime ideal $\ppp$ is the intersection of the strictly larger prime ideals.
 
@@ -3488,25 +3568,26 @@ $$
 $$ 
 for some ideals $\aaa$ and $\bbb$. Moreover $\ppp$ is the intersection of the strictly larger prime ideals. Let $\qqq$ be a prime ideal strictly larger than $\ppp$. Clearly $\qqq$ contains $\aaa$. The above equality implies that $\qqq$ contains $\bbb$, but the fact that $\ppp$ is the intersection of the strictly larger prime ideals implies that $\ppp$ also contains $\bbb$, contradiction.
 
-(d) $\implies$ (c): Let $\ppp$ be a non-maximal prime ideal, and let $\bbb$ be the intersection of those prime ideals which are strictly larger than $\ppp$, and assume by contradiction that $\bbb$ is strictly larger than $\ppp$. Then $\ppp$ is in $V(\ppp)\setminus V(\bbb)$. As the singleton $\{\ppp\}$ is not locally closed, there is a prime ideal $\qqq$ strictly larger than $\ppp$ such that $\qqq$ does not contain $\bbb$. But $\qqq$ contains $\bbb$ by definition of $\bbb$.
+(d) $\implies$ (c): Let $\ppp$ be a non-maximal prime ideal, and let $\bbb$ be the intersection of those prime ideals which are strictly larger than $\ppp$, and assume by contradiction that $\bbb$ is strictly larger than $\ppp$. Then $\ppp$ is in $V(\ppp)\setminus V(\bbb)$. As the singleton $\{\ppp\}$ is not locally closed, there is a prime ideal $\qqq$ strictly larger than $\ppp$ such that $\qqq$ does not contain $\bbb$. But $\qqq$ contains $\bbb$ by definition of $\bbb$. 
 
-\subsection{Page 72, Exercise 5.27}%\label{nnt}%
+\subsection{Page 72, Exercise 5.27}%
 
-Let $\Gamma$ be the set denoted by $\Sigma$ on page 65 of the book (see Section~\ref{65} p.~\pageref{65}), and let $(B,g)$ be in $\Gamma$. By Lemma 5.19 p.~65 of the book, $B$ is in $\Sigma$. 
+Let $\Phi(K,\Omega)$ be the set denoted by $\Sigma$ on page 65 of the book (see Section~\ref{65} p.~\pageref{65}), and let $\Sigma(K)$ be the set of all local subrings of $K$. We equip $\Phi(K,\Omega)$ and $\Sigma(K)$ with their obvious poset structure. %Let $(B,g)$ be in $\Phi(K,\Omega)$. By Lemma 5.19 p.~65 of the book, $B$ is in $\Sigma(K)$. 
+Lemma 5.19 p.~65 of the book implies that $A$ is in $\Sigma(K)$ if $(A,f)$ is in $\Phi(K,\Omega)$.
 
-By Theorem 5.21 p.~66 of the book (see Section~\ref{521} p.~\pageref{521}), it suffices to show that $(B,g)$ is maximal in $\Gamma$ if and only if $B$ is maximal in $\Sigma$. 
+By Theorem 5.21 p.~66 of the book (see Section~\ref{521} p.~\pageref{521}), it suffices to show that $(A,f)$ is maximal in $\Phi(K,\Omega)$ if and only if $A$ is maximal in $\Sigma(K)$. 
 
-Assume that $B$ is not maximal in $\Sigma$, so that there is a $C\in\Sigma$ with $B<C$. Let $c$ be in $C\setminus B$. We have $B<B[c]=:B'\subset C$, and the proof of Theorem 5.21 p.~66 of the book (see Section~\ref{521p} p.~\pageref{521p}), $(B,g)$ is not maximal in $\Gamma$. 
+Assume that $A$ is not maximal in $\Sigma(K)$, so that there is a $B\in\Sigma(K)$ with $A<B$. Let $b$ be in $B\setminus A$. We have $A<A[b]=:A'\subset B$, and the proof of Theorem 5.21 p.~66 of the book (see Section~\ref{521p} p.~\pageref{521p}), shows that $(A,f)$ is not maximal in $\Phi(K,\Omega)$. 
 
-Assume that $(B,g)$ is not maximal in $\Gamma$, so that there is a $(C,h)\in\Gamma$ with $(B,g)<(C,h)$. By Theorem 5.21 p.~66 we can assume that $C$ is local. Leting $\mmm\subset B$ and $\mf n\subset C$ be the maximal ideals, we get 
+Assume that $(A,f)$ is not maximal in $\Phi(K,\Omega)$, so that there is a $(B,g)\in\Phi(K,\Omega)$ with $(A,f)<(B,g)$. By Theorem 5.21 p.~66 (see Section~\ref{521} p.~\pageref{521}) we can assume that $B$ is local. Letting $\mmm\subset A$ and $\mf n\subset B$ be the maximal ideals, we get 
 $$
-\mmm=\Ker f=C\cap\Ker g=C\cap\mf n,
+\mmm=\Ker f=B\cap\Ker g=B\cap\mf n,
 $$ 
-and thus $B<C$ in $\Sigma$.
+and thus $A<B$ in $\Sigma(K)$. 
 
-\subsection{Page 72, Exercise 5.28}%\label{nnt}%
+\subsection{Page 72, Exercise 5.28}%
 
-Hint: If $A$ is a domain and $K$ is its field of fractions, then the following conditions are equivalent:
+Hint: For a domain $A$, the following conditions are equivalent:
 
 (a) If $a,b\in A$ then $a$ divides $b$ or $b$ divides $a$.
 
@@ -3514,11 +3595,13 @@ Hint: If $A$ is a domain and $K$ is its field of fractions, then the following c
 
 (c) If $\aaa$ and $\bbb$ are ideals of $A$, then $\aaa\subset\bbb$ or $\bbb\subset\aaa$.
 
-\subsection{Page 72, Exercise 5.29}%\label{nnt}%
+\subsection{Page 72, Exercise 5.29}%£
 
-Hint: By Proposition 5.18 (i) and (ii), $A$ and $B$ are local valuation rings of $K$. Let $\mmm\subset A$ and $\ppp\subset A$ be the maximal ideals. Then $\ppp\subset\mmm$, that is, $\ppp$ is a prime ideal of $A$, and we have $A_\ppp=B$. 
+Hint: By Proposition 5.18 (i) and (ii), $A$ and $B$ are local. % valuation rings of $K$. 
+Let $\mmm\subset A$ and $\nnn\subset B$ be the maximal ideals, and set $\ppp:=A\cap\nnn$. Then %$\ppp\subset\mmm$, that is, $\ppp$ is a prime ideal of $A$, and 
+we have $A_\ppp=B$. [Indeed, the inclusion $A_\ppp\subset B$ is clear. Let $b\in B\setminus A$. It suffices to show $b\in A_\ppp$. We have $b^{-1}\in A\subset B$. As $b^{-1}$ is a unit of $B$, it is not in $\nnn$, and thus not in $\ppp$, hence $b=1/b^{-1}\in A_\ppp$.]
 
-\subsection{Page 72, Exercise 5.30}%\label{nnt}%
+\subsection{Page 72, Exercise 5.30}%
 
 Let us show that $v(x+y)\ge\min(v(x),v(y))$ for $x,y\in K^*$ such that $x+y\in K^*$. We can assume $v(x)\ge v(y)$, that is $xy^{-1}\in A$. We get 
 $$
@@ -3544,7 +3627,7 @@ Let $\mathcal I$ be the set of those subsets $I\subset M$ which are upward close
 We leave it to the reader to check that $v$ induces a lattice isomorphism from the lattice of ideals of $A$ to $\mathcal I$, and that $v(\aaa)\in\mathcal P$ if and only if $\aaa$ is prime. This implies the proposition. 
 \end{proof}
 
-\subsection{Page 72, Exercise 5.32}%\label{nnt}%
+\subsection{Page 72, Exercise 5.32}%
 
 Here are some hints.
 
