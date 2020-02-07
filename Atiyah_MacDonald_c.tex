@@ -426,7 +426,7 @@ Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we
 
 More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\mf b\in\Sigma$ such that $\mf a\subset\mf b$.
 
-\subsection{Page 13, Exercise 1.19}\label{irr}%£
+\subsection{Page 13, Exercise 1.19}\label{irr}%
 
 Statement:
 
@@ -506,8 +506,9 @@ To a polynomial map $\phi:k^n\to k^m$ we attach a $k$-algebra morphism $\psi:k[u
 
 Conversely, to a $k$-algebra morphism $\psi:k[u]\to k[t]$ we attach a polynomial map $\phi:k^n\to k^m$ by setting $\phi_i(x):=\psi(u_i)(x)$. 
 
-Let $\phi:k^n\to k^m$ be a polynomial map, let $\psi:k[u]\to k[t]$ be the corresponding polynomial map, and let $\phi':k^n\to k^m$ be the polynomial map attached to $\psi$. For $x\in k^n$ we have 
-$$\phi_i'(x)=\psi(u_i)(x)=u_i(\phi(x))=\phi_i(x).
+Let $\phi:k^n\to k^m$ be a polynomial map, let $\psi:k[u]\to k[t]$ be the corresponding $k$-algebra morphism, and let $\phi':k^n\to k^m$ be the polynomial map attached to $\psi$. For $x\in k^n$ we have 
+$$
+\phi_i'(x)=\psi(u_i)(x)=u_i(\phi(x))=\phi_i(x).
 $$ 
 Conversely, let $\psi:k[u]\to k[t]$ be a polynomial map, let $\psi:k[u]\to k[t]$ be the corresponding $k$-algebra morphism, and let $\psi':k[u]\to k[t]$ be the polynomial map attached to $\phi$. For $g\in k[u]$ and $x\in k^n$ we have 
 $$
@@ -755,8 +756,60 @@ Set $k:=i+j$ and define $g:A^k\to A^k$ by $g(x,y):=(f(x,y),0)$ for $x\in A^i$, $
 \begin{equation}\label{211}
 gP(g)=a\oo{id}_{A^k}.
 \end{equation} 
-We can assume that the degree of $P$ is minimal for this condition. In particular $P(g)$ is nonzero. Evaluating \eqref{211} on $(0,y)$, $y\in A^j$, gives $ay=0$. As $y$ is arbitrary, this implies $a=0$, and thus $gP(g)=0$, and the injectivity of $g$ yields $P(g)=0$, a contradiction.
+We can assume that the degree of $P$ is minimal for this condition. In particular $P(g)$ is nonzero. Evaluating \eqref{211} on $(0,y)$, $y\in A^j$, gives $ay=0$. As $y$ is arbitrary, this implies $a=0$, and thus $gP(g)=0$, and the injectivity of $g$ yields $P(g)=0$, a contradiction. 
 
+\subsection{Page 32, Exercise 2.14}\label{colim}%
+
+Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
+
+Consider the commutative diagram %Define the morphisms $u$ and $v$ by the commutative diagram
+$$
+\begin{tikzcd}
+M_{d(f)}\ar[d,"\alpha_{f}"']\ar[dr,"\beta_{d(f)}"]&M_i\ar[d,"\beta_i"]\\ 
+\ds\bigoplus_gM_{d(g)}\ar[r,yshift=0.9ex,"u"]\ar[r,yshift=-0.9ex,"v"']&\ds\bigoplus_iM_i\ar[r,"\pi"]&C\\ 
+M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f),}\ar[u,"\beta_{c(f)}"']
+\end{tikzcd}
+$$ 
+where the $\alpha_f$ and the $\beta_i$ are the coprojections, and the middle line is exact (i.e. the last arrow is a coequalizer). 
+
+We claim that $C$ is a colimit of our system. The proof is left to the reader.
+
+The following definition is taken from the Stacks Project \\ \href{https://stacks.math.columbia.edu/tag/002V}{https://stacks.math.columbia.edu/tag/002V}:
+
+\begin{df}
+%\label{definition-directed}
+We say that a category $I$ is \emph{filtered} if the following conditions hold:
+\begin{enumerate}
+\item the category $I$ has at least one object,
+\item for every pair of objects $x, y$ of $I$ there exists an object $z$ and morphisms $x \to z$, $y \to z$, and
+\item for every pair of objects $x, y$ of $I$ and every pair of morphisms $a, b : x \to y$ of $I$ there exists a morphism $c : y \to z$ of $I$ such that $c \circ a=c\circ b$ as morphisms in $\mathcal{C}$.
+\end{enumerate}
+\end{df}
+
+Assume now that the category $I$ is filtered, and form the commutative diagram %Define the morphisms $u$ and $v$ by the commutative diagram
+$$
+\begin{tikzcd}
+M_{d(f)}\ar[d,"\alpha'_{f}"']\ar[dr,"\beta'_{d(f)}"]&M_i\ar[d,"\beta'_i"]\ar[dr,"\gamma_i"]\\ 
+\ds\bigsqcup_gM_{d(g)}\ar[r,yshift=0.9ex,"u"]\ar[r,yshift=-0.9ex,"v"']&\ds\bigsqcup_iM_i\ar[r,"\pi'"]&C'\\ 
+M_{d(f)}\ar[u,"\alpha'_{f}"]\ar[r,"M_f"']&M_{c(f),}\ar[u,"\beta'_{c(f)}"']
+\end{tikzcd}
+$$ 
+which is the "set theoretical analog" of the previous one, that is, $\bigsqcup$ denotes disjoint union, and the middle line is exact in the category of sets (i.e. the last arrow is a set theoretical coequalizer). Then $C'$ is the set theoretical colimit of our inductive system. 
+
+We claim that the natural set theoretical map $C'\to C$ is bijective. 
+
+To prove this we define a structure of $A$-module on $C'$. To define the addition it suffices to define $\gamma_i(x_i)+\gamma_j(x_j)$ for $x_i\in M_i$, $x_j\in M_j$. To do this we choose morphisms $f:i\to k$, $g:j\to k$, we check that the element 
+$$
+\gamma_k(M_f(x_i)+M_g(x_j))\in C'
+$$ 
+does not depend on the choice of $k,f$ and $g$, and we set 
+$$
+\gamma_i(x_i)+\gamma_j(x_j):=\gamma_k(M_f(x_i)+M_g(x_j))\in C'.
+$$ 
+Then we define the map $A\times C'\to C'$ (details left to the reader), we check that we have indeed defined a structure of $A$-module on $C'$, we use it to define a morphism $C\to C'$, and we check that this morphism is inverse to the morphism $C'\to C'$ previously defined. Again, the details are left to the reader. 
+
+%
+\begin{comment}
 \subsection{Page 33, Exercise 2.15}%\varinjlim
 
 The proof of the following statements is left to the reader.
@@ -776,9 +829,13 @@ $\bullet\ ap(x)=p(ax)$ for all $i$ in $I$, all $x$ in $M_i$ and all $a$ in $A$,
 $\bullet\ p(x)+p(\,y)=p(\mu_{ki}(x)+\mu_{kj}(\,y))$ for all $k\ge i,j$ in $I$, all $x$ in $M_i$ and all $y$ in $M_j$. 
 
 The quotient $M'/\sim$ is a direct limit of the $M_i$ also in the category of $A$-modules.
+\end{comment}
+%
 
 \subsection{Page 33, Exercise 2.20}%
 
+%
+\begin{comment}
 Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
 
 Define the morphisms $u$ and $v$ by the commutative diagram
@@ -801,9 +858,11 @@ M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f)}\ar[u,"\beta_{c(f)}"']
 $$ 
 is exact. 
 
-The proof is left to the reader.
+The proof is left to the reader. 
+\end{comment}
+%
 
-As a result, to prove that the tensor product commutes with colimits, it suffices to check that it commutes with direct sums. 
+In view of Section~\ref{colim} p.~\pageref{colim}, to prove that the tensor product commutes with colimits, it suffices to check that it commutes with direct sums. 
 
 To do so, let $M$ be an $A$-module, let $(N_i)$ be a family of $A$-module, and define the morphisms $f$ and $g$ by the commutative diagram 
 $$
@@ -1168,7 +1227,7 @@ is \emph{the canonical free resolution of} $M$.
 
 We clearly have $H_0(F(M))\simeq M$ and $H_n(F(M))=0$ for $n\ge1$.
 
-\subsubsection{The Tor functor}
+\subsubsection{The Tor functor}\label{Tor-f}
 
 In the above notation, let $N$ be an $A$-module. Note that $F(M)\otimes_AN$ is in a natural way a complex of $A$-modules. We set 
 $$
@@ -1303,9 +1362,9 @@ We also have:
 
 There is also a statement and a proof of this result in the Stacks Project; see the tag \href{http://stacks.math.columbia.edu/tag/00HK}{http://stacks.math.columbia.edu/tag/00HK}
 
-\subsection{Page 35, Exercise 2.27, (i) implies (ii)}\label{227}%
+\subsection{Page 35, Exercise 2.27}\label{227}%
 
-Recall the statement: 
+\textbf{Statement}
 
 A ring $A$ is \emph{absolutely flat} if every $A$-module is flat. Prove that the following are equivalent:
 
@@ -1313,9 +1372,11 @@ A ring $A$ is \emph{absolutely flat} if every $A$-module is flat. Prove that the
 
 (ii) Every principal ideal is idempotent.
 
-(iii) Every finitely generated ideal is a direct summand of $A$.
+(iii) Every finitely generated ideal is a direct summand of $A$. 
 
-To show that (i) implies (ii), let $x$ be in $A$ and consider the obvious diagram 
+\textbf{Partial solution}
+
+$\bu$ To show that (i) implies (ii), let $x$ be in $A$ and consider the obvious diagram 
 $$
 (x)\otimes A\xr\beta(x)\otimes A/(x)\xr\alpha A/(x). 
 $$ 
@@ -1323,11 +1384,13 @@ $$
 
 % comment removed https://docs.google.com/document/d/1qNW_ZVfE2nwm_A5NCGzWo_yu8CYKC0g1NUcCXkT2Igs/edit
 
-Let us show that (iii) implies (i). Let $M$ be an $A$-module and $\aaa$ a finitely generated ideal. By Theorem~\ref{flatcrit} p.~\pageref{flatcrit} it suffices to check that the natural morphism $\aaa\otimes M\to M$ is injective. This morphism is the composite of the obvious morphisms 
+$\bu$ Let us show that (iii) implies (i). Let $M$ be an $A$-module and $\aaa$ a finitely generated ideal. By Theorem~\ref{flatcrit} p.~\pageref{flatcrit} above it suffices to check that the natural morphism $\aaa\otimes M\to M$ is injective. This morphism is the composite of the obvious morphisms 
 $$
 \aaa\otimes M\to(\aaa\oplus\bbb)\otimes M=A\otimes M\to M,
 $$ 
 where $\bbb$ is an ideal such that $A=\aaa\oplus\bbb$ (such an ideal exists by assumption). These morphisms are clearly injective. $\square$ 
+
+\textbf{Comment}
 
 The argument given in the book shows that (i), (ii) and (iii) are also equivalent to
 
@@ -1600,7 +1663,7 @@ is a union of prime ideals.
 
 (ii) If $S$ is any multiplicatively closed subset of $A$, there is a unique smallest saturated multiplicatively closed subset $\overline S$ containing $S$, and that $\overline S$ is the complement in $A$ of the union of the prime ideals which do not meet $S$. ($S$ is called the \emph{saturation} of $S$.)
 
-(iii) If $S=1+\aaa$,where $\aaa$ is an ideal of $A$, find $S$.
+(iii) If $S=1+\aaa$,where $\aaa$ is an ideal of $A$, find $\overline S$.
 
 Solution:
 
@@ -1608,7 +1671,7 @@ Set $S^*:=A\setminus S$, and let $U$ be the union of the prime ideals which do n
 
 (i) Implication $\Longleftarrow$ is easy. Let us prove $\implies$. Assume by contradiction that there is an $a\in S^*$ which is not in $U$. Then $a/1$ belongs to no prime ideal of $S^{-1}A$, and is therefore a unit of $S^{-1}A$. Hence there are $b\in A$ and $s\in S$ such that 
 $$
-\frac{ab}1=\frac a1\frac bs=\frac11\ .
+\frac{ab}s=\frac a1\frac bs=\frac11\ .
 $$ 
 This implies $abt\in S$ for some $t\in S$, contradicting the saturation of $S$.
 
@@ -1620,7 +1683,11 @@ Proof. Let $M$ be the union of the maximal ideals containing $\aaa$ and $P$ the 
 $$
 M:=\bigcup_{\mmm\supset\aaa}\mmm,\quad P:=\bigcup_{\ppp\cap(1+\aaa)=\varnothing}\ppp.
 $$ 
-It suffices to show $M=P$. To prove $M\subset P$, assume $\mmm\supset\aaa$, $\mmm$ maximal. It is enough to check $\mmm\cap(1+\aaa)=\varnothing$. If there was an $x$ in $\mmm\cap(1+\aaa)$, there would be an $a$ in $\aaa$ with $x=1+a$, which would imply $1\in\mmm$, contradiction. Let us verify $P\subset M$. Assume $\ppp\cap(1+\aaa)=\varnothing$, with $\ppp$ prime. We claim $\ppp+\aaa\ne(1)$. If not we would have $p+a=1$ with $p\in\ppp$ and $a\in\aaa$, and thus 
+It suffices to show $M=P$. 
+
+To prove $M\subset P$, assume $\mmm\supset\aaa$, $\mmm$ maximal. It is enough to check $\mmm\cap(1+\aaa)=\varnothing$. If there was an $x$ in $\mmm\cap(1+\aaa)$, there would be an $a$ in $\aaa$ with $x=1+a$, which would imply $1\in\mmm$, contradiction. 
+
+Let us verify $P\subset M$. Assume $\ppp\cap(1+\aaa)=\varnothing$, with $\ppp$ prime. We claim $\ppp+\aaa\ne(1)$. If not we would have $p+a=1$ with $p\in\ppp$ and $a\in\aaa$, and thus 
 $$
 p=1-a\in\ppp\cap(1+\aaa)=\varnothing.
 $$ 
@@ -1680,23 +1747,34 @@ $\bu$ To show that a minimal prime ideal $\ppp$ consists of zero-divisors, set $
 
 $\bu$ (ii) Assume that $a/s\in S_0^{-1}A$ is neither a unit nor a zero-divisor. We have $a\notin S_0$. Then there is a nonzero $b$ in $A$ with $ab=0$, and we get $\frac as\frac b1=0$, hence $\frac b1=0$, that is $bs_0=0$ for some $s_0\in S_0$. This implies $b=0$, a contradiction.
 
-\subsection{Page 44, Exercise 3.10i}%
+\subsection{Page 44, Exercise 3.10}\label{310}%
 
-$$a=a^2x\implies\frac{a^2}{s^2}\frac{sx}1=\frac{ax^2s}{s^2}=\frac as\ .$$ 
+Recall the statement:
 
-\subsection{Page 44, Exercise 3.10ii}\label{310ii}%
+Let $A$ be a ring.
 
-Recall the statement: 
+(i) If $A$ is absolutely flat (Chapter 2, Exercise 27) and $S$ is any multiplicatively 
+closed subset of $A$, then $S^{-1}A$ is absolutely flat.
 
-\emph{$A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maximal ideal $\mmm$.}
+(ii) $A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maximal ideal $\mmm$.
 
-Equivalent statements: 
+Solution:
 
-$A$ \emph{is absolutely flat if and only if for all maximal ideal $\mf m$ of $A$ we have} $\mf m_{\mf m}=(0)$.
+(i) We have, with obvious notation, 
+$$
+a=a^2x\implies\frac{a^2}{s^2}\frac{sx}1=\frac{ax^2s}{s^2}=\frac as\ .
+$$ 
+(ii) Note that the statement to prove is equivalent to any of the following two statements:
 
-$A$ \emph{is absolutely flat if and only if for all $\mu\in\mf m\subset A$ with $\mf m$ maximal, there is an $s\in A\setminus\mf m$ such that} $s\mu=0$.
+$\bu\ A$ is absolutely flat if and only if for all maximal ideal $\mf m$ of $A$ we have $\mf m_{\mf m}=(0)$.
 
-Here is a proof: If $A$ is absolutely flat, then so is $A_{\mf m}$ by Part (i) of the same Exercise, and $A_{\mf m}$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). Conversely, assume that $A_{\mf m}$ is a field for each maximal ideal $\mf m$ of $A$, and let $a$ be in $A$. We have $(a^2)_{\mf m}=(a)_{\mf m}$ for all maximal $\mf m$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
+$\bu\ A$ is absolutely flat if and only if for all $\mu\in\mf m\subset A$ with $\mf m$ maximal, there is an $s\in A\setminus\mf m$ such that $s\mu=0$. 
+
+Let us show that $A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maximal ideal $\mmm$. 
+
+If $A$ is absolutely flat, then so is $A_{\mf m}$ by Part (i) of the same Exercise, and $A_{\mf m}$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). 
+
+Conversely, assume that $A_{\mf m}$ is a field for each maximal ideal $\mf m$ of $A$, and let $a$ be in $A$. We have $(a^2)_{\mf m}=(a)_{\mf m}$ for all maximal $\mf m$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
 
 \subsection{Page 44, Exercise 3.11}%
 
@@ -1722,17 +1800,18 @@ $(\star)$ There are elements $a\in\ppp_y\setminus\ppp_x$, $b\in\ppp_x\setminus\p
 
 Statement $(\star)$ implying that $X_a$ and $X_b$ are disjoint open neighborhoods of $x$ and $y$ respectively, it suffices to prove $(\star)$.
 
-Assume $(\star)$ is false. Then $S:=(A\setminus\ppp_x)(A\setminus\ppp_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mf m$ in $S^{-1}A$. The contraction $\mmm^{\oo c}$ of $\mmm$ in $A$ is a prime ideal contained in $A\setminus S\subset\ppp_x$ (because $A\setminus\ppp_x\subset S$). Similarly we have $\mmm^{\oo c}\subset\ppp_y$, and thus $\mmm^{\oo c}\subset\ppp_x\cap\ppp_y$, a contradiction. $\square$
+Assume $(\star)$ is false. Then $S:=(A\setminus\ppp_x)(A\setminus\ppp_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mf m$ in $S^{-1}A$. The contraction $\mmm^{\oo c}$ of $\mmm$ in $A$ is a prime, and thus maximal, ideal contained in $A\setminus S\subset\ppp_x$ (because $A\setminus\ppp_x\subset S$). This implies $\mmm^{\oo c}=\ppp_x$. Similarly we have $\mmm^{\oo c}=\ppp_y$. As $\ppp_x\ne\ppp_y$, this is a contradiction. %$\mmm^{\oo c}\subset\ppp_y$, and thus $\mmm^{\oo c}\subset\ppp_x\cap\ppp_y$. This is a contradiction because $\mmm^{\oo c}$, $\ppp_x$ and $\ppp_y$ are maximal, and $\ppp_x\ne\ppp_y$. 
+$\square$
 
 At this point we know that (ii), (iii) and (iv) are equivalent.
 
 Introduce the following notation: For any ideal $\mf a$ of any ring $R$ write $\overline\aaa$ for the image of $\mf a$ in $\overline R:=R/\mf N(R)$, and define $\overline r\in\overline R$ for $r\in R$ similarly.
 
-(i)$\implies$(ii): Let $A/\mathfrak N$ be absolutely flat and assume by contradiction that there is a prime ideal $\ppp$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\ppp<\mf m$. Then we get firstly $\overline\ppp<\overline\mmm$ with $\overline\ppp$ prime and $\overline\mmm$ maximal, and secondly $\overline\ppp_{\overline\mmm}<\overline\mmm_{\overline\mmm}$ with $\overline\ppp_{\overline\mmm}$ prime and $\overline\mmm_{\overline\mmm}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310ii} above) implies $\overline\mmm_{\overline\mmm}=(\overline0)$. $\square$
+(i)$\implies$(ii): Let $A/\mathfrak N$ be absolutely flat and assume by contradiction that there is a prime ideal $\ppp$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\ppp<\mf m$. Then we get firstly $\overline\ppp<\overline\mmm$ with $\overline\ppp$ prime and $\overline\mmm$ maximal, and secondly $\overline\ppp_{\overline\mmm}<\overline\mmm_{\overline\mmm}$ with $\overline\ppp_{\overline\mmm}$ prime and $\overline\mmm_{\overline\mmm}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310} above) implies $\overline\mmm_{\overline\mmm}=(\overline0)$. $\square$
 
 % comment removed https://docs.google.com/document/d/14jVzaDzT3fBsM44o-TqK-vj3Y-ffV171uFQfRRwIR9g/edit
 
-(ii)$\implies$(i): We assume that the prime ideals of $A$ are maximal and we show that $A/\mathfrak N$ is absolutely flat. Let $\mmm$ be a maximal ideal of $A$. By Section~\ref{310ii} above it suffices to show $\overline\mmm_{\overline\mmm}=(0)$. But we have 
+(ii)$\implies$(i): We assume that the prime ideals of $A$ are maximal and we show that $A/\mathfrak N$ is absolutely flat. Let $\mmm$ be a maximal ideal of $A$. By Section~\ref{310} above it suffices to show $\overline\mmm_{\overline\mmm}=(0)$. But we have 
 $$
 \overline\mmm_{\overline\mmm}=\mf N\left(\overline A_{\overline\mmm}\right)=\mf N\left(\overline A\right)_{\overline\mmm}=(0),
 $$ 
@@ -1779,6 +1858,43 @@ Let $\mf m$ be a maximal ideal of $A/\mf a$. It suffices to show $(M/\mf aM)_\mm
 $$
 (M/\mf aM)_\mmm\simeq(M/\mf aM)_{\mf m^{\oo c}}\simeq M_{\mf m^{\oo c}}/(\mf aM)_{\mf m^{\oo c}}=0.
 $$ 
+
+\subsection{Page 45, Exercise 3.15}%£
+
+Following the hint, the exact sequence 
+$$
+0\to N\to A^n\to A^n\to0
+$$ 
+induces an exact sequence 
+$$
+\Tor^A_1(k,A^n)\to k\otimes N\to k\otimes A^n\to A^n\otimes F\to0,
+$$ 
+(see Section~\ref{Tor-f} p.~\ref{Tor-f} above) which we can write as 
+$$
+0\to N/\mmm N\to k^n\to k^n\to0.%\overset\sim
+$$ 
+The $k$-linear map $k^n\to k^n$, being surjective, is injective, so that we get $N=\mmm N$. Exercise 2.12 p.~32 of the book shows that $N$ is finitely generated, and Nakayama’s Lemma (Proposition 2.6 p.~21 of the book) gives $N=0$ ($\mmm$ being the Jacobson radical of the local ring $A$). 
+
+%
+\begin{comment}
+We follow Jeffrey Daniel Kasik Carlson. 
+
+The exact sequence 
+$$
+0\to N\to F\to F\to0
+$$ 
+in the hint of the book induces an exact sequence 
+$$
+k\otimes N\to k\otimes F\to k\otimes F\to0,
+$$ 
+which we can write as 
+$$
+N/\mmm N\to k^n\to k^n\to0.
+$$ 
+Now Exercise 2.12 p.~32 of the book shows that $N$ is finitely generated. %and Exercise 2.2 p.~31 of the book gives $k\otimes N=(A/\mmm)\otimes N\simeq N/\mmm N=0$. 
+The map $k^n\to k^n$ is a surjection of vector spaces of the same dimension, hence an isomorphism. This implies $N=\mmm N$, and Nakayama’s Lemma (Proposition 2.6 p.~21 of the book) gives $N=0$ ($\mmm$ being the Jacobson radical of the local ring $A$). Thus our endomorphism of $F$ is injective. 
+\end{comment}
+%
 
 \subsection{Page 46, Exercise 3.18}% 
 
@@ -2570,7 +2686,7 @@ Now (L2) and Lemma~\ref{lasker} p.~\pageref{lasker} give the desired contradicti
 %By Assumption (L2) there is an $n\in\mathbb N$ such that $$\aaa=\qqq_0\cap\cdots\cap\qqq_n\cap\bigcap_{\omega\le\alpha<\zeta}\qqq_\alpha.$$ Of course if there are only finitely many ordinals between $\omega$ and $\zeta$, the proof is complete; but if there are infinitely many such ordinals, I'm stuck...
 %For all $\alpha\le\kappa$ set $$\bbb_\alpha:=\bigcap_{\beta<\alpha}\qqq_\beta.$$ Then (L2) implies that there is some $n\in\mathbb N$ such that $\bbb_\alpha=\bbb_n$ for $n\le\alpha\le\kappa$. (???!!!) (We assume, with no loss of generality, that $\kappa$ is infinite.) Now \eqref{abak} implies $\aaa=\bbb_\kappa=\bbb_n$, showing that $\aaa$ admits a primary decomposition.
 
-\subsection{Page 57, Exercise 4.19}%\label{310ii}%
+\subsection{Page 57, Exercise 4.19}%
 
 Statement:
 
