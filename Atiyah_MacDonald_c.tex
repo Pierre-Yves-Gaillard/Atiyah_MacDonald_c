@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -745,6 +745,10 @@ being exact, we get
 $$
 \Ker(T(g))=\Ker(T(i)\circ T(g'))=\oo{Im}(T(f)).
 $$
+
+\subsection{Page 31, Exercise 2.1}%
+
+Generalization: compute $A/\aaa\otimes_AA/\bbb$ (obvious notation).
 
 \subsection{Page 32, Exercise 2.11}%
 
@@ -1638,7 +1642,7 @@ Claim~2. We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$.
 
 Proof of Claim~2. 
 $$
-\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }\big(B/\ppp^{\oo e}\big)_\ppp\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
+\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }\big(B/\ppp^{\oo e}\big)_\ppp\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e}
 %\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }B/\ppp^{\oo e}\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
 $$ 
 $$
@@ -1859,7 +1863,7 @@ $$
 (M/\mf aM)_\mmm\simeq(M/\mf aM)_{\mf m^{\oo c}}\simeq M_{\mf m^{\oo c}}/(\mf aM)_{\mf m^{\oo c}}=0.
 $$ 
 
-\subsection{Page 45, Exercise 3.15}%£
+\subsection{Page 45, Exercise 3.15}%
 
 Following the hint, the exact sequence 
 $$
@@ -1896,13 +1900,35 @@ The map $k^n\to k^n$ is a surjection of vector spaces of the same dimension, hen
 \end{comment}
 %
 
-\subsection{Page 46, Exercise 3.18}% 
+\subsection{Page 46, Exercise 3.16}\label{316}%
+
+We claim that Property (vi) below is equivalent to Properties (i) to (v).
+
+(vi) For any $A$-linear morphism $M'\to M$, if $M'_B\to M_B$ is injective, then so is $M'\to M$.
+
+(vi) $\implies$ (v): We must prove that $M\to M_B$ is injective. It suffices to show that $M_B\to M_{BB}$ is injective. But this follows from Exercise 2.13 p.~32 of the book.
+
+(iv) $\implies$ (vi): Let $0\to M'\to M\to M''$ be an exact sequence such that $M_B\to M''_B$ is injective. It suffices to show $M'=0$, or even $M'_B=0$. But this follows from the fact that $0\to M'_B\to M_B\to M''_B$ is exact.
+
+\subsection{Page 46, Exercise 3.17}%
+
+Let $M'\to M$ be injective. We must show that $M'_B\to M_B$ is injective.  By Section~\ref{316} and by the fact that $B\to C$ is faithfully flat, it suffices to check that $M'_{BC}\to M_{BC}$ is injective, i.e., that $M'_C\to M_C$ is injective. But this follows from the fact that $A\to C$ is flat.
+
+\subsection{Page 46, Exercise 3.18}%
 
 The phrase ``$B_\qqq$ is a local ring of $B_\ppp$'' means ``$B_\qqq$ is a localization of $B_\ppp$''.
 
-\subsection{Page 46, Exercise 3.19vi}%
+\subsection{Page 46, Exercise 3.19}%
 
-Use Proposition 3.7 p. 40 of the book.
+\textbf{General observation.} If $P(M)$ is a property that an $A$-module $M$ may or may not have, then to prove $P(M)$ for all finitely generated module, it suffices to prove that 
+
+$\bu\ P(A/\aaa)$ holds for all ideal $\aaa$,
+
+$\bu\ P(M_1+M_2)$ holds for all finitely generated submodules $M_1$ and $M_2$ of a module $M$ whenever $P(M_1)$ and $P(M_2)$ hold.
+
+Hint for (vi): Use Proposition 3.7 p. 40 of the book.
+
+Hint for (viii): Use the general observation above. [Note that we have $V(\Ann(M_B)=V(\Ann(M)^{\oo e})$.]
 
 \subsection{Page 46, Exercise 3.20}%\label{321iv}
 
@@ -1936,7 +1962,7 @@ proved in \eqref{fiber2} p.~\pageref{fiber2}. %Section~\ref{res} p.~\pageref{res
 
 \subsection{Page 47, Exercise 3.23}%\label{321iv}%
 
-It is simpler to proceed as follows:
+It seems simpler to proceed as follows:
 
 For $f\in A$ put 
 $$
@@ -2136,7 +2162,7 @@ In particular, if $\ppp$ is a minimal prime ideal, then the kernel of the natura
 
 % comment removed https://docs.google.com/document/d/1830-SPd2EETXXy-5Sbq7s8ppPc7O1mbrr0CMLll1ZL8/edit
 
-\subsection{Page 54, Theorem 4.10}%\label{410}%
+\subsection{Page 54, Theorem 4.10}%
 
 This is the Second Uniqueness Theorem. Here is a corollary (see also Proposition 1.11ii p.~8 of the book):
 
@@ -2202,11 +2228,9 @@ The claim implies that there are infinitely many minimal prime ideals. %Using Ur
 
 \subsection{Page 55, Exercise 4.7}\label{5547}%
 
-Part (iii): Use Exercises 1.18 p.~10 and 1.2ii p.~11. Note that we have (by Exercise 1.2ii p.~11)
-\begin{equation}\label{rax}
-r(\aaa[x])=r(\aaa)[x]
-\end{equation}
-(obvious notation).
+Note that we have $M[x]\simeq A[x]\otimes_AM$ for any $A$-module $M$. In particular $M\mapsto M[x]$ is exact. (See Exercise 2.6 p.~32 of the book.)
+
+Part (iii): Use Exercises 1.18 p.~10, 1.2ii p.~11 and 1.2iii p.~11. %Note that we have (by Exercise 1.2ii p.~11)\begin{equation}\label{rax}r(\aaa[x])=r(\aaa)[x]\end{equation}(obvious notation).
 
 % comment removed https://docs.google.com/document/d/17k969GrD4mEbiSx2cWbae1UARFO3VnJi98nEKwM8Lmg/edit
 
@@ -2273,7 +2297,7 @@ $$
 $$ 
 \textbf{Claim 4:} $(0:\frac a1)\subset S^{-1}\ppp'$.
 
-\emph{Proof of Claim 4.} Assuming $\frac bs\frac a1=0$ (obvious notation), we get $abt=0$ for some $t\in S$, hence $bt\in\ppp'$, hence $b\in\ppp'$, and thus $\frac bs\in S^{-1}\ppp'$. $\square$ 
+\emph{Proof of Claim 4.} Assuming $\frac bs\frac a1=0$ (obvious notation), we get $abt=0$ for some $t\in S$, hence $bt\in(0:a)\subset\ppp'$, hence $b\in\ppp'$, and thus $\frac bs\in S^{-1}\ppp'$. $\square$ 
 
 To complete the proof of \eqref{da2}, note that we get 
 $$
@@ -2296,13 +2320,13 @@ $$
 $$ 
 hence $\ppp\supset\ppp_i$ for some $i$, and thus $\ppp=\ppp_i$ for some $i$. $\square$
 
-\subsection{Page 55, Exercise 4.10}%\label{e410}%
+\subsection{Page 55, Exercise 4.10}%
 
 Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect to $A\to A_\ppp$. We also have 
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)
 $$ 
-and $r_A((0)^{\oo c})=r_{A_\ppp}(0)^{\oo c}$.
+and $r_A((0)^{\oo c})=(r_{A_\ppp}(0))^{\oo c}$.
 
 (i) We have 
 $$
@@ -2357,25 +2381,61 @@ and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conver
 
 Follows from statements 1.18, 3.11ii, 3.11v and 4.9 in the book.
 
-\subsection{Page 56, Exercise 4.13}%
+\subsection{Page 56, Exercise 4.13}%£
 
-Note that $(\ppp^{(n)})_\ppp=\ppp_\ppp^n$.
+The Exercise is an easy consequence of Corollary~\ref{410}b p.~\pageref{410} and the following Lemmas:
 
-(i) Let us show that $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. We have $(\ppp^{(n)})_\ppp=\ppp_\ppp^n\subset\ppp_\ppp$. As $\ppp_\ppp$ is maximal, the ideal $(\ppp^{(n)})_\ppp$ is $\ppp_\ppp$-primary. Using contraction we see that $\ppp^{(n)}$ is $\ppp$-primary. Assuming $\ppp^n\subset\qqq\subset\ppp$ with $\qqq$ a $\ppp$-primary ideal, we get $\ppp_\ppp^n\subset\qqq_\ppp\subset\ppp_\ppp$, and $\ppp^{(n)}\subset\qqq\subset\ppp$. %If we had $\ppp^n\subset\qqq<\ppp$ with $\qqq$ a $\ppp$-primary ideal, localization would give $\ppp_\ppp^n\subset\qqq_\ppp<\ppp_\ppp^n$.
+\begin{lem}
+We have $\ppp^n\subset\ppp^{(n)}=\left(\ppp_\ppp^n\right)^{\oo c}=\left(\ppp^n\right)^{\oo{ec}}$ and $\left(\ppp^{(n)}\right)_\ppp=\ppp_\ppp^n$. 
+\end{lem}
+This is obvious.
 
-(ii) In view of Corollary~\ref{410}b p.~\pageref{410} it suffices to check that $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. We just did that in (i) above.
+\begin{lem}\label{413a}
+We have $r\left(\ppp^{(n)}\right)=\ppp$. 
+\end{lem}
+\begin{proof}
+We have 
+$$
+r\left(\ppp^{(n)}\right)=r\left(\left(\ppp_\ppp^n\right)^{\oo c}\right)=\left(r\left(\ppp_\ppp^n\right)\right)^{\oo c}=(\ppp_\ppp)^{\oo c}=\ppp,
+$$ 
+the second equality following from Exercise 1.18 p.~10 of the book. 
+\end{proof} 
 
-(iii) In view of Corollary~\ref{410}b p.~\pageref{410} it suffices to check that $\ppp^{(m+n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^{(m)}\ppp^{(n)}$. The argument is the same as in (ii).
+\begin{lem}
+We have $r\left(\ppp^{(n_1)}\cdots\ppp^{(n_k)}\right)=\ppp$. 
+\end{lem}
+\begin{proof}
+This follows from Exercise 1.13iii p.~9 of the book and Lemma~\ref{413a} above.
+\end{proof}
 
-(iv) There is a typo in the book. It should be: 
+\begin{lem}\label{413b}
+The ideal $\ppp^{(n)}$ is the smallest $\ppp$-primary ideal containing $\ppp^n$. 
+\end{lem}
+\begin{proof}
+We have $(\ppp^{(n)})_\ppp=\ppp_\ppp^{n}\subset\ppp_\ppp$. As $\ppp_\ppp$ is maximal, the ideal $\ppp^n_\ppp$ is $\ppp_\ppp$-primary. Using contraction we see that $\ppp^{(n)}$ is $\ppp$-primary. Assuming 
+$$
+\ppp^n\subset\qqq\subset\ppp
+$$ 
+with $\qqq$ a $\ppp$-primary ideal, we get $\ppp^n_\ppp\subset\qqq_\ppp\subset\ppp_\ppp$, and thus $\ppp^{(n)}\subset\qqq\subset\ppp$. 
+\end{proof}
+
+\begin{lem}
+Let $\aaa$ be a decomposable ideal such that $\ppp^n\subset\aaa\subset\ppp^{(n)}$, then $\ppp^{(n)}$ is the $\ppp$-primary component of $\aaa$. 
+\end{lem}
+\begin{proof}
+This follows from Corollary~\ref{410}b p.~\pageref{410} and Lemma~\ref{413b} above.
+\end{proof}
+
+Note that there is a typo at the end of the statement of the Exercise in the book: Part (iv) should be: 
 $$
 \ppp^{(n)}=\ppp^n\iff\ppp^n\text{ is }\ppp\text{-primary.}
 $$ 
-This follows from what we proved in (i).
 
 \subsection{Page 56, Exercise 4.14}%
 
-By Corollary~\ref{c45} p.~\pageref{c45} above (which is a corollary to the first uniqueness theorem, that is to Theorem 4.5 p.~52 of the book (the First Uniqueness Theorem)), it suffices to show that $(\aaa:x)$ is prime. If not there would be $y,z\in A$ such that 
+Statement: Let $\aaa$ be a decomposable ideal in a ring $A$ and let $\ppp$ be a maximal element of the set of ideals $(a:x)$, where $x\in A$ and $x\notin\aaa$. Show that $\ppp$ is a prime ideal belonging to $\aaa$.
+
+Solution: By Corollary~\ref{c45} p.~\pageref{c45} above (which is a corollary to the First Uniqueness Theorem, that is to Theorem 4.5 p.~52 of the book), it suffices to show that $(\aaa:x)$ is prime. If not there would be $y,z\in A$ such that 
 $$
 y\notin(\aaa:x),\quad z\notin(\aaa:x),\quad yz\in(\aaa:x),
 $$ 
