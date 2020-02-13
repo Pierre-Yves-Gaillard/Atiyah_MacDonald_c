@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -162,31 +162,31 @@ The following is taken from Wikipedia:
 
 \href{https://en.wikipedia.org/wiki/Prime_avoidance_lemma}{https://en.wikipedia.org/wiki/Prime\_avoidance\_lemma}
 
-\emph{Let $A$ be a commutative ring and $S$ a multiplicatively closed additive subgroup of $A$. Let $\mf a_1,\dots,\mf a_n$, $n\ge1$ be ideals such that $\mf a_i$ is prime for $i\ge3$. If $S$ is not contained in any $\mf a_i$, then $S$ is not contained in their union.}
+\emph{Let $A$ be a commutative ring and $S$ a multiplicatively closed additive subgroup of $A$. Let $\aaa_1,\dots,\aaa_n$, $n\ge1$ be ideals such that $\aaa_i$ is prime for $i\ge3$. If $S$ is not contained in any $\aaa_i$, then $S$ is not contained in their union.}
 
 \begin{proof} 
-We argue by induction on $n$. It suffices to find an element $s$ that is in $S$ and not in $\mf a_i$ for any $i$. 
+We argue by induction on $n$. It suffices to find an element $s$ that is in $S$ and not in $\aaa_i$ for any $i$. 
 
 1. The case $n=1$ is trivial. 
 
-2. Suppose $n\ge2$. For each $i$ choose $s_i$ in $S\setminus\bigcup_{j \ne i}\mf a_j$, this set being nonempty by inductive hypothesis. We can assume $s_i \in \mf a_i$ for all $i$; otherwise, some $s_i$ avoids all the $\mf a_j$'s and we are done. 
+2. Suppose $n\ge2$. For each $i$ choose $s_i$ in $S\setminus\bigcup_{j \ne i}\aaa_j$, this set being nonempty by inductive hypothesis. We can assume $s_i \in \aaa_i$ for all $i$; otherwise, some $s_i$ avoids all the $\aaa_j$'s and we are done. 
 
-Claim: the element $s:=s_1\cdots s_{n-1}+s_n$ is in $S$ but not in $\mf a_i$ for any $i$. 
+Claim: the element $s:=s_1\cdots s_{n-1}+s_n$ is in $S$ but not in $\aaa_i$ for any $i$. 
 
-2.1. If $s$ is in $\mf a_i$ for some $i\le n-1$, then $s_n$ is in $\mf a_i$, a contradiction. 
+2.1. If $s$ is in $\aaa_i$ for some $i\le n-1$, then $s_n$ is in $\aaa_i$, a contradiction. 
 
-2.2. If $s$ is in $\mf a_n$, then $s_1\cdots s_{n-1}$ is in $\mf a_n$. 
+2.2. If $s$ is in $\aaa_n$, then $s_1\cdots s_{n-1}$ is in $\aaa_n$. 
 
-2.2.1. If $n$ is 2, we get $s_1\in \mf a_2$, a contradiction.
+2.2.1. If $n$ is 2, we get $s_1\in \aaa_2$, a contradiction.
 
-2.2.2. If $n>2$ then, since $\mf a_n$ is prime, there is an $i$ less than $n$ such that $s_i$ is in $\mf a_n$, a contradiction.
+2.2.2. If $n>2$ then, since $\aaa_n$ is prime, there is an $i$ less than $n$ such that $s_i$ is in $\aaa_n$, a contradiction.
 
 This proves the claim, and thus the statement. 
 \end{proof}
 
 Here is a version which is slightly weaker but sufficient for our purpose:
 
-\emph{Let $A$ be a commutative ring, let $\mf a$ be an ideal, and let $\ppp_1,\dots,\ppp_n,n\ge1$ be prime ideals. If $\mf a$ is not contained in any $\ppp_i$, then $\mf a$ is not contained in their union.}
+\emph{Let $A$ be a commutative ring, let $\aaa$ be an ideal, and let $\ppp_1,\dots,\ppp_n,n\ge1$ be prime ideals. If $\mf a$ is not contained in any $\ppp_i$, then $\mf a$ is not contained in their union.}
 
 \begin{proof} 
 We can assume that $n\ge2$ and that there are elements $a_1,\dots,a_n$ in $\mf a$ such that 
@@ -202,26 +202,26 @@ $\bu$ \textbf{Proposition 1.11ii}%
 
 Note that $\ppp$ is prime $\iff$
 $$
-\ppp\supset\mf a\mf b\quad\implies\quad\ppp\supset\mf a\quad\text{or}\quad\ppp\supset\mf b.
+\ppp\supset\mf a\bbb\quad\implies\quad\ppp\supset\mf a\quad\text{or}\quad\ppp\supset\bbb.
 $$
 
 $\bu$ \textbf{Quotient ideal}%
 
 We have 
 $$
-\mf a\subset\mf a',\ \mf b'\subset\mf b\ \implies\ (\mf a:\mf b)\subset(\mf a':\mf b'),
+\mf a\subset\mf a',\ \bbb'\subset\bbb\ \implies\ (\mf a:\bbb)\subset(\mf a':\bbb'),
 $$ 
 $$
-(1:\mf b)=(1)=(\mf a:0),\quad(\mf a:1)=\mf a.
+(1:\bbb)=(1)=(\mf a:0),\quad(\mf a:1)=\mf a.
 $$
 
 $\bu$ \textbf{Exercise 1.12i}%
 
-To show that the inclusion $\mf a\subset(\mf a:\mf b)$ is strict in general, let $A$ be nonzero and set $\mf a=\mf b=(0)$.
+To show that the inclusion $\mf a\subset(\mf a:\bbb)$ is strict in general, let $A$ be nonzero and set $\mf a=\bbb=(0)$.
 
 $\bu$ \textbf{Exercise 1.12ii}%
 
-To show that the inclusion $(\mf a\!:\!\mf b)\,\mf b\subset(\mf a:\mf b)$ is strict in general, let $A$ be nonzero and set $\mf a=(1),\ \mf b=(0)$.
+To show that the inclusion $(\mf a\!:\!\bbb)\,\bbb\subset(\mf a:\bbb)$ is strict in general, let $A$ be nonzero and set $\mf a=(1),\ \bbb=(0)$.
 
 \subsection{Page 9, extended ideal}%
 
@@ -245,7 +245,7 @@ $$
 \mf a_1:=(x),\quad\mf a_2:=(x-y).
 $$
 
-$\bu$ Let us show that the inclusion $\mf b_1^{\oo c}+\mf b_2^{\oo c}\subset(\mf b_1+\mf b_2)^{\oo c}$ is strict in general. Set (with obvious notation) 
+$\bu$ Let us show that the inclusion $\bbb_1^{\oo c}+\bbb_2^{\oo c}\subset(\bbb_1+\bbb_2)^{\oo c}$ is strict in general. Set (with obvious notation) 
 $$
 A:=K[X]/(X^2),\quad B:=K[X,Y]/(X^2,XY,Y^2),
 $$ 
@@ -253,10 +253,10 @@ $$
 f:A\to B,\quad f(x):=x,
 $$ 
 $$
-\mf b_1:=(\,y),\quad\mf b_2:=(x-y).
+\bbb_1:=(\,y),\quad\bbb_2:=(x-y).
 $$
 
-$\bu$ Let us show that the inclusion $\mf b_1^{\oo c}\mf b_2^{\oo c}\subset(\mf b_1\mf b_2)^{\oo c}$ is strict in general. Set $A:=K[XY]$, $B:=K[X,Y]$, and let $f:A\to B$ be the inclusion. Then we have 
+$\bu$ Let us show that the inclusion $\bbb_1^{\oo c}\bbb_2^{\oo c}\subset(\bbb_1\bbb_2)^{\oo c}$ is strict in general. Set $A:=K[XY]$, $B:=K[X,Y]$, and let $f:A\to B$ be the inclusion. Then we have 
 $$
 (X)^{\oo c}(Y)^{\oo c}=(X^2Y^2),\quad(XY)^{\oo c}=(XY).
 $$
@@ -267,9 +267,9 @@ y\in((0)^{\oo e}:(X)^{\oo e})=((0):(X)^{\oo e}),
 $$ 
 $$y\notin(0)=(0)^{\oo e}=((0):(X))^{\oo e}.$$
 
-$\bu$ Let us show that the inclusion $(\mf b_1:\mf b_2)^{\oo c}\subset(\mf b_1^{\oo c}:\mf b_2^{\oo c})$ is strict in general. Set $A:=K$, $B:=K[X]$, $\mf b_1:=(0)$, $\mf b_2:=(X)$. Then we have 
+$\bu$ Let us show that the inclusion $(\bbb_1:\bbb_2)^{\oo c}\subset(\bbb_1^{\oo c}:\bbb_2^{\oo c})$ is strict in general. Set $A:=K$, $B:=K[X]$, $\bbb_1:=(0)$, $\bbb_2:=(X)$. Then we have 
 $$
-1\in(\mf b_1^{\oo c}:\mf b_2^{\oo c})\setminus(\mf b_1:\mf b_2)^{\oo c}.
+1\in(\bbb_1^{\oo c}:\bbb_2^{\oo c})\setminus(\bbb_1:\bbb_2)^{\oo c}.
 $$
 $\bu$ Let us show that the inclusion $r(\mf a)^{\oo e}\subset r(\mf a^{\oo e})$ is strict in general. Set $A:=K[X^2]$, $B:=K[X]$, $\mf a:=(X^2)$. Then we have 
 $$
@@ -280,17 +280,17 @@ $$
 
 We have 
 $$
-\left(\sum\mf a_i\right)^{\oo e}=\sum\mf a_i^{\oo e},\quad\left(\sum\mf b_i\right)^{\oo c}\supset\sum\mf b_i^{\oo c},
+\left(\sum\mf a_i\right)^{\oo e}=\sum\mf a_i^{\oo e},\quad\left(\sum\bbb_i\right)^{\oo c}\supset\sum\bbb_i^{\oo c},
 $$
 $$
-\left(\bigcap\mf a_i\right)^{\oo e}\subset\bigcap\mf a_i^{\oo e},\quad\left(\bigcap\mf b_i\right)^{\oo c}=\bigcap\mf b_i^{\oo c}.
+\left(\bigcap\mf a_i\right)^{\oo e}\subset\bigcap\mf a_i^{\oo e},\quad\left(\bigcap\bbb_i\right)^{\oo c}=\bigcap\bbb_i^{\oo c}.
 $$
 
 We prove the first of these four statements, leaving the others to the reader. We have 
 $$
 \left(\sum\mf a_i\right)^{\oo e}=\sum_{\alpha\in\sum\mf a_i}(f(\alpha)),\quad\sum\mf a_i^{\oo e}=\sum_i\sum_{\alpha_i\in\mf a_i}(f(\alpha_i)).
 $$ 
-The inclusion $\supset$ is clear. Let's prove the inclusion $\subset$. Let $\alpha$ be in $\sum\mf a_i$. This means that $\alpha$ is of the form $\sum\alpha_i$ with $\alpha_i\in\mf a_i$, $\alpha_i=0$ for almost all $i$. This yields 
+The inclusion $\supset$ is clear. Let us prove the inclusion $\subset$. Let $\alpha$ be in $\sum\mf a_i$. This means that $\alpha$ is of the form $\sum\alpha_i$ with $\alpha_i\in\mf a_i$, $\alpha_i=0$ for almost all $i$. This yields 
 $$
 f(\alpha)=\sum_if(\alpha_i)\in\sum_i\sum_{\alpha_i\in\mf a_i}(f(\alpha_i))=\sum\mf a_i^{\oo e}.
 $$ 
@@ -370,19 +370,19 @@ Other wording: $\mf R(A[[x]])=\mf R(A)+(x)$.
 
 \subsection{Page 11, Exercise 1.5iv}
 
-Let $\mf m$ be a maximal ideal of $A[[x]]$. We must show that $\mf m^{\oo c}$ is maximal and that $\mf m=\mf m^{\oo c}+(x)$. We have 
+Let $\mmm$ be a maximal ideal of $A[[x]]$. We must show that $\mmm^{\oo c}$ is maximal and that $\mmm=\mmm^{\oo c}+(x)$. We have 
 
-(a) $x\in\mf m$. Proof: $1-xf\in A[[x]]^\times$ for all $f\in A[[x]]$ by (i).
+(a) $x\in\mmm$. Proof: $1-xf\in A[[x]]^\times$ for all $f\in A[[x]]$ by (i).
 
-(b) $A[[x]]=A+\mf m$. Proof: $A[[x]]=A+(x)\overset{(\text a)}\subset A+\mf m$.
+(b) $A[[x]]=A+\mmm$. Proof: $A[[x]]=A+(x)\overset{(\text a)}\subset A+\mmm$.
 
-(c) $A/\mf m^{\oo c}\simeq A[[x]]/\mf m$. Proof: 
+(c) $A/\mmm^{\oo c}\simeq A[[x]]/\mmm$. Proof: 
 $$
-A/\mf m^{\oo c}=A/(A\cap\mf m)\simeq(A+\mf m)/\mf m\overset{(\text b)}=A[[x]]/\mf m.
+A/\mmm^{\oo c}=A/(A\cap\mmm)\simeq(A+\mmm)/\mmm\overset{(\text b)}=A[[x]]/\mmm.
 $$ 
-Then (c) implies that $\mf m^{\oo c}$ is maximal.
+Then (c) implies that $\mmm^{\oo c}$ is maximal.
 
-(d) $\mf m=\mf m^{\oo c}+(x)$. Proof: Let $f\in A[[x]]$ with $f=a_0+a_1x+\cdots$. There is a unique $g\in A[[x]]$ such that $f=a_0+xg$, and (a) implies that $f\in\mmm$ if and only if $a_0\in\mf m^{\oo c}$. %then $f\in\mmm$ by (a). $f=a_0+xg\in\mf m$, then $a_0\in\mf m^{\oo c}$ by (a).
+(d) $\mmm=\mmm^{\oo c}+(x)$. Proof: Let $f\in A[[x]]$ with $f=a_0+a_1x+\cdots$. There is a unique $g\in A[[x]]$ such that $f=a_0+xg$, and (a) implies that $f\in\mmm$ if and only if $a_0\in\mmm^{\oo c}$. %then $f\in\mmm$ by (a). $f=a_0+xg\in\mmm$, then $a_0\in\mmm^{\oo c}$ by (a).
 
 \subsection{Page 11, Exercise 1.5v}%
 
@@ -424,7 +424,7 @@ Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we
 
 \subsection{Page 12, Exercise 1.14}\label{114}%
 
-More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\mf b\in\Sigma$ such that $\mf a\subset\mf b$.
+More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\bbb\in\Sigma$ such that $\mf a\subset\bbb$.
 
 \subsection{Page 13, Exercise 1.19}\label{irr}%
 
@@ -472,7 +472,7 @@ We have $X=V(\aaa)\sqcup V(\bbb)$ with $\aaa,\bbb\ne(1)$ and $\aaa,\bbb\not\subs
 
 Part (i): In fact we have $X=X_f\sqcup X_{1-f}$ for all $f$ in $A$.
 
-Part (iv): If $f\in\ppp\setminus\mf q$ then $\ppp\in X_{1-f}$ and $\mf q\in X_f$.
+Part (iv): If $f\in\ppp\setminus\qqq$ then $\ppp\in X_{1-f}$ and $\qqq\in X_f$.
 
 \subsection{Page 14, Exercise 1.25}%
 
@@ -554,7 +554,7 @@ the penultimate equality being justifies by \eqref{128}.
 
 Proposition 2.4 reads:
 
-\emph{Let $M$ be a finitely generated $A$-module, let $\mf a$ be an ideal of $A$, and let $\phi$ be an $A$-module endomorphism of $M$ such that $\phi(M)\subseteq\mf a M$. Then $\phi$ satisfies an equation of the form
+\emph{Let $M$ be a finitely generated $A$-module, let $\mf a$ be an ideal of $A$, and let $\phi$ be an $A$-module endomorphism of $M$ such that $\phi(M)\subseteq\aaa M$. Then $\phi$ satisfies an equation of the form
 $$
 \phi^n+a_1\,\phi^{n-1}+\cdots+a_n=0
 $$ 
@@ -562,11 +562,11 @@ where the $a_i$ are in $\mf a$.}
 
 Strictly speaking, this makes no sense because $\phi$ and the $a_i$ belong to different rings. We suggest the following restatement:
 
-\emph{Let $M$ be a finitely generated $A$-module, let $\mf a$ be an ideal of $A$, let $\phi$ be an $A$-module endomorphism of $M$ such that $\phi(M)\subseteq\mf a M$, and let $\psi:A\to\oo{End}_A(M)$ be the natural morphism. Then $\phi$ satisfies an equation of the form
+\emph{Let $M$ be a finitely generated $A$-module, let $\aaa$ be an ideal of $A$, let $\phi$ be an $A$-module endomorphism of $M$ such that $\phi(M)\subseteq\aaa M$, and let $\psi:A\to\oo{End}_A(M)$ be the natural morphism. Then $\phi$ satisfies an equation of the form
 $$
 \phi^n+\psi(a_1)\,\phi^{n-1}+\cdots+\psi(a_n)=0
 $$ 
-where the $a_i$ are in $\mf a$.}
+where the $a_i$ are in $\aaa$.}
 
 [We have used the symbol $\subseteq$ above to make the quote accurate, but in general we denote inclusions by $\subset$.]
 
@@ -581,11 +581,11 @@ If $\phi=\psi(\,y)$ for some $y$ in $A$ we get
 \end{equation}
 This yields the following:
 
-\emph{If $yM\subset\mf aM$ for some $y$ in $A$, then there is an $x$ in $A$ such that $xM=0$ and $x\equiv y^n\pmod{\mf a}$ for some $n$.}
+\emph{If $yM\subset\aaa M$ for some $y$ in $A$, then there is an $x$ in $A$ such that $xM=0$ and $x\equiv y^n\pmod{\aaa}$ for some $n$.}
 
 Corollary 2.5 reads:
 
-\emph{Let $M$ be a finitely generated $A$-module and let $\mf a$ be an ideal of $A$ such that $\mf aM=M$. Then there exists $x\equiv1\pmod{\mf a}$ such that $xM=0$.}
+\emph{Let $M$ be a finitely generated $A$-module and let $\aaa$ be an ideal of $A$ such that $\aaa M=M$. Then there exists $x\equiv1\pmod{\aaa}$ such that $xM=0$.}
 
 The proof reads:
 
@@ -601,13 +601,13 @@ and we can set $x:=1+a_1+\cdots+a_n$.
 
 Note that Corollary 2.5 can also be stated as follows:
 
-\emph{Let $M$ be a finitely generated $A$-module and let $\mf a$ be an ideal of $A$ such that $\mf aM=M$. Then there exists $\alpha\in\mf a$ such that $\alpha m=m$ for all $m\in M$.}
+\emph{Let $M$ be a finitely generated $A$-module and let $\aaa$ be an ideal of $A$ such that $\aaa M=M$. Then there exists $\alpha\in\aaa$ such that $\alpha m=m$ for all $m\in M$.}
 
-In other words, we go from $\mf aM=M$ to $\alpha m=m$.
+In other words, we go from $\aaa M=M$ to $\alpha m=m$.
 
 Let us rewrite the proof of Proposition 2.4 to turn it into a proof of the corrected statement:%with as few changes as possible:
 
-Let $x_1,\dots,x_n$ be a set of generators of $M$. Then each $\phi(x_i)\in\mf aM$, so that we have say $\phi(x_i)=\sum_{j=1}^na_{ij}x_j\ (1\le i\le n; a_{ij}\in\mf a)$, i.e., 
+Let $x_1,\dots,x_n$ be a set of generators of $M$. Then each $\phi(x_i)\in\aaa M$, so that we have say $\phi(x_i)=\sum_{j=1}^na_{ij}x_j\ (1\le i\le n; a_{ij}\in\aaa)$, i.e., 
 $$
 \sum_{j=1}^n\ (\delta_{ij}\phi-\psi(a_{ij}))\ x_j=0
 $$ 
@@ -624,7 +624,7 @@ It follows that $\det(b_{j\ell})$ annihilates each $x_i$, hence is the zero endo
 
 \subsection{Page 23, proof of Proposition 2.9 (i)}%
 
-Let's prove: $\overline v$ injective $\implies$ $v$ surjective. If $\phi:M''\to M''/\oo{Im}(v)$ is the canonical projection, we get 
+Let us prove: $\overline v$ injective $\implies$ $v$ surjective. If $\phi:M''\to M''/\oo{Im}(v)$ is the canonical projection, we get 
 $$
 0=\phi\circ v=\overline v(\phi)\ \implies\ \phi=0\ \implies\ v\text{ surjective.}
 $$
@@ -722,7 +722,7 @@ and $\psi'(u)=0$. Thus there is a $w$ in $M^{\oplus I}$ such that $\phi'(w)=u$, 
 
 \subsection{Page 27, contracted ideals}\label{27}%
 
-If $A\to B$ is a morphism, then an ideal $\mf a$ of $A$ is contracted if and only if the natural map $A/\mf a\to B\otimes_A A/\mf a$ is injective. In particular, if a proper ideal $\mf a$ is contracted, we have $B\otimes_A A/\mf a\ne0$. Indeed, $B\otimes_A A/\mf a\simeq B/\mf a^{\oo e}$ and $\oo{Ker}(A/\mf a\to B\otimes_A A/\mf a)\simeq\mf a^{\oo{ec}}/\mf a$. %(Compare with Section~\ref{43b} p.~\pageref{43b}.)
+If $A\to B$ is a morphism, then an ideal $\aaa$ of $A$ is contracted if and only if the natural map $A/\aaa\to B\otimes_A A/\aaa$ is injective. In particular, if a proper ideal $\aaa$ is contracted, we have $B\otimes_A A/\aaa\ne0$. Indeed, $B\otimes_A A/\aaa\simeq B/\aaa^{\oo e}$ and $\oo{Ker}(A/\aaa\to B\otimes_A A/\aaa)\simeq\aaa^{\oo{ec}}/\aaa$. %(Compare with Section~\ref{43b} p.~\pageref{43b}.)
 
 \subsection{Page 29, Proposition 2.19}%
 
@@ -1406,7 +1406,7 @@ and also to
 
 \subsection{Page 35, Exercise 2.28}\label{228}%
 
-An absolutely flat local ring is a field: This follows immediately from Property~(iv) above (Section~\ref{227}) and Exercise 1.12 p.~11 of the book (see Section~\ref{112} p.~\pageref{112} above). %Let $(A,\mf m)$ be our local ring and let $\mu$ be in $\mf m$. It suffices to show $\mu=0$. If we had $\mu\ne0$, we would get $(\mu)=(e)$ for some nonzero idempotent $e$ (see end of Section \ref{227} above). Then $e\in\mf m=\mf R$ would imply that $f:=1-e$ is a unit, hence $f=f^2$ entails $f=1$ and thus $e=0$, a contradiction. 
+An absolutely flat local ring is a field: This follows immediately from Property~(iv) above (Section~\ref{227}) and Exercise 1.12 p.~11 of the book (see Section~\ref{112} p.~\pageref{112} above). %Let $(A,\mmm)$ be our local ring and let $\mu$ be in $\mmm$. It suffices to show $\mu=0$. If we had $\mu\ne0$, we would get $(\mu)=(e)$ for some nonzero idempotent $e$ (see end of Section \ref{227} above). Then $e\in\mmm=\mf R$ would imply that $f:=1-e$ is a unit, hence $f=f^2$ entails $f=1$ and thus $e=0$, a contradiction. 
 
 \section{About Chapter 3}%%
 
@@ -1491,13 +1491,13 @@ Here is a mild generalization:
 
 \emph{The complex of $A$-modules $M\xr fN\xr g P$ is exact if and only if the complex} 
 $$
-M_{\mf m}\xr{f_{\mf m}}N_{\mf m}\xr{g_{\mf m}}P_{\mf m}
+M_\mmm\xr{f_\mmm}N_\mmm\xr{g_\mmm}P_\mmm
 $$ 
-\emph{is exact for all maximal ideal $\mf m$ of} $A$.
+\emph{is exact for all maximal ideal $\mmm$ of} $A$.
 \begin{proof}
 Use the isomorphism 
 $$
-\oo{Ker}(g_{\mf m})/\oo{Im}(f_{\mf m})\simeq(\oo{Ker}(g)/\oo{Im}(f))_{\mf m}
+\oo{Ker}(g_\mmm)/\oo{Im}(f_\mmm)\simeq(\oo{Ker}(g)/\oo{Im}(f))_\mmm
 $$ 
 and Proposition 3.8 of the book.
 \end{proof}
@@ -1508,31 +1508,31 @@ and Proposition 3.8 of the book.
 
 $\bu $ Here is a more detailed proof of the statement 
 
-\emph{If $\mf a$ is an ideal in $A$, then $\mf a^{\oo{ec}}=\bigcup_{s\in S}\ (\mf a:s)$}.
+\emph{If $\aaa$ is an ideal in $A$, then $\aaa^{\oo{ec}}=\bigcup_{s\in S}\ (\aaa:s)$}.
 
 We have 
 
-$x\in\mf a^{\oo{ec}}=(S^{-1}\mf a)^{\oo c}$
+$x\in\aaa^{\oo{ec}}=(S^{-1}\aaa)^{\oo c}$
 
-$\ds\iff\frac{x}{1}=\frac{a}{s'}$ for some $a\in\mf a,s'\in S$ 
+$\ds\iff\frac{x}{1}=\frac{a}{s'}$ for some $a\in\aaa,s'\in S$ 
 
-$\iff(xs'-a)t'=0$ for some $a\in\mf a$ and some $s',t'\in S$ 
+$\iff(xs'-a)t'=0$ for some $a\in\aaa$ and some $s',t'\in S$ 
 
-$\iff xst\in\mf a$ for some $s,t\in S$
+$\iff xst\in\aaa$ for some $s,t\in S$
 
-$\iff xs\in\mf a$ for some $s\in S$
+$\iff xs\in\aaa$ for some $s\in S$
 
-$\iff x\in\bigcup_{s\in S}\ (\mf a:s)$.
+$\iff x\in\bigcup_{s\in S}\ (\aaa:s)$.
 
 To prove 
 
-$xst\in\mf a$ for some $s,t\in S$ $\implies$ $(xs'-a)t'=0$ for some $a\in\mf a$ and some $s',t'\in S$
+$xst\in\aaa$ for some $s,t\in S$ $\implies$ $(xs'-a)t'=0$ for some $a\in\aaa$ and some $s',t'\in S$
 
 we set $a:=xst$, $s':=st$, $t':=1$.%\bigskip%\hrule\bigskip\textbf{Comment.} 
 
 $\bu$ A particular case of the statement 
 
-\emph{$\mf a^{\oo e}=(1)$ if and only if $\mf a$ meets $S$}
+\emph{$\aaa^{\oo e}=(1)$ if and only if $\aaa$ meets $S$}
 
 is 
 
@@ -1584,10 +1584,10 @@ The commutative diagram
 $$
 \begin{tikzcd}
 \kern-22pt\ppp<A\ar[d,"\alpha"']\ar[r,"f"]&B>\ppp B\ar[d,"\beta"]\kern-30pt\\ 
-\kern-22pt\ppp_\ppp<A_\ppp\ar[r,"f_\ppp"']&B_\ppp>\mf m\supset\ppp B_\ppp\kern-66pt.
+\kern-22pt\ppp_\ppp<A_\ppp\ar[r,"f_\ppp"']&B_\ppp>\mmm\supset\ppp B_\ppp\kern-66pt.
 \end{tikzcd}
 $$ 
-might help. Note that we have $f_\ppp^{-1}(\mf m)=\ppp_\ppp$.
+might help. Note that we have $f_\ppp^{-1}(\mmm)=\ppp_\ppp$.
 
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 
@@ -1605,9 +1605,9 @@ Proposition 3.16 can also be stated as follows:
 
 The proofs of these statements are straightforward and elementary. We'll prove (c), the proofs of (a) and (b) being similar and left to the reader.
 
-To prove (c), let $\mf q$ be a maximal element of $\Sigma$. Assume by contradiction that $\mf q$ is not prime. Then there are ideals $\mf{b,b}'$ in $B$ such that $\mf q\not\supset\mf b$, $\mf q\not\supset\mf b'$, $\mf q\supset\mf{bb}'$. Replacing $\mf b$ and $\mf b'$ with $\mf b+\mf q$ and $\mf b'+\mf q$, we can assume that $\mf q$ is a proper sub-ideal of $\bbb$ and $\bbb'$. By maximality of $\mf q$, the prime ideal $\aaa$ is a proper sub-ideal of $\bbb^{\oo c}$ and $\bbb'^{\oo c}$. By Exercise 1.18 p.~10 we also have 
+To prove (c), let $\qqq$ be a maximal element of $\Sigma$. Assume by contradiction that $\qqq$ is not prime. Then there are ideals $\mf{b,b}'$ in $B$ such that $\qqq\not\supset\bbb$, $\qqq\not\supset\bbb'$, $\qqq\supset\mf{bb}'$. Replacing $\bbb$ and $\bbb'$ with $\bbb+\qqq$ and $\bbb'+\qqq$, we can assume that $\qqq$ is a proper sub-ideal of $\bbb$ and $\bbb'$. By maximality of $\qqq$, the prime ideal $\aaa$ is a proper sub-ideal of $\bbb^{\oo c}$ and $\bbb'^{\oo c}$. By Exercise 1.18 p.~10 we also have 
 $$
-\bbb^{\oo c}\bbb'^{\oo c}\subset(\mf{bb}')^{\oo c}\subset\mf q^{\oo c}=\aaa,
+\bbb^{\oo c}\bbb'^{\oo c}\subset(\mf{bb}')^{\oo c}\subset\qqq^{\oo c}=\aaa,
 $$ 
 in contradiction with the primality of $\aaa$.
 
@@ -1770,15 +1770,15 @@ a=a^2x\implies\frac{a^2}{s^2}\frac{sx}1=\frac{ax^2s}{s^2}=\frac as\ .
 $$ 
 (ii) Note that the statement to prove is equivalent to any of the following two statements:
 
-$\bu\ A$ is absolutely flat if and only if for all maximal ideal $\mf m$ of $A$ we have $\mf m_{\mf m}=(0)$.
+$\bu\ A$ is absolutely flat if and only if for all maximal ideal $\mmm$ of $A$ we have $\mmm_\mmm=(0)$.
 
-$\bu\ A$ is absolutely flat if and only if for all $\mu\in\mf m\subset A$ with $\mf m$ maximal, there is an $s\in A\setminus\mf m$ such that $s\mu=0$. 
+$\bu\ A$ is absolutely flat if and only if for all $\mu\in\mmm\subset A$ with $\mmm$ maximal, there is an $s\in A\setminus\mmm$ such that $s\mu=0$. 
 
 Let us show that $A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maximal ideal $\mmm$. 
 
-If $A$ is absolutely flat, then so is $A_{\mf m}$ by Part (i) of the same Exercise, and $A_{\mf m}$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). 
+If $A$ is absolutely flat, then so is $A_\mmm$ by Part (i) of the same Exercise, and $A_\mmm$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). 
 
-Conversely, assume that $A_{\mf m}$ is a field for each maximal ideal $\mf m$ of $A$, and let $a$ be in $A$. We have $(a^2)_{\mf m}=(a)_{\mf m}$ for all maximal $\mf m$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
+Conversely, assume that $A_\mmm$ is a field for each maximal ideal $\mmm$ of $A$, and let $a$ be in $A$. We have $(a^2)_\mmm=(a)_\mmm$ for all maximal $\mmm$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
 
 \subsection{Page 44, Exercise 3.11}%
 
@@ -1804,14 +1804,14 @@ $(\star)$ There are elements $a\in\ppp_y\setminus\ppp_x$, $b\in\ppp_x\setminus\p
 
 Statement $(\star)$ implying that $X_a$ and $X_b$ are disjoint open neighborhoods of $x$ and $y$ respectively, it suffices to prove $(\star)$.
 
-Assume $(\star)$ is false. Then $S:=(A\setminus\ppp_x)(A\setminus\ppp_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mf m$ in $S^{-1}A$. The contraction $\mmm^{\oo c}$ of $\mmm$ in $A$ is a prime, and thus maximal, ideal contained in $A\setminus S\subset\ppp_x$ (because $A\setminus\ppp_x\subset S$). This implies $\mmm^{\oo c}=\ppp_x$. Similarly we have $\mmm^{\oo c}=\ppp_y$. As $\ppp_x\ne\ppp_y$, this is a contradiction. %$\mmm^{\oo c}\subset\ppp_y$, and thus $\mmm^{\oo c}\subset\ppp_x\cap\ppp_y$. This is a contradiction because $\mmm^{\oo c}$, $\ppp_x$ and $\ppp_y$ are maximal, and $\ppp_x\ne\ppp_y$. 
+Assume $(\star)$ is false. Then $S:=(A\setminus\ppp_x)(A\setminus\ppp_y)$ is a multiplicatively closed subset avoiding $0$, hence $S^{-1}A$ is not the zero ring, hence there is a maximal ideal $\mmm$ in $S^{-1}A$. The contraction $\mmm^{\oo c}$ of $\mmm$ in $A$ is a prime, and thus maximal, ideal contained in $A\setminus S\subset\ppp_x$ (because $A\setminus\ppp_x\subset S$). This implies $\mmm^{\oo c}=\ppp_x$. Similarly we have $\mmm^{\oo c}=\ppp_y$. As $\ppp_x\ne\ppp_y$, this is a contradiction. %$\mmm^{\oo c}\subset\ppp_y$, and thus $\mmm^{\oo c}\subset\ppp_x\cap\ppp_y$. This is a contradiction because $\mmm^{\oo c}$, $\ppp_x$ and $\ppp_y$ are maximal, and $\ppp_x\ne\ppp_y$. 
 $\square$
 
 At this point we know that (ii), (iii) and (iv) are equivalent.
 
-Introduce the following notation: For any ideal $\mf a$ of any ring $R$ write $\overline\aaa$ for the image of $\mf a$ in $\overline R:=R/\mf N(R)$, and define $\overline r\in\overline R$ for $r\in R$ similarly.
+Introduce the following notation: For any ideal $\aaa$ of any ring $R$ write $\overline\aaa$ for the image of $\aaa$ in $\overline R:=R/\mf N(R)$, and define $\overline r\in\overline R$ for $r\in R$ similarly.
 
-(i)$\implies$(ii): Let $A/\mathfrak N$ be absolutely flat and assume by contradiction that there is a prime ideal $\ppp$ strictly contained in a maximal ideal $\mf m$. Let us denote this situation by $\ppp<\mf m$. Then we get firstly $\overline\ppp<\overline\mmm$ with $\overline\ppp$ prime and $\overline\mmm$ maximal, and secondly $\overline\ppp_{\overline\mmm}<\overline\mmm_{\overline\mmm}$ with $\overline\ppp_{\overline\mmm}$ prime and $\overline\mmm_{\overline\mmm}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310} above) implies $\overline\mmm_{\overline\mmm}=(\overline0)$. $\square$
+(i)$\implies$(ii): Let $A/\mathfrak N$ be absolutely flat and assume by contradiction that there is a prime ideal $\ppp$ strictly contained in a maximal ideal $\mmm$. Let us denote this situation by $\ppp<\mmm$. Then we get firstly $\overline\ppp<\overline\mmm$ with $\overline\ppp$ prime and $\overline\mmm$ maximal, and secondly $\overline\ppp_{\overline\mmm}<\overline\mmm_{\overline\mmm}$ with $\overline\ppp_{\overline\mmm}$ prime and $\overline\mmm_{\overline\mmm}$ maximal. But Exercise 3.10ii p.~44 of the book (see Section~\ref{310} above) implies $\overline\mmm_{\overline\mmm}=(\overline0)$. $\square$
 
 % comment removed https://docs.google.com/document/d/14jVzaDzT3fBsM44o-TqK-vj3Y-ffV171uFQfRRwIR9g/edit
 
@@ -1858,9 +1858,9 @@ which implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\
 
 \subsection{Page 45, Exercise 3.14}%
 
-Let $\mf m$ be a maximal ideal of $A/\mf a$. It suffices to show $(M/\mf aM)_\mmm=0$. Letting $\mf m^{\oo c}$ be the contraction of $\mf m$ in $A$, we get 
+Let $\mmm$ be a maximal ideal of $A/\aaa$. It suffices to show $(M/\aaa M)_\mmm=0$. Letting $\mmm^{\oo c}$ be the contraction of $\mmm$ in $A$, we get 
 $$
-(M/\mf aM)_\mmm\simeq(M/\mf aM)_{\mf m^{\oo c}}\simeq M_{\mf m^{\oo c}}/(\mf aM)_{\mf m^{\oo c}}=0.
+(M/\aaa M)_\mmm\simeq(M/\aaa M)_{\mmm^{\oo c}}\simeq M_{\mmm^{\oo c}}/(\aaa M)_{\mmm^{\oo c}}=0.
 $$ 
 
 \subsection{Page 45, Exercise 3.15}%
@@ -1974,13 +1974,13 @@ A(X_f):=S(f)^{-1}A.
 $$ 
 Here is a mild generalization: 
 
-For each radical ideal $\mf a$ of $A$ put 
+For each radical ideal $\aaa$ of $A$ put 
 $$
-S_{\mf a}:=A\ \setminus\ \bigcup_{\ppp\not\supset\mf a}\ \ppp.
+S_\aaa:=A\ \setminus\ \bigcup_{\ppp\not\supset\aaa}\ \ppp.
 $$ 
-This is multiplicatively closed. For $\mf a\subset\mf b$ we have a natural morphism $S_{\mf b}^{-1}A\to S_{\mf a}^{-1}A$. We also have a canonical isomorphism 
+This is multiplicatively closed. For $\aaa\subset\bbb$ we have a natural morphism $S_{\bbb}^{-1}A\to S_\aaa^{-1}A$. We also have a canonical isomorphism 
 $$
-\varinjlim_{\mf a\not\subset\ppp}S_{\mf a}^{-1}A\simeq A_\ppp.
+\varinjlim_{\aaa\not\subset\ppp}S_\aaa^{-1}A\simeq A_\ppp.
 $$
 
 \subsection{Page 47, Exercise 3.24}%
@@ -1991,7 +1991,7 @@ Step 1: $I=\{1,\dots,n\}$. Consider the diagram
 $$
 0\to A\xr\alpha\prod_{i\in I}A_{f_i}\xr\beta\prod_{i,j\in I}A_{f_if_j}
 $$ 
-defined by $\alpha(a):=(a_{|i})$ and $\beta((a_i)):=((a_{i|j}-a_{j|i}))$. This is clearly a complex. It suffices to show that it is exact. By Section~\ref{re} p.~\pageref{re}, we can assume that $A$ is local. Let $\mf m$ be its maximal ideal. As the $f_i$ generate the unit ideal, one of them is a unit, so that we can assume $f_1=1$. It is easy to see that $\alpha$ is injective. Assuming $\beta((a_i))=0$, it is straightforward to check that $(a_i)$ is equal to $\alpha(a_1)$. This solves the exercise in the case $I=\{1,\dots,n\}$.
+defined by $\alpha(a):=(a_{|i})$ and $\beta((a_i)):=((a_{i|j}-a_{j|i}))$. This is clearly a complex. It suffices to show that it is exact. By Section~\ref{re} p.~\pageref{re}, we can assume that $A$ is local. Let $\mmm$ be its maximal ideal. As the $f_i$ generate the unit ideal, one of them is a unit, so that we can assume $f_1=1$. It is easy to see that $\alpha$ is injective. Assuming $\beta((a_i))=0$, it is straightforward to check that $(a_i)$ is equal to $\alpha(a_1)$. This solves the exercise in the case $I=\{1,\dots,n\}$.
 
 Step 2: $I$ arbitrary. Let $(s_i)$ be a family such that $s_i\in A_{f_i}$ for all $i$ and $s_{i|j}=s_{j|i}$ for all $i,j$. There are $i_1,\dots,i_n$ such that $(f_{i_1},\dots,f_{i_n})=(1)$ and, by Step~1, there is an $s\in A$ such that $s_{|i_k}=s_{i_k}$ for $1\le k\le n$. Let $i_{n+1}$ be in $I$. There is again a $t\in A$ such that $t_{|i_k}=s_{i_k}$ for $1\le k\le n+1$. By uniqueness we get $t=s$. As $i_{n+1}$ was arbitrary, we have $s_{|i}=s_i$ for all $i$. This proves the existence of a solution to our problem. The uniqueness is clear.
 
@@ -2067,21 +2067,21 @@ The following statement, occurring in the proof of Theorem 4.5, is often used in
 
 {\em In the setting of Theorem 4.5 we have} 
 \begin{equation}\label{45}
-r(\mf a:x)=\bigcap_{x\notin\mf q_j}\ppp_j.
+r(\aaa:x)=\bigcap_{x\notin\qqq_j}\ppp_j.
 \end{equation}
-(See Note~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\mf q_j\}$. Then $(\mf q_j:x)$ is $\ppp_j$-primary for $j\in J(x)$, and we have 
+(See Note~\ref{ef} p.~\pageref{ef}). Here are more details. Still in the setting and notation of Theorem 4.5, for $x$ in $A$ set $J(x):=\{j\ |\ x\notin\qqq_j\}$. Then $(\qqq_j:x)$ is $\ppp_j$-primary for $j\in J(x)$, and we have 
 $$
-(\mf a:x)=\bigcap_{j\in J(x)}(\mf q_j:x).
+(\aaa:x)=\bigcap_{j\in J(x)}(\qqq_j:x).
 $$ 
 In particular, we have $J(x_i)=\{i\}$, and thus 
 $$
-(\mf a:x_i)=(\mf q_i:x_i),\quad r(\mf a:x_i)=\ppp_i.
+(\aaa:x_i)=(\qqq_i:x_i),\quad r(\aaa:x_i)=\ppp_i.
 $$
 
 \subsection{Page 52, Corollary to Proposition 4.6}%
 
 \begin{note}\label{fmme}
-If $\mf a$ is decomposable, then the set of prime ideals containing $\mf a$ has only finitely many minimal elements.
+If $\aaa$ is decomposable, then the set of prime ideals containing $\aaa$ has only finitely many minimal elements.
 \end{note}
 
 \subsection{Page 53, decomposable ideals}\label{di}%
@@ -2106,15 +2106,15 @@ $$
 With these two operations $A$ becomes a commutative ring with $(1,0)$ as unit element. ($A$
 is called the \emph{idealization} of the $R$-module $M$ or the \emph{trivial extension} of $R$ by $M$.)
 
-Let's list some important properties of this ring:
+Let us list some important properties of this ring:
 
-1. $\{0\}\times M$ is an ideal of $A$ isomorphic to $M$ (as $R$-modules) and there is a ono-to-one correspondence between the ideals of $R$ and the ideals of $A$ containing $\{0\}\times M$, the ideal $\mf a\subset R$ corresponding to $\mf a\times M\subset A$.
+1. $\{0\}\times M$ is an ideal of $A$ isomorphic to $M$ (as $R$-modules) and there is a ono-to-one correspondence between the ideals of $R$ and the ideals of $A$ containing $\{0\}\times M$, the ideal $\aaa\subset R$ corresponding to $\aaa\times M\subset A$.
 
 2. $A$ is a Noetherian ring if and only if $R$ is Noetherian and $M$ is finitely generated.
 
 3. All prime (maximal) ideals of $A$ have the form $\ppp\times M$, where $\ppp$ is a prime (maximal) ideal of $R$.
 
-4. If $R$ is an integral domain and $M$ is divisible, then all the ideals of $A$ have the form $\mf a\times M$ with $\mf a$ ideal of $R$, or $\{0\}\times N$ with $N$ submodule of $M$.\bigskip\bigskip
+4. If $R$ is an integral domain and $M$ is divisible, then all the ideals of $A$ have the form $\aaa\times M$ with $\aaa$ ideal of $R$, or $\{0\}\times N$ with $N$ submodule of $M$.\bigskip\bigskip
 
 \hrule\bigskip%
 
@@ -2131,7 +2131,7 @@ $\bullet\quad\{0\}\times\{0\}$.
 
 Moreover $\{0\}\times\mathbb Q$ is the only minimal prime of $\{0\}\times\mathbb Z$, and $\{0\}\times\mathbb Z$ has no primary decomposition (see Note~\ref{fmme}).
 \end{note}\bigskip
-%Then $\mf a:=\{0\}\times\mathbb Z$ has only one minimal prime $\{0\}\times\mathbb Q$ and $\mf a$ has no primary decomposition.\bigskip%https://math.stackexchange.com/a/1679116/660
+%Then $\aaa:=\{0\}\times\mathbb Z$ has only one minimal prime $\{0\}\times\mathbb Q$ and $\aaa$ has no primary decomposition.\bigskip%https://math.stackexchange.com/a/1679116/660
 
 \hrule\bigskip
 
@@ -2381,7 +2381,7 @@ and we must show $\aaa=0\iff m=n$. Implication $\Longleftarrow$ is clear. Conver
 
 Follows from statements 1.18, 3.11ii, 3.11v and 4.9 in the book.
 
-\subsection{Page 56, Exercise 4.13}%£
+\subsection{Page 56, Exercise 4.13}%
 
 The Exercise is an easy consequence of Corollary~\ref{410}b p.~\pageref{410} and the following Lemmas:
 
@@ -2479,7 +2479,7 @@ Then every ideal in $A$ is an intersection of (possibly infinitely many) primary
 
 \subsubsection{First solution}%
 
-Let $\aaa'$ be the intersection of all the primary ideals containing $\aaa$, and let's assume  
+Let $\aaa'$ be the intersection of all the primary ideals containing $\aaa$, and let us assume  
 \begin{equation}\label{abs417}
 \aaa<\aaa'.
 \end{equation} 
@@ -2508,7 +2508,7 @@ $\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$.
 \end{lem}
 
 \begin{proof}
-Part (a) follows from Assumption (L1). Part (b1) follows from Exercise 4.11 p.~56 of the book (see Section~\ref{411} p.~\pageref{411} above). Let's prove (b2). Set $\bbb':=\mathfrak q\cap(\bbb+(x))$. The inclusion $\bbb\subset\bbb'$ is obvious. To prove the other inclusion, let $\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to show $ax\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. As $ax\in\qqq$, we have $ax^2\in\bbb$, hence 
+Part (a) follows from Assumption (L1). Part (b1) follows from Exercise 4.11 p.~56 of the book (see Section~\ref{411} p.~\pageref{411} above). Let us prove (b2). Set $\bbb':=\mathfrak q\cap(\bbb+(x))$. The inclusion $\bbb\subset\bbb'$ is obvious. To prove the other inclusion, let $\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to show $ax\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. As $ax\in\qqq$, we have $ax^2\in\bbb$, hence 
 $$
 a\in(\bbb:x^2)\subset\bigcup_{s\notin\ppp}\ (\bbb:s)=S_{\ppp}(\bbb)=(\bbb:x)
 $$ 
@@ -2718,7 +2718,7 @@ It suffices to show that $\zeta$ in finite.
 
 Assume by contradiction that $\zeta$ is infinite.
 
-Recall that \eqref{e417c} p.~\pageref{e417c} is called Condition $\oo C(\alpha)$, and that $\qqq_\alpha$ is primary for all $\alpha<\zeta$. For the reader's convenience let's rewrite $\oo C(\alpha)$:
+Recall that \eqref{e417c} p.~\pageref{e417c} is called Condition $\oo C(\alpha)$, and that $\qqq_\alpha$ is primary for all $\alpha<\zeta$. For the reader's convenience let us rewrite $\oo C(\alpha)$:
 $$
 \aaa=\aaa_\alpha\cap\bigcap_{\beta<\alpha}\qqq_\beta.
 $$ 
@@ -3015,25 +3015,25 @@ This follows from Corollary~\ref{aimc11} and Theorem~\ref{somaya}.
 
 Here is a slightly stronger statement: 
 
-\emph{Let $A$ be a subring of a ring $B$ such that $B$ is integral over $A$; let $\mf q,\mf b$ be ideals of $B$ such that $\mf q$ is prime, $\mf q\subset\mf b$ and $\mf q^{\oo c}=\mf b^{\oo c}=\ppp$ say. Then $\mf q=\mf b$.}
+\emph{Let $A$ be a subring of a ring $B$ such that $B$ is integral over $A$; let $\qqq,\bbb$ be ideals of $B$ such that $\qqq$ is prime, $\qqq\subset\bbb$ and $\qqq^{\oo c}=\bbb^{\oo c}=\ppp$ say. Then $\qqq=\bbb$.}
 
-Proof. Arguing as in the book, we see that $\ppp_\ppp\subset A_\ppp$ and $\mf q_\ppp\subset B_\ppp$ are maximal, and that we have $\mf q_\ppp\subset\mf b_\ppp\subset B_\ppp$. Proposition 3.11ii p.~41 of the book implies $\mf b_\ppp\ne B_\ppp$, and thus $\mf q_\ppp=\mf b_\ppp$. If $b$ is in $\mf b$, we get $b/1=q/s$ for some $q$ in $\mf q$ and some $s$ in $A\setminus\ppp$, then $tb\in\mf q$ for some $t$ in $A\setminus\ppp$, and thus $b\in\mf q$. $\square$
+Proof. Arguing as in the book, we see that $\ppp_\ppp\subset A_\ppp$ and $\qqq_\ppp\subset B_\ppp$ are maximal, and that we have $\qqq_\ppp\subset\bbb_\ppp\subset B_\ppp$. Proposition 3.11ii p.~41 of the book implies $\bbb_\ppp\ne B_\ppp$, and thus $\qqq_\ppp=\bbb_\ppp$. If $b$ is in $\bbb$, we get $b/1=q/s$ for some $q$ in $\qqq$ and some $s$ in $A\setminus\ppp$, then $tb\in\qqq$ for some $t$ in $A\setminus\ppp$, and thus $b\in\qqq$. $\square$
 
 \subsection{Page 62, proof of Corollary 5.9}%
 
-Let $A\subset B$ be rings, let $\mf q$ be a prime ideal of $B$ and set $\ppp:=A\cap\mf q$:
+Let $A\subset B$ be rings, let $\qqq$ be a prime ideal of $B$ and set $\ppp:=A\cap\qqq$:
 $$
 \begin{tikzcd}
 A\ar[d,"\alpha"']\ar[r,hook]&B\ar[d,"\beta"]\\ 
 A_\ppp\ar[r,hook]&B_\ppp.
 \end{tikzcd}
 $$
-Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$.
-%We claim $A_\ppp\cap\mf q_\ppp=\ppp_\ppp$. Set $S:=A\setminus\ppp$. As $S\cap\mf q=S\cap A\cap\mf q=S\cap\ppp=\varnothing$, we see that $\mf q_\ppp$ is prime, and it suffices to show $\ppp_\ppp\subset\mf q_\ppp$, which is clear.
+Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\qqq_\ppp=\ppp_\ppp$.
+%We claim $A_\ppp\cap\qqq_\ppp=\ppp_\ppp$. Set $S:=A\setminus\ppp$. As $S\cap\qqq=S\cap A\cap\qqq=S\cap\ppp=\varnothing$, we see that $\qqq_\ppp$ is prime, and it suffices to show $\ppp_\ppp\subset\qqq_\ppp$, which is clear.
 
 \subsection{Page 62, Theorem 5.10}\label{510}%
 
-Let $\mf b$ be an ideal of $B$, let $\mf a$ be its contraction in $A$, and assume $\mf a\subset\ppp$. Then it is easy to see that $\mf q$ can be chosen among the prime ideals of $B$ containing $\mf b$. 
+Let $\bbb$ be an ideal of $B$, let $\aaa$ be its contraction in $A$, and assume $\aaa\subset\ppp$. Then it is easy to see that $\qqq$ can be chosen among the prime ideals of $B$ containing $\bbb$. 
 
 Also note that Corollary 5.8 and Theorem 5.10 imply that an ideal of $A$ is maximal if and only if it is the contraction of a maximal ideal of $B$. 
 
@@ -3049,27 +3049,27 @@ Here is an example of a domain which is \emph{not} integrally closed. Let $k$ be
 
 \subsection{Page 63}%
 
-If $A\subset D$ are domains, and if $\mf a$ is an ideal of $A$, then we denote the extension of $\mf a$ in $D$ by $D\,\mf a$, and the integral closure of $\mf a$ in $D$ by $D*\mf a$. 
+If $A\subset D$ are domains, and if $\aaa$ is an ideal of $A$, then we denote the extension of $\aaa$ in $D$ by $D\,\aaa$, and the integral closure of $\aaa$ in $D$ by $D*\aaa$. 
 
 Lemma 5.14 says
 \begin{equation}\label{514}
-D*\mf a=r\Big((D*A)\,\mf a\Big).
+D*\aaa=r\Big((D*A)\,\aaa\Big).
 \end{equation}
-In particular $D*\mf a$ is an ideal of $D*A$. 
+In particular $D*\aaa$ is an ideal of $D*A$. 
 
-In the proof of Proposition 5.15, we have the inclusions $\mf a\subset A\subset L$. Let 
+In the proof of Proposition 5.15, we have the inclusions $\aaa\subset A\subset L$. Let 
 $$
 x^m+a_1x^{m-1}+\cdots+a_m
 $$ 
-be the minimal polynomial of $x$ over $K$. Each $a_j$ being in the ideal $(x_1,\dots,x_n)$ of $L*A$ generated by the $x_i$, and each $x_i$ being in the set $L*\mf a$, which is an ideal of $L*A$ by \eqref{514}, we get 
+be the minimal polynomial of $x$ over $K$. Each $a_j$ being in the ideal $(x_1,\dots,x_n)$ of $L*A$ generated by the $x_i$, and each $x_i$ being in the set $L*\aaa$, which is an ideal of $L*A$ by \eqref{514}, we get 
 $$
-a_j\in(L*\mf a)\cap K=K*\mf a=r\Big((K*A)\,\mf a\Big)=r(A\,\mf a)=r(\mf a)
+a_j\in(L*\aaa)\cap K=K*\aaa=r\Big((K*A)\,\aaa\Big)=r(A\,\aaa)=r(\aaa)
 $$ 
 for all $j$ (the second equality following from \eqref{514}).
 
 \subsection{Page 64, proof of Theorem 5.16}%
 
-Last line of the first paragraph of the proof: It suffices to show $B_{\mf q_1}\ppp_2\cap A\subset\ppp_2$.
+Last line of the first paragraph of the proof: It suffices to show $B_{\qqq_1}\ppp_2\cap A\subset\ppp_2$.
 
 \subsection{Page 65}\label{65}%
 
@@ -3122,14 +3122,14 @@ Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``le
 
 \subsection{Page 67, Exercise 5.2}\label{67}%
 
-Set $\ppp:=\oo{Ker}f$ and let $\mf q\subset B$ be given by Theorem 5.10 p.~62. Our problem can be summarized as follows: 
+Set $\ppp:=\oo{Ker}f$ and let $\qqq\subset B$ be given by Theorem 5.10 p.~62. Our problem can be summarized as follows: 
 $$
 \begin{tikzcd}
-A/\ppp\ar[r,tail]\ar[d,tail]&B/\mf q\ar[dl,dashrightarrow]\\ 
+A/\ppp\ar[r,tail]\ar[d,tail]&B/\qqq\ar[dl,dashrightarrow]\\ 
 \Omega.
 \end{tikzcd}
 $$ 
-Writing $K$ and $L$ for the respective fields of fractions of $A/\ppp$ and $B/\mf q$, our problem becomes  
+Writing $K$ and $L$ for the respective fields of fractions of $A/\ppp$ and $B/\qqq$, our problem becomes  
 $$
 \begin{tikzcd}
 K\ar[r,tail]\ar[d,tail]&L\ar[dl,dashrightarrow]\\ 
@@ -3218,13 +3218,13 @@ In fact $K\left[x,\sqrt{x^2-1}\right]$ is integrally closed, and thus Dedekind.
 
 % comment removed https://docs.google.com/document/d/1NKkrn0BuWcYpctyKk6r9vilhUgX1kuq2_yuWuMwkFS8/edit
 
-\subsection{Page 67, Exercise 5.4}%
+\subsection{Page 67, Exercise 5.4}%£
 
 The characteristic of $k$ must be $\ne2$. The last sentence of the hint should be "Can the element $1/(x + 1)$ be integral over $k[x^2-1]_{(x^2-1)}$?" 
 
 Note that 
 $$
-k[x^2-1]_{(x^2-1)}=\left\{\frac{f(x^2-1)}{g(x^2-1)}\ \bigg|\ f,g\in k[t]\right\},
+k[x^2-1]_{(x^2-1)}=\left\{\frac{f(x^2-1)}{g(x^2-1)}\ \bigg|\ f,g\in k[t],g(0)\ne0\right\},
 $$ 
 and, if $1/(x + 1)$ was integral over $k[x^2-1]_{(x^2-1)}$, we would get 
 $$
@@ -3242,17 +3242,23 @@ Statement: Let $A\subset B$ be rings, $B$ integral over $A$.
 
 Solution: 
 
-(i) Let $a$ be an element of $A$ which has an inverse in $B$. If $a$ was not a unit of $A$, there would be a maximal ideal $\mmm$ of $A$ containing $a$, and the second paragraph of Section~\ref{510} p.~\pageref{510} above would imply the existence of some maximal ideal of $B$ containing $a$, contradicting the invertibility of $a$ in $B$. 
+(i) Let $a$ be an element of $A$ which has an inverse in $B$. If $a$ was not a unit of $A$, there would be a prime ideal $\ppp$ %maximal ideal $\mmm$ 
+of $A$ containing $a$, and, by Theorem 5.10 p.~62 of the book, a prime ideal $\qqq$ of $B$ containing $a$, %the second paragraph of Section~\ref{510} p.~\pageref{510} above would imply the existence of some maximal ideal of $B$ containing $a$, 
+contradicting the invertibility of $a$ in $B$. 
 
-(ii) In the lines below $\mmm$ and $\nnn$ run respectively over the maximal ideal of $A$ and $B$. It suffices to show $A\cap(\bigcap\nnn)=\bigcap\mmm$, that is $\bigcap(A\cap\nnn)=\bigcap\mmm$. But this follows immediately from the second paragraph of Section~\ref{510} p.~\pageref{510}. 
+(ii) In the lines below $\mmm$ and $\nnn$ run respectively over the maximal ideals of $A$ and $B$. It suffices to show $A\cap(\bigcap\nnn)=\bigcap\mmm$, that is $\bigcap(A\cap\nnn)=\bigcap\mmm$. But this follows immediately from the second paragraph of Section~\ref{510} p.~\pageref{510}. 
 
 \subsection{Page 67, Exercise 5.6}%
 
-It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy. 
+Statement: Let $B_1,\ldots,B_n$ be integral $A$-algebras. Show that $\prod B_i$ is an integral $A$-algebra.
+
+Solution: It suffices to show that $(0,\dots,0,b_i,0,\dots,0)$ is integral over $A$, which is easy. 
 
 \subsection{Page 67, Exercise 5.7}% 
 
-Assume by contradiction that $b\in B\setminus A$ is integral over $A$. We have 
+Statement: Let $A$ be a subring of a ring $B$, such that the set $B\setminus A$ is closed under multiplication. Show that $A$ is integrally closed in $B$.
+
+Solution: Assume by contradiction that $b\in B\setminus A$ is integral over $A$. We have 
 $$
 b^n+a_1b^{n-1}+\cdots+a_n=0
 $$ 
@@ -3282,6 +3288,8 @@ More precisely, the second term should be $$g_1\ (f_1+x^r)^{m-1}$$ instead of $$
 
 It is easy to show that (a) implies (c), and that (b) and (c) are equivalent.
 
+For the phrase ``and therefore contains $\Spec(A_\ppp)$'' at the end of the hint, see Exercise 3.22 p.~47 of the book.
+
 \subsection{Page 68, Exercise 5.11}%
 
 The proof of Theorem 5.16 p.~64 of the book shows that the going-down property for $f:A\to B$ is equivalent to the condition that, for all $\qqq\in\Spec(B)$ the natural map $\Spec(B_\qqq)\to\Spec(A_{\qqq^{\oo c}})$ is surjective. 
@@ -3300,12 +3308,24 @@ x=\frac{a}{s}=\frac{at}{st}\ .
 $$ 
 In other words we can assume that the denominator $s$ of our fraction $x=a/s$ is invariant.
 
-Step 2. For $\sigma\in G$ we have $\sigma(a)/s=a/s$, that is $\sigma(a)st_\sigma=ast_\sigma$ for some $t_\sigma\in S$. Arguing as in Step~1 we can assume that the $t_\sigma$ are invariant.
+Step 2. For $\sigma\in G$ we have $\sigma(a)/s=a/s$, that is $\sigma(a)st_\sigma=ast_\sigma$ for some $t_\sigma\in S$. Arguing as in Step~1 we can assume that the $t_\sigma$ are invariant. 
+
+Details: Set 
+$$
+u_\sigma:=\prod_{\tau\ne1}\tau(t_\sigma).
+$$ 
+Then $t_\sigma u_\sigma$ is invariant, and we get $\sigma(a)st_\sigma u_\sigma=ast_\sigma u_\sigma$, and we can indeed assume that the $t_\sigma$ are invariant.
 
 Step 3. By a similar trick we can assume that the $t_\sigma$ are all equal to some $t\in S^G$, and we get $ast=\sigma(a)st=\sigma(ast)$, and thus 
 $$
 \frac{a}{s}=\frac{ast}{s^2t}\ .
+$$ 
+Details: Setting 
 $$
+t:=\prod_\sigma t_\sigma,\quad v_\sigma:=\prod_{\tau\ne\sigma}t_\tau,
+$$ 
+we get $t=t_\sigma v_\sigma$ and $\sigma(a)st=\sigma(a)st_\sigma v_\sigma=ast_\sigma v_\sigma=ast$.
+
 \subsection{Page 68, Exercise 5.13}%
 
 We follow the hint given in the book.
@@ -3425,19 +3445,19 @@ This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module, as 
 
 Here is a statement of \textbf{Zariski's Lemma}:
 
-(ZL)\emph{Let $k$ be a field, $A$ a finitely generated $k$-algebra. Let $\mf m$ be a maximal ideal of $A$. Then the field $A/\mf m$ is a finite algebraic extension of $k$. In particular, if $k$ is algebraically closed then $A/\mf m\simeq k$, that is, the natural morphism $k\to A/\mf m$ is an isomorphism.}
+(ZL)\emph{Let $k$ be a field, $A$ a finitely generated $k$-algebra. Let $\mmm$ be a maximal ideal of $A$. Then the field $A/\mmm$ is a finite algebraic extension of $k$. In particular, if $k$ is algebraically closed then $A/\mmm\simeq k$, that is, the natural morphism $k\to A/\mmm$ is an isomorphism.}
 
 In view of Proposition 5.7 p.~61 of the book, Zariski's Lemma follows immediately from Noether's Normalization Theorem. %In view of Proposition 5.7 p.~61 of the book, Zariski's \- Lemma follows immediately from Noether's Normalization Theorem.
 
 Here is an easy consequence of (ZL):
 
-(ZL2) \emph{Set $A:=k[t_1,\dots,t_n]$ where $k$ is an algebraically closed field and the $t_i$ are indeterminates, let $\mf m$ be a maximal ideal of $A$, let} 
+(ZL2) \emph{Set $A:=k[t_1,\dots,t_n]$ where $k$ is an algebraically closed field and the $t_i$ are indeterminates, let $\mmm$ be a maximal ideal of $A$, let} 
 $$
-k\xrightarrow\iota A\xrightarrow{\pi}A/\mf m
+k\xrightarrow\iota A\xrightarrow{\pi}A/\mmm
 $$ 
 \emph{be the canonical morphisms, and set $x_i:=(\pi\circ\iota)^{-1}(\pi(t_i))$ (recall that $\pi\circ\iota$ is bijective). Then we have} 
 $$
-\mf m=(t_1-x_1,\dots,t_n-x_n)
+\mmm=(t_1-x_1,\dots,t_n-x_n)
 $$ 
 \emph{and} 
 $$
@@ -3445,19 +3465,19 @@ $$
 $$ 
 \emph{(with $x:=(x_1,\dots,x_n)$) for all $f$ in $A$. In particular} 
 $$
-\mf m=\{f\in A\ |\ f(x)=0\}.
+\mmm=\{f\in A\ |\ f(x)=0\}.
 $$
 
 The detailed proof of (ZL2) is left to the reader.
 
 The \textbf{Nullstellensatz} is stated in Exercise 14 of Chapter 7 as follows:
 
-(N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1,\dots,t_n]$ and let $\mf a$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\mf a$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\mf a$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\mf a)$.}
+(N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1,\dots,t_n]$ and let $\aaa$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\aaa$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\aaa$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\aaa)$.}
 
 \begin{proof} 
-The inclusion $r(\mf a)\subset I(V)$ is clear. Let's prove $I(V)\subset r(\mf a)$. 
+The inclusion $r(\aaa)\subset I(V)$ is clear. Let us prove $I(V)\subset r(\aaa)$. 
 
-(ZL2) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\mf a$. As $r(\mf a)$ is the intersection of all the prime ideals of $A$ containing $\mf a$, we can assume that $\mf a$ is a prime ideal $\ppp$. Then the statement follows immediately from Exercises 5.23 and 5.24 p.~71 of the book. Here is a slightly different argument:
+(ZL2) implies that $I(V)$ is the intersection of all the maximal ideals of $A$ containing $\aaa$. As $r(\aaa)$ is the intersection of all the prime ideals of $A$ containing $\aaa$, we can assume that $\aaa$ is a prime ideal $\ppp$. Then the statement follows immediately from Exercises 5.23 and 5.24 p.~71 of the book. Here is a slightly different argument:
 
 Let $f$ be in $A\setminus\ppp$ and set $A_f:=A[1/f]$.
 
@@ -3467,9 +3487,9 @@ Claim: There is a maximal ideal of $A$ which doesn't contain $f$.
 
 We give two proofs of the claim.
 
-Proof 1. The extension $\ppp^{\oo e}$ of $\ppp$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mf m\subset A_f$ containing $\ppp^{\oo e}$. 
+Proof 1. The extension $\ppp^{\oo e}$ of $\ppp$ in $A_f$ being clearly a proper ideal, there is a maximal ideal $\mmm\subset A_f$ containing $\ppp^{\oo e}$. 
 
-Note successively that $f\notin\mf m$; that $\mf q:=\mf m\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mf m$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\mf q\mono A_f/\mf m\simeq k$ implies that $\mf q$ is a maximal ideal of $A$.
+Note successively that $f\notin\mmm$; that $\qqq:=\mmm\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mmm$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\qqq\mono A_f/\mmm\simeq k$ implies that $\qqq$ is a maximal ideal of $A$.
 
 Proof 2. By Noether's Normalization Theorem applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Exercise 5.2 %Theorem 5.10 
 p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
@@ -3482,7 +3502,7 @@ p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra m
 %As observed by the Mathematics Stackexchange user Kato here \href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660} t
 The Weak Nullstellensatz is the statement
 $$
-\mf a\ne(1)\implies V(\mf a)\ne\varnothing.
+\aaa\ne(1)\implies V(\aaa)\ne\varnothing.
 $$ 
 It is \emph{not} the trivial statement 
 $$
@@ -3505,14 +3525,14 @@ In the hint ``ii)'' should be ``i)''.
 
 \subsection{Page 71, Exercise 5.24}%
  
-Part (i). Let's prove %Here is a partial solution.
+Part (i). Let us prove %Here is a partial solution.
 
 \emph{If $A\subset B$ is an integral extension of rings and if $A$ is Jacobson, then $B$ is Jacobson.}
 
 Proof. %By Theorem 5.10 p.~62 of the book 
-We can assume that $B$ is a domain. Let $\mf b\subset B$ be the Jacobson radical of $B$. It suffices to prove $\mf b=(0)$. We have %Claim: 
-$\mf b^{\oo c}=(0)$ by Exercise 5.5 p.~67 of the book (see Section~\ref{55} p.~\pageref{55} above), and %Proof of the claim. By contradiction let $0\ne a\in\mf b^{\oo c}$, and let $\mf m$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\mf n$ of $B$ lying above $\mf m$. Then $\mf n$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\mf n\cap A=\mf m$, a contradiction.\\ %In view of 
-the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\mf b=(0)$. $\square$
+We can assume that $B$ is a domain. Let $\bbb\subset B$ be the Jacobson radical of $B$. It suffices to prove $\bbb=(0)$. We have %Claim: 
+$\bbb^{\oo c}=(0)$ by Exercise 5.5ii p.~67 of the book (see Section~\ref{55} p.~\pageref{55} above), and %Proof of the claim. By contradiction let $0\ne a\in\bbb^{\oo c}$, and let $\mmm$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\nnn$ of $B$ lying above $\mmm$. Then $\nnn$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\nnn\cap A=\mmm$, a contradiction.\\ %In view of 
+the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\bbb=(0)$. $\square$
 
 Part (ii) %of the Exercise 
 follows from Exercise 5.22 p.~70 of the book.
@@ -3614,9 +3634,9 @@ By Theorem 5.21 p.~66 of the book (see Section~\ref{521} p.~\pageref{521}), it s
 
 Assume that $A$ is not maximal in $\Sigma(K)$, so that there is a $B\in\Sigma(K)$ with $A<B$. Let $b$ be in $B\setminus A$. We have $A<A[b]=:A'\subset B$, and the proof of Theorem 5.21 p.~66 of the book (see Section~\ref{521p} p.~\pageref{521p}), shows that $(A,f)$ is not maximal in $\Phi(K,\Omega)$. 
 
-Assume that $(A,f)$ is not maximal in $\Phi(K,\Omega)$, so that there is a $(B,g)\in\Phi(K,\Omega)$ with $(A,f)<(B,g)$. By Theorem 5.21 p.~66 (see Section~\ref{521} p.~\pageref{521}) we can assume that $B$ is local. Letting $\mmm\subset A$ and $\mf n\subset B$ be the maximal ideals, we get 
+Assume that $(A,f)$ is not maximal in $\Phi(K,\Omega)$, so that there is a $(B,g)\in\Phi(K,\Omega)$ with $(A,f)<(B,g)$. By Theorem 5.21 p.~66 (see Section~\ref{521} p.~\pageref{521}) we can assume that $B$ is local. Letting $\mmm\subset A$ and $\nnn\subset B$ be the maximal ideals, we get 
 $$
-\mmm=\Ker f=B\cap\Ker g=B\cap\mf n,
+\mmm=\Ker f=B\cap\Ker g=B\cap\nnn,
 $$ 
 and thus $A<B$ in $\Sigma(K)$. 
 
@@ -3903,11 +3923,11 @@ Here is a related result:
 
 (a) \emph{the Krull dimension of $A$ is at most zero,}
 
-(b) \emph{$A/\mf n$ is absolutely flat, where $\mf n$ is the nilradical of $A$,}
+(b) \emph{$A/\nnn$ is absolutely flat, where $\nnn$ is the nilradical of $A$,}
 
 (c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
 
-\emph{Proof.} (a)$\implies$(b): We can assume $\mf n=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\ppp$ be a prime ideal of $A$. Then the nilradical of $A_\ppp$ is $(0)$ and $\ppp_\ppp$ is the only prime ideal of $A_\ppp$. This implies that $A_\ppp$ is a field, and we get successively the equalities 
+\emph{Proof.} (a)$\implies$(b): We can assume $\nnn=(0)$. Let $a$ be in $A$. It suffices to show $(a)=(a^2)$. Let $\ppp$ be a prime ideal of $A$. Then the nilradical of $A_\ppp$ is $(0)$ and $\ppp_\ppp$ is the only prime ideal of $A_\ppp$. This implies that $A_\ppp$ is a field, and we get successively the equalities 
 $$
 (a)_\ppp=(a^2)_\ppp,\quad(a)_\ppp/(a^2)_\ppp=(0),\quad((a)/(a^2))_\ppp=(0).
 $$ 
@@ -4224,20 +4244,20 @@ proving \eqref{724}.
 
 $\bu$ About Proposition 8.6. I suggest the following restatement of Proposition 8.6:
 
-\emph{Let $A$ be a Noetherian local ring, $\mf m$ its maximal ideal. Then exactly one of the following two statements is true:}
+\emph{Let $A$ be a Noetherian local ring, $\mmm$ its maximal ideal. Then exactly one of the following two statements is true:}
 
-(i) $\mf m^n\ne\mf m^{n+1}$ \emph{for all $n$ and $A$ is \emph{not} Artin};
+(i) $\mmm^n\ne\mmm^{n+1}$ \emph{for all $n$ and $A$ is \emph{not} Artin};
 
-(ii) $\mf m^n=0$ \emph{for some $n$, in which case $A$ is an Artin local ring.}
+(ii) $\mmm^n=0$ \emph{for some $n$, in which case $A$ is an Artin local ring.}
 
 In particular 
 \begin{equation}\label{86}
-A\text{ is Artin $\iff\mf m$ is nilpotent.}
-\end{equation}%Indeed, if $A$ is Artin, then, as observed before Proposition 8.6, $\mf m$ is the nilradical of $A$, and Proposition 8.5 p.~89 implies that $\mf m$ is nilpotent. 
+A\text{ is Artin $\iff\mmm$ is nilpotent.}
+\end{equation}%Indeed, if $A$ is Artin, then, as observed before Proposition 8.6, $\mmm$ is the nilradical of $A$, and Proposition 8.5 p.~89 implies that $\mmm$ is nilpotent. 
 
 $\bu$ By Proposition 8.6 and Proposition 4.2 p.~51, we have:
 
-\emph{Every proper ideal of an Artin local ring is $\mf m$-primary (where $\mf m$ is the maximal ideal).} 
+\emph{Every proper ideal of an Artin local ring is $\mmm$-primary (where $\mmm$ is the maximal ideal).} 
 
 This fact is implicitly used in the proof of Theorem 8.7.
 
@@ -4245,9 +4265,9 @@ $\bu$ It seems to me that the second part of the proof of Theorem 8.7 can be sim
 
 \subsection{Page 91, Proposition 8.8}\label{88}%
 
-Let $A$ be an Artin local ring with maximal ideal $\mf m$ and consider the condition
+Let $A$ be an Artin local ring with maximal ideal $\mmm$ and consider the condition
 
-$(*)$ there is an $x$ in $\mf m$ such that every ideal of $A$ is of the form $(x^r)$. 
+$(*)$ there is an $x$ in $\mmm$ such that every ideal of $A$ is of the form $(x^r)$. 
 
 The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the conditions (i), (ii) or (iii). 
 
@@ -4263,7 +4283,7 @@ Note that $\mathbb Z\to\mathbb Z[\frac12]$ satisfies (ii) but not (i).
 
 In the setting of Proposition 9.2, the condition
 
-(v') every non-zero ideal can be written in a unique way as a power of $\mf m$
+(v') every non-zero ideal can be written in a unique way as a power of $\mmm$
 
 is equivalent to any of the conditions (i) to (vi). The same holds for
 
@@ -4273,7 +4293,7 @@ This follows from Statement (B) in the proof of Proposition 9.2.
 
 \subsection{Page 95}%
 
-$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mf m^n$) it follows that $\mf a$ is a power of $\mf m$''. The fact that $A/\mf m^n$ is Artin follows from Proposition 8.6 p.~90 of the book (see Section~\ref{90} p.~\pageref{90} above). %Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
+$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mmm^n$) it follows that $\aaa$ is a power of $\mmm$''. The fact that $A/\mmm^n$ is Artin follows from Proposition 8.6 p.~90 of the book (see Section~\ref{90} p.~\pageref{90} above). %Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
 
 $\bu$ The proof of the equivalence (ii) $\iff$ (iii) in Theorem 9.3 uses Statement (B) in the proof of Proposition 9.2 p.~94.
 
@@ -4284,7 +4304,7 @@ The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the
 
 \subsection{Page 97, proof of Theorem 9.8}%
 
-The last sentence of the proof of Theorem 9.8 is ``Then $\mf a$ is invertible, hence $\mf b=\mf a_\ppp$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\mf b=\mf a_\ppp$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\mf a_\ppp$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)). 
+The last sentence of the proof of Theorem 9.8 is ``Then $\aaa$ is invertible, hence $\bbb=\aaa_\ppp$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\bbb=\aaa_\ppp$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\aaa_\ppp$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)). 
 
 \subsection{Page 99, Exercise 9.2}%
 
@@ -4408,31 +4428,31 @@ that is, $\widehat G/\widehat{G_n}\simeq G/G_n$ for all $n$. This entails $\wide
 
 Proposition 10.15 (iii) says 
 \begin{equation}\label{1015a}
-\mf a^n/\mf a^{n+1}\simeq\hat{\mf a}^n/\hat{\mf a}^{n+1}.
+\aaa^n/\aaa^{n+1}\simeq\hat\aaa^n/\hat\aaa^{n+1}.
 \end{equation}
 Moreover \eqref{1015a} is derived from 
 \begin{equation}\label{1015b}
-A/\mf a^n\simeq\hat A^n/\hat{\mf a}^n,
+A/\aaa^n\simeq\hat A^n/\hat\aaa^n,
 \end{equation} 
 but in the sequel \eqref{1015b} is needed at various places, and it is justified by stating that it follows from \eqref{1015a}. For instance in the proof of Proposition 10.16 it is written
 
-``By (10.15) iii) we have $\hat A/\hat\mmm\simeq A/\mf m$''.
+``By (10.15) iii) we have $\hat A/\hat\mmm\simeq A/\mmm$''.
 
-In fact, I think it's better to prove $\hat{\mf a}^n/\hat{\mf a}^{n+k}\simeq\mf a^n/\mf a^{n+k}$ directly by noting that we have 
+In fact, I think it's better to prove $\hat\aaa^n/\hat\aaa^{n+k}\simeq\aaa^n/\aaa^{n+k}$ directly by noting that we have 
 $$
-\hat{\mf a}^n/\hat{\mf a}^{n+k}\simeq(\mf a^n)^\wedge/(\mf a^{n+k})^\wedge\simeq(\mf a^n/\mf a^{n+k})^\wedge\simeq\mf a^n/\mf a^{n+k},
+\hat\aaa^n/\hat\aaa^{n+k}\simeq(\aaa^n)^\wedge/(\aaa^{n+k})^\wedge\simeq(\aaa^n/\aaa^{n+k})^\wedge\simeq\aaa^n/\aaa^{n+k},
 $$ 
 the first isomorphism following from Proposition 10.15 (ii), the second from Corollary 10.3 p.~104, and the third being obvious.
 
 Note that (i), (ii) and the proof of (ii) imply  
 $$
-(\mf a^n)^\wedge=\hat A\,\mf a^n=(\hat A\,\mf a)^n=\hat{\mf a}^n\simeq\hat A\otimes_A\mf a^n.
+(\aaa^n)^\wedge=\hat A\,\aaa^n=(\hat A\,\aaa)^n=\hat\aaa^n\simeq\hat A\otimes_A\aaa^n.
 $$ 
-In particular, the equality $(\mf a^n)^\wedge=\hat A\,\mf a^n$ shows that 
+In particular, the equality $(\aaa^n)^\wedge=\hat A\,\aaa^n$ shows that 
 $$
-\boxed{\text{the $\mf a$-topology and the $\hat{\mf a}$-topology of $\hat A$ coincide.}} 
+\boxed{\text{the $\aaa$-topology and the $\hat\aaa$-topology of $\hat A$ coincide.}} 
 $$
-The $\mf a$-topology is finer than the $\hat{\mf a}$-topology even if $A$ is not noetherian. 
+The $\aaa$-topology is finer than the $\hat\aaa$-topology even if $A$ is not noetherian. 
 
 Note also 
 \begin{prop}\label{1015}
@@ -4455,16 +4475,16 @@ Let us prove that the $\aaa$-topology is not necessarily Hausdorff if $\aaa$ is 
 
 \subsection{Page 111, Corollaries 10.20 and 10.21}%
 
-About the proof of Corollary 10.20: The fact that ``an $\mf m$-primary ideal of $A$ is just any ideal contained between $\mf m$ and some power $\mf m^n$'' has already been stated as Corollary 7.16 p.~83.
+About the proof of Corollary 10.20: The fact that ``an $\mmm$-primary ideal of $A$ is just any ideal contained between $\mmm$ and some power $\mmm^n$'' has already been stated as Corollary 7.16 p.~83.
 
 About Corollary 10.21: Let $a$ be in $A$. We must show: 
 
-$a\in\mf q$ for all $\ppp$-primary ideal $\mf q$ $\iff$ there is an $s$ in $A\setminus\ppp$ such that $as=0$. 
+$a\in\qqq$ for all $\ppp$-primary ideal $\qqq$ $\iff$ there is an $s$ in $A\setminus\ppp$ such that $as=0$. 
 
 \begin{proof} 
-If $s$ in $A\setminus\ppp$ satifies $as=0$, and if $\mf q$ is a $\ppp$-primary ideal, then $a$ is in $\mf q$.
+If $s$ in $A\setminus\ppp$ satifies $as=0$, and if $\qqq$ is a $\ppp$-primary ideal, then $a$ is in $\qqq$.
 
-If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 10.20 implies that there is a $\ppp$-primary ideal $\mf q$ such that $\frac a1\notin\mf q_\ppp$, and thus $a\notin\mf q$. 
+If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 10.20 implies that there is a $\ppp$-primary ideal $\qqq$ such that $\frac a1\notin\qqq_\ppp$, and thus $a\notin\qqq$. 
 \end{proof}
 
 \subsection{Page 113, Exercise 10.1}% 
@@ -4677,7 +4697,7 @@ It suffices to show $\phi(\mmm)=(0)$ (see Exercise 3.16iii p.~45 of the book), w
 
 \subsection{Page 118, proof of Proposition 11.4}%\label{odnd}
 
-$\bu$ The ring $A/\mf q$ is Artin by \eqref{86} p.~\pageref{86}.
+$\bu$ The ring $A/\qqq$ is Artin by \eqref{86} p.~\pageref{86}.
 
 $\bu$ The fact below is used on line 5 of the proof of Proposition 11.4:
 
@@ -4694,13 +4714,13 @@ We denote the old $d$ by $d_o$ and the new $d$ by $d_\nu$, so that the equality 
 d_o(A)=d_\nu(G_\mmm(A)).
 \end{equation}
 
-Note that $d_o(A)$ is defined when $A$ is a noetherian graded ring, and $d_\nu(A)$ is defined when $A$ is a noetherian local ring. By Proposition 10.22 (i) p.~111, $G_{\mf a}(A)$ is a noetherian graded ring if $A$ is a noetherian ring and $\mf a$ is an ideal of $A$.
+Note that $d_o(A)$ is defined when $A$ is a noetherian graded ring, and $d_\nu(A)$ is defined when $A$ is a noetherian local ring. By Proposition 10.22 (i) p.~111, $G_\aaa(A)$ is a noetherian graded ring if $A$ is a noetherian ring and $\aaa$ is an ideal of $A$.
 
-As in (1) p. 118 of the book we set $\ell_n:=\ell(A/\mf m^n)$. 
+As in (1) p. 118 of the book we set $\ell_n:=\ell(A/\mmm^n)$. 
 
 Corollary 11.5 p.~119 says that, for large $n$, the function $n\mapsto\ell_n$ is a polynomial whose degree is $d_\nu(A)$ by definition. 
 
-Corollary 11.2 p.~117 says that, for large $n$, the function $n\mapsto\ell(\mf m^n/\mf m^{n+1})$ is a polynomial whose degree is $d_o(G_\mmm(A))-1$.
+Corollary 11.2 p.~117 says that, for large $n$, the function $n\mapsto\ell(\mmm^n/\mmm^{n+1})$ is a polynomial whose degree is $d_o(G_\mmm(A))-1$.
 
 Now \eqref{dd} follows from (1) p. 117.
 
@@ -4724,11 +4744,11 @@ This result is due to Uriya First and to the MathOverflow user dhy. See \\ %\sma
 
 \centerline{\href{https://mathoverflow.net/a/308266/461}{https://mathoverflow.net/a/308266/461}}
 
-We equip $A$ with the $\mf m$-adic topology.
+We equip $A$ with the $\mmm$-adic topology.
 
-Let $v:\mathbb Z_{>0}\to\mathbb Z_{>1}$ be strictly increasing, assume that, for all $n\in\mathbb Z_{>0}$, the characteristic of $K$ does not divide $v(n)$, and consider the sequence $(s_n)_{n\in\mathbb Z_{>0}}$ defined by $s_n=\sum_{i=1}^nx_i^{v(i)}$. This sequence being clearly Cauchy, it suffices to show that it diverges. To prove this we argue by contradiction and assume that $(s_n)$ has a limit in $A$. It is easy to see that this limit is $\sum_{n>0}x_n^{v(n)}$, and that this element of $A$ is in $\mf m^2$. Thus \eqref{u1a} will follow from 
+Let $v:\mathbb Z_{>0}\to\mathbb Z_{>1}$ be strictly increasing, assume that, for all $n\in\mathbb Z_{>0}$, the characteristic of $K$ does not divide $v(n)$, and consider the sequence $(s_n)_{n\in\mathbb Z_{>0}}$ defined by $s_n=\sum_{i=1}^nx_i^{v(i)}$. This sequence being clearly Cauchy, it suffices to show that it diverges. To prove this we argue by contradiction and assume that $(s_n)$ has a limit in $A$. It is easy to see that this limit is $\sum_{n>0}x_n^{v(n)}$, and that this element of $A$ is in $\mmm^2$. Thus \eqref{u1a} will follow from 
 \begin{equation}\label{u1b}
-\sum_{n>0}\ x_n^{v(n)}\notin\mf m^2.
+\sum_{n>0}\ x_n^{v(n)}\notin\mmm^2.
 \end{equation} 
 Our proof of \eqref{u1b} starts with the following claim.
 
@@ -4754,7 +4774,7 @@ Proof of \eqref{u1b}. Assume by contradiction that we have
 $$
 \sum_{n>0}\ x_n^{v(n)}=\sum_{i=1}^r\ c_i\,d_i
 $$ 
-with $c_i,d_i\in\mf m$. Let $k$ be an integer $>2r$. Mapping $x_j$ to $0$ for $j>k$ we get 
+with $c_i,d_i\in\mmm$. Let $k$ be an integer $>2r$. Mapping $x_j$ to $0$ for $j>k$ we get 
 $$
 f:=\sum_{n=1}^k\ x_n^{v(n)}=\sum_{i=1}^r\ a_i\,b_i\in K[[x_1,\dots,x_k]]
 $$ 
@@ -4900,7 +4920,7 @@ We leave the proof of (g) to the reader. Clearly (g) implies (e).
 
 \subsection{Page 126, Exercise 11.6}\label{116}% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
-We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If $\ppp$ and $\mf q$ are prime ideals of a ring $B$, we write %$\ppp<\mf q$ instead of $$\ppp\underset\ne\subset\mf q,$$ and 
+We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If $\ppp$ and $\qqq$ are prime ideals of a ring $B$, we write %$\ppp<\qqq$ instead of $$\ppp\underset\ne\subset\qqq,$$ and 
 $\ppp_i^{\oo c}$ instead of $(\ppp_i)^{\oo c}$. 
 
 We shall use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
