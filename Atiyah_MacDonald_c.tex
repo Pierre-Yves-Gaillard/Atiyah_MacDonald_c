@@ -450,7 +450,7 @@ It seems better to prove first the equality
 $$
 \overline S=V(\mf a),\quad \mf a:=\bigcap_{\ppp\in S}\ \ppp
 $$ 
-for $S\subset\oo{Spec}(A)$.
+for $S\subset\Spec(A)$.
 
 \subsection{Page 13, Exercise 1.21v}\label{121v}%
 
@@ -1798,7 +1798,7 @@ Recall the statement:
 
 The equivalence (ii)$\iff$(iii) is clear, as well as the implication (iv)$\implies$(ii).
 
-(ii)$\implies$(iv): We assume that each prime ideal of $A$ is maximal and we show that $X=\oo{Spec}(A)$ is Hausdorff. Let $x$ and $y$ be two distinct points of $X$. We claim:
+(ii)$\implies$(iv): We assume that each prime ideal of $A$ is maximal and we show that $X=\Spec(A)$ is Hausdorff. Let $x$ and $y$ be two distinct points of $X$. We claim:
 
 $(\star)$ There are elements $a\in\ppp_y\setminus\ppp_x$, $b\in\ppp_x\setminus\ppp_y$ such that $ab=0$.
 
@@ -1953,7 +1953,7 @@ $$
 (A_\ppp/\ppp_\ppp)^*\ar[r]&(A_\ppp)^*\ar[r]& A^*,
 \end{tikzcd}
 $$ 
-where $R^*$ stands for $\oo{Spec}(R)$, and recall the isomorphism 
+where $R^*$ stands for $\Spec(R)$, and recall the isomorphism 
 $$
 (A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp
 $$ 
@@ -2261,7 +2261,7 @@ and we can use Exercise 4.7iii.
 
 Here are some hints.
 
-$\bu$ Let $a,b\in A$ and $\ppp\in\oo{Spec}(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
+$\bu$ Let $a,b\in A$ and $\ppp\in\Spec(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
 
 \textbf{Claim 1:} $a$ is zero-divisor.
 
@@ -3641,7 +3641,7 @@ for some ideals $\aaa$ and $\bbb$. Moreover $\ppp$ is the intersection of the st
 
 (d) $\implies$ (c): Let $\ppp$ be a non-maximal prime ideal, and let $\bbb$ be the intersection of those prime ideals which are strictly larger than $\ppp$, and assume by contradiction that $\bbb$ is strictly larger than $\ppp$. Let $L$ be the locally closed subset $V(\ppp)\setminus V(\bbb)$ of $\Spec(A)$. Then $\ppp$ is in $L$, that is $\{\ppp\}\subset L$. As $\{\ppp\}$ is not locally closed, we have $\{\ppp\}\ne L$, that is $\{\ppp\}<L$. Let $\qqq$ be in $L\setminus\{\ppp\}$, that is $\qqq>\ppp$ and $\qqq\not\supset\bbb$. But we then have $\qqq\supset\bbb$ by definition of $\bbb$. 
 
-\subsection{Page 72, Exercise 5.27}%£ previous version https://docs.google.com/document/d/1pa9JTIG_IbvdERz34Me3c0nSgSFz-lnjuJCYOo1yYrQ/edit
+\subsection{Page 72, Exercise 5.27}% previous version https://docs.google.com/document/d/1pa9JTIG_IbvdERz34Me3c0nSgSFz-lnjuJCYOo1yYrQ/edit
 
 Let $\Phi(K,\Omega)$ be the set denoted by $\Sigma$ on page 65 of the book (see Section~\ref{65} p.~\pageref{65}), and let $\Sigma(K)$ be the set of all local subrings of $K$. We equip $\Phi(K,\Omega)$ and $\Sigma(K)$ with their obvious partial order.
 
@@ -3788,11 +3788,13 @@ $$
 $$
 =b_1+a_1+c_3+\cdots+c_n=b_1+b_2+\cdots+b_n.
 $$ 
-This completes the proof. 
+This completes the proof.
 
 \subsection{Page 78, Exercise 6.3}%\label{nnt}%
 
-Hint: Consider the exact sequences 
+\textbf{Statement:} Let $M$ be an $A$-module and let $N_1,N_2$ be submodules of $M$. If $M/N_1$ and $M/N_2$ are Noetherian, so is $M/(N_1\cap N_2)$. Similarly with Artinian in place of Noetherian.
+
+\textbf{Hint:} Consider the exact sequences 
 $$
 0\to\frac{N_1}{N_1\cap N_2}\to\frac M{N_1\cap N_2}\to\frac M{N_1}\to0
 $$ 
@@ -3800,36 +3802,52 @@ and
 $$
 0\to\frac{N_1+N_2}{N_2}\to\frac M{N_2}\to\frac M{N_1+N_2}\to0.
 $$ 
-Mild generalization: If $N_1,\dots,N_k$ are submodules of $M$ such that $M/N_i$ is noetherian for all $i$, then $M/(N_1\cap\cdots\cap N_k)$ is noetherian. 
+\textbf{Mild generalization:} If $N_1,\dots,N_k$ are submodules of $M$ such that $M/N_i$ is noetherian for all $i$, then $M/(N_1\cap\cdots\cap N_k)$ is noetherian. 
 
-\subsection{Page 78, Exercise 6.4}%\label{nnt}%
+\subsection{Page 78, Exercise 6.4}%
 
-(a) Hint: use the above generalization.
+\textbf{Statement:} (a) Let $M$ be a Noetherian $A$-module and let $\aaa$ be the annihilator of $M$ in $A$. Prove that $A/\aaa$ is a Noetherian ring.
+
+(b) If we replace "Noetherian" by "Artinian" in this result, is it still true?
+
+\textbf{Hints:}
+
+(a) Use the above generalization and Proposition 6.2 p.~75 of the book.
 
 (b) See Example 3 p.~74 of the book. 
 
-\subsection{Page 79, Exercise 6.7}%\label{nnt}%
+\subsection{Page 79, Exercise 6.7}%
+
+\textbf{Statement:} A Noetherian space is a finite union of irreducible closed subspaces. [Consider the set $\Sigma$ of closed subsets of $X$ which are not finite unions of irreducible closed subspaces.] Hence the set of irreducible components of a Noetherian space is finite.
 
 See Exercises 1.19 and 1.20 p.~13 of the book. 
 
-Hint: Let $C$ be a minimal element of $\Sigma$. Then $C$ is nonempty, and, for $c\in C$, we have $C=(C\setminus\{c\})\cup\overline{\{c\}}$. 
+\textbf{Hint:} Let $C$ be a minimal element of $\Sigma$. Then $C$ is nonempty, and, for $c\in C$, we have $C=(C\setminus\{c\})\cup\overline{\{c\}}$. 
 
-\subsection{Page 79, Exercise 6.8}%\label{nnt}%
+\subsection{Page 79, Exercise 6.8}%
 
-Hint: If $V(\aaa_1)\supset V(\aaa_2)\supset\cdots$, with $r(\aaa_i)=\aaa_i$, is a weakly decreasing chain of closed subsets of $X$, then $\aaa_1\subset\aaa_2\subset\cdots$ is a weakly increasing chain of ideals of $A$. 
+\textbf{Statement:} If $A$ is a Noetherian ring then $\Spec(A)$ is a Noetherian topological space. Is the converse true?
 
-\subsection{Page 79, Exercise 6.9}%\label{nnt}%
+\textbf{Hint:} If $V(\aaa_1)\supset V(\aaa_2)\supset\cdots$, with $r(\aaa_i)=\aaa_i$, is a weakly decreasing chain of closed subsets of $X$, then $\aaa_1\subset\aaa_2\subset\cdots$ is a weakly increasing chain of ideals of $A$. 
 
-See Exercise 1.20iv p.~13 of the book.
+\subsection{Page 79, Exercise 6.9}%
 
-\subsection{Page 79, Exercise 6.10}%\label{nnt}%
+\textbf{Statement:} Deduce from Exercise 8 that the set of minimal prime ideals in a Noetherian ring is finite.
 
-By Exercise 3.19 p.~46 of the book we have $\oo{Supp}(M)=V(\aaa)$ with $\aaa:=\oo{Ann}(M)$. We also have $V(\aaa)\simeq\oo{Spec}(A/\aaa)$, and $A/\aaa$ is noetherian by Exercise 6.4 p.~78, and $\oo{Spec}(A/\aaa)$ is noetherian by Exercise 6.8 p.~79. 
+\textbf{Hint:} See Exercise 1.20iv p.~13 of the book.
+
+\subsection{Page 79, Exercise 6.10}%
+
+\textbf{Statement:} If $M$ is a Noetherian module (over an arbitrary ring $A$) then $\oo{Supp}(M)$ is a closed Noetherian subspace of $\Spec(A)$.
+
+\textbf{Solution:} By Exercise 3.19v p.~46 of the book we have $\oo{Supp}(M)=V(\aaa)$ with $\aaa:=\oo{Ann}(M)$. We also have $V(\aaa)\simeq\Spec(A/\aaa)$, and $A/\aaa$ is noetherian by Exercise 6.4 p.~78, and $\Spec(A/\aaa)$ is noetherian by Exercise 6.8 p.~79. 
 
 \subsection{Page 79, Exercise 6.11}%
 
+\textbf{Statement:} Let $f:A\to B$ be a ring homomorphism and suppose that $\Spec(B)$ is a Noetherian space (Exercise 5). Prove that $f^*:\Spec(B)\to\Spec(A)$ is a closed mapping if and only if $f$ has the going-up property (Chapter 5, Exercise 10).
+
 %Hint: use Exercises 5.10i p.~68, 6.5 p.~79 and 1.21iv p.~13. 
-Let us assume that $f$ has the going-up property, and let us show that $f^*$ is closed. Let $\bbb$ be a radical ideal of $B$, and let $\aaa$ be its contraction in $A$. It suffices to prove 
+\textbf{Solution:} Let us assume that $f$ has the going-up property, and let us show that $f^*$ is closed. Let $\bbb$ be a radical ideal of $B$, and let $\aaa$ be its contraction in $A$. It suffices to prove 
 $$
 f^*(V(\bbb))=V(\aaa).
 $$ 
@@ -3853,7 +3871,9 @@ and Proposition 1.11ii p.~8 of the book implies $\ppp\subset\ppp_i$ for some $i$
 
 \subsection{Page 79, Exercise 6.12}%
 
-To show that the converse is not true, let $K$ be a field and $A:=K^{\mathbb N}$ the ring of $K$-valued functions on $\mathbb N$. As $A$ is absolutely flat, its prime ideals are maximal. Hence it suffices to show that there is an ascending chain $\aaa_1<\aaa_2<\cdots$ of radical ideals of $A$. We can set 
+\textbf{Statement:} Let $A$ be a ring such that $\Spec(A)$ is a Noetherian space. Show that the set of prime ideals of $A$ satisfies the ascending chain condition. Is the converse true?
+
+\textbf{Solution:} To show that the converse is not true, let $K$ be a field and $A:=K^{\mathbb N}$ the ring of $K$-valued functions on $\mathbb N$. As $A$ is absolutely flat, its prime ideals are maximal. Hence it suffices to show that there is an ascending chain $\aaa_1<\aaa_2<\cdots$ of radical ideals of $A$. We can set 
 $$
 \aaa_n:=\{f\in A\ |\ f(k)=0\text{ for all }k>n\}.
 $$
@@ -3946,7 +3966,13 @@ As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 
 \subsection{Page 84, Exercise 7.1}%
 
-Following the hint in the book, set $\aaa+(x)=(s_1,\dots,s_n)$, $s_i\in A$. Then we have $s_i=b_i+t_ix$ with $b_i\in\aaa$, $t_i\in A$. Setting $\bbb=(b_1,\dots,b_n)\subset\aaa$, we get $\aaa+(x)=\bbb+(x)$. 
+\textbf{Statement:} Let $A$ be a non-Noetherian ring and let $\Sigma$ be the set of ideals in $A$ which are not finitely generated. Show that $\Sigma$ has maximal elements and that the maximal elements of $\Sigma$ are prime ideals.
+
+[Let $\aaa$ be a maximal element of $\Sigma$, and suppose that there exist $x,y\in A$ such that $x\notin\aaa$ and $y\notin\aaa$ and $xy\in\aaa$. Show that there exists a finitely generated ideal $\aaa_0\subset\aaa$ such that $\aaa_0a+(x)=\aaa+(x)$,and that $\aaa=\aaa_0+x\cdot(\aaa:x)$. Since $(\aaa:x)$ strictly contains $\aaa$, it is finitely generated and therefore so is $\aaa$.]
+
+Hence a ring in which every prime ideal is finitely generated is Noetherian (I. S. Cohen).
+
+\textbf{Solution:} Following the hint in the book, set $\aaa+(x)=(s_1,\dots,s_n)$, $s_i\in A$. Then we have $s_i=b_i+t_ix$ with $b_i\in\aaa$, $t_i\in A$. Setting $\bbb=(b_1,\dots,b_n)\subset\aaa$, we get $\aaa+(x)=\bbb+(x)$. 
 
 We claim $\aaa=\bbb+x\,(\aaa:x)$. 
 
@@ -3956,9 +3982,18 @@ Note that $y$ is in $(\aaa:x)$ but not in $\aaa$. This implies that $(\aaa:x)$ i
 
 \subsection{Page 84, Exercise 7.3}%
 
-Hint: 
+\textbf{Statement:} Let $\aaa$ be an irreducible ideal in a ring $A$. Then the following are equivalent: 
 
-(i) $\implies$ (ii): Use Theorem 4.5 p.~51 (the First Uniqueness Theorem) and Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
+(i) $\aaa$ is primary;
+
+(ii) for every multiplicatively closed subset $S$ of $A$ we have $(S^{-1}\aaa)^{\oo c}=(\aaa:s)$ for some $s\in S$;
+
+(iii) the sequence $(\aaa:x^n)$ is stationary, for every $x\in A$.
+
+\textbf{Hints:} 
+
+(i) $\implies$ (ii): Use %Theorem 4.5 p.~52 (the First Uniqueness Theorem) and 
+Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
 
 (ii) $\implies$ (iii): Use Proposition 3.11ii p.~41. (This implication also holds even if $\aaa$ is reducible.)
 
@@ -3966,7 +4001,15 @@ Hint:
 
 \subsection{Page 84, Exercise 7.5}%
 
-Hint: Use Exercise 5.12 p.~68 and Proposition 7.8 p.~81.
+\textbf{Statement:} Let $A$ be a Noetherian ring, $B$ a finitely generated $A$-algebra, $G$ a finite group of $A$-automorphisms of $B$, and $B^G$ the set of all elements of B which are left fixed by every element of $G$. Show that $B^G$ is a finitely generated $A$-algebra.
+
+\textbf{Hint:} Use Exercise 5.12 p.~68 and Proposition 7.8 p.~81.
+
+\subsection{Page 84, Exercise 7.6}%
+
+\textbf{Statement:} If a finitely generated ring is a field $K$, it is a finite field.
+
+\textbf{Hint:} Let $A$ be the prime subring of $K$. Then $A=\mathbb Z$ or $A=\mathbb F_p$. Noether Normalization Theorem, as stated in Section~\ref{nnt} p.~\pageref{nnt}, and Proposition 5.7 p.~61 of the book imply that the first case is impossible and that, in the second case, $K$ is a finite degree extension of $\mathbb F_p$. %$K$ is a finitely generated module over $\mathbb Z[s^{-1}]$ for some $0\ne s\in\mathbb Z$
 
 \subsection{Page 85, Exercise 7.10}%
 
@@ -3974,7 +4017,7 @@ See Theorem~\ref{hbt} p.~\pageref{hbt} above.
 
 \subsection{Page 85, Exercise 7.13}%
 
-Hint: Let $\ppp$ be in $\oo{Spec}(A)$ and set $k:=A_\ppp/\ppp_\ppp$. It suffices to show that $k\otimes_AB$ is noetherian. To do this, note that there are indeterminates $x_1,\dots,x_n$ such that $B$ is a quotient of $A[x_1,\dots,x_n]$, and conclude that $k\otimes_AB$ is a quotient of $k[x_1,\dots,x_n]$. 
+Hint: Let $\ppp$ be in $\Spec(A)$ and set $k:=A_\ppp/\ppp_\ppp$. It suffices to show that $k\otimes_AB$ is noetherian. To do this, note that there are indeterminates $x_1,\dots,x_n$ such that $B$ is a quotient of $A[x_1,\dots,x_n]$, and conclude that $k\otimes_AB$ is a quotient of $k[x_1,\dots,x_n]$. 
 
 \subsection{Page 86, Exercise 7.17}%
 
@@ -4935,7 +4978,7 @@ We shall use the following fact which occurs in the hint to Exercise 11.6 p.~126
 \begin{note}\label{116b}
 If $f:A\to A[x]$ is the natural embedding, then the fiber of 
 $$
-f^*:\oo{Spec}(A[x])\to\oo{Spec}(A)
+f^*:\Spec(A[x])\to\Spec(A)
 $$ 
 above a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of
 $$
