@@ -3316,7 +3316,7 @@ The proof of Theorem 5.16 p.~64 of the book shows that the going-down property f
 
 Hint: The main point is to show that an invariant fraction is equal to a fraction with invariant numerator and denominator. Let $x=a/s$ be our fraction (obvious notation). 
 
-Step 1. Set 
+\textbf{Step 1.} Set 
 $$
 t:=\prod_{\sigma\ne1}\sigma(s).
 $$ 
@@ -3326,7 +3326,7 @@ x=\frac{a}{s}=\frac{at}{st}\ .
 $$ 
 In other words we can assume that the denominator $s$ of our fraction $x=a/s$ is invariant.
 
-Step 2. For $\sigma\in G$ we have $\sigma(a)/s=a/s$, that is $\sigma(a)st_\sigma=ast_\sigma$ for some $t_\sigma\in S$. Arguing as in Step~1 we can assume that the $t_\sigma$ are invariant. 
+\textbf{Step 2.} For $\sigma\in G$ we have $\sigma(a)/s=a/s$, that is $\sigma(a)st_\sigma=ast_\sigma$ for some $t_\sigma\in S$. Arguing as in Step~1 we can assume that the $t_\sigma$ are invariant. 
 
 Details: Set 
 $$
@@ -3334,11 +3334,11 @@ u_\sigma:=\prod_{\tau\ne1}\tau(t_\sigma).
 $$ 
 Then $t_\sigma u_\sigma$ is invariant, and we get $\sigma(a)st_\sigma u_\sigma=ast_\sigma u_\sigma$, and we can indeed assume that the $t_\sigma$ are invariant.
 
-Step 3. By a similar trick we can assume that the $t_\sigma$ are all equal to some $t\in S^G$, and we get $ast=\sigma(a)st=\sigma(ast)$, and thus 
+\textbf{Step 3.} By a similar trick we can assume that the $t_\sigma$ are all equal to some $t\in S^G$, and we get $ast=\sigma(a)st=\sigma(ast)$, and thus 
 $$
 \frac{a}{s}=\frac{ast}{s^2t}\ .
 $$ 
-Details: Setting 
+\emph{Details:} Setting 
 $$
 t:=\prod_\sigma t_\sigma,\quad v_\sigma:=\prod_{\tau\ne\sigma}t_\tau,
 $$ 
@@ -4021,7 +4021,7 @@ Hint: Let $\ppp$ be in $\Spec(A)$ and set $k:=A_\ppp/\ppp_\ppp$. It suffices to 
 
 \subsection{Page 86, Exercise 7.17}%
 
-Let $M$ be an $A$-module whose zero submodule $0\subset M$ is irreducible. Let us show that $0$ is primary in $M$. 
+Let $M$ be a noetherian $A$-module whose zero submodule $0\subset M$ is irreducible. Let us show that $0$ is primary in $M$. 
 
 Let $a$ be an element of $A$ which is a zero divisor in $M$. It suffices to show that $a$ is nilpotent in $M$. 
 
@@ -4051,13 +4051,13 @@ $$
 \subsection{Page 86, Exercise 7.19}% https://mathoverflow.net/q/12322/461
 % previous version https://docs.google.com/document/d/1a-63-De-I8iBErGM5vuEuVpkBAJ1fOm2j0ECZIMzeT4/edit?folder=0ADbJLwZkWgt8Uk9PVA
 
-Statement: Let $\aaa$ be an ideal in a Noetherian ring $A$. Let 
+\textbf{Statement:} Let $\aaa$ be an ideal in a Noetherian ring $A$. Let 
 $$
 \mathfrak{a}=\bigcap_{i=1}^r\mathfrak{b}_i=\bigcap_{j=1}^s\mathfrak{c}_j
 $$ 
 be two minimal decompositions of $\aaa$ as intersections of irreducible ideals. Prove that $r=s$ and that (possible after re-indexing the $\ccc_i$) $r(\bbb_i)=r(\ccc_i)$ for all $i$. State and prove an analogous result for modules.
 
-Solution: Our goal is to prove:
+\textbf{Solution:} Our goal is to prove:
 
 \begin{prop}\label{719P1}
 (a) Let $A$ be a ring, $M$ an $A$-module and $W$ a submodule. Let 
@@ -4071,7 +4071,7 @@ be two minimal decompositions of $W$ as intersections of irreducible submodules.
 
 \subsubsection{Proof of Part (a) of Proposition~\ref{719P1}}%
 
-It suffices to show:
+%It suffices to show:
 
 \begin{lem}\label{719L2}
 Let $A$ be a ring, $M$ an $A$-module and let $U_1,U_2,V_1,\dots,V_m,W$ be submodules of $M$ such that $U_1$ is irreducible and 
@@ -4081,7 +4081,15 @@ $$
 Then we have $W=V_i\cap U_2$ for some $i$. 
 \end{lem} 
 
-We summarize Lemma~\ref{719L2} by saying that ``we have replaced $U_1$ with $V_i$ in the equality $W=U_1\cap U_2$''. 
+We summarize Lemma~\ref{719L2} by saying that ``we have replaced $U_1$ with $V_i$ in the equality $W=U_1\cap U_2$''.
+
+We shall give two proofs of Lemma~\ref{719L2}, but before we show that it implies Part (a) of Proposition~\ref{719P1}.
+
+It suffices to derive a contradiction from the assumption $n<m$. Using Lemma~\ref{719L2} repeatedly we get 
+$$
+V_{i_1}\cap\cdots\cap V_{i_n}=V_1\cap\cdots\cap V_m,
+$$ 
+in contradiction with the minimality of the right side.
 
 \paragraph{First proof of Lemma~\ref{719L2}}${}$\medskip%
 
@@ -4113,18 +4121,20 @@ $$
 The second case is similar. 
 \end{proof} 
 
-\begin{proof}[Proof of Lemma~\ref{719L2}] Let $1\le i_1<\cdots<i_p\le m$ be such that 
+\begin{proof}[Proof of Lemma~\ref{719L2}] Let $1\le i_1<\cdots<i_p\le m$ be integers such that 
 $$
 W=U_2\cap V_{i_1}\cap\cdots\cap V_{i_p}
 $$ 
-and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L3}b with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. 
+and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L3}b with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. We get %$W=U_2\cap V_{i_1}$ or 
+$$
+W=U_2\cap V_{i_1}\quad\text{or}\quad W=U_2\cap V_{i_2}\cap\cdots\cap V_{i_p},
+$$ 
+but the second case contradicts the minimality of $p$.
 \end{proof}
 
 \paragraph{Second proof of Lemma~\ref{719L2}}${}$\medskip%
 
-We follow Matthew Emerton, \medskip
-
-\centerline{\href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}}
+We follow Matthew Emerton: \href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}%\medskip\centerline{\href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}}
 
 We can assume $W=0$. Let 
 $$
@@ -4144,6 +4154,8 @@ $$
 $$ 
 and thus $\bigcap\phi_1(X_j)=0$. The zero submodule of $M/U_1$ being ir\-re\-ducible, this implies $\phi_1(X_j)=0$, hence $X_j=0$, for some $j$. This proves Lemma~\ref{719L2}.
 
+Part (a) of Proposition~\ref{719P1} has been proved, and it only remains to prove Part~(b).
+
 \subsubsection{Proof of Part (b) of Proposition~\ref{719P1}}%
 
 Recall the setting: $A$ is a ring, $M$ is a noetherian $A$-module, $W$ is a submodule, 
@@ -4156,11 +4168,11 @@ Irreducible submodules being primary, the sets
 $$
 \{r(U_1:M),\dots,r(U_n:M)\}\text{ and }\{r(V_1:M),\dots,r(V_n:M)\}
 $$ 
-are equal. Denote this set by $P$, write $[n]$ for $\{1,\dots,n\}$ and define the maps $f$ and $g$ from $[n]$ to $P$ by 
+are equal. Denote this set by $P$, write $[n]$ for the set $\{1,\dots,n\}$ and define the maps $f$ and $g$ from $[n]$ to $P$ by 
 $$
 f(i):=r(U_i:M),\quad g(i):=r(V_i:M).
 $$ 
-It suffices to show that, for all $\ppp\in P$ the fibers $f^{-1}(\ppp)$ and $g^{-1}(\ppp)$ are equipotent. 
+It suffices to show that, for all $\ppp\in P$, the fibers $f^{-1}(\ppp)$ and $g^{-1}(\ppp)$ are equipotent. 
 
 Let $I$ be an isolated subset of $P$. The Second Uniqueness Theorem for modules implies 
 $$
@@ -4170,15 +4182,13 @@ Then Part (a) of Proposition~\ref{719P1} entails that $f^{-1}(I)$ and $g^{-1}(I)
 
 \subsection{Page 87, Exercise 7.20}\label{720}%
 
-Statement:
-
-Let $X$ be a topological space and let $\mathcal F$ be the smallest collection of subsets of $X$ which contains all open subsets of $X$ and is closed with respect to the formation of finite intersections and complements.
+\textbf{Statement:} Let $X$ be a topological space and let $\mathcal F$ be the smallest collection of subsets of $X$ which contains all open subsets of $X$ and is closed with respect to the formation of finite intersections and complements.
 
 (i) Show that a subset $E$ of $X$ belongs to $\mathcal F$ if and only if $E$ is a finite union of sets of the form $U\cap C$, where $U$ is open and $C$ is closed.
 
 (ii) Suppose that $X$ is irreducible (see Section~\ref{irr} p.~\pageref{irr} above) and let $E\in\mathcal F$. Show that $E$ is dense in $X$ (i.e., that $\overline E=X$) if and only if $E$ contains a non-empty open set in $X$. 
 
-Solution:
+\textbf{Solution:}
 
 (i) Let $\mathcal F'$ be the set of those subsets $E$ of $X$ such that $E$ is a finite union of sets of the form $U\cap C$, where $U$ is open and $C$ is closed. It suffices to check that, if two sets are in $\mathcal F'$, then so are their respective complements and their intersection. This is straightforward. 
 
@@ -4190,11 +4200,23 @@ $$
 
 \subsection{Page 87, Exercise 7.21}%
 
-Let us denote by $\mathcal F(X)$ the set designated by $\mathcal F$ in Exercise 7.20 (see Section~\ref{720} p.~\pageref{720} above). 
+\textbf{Statement:} Let $X$ be a Noetherian topological space (Chapter 6, Exercise 5 --- see Section~\ref{720} p.~\pageref{720} above) and let $E\subset X$. Show that $E\in\mathcal F$ if and only if Condition~$(\star)$ below holds: 
 
-To prove the ``only if'' part of Exercise 7.21, note that $E\cap X_0\in\mathcal F(X_0)$ if $E\in\mathcal F(X)$ and use Exercise 7.20.
+$(\star)$ for each irreducible closed set $X_0\subset X$, either $\overline{E\cap X_0}\ne X_0$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.%, for each irreducible closed set $X_0\subset X$, either $\overline{E\cap X_0}\ne X_0$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
 
-To prove the ``if'' part, we follow the hint, that is, we assume by contradiction that $X\notin\mathcal F:=\mathcal F(X)$, and we let $\Sigma$ be the set of all closed subsets $X'$ of $X$ such that $E\cap X'\notin\mathcal F$. Then $\Sigma$ is nonempty because %it contains 
+\textbf{Solution:} Let us denote by $\mathcal F(X)$ the set designated by $\mathcal F$ in Exercise 7.20 (see Section~\ref{720} p.~\pageref{720} above). 
+
+To prove that $E\in\mathcal F(X)$ implies $(\star)$, %[the ``only if'' part of Exercise 7.21], 
+note that $E\cap X_0\in\mathcal F(X_0)$ if $E\in\mathcal F(X)$ and use Exercise 7.20.
+
+% previous version of the end of the section: https://docs.google.com/document/d/1032l7e5aaxVmdV--H-S8kD2aTal5DmKZaZMrcmIkI8M/edit
+
+To prove that $(\star)$ implies $E\in\mathcal F(X)$, %[the ``if'' part] 
+we follow the hint, that is, we assume by contradiction that $(\star)$ holds but that $E$ is not in $\mathcal F:=\mathcal F(X)$.
+
+Let $\Sigma$ be the set of all closed subsets $X'$ of $X$ such that $E\cap X'\notin\mathcal F$. 
+
+Then $\Sigma$ is nonempty because %it contains 
 $X\in\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. In particular 
 %
 \begin{equation}\label{721}
@@ -4205,31 +4227,41 @@ The subset $X_0$ is irreducible, for if we had $X_0=C\cup D$ with $C,D$ closed a
 $$
 \mathcal F\ni(E\cap C)\cup(E\cap D)=E\cap(C\cup D)=E\cap X_0\notin\mathcal F.
 $$ 
-If $\overline{E\cap X_0}<X_0$, then we have 
-$$
-E\cap X_0=E\cap\overline{E\cap X_0}\in\mathcal F
-$$ 
-by minimality of $X_0$, contradicting \eqref{721}. 
+Let us assume $\overline{E\cap X_0}<X_0$, and let us derive a contradiction as follows. 
 
-If there is a nonempty open subset $U$ of $X_0$ such that $U\subset E$, then $U<X_0$ because $U=X_0$ would imply 
+The minimality of $X_0$ implies 
+\begin{equation}\label{eco}%£
+E\cap\overline{E\cap X_0}\in\mathcal F.
+\end{equation}
+We have 
+$$
+E\cap X_0\subset E\cap\overline{E\cap X_0}
+$$ 
+because $E\cap X_0\subset E$ and $E\cap X_0\subset\overline{E\cap X_0}$. This implies 
+$$
+E\cap X_0=E\cap\overline{E\cap X_0}.
+$$ 
+In view of \eqref{721} and \eqref{eco}, this gives the desired contradiction.
+
+Now $(\star)$ implies that there is a nonempty open subset $U$ of $X_0$ such that $U\subset E$. 
+
+We have $U<X_0$ because $U=X_0$ would imply 
 $$
 \mathcal F\ni X_0=E\cap X_0\notin\mathcal F
 $$ 
-by \eqref{721}. The set $C:=X_0\setminus U$ is closed in $X$, and we have $X_0=U\sqcup C$ (disjoint union), $U\ne\varnothing\ne C$, and thus
+by \eqref{721}. 
+
+The set $C:=X_0\setminus U$ is closed in $X$, and we have $X_0=U\sqcup C$ (disjoint union), $U\ne\varnothing\ne C$, and thus
 $$
 E\cap X_0=(E\cap U)\sqcup(E\cap C)=U\sqcup(E\cap C).
 $$ 
-As $U\ne\varnothing$, we get $E\cap C<E\cap X_0$, and thus $E\cap C\in\mathcal F$ by minimality of $X_0$. The above display implies $E\cap X_0\in\mathcal F$, contradicting again \eqref{721}. 
+As $U\ne\varnothing$, we get $E\cap C<E\cap X_0$, and thus $E\cap C\in\mathcal F$ by minimality of $X_0$. Then the above display implies $E\cap X_0\in\mathcal F$, contradicting again \eqref{721}.
 
 \subsection{Page 87, Exercise 7.22}%
 
-Statement: 
+\textbf{Statement:} Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E\cap X_0=\varnothing$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
 
-Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E\cap X_0=\varnothing$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
-
-Solution: 
-
-If $E$ is open in $X$, then the indicated condition holds because, if $E\cap X_0\ne\varnothing$, then $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. %: straightforward (details left to the reader).
+\textbf{Solution:} If $E$ is open in $X$, then the indicated condition holds because, if $E\cap X_0\ne\varnothing$, then $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. %: straightforward (details left to the reader).
 
 Assume that $E$ is not open in $X$. Set $F:=X\setminus E$. Then $F$ is not closed. Put 
 $$
