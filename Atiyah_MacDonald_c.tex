@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -3047,6 +3047,12 @@ More precisely, we have $\dim A\ge\dim B$ by Corollary 5.9 p.~61 and $\dim A$ $\
 
 Here is an example of a domain which is \emph{not} integrally closed. Let $k$ be a field, let $x$ be an indeterminate and set $A:=k[x^2,x^3]\subset k[x]$. Then $x$ is in the field of fractions of $A$, and is integral over $A$, but is not in $A$.
 
+\subsection{Page 62, Proposition 5.12}\label{512}%
+
+Here is a corollary to Proposition 5.12 p.~62:
+
+Let $A$ be a domain and $S$ a multiplicative subset. If $A$ is an integrally closed, so is $S^{-1}A$.
+
 \subsection{Page 63}%
 
 If $A\subset D$ are domains, and if $\aaa$ is an ideal of $A$, then we denote the extension of $\aaa$ in $D$ by $D\,\aaa$, and the integral closure of $\aaa$ in $D$ by $D*\aaa$. 
@@ -4230,7 +4236,7 @@ $$
 Let us assume $\overline{E\cap X_0}<X_0$, and let us derive a contradiction as follows. 
 
 The minimality of $X_0$ implies 
-\begin{equation}\label{eco}%£
+\begin{equation}\label{eco}%
 E\cap\overline{E\cap X_0}\in\mathcal F.
 \end{equation}
 We have 
@@ -4353,7 +4359,17 @@ $(*)$ there is an $x$ in $\mmm$ such that every ideal of $A$ is of the form $(x^
 
 The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the conditions (i), (ii) or (iii). 
 
-\subsection{Page 91, Exercise 8.4}%
+\subsection{Page 91, Exercise 8.4}%£
+
+To prove (i) $\implies$ (iii) on can use the following Lemma:
+
+\begin{lem}
+Let $A\to B$ be an integral ring morphism, let $S\subset A$ be a multiplicative subset, and let $\ppp$ be a prime ideal of $A$ disjoint from $S$. Then the induced morphism $S^{-1}A/S^{-1}\ppp\to S^{-1}B/(S^{-1}\ppp)^{\oo e}$ is integral.
+\end{lem} 
+ 
+\begin{proof}
+By Proposition 5.6ii p.~61 of the book, $S^{-1}A\to S^{-1}B$ is integral. By Proposition 3.11iv p.~41 of the book, $S^{-1}\ppp$ is prime. By Theorem 5.10 p.~62 of the book, $S^{-1}\ppp$ is contracted. Now the Lemma follows from Proposition 5.6i p.~61 of the book.
+\end{proof}
 
 Hint for the last question, which is ``If $f$ is integral and the fibres of $f^*$ are finite, is $f$ necessarily finite?'': Consider the case when $A$ and $B$ are fields. 
 
@@ -4388,35 +4404,48 @@ The fact that $\mathbb Z[-5]$ doesn't have unique factorization follows from the
 
 The last sentence of the proof of Theorem 9.8 is ``Then $\aaa$ is invertible, hence $\bbb=\aaa_\ppp$ is invertible by (9.7)''. I think the authors meant (9.6). Here are more details: We have $\bbb=\aaa_\ppp$ by Proposition 3.11i p.~41 and Proposition 1.17.iii p.~10 (see the proof of Proposition 7. p.~80). Moreover $\aaa_\ppp$ is invertible by Proposition 9.6 ((i) $\implies$ (ii)). 
 
+\subsection{Page 99, Exercise 9.1}%
+
+See Section~\ref{512} p.~\pageref{512} above.
+
 \subsection{Page 99, Exercise 9.2}%
 
 See Exercise 1.1iv p.~11 of the book. 
 
 It suffices to show $c(f)_\mmm c(g)_\mmm\subset c(fg)_\mmm$ for all maximal ideal $\mmm$. 
 
-\subsection{Page 99, Exercise 9.3}% 
+\subsection{Page 99, Exercise 9.3}%
 
-It is proved on p.~94 of the book that discrete valuation ring are noetherian. Exercise 5.28 p.~72 of the book says that the ideals of a valuation ring are totally ordered. In particular finitely generated ideals are principal. Thus any noetherian valuation ring $A$ is a principal ideal domain. Hence, if $A$ is not a field, then it is of dimension one, and is therefore a discrete valuation ring by Proposition 9.2 p.~94 of the book. 
+\textbf{Statement:} A valuation ring (other than a field) is Noetherian if and only if it is a discrete valuation ring.
 
-Statement. Let $A$ be a local domain which is not a field and in which the maximal ideal $\mmm$ is principal and $\bigcap_{n\ge1}\mmm^n=(0)$. Prove that $A$ is a discrete valuation ring.
+\textbf{Solution:} It is proved on p.~94 of the book that discrete valuation ring are noetherian. Exercise 5.28 p.~72 of the book says that the ideals of a valuation ring are totally ordered. In particular finitely generated ideals are principal. Thus any noetherian valuation ring $A$ is a principal ideal domain. Hence, if $A$ is not a field, then it is of dimension one, and is therefore a discrete valuation ring by Proposition 9.2 p.~94 of the book.
 
-Solution (sketch). Let $p$ be a generator of $\mmm$. 
+\subsection{Page 99, Exercise 9.4}%
+
+\textbf{Statement:} Let $A$ be a local domain which is not a field and in which the maximal ideal $\mmm$ is principal and $\bigcap_{n\ge1}\mmm^n=(0)$. Prove that $A$ is a discrete valuation ring.
+
+\textbf{Solution:} (Sketch.) Let $p$ be a generator of $\mmm$. 
 
 There is a unique map $w:A\setminus\{0\}\epi\mathbb N$ such that $a\in\mmm^{w(a)}\setminus\mmm^{w(a)+1}$ for all $a\in A\setminus\{0\}$. We have $w(ab)=w(a)+w(b)$ for all $a,b\in A\setminus\{0\}$, and $a\in A\setminus\{0\}$ is a unit if and only if $w(a)=0$. Moreover, if $a\in A\setminus\{0\}$, then $a=p^{w(a)}u$ with  $u$ a unit.
 
-If $\aaa$ is a nonzero ideal of $A$, and if $n$ is the least nonnegative integer such that there a an $a\in\aaa\setminus\{0\}$ with $w(a)=n$, then $\aaa=(p^n)$. 
+If $\aaa$ is a nonzero ideal of $A$, and if $n$ is the least nonnegative integer such that $p^n\in\aaa$, %there is an $a\in\aaa\setminus\{0\}$ with $w(a)=n$, 
+then $\aaa=(p^n)$. 
 
 This implies that $A$ is a principal ideal domain, and thus (Proposition 9.2 p.~94 of the book) a Dedekind domain.
 
 %Hint: Note that for $0\ne a\in A$ there is a unique $n\in\mathbb N$ such that $a\in\mmm^n\setminus\mmm^{n+1}$, and set $n(a):=n$. Prove that there a unique valuation $v:K^*\epi\mathbb Z$ such $v(a)=n(a)$ for all $a\in A\setminus(0)$ (here $K$ is the field of fractions of $A$), and show that $A$ is the discrete valuation ring attached to $v$. 
 
-\subsection{Page 99, Exercise 9.5}%
+%\subsection{Page 99, Exercise 9.5}%
 
-See Exercises 3.13 p.~45 and 7.16 p.~86 of the book. Also note that a module is flat if its finitely generated submodules are flat. 
+%\textbf{Statement:} Let $M$ be a finitely-generated module over a Dedekind domain. Prove that $M$ is flat if and only if $M$ is torsion-free.
+
+%\textbf{Hint:} See Exercises 3.13 p.~45 and 7.16 p.~86 of the book. %Also note that a module is flat if its finitely generated submodules are flat. 
 
 \subsection{Page 99, Exercise 9.6}% previous version https://docs.google.com/document/d/1-fJd9kFo9QxKoJMaVo409NohFlWdnzTlFu3ZGrDlxZU/edit?folder=0ADbJLwZkWgt8Uk9PVA
 
-Let $M$ be a finitely-generated torsion module over de Dedekind domain $A$. Then $M$ has a nonzero annihilator $\aaa$. Let $\aaa=\ppp_1^{n_1}\cdots\ppp_r^{n_r}$ be the prime factorization of $\aaa$, and note that $M$ is a module over the ring 
+\textbf{Statement:} Let $M$ be a finitely-generated torsion module ($T(M)=M$) over a Dedekind domain $A$. Prove that $M$ is uniquely representable as a finite direct sum of modules $A/\ppp_i^{n_i}$, where the $\ppp_i$ are non-zero prime ideals of $A$.
+
+\textbf{Solution:} Let $M$ be a finitely-generated torsion module over de Dedekind domain $A$. Then $M$ has a nonzero annihilator $\aaa$. Let $\aaa=\ppp_1^{n_1}\cdots\ppp_r^{n_r}$ be the prime factorization of $\aaa$, and note that $M$ is a module over the ring 
 $$
 A/\aaa\simeq A/\ppp_1^{n_1}\times\cdots\times A/\ppp_r^{n_r}. 
 $$ 
@@ -4458,9 +4487,13 @@ M'\simeq A_\ppp/\ppp_\ppp^{m_1}\oplus\cdots\oplus A_\ppp/\ppp_\ppp^{m_k}
 $$ 
 (isomorphism of $A_\ppp$-modules). As $(A/\ppp^{m_i})'\simeq A_\ppp/\ppp_\ppp^{m_i}$, this implies $(\star)$. 
 
-\subsection{Page 99, Exercise 9.7}% 
+\subsection{Page 99, Exercise 9.7}%
 
-Hint: Show that any nontrivial quotient of $A$ is a principal ideal ring, and that this implies that, given any nonzero element $x\in\aaa$ there is a $y\in\aaa$ such that $\aaa=(x,y)$. 
+\textbf{Statement:} Let $A$ be a Dedekind domain and $\aaa\ne0$ an ideal in $A$. Show that every ideal in $A/\aaa$ is principal.
+
+Deduce that every ideal in A can be generated by at most 2 elements. 
+
+\textbf{Hint:} Show that any nontrivial quotient of $A$ is a principal ideal ring, and that this implies that, given any nonzero element $x\in\aaa$ there is a $y\in\aaa$ such that $\aaa=(x,y)$. 
 
 \section{About Chapter 10}%%
 
@@ -4575,21 +4608,48 @@ Hint: The sequence $A^\land\to B^\land\to(B/\alpha(A))^\land$ is not exact.
 
 \subsection{Page 114, Exercise 10.3}%
 
-(a) By Krull's Theorem (Theorem 10.17 p.~110 of the book), we have 
+\textbf{Statement:} (a) Let $A$ be a Noetherian ring, $\aaa$ an ideal and $M$ a finitely-generated $A$-module. Using Krull's Theorem and Exercise~14 of Chapter~3, prove that 
 $$
-E:=\Ker(M\to\widehat M)=\bigcap\aaa^nM=\bigcup_{\alpha\in\aaa}\oo{Ann}_M(1+\alpha). 
+\bigcap_{n>0}\aaa^nM=\bigcap_{\mmm\supset\aaa}\Ker(M\to M_\mmm),
+$$ 
+where $\mmm$ runs over all maximal ideals containing $\aaa$.
+
+(b) Deduce that
+$$
+\widehat M=0\iff\oo{Supp}(M)\cap V(\aaa)=\varnothing\quad(\text{in }\Spec(A)).
+$$
+\textbf{Solution:} (a) By Krull's Theorem (Theorem 10.17 p.~110 of the book), we have 
+$$
+E:=\Ker(M\to\widehat M)=\bigcap\aaa^nM=\bigcup_{a\in\aaa}\oo{Ann}_M(1+a). 
 $$ 
 Set 
 $$
 F:=\bigcap_{\mmm\supset\aaa}\Ker(M\to M_\mmm). 
 $$ 
-We must show $E=F$. The inclusion $E\subset F$ is easy. To prove $F\subset E$, note the we have $F_\mmm$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book, this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
+We must show $E=F$. The inclusion $E\subset F$ is easy. To prove $F\subset E$, note the we have $F_\mmm=0$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book, this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
 
-(b) Hint: Set $\bbb:=\oo{Ann}(M)$. By Exercise 3.19v p.~46 of the book we have $\oo{Supp}(M)=V(\bbb)$, hence $\oo{Supp}(M)\cap V(\aaa)=V(\aaa+\bbb)$, hence 
+(b) Set $\bbb:=\oo{Ann}(M)$. We have 
+$$
+\widehat M=0\iff M=\aaa M\iff(\exists\ a\in\aaa)\ 1-a\in\bbb
+$$ 
+$$
+\iff\aaa+\bbb=(1)\iff\oo{Supp}(M)\cap V(\aaa)=\varnothing,
+$$ 
+the successive equivalences being justified as follows:
+
+$\bu$ first equivalence: obvious, %Krull's Theorem,
+
+$\bu$ second equivalence: Corollary~2.5 p.~21 of the book,
+
+$\bu$ third equivalence: obvious,
+
+$\bu$ fourth equivalence: Exercise 3.19v p.~46 of the book. 
+
+Details about the fourth equivalence: By Exercise 3.19v p.~46 of the book we have $\oo{Supp}(M)=V(\bbb)$, hence $\oo{Supp}(M)\cap V(\aaa)=V(\aaa+\bbb)$, hence 
 $$
 \oo{Supp}(M)\cap V(\aaa)=\varnothing\iff\aaa+\bbb=(1).
 $$ 
-By Krull's Theorem we have $\widehat M=0$ if and only if $M=\aaa M$. Finally, by Corollary 2.5 p.~21 of the book we have $M=\aaa M$ if and only if there is an $\alpha\in\aaa$ such that $x=\alpha x$ for all $x\in M$. 
+%By Krull's Theorem we have $\widehat M=0$ if and only if $M=\aaa M$. Finally, by Corollary~2.5 p.~21 of the book we have $M=\aaa M$ if and only if there is an $a\in\aaa$ such that $x=ax$ for all $x\in M$. 
 
 \subsection{Page 114, Exercise 10.4}%
 
