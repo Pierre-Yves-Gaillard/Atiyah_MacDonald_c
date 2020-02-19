@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-\usepackage{geometry}% normal
+\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+%\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -4359,7 +4359,7 @@ $(*)$ there is an $x$ in $\mmm$ such that every ideal of $A$ is of the form $(x^
 
 The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the conditions (i), (ii) or (iii). 
 
-\subsection{Page 91, Exercise 8.4}%£
+\subsection{Page 91, Exercise 8.4}%
 
 To prove (i) $\implies$ (iii) on can use the following Lemma:
 
@@ -4653,7 +4653,7 @@ $$
 
 \subsection{Page 114, Exercise 10.4}%
 
-Question: Let $A$ be a Noetherian ring, $\aaa$ an ideal in $A$, and $\widehat A$ the $\aaa$-adic completion. For any $x\in A$, let $\widehat x$ be the image of $x$ in $\widehat A$. 
+\textbf{Statement:} Let $A$ be a Noetherian ring, $\aaa$ an ideal in $A$, and $\widehat A$ the $\aaa$-adic completion. For any $x\in A$, let $\widehat x$ be the image of $x$ in $\widehat A$. 
 
 (a) Show that\smallskip 
 
@@ -4663,11 +4663,13 @@ Question: Let $A$ be a Noetherian ring, $\aaa$ an ideal in $A$, and $\widehat A$
 
 \centerline{$A$ is an integral domain $\implies\widehat A\ $ is an integral domain?}
 
-Answer to (b): No. Take $\aaa:=(1)$. 
+\textbf{Answer to (b):} No. Take $\aaa:=(1)$. 
 
-\subsection{Page 114, Exercise 10.5}% 
+\subsection{Page 114, Exercise 10.5}%
 
-Hint: In view of the isomorphism $\widehat A\otimes_A\simeq\widehat M$, it suffices to show 
+\textbf{Statement:} Let $A$ be a Noetherian ring and let $\aaa,\bbb$ be ideals in $A$. If $M$ is any $A$-module, let $M^\aaa,M^\bbb$ denote its $\aaa$-adic and $\bbb$-adic completions respectively. If $M$ is finitely generated, prove that $(M^\aaa)^\bbb\simeq M^{\aaa+\bbb}$.
+
+\textbf{Hint:} In view of the isomorphism $\widehat A\otimes_A\simeq\widehat M$, it suffices to show 
 \begin{equation}\label{aba+b}
 (A^\aaa)^\bbb\simeq A^{\aaa+\bbb}. 
 \end{equation} 
@@ -4688,19 +4690,25 @@ $$
 \simeq A^{\aaa+\bbb}.
 $$ 
 
-\subsection{Page 114, Exercise 10.6}% 
+\subsection{Page 114, Exercise 10.6}%
 
-Let $A$ be a ring, $\aaa$ an ideal, and equip $A$ with the $\aaa$-adic topology. 
+\textbf{Statement:} Let $A$ be a Noetherian ring and $\aaa$ an ideal in $A$. Prove that $\aaa$ is contained in the Jacobson radical of $A$ if and only if every maximal ideal of $A$ is closed for the $\aaa$-topology.
+
+\textbf{Hint:} Let $A$ be a ring, $\aaa$ an ideal, and equip $A$ with the $\aaa$-adic topology. 
 
 Then any ideal containing $\aaa$ is open and closed (because such an ideal is a union of $\aaa$-cosets). 
 
-Moreover any maximal ideal $\mmm$ not containing $\aaa$ is dense. 
+Moreover any maximal ideal $\mmm$ not containing $\aaa$ is dense.
 
-To prove this let us show that any nonempty open subset $U\subset A$ meets $\mmm$. Set $K:=A/\mmm$ and let $\pi:A\to K$ be the canonical projection. It suffices to check that $0\in\pi(U)$. But the $\aaa$-adic topology of $K$ being the coarse topology, $\pi(U)$ is the unique nonempty subset of $K$, that is $K$ itself. %Let $u$ be in $U$. There some $n\in\mathbb N$ such that $u+\aaa^n\subset U$, and it suffices to prove that $u+\aaa^n$ meets $\mmm$. Let $\alpha$ be in $\aaa\setminus\mmm$. If $x\in A$ is a solution to the equation $$\alpha^nx\equiv u\bmod\mmm,$$ then we have $u-\alpha^nx\in\mmm$, as desired. 
+To prove this, let us show that any nonempty open subset $U\subset A$ meets $\mmm$. Set $K:=A/\mmm$ and let $\pi:A\to K$ be the canonical projection. It suffices to check that $0\in\pi(U)$. But the $\aaa$-adic topology of $K$ being the coarse topology, $\pi(U)$ is the unique nonempty subset of $K$, that is $K$ itself. %Let $u$ be in $U$. There some $n\in\mathbb N$ such that $u+\aaa^n\subset U$, and it suffices to prove that $u+\aaa^n$ meets $\mmm$. Let $\alpha$ be in $\aaa\setminus\mmm$. If $x\in A$ is a solution to the equation $$\alpha^nx\equiv u\bmod\mmm,$$ then we have $u-\alpha^nx\in\mmm$, as desired. 
 
-\subsection{Page 114, Exercise 10.7}% 
+\subsection{Page 114, Exercise 10.7}%
 
-Hint: Let $\mmm$ be a maximal ideal of $A$. Proposition 10.15i p.~109 of the book implies that the extension $\mmm^{\oo e}$ of $\mmm$ in $\widehat A$ is $\widehat\mmm$, and we get 
+\textbf{Statement:} Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$, and $A$ the $\aaa$-adic completion. Prove that $A$ is faithfully flat over $A$ (Chapter 3, Exercise 16) if and only if $A$ is a Zariski ring (for the $\aaa$-topology).
+
+[Recall that a Noetherian topological ring in which the topology is defined by an ideal contained in the Jacobson radical is called a Zariski ring. Examples are local rings and (by Proposition 10.15iv p.~109 of the book $\aaa$-adic completions.]
+
+\textbf{Hint:} Let $\mmm$ be a maximal ideal of $A$. Proposition 10.15i p.~109 of the book implies that the extension $\mmm^{\oo e}$ of $\mmm$ in $\widehat A$ is $\widehat\mmm$, and we get 
 $$
 \aaa\subset\mmm\implies0\ne(A/\mmm)^{\land}\simeq\widehat A/\widehat\mmm\implies\mmm^{\oo e}\ne(1), 
 $$ 
@@ -4708,31 +4716,29 @@ $$
 \aaa\not\subset\mmm\implies0=(A/\mmm)^{\land}\simeq\widehat A/\widehat\mmm\implies\mmm^{\oo e}=(1). 
 $$ %See Section~\ref{1019} p.~\pageref{1019} above. 
 
-\subsection{Page 115, Exercise 10.9, Hensel's Lemma}%
+\subsection{Page 115, Exercise 10.9, Hensel's Lemma}% previous version: https://docs.google.com/document/d/1526_roVmeZpQMrYu0CK8TmS2WNr2HGhfnkqHGozrvLE/edit
 
 We follow Jeffrey Daniel Kasik Carlson. 
 
-\begin{lem}\label{L106a} 
-Let $B$ be a ring, let $p,q$ be coprime monic polynomials in $B[x]$ with $\deg p=r$, and let $c$ be in $B[x]$. Then there are unique $a,b\in B[x]$ with $c=ap+bq$ and $\deg b<r$. 
-\end{lem} 
-\begin{proof}
-The element $\bar q\in B[x]/(p)$ being a unit since $(p,q)=(1)$ in $B[x]$, there is a $b\in B[x]$ of least degree such that $\bar b\bar q=\bar c$ in $B[x]/(p)$. Since $p$ is monic of degree $r$, the elements $\bar 1,\bar x,\dots,\bar x^{r-1}$ freely generate $B[x]/(p)$ as a $B$-module, so $b$ is unique and of degree less than $r$. %Now $c\equiv bq\bmod p$, and
-The polynomial $p$, being monic, is not a zero-divisor, so there is a unique $a\in B[x]$ such that $ap=c-bq$. %has a unique solution $a\in B[x]$. 
-\end{proof}
-
 \begin{lem}\label{L106b}
-Let $\bbb\subset\mf R(A)$ be an ideal of $A$, let $g$ and $h$ be in $A[x]$ with $g$ monic and $(\bar g,\bar h)=(1)$ in $(A/\bbb)[x]$. Then we have $(g,h)=(1)$ in $A[x]$. 
+Let $\aaa\subset\mf R(A)$ be an ideal of $A$, let $g$ and $h$ be in $A[x]$ with $g$ monic and $(\bar g,\bar h)=(1)$ in $(A/\aaa)[x]$. Then we have $(g,h)=(1)$ in $A[x]$. 
 \end{lem} 
 \begin{proof} 
 If $M=A[x]/(g)$, and $N=hM$, then since 
 $$
-\bbb[x]+(g, h)=A[x],
+\aaa[x]+(g, h)=A[x],
 $$ 
-we have $\bbb M+N=M$. Since $M$ is finitely generated by $\bar 1$, $\bar x, $\dots, $\bar x^{(\deg g)-1}$, Corollary 2.7 to Nakayama’s Lemma, p.~22 of the book applies to show $hM=M$, so that $(g,h)=(1)$ in $A[x]$. 
-\end{proof} 
+we have $\aaa M+N=M$. Since $M$ is finitely generated by $\bar 1$, $\bar x, $\dots, $\bar x^{(\deg g)-1}$, Corollary~2.7 to Nakayama’s Lemma, p.~22 of the book applies to show $hM=M$, so that $(g,h)=(1)$ in $A[x]$. 
+\end{proof}
 
-Now we solve Exercise 10.9. We need only assume that $A$ is complete with respect to some ideal $\mmm$; we do not necessarily need $\mmm$ maximal or $A$ local. To emphasize the fact that $\mmm$ is not necessarily maximal, we denote this ideal by $\aaa$. %Recall that $A$ is complete for the $\aaa$-topology. 
-We shall prove: %Recall the statement of Hensel's Lemma
+\begin{lem}\label{L106a} 
+Let $A$ be a ring, let $p,q$ be coprime monic polynomials in $A[x]$ with $\deg p=r$, and let $c$ be in $A[x]$. Then there are unique $a,b\in A[x]$ with $c=ap+bq$ and $\deg b<r$. 
+\end{lem} 
+\begin{proof}
+The element $\bar q\in A[x]/(p)$ being a unit since $(p,q)=(1)$ in $A[x]$, there is a $b\in A[x]$ of least degree such that $\bar b\bar q=\bar c$ in $A[x]/(p)$. Since $p$ is monic of degree $r$, the elements $\bar 1,\bar x,\dots,\bar x^{r-1}$ freely generate $A[x]/(p)$ as a $A$-module, so $b$ is unique and of degree less than $r$. The polynomial $p$, being monic, is not a zero-divisor, so there is a unique $a\in A[x]$ such that $ap=c-bq$.
+\end{proof}
+
+Now we solve Exercise 10.9. We need only assume that $A$ is complete with respect to some ideal $\mmm$; we do not necessarily need $\mmm$ maximal or $A$ local. To emphasize the fact that $\mmm$ is not necessarily maximal, we denote this ideal by $\aaa$. We shall prove:
 
 \begin{thm}[Hensel's Lemma]\label{hl}
 Let $A$ be a ring and $\aaa$ an ideal of $A$ such that $A$ is $\aaa$-complete. For any polynomial $f(x)\in A[x]$, let $\overline f(x)\in(A/\aaa)[x]$ denote its reduction modulo $\aaa$. Assume that $f(x)\in A[x]$ is monic of degree $n$ and that there exist coprime monic polynomials $\overline g(x),\overline h(x)\in(A/\aaa)[x]$ of degrees $r,n-r$ with $1\le r\le n-1$ and $\overline f(x)=\overline g(x)\overline h(x)$. Then we can lift $\overline g(x),\overline h(x)$ back to monic polynomials of the same degrees $g(x),h(x)\in A[x]$ such that $f(x)=g(x)h(x)$.
@@ -4748,11 +4754,11 @@ $$
 g_j\text{ monic of degree }r,\quad\deg h_j=n-r,\quad\overline{h_j}=\overline h,%\text{ for all }j\ge2,  
 $$ 
 $$
-f-g_jh_j\equiv0\bmod\aaa^j%\text{ for all }j\ge2
+f-g_jh_j\equiv0\bmod\aaa^j
 $$ 
 and 
 $$
-g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\bmod\aaa^{j-1}%\text{ for all }j\ge2
+g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\bmod\aaa^{j-1}
 $$ 
 for all $j\ge2$. 
 
@@ -4762,7 +4768,7 @@ g\equiv g_j,\quad h\equiv h_j\bmod\aaa^j
 $$ 
 for all $j\ge1$. We will then have 
 $$
-g\text{ is monic of degree }r,\quad\deg h=n-r,%\text{ for all }j\ge2,  
+g\text{ is monic of degree }r,\quad\deg h=n-r,
 $$ 
 $$
 f-gh=(f-g_jh_j)+(g_jh_j-gh)\equiv0\bmod\aaa^j
@@ -4784,7 +4790,7 @@ g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\bmod\aaa^{j-1}
 $$ 
 for $2\le j\le k$. Note that this implies $\deg c_j\le n$. 
 
-Since by Proposition 10.15.iv p.~109 of the book, $\aaa\subset\mf R(A)$, it follows from Lemma~\ref{L106b} with $\bbb=\aaa$, that $(g_k,h_k)=(1)$ in $A[x]$. By Lemma~\ref{L106a} with 
+Since by Proposition 10.15.iv p.~109 of the book, $\aaa\subset\mf R(A)$, it follows from Lemma~\ref{L106b}, that $(g_k,h_k)=(1)$ in $A[x]$. By Lemma~\ref{L106a} with 
 $$
 B=A,\quad p=g_k,\quad q=h_k,
 $$ 
@@ -4793,11 +4799,10 @@ $$
 \deg b<r\text{ and }ag_k+bh_k=c_k.
 $$ 
 We have in particular 
-$$
+\begin{equation}\label{dega}
 \deg a\le n-r.
-$$ 
-Taking $B:=A/\aaa^k$ in Lemma~\ref{L106a} and using uniqueness, we see that since $c_k\in\aaa^k[x]$ we also have $a,b\in\aaa^k[x]$. %(Here of course the bars mean ``reduction modulo $\aaa^k$''.) 
-Setting  
+\end{equation}
+Taking $B:=A/\aaa^k$ in Lemma~\ref{L106a} and using uniqueness, we see that since $c_k\in\aaa^k[x]$ we also have $a,b\in\aaa^k[x]$. Setting  
 $$
 g_{k+1}=g_k+b\in g_k+\aaa^k[x]
 $$ 
@@ -4809,15 +4814,14 @@ we get
 \[
 \begin{split}
 f-g_{k+1}h_{k+1}&=(f-g_kh_k)-(ag_k+bh_k)-ab\\
-&=c_k-c_k+ab=ab\in\aaa^{2k}[x]\subset\aaa^{k+1}[x].\\
+&=c_k-c_k-ab=-ab\in\aaa^{2k}[x]\subset\aaa^{k+1}[x].\\
 \end{split} 
 \] 
-As $\deg b<r$, the polynomial $g_{k+1}$ is monic of degree $r$. %We have $\overline{h_{k+1}}=\overline h$. As $\deg a\le n-r$, this implies $\deg h_{k+1}\le n-r$. 
-The inequality $\deg a\le n-r$ implies $\deg h_{k+1}\le n-r$, and the condition 
+As $\deg b<r$, the polynomial $g_{k+1}$ is monic of degree $r$. The inequality $\deg a\le n-r$ (see \eqref{dega}) implies $\deg h_{k+1}\le n-r$, and the condition 
 $$
 \overline{h_{k+1}}=\overline h\text{ with }\overline h\text{ monic}
 $$ 
-yields $\deg h_{k+1}=n-r$. %(Here the bars mean ``reduction modulo $\aaa$'', as in the statement of Hensel's Lemma.)
+yields $\deg h_{k+1}=n-r$.
 \end{proof}
 
 \subsection{Page 115, Exercise 10.10iii}%
