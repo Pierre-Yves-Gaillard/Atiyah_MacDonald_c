@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -4830,13 +4830,18 @@ Set $A:=k[[x]]$, $\aaa:=(x)$ in Theorem~\ref{hl} p.~\pageref{hl}.
 
 \subsection{Page 115, Exercise 10.11}%
 
-Let $A$ be the ring of germs at $0$ of $C^\infty$ functions from $\mathbb R$ to $\mathbb R$, and $\mmm$ the ideal of those germs which vanish at $0$. Then $\widehat A\simeq\mathbb R[[x]]$ and $A\to\widehat A$ is surjective. Note that $A$ is not noetherian by Corollary 10.18 p.~110 of the book. 
+\textbf{Statment:} Show that the converse of (10.26) is false, even if we assume that $A$ is local and that $\widehat A$ is a finitely-generated $A$-module.
+
+Recall (10.26): If $A$ is a Noetherian ring, $\aaa$ an ideal of $A$, then the $\aaa$-
+completion $\widehat A$ of $A$ is Noetherian.
+
+\textbf{Hint:} Let $A$ be the ring of germs at $0$ of $C^\infty$ functions from $\mathbb R$ to $\mathbb R$, and $\mmm$ the ideal of those germs which vanish at $0$. Then $\widehat A\simeq\mathbb R[[x]]$ and $A\to\widehat A$ is surjective. Note that $A$ is not noetherian by Corollary 10.18 p.~110 of the book. 
 
 \subsection{Page 115, Exercise 10.12}%
 
-Statement: If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
+\textbf{Statment:} If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
 
-Solution: Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\mmm$ be a maximal ideal of $A$, define the $A$-algebra surjective morphism $\phi:B\to A/\mmm$ as the composite of $B\to A$, $f\mapsto f(0)$ and the canonical projection $A\to A/\mmm$. %, and let $\nnn$ be the kernel of $\phi$. 
+\textbf{Solution:} Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\mmm$ be a maximal ideal of $A$, define the $A$-algebra surjective morphism $\phi:B\to A/\mmm$ as the composite of $B\to A$, $f\mapsto f(0)$ and the canonical projection $A\to A/\mmm$. %, and let $\nnn$ be the kernel of $\phi$. 
 It suffices to show $\phi(\mmm)=(0)$ (see Exercise 3.16iii p.~45 of the book), which is clear. 
 
 \section{About Chapter 11}%%
@@ -4968,7 +4973,11 @@ But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the
 
 \subsection{Page 125, Exercise 11.2}%
 
-Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$ and note that $\qqq$ defines the same topology on $A$ as $\mmm$ (see proof of Proposition 11.6 p.~119). Set $B:=k[[t_1,\ldots,t_d]]$, and let 
+\textbf{Statement:} In (11.21) assume that $A$ is complete. Prove that the homomorphism $k[[t_1,\ldots,t_d]]\to A$ given by $t_i\mapsto x_i$ ($i=1,\ldots,d$) is injective and that $A$ is a finitely-generated module over $k[[t_1,\ldots,t_d]]$.
+
+Recall (11.21): If $k\subset A$ is a field mapping isomorphically onto $A/\mmm$ and if $x_1,\ldots,x_d$ is a system of parameters, then $x_1,\ldots,x_d$ are algebraically independent over $k$.
+
+\textbf{Solution:} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$ and note that $\qqq$ defines the same topology on $A$ as $\mmm$ (see proof of Proposition 11.6 p.~119). Set $B:=k[[t_1,\ldots,t_d]]$, and let 
 $$
 b:=\sum c_\alpha t_1^{\alpha_1}\cdots t_d^{\alpha_d}
 $$ 
@@ -4980,7 +4989,7 @@ is a Cauchy series in $A$. Let $a$ be its sum, and define $\phi:B\to A$ by $\phi
 
 Let us show that $\phi$ is injective. In the above setting, assume that $b\ne0$ and $a=0$. Write $b=b_n+b_{n+1}+\cdots$ with $b_i$ homogeneous of degree $i$ and $b_n\ne0$. Set $a_i:=\phi(b_i)$. We get $a_n\in\qqq^{n+1}$, and Proposition 11.20 p.~122 of the book implies $b_n=0$, contradiction. 
 
-Let us show that $A$ is a finitely generated $B$-module. By Proposition 11.24 p.~112 of the book, it suffices to show that $G_\qqq(A)$ is a finitely generated $G_\nnn(B)$-module. Consider the exact sequence 
+Let us show that $A$ is a finitely generated $B$-module. By Proposition 10.24 p.~112 of the book, it suffices to show that $G_\qqq(A)$ is a finitely generated $G_\nnn(B)$-module, where $\nnn$ is the maximal ideal of $B$. Consider the exact sequence 
 $$
 0\to G_\qqq(\qqq)\to G_\qqq(A)\to A/\qqq\to0
 $$ 
@@ -4988,7 +4997,11 @@ of $G_\nnn(B)$-modules. Then $G_\qqq(\qqq)$ is a finitely generated $G_\nnn(B)$-
 
 \subsection{Page 126, Exercise 11.3}%
 
-Let $K$ be a field and $A$ a finitely generated $K$-algebra. By Noether's Normalization Theorem (see Section~\ref{nnt} p.~\pageref{nnt}), the Krull dimension $n$ of $A$ is finite, and there are $n$ elements of $A$ which are algebraically independent over $K$. 
+\textbf{Statement:} Extend (11.25) to non-algebraically-closed fields.
+
+Recall (11.25): For any irreducible variety $V$ over $k$ the local dimension of $V$ at any point is equal to $\dim V$.
+
+\textbf{Solution:} Let $K$ be a field and $A$ a finitely generated $K$-algebra. By Noether's Normalization Theorem (see Section~\ref{nnt} p.~\pageref{nnt}), the Krull dimension $n$ of $A$ is finite, and there are $n$ elements of $A$ which are algebraically independent over $K$. 
 
 Claim: Any $n+1$ elements of $A$ are algebraically dependent over $K$.
 
@@ -4997,6 +5010,8 @@ Proof. If $A$ is a domain, we are done because Noether's Normalization Theorem i
 Assume by contradiction that the elements $x_1,\ldots,x_{n+1}$ of $A$ are algebraically independent over $K$. Set $B:=K[x_1,\ldots,x_{n+1}]\subset A$ and $S:=B\setminus\{0\}$. This is a multiplicative subset of $A$ which does not contain $0$. Thus there is a prime ideal $\ppp$ of $A$ which is disjoint from $S$, and $B$ imbeds into the domain $A/\ppp$, whose Krull dimension is at most $n$. This contradicts the first part of the argument. 
 
 \subsection{Page 126, Exercise 11.4}%
+
+An example of a Noetherian domain of infinite dimension (Nagata).
 
 We sketch a solution. 
 
@@ -5007,14 +5022,16 @@ $$
 be a partition of $\mathbb N$ with $N_i\ne\varnothing$ for all $i$, let $K$ be a field, let $A$ be the $K$-algebra $K[x_0,x_1,\dots]$, where the $x_i$ are indeterminates, for each $i\in\mathbb N$ let $\ppp_i$ be the ideal of $A$ generated by the $x_j$ with $j\in N_i$, let $S\subset A$ be the complement of the union of the $\ppp_i$, and set $B:=S^{-1}A$. 
 
 Our main goal is to prove 
-
-(a) $B$ is noetherian. 
+$$
+\text{(a) $B$ is noetherian.} 
+$$ 
+\subsubsection{Reduction to Statements (d) and (e)}
 
 By Exercise 7.9 p.~85 of the book, it suffices to show 
 
-(b) for each maximal ideal $\mmm$ of $B$, the local ring $B_\mmm$ is noetherian,
+(b) For each maximal ideal $\mmm$ of $B$, the local ring $B_\mmm$ is noetherian.
 
-(c) for each $b\ne0$ in $B$, the set of maximal ideals of $B$ which contain $b$ is
+(c) For each $b\ne0$ in $B$, the set of maximal ideals of $B$ which contain $b$ is
 finite.
 
 We claim 
@@ -5023,15 +5040,23 @@ We claim
 
 Statement (d) will imply that the maximal ideals of $B$ are the $S^{-1}\ppp_i$, and thus, (d) will imply (c). Statement (d) will also reduce (b) to 
 
-(e) for each $i$ the local ring $B_{S^{-1}\ppp_i}$ is noetherian. 
+(e) For each $i$ the local ring $B_{S^{-1}\ppp_i}$ is noetherian.
 
 To summarize, it suffices to prove (d) and (e). 
 
-We prove (d). We shall use the following easy fact: 
+\subsubsection{Proof of (d)}
 
+Recall Statement (d):
+
+(d) If $\aaa$ is an ideal of $A$ contained in the union of the $\ppp_i$, then $\aaa$ is contained in some $\ppp_i$.
+
+We shall use the following easy fact: 
+
+\begin{rk}\label{monid}
 Let $\aaa$ be an ideal of $A$. Then $\aaa$ is generated by monomials if and only if it has the following property:
 
 A polynomial $f\in A$ is in $\aaa$ if and only if all the monomials occurring in $f$ are in $\aaa$.
+\end{rk}
 
 For $f\in A$ set 
 $$
@@ -5040,34 +5065,42 @@ $$
 and let $\aaa$ be an ideal of $A$ contained in the union of the $\ppp_i$. %Claim 1: We have $\aaa\subset\ppp_i$ for some $i$. 
 We claim that 
 
-(f) if $f,g\in A\setminus\{0\}$ and $i,j\in\mathbb N$ satisfy 
+(f) If $f,g\in A\setminus\{0\}$ and $i,j\in\mathbb N$ satisfy 
 $$
 g\notin\ppp_i,\quad j\notin N_i,\quad x_j\text{ divides no monomial occurring in }f,
 $$ 
 then $W(f+x_jg)\subset W(f)\setminus\{i\}$. % old Claim 2
 
-To prove (f) note that no monomial can occur simultaneously in $f$ and in $x_jg$. 
+To prove (f) note that Remark~\ref{monid} implies that no monomial can occur simultaneously in $f$ and in $x_jg$, and thus $f+x_jag\in\ppp_k$ if and only if $f$ and $x_jg$ are both in $\ppp_k$, or, in other words, $W(f+x_jg)=W(f)\cap W(x_jg)$, and thus $W(f+x_jg)\subset W(f)$. Note also that neither $x_j$ nor $g$ is in $\ppp_i$, hence $x_jg\notin\ppp_i$, hence $f+x_jg\notin\ppp_i$ (by Remark~\ref{monid} and the fact that no monomial can occur simultaneously in $f$ and in $x_jg$), that is $i\notin W(f+x_jg)$.
 
 Let us show that (f) implies (d). 
 
-Assume by contradiction that for all $i$ we have $\aaa\not\subset\ppp_i$. Note that $W(f)$ is finite if $0\ne f\in A$. Denote by $|X|$ the cardinality of any set $X$. Let $f\in\aaa$ with $|W(f)|$ minimum. In particular $|W(f)|$ is a nonnegative integer. It is even a positive integer because $\aaa$ is contained in the union of the $\ppp_i$. Let $i$ be in $W(f)$ and $g$ be in $\aaa\setminus\ppp_i$. By (f) there is a $j$ such that $f+x_jg$ is an element of $\aaa$ satisfying $|W(f+x_jg)|<|W(f)|$, a contradiction. 
+Assume by contradiction that for all $i$ we have $\aaa\not\subset\ppp_i$. Note that $W(f)$ is finite if $0\ne f\in A$. Denote by $|X|$ the cardinality of any set $X$. Let $f\in\aaa$ with $|W(f)|$ minimum. In particular $|W(f)|$ is a nonnegative integer. It is even a positive integer because $\aaa$ is contained in the union of the $\ppp_i$. Let $i$ be in $W(f)$ and $g$ be in $\aaa\setminus\ppp_i$. By (f) there is a $j$ such that $f+x_jg$ is an element of $\aaa$ satisfying $|W(f+x_jg)|<|W(f)|$, a contradiction.
 
-It only remains to prove (e). 
+\subsubsection{Proof of (e)}
+
+It only remains to prove Statement (e), which we recall:
+
+(e) For each $i$ the local ring $B_{S^{-1}\ppp_i}$ is noetherian.
 
 We change the setting as follows (letting again $K$ be a field). Let $x_1,\ldots,x_n$ and $y_1,y_2,\ldots$ be indeterminates, denote by $x$ the sequence $(x_1,\ldots,x_n)$ of indeterminates, and by $y$ the sequence $(y_1,y_2,\ldots)$ of indeterminates. Let $K[x,y]$ be the polynomial $K$-algebra over all the above indeterminates. We claim 
 
-(g) the equality 
+(g) The equality 
 $$
 K[x,y]_{(x_1,\ldots,x_n)}=\Big(\big(K(y)\big)[x]\Big)_{(x_1,\ldots,x_n)}
 $$ 
 holds as an equality between subrings of $K(x,y)$. In particular this ring is noetherian. 
 
-We leave the proof of (g) to the reader. Clearly (g) implies (e).  
+We leave the proof of (g) to the reader. Clearly (g) implies (e). 
 
 \subsection{Page 126, Exercise 11.6}\label{116}% previous version https://docs.google.com/document/d/1pXphjmJVG5y2JSIiE6W0ZBNaBsdVPPTXytsjLOLYc7g/edit
 
-We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If $\ppp$ and $\qqq$ are prime ideals of a ring $B$, we write %$\ppp<\qqq$ instead of $$\ppp\underset\ne\subset\qqq,$$ and 
-$\ppp_i^{\oo c}$ instead of $(\ppp_i)^{\oo c}$. 
+\textbf{Statement:} Let $A$ be a ring (not necessarily Noetherian). Prove that 
+$$
+1+\dim A\le\dim A[x]\le1+2\dim A.
+$$ 
+
+\textbf{Solution:} We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If we have a ring morphism $A\to B$ and a prime ideal $\qqq_i$ of $B$, we write $\ppp_i^{\oo c}$ for $(\ppp_i)^{\oo c}$. 
 
 We shall use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
 
@@ -5083,9 +5116,8 @@ $$
 where $k$ is the residue field at $\ppp$.
 \end{note}
 
-For Exercise 3.21iv p.~47 of the book, see Section~\ref{321iv} p.~\pageref{321iv} above. 
-
-For Exercise 4.7 p.~55 of the book, see Section~\ref{5547} p.~\pageref{5547} above. 
+See Section~\ref{321iv} p.~\pageref{321iv} and Section~\ref{5547} p.~\pageref{5547} above.
+%For Exercise 3.21iv p.~47 of the book, see Section~\ref{321iv} p.~\pageref{321iv} above. For Exercise 4.7 p.~55 of the book, see Section~\ref{5547} p.~\pageref{5547} above. 
 
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
 $
@@ -5099,9 +5131,9 @@ is chain of prime ideals in $A[x].\ \square$
 
 \emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: Note~\ref{116b} above implies that, for any chain $\ppp_0<\ppp_1<\ppp_2$ of prime ideals in $A[x]$, we have:
 
-$\bullet$ if $\ppp_0^{\oo c}=\ppp_1^{\oo c}$ then $\ppp_0=\ppp_0^{\oo c}[x]$ and $\ppp_1^{\oo c}<\ppp_2^{\oo c}$,
+$\bullet$ if $\ppp_0^{\oo c}=\ppp_1^{\oo c}$ then $\ppp_0=\ppp_0^{\oo c}[x]$, $\ppp_1=\ppp_0+(x)$ and $\ppp_1^{\oo c}<\ppp_2^{\oo c}$,
 
-$\bullet$ if $\ppp_1^{\oo c}=\ppp_2^{\oo c}$ then $\ppp_1=\ppp_1^{\oo c}[x]$ and $\ppp_0^{\oo c}<\ppp_1^{\oo c}$.
+$\bullet$ if $\ppp_1^{\oo c}=\ppp_2^{\oo c}$ then $\ppp_1=\ppp_1^{\oo c}[x]$, $\ppp_2=\ppp_1+(x)$ and $\ppp_0^{\oo c}<\ppp_1^{\oo c}$.
 
 This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of length at least $\lfloor\ell/2\rfloor$ in $A$. Hence 
 $$
@@ -5114,7 +5146,27 @@ $$
 
 \subsection{Page 126, Exercise 11.7}% 
 
-We follow the hint of the book, and we shall use the following obvious fact: 
+\textbf{Statement:} Let $A$ be a Noetherian ring. Then
+$$
+\dim A[x]=1+\dim A,
+$$
+and hence, by induction on $n$,
+$$
+\dim A[x_1,\ldots,x_n]=n+\dim A.
+$$ 
+Here is the hint given in the book:
+
+Let $\ppp$ be a prime ideal of height $m$ in $A$. Then there exist $a_1,\ldots,a_m\in\ppp$ such that $\ppp$ is a minimal prime ideal belonging to the ideal $\aaa=(a_1,\ldots,a_m)$. By Exercise 7 of Chapter 4, the ideal $\ppp[x]$ is a minimal prime ideal of $\aaa[x]$ and therefore the height $\ppp[x]$ is $\le m$. On the other hand, a chain of prime ideals 
+$$
+\ppp_0<\ppp_1<\cdots<\ppp_m=\ppp
+$$ 
+gives rise to a chain 
+$$
+\ppp_0[x]<\ppp_1[x]<\cdots<\ppp_m[x]=\ppp[x],
+$$ 
+hence the height of $\ppp$ is $\ge m$. Hence the height of $\ppp[x]$ is equal to the height of $\ppp$. Now use the argument of Exercise~6.
+
+\textbf{Solution:} As in the previous section, we denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. We follow the hint of the book, and we shall use the following obvious fact: 
 
 \begin{note}\label{116a}
 If $\ppp_0<\cdots<\ppp_n$ is a chain of prime ideals, then $h(\ppp_n)\ge n+h(\ppp_0)$. 
@@ -5130,7 +5182,7 @@ This follows from Proposition 11.13 p.~121 of the book, which says
 
 ``Let $A$ be a Noetherian local ring of dimension $d$. Then there exists an $\mmm$-primary ideal in $A$ generated by $d$ elements $x_1,\ldots,x_d$.'' %Second sentence of the hint: see Proposition 11.13 p.~121 of the book. 
 
-$\bullet$ Inequality $\oo{height }\ppp[x]\le m$: see Corollary 11.16 p.~121 of the book, Corollary which says 
+$\bullet$ Inequality $h(\ppp[x])\le m$: see Corollary 11.16 p.~121 of the book, Corollary which says 
 
 ``Let $A$ be a Noetherian ring, $x_1,\ldots,x_r\in A$. Then every minimal ideal $\ppp$ belonging to $(x_1,\ldots,x_r)$ has height $\le r$.''
 
@@ -5148,15 +5200,18 @@ $
 $ 
 be a chain of prime ideals in $A[x]$ of length $n+2$. It suffices to derive a contradiction from this assumption. 
 
-The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ by Note~\ref{116b} p.~\pageref{116b}, and 
-$$
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ and $\ppp_{i+1}=\ppp_i+(x)$ by the proof of the inequality $\dim A[x]\le1+2\dim A$ in Section~\ref{116} p.~\pageref{116}, %Note~\ref{116b} p.~\pageref{116b}, 
+and 
+\begin{equation}\label{hppp}
 h(\ppp_i^{\oo c})=h(\ppp_i^{\oo c}[x])=h(\ppp_i)\ge i,
-$$ 
-the inequality following from Note~\ref{116a} p.~\pageref{116a}. Using again Note~\ref{116a} we get  %and $\ppp_i=\ppp_i^{\oo c}[x]$ by Note~\ref{116a} p.~\pageref{116a}, and thus $h(\ppp_i^{\oo c})=h(\ppp_i)\ge i$. This implies
+\end{equation}
+the inequality following from Note~\ref{116a} p.~\pageref{116a}. %Using again Note~\ref{116a}
+Then we get 
 $$
-h(\ppp_{n+2}^{\oo c})\ge n+1-i+h(\ppp_i^{\oo c})\ge n+1,
+h(\ppp_{n+2}^{\oo c})\ge n+1-i+h(\ppp_i^{\oo c})\ge n+1-i+i=n+1,
 $$ 
-which is impossible. $\square$
+the inequalities following respectively from Note~\ref{116a} and Display~\eqref{hppp}. This contradicts the definition of $n$. %which is impossible. 
+$\square$
 
 \section{Questions}%%
 
