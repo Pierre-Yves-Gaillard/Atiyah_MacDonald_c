@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -404,6 +404,18 @@ Question: A ring $A$ is such that every ideal not contained in the nilradical co
 
 Answer: If $e=e^2\in\mf R$, then $e=0$. Indeed, the element $1-e=1-e^2$ being a unit, the equality $e(1-e)=0$ implies $e=0$.
 
+\subsection{Page 11, Exercise 1.8}\label{vp1}%
+
+\textbf{Statement.} Let $A$ be a ring $\ne0$. Show that the set of prime ideals of $A$ has minimal elements with respect to inclusion.
+
+\textbf{Comment.} Let $X$ be the set of prime ideals of $A$. If $Y$ is a subset of $X$, and if the intersection of any totally ordered subset of $Y$ belongs to $Y$, then $Y$ has at least one minimal element.
+
+In particular, if $\ppp_0\in X$ and if $\aaa$ is an ideal of $A$, then then the set 
+$$
+\{\ppp\in X\ |\ \aaa\subset\ppp\subset\ppp_0\}
+$$ 
+has at least one minimal element.
+
 \subsection{Page 11, Exercise 1.11iii}%
 
 Let $A$ be boolean, and let us show that any finitely generated ideal $\aaa$ is principal. We can assume $\aaa=(x,y)$. Then $z:=x+y-xy\in\aaa$ satisfies $xz=x,yz=y$, and we get $\aaa=(z)$.
@@ -427,6 +439,14 @@ Letting $L$ be an extension of $K$ in which each $f_i$ has a root $\alpha_i$, we
 \subsection{Page 12, Exercise 1.14}\label{114}%
 
 More precisely, for each $\mf a\in\Sigma$ there is a maximal element $\bbb\in\Sigma$ such that $\mf a\subset\bbb$.
+
+\subsection{Page 12, Exercise 1.15}\label{vp2}%
+
+By Section~\ref{vp1} p.~\pageref{vp1} we have 
+$$
+V(E)=\bigcup_{\ppp\in M}V(\ppp),
+$$ 
+where $M$ is the set of minimal elements of $V(E)$.
 
 \subsection{Page 13, Exercise 1.19}\label{irr}%
 
@@ -3991,6 +4011,36 @@ As $\ppp$ is an arbitrary prime ideal of $A$, this forces $(a)=(a^2)$.
 (b)$\implies$(c): With obvious notation we have $\overline a=\overline a^2\overline b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^{n+1}\in(a^n)$ and thus $(a^{n+1})=(a^n)$. 
 
 (c)$\implies$(a): Let $\ppp$ be a prime ideal of $A$ and let $a$ be in $A\setminus\ppp$. We have $a^n(1-ab)=0$ for some $b$ in $A$ and some $n$ in $\mathbb N$. In particular $a^n(1-ab)\in\ppp$, and thus $1-ab\in\ppp$. This implies that $A/\ppp$ is a field, and therefore that $\ppp$ is maximal. $\square$
+
+\subsection{Page 83, Theorem 7.13}%
+
+Recall the statement:
+
+\emph{In a Noetherian ring $A$ every ideal has a primary decomposition.}
+
+Let $E$ be a subset of a ring $A$. Recall that we have, by Section~\ref{vp2} p.~\pageref{vp2}, if $E$ is a subset of a noetherian ring $A$ 
+$$
+V(E)=\bigcup_{\ppp\in M}V(\ppp),
+$$ 
+where $M$ is the set of minimal elements of $V(E)$. 
+
+Assume now that $A$ is \emph{noetherian}. 
+
+Then the set $M$ is finite. As a result, we have %(for $A$ noetherian)
+
+\emph{The topology of $\Spec(A)$ depends only on its poset structure.}
+
+More precisely:
+
+\emph{A subset of $\Spec(A)$ is closed if and only if it is a finite union of subsets of the form $V(\ppp)$ with $\ppp\in\Spec(A)$.}
+
+Equivalently:
+
+\emph{The closed subsets of $\Spec(A)$ are the closures of the finite subsets.}
+
+%$\quad\bu$ \emph{it has finitely many minimal elements} $\ppp_1,\ldots,\ppp_n,$
+
+%$\quad\bu$ \emph{we have} $C=V(\ppp_1)\cup\cdots\cup V(\ppp_n)$.
 
 \subsection{Page 84, Exercise 7.1}%
 
