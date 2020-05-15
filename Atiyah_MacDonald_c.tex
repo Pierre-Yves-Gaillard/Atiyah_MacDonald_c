@@ -1747,7 +1747,12 @@ This will follow from Claim~1 and Claim~2 below.
 
 Claim~1. We have 
 \begin{equation}\label{fiber2}
-(A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp.%\simeq B_\ppp/\ppp B_\ppp.
+(A_\ppp/\ppp_\ppp)\otimes_AB\simeq 
+B_\ppp/\ppp B_\ppp=
+B_\ppp/(\ppp_\ppp)^{\oo e}=
+B_\ppp/(\ppp^{\oo e})_\ppp\simeq 
+\big(B/\ppp^{\oo e}\big)_\ppp=
+(B/\ppp B)_\ppp.
 \end{equation} 
 Proof of Claim~1. The second isomorphism follows from the exactness of localization and the equality $(\ppp B)_\ppp=\ppp B_\ppp$. %is clear. 
 To prove the first isomorphism of \eqref{fiber2}, observe that the sequences 
@@ -3967,7 +3972,7 @@ Assume that $A$ is a valuation ring of $K$ and that $(B,\nnn)$ is a maximal elem
 
 Assume now that $(A,\mmm)$ is maximal in $\Sigma(K)$. Let $\Omega$ be an algebraic closure of $A/\mmm$, let $f:A\to\Omega$ the obvious morphism, and let $(B,g)$ be a maximal element of $\Phi(K,\Omega)$ such that $(A,f)\le(B,g)$. As $B$ is a valuation ring of $K$ by Theorem 5.21 p.~66 of the book, it suffices to show $B=A$. Lemma~5.19 p.~65 of the book implies that $B$ is local and that $\Ker g$ is its maximal ideal. As $\mmm=\Ker f\subset\Ker g$, we see that $B$ dominates $A$, and thus that $B=A$, as desired.
 
-\subsection{Page 72, Exercise 5.28}%
+\subsection{Page 72, Exercise 5.28}\label{528}%
 
 \textbf{Statement.} Let $A$ be an integral domain, $K$ its field of fractions. Show that the following are equivalent:
 
@@ -4673,17 +4678,18 @@ Let $\Sigma$ be the set of all closed subsets $X'$ of $X$ such that $E\cap X'\no
 
 Then $\Sigma$ is nonempty because %it contains 
 $X\in\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. In particular 
-%
 \begin{equation}\label{721}
 E\cap X_0\notin\mathcal F.
-\end{equation}
-%  
+\end{equation}  
 The subset $X_0$ is irreducible, for if we had $X_0=C\cup D$ with $C,D$ closed and $<X_0$, we would have $C,D\notin\Sigma$ by minimality of $X_0$, and thus $E\cap C$ and $E\cap D$ would be in $\mathcal F$, which would imply 
 $$
 \mathcal F\ni(E\cap C)\cup(E\cap D)=E\cap(C\cup D)=E\cap X_0\notin\mathcal F.
 $$ 
-Let us assume $\overline{E\cap X_0}<X_0$, and let us derive a contradiction as follows. 
-
+We claim 
+\begin{equation}\label{oex0}
+\overline{E\cap X_0}=X_0
+\end{equation}
+To prove \eqref{oex0}, assume by contradiction that we have $\overline{E\cap X_0}<X_0$. %, and let us derive a contradiction as follows. 
 The minimality of $X_0$ implies 
 \begin{equation}\label{eco}%
 E\cap\overline{E\cap X_0}\in\mathcal F.
@@ -4696,7 +4702,7 @@ because $E\cap X_0\subset E$ and $E\cap X_0\subset\overline{E\cap X_0}$. This im
 $$
 E\cap X_0=E\cap\overline{E\cap X_0}.
 $$ 
-In view of \eqref{721} and \eqref{eco}, this gives the desired contradiction.
+In view of \eqref{721} and \eqref{eco}, this gives the contradiction needed to prove \eqref{oex0}.
 
 Now $(\star)$ implies that there is a nonempty open subset $U$ of $X_0$ such that $U\subset E$. 
 
@@ -4716,25 +4722,34 @@ As $U\ne\varnothing$, we get $E\cap C<E\cap X_0$, and thus $E\cap C\in\mathcal F
 
 \textbf{Statement.} Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E\cap X_0=\varnothing$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
 
-\textbf{Solution.} If $E$ is open in $X$, then the indicated condition holds because, if $E\cap X_0\ne\varnothing$, then $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. %: straightforward (details left to the reader).
+\textbf{Solution.} If $E$ is open in $X$, then the indicated condition holds because $E\cap X_0\ne\varnothing$ implies that $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. %: straightforward (details left to the reader).
 
 Assume that $E$ is not open in $X$. Set $F:=X\setminus E$. Then $F$ is not closed. Put 
 $$
 \Sigma:=\{\ X'\subset X|\ X'\text{ closed, }F\cap X'\text{ not closed}\}.
 $$ 
-In particular $X$ belongs to $\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. 
+In particular $X$ belongs to $\Sigma$. Let $X_0$ be a minimal element of $\Sigma$.
 
-The subset $X_0$ is irreducible, for the conditions $X_0=Y_1\cup Y_2$ with $Y_i<X_0$ and $Y_i$ closed would imply $F\cap X_0=(F\cap Y_1)\cup(F\cap Y_2)$ with $F\cap Y_i$ closed and $F\cap X_0$ not closed, which is impossible.
+It suffices to show:
 
-Assume $E\cap X_0=\varnothing$. This implies $F\cap X_0=X_0$ with $F\cap X_0$ not closed and $X_0$ closed, a contradiction.
+\qquad(a) $X_0$ is irreducible,
 
-Assume $E\cap X_0\supset U\ne\varnothing$ with $U$ open in $X_0$. It suffices to derive a contradiction. Set $X_1:=X_0\setminus U$. We clearly have $X_1<X_0$. 
+\qquad(b) $E\cap X_0\ne\varnothing$,
+
+\qquad(c) $E\cap X_0$ contains no non-empty open subset of $X_0$.
+
+Proof of (a): %The subset $X_0$ is irreducible, for t
+The conditions $X_0=Y_1\cup Y_2$ with $Y_i<X_0$ and $Y_i$ closed would imply $F\cap X_0=(F\cap Y_1)\cup(F\cap Y_2)$ with $F\cap Y_i$ closed and $F\cap X_0$ not closed, which is impossible.
+
+Proof of (b): The equality $E\cap X_0=\varnothing$ would imply $F\cap X_0=X_0$ with $F\cap X_0$ not closed and $X_0$ closed, a contradiction.
+
+Proof of (c): Assume $E\cap X_0\supset U\ne\varnothing$ with $U$ open in $X_0$. It suffices to derive a contradiction. Set $X_1:=X_0\setminus U$. We clearly have $X_1<X_0$. 
 
 We claim: $F\cap X_1=F\cap X_0$. 
 
 It is enough to show $F\cap X_0\subset F\cap X_1$. Let $a$ be in $F\cap X_0$. As $a$ cannot be in $U$ (because this would imply $a\in E\cap F=\varnothing$), the point $a$ is in $X_0\setminus U=X_1$, and the claim is proved.
 
-The claim implies $X_1\in\Sigma$, contradicting the minimality of $X_0$.
+The claim implies $X_1\in\Sigma$, contradicting the minimality of $X_0$. This completes the proof of (c).
 
 \subsection{Page 87, Exercise 7.23}%
 
@@ -4777,11 +4792,15 @@ proving \eqref{724}.
 
 \section{About Chapter 8}%%
 
-\subsection{Page 90}\label{90}%
+\subsection{Theorem 8.5 p. 90}\label{8.5}%
 
-$\bu$ About Proposition 8.6. I suggest the following restatement of Proposition 8.6:
+Theorem 8.5 implies that an Artin ring $A$ is a finite length $A$-module. In particular Propositions 6.7 and 6.8 p.~77 of the book apply to chains of ideals of $A$.
 
-\emph{Let $A$ be a Noetherian local ring, $\mmm$ its maximal ideal. Then exactly one of the following two statements is true:}
+\subsection{Proposition 8.6 p. 90}\label{8.6}%
+
+I suggest the following restatement of Proposition 8.6:
+
+\emph{Let $A$ be a noetherian local ring, $\mmm$ its maximal ideal. Then exactly one of the following two statements is true:}
 
 (i) $\mmm^n\ne\mmm^{n+1}$ \emph{for all $n$ and $A$ is \emph{not} Artin},
 
@@ -4792,13 +4811,15 @@ In particular
 A\text{ is Artin $\iff\mmm$ is nilpotent.}
 \end{equation}%Indeed, if $A$ is Artin, then, as observed before Proposition 8.6, $\mmm$ is the nilradical of $A$, and Proposition 8.5 p.~89 implies that $\mmm$ is nilpotent. 
 
-$\bu$ By Proposition 8.6 and Proposition 4.2 p.~51, we have:
+By Proposition 8.6 and Proposition 4.2 p.~51, we have:
 
 \emph{Every proper ideal of an Artin local ring is $\mmm$-primary (where $\mmm$ is the maximal ideal).} 
 
 This fact is implicitly used in the proof of Theorem 8.7.
 
-$\bu$ It seems to me that the second part of the proof of Theorem 8.7 can be simplified. We must check the essential uniqueness of the decomposition of an Artin ring $A$ as a finite product of Artin local rings $A_i$. But, looking at minimal idempotents, one sees that, if a ring can be decomposed as a product of finitely many local rings, such a decomposition is essentially unique. More precisely, the kernels of the morphisms from the ring to the various factors are exactly those ideals which are maximal among the proper ideals generated by an idempotent. %To do this it suffices to observe that the kernels of the canonical projections $A\to A_i$ are precisely the minimal primary ideals of $A$.%%, for each minimal primary ideal $\mathfrak q$ of $A$, there is a unique $i$ such that $\mathfrak q$ is the kernel of the canonical projection onto $A_i$.
+\subsection{Theorem 8.7 p. 90}
+
+It seems to me that the second part of the proof of Theorem 8.7 can be simplified. We must check the essential uniqueness of the decomposition of an Artin ring $A$ as a finite product of Artin local rings $A_i$. But, looking at minimal idempotents, one sees that, if a ring can be decomposed as a product of finitely many local rings, such a decomposition is essentially unique. More precisely, the kernels of the morphisms from the ring to the various factors are exactly those ideals which are maximal among the proper ideals generated by an idempotent. %To do this it suffices to observe that the kernels of the canonical projections $A\to A_i$ are precisely the minimal primary ideals of $A$.%%, for each minimal primary ideal $\mathfrak q$ of $A$, there is a unique $i$ such that $\mathfrak q$ is the kernel of the canonical projection onto $A_i$.
 
 \subsection{Page 91, Proposition 8.8}\label{88}%
 
@@ -4808,9 +4829,9 @@ $(*)$ there is an $x$ in $\mmm$ such that every ideal of $A$ is of the form $(x^
 
 The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the conditions (i), (ii) or (iii). 
 
-\subsection{Page 91, Exercise 8.4}%
+\subsection{Page 92, Exercise 8.4}%
 
-To prove (i) $\implies$ (iii) on can use the following Lemma:
+To prove (i) $\implies$ (iii) on can use \eqref{fiber2} p.~\pageref{fiber2} above and the following Lemma:
 
 \begin{lem}
 Let $A\to B$ be an integral ring morphism, let $S\subset A$ be a multiplicative subset, and let $\ppp$ be a prime ideal of $A$ disjoint from $S$. Then the induced morphism $S^{-1}A/S^{-1}\ppp\to S^{-1}B/(S^{-1}\ppp)^{\oo e}$ is integral.
@@ -4822,7 +4843,25 @@ By Proposition 5.6ii p.~61 of the book, $S^{-1}A\to S^{-1}B$ is integral. By Pro
 
 Hint for the last question, which is ``If $f$ is integral and the fibres of $f^*$ are finite, is $f$ necessarily finite?'': Consider the case when $A$ and $B$ are fields. 
 
-Note that $\mathbb Z\to\mathbb Z[\frac12]$ satisfies (ii) but not (i). 
+Note that $\mathbb Z\to\mathbb Z[\frac12]$ satisfies (ii) but not (i).
+
+\subsection{Page 92, Exercise 8.6}% 
+
+See Section~\ref{8.5} p.~\pageref{8.5} above. 
+
+Note that 
+
+\qquad the poset of $\ppp$-primary ideals of $A$ between $\qqq$ and $\ppp$ 
+
+is canonically isomorphic to 
+
+\qquad the poset of $\ppp_\ppp$-primary ideals of $A_\ppp$ containing $\qqq_\ppp$, 
+
+and that the above poset is equal to 
+
+\qquad the poset of proper ideals of $A_\ppp$ containing $\qqq_\ppp$. 
+
+In particular all proper ideals of $A_\ppp$ containing $\qqq_\ppp$ are $\ppp_\ppp$-primary. (This is because all proper ideals of an Artin local ring $(A,\mmm)$ are $\mmm$-primary.)
 
 \section{About Chapter 9}%%
 
@@ -4840,7 +4879,7 @@ This follows from Statement (B) in the proof of Proposition 9.2.
 
 \subsection{Page 95}%
 
-$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mmm^n$) it follows that $\aaa$ is a power of $\mmm$''. The fact that $A/\mmm^n$ is Artin follows from Proposition 8.6 p.~90 of the book (see Section~\ref{90} p.~\pageref{90} above). %Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
+$\bu$ Proof of the implication (iv) $\implies$ (v) in Proposition 9.2 p.~94. It is written: ``from (8.8) (applied to $A/\mmm^n$) it follows that $\aaa$ is a power of $\mmm$''. The fact that $A/\mmm^n$ is Artin follows from Proposition 8.6 p.~90 of the book (see Section~\ref{8.6} p.~\pageref{8.6} above). %Actually it is better to use the version of (8.8) given in Section~\ref{88} above.
 
 $\bu$ The proof of the equivalence (ii) $\iff$ (iii) in Theorem 9.3 uses Statement (B) in the proof of Proposition 9.2 p.~94.
 
@@ -4867,7 +4906,7 @@ It suffices to show $c(f)_\mmm c(g)_\mmm\subset c(fg)_\mmm$ for all maximal idea
 
 \textbf{Statement.} A valuation ring (other than a field) is Noetherian if and only if it is a discrete valuation ring.
 
-\textbf{Solution.} It is proved on p.~94 of the book that discrete valuation ring are noetherian. Exercise 5.28 p.~72 of the book says that the ideals of a valuation ring are totally ordered. In particular finitely generated ideals are principal. Thus any noetherian valuation ring $A$ is a principal ideal domain. Hence, if $A$ is not a field, then it is of dimension one, and is therefore a discrete valuation ring by Proposition 9.2 p.~94 of the book.
+\textbf{Solution.} It is proved on p.~94 of the book that discrete valuation ring are noetherian. Exercise 5.28 p.~72 of the book (see Section~\ref{528} p.~\pageref{528} above) says that the ideals of a valuation ring are totally ordered. In particular finitely generated ideals are principal. Thus any noetherian valuation ring $A$ is a principal ideal domain. Hence, if $A$ is not a field, then it is of dimension one, and is therefore a discrete valuation ring by Proposition 9.2 p.~94 of the book.
 
 \subsection{Page 99, Exercise 9.4}%
 
@@ -4940,9 +4979,9 @@ $$
 
 \textbf{Statement.} Let $A$ be a Dedekind domain and $\aaa\ne0$ an ideal in $A$. Show that every ideal in $A/\aaa$ is principal.
 
-Deduce that every ideal in A can be generated by at most 2 elements. 
+Deduce that every ideal in $A$ can be generated by at most two elements. 
 
-\textbf{Hint.} Show that any nontrivial quotient of $A$ is a principal ideal ring, and that this implies that, given any nonzero element $x\in\aaa$ there is a $y\in\aaa$ such that $\aaa=(x,y)$. 
+\textbf{Hint.} See the previous exercise. More precisely, show that any nontrivial quotient of $A$ is a principal ideal ring, and that this implies that, given any nonzero element $x\in\aaa$ there is a $y\in\aaa$ such that $\aaa=(x,y)$. 
 
 \section{About Chapter 10}%%
 
@@ -5053,7 +5092,24 @@ If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 
 
 \subsection{Page 113, Exercise 10.1}% 
 
-Hint: The sequence $A^\land\to B^\land\to(B/\alpha(A))^\land$ is not exact. 
+Hint: For any abelian group $G$ write $G^p$ for the $p$-adic completion of $G$. Assume by contradiction that $G\mapsto G^p$ is right exact. This functor being left exact, it is exact. Set $C_j:=\mathbb Z/(p^j)$ for $j\le1$ and note the exact sequence 
+$$
+0\to C_1\xr{\alpha_j}C_j\xr{\pi_j}C_{j-1}\to 0,
+$$ 
+where $\pi_j$ is the multiplication by $p$ (we use the isomorphism $pC_j\simeq C_{j-1}$). This induces an exact sequence 
+$$
+0\to A\xr{\alpha}B\xr{\pi}B\to 0.
+$$ 
+Write $A^i$ for the completion of $A$ with respect to the filtration induced by the $p$-adic filtration of $B$. We leave it to the reader to check that applying Corollary 10.3 p.~104 of the book yields the exact sequence 
+$$
+0\to A^i\xr{\alpha}B^p\xr{\pi}B^p\to 0.
+$$ 
+As we are assuming that $G\mapsto G^p$ is exact, the sequence 
+$$
+0\to A^p\xr{\alpha}B^p\xr{\pi}B^p\to 0.
+$$ 
+is also exact. This implies $A^i\simeq A^p$. But we have $A^i\simeq\prod_{j\in\mathbb N}C_1$ %C_1^{\mathbb N}$ 
+and $A^p\simeq A$, hence $A^i\not\simeq A^p$ (details again left to the reader), contradiction.
 
 \subsection{Page 114, Exercise 10.3}%
 
