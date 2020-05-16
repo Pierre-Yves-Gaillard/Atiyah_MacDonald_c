@@ -66,9 +66,7 @@
 
 \maketitle\tableofcontents
 
-This text is available at 
-
-\href{http://www.iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/DIVERS/Atiyah_MacDonald_c/}{https://goo.gl/S9ykSu}\quad\href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf}\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ}
+This text is available at \href{http://www.iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/DIVERS/Atiyah_MacDonald_c/}{https://goo.gl/S9ykSu} and \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf}%\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ}
 
 Atiyah and MacDonald's book referred to in the title is of course the famous \textbf{Introduction to Commutative Algebra}.
 
@@ -5092,24 +5090,45 @@ If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 
 
 \subsection{Page 113, Exercise 10.1}% 
 
-Hint: For any abelian group $G$ write $G^p$ for the $p$-adic completion of $G$. Assume by contradiction that $G\mapsto G^p$ is right exact. This functor being left exact, it is exact. Set $C_j:=\mathbb Z/(p^j)$ for $j\le1$ and note the exact sequence 
+Hint: For any abelian group $G$ write $\widehat G$ for the $p$-adic completion of $G$. 
+
+We claim that 
+\begin{equation}\label{nn}
+G\mapsto\widehat G\text{ is neither left exact not right exact.}
+\end{equation}
+%Assume by contradiction that $G\mapsto G^p$ is right exact. This functor being left exact, it is exact. 
+Set $C_j:=\mathbb Z/(p^j)$ for $j\ge1$ and note the exact sequence 
 $$
-0\to C_1\xr{\alpha_j}C_j\xr{\pi_j}C_{j-1}\to 0,
+0\to C_1\xr{\alpha_j}C_j\xr{\pi_j}C_{j-1}\to0,
 $$ 
 where $\pi_j$ is the multiplication by $p$ (we use the isomorphism $pC_j\simeq C_{j-1}$). This induces an exact sequence 
+\begin{equation}\label{abb}
+0\to A\xr{\alpha}B\xr{\pi}B\to0.
+\end{equation} 
+We claim 
+\begin{equation}\label{ne}
+\widehat A\xr{\widehat\alpha}\widehat B\xr{\widehat\pi}\widehat B\ \text{ is not exact.}
+\end{equation} 
+This will imply \eqref{nn}. As $\widehat A$ is isomorphic to $A$ (details left to the reader), we can rewrite \eqref{ne} as  
+\begin{equation}\label{ne2}
+A\xr{\widehat\alpha}\widehat B\xr{\widehat\pi}\widehat B\ \text{ is not exact.}
+\end{equation} 
+Write $\overline A$ for the completion of $A$ with respect to the filtration induced by the $p$-adic filtration of $B$. We leave it to the reader to check that applying Corollary 10.3 p.~104 of the book to \eqref{abb} yields the exact sequence 
 $$
-0\to A\xr{\alpha}B\xr{\pi}B\to 0.
+0\to\overline A\xr{\alpha'}\widehat B\xr{\pi}\widehat B\to0.
 $$ 
-Write $A^i$ for the completion of $A$ with respect to the filtration induced by the $p$-adic filtration of $B$. We leave it to the reader to check that applying Corollary 10.3 p.~104 of the book yields the exact sequence 
+%As we are assuming that $G\mapsto\widehat G$ is exact, the sequence $$0\to A^p\xr{\alpha}B^p\xr{\pi}B^p\to 0.$$ is also exact. This implies $A^i\simeq A^p$. But w
+We have 
 $$
-0\to A^i\xr{\alpha}B^p\xr{\pi}B^p\to 0.
+\overline A\simeq\prod_{n\in\mathbb N}C_1
 $$ 
-As we are assuming that $G\mapsto G^p$ is exact, the sequence 
+(details again left to the reader), and thus $A<\overline A$. Let 
 $$
-0\to A^p\xr{\alpha}B^p\xr{\pi}B^p\to 0.
+a\in\overline A\setminus A.
 $$ 
-is also exact. This implies $A^i\simeq A^p$. But we have $A^i\simeq\prod_{j\in\mathbb N}C_1$ %C_1^{\mathbb N}$ 
-and $A^p\simeq A$, hence $A^i\not\simeq A^p$ (details again left to the reader), contradiction.
+Then we have $\alpha'(a)\in\oo{Ker}\widehat\pi\setminus\oo{Im}\widehat\alpha$. This proves \eqref{ne2}, \eqref{ne} and \eqref{nn}.
+
+%hence $\overline A\not\simeq\widehat A$, contradiction.
 
 \subsection{Page 114, Exercise 10.3}%
 
@@ -5174,7 +5193,7 @@ $$
 
 \textbf{Statement.} Let $A$ be a Noetherian ring and let $\aaa,\bbb$ be ideals in $A$. If $M$ is any $A$-module, let $M^\aaa,M^\bbb$ denote its $\aaa$-adic and $\bbb$-adic completions respectively. If $M$ is finitely generated, prove that $(M^\aaa)^\bbb\simeq M^{\aaa+\bbb}$.
 
-\textbf{Hint.} In view of the isomorphism $\widehat A\otimes_A\simeq\widehat M$, it suffices to show 
+\textbf{Hint.} In view of the isomorphism $\widehat A\otimes_AM\simeq\widehat M$, it suffices to show 
 \begin{equation}\label{aba+b}
 (A^\aaa)^\bbb\simeq A^{\aaa+\bbb}. 
 \end{equation} 
@@ -5209,9 +5228,9 @@ To prove this, let us show that any nonempty open subset $U\subset A$ meets $\mm
 
 \subsection{Page 114, Exercise 10.7}%
 
-\textbf{Statement.} Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$, and $A$ the $\aaa$-adic completion. Prove that $A$ is faithfully flat over $A$ (Chapter 3, Exercise 16) if and only if $A$ is a Zariski ring (for the $\aaa$-topology).
+\textbf{Statement.} Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$, and $\widehat A$ the $\aaa$-adic completion. Prove that $\widehat A$ is faithfully flat over $A$ (Chapter 3, Exercise 16) if and only if $A$ is a Zariski ring (for the $\aaa$-topology).
 
-[Recall that a Noetherian topological ring in which the topology is defined by an ideal contained in the Jacobson radical is called a Zariski ring. Examples are local rings and (by Proposition 10.15iv p.~109 of the book $\aaa$-adic completions.]
+[Recall that a Noetherian topological ring in which the topology is defined by an ideal contained in the Jacobson radical is called a \textbf{Zariski ring}. Examples are local rings and (by Proposition 10.15iv p.~109 of the book) $\aaa$-adic completions.]
 
 \textbf{Hint.} Let $\mmm$ be a maximal ideal of $A$. Proposition 10.15i p.~109 of the book implies that the extension $\mmm^{\oo e}$ of $\mmm$ in $\widehat A$ is $\widehat\mmm$, and we get 
 $$
@@ -5327,23 +5346,29 @@ As $\deg b<r$, the polynomial $g_{k+1}$ is monic of degree $r$. The inequality $
 
 \subsection{Page 115, Exercise 10.10iii}%
 
-Set $A:=k[[x]]$, $\aaa:=(x)$ in Theorem~\ref{hl} p.~\pageref{hl}. 
+Part (iii) is a particular case of Part (i):
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}\hline
+A&\mmm&\overline f(x)&\alpha&f(x)&a&\overline f(\alpha)=0&f(a)=0\\ \hline
+k[[x]]&(x)&f(0,y)&a_0&f(x,y)&y(x)&f(0,a_0)=0&f(x,y(x))=0\\ \hline
+\end{array}
+$$ 
+(The condition that the roots $\alpha,a,a_0$ and $y(x)$ are simple is implicit.)%Set $A:=k[[x]]$, $\aaa:=(x)$ in Theorem~\ref{hl} p.~\pageref{hl}. 
 
 \subsection{Page 115, Exercise 10.11}%
 
 \textbf{Statment:} Show that the converse of (10.26) is false, even if we assume that $A$ is local and that $\widehat A$ is a finitely-generated $A$-module.
 
-Recall (10.26): If $A$ is a Noetherian ring, $\aaa$ an ideal of $A$, then the $\aaa$-
-completion $\widehat A$ of $A$ is Noetherian.
+Recall (10.26): If $A$ is a Noetherian ring, $\aaa$ an ideal of $A$, then the $\aaa$-completion $\widehat A$ of $A$ is Noetherian.
 
 \textbf{Hint.} Let $A$ be the ring of germs at $0$ of $C^\infty$ functions from $\mathbb R$ to $\mathbb R$, and $\mmm$ the ideal of those germs which vanish at $0$. Then $\widehat A\simeq\mathbb R[[x]]$ and $A\to\widehat A$ is surjective. Note that $A$ is not noetherian by Corollary 10.18 p.~110 of the book. 
 
 \subsection{Page 115, Exercise 10.12}%
 
-\textbf{Statment:} If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
+\textbf{Statement:} If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
 
-\textbf{Solution.} Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\mmm$ be a maximal ideal of $A$, define the $A$-algebra surjective morphism $\phi:B\to A/\mmm$ as the composite of $B\to A$, $f\mapsto f(0)$ and the canonical projection $A\to A/\mmm$. %, and let $\nnn$ be the kernel of $\phi$. 
-It suffices to show $\phi(\mmm)=(0)$ (see Exercise 3.16iii p.~45 of the book), which is clear. 
+\textbf{Solution.} Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\phi:A\to B$ be the inclusion, $\psi:B\to A$ the evaluation at $0$, and $\mmm$ a maximal ideal of $A$. It suffices to show that the extension of $\mmm$ along $\phi$ is a proper ideal of $B$ (see Exercise 3.16iii p.~45 of the book). If this extension was the unit ideal of $B$, then the extension of $\mmm$ along $\psi\circ\phi$ would be the unit ideal of $A$. But this latter extension is $\mmm$ because $\psi\circ\phi$ is the identity of $A$.%define the $A$-algebra surjective morphism $\phi:B\to A/\mmm$ as the composite of $B\to A$, $f\mapsto f(0)$ and the canonical projection $A\to A/\mmm$. %, and let $\nnn$ be the kernel of $\phi$. 
+%It suffices to show $\phi(\mmm)=(0)$ (see Exercise 3.16iii p.~45 of the book), which is clear. 
 
 \section{About Chapter 11}%%
 
@@ -5466,7 +5491,7 @@ if $f\in\mmm^2$, and $\dim_k(\overline\mmm/\overline\mmm^2)\le n-1$ if $f\not\in
 
 As we know that $\dim A_{\overline\mmm}=n-1$, we see that $\dim_k(\overline\mmm/\overline\mmm^2)=n-1$ in this case. 
 
-We conclude that $\dim A_{\overline\mmm}=\dim_k(\overline\mmm/\overline\mmm^2)$ if and only if $f\in\mmm^2$, that is $A_{\overline\mmm}$ is regular if and only if $f\not\in\mmm^2$. 
+We conclude that $\dim A_{\overline\mmm}=\dim_k(\overline\mmm/\overline\mmm^2)$ if and only if $f\not\in\mmm^2$, that is $A_{\overline\mmm}$ is regular if and only if $f\not\in\mmm^2$. 
 
 It remains to check that $0$ is non-singular if and only if $f\not\in\mmm^2$, or, in other words, that $\frac{\partial f}{\partial X_i}(0)\ne0$ for some $i$ if and only if $f\not\in\mmm^2$. 
 
