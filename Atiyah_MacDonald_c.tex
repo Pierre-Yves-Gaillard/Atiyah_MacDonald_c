@@ -8,8 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -54,7 +54,7 @@
 \newtheorem{note}[thm]{Note}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{qn}[thm]{Question}
-\newtheorem{rk}[thm]{Remark}
+%\newtheorem{rk}[thm]{Remark}
 %\addtolength{\parskip}{.2\baselineskip}
 \title{About Atiyah and MacDonald's Book}
 \author{Pierre-Yves Gaillard}
@@ -1874,11 +1874,11 @@ $$
 
 For any multiplicative subset $S$ of $A$ regard $\Spec(S^{-1}A)$ as a subset of $\Spec(A)$.
 
-\begin{rk}\label{sat1}
+\begin{note}\label{sat1}
 An element $a\in A$ is in the saturation of the multiplicative subset $S$ of $A$ if and only if $a/1$ is a unit of $S^{-1}A$ (if and only if $a$ belongs to no prime ideal of $S^{-1}A$).
-\end{rk}
+\end{note}
 
-\begin{rk}\label{sat2}
+\begin{note}\label{sat2}
 Let $S$ and $T$ be two multiplicative subsets of $A$. Then there there is at most one $A$-algebra morphism from $S^{-1}A$ to $T^{-1}A$. Moreover the following conditions are equivalent:
 
 (a) there is one $A$-algebra morphism from $S^{-1}A$ to $T^{-1}A$, 
@@ -1886,7 +1886,7 @@ Let $S$ and $T$ be two multiplicative subsets of $A$. Then there there is at mos
 (b) $\overline S\subset\overline T$,
 
 (c) $\Spec(T^{-1}A)\subset\Spec(S^{-1}A)$.
-\end{rk}
+\end{note}
 
 \subsection{Page 44, Exercise 3.9}%
 
@@ -2152,12 +2152,12 @@ proved in \eqref{fiber2} p.~\pageref{fiber2}. %Section~\ref{res} p.~\pageref{res
 \subsection{Page 47, Exercise 3.23}%
 
 \begin{comment}
-\begin{rk}\label{sheaf}
+\begin{note}\label{sheaf}
 Let $f,g\in A$. Then there is at most one $A$-algebra morphism from $A_f$ to $A_g$. Moreover such a morphism exists if and only if $f/1$ is a unit of $A_g$, that is if and only if $f/1$ is contained in no prime prime ideal of $A_g$, that is if and only if $g\notin\ppp$ implies $f\notin\ppp$ for all prime ideal $\ppp$ of $A$, that is if and only if $X_g\subset X_f$. 
-\end{rk}
+\end{note}
 \end{comment}
 
-Remark~\ref{sat1} p.~\pageref{sat1} and Remark~\ref{sat2} p.~\pageref{sat2} imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
+Note~\ref{sat1} p.~\pageref{sat1} and Note~\ref{sat2} p.~\pageref{sat2} imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
 
 If $S$ is any multiplicative subset of $A$ then there is a natural isomorphism 
 $$
@@ -5475,23 +5475,38 @@ For the last sentence of the proof, see the Examples on p.~121.
 
 \subsection{Page 125, Exercise 11.1}%
 
+I think the assumption that $f$ is irreducible is unnecessary, and that it suffices to suppose that $f$ is nonzero.
+
 We can assume $P=0$. We will use the following notation: $X_1,\ldots,X_n$ are indeterminates, $A$ is defined by $A:=k[X_1,\ldots,X_n]/(f)=k[x_1,\ldots,x_n]$ where $x_i$ is the image of $X_i$, we set 
 $$
-\mmm:=(X_1,\ldots,X_n),\quad\overline\mmm:=(x_1,\ldots,x_n)\simeq\mmm/(f),
+\mmm:=(X_1,\ldots,X_n),\quad\overline\mmm:=(x_1,\ldots,x_n)\simeq\mmm/(f).
 $$ 
-and we get 
-$$
+We have 
+\begin{equation}\label{dimam}
+\dim A_{\overline\mmm}=n-1
+\end{equation}
+by Corollary 11.18 p.~122 of the book. We also have 
+\begin{equation}\label{fom}
 \frac{\overline\mmm}{\overline\mmm^2}=\frac{\mmm/(f)}{(\mmm^2+(f))/(f)}\simeq\frac{\mmm}{\mmm^2+(f)}\ .
-$$ 
-This yields 
+\end{equation}
+If $f\in\mmm^2$ we get 
 $$
 \frac{\overline\mmm}{\overline\mmm^2}\simeq\frac{\mmm}{\mmm^2}\simeq k^n
 $$ 
-if $f\in\mmm^2$, and $\dim_k(\overline\mmm/\overline\mmm^2)\le n-1$ if $f\not\in\mmm^2$, in which case Corollary 11.15 p.~121 of the book says $\dim A_{\overline\mmm}\le\dim_k(\overline\mmm/\overline\mmm^2)$. 
+by \eqref{fom}, and $A_{\overline\mmm}$ is singular by \eqref{dimam}. 
 
-As we know that $\dim A_{\overline\mmm}=n-1$, we see that $\dim_k(\overline\mmm/\overline\mmm^2)=n-1$ in this case. 
+If $f\not\in\mmm^2$ we have 
+$$
+n-1=\dim A_{\overline\mmm}\le\dim_k\overline\mmm/\overline\mmm^2\le n-1
+$$ 
+by \eqref{dimam}, Corollary 11.15 p.~121 of the book and \eqref{fom}, so that $A_{\overline\mmm}$ is regular in this case. 
 
-We conclude that $\dim A_{\overline\mmm}=\dim_k(\overline\mmm/\overline\mmm^2)$ if and only if $f\not\in\mmm^2$, that is $A_{\overline\mmm}$ is regular if and only if $f\not\in\mmm^2$. 
+%if $f\in\mmm^2$, and $\dim_k(\overline\mmm/\overline\mmm^2)\le n-1$ if $f\not\in\mmm^2$, in which case Corollary 11.15 p.~121 of the book says $\dim A_{\overline\mmm}\le\dim_k(\overline\mmm/\overline\mmm^2)$. 
+
+%As we know that $\dim A_{\overline\mmm}=n-1$, we see that $\dim_k(\overline\mmm/\overline\mmm^2)=n-1$ in this case. 
+
+We conclude that %$\dim A_{\overline\mmm}=\dim_k(\overline\mmm/\overline\mmm^2)$ if and only if $f\not\in\mmm^2$, that is 
+$A_{\overline\mmm}$ is regular if and only if $f\not\in\mmm^2$. 
 
 It remains to check that $0$ is non-singular if and only if $f\not\in\mmm^2$, or, in other words, that $\frac{\partial f}{\partial X_i}(0)\ne0$ for some $i$ if and only if $f\not\in\mmm^2$. 
 
@@ -5503,7 +5518,8 @@ But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the
 
 Recall (11.21): If $k\subset A$ is a field mapping isomorphically onto $A/\mmm$ and if $x_1,\ldots,x_d$ is a system of parameters, then $x_1,\ldots,x_d$ are algebraically independent over $k$.
 
-\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$ and note that $\qqq$ defines the same topology on $A$ as $\mmm$ (see proof of Proposition 11.6 p.~119). Set $B:=k[[t_1,\ldots,t_d]]$, and let 
+\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$, %and note that $\qqq$ defines the same topology on $A$ as $\mmm$ (see proof of Proposition 11.6 p.~119). 
+set $B:=k[[t_1,\ldots,t_d]]$, and let 
 $$
 b:=\sum c_\alpha t_1^{\alpha_1}\cdots t_d^{\alpha_d}
 $$ 
@@ -5519,7 +5535,7 @@ Let us show that $A$ is a finitely generated $B$-module. By Proposition 10.24 p.
 $$
 0\to G_\qqq(\qqq)\to G_\qqq(A)\to A/\qqq\to0
 $$ 
-of $G_\nnn(B)$-modules. Then $G_\qqq(\qqq)$ is a finitely generated $G_\nnn(B)$-module because it is isomorphism to $G_\nnn(\nnn)$, and we have $\dim_kA/\qqq<\infty$ because $A/\qqq$ is an artinian $k$-algebra. 
+of $G_\nnn(B)$-modules. Then $G_\qqq(\qqq)$ is a finitely generated $G_\nnn(B)$-module because it is isomorphic to $G_\nnn(\nnn)$, and we have $\dim_kA/\qqq<\infty$ because $A/\qqq$ is an artinian $k$-algebra. 
 
 \subsection{Page 126, Exercise 11.3}%
 
@@ -5545,7 +5561,7 @@ Let
 $$
 \mathbb N=\bigsqcup_{i\in\mathbb N}N_i
 $$ 
-be a partition of $\mathbb N$ with $N_i\ne\varnothing$ for all $i$, let $K$ be a field, let $A$ be the $K$-algebra $K[x_0,x_1,\dots]$, where the $x_i$ are indeterminates, for each $i\in\mathbb N$ let $\ppp_i$ be the ideal of $A$ generated by the $x_j$ with $j\in N_i$, let $S\subset A$ be the complement of the union of the $\ppp_i$, and set $B:=S^{-1}A$. 
+be a partition of $\mathbb N$ such that each $N_i$ is finite and nonempty, let $K$ be a field, let $A$ be the $K$-algebra $K[x_0,x_1,\dots]$, where the $x_i$ are indeterminates, for each $i\in\mathbb N$ let $\ppp_i$ be the ideal of $A$ generated by the $x_j$ with $j\in N_i$, let $S\subset A$ be the complement of the union of the $\ppp_i$, and set $B:=S^{-1}A$. 
 
 Our main goal is to prove 
 $$
@@ -5578,18 +5594,17 @@ Recall Statement (d):
 
 We shall use the following easy fact: 
 
-\begin{rk}\label{monid}
+\begin{note}\label{monid}
 Let $\aaa$ be an ideal of $A$. Then $\aaa$ is generated by monomials if and only if it has the following property:
 
 A polynomial $f\in A$ is in $\aaa$ if and only if all the monomials occurring in $f$ are in $\aaa$.
-\end{rk}
+\end{note}
 
 For $f\in A$ set 
 $$
-W(f):=\{i\in\mathbb N\ |\ f\in\ppp_i\},
+W(f):=\{i\in\mathbb N\ |\ f\in\ppp_i\}.
 $$ 
-and let $\aaa$ be an ideal of $A$ contained in the union of the $\ppp_i$. %Claim 1: We have $\aaa\subset\ppp_i$ for some $i$. 
-We claim that 
+We claim  
 
 (f) If $f,g\in A\setminus\{0\}$ and $i,j\in\mathbb N$ satisfy 
 $$
@@ -5598,18 +5613,19 @@ $$
 then $W(f+x_jg)\subset W(f)\setminus\{i\}$. % old Claim 2
 
 \begin{proof}[Proof of (f)]
-%Remark~\ref{monid} implies that
-As no monomial can occur simultaneously in $f$ and in $x_jg$, we have, by Remark~\ref{monid}, 
+%Note~\ref{monid} implies that
+As no monomial can occur simultaneously in $f$ and in $x_jg$, we have, by Note~\ref{monid}, 
 $$
 f+x_jg\in\ppp_k\iff f,x_jg\in\ppp_k,
 $$
 and thus 
 $$
 W(f+x_jg)=W(f)\cap W(x_jg)\subset W(f).
-$$  
+$$ 
+Finally note that $x_jg\notin\ppp_i$, i.e. $i\notin W(x_jg)$.
 %$f+x_jg\in\ppp_k$ if and only if $f$ and $x_jg$ are both in $\ppp_k$, or, in other words, $W(f+x_jg)=W(f)\cap W(x_jg)$, and in particular $W(f+x_jg)\subset W(f)$. 
 %Note also that n
-Neither $x_j$ nor $g$ is in $\ppp_i$, hence $x_jg$ is not in $\ppp_i$, hence $f+x_jg$ is not in $\ppp_i$ (by Remark~\ref{monid} and the fact that no monomial can occur simultaneously in $f$ and in $x_jg$), that is $i\notin W(f+x_jg)$.
+%Neither $x_j$ nor $g$ is in $\ppp_i$, hence $x_jg$ is not in $\ppp_i$, hence $f+x_jg$ is not in $\ppp_i$ (by Note~\ref{monid} and the fact that no monomial can occur simultaneously in $f$ and in $x_jg$), that is $i\notin W(f+x_jg)$.
 \end{proof}
 
 Let us show that (f) implies (d). 
@@ -5639,7 +5655,7 @@ $$
 1+\dim A\le\dim A[x]\le1+2\dim A.
 $$
 
-\textbf{Solution.} We denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. If we have a ring morphism $A\to B$ and a prime ideal $\qqq_i$ of $B$, we write $\ppp_i^{\oo c}$ for $(\ppp_i)^{\oo c}$. 
+\textbf{Solution.} We denote the Krull dimension of any ring $A$ by $\dim A$ and the height of any prime ideal $\ppp$ by $h(\ppp)$. If we have a ring morphism $A\to B$ and a prime ideal $\qqq_i$ of $B$, we write $\ppp_i^{\oo c}$ for $(\ppp_i)^{\oo c}$. 
 
 %We shall use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
 
@@ -5662,26 +5678,6 @@ is chain of prime ideals in $A[x]$ (see Exercise 4.7 p.~55 of the book and Lemma
 
 \emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: This inequality follows immediately from Lemma~\ref{fiberx} p.~\pageref{fiberx} above.
 
-%
-\begin{comment}
-implies that, for any chain $\ppp_0<\ppp_1<\ppp_2$ of prime ideals in $A[x]$, we have:
-
-$\bullet$ if $\ppp_0^{\oo c}=\ppp_1^{\oo c}$ then $\ppp_0=\ppp_0^{\oo c}[x]$ %, $\ppp_1=\ppp_0+(x)$ 
-and $\ppp_1^{\oo c}<\ppp_2^{\oo c}$,
-
-$\bullet$ if $\ppp_1^{\oo c}=\ppp_2^{\oo c}$ then $\ppp_1=\ppp_1^{\oo c}[x]$ %, $\ppp_2=\ppp_1+(x)$ 
-and $\ppp_0^{\oo c}<\ppp_1^{\oo c}$.
-
-This implies that a chain of length $\ell$ in $A[x]$ contracts to a chain of length at least $\lfloor\ell/2\rfloor$ in $A$. Hence 
-$$
-\left\lfloor\frac{\dim A[x]}2\right\rfloor\le\dim A,
-$$ 
-that is,
-$$
-\frac{\dim A[x]}2\le\frac12+\dim A.\ \square
-$$
-\end{comment}
-%
 \subsection{Page 126, Exercise 11.7}% previous version https://docs.google.com/document/d/1oRILzwsOL6hxY74xil7pEj_bwa9k4-yieyVTCva3ev8/edit
 
 \textbf{Statement.} Let $A$ be a Noetherian ring. Then
@@ -5702,7 +5698,7 @@ $$
 $$ 
 hence the height of $\ppp$ is $\ge m$. Hence the height of $\ppp[x]$ is equal to the height of $\ppp$. Now use the argument of Exercise~6.
 
-\textbf{Solution.} As in the previous section, we denote the Krull dimension of the ring $A$ by $\dim A$ and the height of the prime ideal $\ppp$ by $h(\ppp)$. We follow the hint of the book, and we shall use the following obvious fact: 
+\textbf{Solution.} As in the previous section, we denote the Krull dimension of any ring $A$ by $\dim A$ and the height of any prime ideal $\ppp$ by $h(\ppp)$. We follow the hint of the book, and we shall use the following obvious fact: 
 
 \begin{note}\label{116a}
 If $\ppp_0<\cdots<\ppp_n$ is a chain of prime ideals, then $h(\ppp_n)\ge n+h(\ppp_0)$. 
@@ -5724,13 +5720,11 @@ be a chain of prime ideals in $A[x]$ of length $n+2$.
 
 It suffices to derive a contradiction from this assumption. 
 
-The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ %and $\ppp_{i+1}=\ppp_i+(x)$ 
-by Lemma~\ref{fiberx} p.~\pageref{fiberx} above, % the proof of the inequality $\dim A[x]\le1+2\dim A$ in Section~\ref{116} p.~\pageref{116}, %Note~\ref{116b} p.~\pageref{116b}, 
-and 
+The above chain contracting to a chain of length at most $n$ in $A$, there are indices $i$ such that $\ppp_i^{\oo c}=\ppp_{i+1}^{\oo c}$. Let $i$ be the largest such index. We have $\ppp_i=\ppp_i^{\oo c}[x]$ by Lemma~\ref{fiberx} p.~\pageref{fiberx} above, and 
 \begin{equation}\label{hppp}
 h(\ppp_i^{\oo c})=h(\ppp_i^{\oo c}[x])=h(\ppp_i)\ge i,
 \end{equation}
-the inequality following from Note~\ref{116a} p.~\pageref{116a}. %Using again Note~\ref{116a}
+the inequality following from Note~\ref{116a}.% p.~\pageref{116a}.
 Then we get 
 $$
 h(\ppp_{n+2}^{\oo c})\ge n+1-i+h(\ppp_i^{\oo c})\ge n+1-i+i=n+1,
