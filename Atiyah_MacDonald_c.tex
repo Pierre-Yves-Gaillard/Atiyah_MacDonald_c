@@ -320,33 +320,45 @@ This will follow from Exercise 1.3.
 
 Prove both statements by induction on the number of indeterminates. It seems better to solve Exercise 1.3ii before Exercise 1.3i.
 
-\subsection{Page 11, Exercise 1.3iii}%
+\subsection{Page 11, Exercise 1.3iii}% old version https://docs.google.com/document/d/1zlz5FlVrglnxgwCK_Tx-2QaKcUEMQXUG2O3q69s2y0A/edit
 
-Let $f\in A[x_1,\dots,x_n]$ be a nonzero zero divisor. We must show that there is a nonzero $b$ in $A$ such that $bf=0$. We equip the monomials with the graded lexicographic order, see 
+In the three statements below, $A$ and $B$ are rings, $p,q,r,s$ are nonnegative integers satisfying $0\le r<s$, and the $x_i$ and $y_j$ are indeterminates.
 
-\href{https://en.wikipedia.org/wiki/Monomial_order}{https://en.wikipedia.org/wiki/Monomial\_order}
+Recall the statement of Exercise 1.3iii: 
 
-We denote the multi-degree of $g\in A[x_1,\dots,x_n]$ by $\deg g$. Put 
+$(\star)$ If $f\in A[x_1,\dots,x_p]$ has a nonzero annihilator in $A[x_1,\dots,x_p]$, then $f$ has a nonzero annihilator in $A$. 
+
+\begin{lem}\label{1.3iiil1}
+If $f\in B[\,y_1,\dots,y_q]$ has a nonzero annihilator in $B[\,y_1]$, then $f$ has a nonzero annihilator in $B$.
+\end{lem}
+
+\begin{lem}\label{1.3iiil2}
+If $f\in A[x_1,\dots,x_s]$ has a nonzero annihilator in $A[x_1,\dots,x_{r+1}]$, then $f$ has a nonzero annihilator in $A[x_1,\dots,x_r]$.
+\end{lem}
+
+Clearly Lemma~\ref{1.3iiil2} implies $(\star)$. Moreover, Lemma~\ref{1.3iiil1} follows from Lemma~\ref{1.3iiil1} by setting $B=A[x_1,\ldots,x_r]$, $q=s-r$, $y_i=x_{r+i}$.
+
+It only remains to prove Lemma~\ref{1.3iiil1}. To do so set 
 $$
-f=a_0+\cdots+a_\alpha x^\alpha,
+f=a_0+\cdots+a_n y_1^n,
 $$ 
-where $\alpha$ is the multi-degree of $f$. Let 
+where $n$ is the $y_1$-degree of $f$ (we can assume $f\ne0$) and $a_i\in B[\,y_2,\ldots,y_q]$. Let 
 $$
-g=b_0+\cdots+b_\beta x^\beta\in A[x_1,\dots,x_n]
+g=b_0+\cdots+b_m y_1^m\in B[\,y_1]
 $$ 
-be a nonzero polynomial of least multi-degree $\beta$ such that 
-\begin{equation}\label{1}
+be a nonzero polynomial of least degree $m$ such that 
+\begin{equation}\label{1.3iii1}
 fg=0.
 \end{equation}
 It suffices to prove 
-\begin{equation}\label{2}
-\beta=0.
+\begin{equation}\label{1.3iii2}
+m=0.
 \end{equation}
 For this it suffices to prove
-\begin{equation}\label{3}
-a_\gamma g=0\ \forall\ \gamma.
+\begin{equation}\label{1.3iii3}
+a_i g=0\ \forall\ i.
 \end{equation}
-Assume \eqref3 is false, and let $\gamma$ be the largest multi-index satisfying $a_\gamma g\neq0$. Then \eqref1 implies $a_\gamma b_\beta=0$ [because $a_\gamma b_\beta\ne0$ would imply $\deg(fg)=\gamma+\beta$, but we have $fg=0$] and thus $\deg a_\gamma g<\beta$. As $f\cdot(a_\gamma g)=0$, this entails $a_\gamma g=0$, a contradiction. This proves \eqref3 and thus \eqref2. 
+Assume \eqref{1.3iii3} is false, and let $i$ be the largest index satisfying $a_i g\ne0$. Then \eqref{1.3iii1} implies $a_i b_m=0$ [because $a_i b_m\ne0$ would imply $\deg_{y_1}(fg)=i+m$, where $\deg_{y_1}$ is the $y_1$-degree, but we have $fg=0$] and thus $\deg_{y_1}(a_i g)<m$. As $f\cdot(a_i g)=0$, this entails $a_i g=0$, a contradiction. This proves \eqref{1.3iii3} and thus \eqref{1.3iii2}, completing the proof of Lemma~\ref{1.3iiil1}. 
 
 \subsection{Page 11, Exercise 1.3iv}%
 
@@ -401,7 +413,7 @@ are ring morphisms and if $(g\circ f)^*:C^*\to A^*$ is surjective, then so is $f
 
 \textbf{Statement.} A ring $A$ is such that every ideal not contained in the nilradical contains a non-zero idempotent (that is, an element $e$ such that $e^2=e\ne0$). Prove that the nilradical and Jacobson radical of $A$ are equal.
 
-\textbf{Hint.} If $e=e^2\in\mf R$, then $e=0$. Indeed, the element $1-e=1-e^2$ being a unit, the equality $e(1-e)=0$ implies $e=0$.
+\textbf{Hint.} If $e=e^2\in\mf R$, then $e=0$. Indeed, the element $1-e$ being a unit, the equality $e(1-e)=0$ implies $e=0$.
 
 \subsection{Page 11, Exercise 1.8}\label{vp1}%
 
@@ -491,17 +503,17 @@ $\bu$ The statement implies that the closed irreducible subsets of $\Spec(A)$ ar
 
 $\bu$ $X\ne\varnothing$ is irreducible if and only if $X=C\cup D$ with $C$ and $D$ closed implies $C=X$ or $D=X$. 
 
-Let us show that $X\ne\varnothing$ is irreducible if and only if every non-empty open set is dense in $X$. Assuming $X\ne\varnothing$, let us prove that $X$ is reducible if and only if some non-empty open set is not dense in $X$. 
+Assume $X\ne\varnothing$. Let us show that $X$ is irreducible if and only if every non-empty open set is dense in $X$, or, equivalently, let us prove that $X$ is reducible if and only if some non-empty open set is not dense in $X$. 
 
-If $X$ is reducible, there are disjoint non-empty open sets $U$ and $V$. Then $V$ is contained in the complement of the closure of $U$, and $U$ is not dense. 
+If $X$ is reducible, there are disjoint non-empty open subsets $U$ and $V$. Then $V$ is contained in the complement of the closure of $U$, and $U$ is not dense. 
 
-If some non-empty open set $U$ is not dense in $X$, the complement of the closure of $U$ is non-empty open subset disjoint from $U$.
+If some non-empty open subset $U$ is not dense in $X$, the complement of the closure of $U$ is non-empty open subset disjoint from $U$.
 
 \subsection{Page 13, Exercise 1.20}%
 
 \textbf{Statement.} Let $X$ be a topological space.
 
-(i) If $Y$ is an irreducible (Exercise 19) subspace of $X$, then the closure $Y$ of $Y$ in $X$ is irreducible.
+(i) If $Y$ is an irreducible (Exercise 19) subspace of $X$, then the closure $\overline Y$ of $Y$ in $X$ is irreducible.
 
 (ii) Every irreducible subspace of $X$ is contained in a maximal irreducible subspace.
 
@@ -521,7 +533,7 @@ Parts (ii) and (iii) are left to the reader.
 
 \subsection{Page 13, Exercise 1.21}%
 
-\subsubsection{Exercise 1.21iii}\label{121iii}%
+\subsubsection{Part (iii)}\label{121iii}%
 
 In the notation of the Exercise, we must show 
 \begin{equation}\label{phi}
@@ -531,11 +543,11 @@ Let us prove first
 \begin{equation}\label{S}
 \overline S=V(\aaa)\text{ where }\aaa:=\bigcap_{\ppp\in S}\ \ppp
 \end{equation}
-for $S\subset\Spec(A)$. The inclusion $S\subset V(\aaa)$ is clear. Let $\bbb$ be an ideal of $A$ satisfying $S\subset V(\bbb)$. It suffices to show $V(\aaa)\subset V(\bbb)$. But this is clear because we have $\bbb\subset\ppp$ for all $\ppp\in S$, and thus 
+for $S\subset\Spec(A)$. The inclusion $S\subset V(\aaa)$ is clear. Let $\aaa'$ be an ideal of $A$ satisfying $S\subset V(\aaa')$. It suffices to show $V(\aaa)\subset V(\aaa')$. But this is clear because we have $\aaa'\subset\ppp$ for all $\ppp\in S$, and thus 
 $$
-\bbb\subset\bigcap_{\ppp\in S}\ \ppp=\aaa.
+\aaa'\subset\bigcap_{\ppp\in S}\ \ppp=\aaa.
 $$ 
-This proves \eqref{phi}. Now let us check \eqref{S}. We have 
+This proves \eqref{S}. Now let us check \eqref{phi}. We have 
 $$
 \overline{\phi^*(V(\bbb))}=V\left(\bigcap_{\ppp\in\phi^*(V(\bbb))}\ppp\right)=V\left(\bigcap_{\qqq\supset\bbb}\qqq^{\oo c}\right)=V\left(\left(\bigcap_{\qqq\supset\bbb}\qqq\right)^{\oo c}\right)=V(r(\bbb)^{\oo c})
 $$
@@ -551,7 +563,7 @@ The map $W$ is bijective and its inverse is $\aaa\mapsto V(\aaa)$.
 \end{prop}
 This follows from \eqref{S}.
 
-\subsubsection{Page 13, Exercise 1.21v}\label{121v}%
+\subsubsection{Part (v)}\label{121v}%
 
 In the notation of the exercise we must show 
 $$
@@ -887,7 +899,7 @@ $$
 \iff h\circ u\circ\alpha_f=h\circ v\circ\alpha_f\ \forall\ f
 $$ 
 $$
-\iff h\circ\beta_{d(f)}=h\circ\beta_{c(f)}\ \forall\ f.
+\iff h\circ\beta_{d(f)}=h\circ\beta_{c(f)}\circ M_f\ \forall\ f.
 $$ 
 This shows that $C$ is indeed a colimit of our system.
 
@@ -1511,15 +1523,15 @@ $$
 $$ 
 where $\bbb$ is an ideal such that $A=\aaa\oplus\bbb$ (such an ideal exists by assumption). These morphisms are clearly injective. $\square$ 
 
-\textbf{Comment}
-
+\begin{note}
 The argument given in the book shows that (i), (ii) and (iii) are also equivalent to
 
 (iv) Every finitely generated ideal is generated by an idempotent,
 
 and also to 
 
-(v) For all $a$ in $A$ there is an $x$ in $A$ such that $a=a^2x$.
+(v) For all $a$ in $A$ there is an $x$ in $A$ such that $a=a^2x$. 
+\end{note}
 
 \subsection{Page 35, Exercise 2.28}\label{228}%
 
@@ -1786,16 +1798,23 @@ Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
 
 \subsection{Page 44, Exercise 3.5}%
 
-Use Corollary 3.12 p.~42 of the book. See also Section~\ref{38} p.~\pageref{38}.
+\textbf{Statement.} Let $A$ be a ring. Suppose that, for each prime ideal $\ppp$, the local ring $A_\ppp$ has no nilpotent element $\ne0$. Show that $A$ has no nilpotent element $\ne0$. If each $A_\ppp$ is an integral domain, is $A$ necessarily an integral domain?
+
+\textbf{Hint.} First part: use Corollary 3.12 p.~42 of the book; see also Section~\ref{38} p.~\pageref{38}. Second part: take the zero ring (or a product of two fields).
+
+\subsection{Page 44, Exercise 3.6}%
+
+\textbf{Statement.} Let $A$ be a ring $\ne0$ and let $\Sigma$ be the set of all multiplicatively closed subsets $S$ of $A$ such that $0\notin S$. Show that $\Sigma$ has maximal elements, and that $S\in\Sigma$ is maximal if and only if $A\setminus S$ is a minimal prime ideal of $A$.
+
+\textbf{Hint.} The union of a chain in $\Sigma$ belongs to $\Sigma$. If $S\in\Sigma$ is maximal, then $S^{-1}A\ne0$. In particular $A$ has a prime ideal $\ppp$ disjoint from $S$, and $A\setminus\ppp$ is an element of $\Sigma$ containing $S$, hence equal to $S$ by maximality of $S$.
 
 \subsection{Page 44, Exercise 3.7}%
 
-\textbf{Statement.} A multiplicatively closed subset $S$ of a ring $A$ is said to be \emph{saturated} if $xy\in S\iff x\in S$ and $y\in S$. %XY E S ~ X E Sand y E S.
+\textbf{Statement.} A multiplicatively closed subset $S$ of a ring $A$ is said to be \emph{saturated} if $xy\in S\iff x\in S$ and $y\in S$. 
 
 Prove that
 
-(i) $S$ is saturated $\iff A\setminus S$ %~ A S 
-is a union of prime ideals.
+(i) $S$ is saturated $\iff A\setminus S$ is a union of prime ideals.
 
 (ii) If $S$ is any multiplicatively closed subset of $A$, there is a unique smallest saturated multiplicatively closed subset $\overline S$ containing $S$, and that $\overline S$ is the complement in $A$ of the union of the prime ideals which do not meet $S$. ($S$ is called the \emph{saturation} of $S$.)
 
@@ -1821,11 +1840,11 @@ It suffices to show $M=P$.
 
 To prove $M\subset P$, assume $\mmm\supset\aaa$, $\mmm$ maximal. It is enough to check $\mmm\cap(1+\aaa)=\varnothing$. If there was an $x$ in $\mmm\cap(1+\aaa)$, there would be an $a$ in $\aaa$ with $x=1+a$, which would imply $1\in\mmm$, contradiction. 
 
-Let us verify $P\subset M$. Assume $\ppp\cap(1+\aaa)=\varnothing$, with $\ppp$ prime. We claim $\ppp+\aaa\ne(1)$. If not we would have $p+a=1$ with $p\in\ppp$ and $a\in\aaa$, and thus 
+Let us verify $P\subset M$. Assume $\ppp\cap(1+\aaa)=\varnothing$, with $\ppp$ prime. It suffices to show $\ppp\subset M$. We claim $\ppp+\aaa\ne(1)$. If not we would have $p+a=1$ with $p\in\ppp$ and $a\in\aaa$, and thus 
 $$
 p=1-a\in\ppp\cap(1+\aaa)=\varnothing.
 $$ 
-As $\ppp+\aaa\ne(1)$, there is a maximal ideal containing $\ppp$ and $\aaa$.
+As $\ppp+\aaa\ne(1)$, there is a maximal ideal containing $\ppp$ and $\aaa$. This implies $\ppp\subset M$, as announced.
 
 %Hint 1: Let $S$ be a multiplicative set and $\aaa$ an ideal disjoint from $S$, and let $\Sigma$ be the set of ideals of $A$ which are disjoint from $S$. Then $\Sigma$ has maximal elements, and any maximal element of $\Sigma$ is prime.
 
@@ -1853,12 +1872,11 @@ in $(T^{-1}A)_{S^{-1}\ppp}$. Then there is an $r'\in A\setminus\ppp$ and an $s''
 $$
 \frac{a}{s}\frac{r'}{s''}=\frac{ar'}{ss''}
 $$ 
-is equal to zero in $T^{-1}A$, and there is a $t\in T$ such that $ar't=0$. Then $t$ is not in $\ppp$, and we get % the element %we get 
+is equal to zero in $T^{-1}A$, and there is a $t\in T$ such that $ar't=0$. Then $t$ is not in $\ppp$, and we get 
 $$
 \frac{a/s}{r/s'}=\frac{ar't/s}{rr't/s'}=0
 $$ 
-%vanishes 
-in $(S^{-1}A)_{S^{-1}\ppp}$.
+in $(S^{-1}A)_{S^{-1}\ppp}$. $\square$
 
 Surjectivity of $\psi$: An element of $(T^{-1}A)_{S^{-1}\ppp}$ is of the form 
 $$
@@ -1870,7 +1888,7 @@ $$
 $$ 
 in $(T^{-1}A)_{S^{-1}\ppp}$. We see that $rt$ is not in $\ppp$, and thus 
 $$
-\frac{a/t}{r/s}=\psi\left(\frac{a/1}{rt/s}\right).
+\frac{a/t}{r/s}=\psi\left(\frac{a/1}{rt/s}\right).\ \square
 $$
 
 For any multiplicative subset $S$ of $A$ regard $\Spec(S^{-1}A)$ as a subset of $\Spec(A)$.
@@ -1893,7 +1911,7 @@ Let $S$ and $T$ be two multiplicative subsets of $A$. Then there there is at mos
 
 See Section \ref{114} p.~\pageref{114}. --- Actually there are two proofs of the fact that the set of zero-divisors  is a union of prime ideals: one is Exercise 1.14 p.~12, the other is Exercise 3.7 p.~44.
 
-$\bu$ To show that a minimal prime ideal $\ppp$ consists of zero-divisors, set $S:=A\setminus\ppp$. Then $S$ is a maximal element of the set denoted $\Sigma$ in Exercise~6. It suffices to prove $S_0\subset S$. Let $s_0$ be in $S_0$. If $s_0$ was not in $S$, then $s_0$ and $S$ would generate a multiplicative set not containing $0$ which is larger than $S$, contradiction. %But otherwise we would have $ss_0=0$ with $s\in S$, $s_0\in S_0$, and $s_0$ would be a zero-divisor.
+$\bu$ To show that a minimal prime ideal $\ppp$ consists of zero-divisors, set $S:=A\setminus\ppp$. Then $S$ is a maximal element of the set denoted $\Sigma$ in Exercise~6. It suffices to prove $S_0\subset S$. Let $s_0$ be in $S_0$. If $s_0$ was not in $S$, then $s_0$ and $S$ would generate a multiplicative set not containing $0$ which is larger than $S$, contradiction. 
 
 $\bu$ (ii) Assume that $a/s\in S_0^{-1}A$ is neither a unit nor a zero-divisor. We have $a\notin S_0$. Then there is a nonzero $b$ in $A$ with $ab=0$, and we get $\frac as\frac b1=0$, hence $\frac b1=0$, that is $bs_0=0$ for some $s_0\in S_0$. This implies $b=0$, a contradiction.
 
@@ -1926,21 +1944,19 @@ Conversely, assume that $A_\mmm$ is a field for each maximal ideal $\mmm$ of $A$
 
 \subsection{Page 44, Exercise 3.11}%
 
-Recall the statement:
+\textbf{Statement.} Let $A$ be a ring. Prove that the following are equivalent:
 
-\emph{Let $A$ be a ring. Prove that the following are equivalent:}
+(i) $A/\mf N$ is absolutely flat ($\,\mf N$ being the nilradical of $A$).
 
-(i) $A/\mf N$ \emph{is absolutely flat ($\,\mf N$ being the nilradical of $A$).}
+(ii) Every prime ideal of $A$ is maximal.
 
-(ii) \emph{Every prime ideal of $A$ is maximal.}
+(iii)  $\Spec(A)$ is a T1-space (i.e., every subset consisting of a single point is closed).
 
-(iii)  $\Spec(A)$ \emph{is a T1-space (i.e., every subset consisting of a single point is closed).}
+(iv) $\Spec(A)$ is Hausdorff.
 
-(iv) $\Spec(A)$ \emph{is Hausdorff.}
+If these conditions are satisfied, show that $\Spec(A)$ is compact and totally disconnected (i.e. the only connected subsets of $\Spec(A)$ are those consisting of a single point).
 
-\emph{If these conditions are satisfied, show that $\Spec(A)$ is compact and totally disconnected (i.e. the only connected subsets of $\Spec(A)$ are those consisting of a single point).}
-
-The equivalence (ii)$\iff$(iii) is clear, as well as the implication (iv)$\implies$(ii).
+\textbf{Solution.} The equivalence (ii)$\iff$(iii) is clear, as well as the implication (iv)$\implies$(ii).
 
 (ii)$\implies$(iv): We assume that each prime ideal of $A$ is maximal and we show that $X=\Spec(A)$ is Hausdorff. Let $x$ and $y$ be two distinct points of $X$. We claim:
 
@@ -5601,6 +5617,24 @@ Let $\aaa$ be an ideal of $A$. Then $\aaa$ is generated by monomials if and only
 A polynomial $f\in A$ is in $\aaa$ if and only if all the monomials occurring in $f$ are in $\aaa$.
 \end{note}
 
+Proof of (d). Assume by contradiction that $\aaa$ is contained in the union of the $\ppp_i$, but is contained in no $\ppp_i$. Let $0\ne f\in\aaa$. 
+
+There is an $n\in\mathbb N$ such that no monomial occurring in $f$ is in $\ppp_{n+1}\cup\ppp_{n+2}\cup\cdots$. In particular 
+
+\qquad(A) $f\notin\ppp_{n+1}\cup\ppp_{n+2}\cup\cdots$. 
+
+We claim that there is a $g\in\aaa$ such that 
+
+\qquad(B) $g\notin\ppp_0\cup\cdots\cup\ppp_n$, 
+
+\qquad(C) $g$ has no monomial in common with $f$.
+
+In view of (A) the claim will imply that $f+g$ is in $\aaa$ but not in any of the $\ppp_i$, contradiction.
+ 
+By Proposition 1.11i p.~8 of the book (see Proposition~\ref{111i} p.~\pageref{111i}), there is an $h\in\aaa$ such that $h\notin\ppp_0\cup\cdots\cup\ppp_n$. If $j$ is in $N_{n+1}$, then $g:=x_jh$ will satisfy (B) and (C). This completes the proof of (d).
+
+%
+\begin{comment}
 Proof of (d). For any $f\in A$ write $M(f)$ for the set of all monomial occurring (with a nonzero coefficient) in $f$. Assume by contradiction that the ideal $\aaa$ of $A$ is contained in the union of the $\ppp_i$, but is contained in no $\ppp_i$. In particular $\aaa\ne(0)$. 
 
 Let $0\ne f\in\aaa$ and let $I$ be the set of all $i\in\mathbb N$ such that $\mu\in\ppp_i$ for some $\mu\in M(f)$ (in other words $I$ is the set of all $i$ such that the indeterminate $x_i$ occurs in $f$). 
@@ -5614,6 +5648,8 @@ $$
 x_j\text{ and }g\text{ are not in }\ppp_k.
 $$ 
 But if $f\in\ppp_k$ then $k\in I$, and thus $x_j$ and $g$ are not in $\ppp_k$. This completes the proof of (d).
+\end{comment}
+%
 
 %
 \begin{comment}
