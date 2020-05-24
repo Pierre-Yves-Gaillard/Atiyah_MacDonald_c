@@ -1808,7 +1808,38 @@ Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
 
 \textbf{Hint.} The union of a chain in $\Sigma$ belongs to $\Sigma$. If $S\in\Sigma$ is maximal, then $S^{-1}A\ne0$. In particular $A$ has a prime ideal $\ppp$ disjoint from $S$, and $A\setminus\ppp$ is an element of $\Sigma$ containing $S$, hence equal to $S$ by maximality of $S$.
 
+% previous version of E 3.7 and E 3.8 https://docs.google.com/document/d/17YFAWtEXwYAJzdMWuQHhimOkH3r1XfLmwqo1q8LgB80/edit
 \subsection{Page 44, Exercise 3.7}%
+
+\subsubsection{Preliminaries}\label{satprel}
+
+The theme of Exercise 3.7 and 3.8 is the notion of saturation. Here are a few comments one can make at the outset.
+
+\begin{note}%\label{sat3}
+Let $S$ and $T$ be two multiplicative subsets of $A$. Then there is at most one $A$-algebra morphism from $S^{-1}A\to T^{-1}A$. Moreover such a morphism exists if and only if for each $s\in S$ the image of $s$ in $T^{-1}A$ is a unit.
+\end{note}
+
+\begin{note}%\label{sat4}
+Let $S$ be a multiplicative subset of $A$. Then the following five subsets of $A$ are equal:
+
+$\bullet$ the intersection of all saturated multiplicative subsets of $A$ containing $S$,
+
+$\bullet$ the set of all those elements of $A$ whose image in $S^{-1}A$ is a unit,
+
+$\bullet$ the complement in $A$ of the union of the prime ideals of $A$ which are disjoint from $S$,
+
+$\bullet$ the set of all those elements $a\in A$ such that $ab\in S$ for some $b\in A$.
+
+Moreover this set is the least saturated multiplicative subset of $A$ containing $S$.
+\end{note}
+
+This set is called the \textbf{saturation} of $S$ and is denoted $\overline S$.
+
+\begin{note}%\label{sat5}
+The unique $A$-algebra morphism $S^{-1}A\to\overline S^{-1}A$ is bijective. Moreover, if $T$ is another multiplicative subset, then there is a (necessarily unique) $A$-algebra morphism $S^{-1}A\to T^{-1}A$ if and only if $\overline S\subset T$.
+\end{note}
+
+\subsubsection{Exercise 3.7}
 
 \textbf{Statement.} A multiplicatively closed subset $S$ of a ring $A$ is said to be \emph{saturated} if $xy\in S\iff x\in S$ and $y\in S$. 
 
@@ -1846,66 +1877,9 @@ p=1-a\in\ppp\cap(1+\aaa)=\varnothing.
 $$ 
 As $\ppp+\aaa\ne(1)$, there is a maximal ideal containing $\ppp$ and $\aaa$. This implies $\ppp\subset M$, as announced.
 
-%Hint 1: Let $S$ be a multiplicative set and $\aaa$ an ideal disjoint from $S$, and let $\Sigma$ be the set of ideals of $A$ which are disjoint from $S$. Then $\Sigma$ has maximal elements, and any maximal element of $\Sigma$ is prime.
-
-%Hint 2: If $S=1+\aaa$, then $\overline S$ is the complement of the union of the maximal ideals containing $\aaa$.
-
 \subsection{Page 44, Exercise 3.8}%
 
-Implication (v)$\implies$(i). Let $\ppp$ be a prime ideal of $A$ disjoint from $S$. By Proposition 3.9 p.~40 of the book, it suffices to show that the natural map 
-$$
-\psi:(S^{-1}A)_{S^{-1}\ppp}\to(T^{-1}A)_{S^{-1}\ppp}
-$$ 
-is bijective. 
-
-The element $r/s\in S^{-1}A$ is not in $S^{-1}\ppp$ if and only if $r$ is not in $\ppp$. In particular an element of $(S^{-1}A)_{S^{-1}\ppp}$ is of the form 
-$$
-\frac{a/s}{r/s'}
-$$ 
-with $a\in A, r\in A\setminus\ppp$ and $s,s'\in S$.
-
-Injectivity of $\psi$: Let $a,r,s,s'$ be as above and assume that  
-$$
-\frac{a/s}{r/s'}=0
-$$ 
-in $(T^{-1}A)_{S^{-1}\ppp}$. Then there is an $r'\in A\setminus\ppp$ and an $s''\in S$ such that the element 
-$$
-\frac{a}{s}\frac{r'}{s''}=\frac{ar'}{ss''}
-$$ 
-is equal to zero in $T^{-1}A$, and there is a $t\in T$ such that $ar't=0$. Then $t$ is not in $\ppp$, and we get 
-$$
-\frac{a/s}{r/s'}=\frac{ar't/s}{rr't/s'}=0
-$$ 
-in $(S^{-1}A)_{S^{-1}\ppp}$. $\square$
-
-Surjectivity of $\psi$: An element of $(T^{-1}A)_{S^{-1}\ppp}$ is of the form 
-$$
-\frac{a/t}{r/s}
-$$ 
-with $a\in A,t\in T,r\in A\setminus\ppp, s\in S$, and we have 
-$$
-\frac{a/t}{r/s}=\frac{a/1}{rt/s}
-$$ 
-in $(T^{-1}A)_{S^{-1}\ppp}$. We see that $rt$ is not in $\ppp$, and thus 
-$$
-\frac{a/t}{r/s}=\psi\left(\frac{a/1}{rt/s}\right).\ \square
-$$
-
-For any multiplicative subset $S$ of $A$ regard $\Spec(S^{-1}A)$ as a subset of $\Spec(A)$.
-
-\begin{note}\label{sat1}
-An element $a\in A$ is in the saturation of the multiplicative subset $S$ of $A$ if and only if $a/1$ is a unit of $S^{-1}A$ (if and only if $a$ belongs to no prime ideal of $S^{-1}A$).
-\end{note}
-
-\begin{note}\label{sat2}
-Let $S$ and $T$ be two multiplicative subsets of $A$. Then there there is at most one $A$-algebra morphism from $S^{-1}A$ to $T^{-1}A$. Moreover the following conditions are equivalent:
-
-(a) there is one $A$-algebra morphism from $S^{-1}A$ to $T^{-1}A$, 
-
-(b) $\overline S\subset\overline T$,
-
-(c) $\Spec(T^{-1}A)\subset\Spec(S^{-1}A)$.
-\end{note}
+See Section~\ref{satprel} p.~\pageref{satprel} above.
 
 \subsection{Page 44, Exercise 3.9}%
 
@@ -2014,7 +1988,7 @@ If $1\otimes x$ vanishes in $K\otimes_AM$, then Exercise 2.15 p.~33 of the book 
 $$
 0=1\otimes x=a^{-1}a\otimes x=a^{-1}\otimes ax,
 $$ 
-in $Aa^{-1}\otimes_AM$. This implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\otimes ay$ is an isomorphism. %If $1\otimes x=0$ in $K\otimes M$, then $1\otimes x=0$ in $A\frac1a\otimes M$. This implies $ax=0$.
+in $Aa^{-1}\otimes_AM$. This implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\otimes y$ is an isomorphism. %If $1\otimes x=0$ in $K\otimes M$, then $1\otimes x=0$ in $A\frac1a\otimes M$. This implies $ax=0$.
 
 \subsection{Page 45, Exercise 3.14}%
 
@@ -2174,7 +2148,8 @@ Let $f,g\in A$. Then there is at most one $A$-algebra morphism from $A_f$ to $A_
 \end{note}
 \end{comment}
 
-Note~\ref{sat1} p.~\pageref{sat1} and Note~\ref{sat2} p.~\pageref{sat2} imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
+The notes in Section~\ref{satprel} p.~\pageref{satprel} above %Note~\ref{sat1} p.~\pageref{sat1} and Note~\ref{sat2} p.~\pageref{sat2} 
+imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
 
 If $S$ is any multiplicative subset of $A$ then there is a natural isomorphism 
 $$
