@@ -1748,7 +1748,7 @@ $$
 $$ 
 in contradiction with the primality of $\aaa$.
 
-\subsection{Related result}\label{res}%
+\subsection{Related result}\label{res}% previous version https://docs.google.com/document/d/1FLOY6fmb0i51WurlovxJkWdDL-SOx5gDK0UZWK0kUjA/edit
 
 Here is a related result:
 \begin{equation}\label{fiber1}
@@ -1756,36 +1756,20 @@ Here is a related result:
 \end{equation}
 This will follow from Claim~1 and Claim~2 below.
 
-Claim~1. We have 
-\begin{equation}\label{fiber2}
-(A_\ppp/\ppp_\ppp)\otimes_AB\simeq 
-B_\ppp/\ppp B_\ppp=
-B_\ppp/(\ppp_\ppp)^{\oo e}=
-B_\ppp/(\ppp^{\oo e})_\ppp\simeq 
-\big(B/\ppp^{\oo e}\big)_\ppp=
-(B/\ppp B)_\ppp.
-\end{equation} 
-Proof of Claim~1. The second isomorphism follows from the exactness of localization and the equality $(\ppp B)_\ppp=\ppp B_\ppp$. %is clear. 
-To prove the first isomorphism of \eqref{fiber2}, observe that the sequences 
+\textbf{Claim~1.} Let $C_1,\ldots,C_6$ be the six $B$-algebras 
 $$
-\ppp_\ppp\to A_\ppp\to A_\ppp/\ppp_\ppp\to0,
+A_\ppp\otimes_AB/\ppp B,\quad (B/\ppp B)_\ppp,\quad B_\ppp/\ppp_\ppp B,\quad  
+\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB},\quad \frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB.
 $$ 
-$$
-\ppp_\ppp\otimes_AB\to A_\ppp\otimes_AB\to A_\ppp/\ppp_\ppp\otimes_AB\to0
-$$ 
-and 
-$$
-\ppp_\ppp\otimes_AB\to B_\ppp\to A_\ppp/\ppp_\ppp\otimes_AB\to0
-$$ 
-are exact, and that the image of $\ppp_\ppp\otimes_AB\to B_\ppp$ is $\ppp B_\ppp$. This proves the first isomorphism of \eqref{fiber2}, completing the proof of Claim~1. 
-%$$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp=\big(B/\ppp^{\oo e}\big)_\ppp,$$ 
+Then for any $1\le i,j\le6$ there is a unique $B$-algebra morphism $C_i\to C_j$, and this morphism is bijective.
 
-Claim~2. We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
+\textbf{Proof of Claim~1.} Left to the reader. 
 
-Proof of Claim~2. 
+\textbf{Claim~2.} We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
+
+\textbf{Proof of Claim~2.} 
 $$
 \big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }\big(B/\ppp^{\oo e}\big)_\ppp\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e}
-%\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\frac11=\frac01\text{ in }B/\ppp^{\oo e}\iff\exists\ s\in A\setminus\ppp\ |\ f(s)\in\ppp^{\oo e},
 $$ 
 $$
 \iff\exists\ s\in\ppp^{\oo{ec}}\setminus\ppp\iff\ppp^{\oo{ec}}\ne\ppp.
@@ -1793,8 +1777,6 @@ $$
 Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
 
 % comment removed https://docs.google.com/document/d/1fIl3kyz4VZj3UEkEyfreFtOzEm6ZO_1WCRS14hkmw1w/edit
-
-%Hint: Let $S$ be in $\Sigma$. Then $S$ is a maximal element of $\Sigma$ if and only if for all $a$ in $A\setminus S$ there is an $s$ in $S$ such that $as$ is nilpotent. Moreover, if $S$ is a maximal element of $\Sigma$, and if $a$ and $b$ are in $A\setminus S$, then so is $a+b$.% Hint: Let $S$ be in $\Sigma$. Then $S$ is a maximal element of $\Sigma$ if and only if for all $a$ in $A\setminus S$ there is an $n$ in $\mathbb N$ and an $s$ in $S$ such that $a^ns=0$. Moreover, if $S$ is a maximal element of $\Sigma$ and if $a$ and $b$ are in $A\setminus S$, then so is $a-b$.
 
 \subsection{Page 44, Exercise 3.5}%
 
@@ -2101,18 +2083,18 @@ $$%\begin{equation}\label{bamq}
 $$%\end{equation} 
 Indeed, we have 
 $$
-(B\otimes_AM)_\qqq\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_BB\otimes_AM\simeq
-\frac{B_\qqq}{\qqq_\qqq}\otimes_AM
+(B\otimes_AM)_\qqq\simeq B_\qqq\otimes_BB\otimes_AM\simeq
+B_\qqq\otimes_AM
 $$ 
 $$
-=\frac{B_\qqq}{\ppp B_\qqq}\otimes_AM\simeq 
-B_\qqq\otimes_{A_\ppp}\frac{A_\ppp}{\ppp_\ppp}\otimes_AM\simeq 
-B_\qqq\otimes_{A_\ppp}M_\ppp\ .
+\simeq B_\qqq\otimes_{A_\ppp}A_\ppp\otimes_AM
+\simeq B_\qqq\otimes_{A_\ppp}M_\ppp\ .
 $$
+%$$(B\otimes_AM)_\qqq\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_BB\otimes_AM\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_AM$$ $$=\frac{B_\qqq}{\ppp B_\qqq}\otimes_AM\simeq B_\qqq\otimes_{A_\ppp}\frac{A_\ppp}{\ppp_\ppp}\otimes_AM\simeq B_\qqq\otimes_{A_\ppp}M_\ppp\ .$$
 
 \subsection{Page 46, Exercise 3.20}%\label{321iv}
 
-Counterexample to the converse of (ii): $B:=k$ a field, $A:=k[\varepsilon]$ with $\varepsilon^2=0$, $f:k[\varepsilon]\to k$ the canonical projection. 
+Counterexample to the converse of (ii): $A:=K$ a field, $B:=K[\varepsilon]$ with $\varepsilon^2=0$, $f:K\to K[\varepsilon]$ the inclusion.%$B:=k$ a field, $A:=k[\varepsilon]$ with $\varepsilon^2=0$, $f:k[\varepsilon]\to k$ the canonical projection. 
 
 \subsection{Page 47, Exercise 3.21iv}\label{321iv}%
 
@@ -2137,8 +2119,7 @@ where $R^*$ stands for $\Spec(R)$, and recall the isomorphism
 $$
 (A_\ppp/\ppp_\ppp)\otimes_AB\simeq B_\ppp/\ppp B_\ppp
 $$ 
-proved in \eqref{fiber2} p.~\pageref{fiber2}. %Section~\ref{res} p.~\pageref{res}.
-%chain of isomorphisms $$(A_\ppp/\ppp_\ppp)\otimes_AB\simeq(A/\ppp)_\ppp\otimes_AB\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}A/\ppp\otimes_AB$$ $$\simeq(A/\ppp)_\ppp\otimes_{A/\ppp}B/\ppp B\simeq(B/\ppp B)_\ppp.$$ (See Section~\ref{res} p.~\pageref{res} for a minor variant of the above calculation.)
+proved in Section~\ref{res} p.~\pageref{res}, Claim~1. 
 
 \subsection{Page 47, Exercise 3.23}%
 
@@ -4821,7 +4802,7 @@ The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the condit
 
 \subsection{Page 92, Exercise 8.4}%
 
-To prove (i) $\implies$ (iii) on can use \eqref{fiber2} p.~\pageref{fiber2} above and the following Lemma:
+To prove (i) $\implies$ (iii) on can use Section~\ref{res} p.~\pageref{res}, Claim~1 above and the following Lemma:
 
 \begin{lem}
 Let $A\to B$ be an integral ring morphism, let $S\subset A$ be a multiplicative subset, and let $\ppp$ be a prime ideal of $A$ disjoint from $S$. Then the induced morphism $S^{-1}A/S^{-1}\ppp\to S^{-1}B/(S^{-1}\ppp)^{\oo e}$ is integral.
