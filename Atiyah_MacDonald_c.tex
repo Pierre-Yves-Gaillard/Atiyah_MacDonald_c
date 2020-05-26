@@ -1759,11 +1759,13 @@ This will follow from Claim~1 and Claim~2 below.
 \textbf{Claim~1.} Let $C_1,\ldots,C_6$ be the six $B$-algebras 
 $$
 A_\ppp\otimes_AB/\ppp B,\quad (B/\ppp B)_\ppp,\quad B_\ppp/\ppp_\ppp B,\quad  
-\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB},\quad \frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB.
+\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\ ,\quad \frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB.
 $$ 
 Then for any $1\le i,j\le6$ there is a unique $B$-algebra morphism $C_i\to C_j$, and this morphism is bijective.
 
 \textbf{Proof of Claim~1.} Left to the reader. 
+
+Note that $C_i$ is an initial object in the category of those $B$-algebras $C$ such that the image of $a\in A$ in $C$ is zero if $a\in\ppp$ and is a unit if $a\notin\ppp$. 
 
 \textbf{Claim~2.} We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
 
@@ -2370,9 +2372,9 @@ This is the Second Uniqueness Theorem. Here is a corollary (see also Proposition
 \begin{cor}\label{410}
 Let $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced primary decomposition.
 
-(a) If $\ppp_i:=r(\qqq_i)$ is isolated, then $\qqq_i$ is the smallest $\ppp_i$-primary ideal containing $\aaa$.%\end{cor}\begin{cor}\label{413}
+\emph{(a)} If $\ppp_i:=r(\qqq_i)$ is isolated, then $\qqq_i$ is the smallest $\ppp_i$-primary ideal containing $\aaa$.
 
-(b) If $r(\aaa)=\ppp$ for some prime ideal $\ppp$, then $\ppp$ is the only isolated prime ideal of $\aaa$, and the corresponding primary component is the smallest $\ppp$-primary ideal containing $\aaa$.
+\emph{(b)} If $r(\aaa)=\ppp$ for some prime ideal $\ppp$, then $\ppp$ is the only isolated prime ideal of $\aaa$, and the corresponding primary component is the smallest $\ppp$-primary ideal containing $\aaa$.
 \end{cor}
 
 \subsection{Page 55, Exercise 4.2}% 
@@ -2482,7 +2484,7 @@ and we can use Exercise 4.7iii.
 
 \textbf{Statement.} [I found it convenient to make some minor changes to the wording of the book.] In a ring $A$, let $D(A)$ denote the set of prime ideals $\ppp$ which satisfy the following condition: there exists $a\in A$ such that $\ppp$ is minimal in the set of prime ideals containing $(0:a)$. 
 
-(a) Show that $b\in A$ is a zero divisor if and only if $\in\ppp$ for some $\ppp\in D(A)$.
+(a) Show that $b\in A$ is a zero divisor if and only if $b\in\ppp$ for some $\ppp\in D(A)$.
 
 (b) Let $S$ be a multiplicatively closed subset of $A$, and write $S^{-1}D(A)$ for the set of all prime ideals of the form $S^{-1}\ppp$ with $\ppp\in D(A)$ [in particular such a $\ppp$ is disjoint from $S$]. Show that
 $$
@@ -2490,7 +2492,7 @@ D(S^{-1}A)=S^{-1}D(A).
 $$
 (c) If the zero ideal has a primary decomposition, show that $D(A)$ is the set of associated prime ideals of $(0)$.
 
-\textbf{Solution.} Here are some hints.
+\textbf{Hints.} %Here are some hints.
 
 (a) Let $a,b\in A$ and $\ppp\in\Spec(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
 
@@ -2505,51 +2507,19 @@ We have $a(a^{n-1}sb)=a^nsb=0$. As $a$ is not a zero-divisor, this implies $a^{n
 
 To complete the proof of Claim~1 set $T:=\{\ a^ns|\ n\in\mathbb N,s\in A\setminus\ppp\}$. This is a multiplicative set. Claim~2 implies that $T$ is disjoint from $(0:b)$. Thus there is a prime ideal $\ppp'$ which contains $(0:b)$ and is disjoint from $T$, and we have $A\setminus\ppp\subset T\subset A\setminus\ppp'$, that is $(0:b)\subset\ppp'\subset\ppp$. By minimality of $\ppp$ over $(0:b)$ this forces $\ppp'=\ppp$, and thus $a\in\ppp\cap T=\ppp'\cap T=\varnothing$, a contradiction. This completes the proof of Claim~1. $\square$ 
 
-\begin{comment}
-$\bu$ \textbf{Proof of the inclusion} 
-\begin{equation}\label{da}
-D(S^{-1}A)\subset D(A)\cap\Sp(S^{-1}A):
-\end{equation}
-To start the proof of \eqref{da}, let $\ppp$ be a prime ideal of $A$ disjoint from $S$ such that $S^{-1}\ppp\in D(S^{-1}A)$. It suffices to show $\ppp\in D(A)$. Note that $S^{-1}\ppp$ is minimal over $(0:\frac a1)$ for some $a\in A$. % and some $s\in S$ such that $\frac as$ is a zero-divisor. 
-It suffices to show that %$a$ is a zero-divisor and that 
-\begin{equation}\label{da2}
-\ppp\text{ is minimal over }(0:a).
-\end{equation}
-%It is easy to prove that $a$ is a zero-divisor. It remains to verify that $\ppp$ is minimal over $(0:a)$. 
-
-To prove \eqref{da2} we start by proving:
-
-\textbf{Claim 3:} $(0:a)\subset\ppp$.
-
-\emph{Proof of Claim 3.} Let $b\in A$ satisfy $ab=0$. It is enough to check $b\in\ppp$. We have $\frac a1\frac b1=0$, hence $\frac b1\in(0:\frac a1)\subset S^{-1}\ppp$, and thus $b\in\ppp$. $\square$
-
-To complete the proof of \eqref{da2}, assume by contradiction that there is a prime ideal $\ppp'$ such that 
-$$
-(0:a)\subset\ppp'<\ppp.
-$$ 
-\textbf{Claim 4:} $(0:\frac a1)\subset S^{-1}\ppp'$.
-
-\emph{Proof of Claim 4.} Assuming $\frac bs\frac a1=0$ (obvious notation), we get $abt=0$ for some $t\in S$, hence $bt\in(0:a)\subset\ppp'$, hence $b\in\ppp'$, and thus $\frac bs\in S^{-1}\ppp'$. $\square$ 
-
-To complete the proof of \eqref{da2}, note that we get 
-$$
-\left(0:\frac a1\right)\subset S^{-1}\ppp'<S^{-1}\ppp,
-$$ 
-contradicting the minimality of $S^{-1}\ppp$ over $(0:\frac a1)$. %$\ppp$ over $(0:a)$. 
-$\square$
-\end{comment}
+% comment removed https://docs.google.com/document/d/1BC9kzpvjeCytRBmyZYoAjIPlupnoTbLJT9d_T6a0iSA/edit
 
 (b) It suffices to prove any of the following two equivalent statements: 
 
-(b1) Let $a$ be an element of $A$ and $\ppp$ a prime ideal of $A$ disjoint of $S$. Then $S^{-1}\ppp$ is minimal over $(0:\frac a1)$ if and only if $\ppp$ is minimal over $(0:a)$.
+(b1) Let $a$ be an element of $A$ and $\ppp$ a prime ideal of $A$ disjoint from $S$. Then $S^{-1}\ppp$ is minimal over $(0:\frac a1)$ if and only if $\ppp$ is minimal over $(0:a)$.
 
-(b2) If $a$ is an element of $A$ and $\ppp$ a prime ideal of $A$ disjoint of $S$, then 
+(b2) If $a$ is an element of $A$ and $\ppp$ a prime ideal of $A$ disjoint from $S$, then 
 $$
 S^{-1}\ppp\supset\left(0:\frac a1\right)\quad\iff\quad\ppp\supset(0:a).
 $$
 This proof is left to the reader. [Note the inclusion $S^{-1}(0:a)\subset(0:\frac a1)$.]
 
-(c) Let $(0)=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced decomposition and set $\ppp_i:=r(\qqq_i)$. Then we have 
+(c) Let $(0)=\qqq_1\cap\cdots\cap\qqq_n$ be a reduced decomposition and set $\ppp_i:=r(\qqq_i)$. We claim 
 $$
 D(A)\subset\{\ppp_1,\dots,\ppp_n\}.
 $$ 
@@ -2557,13 +2527,9 @@ $$
 $$
 \bigcap_{\qqq_i\not\ni a}\ \ppp_i=r(0:a)\subset\ppp.
 $$ 
-In particular $a\notin\qqq_i$ for some $i$, and we get 
-$$
-\ppp\supset\prod_{\qqq_i\not\ni a}\ppp_i,
-$$ 
-hence $\ppp\supset\ppp_i$ for some $i$, and thus $\ppp=\ppp_i$ for some $i$. $\square$
+In particular there is a $j$ such that $a\notin\qqq_j$ and $\ppp\supset\ppp_j$. As $\ppp_j\supset(0:a)$, we get $\ppp=\ppp_j$ by minimality of $\ppp$. $\square$
 
-\subsection{Page 55, Exercise 4.10}%
+\subsection{Page 55, Exercise 4.10}\label{4.10}%
 
 \textbf{Statement.} For any prime ideal $\ppp$ in a ring $A$, let $S_\ppp(0)$ denote the kernel of the homomorphism $A\to A_\ppp$. Prove that
 
@@ -2585,13 +2551,11 @@ and $r_A((0)^{\oo c})=(r_{A_\ppp}(0))^{\oo c}$ (Exercise 1.18 p.~10 and Proposit
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)\subset\ppp.
 $$
-(ii) %We must show that $\ppp$ is minimal if and only if $(r_{A_\ppp}(0))^{\oo c}=\ppp$. 
-If $\ppp$ is minimal we have $r_{A_\ppp}(0)=\ppp_\ppp$ and thus $(r_{A_\ppp}(0))^{\oo c}=\ppp$. 
+(ii) If $\ppp$ is minimal we have $r_{A_\ppp}(0)=\ppp_\ppp$ and thus $(r_{A_\ppp}(0))^{\oo c}=\ppp$. 
 
 If $\ppp$ is \emph{not} minimal, there is a prime ideal $\ppp'$ such that $\ppp'<\ppp$, and we get $r_{A_\ppp}(0)\subset\ppp'_\ppp<\ppp_\ppp$, hence $r_A(0)^{\oo c}\subset\ppp'<\ppp$ and thus $r_{A_\ppp}(0)^{\oo c}\ne\ppp$.
 
-(iii) %Assuming $\ppp\supset\ppp'$, we must show $S_\ppp(0)\subset S_{\ppp'}(0)$. 
-We have 
+(iii) We have 
 $$
 S_\ppp(0)=\bigcup_{s\in A\setminus\ppp}(0:s)\subset\bigcup_{s'\in A\setminus\ppp'}(0:s')=S_{\ppp'}(0).
 $$
@@ -2615,11 +2579,9 @@ would imply $as=0$ for some $s\in A\setminus\ppp$, and thus $s\in(0:a)\subset\pp
 
 (c) Suppose that the zero ideal is decomposable. Prove that $\aaa=(0)$ if and only if every prime ideal of $(0)$ is isolated.
 
-\textbf{Solution.}
+\textbf{Solution.}\\ (a) The ideal $\ppp_\ppp$, being the unique prime ideal of $A_\ppp$, coincides with the nilradical: $\ppp_\ppp=r_{A_\ppp}(0)$. Proposition 4.2 p.~51 of the book implies that $(0)$ is $\ppp_\ppp$-primary, and is thus the smallest $\ppp_\ppp$-primary ideal of $A_\ppp$. As $\ppp_\ppp$ contracts to $\ppp$, Section~\ref{prycor} p.~\pageref{prycor} above entails that $S_\ppp(0)=(0)^{\oo c}$ is the smallest $\ppp$-primary ideal of $A$. 
 
-(a) The ideal $\ppp_\ppp$, being the unique prime ideal of $A_\ppp$, coincides with the nilradical: $\ppp_\ppp=r_{A_\ppp}(0)$. Proposition 4.2 p.~51 of the book implies that $(0)$ is $\ppp_\ppp$-primary, and is thus the smallest $\ppp_\ppp$-primary ideal of $A_\ppp$. As $\ppp_\ppp$ contracts to $\ppp$, Section~\ref{prycor} p.~\pageref{prycor} above entails that $S_\ppp(0)=(0)^{\oo c}$ is the smallest $\ppp$-primary ideal of $A$. %By Exercise 4.10ii p.~55 of the book (see Section~\ref{e410} above), we have $r(S_\ppp(0))=\ppp$, and thus $r(S_\ppp(0)_\ppp)=\ppp_\ppp$ (Proposition 3.11v p.~42 of the book).  Proposition 4.2 p.~51 of the book implies then that $S_\ppp(0)_\ppp$, and Section~\ref{prycor} p.~\pageref{prycor} above entails that ??? This follows from Proposition 4.2 p.~51 %and 4.8 p.~53 of the book and Section~\ref{prycor} p.~\pageref{prycor}.
-
-(b) This follows from Exercise 4.10i p. 55.
+(b) This follows from Exercise 4.10i p. 55, see Section~\ref{4.10} p.~\pageref{4.10} above.
 
 (c) Let 
 $$
@@ -2708,7 +2670,9 @@ contradicting the maximality of $(\aaa:x)$.%and thus $(\aaa:xz)=(1)$, which is i
 
 \subsection{Page 56, Exercise 4.15}%
 
-We can assume that $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ is a minimal primary decomposition, and that, setting $\ppp_i:=r(\qqq_i)$, we have $\Sigma=\{\ppp_1,\dots\ppp_m\}$. The equality $\qqq_\Sigma=S_f(\aaa)$ follows from Proposition 4.9 p.~54 of the book. Proposition 3.11ii p.~41 of the book implies $S_f(\aaa)=\bigcup_{k\ge0}(\aaa:f^k)$. We have 
+\textbf{Statement.} Let $\aaa$ be a decomposable ideal in a ring $A$, let $\Sigma$ be an isolated set of prime ideals belonging to $\aaa$, and let $\qqq_\Sigma$ be the intersection of the corresponding primary components. Let $f$ be an element of $A$ such that, for each prime ideal $\ppp$ belonging to $\aaa$, we have $f\in\ppp\iff\ppp\notin\Sigma$, and let $S_f$ be the set of all powers of $f$. Show that $\qqq_\Sigma=S_f(\aaa)=(a:f^n)$ for all large $n$.
+
+\textbf{Stolution.} We can assume that $\aaa=\qqq_1\cap\cdots\cap\qqq_n$ is a minimal primary decomposition, and that, setting $\ppp_i:=r(\qqq_i)$, we have $\Sigma=\{\ppp_1,\dots\ppp_m\}$. The equality $\qqq_\Sigma=S_f(\aaa)$ follows from Proposition 4.9 p.~54 of the book. Proposition 3.11ii p.~41 of the book implies $S_f(\aaa)=\bigcup_{k\ge0}(\aaa:f^k)$. We have 
 \begin{equation}\label{afk}
 (\aaa:f^k)=(\qqq_1:f^k)\cap\cdots\cap(\qqq_n:f^k).
 \end{equation} 
@@ -3588,11 +3552,17 @@ For the phrase ``and therefore contains $\Spec(A_\ppp)$'' at the end of the hint
 
 \subsection{Page 68, Exercise 5.11}%
 
-The proof of Theorem 5.16 p.~64 of the book shows that the going-down property for $f:A\to B$ is equivalent to the condition that, for all $\qqq\in\Spec(B)$ the natural map $\Spec(B_\qqq)\to\Spec(A_{\qqq^{\oo c}})$ is surjective. 
+\textbf{Statement.} Let $f:A\to B$ be a flat homomorphism of rings. Then $f$ has the going-down property. [Chapter 3, Exercise 18.]
+
+\textbf{Hint.} The proof of Theorem 5.16 p.~64 of the book shows that the going-down property for $f:A\to B$ is equivalent to the condition that, for all $\qqq\in\Spec(B)$ the natural map $\Spec(B_\qqq)\to\Spec(A_{\qqq^{\oo c}})$ is surjective. 
 
 \subsection{Page 68, Exercise 5.12}%
 
-Hint: The main point is to show that an invariant fraction is equal to a fraction with invariant numerator and denominator. Let $x=a/s$ be our fraction (obvious notation). 
+\textbf{Statement.} Let $G$ be a finite group of automorphisms of a ring $A$, and let $A^G$ denote the subring of $G$-invariants, that is of all $x\in A$ such that $\sigma(x)=x$ for all $\sigma\in G$. Prove that $A$ is integral over $A^G$. [If $x\in A$, observe that $x$ is a root of the polynomial $\prod_{\sigma\in G}(t-\sigma(x))$.]
+
+Let $S$ be a multiplicatively closed subset of $A$ such that $\sigma(S)\subset S$ for all $\sigma\in G$, and let $S^G=S\cap A^G$. Show that the action of $G$ on $A$ extends to an action on $S^{-1}A$, and that $(S^G)^{-1}A^G\simeq(S^{-1}A)^G$.
+
+\textbf{Hints.} The main point is to show that an invariant fraction is equal to a fraction with invariant numerator and denominator. Let $x=a/s$ be our fraction (obvious notation). 
 
 \textbf{Step 1.} Set 
 $$
@@ -3624,7 +3594,11 @@ we get $t=t_\sigma v_\sigma$ and $\sigma(a)st=\sigma(a)st_\sigma v_\sigma=ast_\s
 
 \subsection{Page 68, Exercise 5.13}%
 
-We follow the hint given in the book.
+\textbf{Statement.} In the situation of Exercise 12, let $\ppp$ be a prime ideal of $A^G$, and let $P$ be the set of prime ideals of $A$ whose contraction is $\ppp$. Show that $G$ acts transitively on $P$. In particular, $P$ is finite.
+
+[Let $\ppp_1,\ppp_2\in P$ and let $x\in\ppp_1$. Then $\prod_\sigma\sigma(x)\in\ppp_1\cap A^G=\ppp\subset\ppp_2$, hence $\sigma(x)\in\ppp_2$ for some $\sigma\in G$. Deduce that $\ppp_1$ is contained in $\bigcup_\sigma\sigma(\ppp_2)$, and then apply (1.11) and (5.9).]
+
+\textbf{Solution.} We follow the hint given in the book.
 
 Let $\qqq,\qqq'\in P$ and $a\in\qqq'$. We have  
 $$
@@ -3642,13 +3616,17 @@ As
 $$
 \sigma(\qqq)\cap A^G=\sigma\left(\qqq\cap\sigma^{-1}(A^G)\right)=\sigma\left(\qqq\cap A^G\right)=\sigma(\ppp)=\ppp=\qqq'\cap A^G,
 $$ 
-Corollary 5.9 p.~61 of the book (See Section~\ref{59} p.~\pageref{59}) implies $\qqq'=\sigma(\qqq)$, as was to be shown.
+Corollary 5.9 p.~61 of the book (see Section~\ref{59} p.~\pageref{59}) implies $\qqq'=\sigma(\qqq)$, as was to be shown.
 
 \subsection{Page 69, Exercise 5.15}%
 
-Hint 1: $\Spec(B)\to\Spec(A)$ has finite \emph{nonempty} fibers.
+\textbf{Statement.} Let $A$ be an integrally closed domain, $K$ its field of fractions and $L$ any finite extension field of $K$, and let $B$ be the integral closure of $A$ in $L$. Show that, if $\ppp$ is any prime ideal of $A$, then the set of prime ideals $\qqq$ of $B$ which contract to $\ppp$ is finite (in other words, that $\Spec(B)\to\Spec(A)$ has finite fibers).
 
-Hint 2: Let $L/K$ be purely inseparable of characteristic $p>0$, and let $\ppp$ be a prime ideal of $A$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\qqq$ of $B$ lying above $\ppp$. If $b\in B$, $n\in\mathbb N$ and $b^{p^n}\in\ppp$, then $b\in\qqq$. If $x\in\qqq$, then $x^{p^n}\in K$ for some $n\in\mathbb N$, and thus $x^{p^n}\in K\cap\qqq=\ppp$. We conclude that $\qqq$ is the set of those $b\in B$ such that $b^{p^n}\in\ppp$ for some $n\in\mathbb N$ (even if the extension is of infinite degree). In particular the map $\Spec(B)\to\Spec(A)$ is bijective.
+[Reduce to the two cases (a) $L$ separable over $K$ and (b) $L$ purely inseparable over $K$. In case (a), embed $L$ in a finite normal separable extension of $K$, and use Exercises 13 and 14. In case (b),if $\qqq$ is a prime ideal of $B$ such that $\qqq\cap A =\ppp$, show that $\qqq$ is the set of all $x\in B$ such that $x^{p^m}\in\ppp$ for some $m\ge0$, where $p$ is the characteristic of $K$, and hence that $\Spec(B)\to\Spec(A)$ is bijective in this case.]
+
+\textbf{Hints.} (a) $\Spec(B)\to\Spec(A)$ has finite \emph{nonempty} fibers.
+
+(b) Let $L/K$ be purely inseparable of characteristic $p>0$, and let $\ppp$ be a prime ideal of $A$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\qqq$ of $B$ lying above $\ppp$. If $b\in B$, $n\in\mathbb N$ and $b^{p^n}\in\ppp$, then $b\in\qqq$. If $x\in\qqq$, then $x^{p^n}\in K$ for some $n\in\mathbb N$, and thus $x^{p^n}\in K\cap\qqq=\ppp$. We conclude that $\qqq$ is the set of those $b\in B$ such that $b^{p^n}\in\ppp$ for some $n\in\mathbb N$ (even if the extension is of infinite degree). In particular the map $\Spec(B)\to\Spec(A)$ is bijective.
 
 \subsection{Page 69, Exercise 5.16, NNT}\label{nnt}%
 
@@ -3734,10 +3712,9 @@ Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module (see $
 In particular $B_s$ is a finitely generated module over the ring $$A_s[z_1,\dots,z_{m-1}],$$ ring which is itself, as we have just seen, a finitely generated $A_s[x_1,\dots,x_n]$-module. 
 
 This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module, as desired.
-
-%This shows that, indeed, $(\star)$ implies the Theorem.
 \end{proof} 
-%https://docs.google.com/document/d/1KsGGeQkmO40nOVK3_LVgBWoxS6DiRJsDygE6UnkFWjc/edit
+
+% https://docs.google.com/document/d/1KsGGeQkmO40nOVK3_LVgBWoxS6DiRJsDygE6UnkFWjc/edit
 % https://docs.google.com/document/d/1oTZtahmZAPeNJrbs65b2IzgWHBKkWBjzasbWtsHpWDA/edit old versions
 %[Added later: An approach which I find better is expounded in Mel Hochster, Noether's normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}\ ]
 
@@ -3797,7 +3774,7 @@ p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra m
 
 \subsection{Page 69, Exercise 5.17}%
 
-%As observed by the Mathematics Stackexchange user Kato here \href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660} t
+%As observed by the Mathematics Stackexchange user Kato here \href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660}
 The Weak Nullstellensatz is the statement
 $$
 \aaa\ne(1)\implies V(\aaa)\ne\varnothing.
@@ -3823,17 +3800,13 @@ In the hint ``ii)'' should be ``i)''.
 
 \subsection{Page 71, Exercise 5.24}%
  
-Part (i). Let us prove %Here is a partial solution.
+Part (i). Let us prove 
 
 \emph{If $A\subset B$ is an integral extension of rings and if $A$ is Jacobson, then $B$ is Jacobson.}
 
-Proof. %By Theorem 5.10 p.~62 of the book 
-We can assume that $B$ is a domain. Let $\bbb\subset B$ be the Jacobson radical of $B$. It suffices to prove $\bbb=(0)$. We have %Claim: 
-$\bbb^{\oo c}=(0)$ by Exercise 5.5ii p.~67 of the book (see Section~\ref{55} p.~\pageref{55} above), and %Proof of the claim. By contradiction let $0\ne a\in\bbb^{\oo c}$, and let $\mmm$ be a maximal ideal of $A$ avoiding $a$. By Theorem 5.10 p.~62 of the book, there is a prime ideal $\nnn$ of $B$ lying above $\mmm$. Then $\nnn$ is maximal by Corollary 5.8 p.~61 of the book, and $a\in\nnn\cap A=\mmm$, a contradiction.\\ %In view of 
-the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the claim implies $\bbb=(0)$. $\square$
+Proof. We can assume that $B$ is a domain. Let $\bbb\subset B$ be the Jacobson radical of $B$. It suffices to prove $\bbb=(0)$. We have $\bbb^{\oo c}=(0)$ by Exercise 5.5ii p.~67 of the book (see Section~\ref{55} p.~\pageref{55} above), and the version of Corollary 5.9 p.~61 of the book proved in Section~\ref{59} p.~\pageref{59}, the implies $\bbb=(0)$. $\square$
 
-Part (ii) %of the Exercise 
-follows from Exercise 5.22 p.~70 of the book.
+Part (ii) follows from Exercise 5.22 p.~70 of the book.
 
 \subsection{Page 71, Exercise 5.26}%
 
@@ -3877,7 +3850,7 @@ L:=C\setminus\overline{X_0\cap C}
 $$ 
 is  a nonempty locally closed subset satisfying $X_0\cap L=\varnothing$. 
 
-(2)$\implies$(3''): (2) means that $C'\to\overline{C'}$ is a left inverse to the map in (3''). 
+(2)$\implies$(3''): (2) means that $C'\mapsto\overline{C'}$ is a left inverse to the map in (3''). 
 
 (3)$\implies$(1): for $U,V$ open and $V\subset U$ the equality $X_0\cap(U\setminus V)=\varnothing$ implies $X_0\cap U=X_0\cap V$.% for $U,V$ open and $V\subset U$.
 
@@ -3953,7 +3926,7 @@ Assume now that $(A,\mmm)$ is maximal in $\Sigma(K)$. Let $\Omega$ be an algebra
 
 Deduce that if $A$ is a valuation ring and $\ppp$ is a prime ideal of $A$, then $A_\ppp$  and $A/\ppp$ are valuation rings of their fields of fractions.
 
-\textbf{Solution.} (Sketch.) It suffices to show that the following statements are equivalent:
+\textbf{Hint.} It suffices to show that the following statements are equivalent:
 
 (a) $A$ is \emph{not} a valuation ring of $K$,
 
@@ -3967,7 +3940,7 @@ Clearly (b) implies (c). There are $a,b\in A\setminus\{0\}$ such that $\frac ab$
 
 \textbf{Statement.} Let $A$ be a valuation ring of a field $K$. Show that every subring of $K$ which contains $A$ is a local ring of $A$ (i.e. is of the form $A_\ppp$ for some prime ideal $\ppp\subset A$).
 
-\textbf{Solution.} (Hint.) Let $B$ be the unnamed ring in the statement. By Proposition 5.18 (i) and (ii) p.~65 of the book, $B$ is local. Let $\nnn\subset B$ be the maximal ideal and set $\ppp:=A\cap\nnn$. Then we have $A_\ppp=B$. Indeed, the inclusion $A_\ppp\subset B$ is clear. Let $b\in B\setminus A$. It suffices to show $b\in A_\ppp$. We have $b^{-1}\in A\subset B$. As $b^{-1}$ is a unit of $B$, it is not in $\nnn$, and thus not in $\ppp$, hence $b=1/b^{-1}\in A_\ppp$.
+\textbf{Hint.} Let $B$ be the unnamed ring in the statement. By Proposition 5.18 (i) and (ii) p.~65 of the book, $B$ is local. Let $\nnn\subset B$ be the maximal ideal and set $\ppp:=A\cap\nnn$. Then we have $A_\ppp=B$. Indeed, the inclusion $A_\ppp\subset B$ is clear. Let $b\in B\setminus A$. It suffices to show $b\in A_\ppp$. We have $b^{-1}\in A\subset B$. As $b^{-1}$ is a unit of $B$, it is not in $\nnn$, and thus not in $\ppp$, hence $b=1/b^{-1}\in A_\ppp$.
 
 \subsection{Page 72, Exercise 5.30}%
 
@@ -4007,12 +3980,14 @@ Let $\ppp$ be a prime ideal of $A$, set $S:=A\setminus\ppp$ and let $\Delta$ be 
 
 We claim 
 \begin{equation}\label{loc}
-\Gamma(A_\ppp)=\frac{\Gamma}{\Delta}
+\Gamma(A_\ppp)\simeq\frac{\Gamma}{\Delta}
 \end{equation}
 and 
 \begin{equation}\label{quo}
-\Gamma(A/\ppp)\simeq\Delta\text{ (isomorphism of totally ordered abelian groups).}
+\Gamma(A/\ppp)\simeq\Delta%\text{ (isomorphism of totally ordered abelian groups).}
 \end{equation}
+(isomorphisms of totally ordered abelian groups).
+
 Proof of \eqref{loc}:
 $$
 \Gamma(A_\ppp)=Q(A)^*/(A_\ppp)^*=Q(A)^*/\langle S\rangle\simeq\frac{Q(A)^*/A^*}{\langle S\rangle/A^*}=\frac{\Gamma}{\Delta}\ .
@@ -4020,7 +3995,7 @@ $$
 Proof of \eqref{quo}: Set $\overline A:=A/\ppp$ and, for any $a\in A$, write $\overline a$ for the image of $a$ in $\overline A$. %We claim $\Gamma(\overline A)\simeq\Delta$ (isomorphism of totally ordered abelian groups). 
 As $\Gamma(\overline A)$ and $\Delta$ are totally ordered abelian groups, it suffices to show 
 \begin{equation}\label{mon}
-\Gamma(\overline A)^+\simeq\Delta^+\text{ (isomorphism of monoids).}
+\Gamma(\overline A)^+\simeq\Delta^+\text{ (isomorphism of totally ordered monoids).}
 \end{equation}
 Proof of \eqref{mon}: We have $\Gamma(\overline A)^+=(\overline A)^0/(\overline A)^*$ and $\Delta^+=S/A^*$. Define the monoid morphism $f:S\to(\overline A)^0$ by $f(s):=\overline s$, and consider the diagram 
 $$
@@ -4033,7 +4008,7 @@ where $p$ and $q$ are the canonical projections. We claim that there is an induc
 
 \subsection{Page 73, Exercise 5.34}%
 
-In the hint of the book we must check that $C_\nnn$ dominates $A$, that is $\mmm\subset A\cap\nnn_\nnn$. But we have $\mmm\subset A\cap\nnn\subset A\cap\nnn_\nnn$. (All these rings are subrings of $K$.)
+In the hint of the book we must check that $C_\nnn$ dominates $A$, that is $\mmm\subset A\cap\nnn_\nnn$. But we have $\mmm\subset A\cap\nnn\subset A\cap\nnn_\nnn$. %(All these rings are subrings of $K$.)
 
 \subsection{Page 73, Exercise 5.35}%
 
