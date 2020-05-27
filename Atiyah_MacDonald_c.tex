@@ -312,8 +312,6 @@ If $x$ is nilpotent, then $\sum_{n\ge0}x^n$ is the inverse of $1-x$. If $u$ is a
 
 This will follow from Exercise 1.3.
 
-%\subsection{Page 11, Exercise 1.2iv}%
-
 %See \href{https://goo.gl/sbszfj}{https://goo.gl/sbszfj}
 
 \subsection{Page 11, Exercise 1.3i and 1.3ii}%
@@ -366,7 +364,7 @@ Let $f,g\in A[x_1,\ldots,x_n]$. If $\aaa,\bbb,\ccc$ are respectively the ideals 
 
 \subsection{Page 11, Exercise 1.4}%
 
-We must show that the Jacobson radical of $A[x]$ coincides with its nilradical. Let $f$ be in the Jacobson radical of $A[x]$. It suffices to show that $f$ is nilpotent. By Proposition~1.9 p.~6 of the book, $1-xf$ is a unit. Exercise 1.2i p.~11 implies that the coefficients of $f$ are nilpotent, and Exercise 1.2ii implies that $f$ itself is nilpotent.
+We must show that the Jacobson radical of $A[x]$ coincides with its nilradical. Let $f$ be in the Jacobson radical of $A[x]$. It suffices to show that $f$ is nilpotent. By Proposition~1.9 p.~6 of the book, $1-xf$ is a unit. Exercise 1.2i p.~11 implies that the coefficients of $f$ are nilpotent, and Exercise 1.2ii implies that $f$ itself is nilpotent. 
 
 \subsection{Page 11, Exercise 1.5}%
 
@@ -377,11 +375,11 @@ $$
 f^n=\sum_{i>n}a_i^nx^{in}\neq0.
 $$
 
-\subsubsection{Exercise 1.5iii}%\subsection{Page 11, Exercise 1.5iii}%
+\subsubsection{Exercise 1.5iii}%
 
 Other wording: $\mf R(A[[x]])=\mf R(A)+(x)$.
 
-\subsubsection{Exercise 1.5iv}%\subsection{Page 11, Exercise 1.5iv}
+\subsubsection{Exercise 1.5iv}%
 
 Let $\mmm$ be a maximal ideal of $A[[x]]$. We must show that $\mmm^{\oo c}$ is maximal and that $\mmm=\mmm^{\oo c}+(x)$. We have 
 
@@ -395,9 +393,9 @@ A/\mmm^{\oo c}=A/(A\cap\mmm)\simeq(A+\mmm)/\mmm\overset{(\text b)}=A[[x]]/\mmm.
 $$ 
 Then (c) implies that $\mmm^{\oo c}$ is maximal.
 
-(d) $\mmm=\mmm^{\oo c}+(x)$. Proof: Let $f\in A[[x]]$ with $f=a_0+a_1x+\cdots$. There is a unique $g\in A[[x]]$ such that $f=a_0+xg$, and (a) implies that $f\in\mmm$ if and only if $a_0\in\mmm^{\oo c}$. %then $f\in\mmm$ by (a). $f=a_0+xg\in\mmm$, then $a_0\in\mmm^{\oo c}$ by (a).
+(d) $\mmm=\mmm^{\oo c}+(x)$. Proof: Let $f\in A[[x]]$ with $f=a_0+a_1x+\cdots$. There is a unique $g\in A[[x]]$ such that $f=a_0+xg$, and (a) implies that $f\in\mmm$ if and only if $a_0\in\mmm^{\oo c}$. 
 
-\subsubsection{Exercise 1.5v}%\subsection{Page 11, Exercise 1.5v}%
+\subsubsection{Exercise 1.5v}%
 
 In the next few lines, $A^*$ shall designate the set of prime ideals of the ring $A$, and $f^*:B^*\to A^*$ shall denote the map induced by the ring morphism $f:A\to B$. 
 
@@ -433,7 +431,7 @@ Let $A$ be boolean, and let us show that any finitely generated ideal $\aaa$ is 
 
 \subsection{Page 11, Exercise 1.12}\label{112}%
 
-A local ring $(A,\mmm)$ contains no idempotent $\neq0,1$. %A ring containing such an idempotent is a product of two nonzero rings, and, thus, cannot be local. Other argument: %If $A$ is local and $a\in A$ is not a unit, then $a\in\mathfrak R$, and $1-a$ is a unit. 
+A local ring $(A,\mmm)$ contains no idempotent $\neq0,1$. 
 
 Proof: Let $e\in A$ be idempotent. If $e$ is a unit, then $e=e^{-1}e^2=e^{-1}e=1$. If $e$ is not a unit, then $e\in\mmm=\mf R$, and $1-e$ is a unit (by Proposition~1.9 p.~6 of the book) and an idempotent, and thus equal to $1$, hence $e=0$.
 
@@ -589,7 +587,7 @@ We have $X=V(\aaa)\sqcup V(\bbb)$ with $\aaa,\bbb\ne(1)$ and $\aaa,\bbb\not\subs
 
 \subsection{Page 14, Exercise 1.25}%
 
-The following observation can be used in the solution to Exercise 1.25.
+The following observation can be used in the solution to Exercise~1.25.
 
 Let $a$ and $b$ be elements of a boolean ring $A$. We claim
 \begin{equation}\label{125a}
@@ -937,59 +935,11 @@ $$
 $$ 
 Then we define the map $A\times C'\to C'$ (details left to the reader), we check that we have indeed defined a structure of $A$-module on $C'$, we use it to define a morphism $C\to C'$, and we check that this morphism is inverse to the morphism $C'\to C$ previously defined. Again, the details are left to the reader. 
 
-%
-\begin{comment}
-\subsection{Page 33, Exercise 2.15}%\varinjlim
-
-The proof of the following statements is left to the reader.
-
-\emph{There is a unique equivalence relation $\sim$ on the disjoint union $M'$ of the $M_i$ such that, for any $x\in M_i$ and any $y$ in $M_j$, we have $x\sim y$ if and only if there is a $k\ge i,j$ with $\mu_{ki}(x)=\mu_{kj}(\,y)$.}
-
-[I denote by $\mu_{ki}$ what the book denotes by $\mu_{ik}$.]
-
-Then $M'/\sim$ is a direct limit of the $M_i$ in the category of sets. 
-
-Let $p:M'\to M'/\sim$ be the canonical projection. 
-
-There is a unique structure of $A$-module on $M'/\sim$ such that 
-
-$\bullet\ ap(x)=p(ax)$ for all $i$ in $I$, all $x$ in $M_i$ and all $a$ in $A$, 
-
-$\bullet\ p(x)+p(\,y)=p(\mu_{ki}(x)+\mu_{kj}(\,y))$ for all $k\ge i,j$ in $I$, all $x$ in $M_i$ and all $y$ in $M_j$. 
-
-The quotient $M'/\sim$ is a direct limit of the $M_i$ also in the category of $A$-modules.
-\end{comment}
-%
+% comment removed https://docs.google.com/document/d/1p9Zb4h4QfJOoEdHG-OtcEpEXKNNxvEHr9XZ5lTQ6tg8/edit
 
 \subsection{Page 33, Exercise 2.20}%
 
-%
-\begin{comment}
-Assume we have an inductive system $(M_i)$ of $A$-modules indexed by a category  $I$, that is, for each object $i$ of $I$ we have an $A$-module $M_i$, and for each morphism $f:d(f)\to c(f)$ in $I$ we have an $A$-linear map $M_f:M_{c(f)}\to M_{d(f)}$. 
-
-Define the morphisms $u$ and $v$ by the commutative diagram
-$$
-\begin{tikzcd}
-M_{d(f)}\ar[d,"\alpha_{f}"']\ar[r,equal]&M_{d(f)}\ar[d,"\beta_{d(f)}"]\\ 
-\ds\bigoplus_gM_{d(g)}\ar[r,yshift=0.9ex,"u"]\ar[r,yshift=-0.9ex,"v"']&\ds\bigoplus_iM_i\\ 
-M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f),}\ar[u,"\beta_{c(f)}"']
-\end{tikzcd}
-$$ 
-where the $\alpha_f$ and the $\beta_i$ are the coprojections. 
-
-We claim that the cokernel of $u-v$ is a colimit of our system, or equivalently, that the middle row of the commutative diagram 
-$$
-\begin{tikzcd}
-M_{d(f)}\ar[d,"\alpha_{f}"']\ar[r,equal]&M_{d(f)}\ar[d,"\beta_{d(f)}"]\\ 
-\ds\bigoplus_gM_{d(g)}\ar[r,"u-v"]&\ds\bigoplus_iM_i\ar[r]&\ds\ooo{colim}_iM_i\ar[r]&0\\ 
-M_{d(f)}\ar[u,"\alpha_{f}"]\ar[r,"M_f"']&M_{c(f)}\ar[u,"\beta_{c(f)}"']
-\end{tikzcd}
-$$ 
-is exact. 
-
-The proof is left to the reader. 
-\end{comment}
-%
+% comment removed https://docs.google.com/document/d/17kV4NGPGv6_o1oibgrm3QyNS-c5T0mJVynjJzqlLK9o/edit
 
 In view of Section~\ref{colim} p.~\pageref{colim}, to prove that 
 \begin{equation}\label{tpcwc}
@@ -1256,7 +1206,7 @@ Assume that $M'$ is flat. Then $\alpha$ is injective, and Lemma~\ref{b2i} implie
 
 \subsection{Page 34, Exercise 2.25, second solution}\label{sol2}% doc snake0: https://docs.google.com/document/d/1gTyvvgy4XYRi04V_LI47nxX0mYQvRyn57lMmjo59hlM/edit
 
-In Section~\ref{s225a} p.~\pageref{s225a} above we gave a solution to Exercise 2.25 p.~34 of the book which doesn't use the Tor functor. The purpose of the present section is to give a solution which \emph{does} use the Tor functor, but does \emph{not} assume this functor to be known. We'll follow Bourbaki's \textbf{Algèbre homologique}.
+In Section~\ref{s225a} p.~\pageref{s225a} above we gave a solution to Exercise 2.25 p.~34 of the book which doesn't use the Tor functor. The purpose of the present section is to give a solution which \emph{does} use the Tor functor, but does \emph{not} assume this functor to be known. We'll follow Bourbaki's \textbf{Algèbre homologique}. 
 
 We return to the notation $A$ for a commutative ring with one. \emph{Module} stands for $A$-\emph{module}. 
 
@@ -1389,11 +1339,7 @@ Now Exercise 2.25 (see Exercise~\ref{e225b} above) follows from the above statem
 
 \subsection{Page 35, Exercise 2.26}\label{35}%
 
-The goal is to show: 
-
-%\emph{If the natural morphism $M\otimes\aaa\to M\otimes A$ is injective for all finitely generated ideal $\aaa$, then $M$ is flat.}
-
-%Let us state this in a more explicit way:
+The goal is to show:
 
 \begin{thm}\label{flatcrit}
 In the above setting, $M$ is flat if and only if for all finitely generated ideal $\aaa$ the morphism $M\otimes\aaa\to M$ sending $x\otimes a$ to $xa$ is injective.
@@ -1409,7 +1355,7 @@ Given $A$-modules $M$ and $N$ we say that $M$ is $N$\textbf{-flat} if for all su
 Let $N''$ be an arbitrary submodule of $N$; let $x_1,\dots,x_n$ be in $M$; let $y_1,\dots,y_n$ be in $N''$; define $t''\in M\otimes N''$ by $t''=\sum x_i\otimes y_i$; define $t\in M\otimes N$ by $t=\sum x_i\otimes y_i$; and assume $t=0$. It suffices to show $t''=0$. Let $N'$ be the submodule of $N''$ generated by the $y_i$. By assumption the tensor $t'\in M\otimes N'$ defined by $t'=\sum x_i\otimes y_i$ vanishes. As the natural map $M\otimes N'\to M\otimes N''$ sends $t'$ to $t''$, we have indeed $t''=0$. 
 \end{proof}
 
-(b) If $M$ is $N$-flat and if $P$ is a submodule or a quotient of $N$, then $M$ is $P$-flat.%, then so are the submodules and the quotients of $N$. 
+(b) If $M$ is $N$-flat and if $P$ is a submodule or a quotient of $N$, then $M$ is $P$-flat. 
 
 \begin{proof} 
 The case of the submodules is left to the reader. Let 
@@ -1433,14 +1379,12 @@ $$
 where $\overline r$ is the identity of $\overline R$. As $\overline n$ is injective, so is $\overline q$. 
 \end{proof}
 
-(c) If $N=\bigoplus_{i\in I}N_i$ is the direct sum of a family of submodules, and if $M$ is $N_i$-flat for each $i$, then $M$ is $N$-flat.%The direct sum of a family of $M$-flat modules is $M$-flat. 
+(c) If $N=\bigoplus_{i\in I}N_i$ is the direct sum of a family of submodules, and if $M$ is $N_i$-flat for each $i$, then $M$ is $N$-flat. 
 
 \begin{proof} 
 Let $(N_i)_{i\in I}$ be our family. 
 
-$\bu$ First assume $I=\{1,2\}$. 
-%\begin{proof} 
-Consider the \emph{split} exact sequence 
+$\bu$ First assume $I=\{1,2\}$. Consider the \emph{split} exact sequence 
 $$
 0\to N_1\xrightarrow i N_1\oplus N_2\xrightarrow pN_2\to0,
 $$ 
@@ -1459,7 +1403,6 @@ $$
 \end{tikzcd}
 $$ 
 It is easy to see that $\overline{f_1},\overline{f_2}$ and $\overline i$ are injective, and that this implies that $\overline f$ is also injective. This completes the proof of (c) in the case $I=\{1,2\}$.
-%\end{proof}
 
 $\bu$ Second assume that $I$ is \emph{finite}. We prove the statement by induction.
 
@@ -1468,8 +1411,6 @@ $$
 N=\left(\bigoplus_{j\in J}N_j\right)\oplus\left(\bigoplus_{i\in I\setminus J}N_i\right). 
 $$ 
 We leave the rest of the proof to the reader.
-
-%(d) If $M\otimes\aaa\to M\otimes A$ is injective for all finitely generated ideal $\aaa$, then $M$ is flat.
 
 From this point, the proof of Theorem~\ref{flatcrit} p.~\pageref{flatcrit} is straightforward. The details are again left to the reader.
 
@@ -1497,9 +1438,7 @@ There is also a statement and a proof of this result in the Stacks Project; see 
 
 \subsection{Page 35, Exercise 2.27}\label{227}%
 
-\textbf{Statement}
-
-A ring $A$ is \emph{absolutely flat} if every $A$-module is flat. Prove that the following are equivalent:
+\textbf{Statement.} A ring $A$ is \emph{absolutely flat} if every $A$-module is flat. Prove that the following are equivalent:
 
 (i) $A$ is absolutely flat.
 
@@ -1507,7 +1446,7 @@ A ring $A$ is \emph{absolutely flat} if every $A$-module is flat. Prove that the
 
 (iii) Every finitely generated ideal is a direct summand of $A$. 
 
-\textbf{Partial solution}
+\textbf{Hints.}
 
 $\bu$ To show that (i) implies (ii), let $x$ be in $A$ and consider the obvious diagram 
 $$
@@ -1535,7 +1474,7 @@ and also to
 
 \subsection{Page 35, Exercise 2.28}\label{228}%
 
-An absolutely flat local ring is a field: This follows immediately from Property~(iv) above (Section~\ref{227}) and Exercise 1.12 p.~11 of the book (see Section~\ref{112} p.~\pageref{112} above). %Let $(A,\mmm)$ be our local ring and let $\mu$ be in $\mmm$. It suffices to show $\mu=0$. If we had $\mu\ne0$, we would get $(\mu)=(e)$ for some nonzero idempotent $e$ (see end of Section \ref{227} above). Then $e\in\mmm=\mf R$ would imply that $f:=1-e$ is a unit, hence $f=f^2$ entails $f=1$ and thus $e=0$, a contradiction. 
+An absolutely flat local ring is a field: This follows immediately from Property~(iv) above (Section~\ref{227}) and Exercise 1.12 p.~11 of the book (see Section~\ref{112} p.~\pageref{112} above). 
 
 \section{About Chapter 3}%%
 
@@ -1711,7 +1650,7 @@ A:=K[x],\quad S:=K[x]\setminus\{0\},\quad M:=\bigoplus A/(x^n).
 $$ 
 We get $\oo{Ann}M=(0)$, $S^{-1}M=0$, $\oo{Ann}S^{-1}M=(1)$. 
 
-\subsection{Page 43, Proposition 3.16}%\label{43b}
+\subsection{Page 43, Proposition 3.16}%
 
 Compare with Exercise 3.21iv p. 47 of the book Section~\ref{321iv} p.~\pageref{321iv} below.
 
@@ -1776,7 +1715,7 @@ $$
 $$
 \iff\exists\ s\in\ppp^{\oo{ec}}\setminus\ppp\iff\ppp^{\oo{ec}}\ne\ppp.
 $$ 
-Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
+Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book (see Section~\ref{321iv} p.~\pageref{321iv} below). 
 
 % comment removed https://docs.google.com/document/d/1fIl3kyz4VZj3UEkEyfreFtOzEm6ZO_1WCRS14hkmw1w/edit
 
@@ -1786,24 +1725,25 @@ Statement \eqref{fiber1} follows also from Exercise 3.21iv p.~47 of the book.
 
 \textbf{Hint.} First part: use Corollary 3.12 p.~42 of the book; see also Section~\ref{38} p.~\pageref{38}. Second part: take the zero ring (or a product of two fields).
 
-\subsection{Page 44, Exercise 3.6}%
+\subsection{Page 44, Exercise 3.6}\label{36}%
 
 \textbf{Statement.} Let $A$ be a ring $\ne0$ and let $\Sigma$ be the set of all multiplicatively closed subsets $S$ of $A$ such that $0\notin S$. Show that $\Sigma$ has maximal elements, and that $S\in\Sigma$ is maximal if and only if $A\setminus S$ is a minimal prime ideal of $A$.
 
 \textbf{Hint.} The union of a chain in $\Sigma$ belongs to $\Sigma$. If $S\in\Sigma$ is maximal, then $S^{-1}A\ne0$. In particular $A$ has a prime ideal $\ppp$ disjoint from $S$, and $A\setminus\ppp$ is an element of $\Sigma$ containing $S$, hence equal to $S$ by maximality of $S$.
 
 % previous version of E 3.7 and E 3.8 https://docs.google.com/document/d/17YFAWtEXwYAJzdMWuQHhimOkH3r1XfLmwqo1q8LgB80/edit
+
 \subsection{Page 44, Exercise 3.7}%
 
 \subsubsection{Preliminaries}\label{satprel}
 
 The theme of Exercise 3.7 and 3.8 is the notion of saturation. Here are a few comments one can make at the outset.
 
-\begin{note}%\label{sat3}
+\begin{note}%
 Let $S$ and $T$ be two multiplicative subsets of $A$. Then there is at most one $A$-algebra morphism from $S^{-1}A\to T^{-1}A$. Moreover such a morphism exists if and only if for each $s\in S$ the image of $s$ in $T^{-1}A$ is a unit.
 \end{note}
 
-\begin{note}%\label{sat4}
+\begin{note}%
 Let $S$ be a multiplicative subset of $A$. Then the following five subsets of $A$ are equal:
 
 $\bullet$ the intersection of all saturated multiplicative subsets of $A$ containing $S$,
@@ -1819,11 +1759,11 @@ Moreover this set is the least saturated multiplicative subset of $A$ containing
 
 This set is called the \textbf{saturation} of $S$ and is denoted $\overline S$.
 
-\begin{note}%\label{sat5}
+\begin{note}%
 The unique $A$-algebra morphism $S^{-1}A\to\overline S^{-1}A$ is bijective. Moreover, if $T$ is another multiplicative subset, then there is a (necessarily unique) $A$-algebra morphism $S^{-1}A\to T^{-1}A$ if and only if $\overline S\subset T$.
 \end{note}
 
-\subsubsection{Exercise 3.7}
+\subsubsection{Exercise 3.7}\label{37}%
 
 \textbf{Statement.} A multiplicatively closed subset $S$ of a ring $A$ is said to be \emph{saturated} if $xy\in S\iff x\in S$ and $y\in S$. 
 
@@ -1867,9 +1807,9 @@ See Section~\ref{satprel} p.~\pageref{satprel} above.
 
 \subsection{Page 44, Exercise 3.9}%
 
-See Section \ref{114} p.~\pageref{114}. --- Actually there are two proofs of the fact that the set of zero-divisors  is a union of prime ideals: one is Exercise 1.14 p.~12, the other is Exercise 3.7 p.~44.
+See Section \ref{114} p.~\pageref{114}. --- Actually there are two proofs of the fact that the set of zero-divisors  is a union of prime ideals: one is Exercise 1.14 p.~12, the other is Exercise 3.7 p.~44 (see Section~\ref{37} p~\pageref{37}). 
 
-$\bu$ To show that a minimal prime ideal $\ppp$ consists of zero-divisors, set $S:=A\setminus\ppp$. Then $S$ is a maximal element of the set denoted $\Sigma$ in Exercise~6. It suffices to prove $S_0\subset S$. Let $s_0$ be in $S_0$. If $s_0$ was not in $S$, then $s_0$ and $S$ would generate a multiplicative set not containing $0$ which is larger than $S$, contradiction. 
+$\bu$ To show that a minimal prime ideal $\ppp$ consists of zero-divisors, set $S:=A\setminus\ppp$. Then $S$ is a maximal element of the set denoted $\Sigma$ in Exercise~3.6 (see Section~\ref{36} p.~\pageref{36}). It suffices to prove $S_0\subset S$. Let $s_0$ be in $S_0$. If $s_0$ was not in $S$, then $s_0$ and $S$ would generate a multiplicative set not containing $0$ which is larger than $S$, contradiction. 
 
 $\bu$ (ii) Assume that $a/s\in S_0^{-1}A$ is neither a unit nor a zero-divisor. We have $a\notin S_0$. Then there is a nonzero $b$ in $A$ with $ab=0$, and we get $\frac as\frac b1=0$, hence $\frac b1=0$, that is $bs_0=0$ for some $s_0\in S_0$. This implies $b=0$, a contradiction.
 
@@ -1878,7 +1818,7 @@ $\bu$ (ii) Assume that $a/s\in S_0^{-1}A$ is neither a unit nor a zero-divisor. 
 \textbf{Statement.} Let $A$ be a ring.
 
 (i) If $A$ is absolutely flat (Chapter 2, Exercise 27) and $S$ is any multiplicatively 
-closed subset of $A$, then $S^{-1}A$ is absolutely flat.
+closed subset of $A$, then $S^{-1}A$ is absolutely flat. 
 
 (ii) $A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maximal ideal $\mmm$.
 
@@ -1898,9 +1838,9 @@ Let us show that $A$ is absolutely flat $\iff$ $A_\mmm$ is a field for each maxi
 
 If $A$ is absolutely flat, then so is $A_\mmm$ by Part (i) of the same Exercise, and $A_\mmm$ is a field by Exercise 2.28 p.~35 of the book (see Section~\ref{228} p.~\pageref{228} above). 
 
-Conversely, assume that $A_\mmm$ is a field for each maximal ideal $\mmm$ of $A$, and let $a$ be in $A$. We have $(a^2)_\mmm=(a)_\mmm$ for all maximal $\mmm$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book ((ii) implies (i)).
+Conversely, assume that $A_\mmm$ is a field for each maximal ideal $\mmm$ of $A$, and let $a$ be in $A$. We have $(a^2)_\mmm=(a)_\mmm$ for all maximal $\mmm$, and thus $(a^2)=(a)$. This shows that $A$ is absolutely flat by Exercise 2.27 p.~35 of the book (see Section~\ref{227} p.~\pageref{227}) ((ii) implies (i)).
 
-\subsection{Page 44, Exercise 3.11}%
+\subsection{Page 44, Exercise 3.11}\label{311}%
 
 \textbf{Statement.} Let $A$ be a ring. Prove that the following are equivalent:
 
@@ -1954,7 +1894,7 @@ Here is a related result:
 
 (c) \emph{for each $a$ in $A$ the descending chain $(a)\supset(a^2)\supset\cdots$ stabilizes.}
 
-\emph{Proof.} In view of Exercise 3.11 p. 44 of the book, it suffices to prove (b)$\implies$(c)$\implies$(a). 
+\emph{Proof.} In view of Exercise 3.11 p. 44 of the book (see Section~\ref{311} p.~\pageref{311}), it suffices to prove (b)$\implies$(c)$\implies$(a). 
 
 (b)$\implies$(c): With obvious notation we have $\overline a=\overline a^2\overline b$ for some $b$ in $A$, that is $(a-a^2b)^n=0$ for some $n\ge1$. This is easily seen to imply $a^n\in(a^{n+1})$ and thus $(a^{n+1})=(a^n)$. 
 
@@ -1972,9 +1912,9 @@ If $1\otimes x$ vanishes in $K\otimes_AM$, then Exercise 2.15 p.~33 of the book 
 $$
 0=1\otimes x=a^{-1}a\otimes x=a^{-1}\otimes ax,
 $$ 
-in $Aa^{-1}\otimes_AM$. This implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\otimes y$ is an isomorphism. %If $1\otimes x=0$ in $K\otimes M$, then $1\otimes x=0$ in $A\frac1a\otimes M$. This implies $ax=0$.
+in $Aa^{-1}\otimes_AM$. This implies $ax=0$ because the map $M\to Aa^{-1}\otimes_AM$, $y\mapsto a^{-1}\otimes y$ is an isomorphism. 
 
-\subsection{Page 45, Exercise 3.14}%
+\subsection{Page 45, Exercise 3.14}\label{314}%
 
 \textbf{Statement.} Let $M$ be an $A$-module and $\aaa$ an ideal of $A$. Suppose that $M_\mmm=0$ for all maximal ideals $\mmm\supset\aaa$. Prove that $M=\aaa M$. 
 
@@ -1985,8 +1925,7 @@ $$
 
 \subsection{Page 45, Exercise 3.15}%
 
-\textbf{Statement.} Let $A$ be a ring. %, and let $F$ be the $A$-module $A^n$. 
-Show that every set of $n$ generators of $A^n$ is a basis of $A^n$. Deduce that every set of generators of $A^n$ has at least $n$ elements. [Hint. Let $x_1,\ldots,x_n$ be a set of generators and $e_1,\ldots,e_n$ the canonical basis of $A^n$. Define $\phi:A^n\to A^n$ by $\phi(e_i)=x_i$. Then $\phi$ is surjective and we have to prove that it is an isomorphism. By (3.9) we may assume that $A$ is a local ring. Let $N$ be the kernel of $\phi$ and let $k=A/\mmm$ be the residue field of $A$\ldots]
+\textbf{Statement.} Let $A$ be a ring. Show that every set of $n$ generators of $A^n$ is a basis of $A^n$. Deduce that every set of generators of $A^n$ has at least $n$ elements. [Hint. Let $x_1,\ldots,x_n$ be a set of generators and $e_1,\ldots,e_n$ the canonical basis of $A^n$. Define $\phi:A^n\to A^n$ by $\phi(e_i)=x_i$. Then $\phi$ is surjective and we have to prove that it is an isomorphism. By (3.9) we may assume that $A$ is a local ring. Let $N$ be the kernel of $\phi$ and let $k=A/\mmm$ be the residue field of $A$\ldots]
 
 \textbf{Solution.} The exact sequence 
 $$
@@ -1998,30 +1937,11 @@ $$
 $$ 
 (see Section~\ref{Tor-f} p.~\ref{Tor-f} above) which we can write as 
 $$
-0\to N/\mmm N\to k^n\to k^n\to0.%\overset\sim
+0\to N/\mmm N\to k^n\to k^n\to0. 
 $$ 
 The $k$-linear map $k^n\to k^n$, being surjective, is injective, so that we get $N=\mmm N$. Exercise 2.12 p.~32 of the book shows that $N$ is finitely generated, and Nakayama’s Lemma (Proposition 2.6 p.~21 of the book) gives $N=0$ ($\mmm$ being the Jacobson radical of the local ring $A$). 
 
-%
-\begin{comment}
-We follow Jeffrey Daniel Kasik Carlson. 
-
-The exact sequence 
-$$
-0\to N\to F\to F\to0
-$$ 
-in the hint of the book induces an exact sequence 
-$$
-k\otimes N\to k\otimes F\to k\otimes F\to0,
-$$ 
-which we can write as 
-$$
-N/\mmm N\to k^n\to k^n\to0.
-$$ 
-Now Exercise 2.12 p.~32 of the book shows that $N$ is finitely generated. %and Exercise 2.2 p.~31 of the book gives $k\otimes N=(A/\mmm)\otimes N\simeq N/\mmm N=0$. 
-The map $k^n\to k^n$ is a surjection of vector spaces of the same dimension, hence an isomorphism. This implies $N=\mmm N$, and Nakayama’s Lemma (Proposition 2.6 p.~21 of the book) gives $N=0$ ($\mmm$ being the Jacobson radical of the local ring $A$). Thus our endomorphism of $F$ is injective. 
-\end{comment}
-%
+% comment removed https://docs.google.com/document/d/1xq5VCYuRUAVFwrbOqkGsjJjaLqYfpHNf5kZr2zub8rs/edit
 
 \subsection{Page 46, Exercise 3.16}\label{316}%
 
@@ -2092,11 +2012,10 @@ $$
 \simeq B_\qqq\otimes_{A_\ppp}A_\ppp\otimes_AM
 \simeq B_\qqq\otimes_{A_\ppp}M_\ppp\ .
 $$
-%$$(B\otimes_AM)_\qqq\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_BB\otimes_AM\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_AM$$ $$=\frac{B_\qqq}{\ppp B_\qqq}\otimes_AM\simeq B_\qqq\otimes_{A_\ppp}\frac{A_\ppp}{\ppp_\ppp}\otimes_AM\simeq B_\qqq\otimes_{A_\ppp}M_\ppp\ .$$
 
-\subsection{Page 46, Exercise 3.20}%\label{321iv}
+\subsection{Page 46, Exercise 3.20}%
 
-Counterexample to the converse of (ii): $A:=K$ a field, $B:=K[\varepsilon]$ with $\varepsilon^2=0$, $f:K\to K[\varepsilon]$ the inclusion.%$B:=k$ a field, $A:=k[\varepsilon]$ with $\varepsilon^2=0$, $f:k[\varepsilon]\to k$ the canonical projection. 
+Counterexample to the converse of (ii): $A:=K$ a field, $B:=K[\varepsilon]$ with $\varepsilon^2=0$, $f:K\to K[\varepsilon]$ the inclusion. 
 
 \subsection{Page 47, Exercise 3.21iv}\label{321iv}%
 
@@ -2125,14 +2044,9 @@ proved in Section~\ref{res} p.~\pageref{res}, Claim~1.
 
 \subsection{Page 47, Exercise 3.23}%
 
-\begin{comment}
-\begin{note}\label{sheaf}
-Let $f,g\in A$. Then there is at most one $A$-algebra morphism from $A_f$ to $A_g$. Moreover such a morphism exists if and only if $f/1$ is a unit of $A_g$, that is if and only if $f/1$ is contained in no prime prime ideal of $A_g$, that is if and only if $g\notin\ppp$ implies $f\notin\ppp$ for all prime ideal $\ppp$ of $A$, that is if and only if $X_g\subset X_f$. 
-\end{note}
-\end{comment}
+%\begin{note}\label{sheaf} Let $f,g\in A$. Then there is at most one $A$-algebra morphism from $A_f$ to $A_g$. Moreover such a morphism exists if and only if $f/1$ is a unit of $A_g$, that is if and only if $f/1$ is contained in no prime prime ideal of $A_g$, that is if and only if $g\notin\ppp$ implies $f\notin\ppp$ for all prime ideal $\ppp$ of $A$, that is if and only if $X_g\subset X_f$. \end{note}
 
-The notes in Section~\ref{satprel} p.~\pageref{satprel} above %Note~\ref{sat1} p.~\pageref{sat1} and Note~\ref{sat2} p.~\pageref{sat2} 
-imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
+The notes in Section~\ref{satprel} p.~\pageref{satprel} above imply (i), (ii), (iii) and (iv). Part (v) results from the following more general statement, whose proof is left to the reader:
 
 If $S$ is any multiplicative subset of $A$ then there is a natural isomorphism 
 $$
@@ -2160,7 +2074,6 @@ S_\aaa:=A\ \setminus\ \bigcup_{\ppp\not\supset\aaa}\ \ppp.
 $$ 
 This is multiplicatively closed. For $\aaa\subset\bbb$ we have a natural morphism $S_{\bbb}^{-1}A\to S_\aaa^{-1}A$. We also have a canonical isomorphism 
 $$
-%\varinjlim
 \colim_{\aaa\not\subset\ppp}S_\aaa^{-1}A\simeq A_\ppp.
 $$
 \end{comment}
@@ -2206,7 +2119,7 @@ For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pag
 
 For the hint see Exercise 3.21iv p. 47 of the book and Section~\ref{res} p.~\pageref{res} above.
 
-\subsection{Page 48, Exercise 3.27}%Examples 25 and 26
+\subsection{Page 48, Exercise 3.27}%
 
 In the hint to (i), ``Examples 25 and 26'' should be ``Exercises 25 and 26''. 
 
@@ -2427,13 +2340,13 @@ Claim: any prime ideal is contained in a \emph{unique} maximal ideal.
 
 Proof: Using Urysohn's Lemma it is easy to see that, given distinct points $x$ and $y$ in $X$ and denoting by $\mmm_x$ and $\mmm_y$ the corresponding maximal ideals, there are $f,g\in C(X)$ such that $fg=0$, $f\in\mmm_x\setminus\mmm_y$, $g\in\mmm_y\setminus\mmm_x$. 
 
-The claim implies that there are infinitely many minimal prime ideals. %Using Urysohn's Lemma it is easy to see that any prime ideal is contained in a \emph{unique} maximal ideal. This implies that there are infinitely many minimal prime ideals.
+The claim implies that there are infinitely many minimal prime ideals. 
 
 \subsection{Page 55, Exercise 4.7}\label{5547}%
 
 Observe that $A[x]$ is faithfully flat over $A$: see Exercise 3.16 p.~45 of the book and Section~\ref{316} p.~\pageref{316} above.
 
-Note that we have $M[x]\simeq A[x]\otimes_AM$ for any $A$-module $M$. In particular $M\mapsto M[x]$ is exact. (See Exercise 2.6 p.~32 of the book.)
+Note that we have $M[x]\simeq A[x]\otimes_AM$ for any $A$-module $M$. In particular $M\mapsto M[x]$ is exact. (See Exercise 2.6 p.~32 of the book.) 
 
 Part (ii): In fact we have 
 
@@ -2447,13 +2360,12 @@ above a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of
 $$
 k\otimes_AA[x]\simeq k[x],
 $$ 
-where $k$ is the residue field at $\ppp$. %we have $$f^{*-1}(\ppp)=\{\ \ppp[x]\ ,\ \ppp[x]+(x)\ \}.$$
-Moreover, the least element of $f^{*-1}(\ppp)$ is $\ppp[x]$, and $\ppp[x]+(x)$ is a maximal element.
+where $k$ is the residue field at $\ppp$. Moreover, the least element of $f^{*-1}(\ppp)$ is $\ppp[x]$, and $\ppp[x]+(x)$ is a maximal element.
 \end{lem}
 
 See Exercise 3.21iv p.~47 of the book and Section~\ref{321iv} p.~\pageref{321iv} above. Also note that, if $A\to B$ is a ring morphism and $\aaa$ a contracted ideal of $A$, then $\aaa^{\oo e}$ is the least element of the set of ideals of $B$ contracting to $\aaa$.
 
-Part (iii): Use Exercises 1.18 p.~10, 1.2ii p.~11 and 1.2iii p.~11. %Note that we have (by Exercise 1.2ii p.~11)\begin{equation}\label{rax}r(\aaa[x])=r(\aaa)[x]\end{equation}(obvious notation).
+Part (iii): Use Exercises 1.18 p.~10, 1.2ii p.~11 and 1.2iii p.~11. 
 
 % comment removed https://docs.google.com/document/d/17k969GrD4mEbiSx2cWbae1UARFO3VnJi98nEKwM8Lmg/edit
 
@@ -2480,7 +2392,7 @@ and we can use Exercise 4.7iii.
 
 % comment removed https://docs.google.com/document/d/1fOqIMiNtLhAGSNjEWSk4jp_hfhwqHIqFx3DEPyU_zHg/edit
 
-\subsection{Page 55, Exercise 4.9}%
+\subsection{Page 55, Exercise 4.9}\label{49}%
 
 \textbf{Statement.} [I found it convenient to make some minor changes to the wording of the book.] In a ring $A$, let $D(A)$ denote the set of prime ideals $\ppp$ which satisfy the following condition: there exists $a\in A$ such that $\ppp$ is minimal in the set of prime ideals containing $(0:a)$. 
 
@@ -2492,7 +2404,7 @@ D(S^{-1}A)=S^{-1}D(A).
 $$
 (c) If the zero ideal has a primary decomposition, show that $D(A)$ is the set of associated prime ideals of $(0)$.
 
-\textbf{Hints.} %Here are some hints.
+\textbf{Hints.} 
 
 (a) Let $a,b\in A$ and $\ppp\in\Spec(A)$ be such that $a\in\ppp$ and $\ppp$ is minimal over $(0:b)$.
 
@@ -2539,7 +2451,7 @@ In particular there is a $j$ such that $a\notin\qqq_j$ and $\ppp\supset\ppp_j$. 
 
 (iii) if $\ppp\supset\ppp'$, then $S_\ppp(0)\subset S_{\ppp'}(0)$,
 
-(iv) $\bigcap_{\ppp\in D(A)}S_\ppp(0)=(0)$, where $D(A)$ is defined in Exercise 9.
+(iv) $\bigcap_{\ppp\in D(A)}S_\ppp(0)=(0)$, where $D(A)$ is defined in Exercise 9 (see Section~\ref{49} p.~\ref{49}).
 
 \textbf{Solution.} Note that $S_\ppp(0)=(0)^{\oo c}$, where the contraction is taken with respect to $A\to A_\ppp$. We also have 
 $$
@@ -2573,7 +2485,7 @@ would imply $as=0$ for some $s\in A\setminus\ppp$, and thus $s\in(0:a)\subset\pp
 
 \textbf{Statement.} 
 
-(a) If $\ppp$ is a minimal prime ideal of a ring $A$, show that $S_\ppp(0)$ (Exercise 10) is the smallest $\ppp$-primary ideal.
+(a) If $\ppp$ is a minimal prime ideal of a ring $A$, show that $S_\ppp(0)$ (Exercise 10) is the smallest $\ppp$-primary ideal. 
 
 (b) Let $\aaa$ be the intersection of the ideals $S_\ppp(0)$ as  $\ppp$ runs through the minimal prime ideals of $A$. Show that $\aaa$ is contained in the nilradical of $A$.
 
@@ -2666,7 +2578,7 @@ This implies
 $$
 y\in(\aaa:xz)\supset(\aaa:x)\not\ni y,
 $$ 
-contradicting the maximality of $(\aaa:x)$.%and thus $(\aaa:xz)=(1)$, which is impossible since $xz\notin\aaa$.
+contradicting the maximality of $(\aaa:x)$. 
 
 \subsection{Page 56, Exercise 4.15}%
 
@@ -2730,7 +2642,7 @@ $\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$.
 \emph{(b2)} $\bbb=\mathfrak q\cap(\bbb+(x))$.
 \end{lem}
 
-\begin{proof}
+\begin{proof} 
 Part (a) follows from Assumption (L1). Part (b1) follows from Exercise 4.11 p.~56 of the book (see Section~\ref{411} p.~\pageref{411} above). Let us prove (b2). Set $\bbb':=\mathfrak q\cap(\bbb+(x))$. The inclusion $\bbb\subset\bbb'$ is obvious. To prove the other inclusion, let $\beta+ax\in\qqq$ with $\beta\in\bbb,a\in A$. It suffices to show $ax\in\bbb$. Recall that $\qqq=S_{\ppp}(\bbb)=(\bbb:x)$. As $ax\in\qqq$, we have $ax^2\in\bbb$, hence 
 $$
 a\in(\bbb:x^2)\subset\bigcup_{s\notin\ppp}\ (\bbb:s)=S_{\ppp}(\bbb)=(\bbb:x)
@@ -2814,11 +2726,11 @@ In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ 
 
 Now the map \eqref{e417a} is defined. The map $\alpha\mapsto\aaa_\alpha$ is clearly increasing. As already indicated, this is a contradiction.
 
-This completes the solution to Exercise 4.17. %The following variant will be used to solve Exercise 4.18.
+This completes the solution to Exercise 4.17. 
 
 \subsubsection{Second solution}\label{for418}%\subsection{Part 2}% previous version https://docs.google.com/document/d/1DnCzzLfgWzv6XqiA-2PiOudOTof99MIeD9ejViIJwUY/edit
 
-The following variant of the above proof will be used to solve Exercise 4.18. %Here is a variant of the above proof.
+The following variant of the above proof will be used to solve Exercise 4.18. 
 
 We stop assuming \eqref{abs417}. 
 
@@ -2947,7 +2859,7 @@ $$
 $$ 
 This holds for all $\alpha<\zeta$.
 
-Setting $S_n:=S_{\ppp_0}\cap\cdots\cap S_{\ppp_n}$ for $n\in\mathbb N$, we get, in view of $\oo C(n+1)$ and Exercise 4.12i p.~56 of the book,
+Setting $S_n:=S_{\ppp_0}\cap\cdots\cap S_{\ppp_n}$ for $n\in\mathbb N$, we get, in view of $\oo C(n+1)$ and Exercise 4.12i p.~56 of the book, 
 $$
 S_n(\aaa)=S_n(\aaa_{n+1})\cap S_n(\qqq_0\cap\cdots\cap\qqq_n).
 $$ 
@@ -2964,10 +2876,6 @@ $$
 S_n(\aaa)=\qqq_0\cap\cdots\cap\qqq_n.
 $$ 
 Now (L2) and Lemma~\ref{lasker} p.~\pageref{lasker} give the desired contradiction.
-%\label{lasker}
-%The map $n\mapsto S_n(\aaa)$ taking only finitely many values by Assumption (L2),%Proposition 4.9 p.~54 of the book, %there is an $n\in\mathbb N$ such that 
-%By Assumption (L2) there is an $n\in\mathbb N$ such that $$\aaa=\qqq_0\cap\cdots\cap\qqq_n\cap\bigcap_{\omega\le\alpha<\zeta}\qqq_\alpha.$$ Of course if there are only finitely many ordinals between $\omega$ and $\zeta$, the proof is complete; but if there are infinitely many such ordinals, I'm stuck...
-%For all $\alpha\le\kappa$ set $$\bbb_\alpha:=\bigcap_{\beta<\alpha}\qqq_\beta.$$ Then (L2) implies that there is some $n\in\mathbb N$ such that $\bbb_\alpha=\bbb_n$ for $n\le\alpha\le\kappa$. (???!!!) (We assume, with no loss of generality, that $\kappa$ is infinite.) Now \eqref{abak} implies $\aaa=\bbb_\kappa=\bbb_n$, showing that $\aaa$ admits a primary decomposition.
 
 \subsection{Page 57, Exercise 4.19}%
 
@@ -3003,8 +2911,7 @@ On the other hand, we have $\mathfrak{p}_1=r(\mathfrak{q}_1)\not \supset \mathfr
 $$
 y\in\mathfrak{q}_n\setminus\mathfrak{p}_1.
 $$ 
-%$y\in\mathfrak{q}_n$ such that $y\notin\mathfrak{p}_1$.
-Then the product $xy$ is in $\mathfrak{q}_2\cap\cdots\cap\mathfrak{q}_n\subset\mathfrak{q}_1$. But this is impossible since $x$ is not in $\qqq_1$ and $y$ is not in $\ppp_1$. %Since $\mathfrak{q}_1$ is $\mathfrak{p}_1$-primary, so either $x\in \mathfrak{q}_1$ or $y\in \mathfrak{p}_1$. But by construction of $x$ and $y$, this is not the case.
+Then the product $xy$ is in $\mathfrak{q}_2\cap\cdots\cap\mathfrak{q}_n\subset\mathfrak{q}_1$. But this is impossible since $x$ is not in $\qqq_1$ and $y$ is not in $\ppp_1$. 
 
 \subsection{Page 57, Exercise 4.20}%
 
@@ -3022,7 +2929,7 @@ p.~70, the converse is false: set
 $$
 A\ne0,\quad M=A\oplus A,\quad N=A\oplus(0),\quad P=(0)\oplus A.
 $$ 
-This yields $M=N+P$, so $r_M(N+P)=(1)$, but $r_M(N)=r_M(P)=0$. % Let $A\ne0$, $M=A\oplus A$ with action $a(b,c)=(ab,ac)$, $N=A\oplus(0)$, and $P=(0)\oplus A$. Then $M=N+P$, so $r_M(N+P)=(1)$, but $r_M(N)=r_M(P)=0$.
+This yields $M=N+P$, so $r_M(N+P)=(1)$, but $r_M(N)=r_M(P)=0$. 
 
 \subsection{Page 57, Exercise 4.21}%
 
@@ -3253,8 +3160,7 @@ A\ar[d,"\alpha"']\ar[r,hook]&B\ar[d,"\beta"]\\
 A_\ppp\ar[r,hook]&B_\ppp.
 \end{tikzcd}
 $$
-Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\qqq_\ppp=\ppp_\ppp$.
-%We claim $A_\ppp\cap\qqq_\ppp=\ppp_\ppp$. Set $S:=A\setminus\ppp$. As $S\cap\qqq=S\cap A\cap\qqq=S\cap\ppp=\varnothing$, we see that $\qqq_\ppp$ is prime, and it suffices to show $\ppp_\ppp\subset\qqq_\ppp$, which is clear.
+Then Corollary 3.4ii p.~39 of the book implies $A_\ppp\cap\qqq_\ppp=\ppp_\ppp$. 
 
 \subsection{Page 62, Theorem 5.10}\label{510}%
 
@@ -3364,10 +3270,9 @@ Sentences
 
 I would change this to 
 
-%``Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. 
-``By (5.21) the natural homomorphism $A'\to\Omega$ can be extended to some valuation ring $B\supseteq A'$.'' %Then the restriction to $A$ of the natural homomorphism $A'\to k'$ defines a homomorphism of $A'$ into $\Omega$. By (5.21) this can be extended to some valuation ring $B\supseteq A'$.
+``By (5.21) the natural homomorphism $A'\to\Omega$ can be extended to some valuation ring $B\supseteq A'$.'' 
 
-Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof.%\bigskip
+Also, it would be slightly better to change ``let $x\notin\overline A$'' to ``let $x\in K\setminus\overline A$'' on the third line of the proof. 
 
 \subsection{Page 67, Exercise 5.2}\label{67}%
 
@@ -3479,8 +3384,7 @@ In fact $K\left[x,\sqrt{x^2-1}\right]$ is integrally closed, and thus Dedekind.
 
 [Consider the subring $k[x^2-1]$ of $k[x]$, where $k$ is a field, and let $\nnn=(x-1)$. Can the element $1/(x+1)$ be integral?]
 
-\textbf{Solution.} %The characteristic of $k$ must be $\ne2$. 
-The last sentence of the hint should be "Can the element $1/(x + 1)$ be integral over $k[x^2-1]_{(x^2-1)}$?" 
+\textbf{Solution.} The last sentence of the hint should be "Can the element $1/(x + 1)$ be integral over $k[x^2-1]_{(x^2-1)}$?" 
 
 Note that 
 $$
@@ -3548,15 +3452,15 @@ More precisely, the second term should be $$g_1\ (f_1+x^r)^{m-1}$$ instead of $$
 
 It is easy to show that (a) implies (c), and that (b) and (c) are equivalent.
 
-For the phrase ``and therefore contains $\Spec(A_\ppp)$'' at the end of the hint, see Exercise 3.22 p.~47 of the book.
+For the phrase ``and therefore contains $\Spec(A_\ppp)$'' at the end of the hint, see Exercise 3.22 p.~47 of the book. 
 
-\subsection{Page 68, Exercise 5.11}%
+\subsection{Page 68, Exercise 5.11}
 
 \textbf{Statement.} Let $f:A\to B$ be a flat homomorphism of rings. Then $f$ has the going-down property. [Chapter 3, Exercise 18.]
 
 \textbf{Hint.} The proof of Theorem 5.16 p.~64 of the book shows that the going-down property for $f:A\to B$ is equivalent to the condition that, for all $\qqq\in\Spec(B)$ the natural map $\Spec(B_\qqq)\to\Spec(A_{\qqq^{\oo c}})$ is surjective. 
 
-\subsection{Page 68, Exercise 5.12}%
+\subsection{Page 68, Exercise 5.12}\label{5.12}%
 
 \textbf{Statement.} Let $G$ be a finite group of automorphisms of a ring $A$, and let $A^G$ denote the subring of $G$-invariants, that is of all $x\in A$ such that $\sigma(x)=x$ for all $\sigma\in G$. Prove that $A$ is integral over $A^G$. [If $x\in A$, observe that $x$ is a root of the polynomial $\prod_{\sigma\in G}(t-\sigma(x))$.]
 
@@ -3766,15 +3670,13 @@ Proof 1. The extension $\ppp^{\oo e}$ of $\ppp$ in $A_f$ being clearly a proper 
 
 Note successively that $f\notin\mmm$; that $\qqq:=\mmm\cap A$ is a prime ideal of $A$ which doesn't contain $f$; that $A_f/\mmm$ is isomorphic to $k$ by (ZL); and that the monomorphism of $k$-algebras $0\ne A/\qqq\mono A_f/\mmm\simeq k$ implies that $\qqq$ is a maximal ideal of $A$.
 
-Proof 2. By Noether's Normalization Theorem applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Exercise 5.2 %Theorem 5.10 
-p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
+Proof 2. By Noether's Normalization Theorem applied to the $k$-algebra $A_f$, there are elements $u_1,\dots,u_m$ of $A_f$ which are algebraically independent over $k$, such that $A_f$ is integral over $k[u_1,\dots,u_m]$. By Exercise 5.2 p.~67 of the book (see Section~\ref{67} p.~\pageref{67} above) the $k$-algebra morphism $\varphi:k[u_1,\dots,u_m]\to k$ which maps $u_i$ to $0$ extends to a $k$-algebra morphism $\Phi:A_f\to k$. As $\Phi(f)\ne0$, we see that $A\cap\oo{Ker}\Phi$ is a maximal ideal of $A$ which doesn't contain $f$.
 \end{proof}
 %https://docs.google.com/document/d/1YYUDEGhoImy-b_Lx9foGoetelzzXbN1IiNbpo7pXh98/edit {comment} 180522
 %The assumption that $B$ is a domain (instead of an arbitrary ring) is not used. For another approach, see the following reference (already given in Section~\ref{nnt} p.~\pageref{nnt}): Mel Hochster, Noether's normalization and Hilbert’s Nullstellensatz, \href{http://www.math.lsa.umich.edu/~hochster/615W10/supNoeth.pdf}{http://www.math.lsa.umich.edu/$\sim$hochster/615W10/supNoeth.pdf}
 
 \subsection{Page 69, Exercise 5.17}%
 
-%As observed by the Mathematics Stackexchange user Kato here \href{https://math.stackexchange.com/q/2808775/660}{https://math.stackexchange.com/q/2808775/660}
 The Weak Nullstellensatz is the statement
 $$
 \aaa\ne(1)\implies V(\aaa)\ne\varnothing.
@@ -3822,7 +3724,7 @@ Proof of $(\star)$. We have:
 
 $\bullet\ U\cap C\subset U\cap\overline{U\cap C}$ because $U\cap C\subset U$ and $U\cap C\subset\overline{U\cap C}$,
 
-$\bullet\ U\cap\overline{U\cap C}\subset U\cap C$ because $\overline{U\cap C}\subset\overline C=C$. $\square$ %(because $U\cap C\subset C$ and $C$ is closed). \\ If $S\subset X$ is open in its closure $\overline S$, we have $S=U\cap\overline S$ for some open subset $U$. \\ Conversely, if $S=U\cap C$ with $U$ open and $C$ closed, then $$S=U\cap C=U\cap\overline{U\cap C}.$$ To prove this it suffices to show $U\cap\overline{U\cap C}\subset U\cap C$. Let $u$ be in $U\cap\overline{U\cap C}$. If $u$ was not in $C$, then $u$ would be in $V:=X\setminus C$, and $V$ would meet $U\cap C$, contradiction. \\ Hint for the first part: prove (2) $\iff$ (1)$\iff$ (3).
+$\bullet\ U\cap\overline{U\cap C}\subset U\cap C$ because $\overline{U\cap C}\subset\overline C=C$. $\square$ 
 
 \subsubsection{Part 1}
 
@@ -3852,7 +3754,7 @@ is  a nonempty locally closed subset satisfying $X_0\cap L=\varnothing$.
 
 (2)$\implies$(3''): (2) means that $C'\mapsto\overline{C'}$ is a left inverse to the map in (3''). 
 
-(3)$\implies$(1): for $U,V$ open and $V\subset U$ the equality $X_0\cap(U\setminus V)=\varnothing$ implies $X_0\cap U=X_0\cap V$.% for $U,V$ open and $V\subset U$.
+(3)$\implies$(1): for $U,V$ open and $V\subset U$ the equality $X_0\cap(U\setminus V)=\varnothing$ implies $X_0\cap U=X_0\cap V$. 
 
 \subsubsection{Part 2} 
 
@@ -3950,7 +3852,7 @@ A\ni xy^{-1}+1=(x+y)y^{-1},
 $$ 
 and thus $v(x+y)\ge v(y)=\min(v(x),v(y))$.
 
-\subsection{Page 72, About Exercise 5.31}%\label{hbt}
+\subsection{Page 72, About Exercise 5.31}%
 
 Let $J$ be a set; for each $j\in J$ let $A_j$ and $B_j$ be two valuation domains with same value group $G_j$; let $G_{j,\infty}$ be to the totally ordered commutative monoid obtained by adjoining to $G_j$ a largest element, denoted $\infty$, such that $\infty+x=\infty$ for all $x\in G_{j,\infty}$; let $v_j:A_j\to G_{j,\infty}$ and $w_j:B_j\to G_{j,\infty}$ be the respective valuations; let $\aaa_j\subset A_j$ and $\bbb_j\subset B_j$ be ideals such that $v_j(\aaa_j)=w_j(\bbb_j)$ for all $j$, let $A$ and $B$ be the respective products of the $A_j/\aaa_j$ and the $B_j/\bbb_j$.
 
@@ -4008,7 +3910,7 @@ where $p$ and $q$ are the canonical projections. We claim that there is an induc
 
 \subsection{Page 73, Exercise 5.34}%
 
-In the hint of the book we must check that $C_\nnn$ dominates $A$, that is $\mmm\subset A\cap\nnn_\nnn$. But we have $\mmm\subset A\cap\nnn\subset A\cap\nnn_\nnn$. %(All these rings are subrings of $K$.)
+In the hint of the book we must check that $C_\nnn$ dominates $A$, that is $\mmm\subset A\cap\nnn_\nnn$. But we have $\mmm\subset A\cap\nnn\subset A\cap\nnn_\nnn$. 
 
 \subsection{Page 73, Exercise 5.35}%
 
@@ -4112,7 +4014,7 @@ $$
 $$ 
 This completes the proof.
 
-\subsection{Page 78, Exercise 6.3}%\label{nnt}%
+\subsection{Page 78, Exercise 6.3}%
 
 \textbf{Statement.} Let $M$ be an $A$-module and let $N_1,N_2$ be submodules of $M$. If $M/N_1$ and $M/N_2$ are Noetherian, so is $M/(N_1\cap N_2)$. Similarly with Artinian in place of Noetherian.
 
@@ -4126,7 +4028,7 @@ $$
 $$ 
 \textbf{Mild generalization:} If $N_1,\dots,N_k$ are submodules of $M$ such that $M/N_i$ is noetherian for all $i$, then $M/(N_1\cap\cdots\cap N_k)$ is noetherian. 
 
-\subsection{Page 78, Exercise 6.4}%
+\subsection{Page 78, Exercise 6.4}\label{64}
 
 \textbf{Statement.} (a) Let $M$ be a Noetherian $A$-module and let $\aaa$ be the annihilator of $M$ in $A$. Prove that $A/\aaa$ is a Noetherian ring.
 
@@ -4151,7 +4053,7 @@ $$
 
 \textbf{Hint.} To show that (ii) implies (i), note that the chain $U_1\subset U_2\subset\cdots$ of open subsets covers the open subset $U_1\cup U_2\cup\cdots$
 
-\subsection{Page 79, Exercise 6.7}%
+\subsection{Page 79, Exercise 6.7}\label{6.7}%
 
 \textbf{Statement.} A Noetherian space is a finite union of irreducible closed subspaces. [Consider the set $\Sigma$ of closed subsets of $X$ which are not finite unions of irreducible closed subspaces.] Hence the set of irreducible components of a Noetherian space is finite.
 
@@ -4161,16 +4063,15 @@ See Exercises 1.19 and 1.20 p.~13 of the book.
 
 \centerline{\href{https://goo.gl/WEfMG7}{https://goo.gl/WEfMG7}}
 
-Suppose, for a contradiction, that the result is false. Then there is a Noetherian space $X$ such that $X$ is an element of the set $\Sigma$ of closed subsets of $X$ that are not unions of finitely many irreducible closed subspaces. Since $\Sigma$ is nonempty and $X$ is noetherian, $\Sigma$ has a minimal element $M$. Since $M$ is not a finite union of irreducible sets, it is not itself an irreducible set. Thus it is reducible, and so a union of two proper closed subspaces $C$ and $D$. But $C$ and $D$ are both finite unions of irreducible closed sets, so $M$ is as well, a contradiction.
+Suppose, for a contradiction, that the result is false. Then there is a noetherian space $X$ such that $X$ is an element of the set $\Sigma$ of closed subsets of $X$ that are not unions of finitely many irreducible closed subspaces. Since $\Sigma$ is nonempty and $X$ is noetherian, $\Sigma$ has a minimal element $M$. Since $M$ is not a finite union of irreducible sets, it is not itself an irreducible set. Thus it is reducible, and so a union of two proper closed subspaces $C$ and $D$. But $C$ and $D$ are both finite unions of irreducible closed sets, so $M$ is as well, a contradiction.
 
-Recall from Exercise 1.20iii p.~13 of the book that the irreducible components of a space $X$ are the maximal irreducible subsets of $X$, and that they are closed and cover $X$. Since a noetherian space $X$ is a union of finitely many irreducible closed subspaces, it is a fortiori a union of finitely many maximal such, so it is a union of finitely many irreducible components. Let $n$ be the minimal possible number needed to cover $X$, and let $C_1,\ldots,C_n$ be irreducible components covering $X$. If $C$ is any other irreducible closed set, then 
+Recall from Exercise 1.20iii p.~13 of the book that the irreducible components of a space $X$ are the maximal irreducible subsets of $X$, and that they are closed and cover $X$. Since a noetherian space $X$ is a union of finitely many irreducible closed subspaces, it is a fortiori a union of finitely many maximal such, so it is a union of finitely many irreducible components. Let $n$ be the least possible number needed to cover $X$, and let $C_1,\ldots,C_n$ be irreducible components covering $X$. If $C$ is any other irreducible closed set, then 
 $$
 C=\bigcup_{j=1}^n\ (C\cap C_j)
 $$ 
 expresses $C$ as a union of closed subsets; as $C$ is irreducible, $C\subset C_j$ for some $j$. Thus $C_1,\ldots,C_n$ are the only irreducible components of $X$. 
-%Let $C$ be a minimal element of $\Sigma$. Then $C$ is nonempty, and, for $c\in C$, we have $C=(C\setminus\{c\})\cup\overline{\{c\}}$. 
 
-\subsection{Page 79, Exercise 6.8}%
+\subsection{Page 79, Exercise 6.8}\label{68}%
 
 \textbf{Statement.} If $A$ is a Noetherian ring then $\Spec(A)$ is a Noetherian topological space. Is the converse true?
 
@@ -4180,26 +4081,25 @@ expresses $C$ as a union of closed subsets; as $C$ is irreducible, $C\subset C_j
 
 \textbf{Statement.} Deduce from Exercise 6.8 that the set of minimal prime ideals in a Noetherian ring is finite.
 
-\textbf{Hint.} See Exercises 1.20iv p.~13 and 6.7 p.~79 of the book.
+\textbf{Hint.} See Exercises 1.20iv p.~13 and 6.7 p.~79 (see Section~\ref{6.7} p.~\pageref{6.7}) of the book.
 
 \subsection{Page 79, Exercise 6.10}%
 
 \textbf{Statement.} If $M$ is a Noetherian module (over an arbitrary ring $A$) then $\oo{Supp}(M)$ is a closed Noetherian subspace of $\Spec(A)$.
 
-\textbf{Solution.} By Exercise 3.19v p.~46 of the book we have $\oo{Supp}(M)=V(\aaa)$ with $\aaa:=\oo{Ann}(M)$. We also have $V(\aaa)\simeq\Spec(A/\aaa)$, and $A/\aaa$ is noetherian by Exercise 6.4 p.~78, and $\Spec(A/\aaa)$ is noetherian by Exercise 6.8 p.~79. 
+\textbf{Solution.} By Exercise 3.19v p.~46 of the book we have $\oo{Supp}(M)=V(\aaa)$ with $\aaa:=\oo{Ann}(M)$. We also have $V(\aaa)\simeq\Spec(A/\aaa)$, and $A/\aaa$ is noetherian by Exercise 6.4 p.~78 (see Section~\ref{64} p.~\pageref{64}), and $\Spec(A/\aaa)$ is noetherian by Exercise 6.8 p.~79 (Section~\ref{68} p.~\pageref{68}).
 
 \subsection{Page 79, Exercise 6.11}%
 
-\textbf{Statement.} Let $f:A\to B$ be a ring homomorphism and suppose that $\Spec(B)$ is a Noetherian space (Exercise 5). Prove that $f^*:\Spec(B)\to\Spec(A)$ is a closed mapping if and only if $f$ has the going-up property (Chapter 5, Exercise 10).
+\textbf{Statement.} Let $f:A\to B$ be a ring homomorphism and suppose that $\Spec(B)$ is a Noetherian space (Exercise 5). Prove that $f^*:\Spec(B)\to\Spec(A)$ is a closed mapping if and only if $f$ has the going-up property (Chapter 5, Exercise 10). 
 
-%Hint: use Exercises 5.10i p.~68, 6.5 p.~79 and 1.21iv p.~13. 
 \textbf{Solution.} As it is stated in Exercise 5.10i p.~68 of the book that $f$ has the going-up property if $f^*$ is closed, it suffices to prove the converse. So, assuming that $f$ has the going-up property, let us show that $f^*$ is closed. 
 
 Let $\bbb$ be a radical ideal of $B$, and let $\aaa$ be its contraction in $A$. It suffices to prove 
 $$
 f^*(V(\bbb))=V(\aaa).
 $$ 
-By Exercises 6.5, 6.7 and 1.20iv there are $\qqq_1,\dots,\qqq_n\in V(\bbb)$ such that the set of minimal elements of $V(\bbb)$ is $\{\qqq_1,\dots,\qqq_n\}$ and 
+By Exercises 6.5, 6.7 (see Section~\ref{6.7} p.~\pageref{6.7}) and 1.20iv there are $\qqq_1,\dots,\qqq_n\in V(\bbb)$ such that the set of minimal elements of $V(\bbb)$ is $\{\qqq_1,\dots,\qqq_n\}$ and 
 $$
 V(\bbb)=\bigcup_{i=1}^n\ V(\qqq_i).
 $$ 
@@ -4338,23 +4238,25 @@ Equivalently:
 
 \emph{The closed subsets of $\Spec(A)$ are the closures of the finite subsets.}
 
-%$\quad\bu$ \emph{it has finitely many minimal elements} $\ppp_1,\ldots,\ppp_n,$
-
-%$\quad\bu$ \emph{we have} $C=V(\ppp_1)\cup\cdots\cup V(\ppp_n)$.
-
 \subsection{Page 84, Exercise 7.1}%
 
 \textbf{Statement.} Let $A$ be a non-Noetherian ring and let $\Sigma$ be the set of ideals in $A$ which are not finitely generated. Show that $\Sigma$ has maximal elements and that the maximal elements of $\Sigma$ are prime ideals.
 
-[Let $\aaa$ be a maximal element of $\Sigma$, and suppose that there exist $x,y\in A$ such that $x\notin\aaa$ and $y\notin\aaa$ and $xy\in\aaa$. Show that there exists a finitely generated ideal $\aaa_0\subset\aaa$ such that $\aaa_0+(x)=\aaa+(x)$, and that $\aaa=\aaa_0+x\cdot(\aaa:x)$. Since $(\aaa:x)$ strictly contains $\aaa$, it is finitely generated and therefore so is $\aaa$.]
+%[Let $\aaa$ be a maximal element of $\Sigma$, and suppose that there exist $x,y\in A$ such that $x\notin\aaa$ and $y\notin\aaa$ and $xy\in\aaa$. Show that there exists a finitely generated ideal $\aaa_0\subset\aaa$ such that $\aaa_0+(x)=\aaa+(x)$, and that $\aaa=\aaa_0+x\cdot(\aaa:x)$. Since $(\aaa:x)$ strictly contains $\aaa$, it is finitely generated and therefore so is $\aaa$.]
 
 Hence a ring in which every prime ideal is finitely generated is Noetherian (I. S. Cohen).
 
-\textbf{Solution.} Following the hint in the book, set $\aaa+(x)=(s_1,\dots,s_n)$, $s_i\in A$. Then we have $s_i=b_i+t_ix$ with $u_i\in A$, $b_i\in\aaa$, $t_i\in A$. Setting $\bbb=(b_1,\dots,b_n)\subset\aaa$, we get $\aaa+(x)=\bbb+(x)$. 
+\textbf{Solution.} Following the hint in the book, let $\aaa$ be a maximal element of $\Sigma$. Suppose by contradiction that there exist $x,y\in A$ such that $x\notin\aaa$, $y\notin\aaa$, $xy\in\aaa$. 
+
+There are $s_i\in A$ such that $\aaa+(x)=(s_1,\dots,s_n)$. We have $s_i=b_i+t_ix$ with $b_i\in\aaa$, $t_i\in A$. Putting $\bbb=(b_1,\dots,b_n)\subset\aaa$, we get $\aaa+(x)=\bbb+(x)$. 
 
 We claim $\aaa=\bbb+x\,(\aaa:x)$. 
 
-The inclusion $\bbb+x\,(\aaa:x)\subset\aaa$ is clear. To prove the other inclusion, let $a$ be in $\aaa$ and let us show that $a$ is in $\bbb+x\,(\aaa:x)$. We have $a=\sum u_i\,(b_i+t_ix)=b+vx$ with $b\in\bbb$ and $v\in A$. This yields $vx=a-b\in\aaa$, and thus $v\in(\aaa:x)$, proving the claim.
+The inclusion $\bbb+x\,(\aaa:x)\subset\aaa$ is clear. To prove the other inclusion, let $a$ be in $\aaa$ and let us show $a\in\bbb+x\,(\aaa:x)$. We have 
+$$
+a=\sum u_i\,(b_i+t_ix)=b+vx
+$$ 
+with $u_i\in A$, $b\in\bbb$, $v\in A$. This yields $vx=a-b\in\aaa$, and thus $v\in(\aaa:x)$, proving the claim.
 
 Note that $y$ is in $(\aaa:x)$ but not in $\aaa$. This implies that $(\aaa:x)$ is finitely generated, and thus, in view of the claim, that $\aaa$ is finitely generated, contradiction.
 
@@ -4370,8 +4272,7 @@ Note that $y$ is in $(\aaa:x)$ but not in $\aaa$. This implies that $(\aaa:x)$ i
 
 \textbf{Hints:} 
 
-(i) $\implies$ (ii): Use %Theorem 4.5 p.~52 (the First Uniqueness Theorem) and 
-Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
+(i) $\implies$ (ii): Use Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
 
 (ii) $\implies$ (iii): Use Proposition 3.11ii p.~41. (This implication also holds even if $\aaa$ is reducible.)
 
@@ -4379,15 +4280,15 @@ Proposition 4.8 p.~53. (This implication holds even if $\aaa$ is reducible.)
 
 \subsection{Page 84, Exercise 7.5}%
 
-\textbf{Statement.} Let $A$ be a Noetherian ring, $B$ a finitely generated $A$-algebra, $G$ a finite group of $A$-automorphisms of $B$, and $B^G$ the set of all elements of B which are left fixed by every element of $G$. Show that $B^G$ is a finitely generated $A$-algebra.
+\textbf{Statement.} Let $A$ be a Noetherian ring, $B$ a finitely generated $A$-algebra, $G$ a finite group of $A$-automorphisms of $B$, and $B^G$ the set of all elements of $B$ which are left fixed by every element of $G$. Show that $B^G$ is a finitely generated $A$-algebra.
 
-\textbf{Hint.} Use Exercise 5.12 p.~68 and Proposition 7.8 p.~81.
+\textbf{Hint.} Use Exercise 5.12 p.~68 (see Section~\ref{5.12} p.~\pageref{5.12}) and Proposition 7.8 p.~81.
 
 \subsection{Page 84, Exercise 7.6}%
 
 \textbf{Statement.} If a finitely generated ring is a field $K$, it is a finite field.
 
-\textbf{Hint.} Let $A$ be the prime subring of $K$. Then $A=\mathbb Z$ or $A=\mathbb F_p$. Noether Normalization Theorem, as stated in Section~\ref{nnt} p.~\pageref{nnt}, and Proposition 5.7 p.~61 of the book imply that the first case is impossible and that, in the second case, $K$ is a finite degree extension of $\mathbb F_p$. %$K$ is a finitely generated module over $\mathbb Z[s^{-1}]$ for some $0\ne s\in\mathbb Z$
+\textbf{Hint.} Let $A$ be the prime subring of $K$. Then $A=\mathbb Z$ or $A=\mathbb F_p$. Noether Normalization Theorem, as stated in Section~\ref{nnt} p.~\pageref{nnt}, and Proposition 5.7 p.~61 of the book imply that the first case is impossible and that, in the second case, $K$ is a finite degree extension of $\mathbb F_p$. 
 
 \subsection{Page 85, Exercise 7.9}%
 
@@ -4401,13 +4302,13 @@ The inclusion
 $$
 \aaa_{\mmm_{r+1}}\subset\left(\frac{x_0}1,\cdots,\frac{x_t}1\right)
 $$ 
-holds by the choice of $x_1$. 
+holds by the choice of $x_1$ (indeed, $x_1/1$ is a unit of $A_{\mmm_{r+1}}$). 
 
 If $\mmm$ is a maximal ideal distinct from all the $\mmm_i$, then the inclusion 
 $$
 \aaa_\mmm\subset\left(\frac{x_0}1,\cdots,\frac{x_t}1\right)
 $$ 
-holds by the choice of $\mmm_1,\ldots,\mmm_{r+s}$.
+holds by the choice of $\mmm_1,\ldots,\mmm_{r+s}$ (indeed, $x_0/1$ is a unit of $A_\mmm$).
 
 \subsection{Page 85, Exercise 7.10}%
 
@@ -4417,13 +4318,13 @@ See Theorem~\ref{hbt} p.~\pageref{hbt} above.
 
 \textbf{Statement.} Let $A$ be a ring such that each local ring $A_\ppp$ is Noetherian. Is $A$ necessarily Noetherian?
 
-\textbf{Hints.} See Exercises 2.28 and 3.10ii pages 35 and 44 of the book.
+\textbf{Hints.} See Exercises 2.28 and 3.10ii (see Section~\ref{310} p.~\pageref{310}) pages 35 and 44 of the book. 
 
 \subsection{Page 85, Exercise 7.13}%
 
 \textbf{Statement.} Let $f:A\to B$ be a ring homomorphism of finite type and let $f^*: \Spec(B)\to\Spec(A)$ be the mapping associated with $f$. Show that the fibers of $f^*$ are Noetherian subspaces of $B$. [Typo: it should be ``of $\Spec(B)$''.]
 
-\textbf{Hint.} Let $\ppp$ be in $\Spec(A)$ and set $k:=A_\ppp/\ppp_\ppp$. It suffices to show that $k\otimes_AB$ is noetherian (see Section~\ref{321iv} p.~\pageref{321iv} and Exercise 6.8 p.~79 of the book). To do this, note that there are indeterminates $x_1,\dots,x_n$ such that $B$ is a quotient of $A[x_1,\dots,x_n]$, and conclude that $k\otimes_AB$ is a quotient of $k[x_1,\dots,x_n]$. 
+\textbf{Hint.} Let $\ppp$ be in $\Spec(A)$ and set $k:=A_\ppp/\ppp_\ppp$. By Section~\ref{321iv} p.~\pageref{321iv} and Exercise 6.8 p.~79 of the book (Section~\ref{68} p.~\pageref{68} above), it suffices to show that $k\otimes_AB$ is noetherian. To do this, note that there are indeterminates $x_1,\dots,x_n$ such that $B$ is a quotient of $A[x_1,\dots,x_n]$, and conclude that $k\otimes_AB$ is a quotient of $k[x_1,\dots,x_n]$. 
 
 \subsection{Page 86, Exercise 7.17}%
 
@@ -4452,7 +4353,6 @@ $$
 N<M&x\in M&Q_i&\ppp_i=r(Q_i:M)&N_i&\ppp_i^mM\subset Q_i&N_i\cap\ppp_i^mM\\ \hline
 \end{array}
 $$ 
-%$$\begin{matrix}\aaa\ne(1)&x\in A&\qqq_i&\ppp_i=r(\qqq_i)&\aaa_i&\ppp_i^m\subset\qqq_i&\aaa_i\cap\ppp_i^m\\ \\ N<M&x\in M&Q_i&\ppp_i=r(Q_i:M)&N_i&\ppp_i^mM\subset Q_i&N_i\cap\ppp_i^mM\end{matrix}$$ 
 
 \subsection{Page 86, Exercise 7.19}% https://mathoverflow.net/q/12322/461
 % previous version https://docs.google.com/document/d/1a-63-De-I8iBErGM5vuEuVpkBAJ1fOm2j0ECZIMzeT4/edit?folder=0ADbJLwZkWgt8Uk9PVA
@@ -4476,8 +4376,6 @@ be two minimal decompositions of $W$ as intersections of irreducible submodules.
 \end{prop}
 
 \subsubsection{Proof of Part (a) of Proposition~\ref{719P1}}%
-
-%It suffices to show:
 
 \begin{lem}\label{719L2}
 Let $A$ be a ring, $M$ an $A$-module and let $U_1,U_2,V_1,\dots,V_m,W$ be submodules of $M$ such that $U_1$ is irreducible and 
@@ -4531,7 +4429,7 @@ The second case is similar.
 $$
 W=U_2\cap V_{i_1}\cap\cdots\cap V_{i_p}
 $$ 
-and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L3}b with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. We get %$W=U_2\cap V_{i_1}$ or 
+and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L3}b with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. We get 
 $$
 W=U_2\cap V_{i_1}\quad\text{or}\quad W=U_2\cap V_{i_2}\cap\cdots\cap V_{i_p},
 $$ 
@@ -4540,7 +4438,7 @@ but the second case contradicts the minimality of $p$.
 
 \paragraph{Second proof of Lemma~\ref{719L2}}${}$\medskip%
 
-We follow Matthew Emerton: \href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}%\medskip\centerline{\href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}}
+We follow Matthew Emerton: \href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}
 
 We can assume $W=0$. Let 
 $$
@@ -4608,22 +4506,19 @@ $$
 
 \textbf{Statement.} Let $X$ be a Noetherian topological space (Chapter 6, Exercise 5 --- see Section~\ref{720} p.~\pageref{720} above) and let $E\subset X$. Show that $E\in\mathcal F$ if and only if Condition~$(\star)$ below holds: 
 
-$(\star)$ for each irreducible closed set $X_0\subset X$, either $\overline{E\cap X_0}\ne X_0$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.%, for each irreducible closed set $X_0\subset X$, either $\overline{E\cap X_0}\ne X_0$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
+$(\star)$ for each irreducible closed set $X_0\subset X$, either $\overline{E\cap X_0}\ne X_0$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$. 
 
 \textbf{Solution.} Let us denote by $\mathcal F(X)$ the set designated by $\mathcal F$ in Exercise 7.20 (see Section~\ref{720} p.~\pageref{720} above). 
 
-To prove that $E\in\mathcal F(X)$ implies $(\star)$, %[the ``only if'' part of Exercise 7.21], 
-note that $E\cap X_0\in\mathcal F(X_0)$ if $E\in\mathcal F(X)$ and use Exercise 7.20.
+To prove that $E\in\mathcal F(X)$ implies $(\star)$, note that $E\cap X_0\in\mathcal F(X_0)$ if $E\in\mathcal F(X)$ and use Exercise 7.20.
 
 % previous version of the end of the section: https://docs.google.com/document/d/1032l7e5aaxVmdV--H-S8kD2aTal5DmKZaZMrcmIkI8M/edit
 
-To prove that $(\star)$ implies $E\in\mathcal F(X)$, %[the ``if'' part] 
-we follow the hint, that is, we assume by contradiction that $(\star)$ holds but that $E$ is not in $\mathcal F:=\mathcal F(X)$.
+To prove that $(\star)$ implies $E\in\mathcal F(X)$, we follow the hint, that is, we assume by contradiction that $(\star)$ holds but that $E$ is not in $\mathcal F:=\mathcal F(X)$.
 
 Let $\Sigma$ be the set of all closed subsets $X'$ of $X$ such that $E\cap X'\notin\mathcal F$. 
 
-Then $\Sigma$ is nonempty because %it contains 
-$X\in\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. In particular 
+Then $\Sigma$ is nonempty because $X\in\Sigma$. Let $X_0$ be a minimal element of $\Sigma$. In particular 
 \begin{equation}\label{721}
 E\cap X_0\notin\mathcal F.
 \end{equation}  
@@ -4635,9 +4530,8 @@ We claim
 \begin{equation}\label{oex0}
 \overline{E\cap X_0}=X_0
 \end{equation}
-To prove \eqref{oex0}, assume by contradiction that we have $\overline{E\cap X_0}<X_0$. %, and let us derive a contradiction as follows. 
-The minimality of $X_0$ implies 
-\begin{equation}\label{eco}%
+To prove \eqref{oex0}, assume by contradiction that we have $\overline{E\cap X_0}<X_0$. The minimality of $X_0$ implies 
+\begin{equation}\label{eco}
 E\cap\overline{E\cap X_0}\in\mathcal F.
 \end{equation}
 We have 
@@ -4668,7 +4562,7 @@ As $U\ne\varnothing$, we get $E\cap C<E\cap X_0$, and thus $E\cap C\in\mathcal F
 
 \textbf{Statement.} Let $X$ be a Noetherian topological space and let $E$ be a subset of $X$. Show that $E$ is open in $X$ if and only if, for each irreducible closed subset $X_0$ in $X$, either $E\cap X_0=\varnothing$ or else $E\cap X_0$ contains a non-empty open subset of $X_0$.
 
-\textbf{Solution.} If $E$ is open in $X$, then the indicated condition holds because $E\cap X_0\ne\varnothing$ implies that $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. %: straightforward (details left to the reader).
+\textbf{Solution.} If $E$ is open in $X$, then the indicated condition holds because $E\cap X_0\ne\varnothing$ implies that $E\cap X_0$ is a non-empty open subset of $X_0$ contained in $E\cap X_0$. 
 
 Assume that $E$ is not open in $X$. Set $F:=X\setminus E$. Then $F$ is not closed. Put 
 $$
@@ -4699,7 +4593,7 @@ The claim implies $X_1\in\Sigma$, contradicting the minimality of $X_0$. This co
 
 \subsection{Page 87, Exercise 7.23}%
 
-The fact that ``$E$ is quasi-compact'' in the hint follows from Exercise 6.6 p.~79 of the book. The phrase ``where $X_0=\Spec(A/\ppp)$'' follows from Section~\ref{irr} p.~\pageref{irr} above. %For the last step of the argument, see Section~\ref{522} p.~\pageref{522} above. 
+The fact that ``$E$ is quasi-compact'' in the hint follows from Exercise 6.6 p.~79 of the book. The phrase ``where $X_0=\Spec(A/\ppp)$'' follows from Section~\ref{irr} p.~\pageref{irr} above. 
 
 Here are some details about various steps:
 
@@ -4867,14 +4761,6 @@ then $\aaa=(p^n)$.
 
 This implies that $A$ is a principal ideal domain, and thus (Proposition 9.2 p.~94 of the book) a Dedekind domain.
 
-%Hint: Note that for $0\ne a\in A$ there is a unique $n\in\mathbb N$ such that $a\in\mmm^n\setminus\mmm^{n+1}$, and set $n(a):=n$. Prove that there a unique valuation $v:K^*\epi\mathbb Z$ such $v(a)=n(a)$ for all $a\in A\setminus(0)$ (here $K$ is the field of fractions of $A$), and show that $A$ is the discrete valuation ring attached to $v$. 
-
-%\subsection{Page 99, Exercise 9.5}%
-
-%\textbf{Statement.} Let $M$ be a finitely-generated module over a Dedekind domain. Prove that $M$ is flat if and only if $M$ is torsion-free.
-
-%\textbf{Hint.} See Exercises 3.13 p.~45 and 7.16 p.~86 of the book. %Also note that a module is flat if its finitely generated submodules are flat. 
-
 \subsection{Page 99, Exercise 9.6}% previous version https://docs.google.com/document/d/1-fJd9kFo9QxKoJMaVo409NohFlWdnzTlFu3ZGrDlxZU/edit?folder=0ADbJLwZkWgt8Uk9PVA
 
 \textbf{Statement.} Let $M$ be a finitely-generated torsion module ($T(M)=M$) over a Dedekind domain $A$. Prove that $M$ is uniquely representable as a finite direct sum of modules $A/\ppp_i^{n_i}$, where the $\ppp_i$ are non-zero prime ideals of $A$.
@@ -5031,7 +4917,7 @@ About Corollary 10.21: Let $a$ be in $A$. We must show:
 $a\in\qqq$ for all $\ppp$-primary ideal $\qqq$ $\iff$ there is an $s$ in $A\setminus\ppp$ such that $as=0$. 
 
 \begin{proof} 
-If $s$ in $A\setminus\ppp$ satifies $as=0$, and if $\qqq$ is a $\ppp$-primary ideal, then $a$ is in $\qqq$.
+If $s$ in $A\setminus\ppp$ satisfies $as=0$, and if $\qqq$ is a $\ppp$-primary ideal, then $a$ is in $\qqq$.
 
 If $as\neq0$ for all $s\in A\setminus\ppp$, then $\frac a1\neq0$, and Corollary 10.20 implies that there is a $\ppp$-primary ideal $\qqq$ such that $\frac a1\notin\qqq_\ppp$, and thus $a\notin\qqq$. 
 \end{proof}
@@ -5044,7 +4930,6 @@ We claim that
 \begin{equation}\label{nn}
 G\mapsto\widehat G\text{ is neither left exact not right exact.}
 \end{equation}
-%Assume by contradiction that $G\mapsto G^p$ is right exact. This functor being left exact, it is exact. 
 Set $C_j:=\mathbb Z/(p^j)$ for $j\ge1$ and note the exact sequence 
 $$
 0\to C_1\xr{\alpha_j}C_j\xr{\pi_j}C_{j-1}\to0,
@@ -5076,8 +4961,6 @@ a\in\overline A\setminus A.
 $$ 
 Then we have $\alpha'(a)\in\oo{Ker}\widehat\pi\setminus\oo{Im}\widehat\alpha$. This proves \eqref{ne2}, \eqref{ne} and \eqref{nn}.
 
-%hence $\overline A\not\simeq\widehat A$, contradiction.
-
 \subsection{Page 114, Exercise 10.3}%
 
 \textbf{Statement.} (a) Let $A$ be a Noetherian ring, $\aaa$ an ideal and $M$ a finitely-generated $A$-module. Using Krull's Theorem and Exercise~14 of Chapter~3, prove that 
@@ -5098,7 +4981,7 @@ Set
 $$
 F:=\bigcap_{\mmm\supset\aaa}\Ker(M\to M_\mmm). 
 $$ 
-We must show $E=F$. The inclusion $E\subset F$ is easy. To prove $F\subset E$, note the we have $F_\mmm=0$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book, this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
+We must show $E=F$. The inclusion $E\subset F$ is easy. To prove $F\subset E$, note the we have $F_\mmm=0$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book (Section~\ref{314} p.~\pageref{314}), this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
 
 (b) Set $\bbb:=\oo{Ann}(M)$. We have 
 $$
@@ -5109,7 +4992,7 @@ $$
 $$ 
 the successive equivalences being justified as follows:
 
-$\bu$ first equivalence: obvious, %Krull's Theorem,
+$\bu$ first equivalence: obvious, 
 
 $\bu$ second equivalence: Corollary~2.5 p.~21 of the book,
 
@@ -5121,7 +5004,6 @@ Details about the fourth equivalence: By Exercise 3.19v p.~46 of the book we hav
 $$
 \oo{Supp}(M)\cap V(\aaa)=\varnothing\iff\aaa+\bbb=(1).
 $$ 
-%By Krull's Theorem we have $\widehat M=0$ if and only if $M=\aaa M$. Finally, by Corollary~2.5 p.~21 of the book we have $M=\aaa M$ if and only if there is an $a\in\aaa$ such that $x=ax$ for all $x\in M$. 
 
 \subsection{Page 114, Exercise 10.4}%
 
@@ -5172,11 +5054,11 @@ Then any ideal containing $\aaa$ is open and closed (because such an ideal is a 
 
 Moreover any maximal ideal $\mmm$ not containing $\aaa$ is dense.
 
-To prove this, let us show that any nonempty open subset $U\subset A$ meets $\mmm$. Set $K:=A/\mmm$ and let $\pi:A\to K$ be the canonical projection. It suffices to check that $0\in\pi(U)$. But the $\aaa$-adic topology of $K$ being the coarse topology, $\pi(U)$ is the unique nonempty subset of $K$, that is $K$ itself. %Let $u$ be in $U$. There some $n\in\mathbb N$ such that $u+\aaa^n\subset U$, and it suffices to prove that $u+\aaa^n$ meets $\mmm$. Let $\alpha$ be in $\aaa\setminus\mmm$. If $x\in A$ is a solution to the equation $$\alpha^nx\equiv u\bmod\mmm,$$ then we have $u-\alpha^nx\in\mmm$, as desired. 
+To prove this, let us show that any nonempty open subset $U\subset A$ meets $\mmm$. Set $K:=A/\mmm$ and let $\pi:A\to K$ be the canonical projection. It suffices to check that $0\in\pi(U)$. But the $\aaa$-adic topology of $K$ being the coarse topology, $\pi(U)$ is the unique nonempty subset of $K$, that is $K$ itself. 
 
 \subsection{Page 114, Exercise 10.7}%
 
-\textbf{Statement.} Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$, and $\widehat A$ the $\aaa$-adic completion. Prove that $\widehat A$ is faithfully flat over $A$ (Chapter 3, Exercise 16) if and only if $A$ is a Zariski ring (for the $\aaa$-topology).
+\textbf{Statement.} Let $A$ be a Noetherian ring, $\aaa$ an ideal of $A$, and $\widehat A$ the $\aaa$-adic completion. Prove that $\widehat A$ is faithfully flat over $A$ (Chapter 3, Exercise 16) if and only if $A$ is a Zariski ring (for the $\aaa$-topology). 
 
 [Recall that a Noetherian topological ring in which the topology is defined by an ideal contained in the Jacobson radical is called a \textbf{Zariski ring}. Examples are local rings and (by Proposition 10.15iv p.~109 of the book) $\aaa$-adic completions.]
 
@@ -5186,7 +5068,7 @@ $$
 $$ 
 $$
 \aaa\not\subset\mmm\implies0=(A/\mmm)^{\land}\simeq\widehat A/\widehat\mmm\implies\mmm^{\oo e}=(1). 
-$$ %See Section~\ref{1019} p.~\pageref{1019} above. 
+$$ 
 
 \subsection{Page 115, Exercise 10.9, Hensel's Lemma}% previous version: https://docs.google.com/document/d/1526_roVmeZpQMrYu0CK8TmS2WNr2HGhfnkqHGozrvLE/edit
 
@@ -5289,7 +5171,7 @@ f-g_{k+1}h_{k+1}&=(f-g_kh_k)-(ag_k+bh_k)-ab\\
 &=c_k-c_k-ab=-ab\in\aaa^{2k}[x]\subset\aaa^{k+1}[x].\\
 \end{split} 
 \] 
-As $\deg b<r$, the polynomial $g_{k+1}$ is monic of degree $r$. The inequality $\deg a\le n-r$ (see \eqref{dega}) implies $\deg h_{k+1}\le n-r$.%, and the condition $$\overline{h_{k+1}}=\overline h\text{ with }\overline h\text{ monic}$$ yields $\deg h_{k+1}=n-r$.
+As $\deg b<r$, the polynomial $g_{k+1}$ is monic of degree $r$. The inequality $\deg a\le n-r$ (see \eqref{dega}) implies $\deg h_{k+1}\le n-r$. 
 \end{proof}
 
 \subsection{Page 115, Exercise 10.10iii}%
@@ -5301,7 +5183,7 @@ A&\mmm&\overline f(x)&\alpha&f(x)&a&\overline f(\alpha)=0&f(a)=0\\ \hline
 k[[x]]&(x)&f(0,y)&a_0&f(x,y)&y(x)&f(0,a_0)=0&f(x,y(x))=0\\ \hline
 \end{array}
 $$ 
-(The condition that the roots $\alpha,a,a_0$ and $y(x)$ are simple is implicit.)%Set $A:=k[[x]]$, $\aaa:=(x)$ in Theorem~\ref{hl} p.~\pageref{hl}. 
+(The condition that the roots $\alpha,a,a_0$ and $y(x)$ are simple is implicit.) 
 
 \subsection{Page 115, Exercise 10.11}%
 
@@ -5311,12 +5193,11 @@ Recall (10.26): If $A$ is a Noetherian ring, $\aaa$ an ideal of $A$, then the $\
 
 \textbf{Hint.} Let $A$ be the ring of germs at $0$ of $C^\infty$ functions from $\mathbb R$ to $\mathbb R$, and $\mmm$ the ideal of those germs which vanish at $0$. Then $\widehat A\simeq\mathbb R[[x]]$ and $A\to\widehat A$ is surjective. Note that $A$ is not noetherian by Corollary 10.18 p.~110 of the book. 
 
-\subsection{Page 115, Exercise 10.12}%
+\subsection{Page 115, Exercise 10.12}%£
 
 \textbf{Statement:} If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
 
-\textbf{Solution.} Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\phi:A\to B$ be the inclusion, $\psi:B\to A$ the evaluation at $0$, and $\mmm$ a maximal ideal of $A$. It suffices to show that the extension of $\mmm$ along $\phi$ is a proper ideal of $B$ (see Exercise 3.16iii p.~45 of the book). If this extension was the unit ideal of $B$, then the extension of $\mmm$ along $\psi\circ\phi$ would be the unit ideal of $A$. But this latter extension is $\mmm$ because $\psi\circ\phi$ is the identity of $A$.%define the $A$-algebra surjective morphism $\phi:B\to A/\mmm$ as the composite of $B\to A$, $f\mapsto f(0)$ and the canonical projection $A\to A/\mmm$. %, and let $\nnn$ be the kernel of $\phi$. 
-%It suffices to show $\phi(\mmm)=(0)$ (see Exercise 3.16iii p.~45 of the book), which is clear. 
+\textbf{Solution.} Using Proposition 10.14 p.~109 of the book it is easy to see that $B$ is $A$-flat. Let $\phi:A\to B$ be the inclusion, $\psi:B\to A$ the evaluation at $0$, and $\mmm$ a maximal ideal of $A$. It suffices to show that the extension of $\mmm$ along $\phi$ is a proper ideal of $B$ (see Exercise 3.16iii p.~45 of the book). If this extension was the unit ideal of $B$, then the extension of $\mmm$ along $\psi\circ\phi$ would be the unit ideal of $A$. But this latter extension is $\mmm$ because $\psi\circ\phi$ is the identity of $A$. 
 
 \section{About Chapter 11}%%
 
@@ -5458,7 +5339,7 @@ $A_{\overline\mmm}$ is regular if and only if $f\not\in\mmm^2$.
 
 It remains to check that $0$ is non-singular if and only if $f\not\in\mmm^2$, or, in other words, that $\frac{\partial f}{\partial X_i}(0)\ne0$ for some $i$ if and only if $f\not\in\mmm^2$. 
 
-But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the coefficient of $X_i$ in $f$. %It is clear that $f\not\in\mmm^2$ if $\frac{\partial f}{\partial X_i}(0)\ne0$ for some $i$. To prove the converse, note that $\frac{\partial f}{\partial X_i}(0)$ is the coefficient of $X_i$ in $f$. 
+But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the coefficient of $X_i$ in $f$. 
 
 \subsection{Page 125, Exercise 11.2}%
 
@@ -5466,8 +5347,7 @@ But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the
 
 Recall (11.21): If $k\subset A$ is a field mapping isomorphically onto $A/\mmm$ and if $x_1,\ldots,x_d$ is a system of parameters, then $x_1,\ldots,x_d$ are algebraically independent over $k$.
 
-\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$, %and note that $\qqq$ defines the same topology on $A$ as $\mmm$ (see proof of Proposition 11.6 p.~119). 
-set $B:=k[[t_1,\ldots,t_d]]$, and let 
+\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$, set $B:=k[[t_1,\ldots,t_d]]$, and let 
 $$
 b:=\sum c_\alpha t_1^{\alpha_1}\cdots t_d^{\alpha_d}
 $$ 
@@ -5649,16 +5529,7 @@ $$
 1+\dim A\le\dim A[x]\le1+2\dim A.
 $$
 
-\textbf{Solution.} We denote the Krull dimension of any ring $A$ by $\dim A$ and the height of any prime ideal $\ppp$ by $h(\ppp)$. If we have a ring morphism $A\to B$ and a prime ideal $\qqq_i$ of $B$, we write $\ppp_i^{\oo c}$ for $(\ppp_i)^{\oo c}$. 
-
-%We shall use the following fact which occurs in the hint to Exercise 11.6 p.~126 of the book:
-
-%\begin{note}\label{116b}Let $f:A\to A[x]$ be the natural embedding, let $$f^*:\Spec(A[x])\to\Spec(A)$$ be the continuous map induced by $f$, and let $\ppp$ be a prime ideal of $A$. Then we have $$f^{*-1}(\ppp)=\{\ \ppp[x]\ ,\ \ppp[x]+(x)\ \}.$$
-%%then the fiber of $$f^*:\Spec(A[x])\to\Spec(A)$$ above a prime ideal $\ppp$ of $A$ is order isomorphic to the spectrum of $$k\otimes_AA[x]\simeq k[x],$$ where $k$ is the residue field at $\ppp$.
-%\end{note}
-
-%See Section~\ref{321iv} p.~\pageref{321iv} and Section~\ref{5547} p.~\pageref{5547} above.
-%%For Exercise 3.21iv p.~47 of the book, see Section~\ref{321iv} p.~\pageref{321iv} above. For Exercise 4.7 p.~55 of the book, see Section~\ref{5547} p.~\pageref{5547} above. 
+\textbf{Solution.} We denote the Krull dimension of any ring $A$ by $\dim A$ and the height of any prime ideal $\ppp$ by $h(\ppp)$. If we have a ring morphism $A\to B$ and a prime ideal $\qqq_i$ of $B$, we write $\ppp_i^{\oo c}$ for $(\ppp_i)^{\oo c}$.  
 
 \emph{Proof of the inequality} $\dim A[x]\ge1+\dim A$: If 
 $
@@ -5668,7 +5539,7 @@ is a chain of prime ideals in $A$, then
 $$
 \ppp_0[x]<\dots<\ppp_n[x]<\ppp_n+(x)
 $$ 
-is chain of prime ideals in $A[x]$ (see Exercise 4.7 p.~55 of the book and Lemma~\ref{fiberx} p.~\pageref{fiberx}). $\square$
+is chain of prime ideals in $A[x]$ (see Exercise 4.7 p.~55 of the book --- see Section~\ref{5547} p.~\pageref{5547} --- and Lemma~\ref{fiberx} p.~\pageref{fiberx}). $\square$ 
 
 \emph{Proof of the inequality} $\dim A[x]\le1+2\dim A$: This inequality follows immediately from Lemma~\ref{fiberx} p.~\pageref{fiberx} above.
 
