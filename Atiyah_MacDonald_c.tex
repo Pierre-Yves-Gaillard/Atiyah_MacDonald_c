@@ -320,7 +320,7 @@ Prove both statements by induction on the number of indeterminates. It seems bet
 
 \subsection{Page 11, Exercise 1.3iii}% old version https://docs.google.com/document/d/1zlz5FlVrglnxgwCK_Tx-2QaKcUEMQXUG2O3q69s2y0A/edit
 
-In the three statements below, $A$ and $B$ are rings, $p,q,r,s$ are nonnegative integers satisfying $0\le r<s$, and the $x_i$ and $y_j$ are indeterminates.
+In the three statements below, $A$ and $B$ are rings, $p,q,r,s$ are nonnegative integers satisfying $q>0$ and $r<s$, and the $x_i$ and $y_j$ are indeterminates.
 
 Recall the statement of Exercise 1.3iii: 
 
@@ -334,7 +334,7 @@ If $f\in B[\,y_1,\dots,y_q]$ has a nonzero annihilator in $B[\,y_1]$, then $f$ h
 If $f\in A[x_1,\dots,x_s]$ has a nonzero annihilator in $A[x_1,\dots,x_{r+1}]$, then $f$ has a nonzero annihilator in $A[x_1,\dots,x_r]$.
 \end{lem}
 
-Clearly Lemma~\ref{1.3iiil2} implies $(\star)$. Moreover, Lemma~\ref{1.3iiil1} follows from Lemma~\ref{1.3iiil1} by setting $B=A[x_1,\ldots,x_r]$, $q=s-r$, $y_i=x_{r+i}$.
+Clearly Lemma~\ref{1.3iiil2} implies $(\star)$. Moreover, Lemma~\ref{1.3iiil2} follows from Lemma~\ref{1.3iiil1} by setting $B=A[x_1,\ldots,x_r]$, $q=s-r$, $y_i=x_{r+i}$.
 
 It only remains to prove Lemma~\ref{1.3iiil1}. To do so set 
 $$
@@ -3182,7 +3182,7 @@ Here is an example of a domain which is \emph{not} integrally closed. Let $k$ be
 
 Here is a corollary to Proposition 5.12 p.~62:
 
-Let $A$ be a domain and $S$ a multiplicative subset. If $A$ is an integrally closed, so is $S^{-1}A$.
+Let $A$ be a domain and $S$ a multiplicative subset with $0\notin S$. If $A$ is integrally closed, so is $S^{-1}A$.
 
 \subsection{Page 63}%
 
@@ -3248,19 +3248,15 @@ Let $A$ be a valuation ring of a field $K$ with maximal ideal $\mmm$, and let $B
 If $b$ is in $B\setminus A$, then $b^{-1}$, being a non-unit of $A$, is in $\mmm$, and we get $1=b^{-1}b\in\mmm B$.
 \end{proof}
 
-%Let us prove the ``if'' part. Let $(B,g)\in\Sigma$ with $B$ a valuation ring of $K$, and 
 \begin{proof}[Proof of Proposition \ref{521}] 
-If we had $(B,g)<(C,h)$ for some $(C,h)\in\Sigma$, we would get $C=(\Ker g)C$ by Lemma~\ref{vrok}, and $(\Ker g)C\subset\Ker h$ by assumption. %and let $c$ be in $C\setminus B$. Then $c^{-1}$ is a non-unit of $B$. %Lemma 5.19 p.~65 of the book implies that
-%As $B$ is local with maximal ideal $\Ker g$, the element $c^{-1}$ is in $\Ker g$, and thus in $\Ker h$, which is impossible.
+If we had $(B,g)<(C,h)$ for some $(C,h)\in\Sigma$, we would get $C=(\Ker g)C$ by Lemma~\ref{vrok}, and $(\Ker g)C\subset\Ker h$ by assumption. 
 \end{proof}
 
 \subsection{Page 66, proof of Theorem 5.21}\label{521p}%
 
 The proof shows:
 
-\emph{In the setting of Section~\ref{520} above, let $x$ be a non-zero element of $K$. If $\mmm[x]\ne B[x]$, then there is a maximal ideal $\mmm'$ of $B[x]$ such that $B\cap\mmm'=\mmm$ %containing $\mmm$ 
-and $B[x]/\mmm'$ is algebraic over $B/\mmm$. If $\mmm[x^{-1}]\ne B[x^{-1}]$, then there is a maximal ideal $\mmm'$ of $B[x^{-1}]$ such that $B\cap\mmm'=\mmm$ %containing $\mmm$ 
-and $B[x]/\mmm'$ is algebraic over $B/\mmm$.}
+\emph{In the setting of Section~\ref{520} above, let $x$ be a non-zero element of $K$. If $\mmm[x]\ne B[x]$, then there is a maximal ideal $\mmm'$ of $B[x]$ such that $B\cap\mmm'=\mmm$ and $B[x]/\mmm'$ is algebraic over $B/\mmm$. If $\mmm[x^{-1}]\ne B[x^{-1}]$, then there is a maximal ideal $\mmm'$ of $B[x^{-1}]$ such that $B\cap\mmm'=\mmm$ and $B[x]/\mmm'$ is algebraic over $B/\mmm$.}
 
 \subsection{Page 66, proof of Corollary 5.22}%
 
@@ -3686,9 +3682,13 @@ $$
 I(X)\ne(1)\implies X\ne\varnothing.
 $$ 
 
-\subsection{Page 70, Exercise 5.21}\label{522}%
+\subsection{Page 70, Exercise 5.21}\label{5.21}%
 
-Here is a corollary:
+Here is the statement of the Exercise:
+
+Let $A$ be a subring of an integral domain $B$ such that $B$ is finitely generated over $A$. Show that there exists $s\ne0$ in $A$ such that, if $\Omega$ is an algebraically closed field and $f:A\to\Omega$ is a homomorphism for which $f(s)\ne0$, then $f$ can be extended to a homomorphism $B\to\Omega$.
+
+And here is a corollary:
 
 In the setting of the Exercise, if $i:A\to B$ denotes the inclusion, then we have $X_s\subset i^*(\Spec(B))$. In particular the interior of $i^*(\Spec(B))$ is nonempty. [Proof: given $\ppp\in X_s$ pick an algebraically closed field $\Omega$ containing $A/\ppp$.]
 
@@ -4355,6 +4355,7 @@ N<M&x\in M&Q_i&\ppp_i=r(Q_i:M)&N_i&\ppp_i^mM\subset Q_i&N_i\cap\ppp_i^mM\\ \hlin
 $$ 
 
 \subsection{Page 86, Exercise 7.19}% https://mathoverflow.net/q/12322/461
+% version of 200528: https://docs.google.com/document/d/1T-TwxPnyJQv5Y1jqLIEEGUmE__PS3zMhLF3kQFoqZIU/edit
 % previous version https://docs.google.com/document/d/1a-63-De-I8iBErGM5vuEuVpkBAJ1fOm2j0ECZIMzeT4/edit?folder=0ADbJLwZkWgt8Uk9PVA
 
 \textbf{Statement.} Let $\aaa$ be an ideal in a Noetherian ring $A$. Let 
@@ -4385,9 +4386,9 @@ $$
 Then we have $W=V_i\cap U_2$ for some $i$. 
 \end{lem} 
 
-We summarize Lemma~\ref{719L2} by saying that ``we have replaced $U_1$ with $V_i$ in the equality $W=U_1\cap U_2$''.
+We summarize Lemma~\ref{719L2} by saying that ``we have replaced $U_1$ with $V_i$ in the equality $W=U_1\cap U_2$''. %We shall give two proofs of Lemma~\ref{719L2}, but before we show that it implies Part (a) of Proposition~\ref{719P1}.
 
-We shall give two proofs of Lemma~\ref{719L2}, but before we show that it implies Part (a) of Proposition~\ref{719P1}.
+Before proving Lemma~\ref{719L2}, we show that it implies Part (a) of Proposition~\ref{719P1}. 
 
 It suffices to derive a contradiction from the assumption $n<m$. Using Lemma~\ref{719L2} repeatedly we get 
 $$
@@ -4395,48 +4396,7 @@ V_{i_1}\cap\cdots\cap V_{i_n}=V_1\cap\cdots\cap V_m,
 $$ 
 in contradiction with the minimality of the right side.
 
-\paragraph{First proof of Lemma~\ref{719L2}}${}$\medskip%
-
-We follow Bourbaki, \textbf{Algèbre}, Exercice II.2.17.
-
-\begin{lem}\label{719L3}
-Let $A$ be a ring, $M$ an $A$-module and let $U,V,U',V'$ and $W$ be five submodules of $M$ such that 
-$$
-W=U\cap V=U'\cap V'.
-$$ 
-(a) We have 
-$$
-U=(U+(V\cap U'))\cap(U+(V\cap V')).
-$$ 
-(b) If $U$ is irreducible, then $W=V\cap U'$ or $W=V\cap V'$. 
-\end{lem} 
-\begin{proof}[Proof of Lemma~\ref{719L3}] We can assume $W=0$. 
-
-(a) It suffices to show 
-$$
-(U+(V\cap U'))\cap(U+(V\cap V'))\subset U. 
-$$ 
-Let $u_1,u_2,x,y$ be such that $u_1,u_2\in U$, $x\in V\cap U'$, $y\in V\cap V'$ and $u_1+x=u_2+y$. It suffices to show $x\in U$. We have $x-y\in U\cap V=0$, and thus $x=y\in U'\cap V'=0$. 
-
-(b) The submodule $U$ is equal to $U+(V\cap U')$ or to $U+(V\cap V')$. In the first case we have $V\cap U'\subset U$, and thus 
-$$
-V\cap U'=U\cap V\cap U'=0. 
-$$ 
-The second case is similar. 
-\end{proof} 
-
-\begin{proof}[Proof of Lemma~\ref{719L2}] Let $1\le i_1<\cdots<i_p\le m$ be integers such that 
-$$
-W=U_2\cap V_{i_1}\cap\cdots\cap V_{i_p}
-$$ 
-and $p\ge1$ is minimum for this condition. It suffices to show $p=1$. We do this by applying Lemma~\ref{719L3}b with $U:=U_1$, $V:=U_2$, $U':=U_2\cap V_{i_1}$, $V':=V_{i_2}\cap\cdots\cap V_{i_p}$. We get 
-$$
-W=U_2\cap V_{i_1}\quad\text{or}\quad W=U_2\cap V_{i_2}\cap\cdots\cap V_{i_p},
-$$ 
-but the second case contradicts the minimality of $p$.
-\end{proof}
-
-\paragraph{Second proof of Lemma~\ref{719L2}}${}$\medskip%
+\paragraph{Proof of Lemma~\ref{719L2}}${}$\medskip%
 
 We follow Matthew Emerton: \href{https://mathoverflow.net/q/12322/461}{https://mathoverflow.net/q/12322/461}
 
@@ -4450,7 +4410,7 @@ It suffices to show $X_j=0$ for some $j$.
 
 We have 
 $$
-\bigcap X_j\subset \bigcap V_j=0,\quad\phi(X_j)=\phi_1(X_j)\times0.
+\bigcap X_j\subset\bigcap V_j=0,\quad\phi(X_j)=\phi_1(X_j)\times0.
 $$ 
 By injectivity of $\phi$ we also have 
 $$
@@ -4578,8 +4538,7 @@ It suffices to show:
 
 \qquad(c) $E\cap X_0$ contains no non-empty open subset of $X_0$.
 
-Proof of (a): %The subset $X_0$ is irreducible, for t
-The conditions $X_0=Y_1\cup Y_2$ with $Y_i<X_0$ and $Y_i$ closed would imply $F\cap X_0=(F\cap Y_1)\cup(F\cap Y_2)$ with $F\cap Y_i$ closed and $F\cap X_0$ not closed, which is impossible.
+Proof of (a): The conditions $X_0=Y_1\cup Y_2$ with $Y_i<X_0$ and $Y_i$ closed would imply $F\cap X_0=(F\cap Y_1)\cup(F\cap Y_2)$ with $F\cap Y_i$ closed and $F\cap X_0$ not closed, which is impossible.
 
 Proof of (b): The equality $E\cap X_0=\varnothing$ would imply $F\cap X_0=X_0$ with $F\cap X_0$ not closed and $X_0$ closed, a contradiction.
 
@@ -4606,7 +4565,7 @@ f^{*-1}(X_0)\ar[r,"f^*"']&X_0.
 $$ 
 $\bu$ Restriction to the case when $A$ and $B$ are domains and $f$ is injective: As $X$ is irreducible, at least one of the $f^*(Y_i)$ is dense. We have $Y_i\simeq\Spec(B/\qqq)$ for some $\qqq\in Y$. We can replace $B$ with $B/\qqq$, i.e. we can assume that $B$ is a domain and $f^*(Y)$ is dense, and Exercise 1.21v p.~13 of the book (see Section~\ref{121v} p.~\pageref{121v} above) implies that $f$ is injective. 
 
-$\bu$ Last step: See Section~\ref{522} p.~\pageref{522} above.
+$\bu$ Last step: See Section~\ref{5.21} p.~\pageref{5.21} above.
 
 \subsection{Page 87, Exercise 7.24}% 
 
@@ -4671,7 +4630,7 @@ The proof of Proposition 8.8 shows that $(*)$ is equivalent to any of the condit
 
 \subsection{Page 92, Exercise 8.4}%
 
-To prove (i) $\implies$ (iii) on can use Section~\ref{res} p.~\pageref{res}, Claim~1 above and the following Lemma:
+To prove (i)$\implies$(iii) on can use Section~\ref{res} p.~\pageref{res}, Claim~1 above and the following Lemma:
 
 \begin{lem}
 Let $A\to B$ be an integral ring morphism, let $S\subset A$ be a multiplicative subset, and let $\ppp$ be a prime ideal of $A$ disjoint from $S$. Then the induced morphism $S^{-1}A/S^{-1}\ppp\to S^{-1}B/(S^{-1}\ppp)^{\oo e}$ is integral.
@@ -4685,9 +4644,11 @@ Hint for the last question, which is ``If $f$ is integral and the fibres of $f^*
 
 Note that $\mathbb Z\to\mathbb Z[\frac12]$ satisfies (ii) but not (i).
 
-\subsection{Page 92, Exercise 8.6}% 
+\subsection{Page 92, Exercise 8.6}% £
 
-See Section~\ref{8.5} p.~\pageref{8.5} above. 
+\textbf{Statement.} Let $A$ be a Noetherian ring and $\qqq$ a $\ppp$-primary ideal in $A$. Consider chains of primary ideals from $\qqq$ to $\ppp$. Show that all such chains are of finite bounded length, and that all maximal chains have the same length.
+
+\textbf{Hints.} See Section~\ref{8.5} p.~\pageref{8.5} above. 
 
 Note that 
 
@@ -4752,7 +4713,7 @@ It suffices to show $c(f)_\mmm c(g)_\mmm\subset c(fg)_\mmm$ for all maximal idea
 
 \textbf{Statement.} Let $A$ be a local domain which is not a field and in which the maximal ideal $\mmm$ is principal and $\bigcap_{n\ge1}\mmm^n=(0)$. Prove that $A$ is a discrete valuation ring.
 
-\textbf{Solution.} (Sketch.) Let $p$ be a generator of $\mmm$. 
+\textbf{Hint.} Let $p$ be a generator of $\mmm$. 
 
 There is a unique map $w:A\setminus\{0\}\epi\mathbb N$ such that $a\in\mmm^{w(a)}\setminus\mmm^{w(a)+1}$ for all $a\in A\setminus\{0\}$. We have $w(ab)=w(a)+w(b)$ for all $a,b\in A\setminus\{0\}$, and $a\in A\setminus\{0\}$ is a unit if and only if $w(a)=0$. Moreover, if $a\in A\setminus\{0\}$, then $a=p^{w(a)}u$ with  $u$ a unit.
 
@@ -4930,11 +4891,15 @@ We claim that
 \begin{equation}\label{nn}
 G\mapsto\widehat G\text{ is neither left exact not right exact.}
 \end{equation}
-Set $C_j:=\mathbb Z/(p^j)$ for $j\ge1$ and note the exact sequence 
+Set $C_j:=\mathbb Z/(p^j)$ for $j\ge0$ and 
+$$
+A:=\bigoplus_{j\ge1}C_1,\quad B:=\bigoplus_{j\ge1}C_j.
+$$ 
+The exact sequences 
 $$
 0\to C_1\xr{\alpha_j}C_j\xr{\pi_j}C_{j-1}\to0,
 $$ 
-where $\pi_j$ is the multiplication by $p$ (we use the isomorphism $pC_j\simeq C_{j-1}$). This induces an exact sequence 
+where $\pi_j$ is the multiplication by $p$ (we use the isomorphism $pC_j\simeq C_{j-1}$ for $j\ge1$), induce an exact sequence 
 \begin{equation}\label{abb}
 0\to A\xr{\alpha}B\xr{\pi}B\to0.
 \end{equation} 
@@ -4948,12 +4913,11 @@ A\xr{\widehat\alpha}\widehat B\xr{\widehat\pi}\widehat B\ \text{ is not exact.}
 \end{equation} 
 Write $\overline A$ for the completion of $A$ with respect to the filtration induced by the $p$-adic filtration of $B$. We leave it to the reader to check that applying Corollary 10.3 p.~104 of the book to \eqref{abb} yields the exact sequence 
 $$
-0\to\overline A\xr{\alpha'}\widehat B\xr{\pi}\widehat B\to0.
+0\to\overline A\xr{\alpha'}\widehat B\xr{\widehat\pi}\widehat B\to0.
 $$ 
-%As we are assuming that $G\mapsto\widehat G$ is exact, the sequence $$0\to A^p\xr{\alpha}B^p\xr{\pi}B^p\to 0.$$ is also exact. This implies $A^i\simeq A^p$. But w
 We have 
 $$
-\overline A\simeq\prod_{n\in\mathbb N}C_1
+\overline A\simeq\prod_{j\le1}C_1
 $$ 
 (details again left to the reader), and thus $A<\overline A$. Let 
 $$
@@ -4981,7 +4945,7 @@ Set
 $$
 F:=\bigcap_{\mmm\supset\aaa}\Ker(M\to M_\mmm). 
 $$ 
-We must show $E=F$. The inclusion $E\subset F$ is easy. To prove $F\subset E$, note the we have $F_\mmm=0$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book (Section~\ref{314} p.~\pageref{314}), this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
+We must show $E=F$. The inclusion $E\subset F$ is easy (indeed we have $\oo{Ann}_M(1-a)\subset\aaa^nM$ for $a\in\aaa$ and $n\in\mathbb N$). To prove $F\subset E$, first note that we have $F_\mmm=0$ if $\mmm\supset\aaa$. By Exercise 3.14 p.~45 of the book (Section~\ref{314} p.~\pageref{314}), this implies $F=\aaa F$, hence $F=\aaa^nF\subset\aaa^nM$ for all $n$, hence $F\subset E$. 
 
 (b) Set $\bbb:=\oo{Ann}(M)$. We have 
 $$
@@ -5144,7 +5108,7 @@ g_j\equiv g_{j-1},\quad h_j\equiv h_{j-1}\bmod\aaa^{j-1}
 $$ 
 for $2\le j\le k$. Note that this implies $\deg c_j\le n$. 
 
-Since by Proposition 10.15.iv p.~109 of the book, $\aaa\subset\mf R(A)$, it follows from Lemma~\ref{L106b}, that $(g_k,h_k)=(1)$ in $A[x]$. By Lemma~\ref{L106a} with 
+Since by Proposition 10.15.iv p.~109 of the book, $\aaa\subset\mf R(A)$, it follows from Lemma~\ref{L106b} that $(g_k,h_k)=(1)$ in $A[x]$. By Lemma~\ref{L106a} with 
 $$
 B:=A,\quad p:=g_k,\quad q:=h_k,
 $$ 
@@ -5193,7 +5157,7 @@ Recall (10.26): If $A$ is a Noetherian ring, $\aaa$ an ideal of $A$, then the $\
 
 \textbf{Hint.} Let $A$ be the ring of germs at $0$ of $C^\infty$ functions from $\mathbb R$ to $\mathbb R$, and $\mmm$ the ideal of those germs which vanish at $0$. Then $\widehat A\simeq\mathbb R[[x]]$ and $A\to\widehat A$ is surjective. Note that $A$ is not noetherian by Corollary 10.18 p.~110 of the book. 
 
-\subsection{Page 115, Exercise 10.12}%£
+\subsection{Page 115, Exercise 10.12}%
 
 \textbf{Statement:} If $A$ is Noetherian, then $B:=A[[x_1,\ldots,x_n]]$ is a faithfully flat $A$-algebra. 
 
