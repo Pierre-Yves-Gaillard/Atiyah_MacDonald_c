@@ -14,9 +14,9 @@
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
 \usepackage{datetime}
-\usepackage[osf]{Baskervaldx} % oldstyle figures
+%%\usepackage[osf]{Baskervaldx} % oldstyle figures
 %\usepackage{Baskervaldx}
-\usepackage[baskervaldx]{newtxmath}
+%%\usepackage[baskervaldx]{newtxmath}
 \usepackage{tikz-cd}
 \usepackage{comment}
 %\usepackage[dvipsnames]{xcolor} % creates clashes !!!
@@ -66,7 +66,10 @@
 
 \maketitle\tableofcontents
 
-This text is available at \href{http://www.iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/DIVERS/Atiyah_MacDonald_c/}{https://goo.gl/S9ykSu} and \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf}%\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ}
+This text is available at 
+
+\centerline{\href{http://www.iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/DIVERS/Atiyah_MacDonald_c/}{https://goo.gl/S9ykSu} and \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf}%\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ}
+}
 
 Atiyah and MacDonald's book referred to in the title is of course the famous \textbf{Introduction to Commutative Algebra}.
 
@@ -331,7 +334,11 @@ If $f\in B[\,y_1,\dots,y_q]$ has a nonzero annihilator in $B[\,y_1]$, then $f$ h
 \end{lem}
 
 \begin{lem}\label{1.3iiil2}
-If $f\in A[x_1,\dots,x_s]$ has a nonzero annihilator in $A[x_1,\dots,x_{r+1}]$, then $f$ has a nonzero annihilator in $A[x_1,\dots,x_r]$.
+If $f\in A[x_1,\dots,x_s]$ has a nonzero annihilator in 
+$$
+A[x_1,\dots,x_{r+1}],
+$$ 
+then $f$ has a nonzero annihilator in $A[x_1,\dots,x_r]$.
 \end{lem}
 
 Clearly Lemma~\ref{1.3iiil2} implies $(\star)$. Moreover, Lemma~\ref{1.3iiil2} follows from Lemma~\ref{1.3iiil1} by setting $B=A[x_1,\ldots,x_r]$, $q=s-r$, $y_i=x_{r+i}$.
@@ -340,7 +347,11 @@ It only remains to prove Lemma~\ref{1.3iiil1}. To do so set
 $$
 f=a_0+\cdots+a_n y_1^n,
 $$ 
-where $n$ is the $y_1$-degree of $f$ (we can assume $f\ne0$) and $a_i\in B[\,y_2,\ldots,y_q]$. Let 
+where $n$ is the $y_1$-degree of $f$ (we can assume $f\ne0$) and 
+$$
+a_i\in B[\,y_2,\ldots,y_q].
+$$ 
+Let 
 $$
 g=b_0+\cdots+b_m y_1^m\in B[\,y_1]
 $$ 
@@ -653,7 +664,10 @@ $$
 $$ 
 Proof of (b): For $x\in X$ and $g\in I(Y)$ we have 
 $$
-g(\phi(x))=g(\phi_1(x),\dots,\phi_m(x))=g(\psi(u_1)(x),\dots,\psi(u_m)(x))=\psi(g)(x)=0,
+g(\phi(x))=g(\phi_1(x),\dots,\phi_m(x))=g(\psi(u_1)(x),\dots,\psi(u_m)(x))
+$$ 
+$$
+=\psi(g)(x)=0,
 $$ 
 the penultimate equality being justifies by \eqref{128}.
 
@@ -1697,8 +1711,10 @@ This will follow from Claim~1 and Claim~2 below.
 
 \textbf{Claim~1.} Let $C_1,\ldots,C_6$ be the six $B$-algebras 
 $$
-A_\ppp\otimes_AB/\ppp B,\quad (B/\ppp B)_\ppp,\quad B_\ppp/\ppp_\ppp B,\quad  
-\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\ ,\quad \frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB.
+A_\ppp\otimes_AB/\ppp B,\quad (B/\ppp B)_\ppp,\quad B_\ppp/\ppp_\ppp B,
+$$ 
+$$  
+\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\ ,\quad\frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB.
 $$ 
 Then for any $1\le i,j\le6$ there is a unique $B$-algebra morphism $C_i\to C_j$, and this morphism is bijective.
 
@@ -1918,7 +1934,11 @@ in $Aa^{-1}\otimes_AM$. This implies $ax=0$ because the map $M\to Aa^{-1}\otimes
 
 \textbf{Statement.} Let $M$ be an $A$-module and $\aaa$ an ideal of $A$. Suppose that $M_\mmm=0$ for all maximal ideals $\mmm\supset\aaa$. Prove that $M=\aaa M$. 
 
-\textbf{Solution.} Let $\mmm$ be a maximal ideal of $A/\aaa$. It suffices to show $(M/\aaa M)_\mmm=0$. Letting $\mmm^{\oo c}$ be the contraction of $\mmm$ in $A$, we get 
+\textbf{Solution.} Let $\mmm$ be a maximal ideal of $A/\aaa$. It suffices to show 
+$$
+(M/\aaa M)_\mmm=0.
+$$ 
+Letting $\mmm^{\oo c}$ be the contraction of $\mmm$ in $A$, we get 
 $$
 (M/\aaa M)_\mmm\simeq(M/\aaa M)_{\mmm^{\oo c}}\simeq M_{\mmm^{\oo c}}/(\aaa M)_{\mmm^{\oo c}}=0.
 $$ 
@@ -2632,7 +2652,10 @@ $\bu\ x\in A\setminus\ppp$ satisfies $\mathfrak q=(\bbb:x)$.
 \end{df}
 
 \begin{lem}\label{l417}
- \emph{(a)} For all $\bbb\ne(1)$ there is an admissible quadruple $(\bbb,\ppp,\qqq,x)$.
+ \emph{(a)} For all $\bbb\ne(1)$ there is an admissible quadruple 
+ $$
+ (\bbb,\ppp,\qqq,x).
+ $$
 
 \emph{(b)} If $(\bbb,\ppp,\qqq,x)$ is an admissible quadruple, then 
 
@@ -2721,7 +2744,11 @@ x\in\aaa_\alpha\cap\bigcap_{\beta<\gamma}\qqq_\beta\subset\aaa_\alpha\cap\bigcap
 $$ 
 This proves Condition $\oo C(\gamma)$. 
 
-In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ in such a way that $(\aaa_\gamma,\ppp_\gamma,\qqq_\gamma,x_\gamma)$ is admissible (Lemma~\ref{l417}a).
+In particular $\aaa_\gamma\ne(1)$. We define $\ppp_\gamma,\qqq_\gamma,x_\gamma$ in such a way that 
+$$
+(\aaa_\gamma,\ppp_\gamma,\qqq_\gamma,x_\gamma)
+$$ 
+is admissible (Lemma~\ref{l417}a).
 
 Now the map \eqref{e417a} is defined. The map $\alpha\mapsto\aaa_\alpha$ is clearly increasing. As already indicated, this is a contradiction.
 
@@ -3544,8 +3571,10 @@ $$
 A_s[x_1,\dots,x_n].
 $$ 
 \begin{proof} 
-Let $y_1,\dots,y_m\in B$ generate $B$ as an $A$-algebra: $B=A[\,y_1,\dots,y_m]$. 
-
+Let $y_1,\dots,y_m\in B$ generate $B$ as an $A$-algebra: 
+$$
+B=A[\,y_1,\dots,y_m].
+$$ 
 We argue by induction on $m$. 
 
 If $m=0$ or if the $y_i$ are algebraically independent over $A$, there is nothing to prove.
@@ -3608,7 +3637,7 @@ are algebraically independent over $A_s$, and that $A_s[z_1,\dots,z_{m-1}]$ is a
 
 Recall that $B_t$ is a finitely generated $A_t[z_1,\dots,z_{m-1}]$-module (see $(\star)$). 
 
-In particular $B_s$ is a finitely generated module over the ring $$A_s[z_1,\dots,z_{m-1}],$$ ring which is itself, as we have just seen, a finitely generated $A_s[x_1,\dots,x_n]$-module. 
+In particular $B_s$ is a finitely generated module over the ring $$A_s[z_1,\dots,z_{m-1}],$$ ring which is itself, as we have just seen, a finitely generated module over the ring $A_s[x_1,\dots,x_n]$. 
 
 This implies that $B_s$ is a finitely generated $A_s[x_1,\dots,x_n]$-module, as desired.
 \end{proof} 
@@ -4098,7 +4127,11 @@ Let $\bbb$ be a radical ideal of $B$, and let $\aaa$ be its contraction in $A$. 
 $$
 f^*(V(\bbb))=V(\aaa).
 $$ 
-By Exercises 6.5, 6.7 (see Section~\ref{6.7} p.~\pageref{6.7}) and 1.20iv there are $\qqq_1,\dots,\qqq_n\in V(\bbb)$ such that the set of minimal elements of $V(\bbb)$ is $\{\qqq_1,\dots,\qqq_n\}$ and 
+By Exercises 6.5, 6.7 (see Section~\ref{6.7} p.~\pageref{6.7}) and 1.20iv there are 
+$$
+\qqq_1,\dots,\qqq_n\in V(\bbb)
+$$ 
+such that the set of minimal elements of $V(\bbb)$ is $\{\qqq_1,\dots,\qqq_n\}$ and 
 $$
 V(\bbb)=\bigcup_{i=1}^n\ V(\qqq_i).
 $$ 
@@ -4141,7 +4174,10 @@ M:=\bigcap_n\ M_n=\{a\in\mathbb N^2\ |\ a_2\ge1\}
 $$ 
 is \emph{not} finitely generated. Observe that the finite set 
 $$
-G_n:=\{(n,0),(n+1,0),\dots,(2n-1,0),(0,1),(1,1),(2,1),\dots,(n-1,1)\}\subset M_n
+G_n:=\{(n,0),(n+1,0),\dots,(2n-1,0),(0,1),(1,1),(2,1),\dots,(n-1,1)\}
+$$ 
+$$
+\subset M_n
 $$ 
 generates $M_n$. 
 
@@ -4377,7 +4413,7 @@ be two minimal decompositions of $W$ as intersections of irreducible submodules.
 \subsubsection{Proof of Part (a) of Proposition~\ref{719P1}}%
 
 \begin{lem}\label{719L2}
-Let $A$ be a ring, $M$ an $A$-module and let $U_1,U_2,V_1,\dots,V_m,W$ be submodules of $M$ such that $U_1$ is irreducible and 
+Let $A$ be a ring, $M$ an $A$-module and let $U_1$, $U_2$, $V_1$,\dots, $V_m$, $W$ be submodules of $M$ such that $U_1$ is irreducible and 
 $$
 W=U_1\cap U_2=V_1\cap\cdots\cap V_m.
 $$ 
@@ -5333,7 +5369,11 @@ But this follows from that fact that $\frac{\partial f}{\partial X_i}(0)$ is the
 
 Recall (11.21): If $k\subset A$ is a field mapping isomorphically onto $A/\mmm$ and if $x_1,\ldots,x_d$ is a system of parameters, then $x_1,\ldots,x_d$ are algebraically independent over $k$.
 
-\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$, set $B:=k[[t_1,\ldots,t_d]]$, and let 
+\textbf{Solution.} Let $\qqq$ be the $\mmm$-primary ideal $(x_1,\ldots,x_d)$, set 
+$$
+B:=k[[t_1,\ldots,t_d]],
+$$ 
+and let 
 $$
 b:=\sum c_\alpha t_1^{\alpha_1}\cdots t_d^{\alpha_d}
 $$ 
