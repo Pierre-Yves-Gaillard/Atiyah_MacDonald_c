@@ -15,7 +15,7 @@
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
 \usepackage{datetime}
 \usepackage{microtype}
-\usepackage{mathptmx}
+%\usepackage{mathptmx}
 %%\usepackage[osf]{Baskervaldx} % oldstyle figures
 %\usepackage{Baskervaldx}
 %%\usepackage[baskervaldx]{newtxmath}
@@ -68,10 +68,16 @@
 
 \maketitle\tableofcontents
 
-This text is available at 
+\section{Introduction}
 
-\centerline{\href{http://www.iecl.univ-lorraine.fr/~Pierre-Yves.Gaillard/DIVERS/Atiyah_MacDonald_c/}{https://goo.gl/S9ykSu} and \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf}%\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ}
-}
+This text is available at the Google sites 
+
+\centerline{\href{https://sites.google.com/site/pierreyvesgaillard}{https://sites.google.com/site/pierreyvesgaillard}}\medskip 
+
+\centerline{\href{https://sites.google.com/view/pierreyvesgaillardmath}{https://sites.google.com/view/pierreyvesgaillardmath}} 
+
+The tex file is available at the GitHub page \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/blob/master/Atiyah_MacDonald_c.tex}{https://goo.gl/8FNDcf} %\quad\href{https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit?usp=sharing}{https://goo.gl/w26ZGZ} 
+and in the Google Drive folder {\href{https://tinyurl.com/y3zlfbww}{https://tinyurl.com/y3zlfbww}} % https://drive.google.com/drive/folders/1svTFcsD0DGjR4wlXLfFrnAFPwRJqp58S?usp=sharing
 
 Atiyah and MacDonald's book referred to in the title is of course the famous \textbf{Introduction to Commutative Algebra}.
 
@@ -1349,7 +1355,7 @@ M\otimes_AN'&\to&M\otimes_AN&\to&M\otimes_AN''&\to\\ \\
 $$ 
 In particular 
 
-$M$ \emph{is flat if and only if $\ \Tor^A_1(M,N'')=0$ for all $N''$ --- in which case we have $\Tor^A_n(M,N'')=0$ for all $n\ge1$ and all $N''$.}
+$M$ \emph{is flat if and only if $\ \Tor^A_1(M,N'')=0$ for all $N''$ --- in which case we have $$\Tor^A_n(M,N'')=0$$ for all $n\ge1$ and all $N''$.}
 
 Now Exercise 2.25 (see Exercise~\ref{e225b} above) follows from the above statement and the above long exact sequence.
 
@@ -3677,7 +3683,11 @@ The detailed proof of (ZL2) is left to the reader.
 
 The \textbf{Nullstellensatz} is stated in Exercise 14 of Chapter 7 as follows:
 
-(N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring $k[t_1,\dots,t_n]$ and let $\aaa$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\aaa$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\aaa$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\aaa)$.}
+(N) \emph{Let $k$ be an algebraically closed field, let $A$ denote the polynomial ring 
+$$
+k[t_1,\dots,t_n]
+$$ 
+and let $\aaa$ be an ideal in $A$. Let V be the variety in $k^n$ defined by the ideal $\aaa$, so that $V$ is the set of all $x=(x_1,\dots,x_n)\in k^n$ such that $f(x)=0$ for all $f\in\aaa$. Let $I(V)$ be the ideal of $V$, i.e. the ideal of all polynomials $g\in A$ such that $g(x)=0$ for all $x\in V$. Then $I(V)=r(\aaa)$.}
 
 \begin{proof} 
 The inclusion $r(\aaa)\subset I(V)$ is clear. Let us prove $I(V)\subset r(\aaa)$. 
@@ -5253,7 +5263,7 @@ The claim ``$A$ is an Artin ring'' is justified by \eqref{86} p.~\pageref{86}.
 
 Here is an application of the Dimension Theorem: 
 
-Let $K$ be a field, let $x_1,x_2,\dots$ be indeterminates, and form the $K$-algebra  $A:=K[[x_1,x_2,\dots]]$. 
+Let $K$ be a field, let $x_1,x_2,\dots$ be indeterminates, and form the $K$-algebra  $$A:=K[[x_1,x_2,\dots]].$$ 
 
 Recall that $A$ can be defined as the set of expressions of the form $\sum_ua_uu$, where $u$ runs over the set monomials in $x_1,x_2,\dots$, and each $a_u$ is in $K$, the addition and multiplication being the obvious ones. 
 
