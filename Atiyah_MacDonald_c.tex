@@ -3,13 +3,14 @@
 % https://docs.google.com/document/d/1AW4qMXoarPW1L1Nxbgy4bODorWEpE6_Gdd35sFJKyew/edit
 % https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/edit/master/Atiyah_MacDonald_c.tex
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
-%\documentclass[12pt]{article}%\documentclass{article}
-\documentclass[parskip=half,fontsize=12pt]{scrartcl}%\documentclass[parskip=full]{scrartcl}
+%\documentclass[12pt]{article}%\documentclass{article} % old
+%\documentclass[parskip=half,fontsize=12pt]{scrartcl}%\documentclass[parskip=full]{scrartcl} % variable
+\documentclass[fontsize=12pt]{scrartcl} % variable
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath,amsthm} 
-\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
-%\usepackage{geometry}% normal
+%\usepackage[papersize={400pt,520pt},margin=15pt]{geometry}% e-readers
+\usepackage{geometry}% normal
 %\usepackage[margin=15pt]{geometry} old
 %\usepackage[papersize={4.5in,6in},margin=0.5cm]{geometry} old
 %\usepackage[parfill]{parskip}%https://tex.stackexchange.com/questions/133003/using-the-parskip-package-i-find-the-space-between-subtitles-ugly
@@ -23,6 +24,7 @@
 \usepackage{comment}
 %\usepackage[dvipsnames]{xcolor} % creates clashes !!!
 \usepackage[pdfusetitle]{hyperref}
+\setlength{\parskip}{5pt} % variable
 %\pagestyle{empty}
 %\newcommand{\nn}{\newcommand}
 \newcommand{\oo}{\operatorname}\newcommand{\ooo}{\operatorname*}
@@ -4229,6 +4231,22 @@ g:=\sum_{i=1}^n\,a_i\,t^{d(i)}f_i\in N_n\subset A[t];
 $$ 
 and observe that $\deg(f_{n+1}-g)$ is less than $\deg f_{n+1}$, which is impossible.
 \end{proof}
+
+\subsection{Page 82, Proof of Proposition 7.8}% 
+
+Kevin Buzzard writes in \href{https://mathoverflow.net/a/372412/461}{this MathOverflow answer}:
+
+{\footnotesize The following slip on p. 82 was found by Kenny Lau when he was formalising Proposition 7.8 in Lean: In the line 
+
+"Substituting $(1)$ and making repeated use of $(2)$ shows that each element of $C$ is..." 
+
+\noindent there's an implicit induction proof, but the base case where the element is $1$ is not dealt with. This can be fixed in a number of ways, e.g. by adding a new condition 
+$$
+(0)\qquad1=\sum_i b_i y_i
+$$ 
+and using the $b_i$ as further generators of $B_0$.} 
+
+Another way of fixing this would be to take $1$ as one of the $y_j$. 
 
 \subsection{Page 83, Lemma 7.12}%
 
