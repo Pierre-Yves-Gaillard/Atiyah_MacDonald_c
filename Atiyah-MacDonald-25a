@@ -1,7 +1,7 @@
 % Atiyah-MacDonald-25a
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1jll4EDMRR8FfpWCHrUCoEQRvUAEtZBGDI2wLmzX9pIE/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1739290858
+% https://www.site24x7.com/tools/time-stamp-converter.html 1739540764
 % https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/edit/master/Atiyah_MacDonald_c.tex
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
 \documentclass[12pt,letterpaper]{article}%\documentclass{article} % old
@@ -9,7 +9,7 @@
 %\documentclass[fontsize=12pt]{scrartcl} % variable
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny Atiyah-MacDonald-25a,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1739290858}} 
+\fancyfoot[R]{{\tiny Atiyah-MacDonald-25a,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1739540764}} 
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
