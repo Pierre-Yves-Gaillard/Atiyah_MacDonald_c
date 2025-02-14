@@ -1,15 +1,15 @@
 % Atiyah-MacDonald-25b
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1jll4EDMRR8FfpWCHrUCoEQRvUAEtZBGDI2wLmzX9pIE/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1739542759
-% https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c/edit/master/Atiyah_MacDonald_c.tex
+% https://www.site24x7.com/tools/time-stamp-converter.html 1739558214
+% https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
 \documentclass[12pt,letterpaper]{article}%\documentclass{article} % old
 %\documentclass[parskip=half,fontsize=12pt]{scrartcl}%\documentclass[parskip=full]{scrartcl} % variable
 %\documentclass[fontsize=12pt]{scrartcl} % variable
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1739542759}} 
+\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1739558214}} 
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -2048,7 +2048,7 @@ $$
 \bigcap_n S^{-1}(x^n)=K(x),\quad S^{-1}\bigcap_n(x^n)=(0).
 $$
 
-\subsubsection{Pages 39-40, Propositions 3.5 and 3.7}%
+\subsubsection{Pages 39-40, Propositions 3.5 and 3.7}\label{p3.5,3.7}%
 
 Recall the statements of these propositions:
 
@@ -2087,7 +2087,15 @@ For all $A$-linear map $g:M\to N$ from $M$ to an $S^{-1}A$-module $N$ such that 
 	\arrow["h"', dashed, from=2-1, to=1-2]
 \end{tikzcd}\] 
 
-Using this universal property one can describe explicitly the respective inverses of the isomorphisms in Propositions 3.5 and 3.7.
+Using this universal property one can describe explicitly the respective inverses of the isomorphisms in Propositions 3.5 and 3.7. 
+
+If $\ppp$ is a prime ideal of $A$, then the modules $M_\ppp/\ppp M_\ppp$ and $(M/\ppp M)_\ppp$ are naturally isomorphic. Moreover we clearly have $\ppp M_\ppp=(\ppp M)_\ppp=\ppp_\ppp M_\ppp$ (see Paragraph~(v) p.~\pageref{pam}), and thus $M_\ppp/\ppp M_\ppp=M_\ppp/(\ppp M)_\ppp=M_\ppp/\ppp_\ppp M_\ppp$.  
+
+To prove the isomorphism $M_\ppp/\ppp M_\ppp\simeq(M/\ppp M)_\ppp$, note that the sequence 
+$$
+0\to (\ppp M)_\ppp\to M_\ppp\to(M/\ppp M)_\ppp\to 0
+$$ 
+is exact by Proposition~3.3 p.~39 of the book. 
 
 \subsubsection{Page 39, Proposition~3.5}%
 
@@ -2099,7 +2107,19 @@ In the setting of Proposition~3.5 p.~39 [Proposition~\ref{p3.5}] we have:
 $$
 B\otimes_AM\to M\xr gA/s\otimes_AM\to0\quad\text{and}\quad0\to BM\to M\xr gA/s\otimes_AM\to0.
 $$ 
-We have $g(sx)=0$ and thus $sx=\sum_{i=1}^nb_ix_i$ with $b_i\in B$ and $x_i\in M$. As $b_i/s=0$ in $S^{-1}A$ there is a $t\in S$ such that $tb_i=0$ for all $i$. This gives $tsx=0.\ \square$
+We have $g(sx)=0$ and thus $sx=\sum_{i=1}^nb_ix_i$ with $b_i\in B$ and $x_i\in M$. As $b_i/s=0$ in $S^{-1}A$ there is a $t\in S$ such that $tb_i=0$ for all $i$. This gives $tsx=0.\ \square$ 
+
+\subsubsection{Page 40, More natural isomorphisms}\label{Smore}% 
+
+In the notation of Proposition 3.7, the $A_\ppp$-modules 
+\begin{equation}\label{E5iso}
+M_\ppp/\ppp M_\ppp,\quad (M/\ppp M)_\ppp,\quad(A_\ppp/\ppp_\ppp)\otimes_AM,\quad (A/\ppp)_\ppp\otimes_AM,\quad A_\ppp\otimes_A(M/\ppp M)
+\end{equation} 
+are naturally isomorphic. 
+
+\nn Proof: Call these modules $M_1,M_2,M_3,M_4,M_5$. The isomorphisms $M_1\simeq M_2$ and $M_3\simeq M_4$ follow from the end of Section~\ref{p3.5,3.7} p.~\pageref{p3.5,3.7}. The isomorphism $M_2\simeq M_5$ results from Proposition~3.5 p.~39 of the book. Let us prove $M_1\simeq M_4$. The sequence $\ppp_\ppp\otimes_AM\to A_\ppp\otimes_AM\to(A_\ppp/\ppp_\ppp)\otimes_AM\to0$, that is $\ppp_\ppp\otimes_AM\to A_\ppp\otimes_AM\to M_4\to0$, is exact by Proposition~3.3 p.~39 of the book. By Proposition~3.5 p.~39 of the book, we get an exact sequence $\ppp_\ppp\otimes_AM\to M_\ppp\to M_4\to0$, and the image of $\ppp_\ppp\otimes_AM$ in $M_\ppp$ is clearly $\ppp M_\ppp$. 
+
+Finally note that, if $M$ is an $A$-algebra (that is, a commutative ring together with a morphism $A\to M$), then the isomorphisms in \eqref{E5iso} are isomorphisms of $M$-algebras. 
 
 \subsubsection{Page 40, Proposition~3.8}%
 
@@ -2201,6 +2221,10 @@ Set $X:=\Sp(A),Y:=\Sp(S^{-1}A)$ and let $c:Y\to X$ be the contraction map. In vi
 
 % comment removed https://docs.google.com/document/d/1bFidiNFmzhw5CQkg8ZiIsbVKhNkEZ8LJnyYfJD2KPLg/edit
 
+\paragraph{Part (v).}\label{pam}%
+
+With obvious notation, we have $S^{-1}(\aaa M)=S^{-1}\aaa\cdot S^{-1}M=\aaa\cdot S^{-1}M$ (equalities as submodules of $S^{-1}M$). 
+
 \subsubsection{Page 43, Proposition~3.14}%
 
 The inclusion $S^{-1}\oo{Ann}M\subset\oo{Ann}S^{-1}M$ holds even is $M$ is not finitely generated. Here is a counterexample to the reverse inclusion:
@@ -2254,19 +2278,19 @@ To prove (c), let $\qqq$ be a maximal element of $\Sigma$. Assume by contradicti
 
 Here is a related result:
 \begin{equation}\label{fiber1}
-\ppp\text{ is the contraction of a prime ideal if and only if }A_\ppp/\ppp_\ppp\otimes_AB\ne0.
+\ppp\text{ is the contraction of a prime ideal if and only if }(A_\ppp/\ppp_\ppp)\otimes_AB\ne0.
 \end{equation}
 This will follow from Claim~1 and Claim~2 below.
 
-\nn\textbf{Claim~1.} Let $C_1,\ldots,C_5$ be the five $B$-algebras 
+\nn\textbf{Claim~1.} The five $B$-algebras 
 $$
-A_\ppp\otimes_AB/\ppp B,\quad 
-(B/\ppp B)_\ppp,\quad 
-B_\ppp/\ppp B_\ppp,\quad%\frac{A_\ppp\otimes_AB}{\ppp_\ppp\otimes_AB}\ ,\quad
-\frac{A_\ppp}{\ppp_\ppp}\otimes_AB,\quad 
-(A/\ppp)_\ppp\otimes_AB.
+B_\ppp/\ppp B_\ppp,\quad (B/\ppp B)_\ppp,\quad(A_\ppp/\ppp_\ppp)\otimes_AB,\quad (A/\ppp)_\ppp\otimes_AB,\quad A_\ppp\otimes_A(B/\ppp B)
 $$ 
-Then for any $1\le i,j\le5$ there is a unique $B$-algebra morphism $C_i\to C_j$, and this morphism is bijective. ???
+are naturally isomorphic. %Then for any $1\le i,j\le5$ there is a unique $B$-algebra morphism $C_i\to C_j$, and this morphism is bijective. ??? 
+
+This follows from the end of Section~\ref{Smore} p.~\pageref{Smore}. 
+
+\begin{comment}
 
 \nn\textbf{Proof of Claim~1.} Note that $C_i$ has a unique $B_\ppp$-algebra structure which extends its natural $B$-algebra structure. In other words, the image in $C_i$ of any $s\in A\setminus\ppp$ is a unit. Moreover, any element of $C_i$ is equal to $\frac bs\cdot1$ for some $b$ in $B$ and $s$ in $A\setminus\ppp$. This implies that there is at most one morphism of $B$-algebras $\phi_{ji}:C_i\to C_j$. To prove that such morphisms exist, we proceed as follows. If $U$ is an additive group and $V$ a subgroup, we denote the class in $U/V$ of $u\in U$ by $\ov u$ when $V$ is clear from the context. For $i=1,\ldots,5$ define the set theoretical map $f_i:A\times(A\setminus\ppp)\times B\to C_i$ by 
 $$
@@ -2281,6 +2305,8 @@ $$
 We leave it to the reader to check that, for $i,j=1,\ldots,5$, there is a $B$-algebra morphism $\phi_{ji}:C_i\to C_j$ such that $\phi_{ji}(f_i(a,s,b))=f_j(a,s,b)$ for all $a,s,b$. 
 
 Note that $C_i$ is an initial object in the category of those $B$-algebras $C$ such that the image of $a\in A$ in $C$ is zero if $a\in\ppp$ and is a unit if $a\notin\ppp$. 
+
+\end{comment}
 
 \nn\textbf{Claim~2.} We have $\big(B/\ppp^{\oo e}\big)_\ppp=0\iff\ppp^{\oo{ec}}\ne\ppp$. 
 
@@ -2865,7 +2891,7 @@ with $Z:=\Spec(B_{\mathfrak p}/\mathfrak pB_{\mathfrak p})$. The second claim of
 $$
 \overline f^{*-1}(\ppp)=\{\qqq\in Y\ |\ \qqq\supset f(\ppp),\ f^*(\qqq)=\ppp\}=\{\qqq\in Y\ |\ f^*(\qqq)=\ppp\}=f^{*-1}(\ppp),
 $$ 
-that is, $\Spec(B_{\mathfrak p}/\mathfrak pB_{\mathfrak p})=f^{*-1}(\ppp)$, as required. 
+that is, $\Spec(B_{\mathfrak p}/\mathfrak pB_{\mathfrak p})=f^{*-1}(\ppp)$, as required. Finally, the natural isomorphism $B_\ppp/\ppp B_\ppp\simeq k(\ppp)\otimes_AB)$ follows from Section~\ref{res} p.~\pageref{res}. 
 
 % comment removed https://docs.google.com/document/d/1e5EGybYATuzRFl6V2MD2Bfkw6ESUFFAvB4Pu2RvwVTU/edit comment 4
 
