@@ -1,7 +1,7 @@
 % Atiyah-MacDonald-25b
 % !TEX encoding = UTF-8 Unicode
-% https://docs.google.com/document/d/1jll4EDMRR8FfpWCHrUCoEQRvUAEtZBGDI2wLmzX9pIE/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1739558214
+% https://docs.google.com/document/d/1qY50h1OrJgKLaqmX8YR0bmc0EbD8Ar0YSAvQMz7cLSQ/edit?tab=t.0
+% https://www.site24x7.com/tools/time-stamp-converter.html 1749557308
 % https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
 \documentclass[12pt,letterpaper]{article}%\documentclass{article} % old
@@ -9,7 +9,7 @@
 %\documentclass[fontsize=12pt]{scrartcl} % variable
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1739558214}} 
+\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1749557308}} 
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -90,12 +90,10 @@
 
 \begin{center}{\Huge About Atiyah and MacDonald's Book}\bigskip 
 
-Pierre-Yves Gaillard\footnote{DOI 10.5281/zenodo.6498378. Links to this text: \href{https://zenodo.org/record/6498378}{Zenodo}, \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c}{GitHub} (the GitHub is updated more often). My texts at: \href{https://tinyurl.com/3r5vscy8}{Zenodo},  \href{https://orcid.org/0000-0002-7960-1698}{ORCID}.} 
+Pierre-Yves Gaillard\footnote{DOI 10.5281/zenodo.6498378. Links to this text: \href{https://zenodo.org/record/6498378}{Zenodo}, \href{https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c}{GitHub} (the GitHub version, being updated more often, is the ``official'' version). My texts at: \href{https://tinyurl.com/3r5vscy8}{Zenodo}, \href{https://orcid.org/0000-0002-7960-1698}{ORCID}, \href{https://vixra.org/author/pierre-yves_gaillard}{viXra}. Email: pierre.yves.gaillard at gmail.com.} 
 \end{center}
 
-%\maketitle
-
-%\nn The last version is available at \href{https://tinyurl.com/yxb32wmu}{https://tinyurl.com/yxb32wmu} 
+%\maketitle%\nn The last version is available at \href{https://tinyurl.com/yxb32wmu}{https://tinyurl.com/yxb32wmu} 
 
 \tableofcontents
 
@@ -2741,12 +2739,26 @@ $$
 $$ 
 we can assume $\ppp\supset\aaa$, and we get $\ov M_\ppp\ne0\iff\ov M_{\ov\ppp}\ne0\iff\ov\ppp\supset\ov\bbb\iff\ppp\supset\bbb$ by (v). 
 
+To prove (viii) we will use the following lemma: 
+
+\begin{lem}\label{L25a} 
+If $f:A\to B$ is a ring homomorphism as above, then we have: 
+
+\nn\emph{(a)} The $A$-linear morphism $B\otimes_AA\to B$ characterized by the condition $b\otimes a\mapsto ba$ for all $b\in B$ and $a\in A$ is a ring isomorphism. 
+
+\nn\emph{(b)} If $n$ is a nonnegative integer, then there is a $B$-linear isomorphism $B\otimes_AA^n\to B^n$. (In particular $B\otimes_AA^n=0\implies n=0\implies A^n=0$.) %Let $k$ be a field, let $K$ be an extension of $k$ (that is, $K$ is a field containing $k$), and let $V$ be an $n$-dimensional $k$-vector space (where $n$ is a nonnegative integer). Then $K\otimes_kV$ is an $n$-dimensional $K$-vector space.
+\end{lem}
+
+\begin{proof} 
+(a) Proposition~2.14iv p.~26 of the book implies that there is an $A$-linear isomorphism $B\otimes_AA\to B$ characterized by the condition $b\otimes a\mapsto ba$ for all $b\in B$ and $a\in A$, and it is easy to see that this is a ring morphism. Now (b) follows from (a) and Proposition~2.14iii p.~26 of the book which says that there is an $A$-module isomorphism $(M\oplus N)\otimes_AP\to(M\otimes_AP)\oplus(N\otimes_AP)$, where $M,N$ and $P$ are $A$-modules. %[This follows immediately from Proposition~2.14iii (p.~26 of the book) and the observation just before Proposition 2,17 (p.~28 of the book). [Proposition~2.14iii says that there is an $A$-module isomorphism $(M\oplus N)\otimes_AP\to(M\otimes_AP)\oplus(N\otimes_AP)$, where $M,N$ and $P$ are $A$-modules. ???] 
+\end{proof}
+
 \nn Proof of (viii): Let $\qqq\in\Spec(B)$ and set $\ppp:=\qqq^{\oo c}$. It suffices to show $M_{B,\qqq}=0\iff M_\ppp=0$. We claim
 \begin{equation}\label{mbq}
 \frac{M_{B,\qqq}}{\qqq M_{B,\qqq}}\simeq\frac{B_\qqq}{\qqq_\qqq}\otimes_{A_\ppp/\ppp_\ppp}\frac{M_\ppp}{\ppp M_\ppp}\ .
 \end{equation}
 
-\nn As $M$ is finitely generated, \eqref{mbq} will imply 
+\nn As $A_\ppp/\ppp_\ppp$ is a field and $M$ is finitely generated, \eqref{mbq} will imply, in view of Lemma~\ref{L25a}, that 
 $$
 M_{B,\qqq}=0\iff\frac{M_{B,\qqq}}{\qqq M_{B,\qqq}}=0\iff\frac{M_\ppp}{\ppp M_\ppp}=0\iff M_\ppp=0.
 $$ 
