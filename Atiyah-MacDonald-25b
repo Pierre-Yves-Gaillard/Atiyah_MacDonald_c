@@ -1,7 +1,7 @@
 % Atiyah-MacDonald-25b
 % !TEX encoding = UTF-8 Unicode
 % https://docs.google.com/document/d/1qY50h1OrJgKLaqmX8YR0bmc0EbD8Ar0YSAvQMz7cLSQ/edit?tab=t.0
-% https://www.site24x7.com/tools/time-stamp-converter.html 1749557308
+% https://www.site24x7.com/tools/time-stamp-converter.html 1749558176
 % https://github.com/Pierre-Yves-Gaillard/Atiyah_MacDonald_c
 % version a of 20180208 https://docs.google.com/document/d/1p2ri2Mu-zyF7-Gk1eeJ4f0OinG0BPXZEAsljF3af2zs/edit
 \documentclass[12pt,letterpaper]{article}%\documentclass{article} % old
@@ -9,7 +9,7 @@
 %\documentclass[fontsize=12pt]{scrartcl} % variable
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1749557308}} 
+\fancyfoot[R]{{\tiny Atiyah-MacDonald-25b,\ \filemodprintdate{\jobname},\ \filemodprinttime{\jobname},\ 1749558176}} 
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\thepage}
 \usepackage[T1]{fontenc}
@@ -137,7 +137,9 @@ Here are some links to texts related to this book:
 \nn$\bu$ Joshua Ruiter \href{https://tinyurl.com/3hj9btp3}{https://tinyurl.com/3hj9btp3} %https://users.math.msu.edu/users/ruiterj2/Math/Documents/Fall%202018/Commutative%20Algebra/Commutative%20Algebra%20Homework%201.pdf
 
 \nn$\bu$ J. David Taylor\\\href{https://www.math.arizona.edu/~jtaylor/notes/atiyah_macdonald_solutions.pdf}{https://www.math.arizona.edu/$\sim$jtaylor/notes/atiyah\_macdonald\_solutions.pdf} 
-\medskip 
+\bigskip 
+
+Thank you to Rafał Michalski for his help!
 
 % comment removed https://docs.google.com/document/d/1e5EGybYATuzRFl6V2MD2Bfkw6ESUFFAvB4Pu2RvwVTU/edit comment 1
 
